@@ -1,0 +1,110 @@
+.demo {
+  padding: 16px;
+}
+
+.demo h1 {
+  font-size: 16px;
+}
+
+.demo > h1 {
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #ededed;
+  margin: 20px 0;
+}
+
+.demo > h1 a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.demo > h1:hover a {
+  text-decoration: underline;
+}
+
+.emojione {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.emoji-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emoji-menu {
+  height: 250px;
+  overflow: hidden;
+  background: #F9F7F7;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.emoji-categories {
+  height: calc(100% - 84px);
+  overflow-y: scroll;
+}
+
+.emoji-container div {
+  height: 100%;
+}
+
+.modifiers-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* adjust this to calc(100% - buttonWidth) to fit the button */
+  overflow-x: auto;
+}
+
+article h1 {
+  margin: 0;
+  margin-left: 5px;
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+
+.demo > div .emojione {
+  width: 150px;
+  height: 150px;
+}
+
+.modifiers {
+  background: #fff;
+  height: 40px;
+}
+
+.modifier .emojione {
+  width: 20px;
+  height: 20px;
+}
+
+.modifier {
+  display: flex;
+  transition: transform .3s ease-in-out;
+}
+
+.modifier:first-of-type {
+  margin-left: 5px;
+}
+
+.modifier > svg {
+  align-self: center;
+}
+
+.modifier.active {
+  transform: scale(1.3);
+}
+
+footer {
+  background: #fff;
+  height: 24px;
+  padding: 10px 5px;
+}
+
+footer svg {
+  margin: 0 5px;
+  cursor: pointer;
+}
