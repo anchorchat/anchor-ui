@@ -1,4 +1,5 @@
 import React from 'react';
+import Message from './components/message';
 
 function Component() {
   return (
@@ -8,4 +9,4 @@ function Component() {
   );
 }
 
-export default Component;
+export { Component, Message };
