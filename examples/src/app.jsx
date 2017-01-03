@@ -1,5 +1,5 @@
 import React from 'react';
-import Component from '../../dist/index';
+import { Component, Message } from '../../dist/index';
 import './app.css';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         </a>
       </h1>
       <Component />
+      <Message message={{ body: 'hi' }} />
     </section>
   );
 }
