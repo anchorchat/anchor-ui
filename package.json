@@ -7,12 +7,19 @@
     "dist/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel -d dist/ -w src/",
+    "compile": "babel -d dist/ src/",
+    "lint": "eslint src/*",
+    "prepublish": "npm run lint && npm run compile"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anchorchat/anchor-ui.git"
   },
+  "keywords": [
+    "react"
+  ],
   "author": "Sjaak Luthart",
   "license": "MIT",
   "bugs": {
