@@ -1,0 +1,48 @@
+{
+  "name": "anchor-ui",
+  "version": "1.0.0",
+  "description": "React Component UI Kit",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchorchat/anchor-ui.git"
+  },
+  "author": "Sjaak Luthart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anchorchat/anchor-ui/issues"
+  },
+  "homepage": "https://github.com/anchorchat/anchor-ui#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^15.4.1"
+  }
+}
