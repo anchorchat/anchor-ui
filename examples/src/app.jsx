@@ -15,7 +15,7 @@ function App() {
         </a>
       </h1>
       <Component />
-      <Message message={{ body: 'hi' }} />
+      <Message message={{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }} />
     </section>
   );
 }
