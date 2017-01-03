@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component, Message } from '../../dist/index';
+import { Message, UserList } from '../../dist/index';
 import './app.css';
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
           Anchor UI
         </a>
       </h1>
-      <Component />
       <Message message={{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }} />
+      <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} />
     </section>
   );
 }
