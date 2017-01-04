@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import classNames from 'classnames';
-import jss from 'jss';
+import getClassNames from '../get-class-names';
 
 const styles = {
   ul: {
@@ -13,10 +12,8 @@ const styles = {
 };
 
 function UserList({ users, sheet: { classes }, style }) {
-  const overrideSheet = jss.createStyleSheet(style).attach();
-
   return (
-    <ul className={classNames(classes.ul, overrideSheet.classes.ul)}>
+    <ul className={getClassNames(classes, style, 'ul')}>
       {users.map(user => (<li className={classes.li} key={`user-list-${user.username}`}>{user.username}</li>))}
     </ul>
   );
