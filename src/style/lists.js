@@ -10,7 +10,7 @@ const style = {
     padding: '10px',
     boxSizing: 'border-box',
     cursor: 'pointer',
-    transition: 'all .3s ease-in-out',
+    transition: 'background-color .3s ease-in-out',
     backgroundColor: colors.white,
     '&:hover': {
       backgroundColor: colors.lightGrey
