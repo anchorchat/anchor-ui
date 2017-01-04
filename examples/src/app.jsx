@@ -66,7 +66,7 @@ class App extends Component {
         <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
         <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }, { username: 'Ian' }]} />
         <ChannelList channels={channels} />
-        <MessageInput onChange={this.changeMessage} value={this.state.message} />
+        <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} />
       </section>
     );
   }

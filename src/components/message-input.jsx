@@ -3,8 +3,8 @@ import injectSheet from 'react-jss';
 import getClassNames from '../get-class-names';
 import inputStyle from '../style/inputs';
 
-function MessageInput({ onChange, value, sheet: { classes }, style }) {
-  return <input className={getClassNames(classes, 'input', style)} onChange={onChange} value={value} type="text" />;
+function MessageInput({ onChange, placeholder, value, sheet: { classes }, style }) {
+  return <input className={getClassNames(classes, 'messageInput', style)} placeholder={placeholder} onChange={onChange} value={value} type="text" />;
 }
 
 MessageInput.propTypes = {
@@ -15,8 +15,9 @@ MessageInput.propTypes = {
       input: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
+  placeholder: PropTypes.string.isRequired,
   style: PropTypes.shape({
-    input: PropTypes.object
+    messageInput: PropTypes.object
   })
 };
 
