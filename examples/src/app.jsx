@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { ChannelList, UserList, MessageInput, Messages } from '../../dist/index';
+import {
+  UserList,
+  MessageInput,
+  Messages,
+  ChannelHeader,
+  MyProfileCard,
+  ChannelList
+} from '../../dist/index';
 import './app.css';
 
 class App extends Component {
@@ -54,8 +61,10 @@ class App extends Component {
             Anchor UI
           </a>
         </h1>
+        <MyProfileCard username="Ian" />
+        <ChannelHeader name="Channel 1" />
         <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
-        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} />
+        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }, { username: 'Ian' }]} />
         <ChannelList channels={channels} />
         <MessageInput onChange={this.changeMessage} value={this.state.message} />
       </section>
