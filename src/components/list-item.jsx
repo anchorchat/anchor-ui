@@ -6,8 +6,8 @@ import listStyle from '../style/lists';
 function ListItem({ primaryText, secondaryText, sheet: { classes }, style }) {
   return (
     <li className={getClassNames(classes, 'listItem', style)}>
-      <h1>{primaryText}</h1>
-      {secondaryText ? <h2>{secondaryText}</h2> : null}
+      <h1 className={getClassNames(classes, 'primaryText', style)}>{primaryText}</h1>
+      {secondaryText ? <h2 className={getClassNames(classes, 'secondaryText', style)}>{secondaryText}</h2> : null}
     </li>
   );
 }

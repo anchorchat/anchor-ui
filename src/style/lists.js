@@ -5,6 +5,18 @@ const style = {
   },
   listItem: {
     'list-style': 'none'
+  },
+  primaryText: {
+    margin: 0,
+    'font-size': '16px',
+    'line-height': '16px',
+    'font-weight': 'normal'
+  },
+  secondaryText: {
+    margin: 0,
+    'font-size': '14px',
+    'line-height': '14px',
+    'font-weight': 'normal'
   }
 };
 
