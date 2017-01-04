@@ -1,20 +1,15 @@
 import React, { PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import getClassNames from '../get-class-names';
-
-const styles = {
-  ul: {
-    'padding-left': '0'
-  },
-  li: {
-    listStyle: 'none'
-  }
-};
+import listStyle from '../style/lists';
+import ListItem from './list-item';
 
 function UserList({ users, sheet: { classes }, style }) {
   return (
-    <ul className={getClassNames(classes, 'ul', style)}>
-      {users.map(user => (<li className={classes.li} key={`user-list-${user.username}`}>{user.username}</li>))}
+    <ul className={getClassNames(classes, 'list', style)}>
+      {users.map(user => (
+        <ListItem primaryText={user.username} key={`user-list-${user.username}`} />
+      ))}
     </ul>
   );
 }
@@ -23,14 +18,14 @@ UserList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({ username: PropTypes.string.isRequired })).isRequired,
   sheet: PropTypes.shape({
     classes: PropTypes.shape({
-      ul: PropTypes.string.isRequired,
-      li: PropTypes.string.isRequired
+      list: PropTypes.string.isRequired,
+      listItem: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
   style: PropTypes.shape({
-    ul: PropTypes.object,
-    li: PropTypes.object
+    list: PropTypes.object,
+    listItem: PropTypes.object
   })
 };
 
-export default injectSheet(styles)(UserList);
+export default injectSheet(listStyle)(UserList);
