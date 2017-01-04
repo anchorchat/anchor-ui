@@ -1,5 +1,5 @@
-import Message from './components/message';
 import UserList from './components/user-list';
 import MessageInput from './components/message-input';
+import Messages from './components/messages';
 
-export { Message, UserList, MessageInput };
+export { Messages, UserList, MessageInput };
