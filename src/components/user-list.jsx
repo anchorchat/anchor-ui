@@ -15,7 +15,6 @@ const styles = {
 function UserList({ users, sheet: { classes }, style }) {
   const test = jss.createStyleSheet(style).attach();
 
-  console.log(test);
   return (
     <ul className={classNames(classes.ul, test.classes.ul)}>
       {users.map(user => (<li className={classes.li} key={`user-list-${user.username}`}>{user.username}</li>))}
@@ -29,7 +28,11 @@ UserList.propTypes = {
     classes: PropTypes.shape({
       ul: PropTypes.string.isRequired, li: PropTypes.string.isRequired
     }).isRequired
-  }).isRequired
+  }).isRequired,
+  style: PropTypes.shape({
+    ul: PropTypes.object,
+    li: PropTypes.object
+  })
 };
 
 export default injectSheet(styles)(UserList);
