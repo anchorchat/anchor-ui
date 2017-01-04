@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import { ChannelList, UserList, MessageInput, Messages } from '../../dist/index';
 import './app.css';
 
-const style = {
-  ul: {
-    'padding-left': '10px'
-  }
-};
-
 class App extends Component {
   constructor() {
     super();
@@ -38,8 +32,8 @@ class App extends Component {
           </a>
         </h1>
         <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
-        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} style={style} />
-        <ChannelList channels={[{ name: 'Channel1' }, { name: 'Channel2' }, { name: 'Channel3' }, { name: 'Channel4' }]} style={style} />
+        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} />
+        <ChannelList channels={[{ name: 'Channel1' }, { name: 'Channel2' }, { name: 'Channel3' }, { name: 'Channel4' }]} />
         <MessageInput onChange={this.changeMessage} value={this.state.message} />
       </section>
     );
