@@ -5,10 +5,10 @@ import listStyle from '../style/lists';
 
 function UserList({ users, sheet: { classes }, style }) {
   return (
-    <ul className={getClassNames(classes, 'ul', style)}>
+    <ul className={getClassNames(classes, 'list', style)}>
       {users.map(user => (
         <li
-          className={getClassNames(classes, 'li', style)}
+          className={getClassNames(classes, 'listItem', style)}
           key={`user-list-${user.username}`}
         >
           {user.username}
@@ -22,13 +22,13 @@ UserList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({ username: PropTypes.string.isRequired })).isRequired,
   sheet: PropTypes.shape({
     classes: PropTypes.shape({
-      ul: PropTypes.string.isRequired,
-      li: PropTypes.string.isRequired
+      list: PropTypes.string.isRequired,
+      listItem: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
   style: PropTypes.shape({
-    ul: PropTypes.object,
-    li: PropTypes.object
+    list: PropTypes.object,
+    listItem: PropTypes.object
   })
 };
 

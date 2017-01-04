@@ -1,9 +1,9 @@
 const style = {
-  ul: {
+  list: {
     'padding-left': '0',
     margin: '0'
   },
-  li: {
+  listItem: {
     'list-style': 'none'
   }
 };

@@ -6,10 +6,10 @@ import listStyle from '../style/lists';
 function ChannelList({ channels, sheet: { classes }, style }) {
   return (
     <article>
-      <ul className={getClassNames(classes, 'ul', style)}>
+      <ul className={getClassNames(classes, 'list', style)}>
         {channels.map(channel => (
           <li
-            className={getClassNames(classes, 'li', style)}
+            className={getClassNames(classes, 'listItem', style)}
             key={`channel-list-${channel.name}`}
           >
             {channel.name}
@@ -24,13 +24,13 @@ ChannelList.propTypes = {
   channels: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string.isRequired })).isRequired,
   sheet: PropTypes.shape({
     classes: PropTypes.shape({
-      ul: PropTypes.string.isRequired,
-      li: PropTypes.string.isRequired
+      list: PropTypes.string.isRequired,
+      listItem: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
   style: PropTypes.shape({
-    ul: PropTypes.object,
-    li: PropTypes.object
+    list: PropTypes.object,
+    listItem: PropTypes.object
   })
 };
 
