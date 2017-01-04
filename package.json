@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "babel -d dist/ -w src/",
-    "compile": "babel -d dist/ src/",
+    "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
     "prepublish": "npm run lint && npm run compile"
   },

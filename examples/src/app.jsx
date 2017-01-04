@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Message, UserList, MessageInput } from '../../dist/index';
+import {
+  UserList,
+  MessageInput,
+  Messages,
+  ChannelHeader,
+  MyProfileCard
+} from '../../dist/index';
 import './app.css';
 
 const style = {
@@ -37,8 +43,10 @@ class App extends Component {
             Anchor UI
           </a>
         </h1>
-        <Message message={{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }} />
-        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} style={style} />
+        <MyProfileCard username="Ian" />
+        <ChannelHeader name="Channel 1" />
+        <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
+        <UserList users={[{ username: 'Peter' }, { username: 'Sjaak' }, { username: 'Ian' }, { username: 'Lars' }]} style={style} />
         <MessageInput onChange={this.changeMessage} value={this.state.message} />
       </section>
     );
