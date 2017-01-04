@@ -1,15 +1,19 @@
 import React, { PropTypes } from 'react';
+import moment from 'moment';
 import MessageHeader from './message-header';
 
 function Message({ message, momentFormat }) {
+  const format = momentFormat || 'HH:mm';
+
   return (
     <section>
-      <MessageHeader
-        createdAt={message.createdAt}
-        username={message.username}
-        momentFormat={momentFormat}
-      />
-      {message.body}
+      <div>
+        <MessageHeader
+          username={message.username}
+        />
+        {message.body}
+      </div>
+      {moment(message.createdAt).format(format)}
     </section>
   );
 }
