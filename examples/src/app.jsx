@@ -20,6 +20,29 @@ class App extends Component {
   }
 
   render() {
+    const channels = [
+      {
+        name: 'Channel1',
+        maxUsers: 50,
+        users: ['1', '2', '3']
+      },
+      {
+        name: 'Channel2',
+        maxUsers: 50,
+        users: ['1', '2', '3']
+      },
+      {
+        name: 'Channel3',
+        maxUsers: 50,
+        users: ['1', '2', '3']
+      },
+      {
+        name: 'Channel4',
+        maxUsers: 50,
+        users: ['1', '2', '3']
+      }
+    ];
+
     return (
       <section className="demo">
         <h1>
@@ -33,7 +56,7 @@ class App extends Component {
         </h1>
         <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
         <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} />
-        <ChannelList channels={[{ name: 'Channel1' }, { name: 'Channel2' }, { name: 'Channel3' }, { name: 'Channel4' }]} />
+        <ChannelList channels={channels} />
         <MessageInput onChange={this.changeMessage} value={this.state.message} />
       </section>
     );
