@@ -13,7 +13,7 @@ const styles = {
 
 function UserList({ users, sheet: { classes }, style }) {
   return (
-    <ul className={getClassNames(classes, style, 'ul')}>
+    <ul className={getClassNames(classes, 'ul', style)}>
       {users.map(user => (<li className={classes.li} key={`user-list-${user.username}`}>{user.username}</li>))}
     </ul>
   );
