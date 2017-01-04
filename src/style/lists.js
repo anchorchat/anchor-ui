@@ -1,10 +1,23 @@
+import colors from './colors';
+
 const style = {
   list: {
     'padding-left': '0',
     margin: '0'
   },
   listItem: {
-    'list-style': 'none'
+    'list-style': 'none',
+    padding: '10px',
+    'box-sizing': 'border-box',
+    cursor: 'pointer',
+    transition: 'all .3s ease-in-out',
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.lightGrey
+    },
+    '&:active': {
+      backgroundColor: colors.grey
+    }
   },
   primaryText: {
     margin: 0,
@@ -16,7 +29,8 @@ const style = {
     margin: 0,
     'font-size': '14px',
     'line-height': '14px',
-    'font-weight': 'normal'
+    'font-weight': 'normal',
+    'margin-top': '2.4px'
   }
 };
 
