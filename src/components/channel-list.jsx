@@ -2,18 +2,18 @@ import React, { PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import getClassNames from '../get-class-names';
 import listStyle from '../style/lists';
+import ListItem from './list-item';
 
 function ChannelList({ channels, sheet: { classes }, style }) {
   return (
     <article>
       <ul className={getClassNames(classes, 'list', style)}>
         {channels.map(channel => (
-          <li
-            className={getClassNames(classes, 'listItem', style)}
+          <ListItem
             key={`channel-list-${channel.name}`}
-          >
-            {channel.name}
-          </li>
+            primaryText={channel.name}
+            secondaryText={`${channel.users.length}/${channel.maxUsers}`}
+          />
         ))}
       </ul>
     </article>
