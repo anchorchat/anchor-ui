@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-  UserList,
   MessageInput,
   Messages,
   ChannelHeader,
   MyProfileCard,
-  ChannelList
+  List,
+  ListItem
 } from '../../dist/index';
 import './app.css';
 
@@ -50,6 +50,14 @@ class App extends Component {
       }
     ];
 
+    const users = [
+      { username: 'Sjaak' },
+      { username: 'Peter' },
+      { username: 'Lars' },
+      { username: 'Sven' },
+      { username: 'Ian' }
+    ];
+
     return (
       <section className="demo">
         <h1>
@@ -64,8 +72,23 @@ class App extends Component {
         <MyProfileCard username="Ian" />
         <ChannelHeader name="Channel 1" />
         <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
-        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }, { username: 'Ian' }]} />
-        <ChannelList channels={channels} />
+        <List>
+          {channels.map(channel => (
+            <ListItem
+              key={`channel-list-${channel.name}`}
+              primaryText={channel.name}
+              secondaryText={`${channel.users.length}/${channel.maxUsers}`}
+            />
+          ))}
+        </List>
+        <List>
+          {users.map(user => (
+            <ListItem
+              key={`user-list-${user.username}`}
+              primaryText={user.username}
+            />
+          ))}
+        </List>
         <MessageInput onChange={this.changeMessage} value={this.state.message} />
       </section>
     );
