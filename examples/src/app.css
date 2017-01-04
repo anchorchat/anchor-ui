@@ -1,4 +1,10 @@
-.demo h1 {
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+.demo > h1 {
   font-size: 16px;
 }
 

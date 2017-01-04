@@ -1,5 +1,6 @@
 const style = {
   messageInput: {
+    display: 'flex',
     appearance: 'none',
     border: '0',
     width: '100%',

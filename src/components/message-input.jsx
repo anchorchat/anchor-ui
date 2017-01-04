@@ -12,7 +12,7 @@ MessageInput.propTypes = {
   value: PropTypes.string.isRequired,
   sheet: PropTypes.shape({
     classes: PropTypes.shape({
-      input: PropTypes.string.isRequired
+      messageInput: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
   placeholder: PropTypes.string.isRequired,
