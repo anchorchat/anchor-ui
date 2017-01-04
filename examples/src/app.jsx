@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Message, UserList, MessageInput } from '../../dist/index';
 import './app.css';
 
+const style = {
+  ul: {
+    'padding-left': '10px'
+  }
+};
+
 class App extends Component {
   constructor() {
     super();
@@ -32,7 +38,7 @@ class App extends Component {
           </a>
         </h1>
         <Message message={{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }} />
-        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} />
+        <UserList users={[{ username: 'Sjaak' }, { username: 'Peter' }, { username: 'Lars' }, { username: 'Sven' }]} style={style} />
         <MessageInput onChange={this.changeMessage} value={this.state.message} />
       </section>
     );

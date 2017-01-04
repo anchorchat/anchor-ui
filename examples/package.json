@@ -12,9 +12,10 @@
   },
   "dependencies": {
     "emojione": "^2.2.7",
+    "jss": "^6.1.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-emojione-menu": "^1.1.1"
+    "react-jss": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
