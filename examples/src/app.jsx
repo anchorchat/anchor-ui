@@ -5,7 +5,8 @@ import {
   MyProfileCard,
   List,
   ListItem,
-  Message
+  Message,
+  colors
 } from '../../dist/index';
 import './app.css';
 
@@ -81,7 +82,7 @@ class App extends Component {
     const listStyle = {
       list: {
         overflow: 'auto',
-        background: '#F2F7F7',
+        background: colors.background,
         padding: '10px'
       }
     };

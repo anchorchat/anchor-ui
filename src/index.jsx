@@ -17,6 +17,8 @@ import IconMenu from './icons/icon-menu';
 import IconPeople from './icons/icon-people';
 import IconPerson from './icons/icon-person';
 import IconSend from './icons/icon-send';
+// Settings
+import colors from './style/colors';
 
 export {
   // Components
@@ -37,5 +39,7 @@ export {
   IconMenu,
   IconPeople,
   IconPerson,
-  IconSend
+  IconSend,
+  // Settings
+  colors
 };
