@@ -41,8 +41,21 @@ const users = [
 ];
 
 const messages = [
-  { body: 'hi', createdAt: new Date(), username: 'Sjaak' },
-  { body: 'hi', createdAt: new Date(), username: 'Sven' }
+  {
+    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
+    createdAt: new Date(),
+    username: 'The Doctor'
+  },
+  {
+    body: 'You hit me with a cricket bat. I\'m nobody\'s taxi service; I\'m not gonna be there to catch you every time you feel like jumping out of a spaceship. Sorry, checking all the water in this area; there\'s an escaped fish.',
+    createdAt: new Date(),
+    username: 'The Doctor'
+  },
+  {
+    body: 'You hit me with a cricket bat.',
+    createdAt: new Date(),
+    username: 'The Doctor'
+  }
 ];
 
 class App extends Component {
@@ -77,8 +90,8 @@ class App extends Component {
         <MyProfileCard username="Ian" />
         <ChannelHeader name="Channel 1" />
         <List>
-          {messages.map(message => (
-            <Message message={message} key={`message-${message.username}`} />
+          {messages.map((message, index) => (
+            <Message message={message} key={`message-${index}`} />
           ))}
         </List>
         <List>
