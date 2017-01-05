@@ -89,7 +89,7 @@ class App extends Component {
             />
           ))}
         </List>
-        <MessageInput onChange={this.changeMessage} value={this.state.message} />
+        <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} />
       </section>
     );
   }
