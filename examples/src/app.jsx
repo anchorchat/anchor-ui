@@ -47,16 +47,18 @@ const messages = [
     username: 'The Doctor'
   },
   {
-    body: 'You hit me with a cricket bat. I\'m nobody\'s taxi service; I\'m not gonna be there to catch you every time you feel like jumping out of a spaceship. Sorry, checking all the water in this area; there\'s an escaped fish.',
+    body: 'You\'ve swallowed a planet! They\'re not aliens, they\'re Earth…liens!',
     createdAt: new Date(),
-    username: 'The Doctor'
+    username: 'Amy'
   },
   {
-    body: 'You hit me with a cricket bat.',
+    body: 'You hit me with a cricket bat. I\'m nobody\'s taxi service; I\'m not gonna be there to catch you every time you feel like jumping out of a spaceship. Sorry, checking all the water in this area; there\'s an escaped fish.',
     createdAt: new Date(),
     username: 'The Doctor'
   }
 ];
+
+const currentUser = 'The Doctor';
 
 class App extends Component {
   constructor() {
@@ -76,6 +78,14 @@ class App extends Component {
   }
 
   render() {
+    const listStyle = {
+      list: {
+        overflow: 'auto',
+        background: '#F2F7F7',
+        padding: '10px'
+      }
+    };
+
     return (
       <section className="demo">
         <h1>
@@ -89,9 +99,12 @@ class App extends Component {
         </h1>
         <MyProfileCard username="Ian" />
         <ChannelHeader name="Channel 1" />
-        <List>
+        <List style={listStyle}>
           {messages.map((message, index) => (
-            <Message message={message} key={`message-${index}`} />
+            <Message
+              message={message} key={`message-${index}`}
+              myMessage={message.username === currentUser}
+            />
           ))}
         </List>
         <List>
