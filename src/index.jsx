@@ -3,7 +3,6 @@ import ChannelHeader from './components/channel-header';
 import List from './components/list';
 import ListItem from './components/list-item';
 import Message from './components/message';
-import Messages from './components/messages';
 import MessageInput from './components/message-input';
 import MyProfileCard from './components/my-profile-card';
 // Icons
@@ -25,7 +24,6 @@ export {
   List,
   ListItem,
   Message,
-  Messages,
   MessageInput,
   MyProfileCard,
   // Icons

@@ -1,13 +1,49 @@
 import React, { Component } from 'react';
 import {
   MessageInput,
-  Messages,
   ChannelHeader,
   MyProfileCard,
   List,
-  ListItem
+  ListItem,
+  Message
 } from '../../dist/index';
 import './app.css';
+
+const channels = [
+  {
+    name: 'Channel1',
+    maxUsers: 50,
+    users: ['1', '2', '3']
+  },
+  {
+    name: 'Channel2',
+    maxUsers: 50,
+    users: ['1', '2', '3']
+  },
+  {
+    name: 'Channel3',
+    maxUsers: 50,
+    users: ['1', '2', '3']
+  },
+  {
+    name: 'Channel4',
+    maxUsers: 50,
+    users: ['1', '2', '3']
+  }
+];
+
+const users = [
+  { username: 'Sjaak' },
+  { username: 'Peter' },
+  { username: 'Lars' },
+  { username: 'Sven' },
+  { username: 'Ian' }
+];
+
+const messages = [
+  { body: 'hi', createdAt: new Date(), username: 'Sjaak' },
+  { body: 'hi', createdAt: new Date(), username: 'Sven' }
+];
 
 class App extends Component {
   constructor() {
@@ -27,37 +63,6 @@ class App extends Component {
   }
 
   render() {
-    const channels = [
-      {
-        name: 'Channel1',
-        maxUsers: 50,
-        users: ['1', '2', '3']
-      },
-      {
-        name: 'Channel2',
-        maxUsers: 50,
-        users: ['1', '2', '3']
-      },
-      {
-        name: 'Channel3',
-        maxUsers: 50,
-        users: ['1', '2', '3']
-      },
-      {
-        name: 'Channel4',
-        maxUsers: 50,
-        users: ['1', '2', '3']
-      }
-    ];
-
-    const users = [
-      { username: 'Sjaak' },
-      { username: 'Peter' },
-      { username: 'Lars' },
-      { username: 'Sven' },
-      { username: 'Ian' }
-    ];
-
     return (
       <section className="demo">
         <h1>
@@ -71,7 +76,11 @@ class App extends Component {
         </h1>
         <MyProfileCard username="Ian" />
         <ChannelHeader name="Channel 1" />
-        <Messages messages={[{ body: 'hi', createdAt: new Date(), username: 'Sjaak' }, { body: 'hi', createdAt: new Date(), username: 'Sven' }]} />
+        <List>
+          {messages.map(message => (
+            <Message message={message} key={`message-${message.username}`} />
+          ))}
+        </List>
         <List>
           {channels.map(channel => (
             <ListItem
