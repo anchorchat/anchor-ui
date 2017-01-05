@@ -11,6 +11,7 @@ const style = {
     position: 'relative',
     marginBottom: '30px',
     float: 'left',
+    clear: 'both',
     '&:last-of-type': {
       marginBottom: '15px'
     }
