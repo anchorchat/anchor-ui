@@ -10,7 +10,10 @@ const style = {
     color: colors.primaryText,
     position: 'relative',
     marginBottom: '30px',
-    float: 'left'
+    float: 'left',
+    '&:last-of-type': {
+      marginBottom: '15px'
+    }
   },
   myMessage: {
     float: 'right',
