@@ -66,16 +66,41 @@ class App extends Component {
     super();
 
     this.state = {
-      message: ''
+      message: '',
+      messages
     };
 
     this.changeMessage = this.changeMessage.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
   }
 
   changeMessage(event) {
     this.setState({
       message: event.currentTarget.value
     });
+  }
+
+  sendMessage() {
+    const { message } = this.state;
+
+    if (message.length < 1) {
+      return false;
+    }
+
+    const newMessages = this.state.messages;
+
+    newMessages.push({
+      body: message,
+      createdAt: new Date(),
+      username: currentUser
+    });
+
+    this.setState({
+      messages: newMessages,
+      message: ''
+    });
+
+    return false;
   }
 
   render() {
@@ -101,13 +126,14 @@ class App extends Component {
         <MyProfileCard username="Ian" />
         <ChannelHeader name="Channel 1" />
         <List style={listStyle}>
-          {messages.map((message, index) => (
+          {this.state.messages.map((message, index) => (
             <Message
               message={message} key={`message-${index}`}
               myMessage={message.username === currentUser}
             />
           ))}
         </List>
+        <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={this.sendMessage} />
         <List>
           {channels.map(channel => (
             <ListItem
@@ -125,7 +151,6 @@ class App extends Component {
             />
           ))}
         </List>
-        <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={() => console.log(this.state.message)} />
       </section>
     );
   }
