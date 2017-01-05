@@ -24,7 +24,10 @@ function Message({ message, timeFormat, myMessage, sheet: { classes }, style }) 
 Message.propTypes = {
   message: PropTypes.shape({
     body: PropTypes.string.isRequired,
-    createdAt: PropTypes.instanceOf(Date).isRequired,
+    createdAt: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(Date)
+    ]).isRequired,
     username: PropTypes.string.isRequired,
   }).isRequired,
   timeFormat: PropTypes.string,
