@@ -1,0 +1,18 @@
+import React, { PropTypes } from 'react';
+
+function IconPerson({ color }) {
+  const fill = color || '#C4C4C4';
+
+  return (
+    <svg fill={fill} height="24" viewBox="0 0 24 24" width="24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+  );
+}
+
+IconPerson.propTypes = {
+  color: PropTypes.string
+};
+
+export default IconPerson;
