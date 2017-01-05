@@ -9,11 +9,11 @@ const style = {
     borderRadius: '3px',
     color: colors.primaryText,
     position: 'relative',
-    marginBottom: '30px',
+    marginBottom: '34px',
     float: 'left',
     clear: 'both',
     '&:last-of-type': {
-      marginBottom: '15px'
+      marginBottom: '17px'
     }
   },
   myMessage: {
@@ -25,27 +25,29 @@ const style = {
       color: colors.white
     },
     '& $messageTime': {
-      color: colors.primaryText
+      color: colors.primaryText,
+      right: 'initial',
+      left: '0'
     }
   },
   messageHeader: {
     fontWeight: 'bold',
-    fontSize: '12px',
-    lineHeight: '12px',
+    fontSize: '14px',
+    lineHeight: '14px',
     marginBottom: '5px',
     color: colors.secondaryText
   },
   messageBody: {
     margin: '0',
-    fontSize: '14px',
-    lineHeight: '16px'
+    fontSize: '16px',
+    lineHeight: '18px'
   },
   messageTime: {
-    fontSize: '10px',
-    lineHeight: '10px',
+    fontSize: '12px',
+    lineHeight: '12px',
     position: 'absolute',
-    bottom: '-15px',
-    right: '7.5px'
+    bottom: '-17px',
+    right: '0'
   }
 };
 
