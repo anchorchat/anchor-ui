@@ -3,9 +3,9 @@ import injectSheet from 'react-jss';
 import getClassNames from '../get-class-names';
 import listStyle from '../style/lists';
 
-function ListItem({ primaryText, secondaryText, sheet: { classes }, style }) {
+function ListItem({ primaryText, secondaryText, onClick, sheet: { classes }, style }) {
   return (
-    <li className={getClassNames(classes, 'listItem', style)}>
+    <li onClick={onClick} className={getClassNames(classes, 'listItem', style)}>
       <h1 className={getClassNames(classes, 'primaryText', style)}>{primaryText}</h1>
       {secondaryText ? <h2 className={getClassNames(classes, 'secondaryText', style)}>{secondaryText}</h2> : null}
     </li>
@@ -22,7 +22,8 @@ ListItem.propTypes = {
   }).isRequired,
   style: PropTypes.shape({
     listItem: PropTypes.object
-  })
+  }),
+  onClick: PropTypes.func
 };
 
 export default injectSheet(listStyle)(ListItem);
