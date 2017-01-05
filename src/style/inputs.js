@@ -1,3 +1,5 @@
+import colors from './colors';
+
 const style = {
   messageInput: {
     appearance: 'none',
@@ -9,7 +11,8 @@ const style = {
     fontSize: '16px',
     '&:focus': {
       outline: 'none'
-    }
+    },
+    color: colors.primaryText
   }
 };
 

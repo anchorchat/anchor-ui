@@ -6,11 +6,11 @@ const style = {
     margin: '0'
   },
   listItem: {
-    'list-style': 'none',
+    listStyle: 'none',
     padding: '10px',
-    'box-sizing': 'border-box',
+    boxSizing: 'border-box',
     cursor: 'pointer',
-    transition: 'all .3s ease-in-out',
+    transition: 'background-color .3s ease-in-out',
     backgroundColor: colors.white,
     '&:hover': {
       backgroundColor: colors.lightGrey
@@ -21,16 +21,16 @@ const style = {
   },
   primaryText: {
     margin: 0,
-    'font-size': '16px',
-    'line-height': '16px',
-    'font-weight': 'normal'
+    fontSize: '16px',
+    lineHeight: '16px',
+    fontWeight: 'normal'
   },
   secondaryText: {
     margin: 0,
-    'font-size': '14px',
-    'line-height': '14px',
-    'font-weight': 'normal',
-    'margin-top': '2.4px'
+    fontSize: '14px',
+    lineHeight: '14px',
+    fontWeight: 'normal',
+    marginTop: '2.4px'
   }
 };
 
