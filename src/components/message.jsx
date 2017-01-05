@@ -6,11 +6,9 @@ function Message({ message, timeFormat }) {
 
   return (
     <section>
-      <div>
-        <header>{message.username}</header>
-        {message.body}
-      </div>
-      {moment(message.createdAt).format(format)}
+      <header>{message.username}</header>
+      <p>{message.body}</p>
+      <span>{moment(message.createdAt).format(format)}</span>
     </section>
   );
 }
