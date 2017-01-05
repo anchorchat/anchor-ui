@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 
-function Message({ message, momentFormat }) {
-  const format = momentFormat || 'HH:mm';
+function Message({ message, timeFormat }) {
+  const format = timeFormat || 'HH:mm';
 
   return (
     <section>
@@ -21,7 +21,7 @@ Message.propTypes = {
     createdAt: PropTypes.instanceOf(Date).isRequired,
     username: PropTypes.string.isRequired,
   }).isRequired,
-  momentFormat: PropTypes.string
+  timeFormat: PropTypes.string
 };
 
 export default Message;
