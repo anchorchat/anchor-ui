@@ -9,7 +9,9 @@ class ListItem extends Component {
     secondaryText: PropTypes.string,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
-        listItem: PropTypes.string.isRequired
+        listItem: PropTypes.string.isRequired,
+        primaryText: PropTypes.string.isRequired,
+        secondaryText: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(PropTypes.object),

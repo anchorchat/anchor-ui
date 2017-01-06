@@ -108,7 +108,11 @@ class App extends Component {
       overflow: 'auto',
       background: colors.background,
       padding: '10px',
-      height: 'calc(100% - 127px)'
+      height: 'calc(100% - 96px)'
+    };
+
+    const channelList = {
+      height: 'calc(100% - 59px)'
     };
 
     return (
@@ -124,7 +128,7 @@ class App extends Component {
         </h1>
         <article>
           <MyProfileCard username="Ian" />
-          <List>
+          <List style={channelList}>
             {channels.map(channel => (
               <ListItem
                 key={`channel-list-${channel.name}`}
