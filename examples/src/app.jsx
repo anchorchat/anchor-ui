@@ -105,11 +105,9 @@ class App extends Component {
 
   render() {
     const listStyle = {
-      list: {
-        overflow: 'auto',
-        background: colors.background,
-        padding: '10px'
-      }
+      overflow: 'auto',
+      background: colors.background,
+      padding: '10px'
     };
 
     return (

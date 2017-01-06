@@ -1,27 +1,41 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import getClassNames from '../get-class-names';
 import buttonStyle from '../style/buttons';
+import getClassNames from '../internal/get-class-names';
 
-function Button({ children, onClick, sheet: { classes }, style }) {
-  return (
-    <button onClick={onClick} className={getClassNames(classes, 'button', style)}>
-      {children}
-    </button>
-  );
+class Button extends Component {
+  static propTypes = {
+    children: PropTypes.element.isRequired,
+    onClick: PropTypes.func.isRequired,
+    sheet: PropTypes.shape({
+      classes: PropTypes.shape({
+        button: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired,
+    style: PropTypes.instanceOf(Object)
+  }
+
+  constructor(props) {
+    super(props);
+
+    const { sheet: { classes }, style } = props;
+    const className = getClassNames(classes, style, 'button', 'Button');
+
+    this.state = {
+      className
+    };
+  }
+
+  render() {
+    const { children, onClick } = this.props;
+    const { className } = this.state;
+
+    return (
+      <button onClick={onClick} className={className}>
+        {children}
+      </button>
+    );
+  }
 }
-
-Button.propTypes = {
-  children: PropTypes.element.isRequired,
-  onClick: PropTypes.func.isRequired,
-  sheet: PropTypes.shape({
-    classes: PropTypes.shape({
-      button: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired,
-  style: PropTypes.shape({
-    button: PropTypes.object
-  })
-};
 
 export default injectSheet(buttonStyle)(Button);
