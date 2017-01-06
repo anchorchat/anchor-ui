@@ -1,4 +1,5 @@
 import colors from './colors';
+import darken from '../internal/darken';
 
 const style = {
   button: {
@@ -10,11 +11,12 @@ const style = {
     border: 0,
     borderRadius: '50%',
     transition: 'background-color .3s ease-in-out',
+    backgroundColor: colors.white,
     '&:hover': {
-      backgroundColor: colors.lightGrey
+      backgroundColor: darken(colors.white, 0.05)
     },
     '&:active': {
-      backgroundColor: colors.grey
+      backgroundColor: darken(colors.white, 0.15)
     }
   }
 };
