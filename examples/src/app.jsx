@@ -7,8 +7,7 @@ import {
   ListItem,
   Message,
   colors,
-  Badge,
-  Avatar
+  Badge
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -99,7 +98,8 @@ class App extends Component {
     newMessages.push({
       body: message,
       createdAt: new Date(),
-      username: currentUser
+      username: currentUser,
+      profileImage: theDoctor
     });
 
     this.setState({

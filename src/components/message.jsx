@@ -66,13 +66,13 @@ class Message extends Component {
 
     const style = {
       position: 'absolute',
-      left: '-50px',
+      left: '-60px',
       top: '0'
     };
 
     if (myMessage) {
       style.left = 'initial';
-      style.right = '-50px';
+      style.right = '-60px';
     }
 
     return (
