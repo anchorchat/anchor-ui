@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import listStyle from '../style/lists';
+import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
 
 class List extends Component {
@@ -33,4 +33,4 @@ class List extends Component {
   }
 }
 
-export default injectSheet(listStyle)(List);
+export default injectSheet(listStyleSheet)(List);

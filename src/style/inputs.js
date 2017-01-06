@@ -1,6 +1,6 @@
 import colors from './colors';
 
-const style = {
+const styleSheet = {
   input: {
     position: 'relative',
     padding: '16px',
@@ -22,4 +22,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

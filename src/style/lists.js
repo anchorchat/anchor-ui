@@ -1,7 +1,7 @@
 import colors from './colors';
 import darken from '../internal/darken';
 
-const style = {
+const styleSheet = {
   list: {
     'padding-left': '0',
     margin: '0',
@@ -37,4 +37,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

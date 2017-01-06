@@ -1,15 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import buttonStyleSheet from '../style/buttons';
+import avatarStyleSheet from '../style/avatars';
 import getClassNames from '../internal/get-class-names';
 
-class Button extends Component {
+class Avatar extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired,
-    onClick: PropTypes.func.isRequired,
+    image: PropTypes.string.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
-        button: PropTypes.string.isRequired
+        avatar: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object)
@@ -19,7 +18,7 @@ class Button extends Component {
     super(props);
 
     const { sheet: { classes }, style } = props;
-    const className = getClassNames(classes, style, 'button', 'Button');
+    const className = getClassNames(classes, style, 'avatar', 'Avatar');
 
     this.state = {
       className
@@ -27,15 +26,17 @@ class Button extends Component {
   }
 
   render() {
-    const { children, onClick } = this.props;
+    const { image } = this.props;
     const { className } = this.state;
 
+    const style = {
+      backgroundImage: `url(${image})`
+    };
+
     return (
-      <button onClick={onClick} className={className}>
-        {children}
-      </button>
+      <section style={style} className={className} />
     );
   }
 }
 
-export default injectSheet(buttonStyleSheet)(Button);
+export default injectSheet(avatarStyleSheet)(Avatar);

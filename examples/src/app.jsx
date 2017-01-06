@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import {
   MessageInput,
   ChannelHeader,
-  MyProfileCard,
+  ProfileCard,
   List,
   ListItem,
   Message,
-  colors
+  colors,
+  Badge
 } from '../../dist/index';
 import './app.css';
+import theDoctor from './assets/images/the_doctor.jpg';
+import dalek from './assets/images/dalek.jpg';
 
 const channels = [
   {
@@ -34,28 +37,30 @@ const channels = [
 ];
 
 const users = [
-  { username: 'Sjaak' },
-  { username: 'Peter' },
-  { username: 'Lars' },
-  { username: 'Sven' },
-  { username: 'Ian' }
+  { username: 'The Doctor' },
+  { username: 'Dalek' },
+  { username: 'Cyberman' },
+  { username: 'The Tardis' }
 ];
 
 const messages = [
   {
     body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
-    username: 'The Doctor'
+    username: 'The Doctor',
+    profileImage: theDoctor
   },
   {
-    body: 'You\'ve swallowed a planet! They\'re not aliens, they\'re Earth…liens!',
+    body: 'Daleks have no concept of elegance.',
     createdAt: new Date(),
-    username: 'Amy'
+    username: 'Dalek',
+    profileImage: dalek
   },
   {
     body: 'You hit me with a cricket bat. I\'m nobody\'s taxi service; I\'m not gonna be there to catch you every time you feel like jumping out of a spaceship. Sorry, checking all the water in this area; there\'s an escaped fish.',
     createdAt: new Date(),
-    username: 'The Doctor'
+    username: 'The Doctor',
+    profileImage: theDoctor
   }
 ];
 
@@ -92,7 +97,8 @@ class App extends Component {
     newMessages.push({
       body: message,
       createdAt: new Date(),
-      username: currentUser
+      username: currentUser,
+      profileImage: theDoctor
     });
 
     this.setState({
@@ -133,7 +139,7 @@ class App extends Component {
           </a>
         </h1>
         <article>
-          <MyProfileCard username="Ian" />
+          <ProfileCard username={currentUser} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
@@ -151,6 +157,7 @@ class App extends Component {
               <Message
                 message={message} key={`message-${index}`}
                 myMessage={message.username === currentUser}
+                avatar={message.profileImage}
               />
             ))}
           </List>
@@ -166,6 +173,7 @@ class App extends Component {
             ))}
           </List>
         </article>
+        <Badge content={4} />
       </section>
     );
   }

@@ -1,15 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import buttonStyleSheet from '../style/buttons';
+import badgeStyleSheet from '../style/badges';
 import getClassNames from '../internal/get-class-names';
 
-class Button extends Component {
+class Badge extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired,
-    onClick: PropTypes.func.isRequired,
+    content: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.node
+    ]).isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
-        button: PropTypes.string.isRequired
+        badge: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object)
@@ -19,7 +22,7 @@ class Button extends Component {
     super(props);
 
     const { sheet: { classes }, style } = props;
-    const className = getClassNames(classes, style, 'button', 'Button');
+    const className = getClassNames(classes, style, 'badge', 'Badge');
 
     this.state = {
       className
@@ -27,15 +30,13 @@ class Button extends Component {
   }
 
   render() {
-    const { children, onClick } = this.props;
+    const { content } = this.props;
     const { className } = this.state;
 
     return (
-      <button onClick={onClick} className={className}>
-        {children}
-      </button>
+      <span className={className}>{content}</span>
     );
   }
 }
 
-export default injectSheet(buttonStyleSheet)(Button);
+export default injectSheet(badgeStyleSheet)(Badge);

@@ -6,7 +6,8 @@ const colors = {
   green: '#54D38A',
   primaryText: '#B4BEC6',
   secondaryText: '#757F85',
-  background: '#F2F7F7'
+  background: '#F2F7F7',
+  icons: '#C4C4C4'
 };
 
 export default colors;

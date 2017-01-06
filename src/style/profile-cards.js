@@ -1,7 +1,7 @@
 import colors from './colors';
 
-const style = {
-  myProfileCard: {
+const styleSheet = {
+  profileCard: {
     padding: '15px',
     fontSize: '18px',
     lineHeight: '18px',
@@ -10,4 +10,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;
