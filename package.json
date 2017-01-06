@@ -56,6 +56,7 @@
     "react-jss": "^5.1.1"
   },
   "dependencies": {
+    "color": "^1.0.3",
     "underscore": "^1.8.3"
   }
 }
