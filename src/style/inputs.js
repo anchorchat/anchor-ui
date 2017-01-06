@@ -1,6 +1,6 @@
 import colors from './colors';
 
-const style = {
+const styleSheet = {
   messageInput: {
     appearance: 'none',
     border: '0',
@@ -16,4 +16,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

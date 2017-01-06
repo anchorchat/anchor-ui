@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import colors from '../style/colors';
 
 function IconChannel({ color }) {
-  const fill = color || '#C4C4C4';
+  const fill = color || colors.icons;
 
   return (
     <svg width="24px" height="24px" viewBox="0 0 24 24">

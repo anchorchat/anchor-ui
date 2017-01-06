@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import colors from '../style/colors';
 
 function IconEmoji({ color }) {
-  const fill = color || '#C4C4C4';
+  const fill = color || colors.icons;
 
   return (
     <svg fill={fill} height="24" viewBox="0 0 24 24" width="24">
