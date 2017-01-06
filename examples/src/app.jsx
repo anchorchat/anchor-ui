@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   MessageInput,
   ChannelHeader,
-  MyProfileCard,
+  ProfileCard,
   List,
   ListItem,
   Message,
@@ -37,11 +37,10 @@ const channels = [
 ];
 
 const users = [
-  { username: 'Sjaak' },
-  { username: 'Peter' },
-  { username: 'Lars' },
-  { username: 'Sven' },
-  { username: 'Ian' }
+  { username: 'The Doctor' },
+  { username: 'Dalek' },
+  { username: 'Cyberman' },
+  { username: 'The Tardis' }
 ];
 
 const messages = [
@@ -130,7 +129,7 @@ class App extends Component {
           </a>
         </h1>
         <article>
-          <MyProfileCard username="Ian" />
+          <ProfileCard username={currentUser} />
           <List>
             {channels.map(channel => (
               <ListItem

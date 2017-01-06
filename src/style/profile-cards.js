@@ -1,7 +1,7 @@
 import colors from './colors';
 
-const style = {
-  myProfileCard: {
+const styleSheet = {
+  profileCard: {
     padding: '20px',
     fontSize: '16px',
     backgroundColor: colors.green,
@@ -9,4 +9,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

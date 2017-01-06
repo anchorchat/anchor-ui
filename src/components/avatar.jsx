@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import avatarStyle from '../style/avatars';
+import avatarStyleSheet from '../style/avatars';
 import getClassNames from '../internal/get-class-names';
 
 class Avatar extends Component {
@@ -39,4 +39,4 @@ class Avatar extends Component {
   }
 }
 
-export default injectSheet(avatarStyle)(Avatar);
+export default injectSheet(avatarStyleSheet)(Avatar);

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import getClassNames from '../internal/get-class-names';
-import inputStyle from '../style/inputs';
+import inputStyleSheet from '../style/inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
@@ -70,4 +70,4 @@ class MessageInput extends Component {
   }
 }
 
-export default injectSheet(inputStyle)(MessageInput);
+export default injectSheet(inputStyleSheet)(MessageInput);

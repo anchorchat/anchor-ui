@@ -1,7 +1,7 @@
 import colors from './colors';
 import darken from '../internal/darken';
 
-const style = {
+const styleSheet = {
   button: {
     width: '48px',
     height: '48px',
@@ -21,4 +21,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

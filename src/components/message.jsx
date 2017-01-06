@@ -4,7 +4,7 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
-import messageStyle from '../style/messages';
+import messageStyleSheet from '../style/messages';
 
 class Message extends Component {
   static propTypes = {
@@ -90,4 +90,4 @@ class Message extends Component {
   }
 }
 
-export default injectSheet(messageStyle)(Message);
+export default injectSheet(messageStyleSheet)(Message);

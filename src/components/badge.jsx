@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import badgeStyle from '../style/badges';
+import badgeStyleSheet from '../style/badges';
 import getClassNames from '../internal/get-class-names';
 
 class Badge extends Component {
@@ -39,4 +39,4 @@ class Badge extends Component {
   }
 }
 
-export default injectSheet(badgeStyle)(Badge);
+export default injectSheet(badgeStyleSheet)(Badge);

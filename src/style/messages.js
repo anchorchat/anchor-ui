@@ -1,6 +1,6 @@
 import colors from './colors';
 
-const style = {
+const styleSheet = {
   message: {
     maxWidth: '75%',
     padding: '7.5px',
@@ -78,4 +78,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;
