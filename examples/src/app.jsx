@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   MessageInput,
   ChannelHeader,
-  MyProfileCard,
+  ProfileCard,
   List,
   ListItem,
   Message,
@@ -129,7 +129,7 @@ class App extends Component {
           </a>
         </h1>
         <article>
-          <MyProfileCard username={currentUser} />
+          <ProfileCard username={currentUser} />
           <List>
             {channels.map(channel => (
               <ListItem

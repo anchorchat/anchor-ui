@@ -1,6 +1,6 @@
 import colors from './colors';
 
-const style = {
+const styleSheet = {
   badge: {
     width: '24px',
     height: '24px',
@@ -15,4 +15,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

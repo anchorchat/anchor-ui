@@ -6,7 +6,7 @@ import List from './components/list';
 import ListItem from './components/list-item';
 import Message from './components/message';
 import MessageInput from './components/message-input';
-import MyProfileCard from './components/my-profile-card';
+import ProfileCard from './components/profile-card';
 // Icons
 import IconAddImage from './icons/icon-add-image';
 import IconChannel from './icons/icon-channel';
@@ -35,7 +35,7 @@ export {
   ListItem,
   Message,
   MessageInput,
-  MyProfileCard,
+  ProfileCard,
   // Icons
   IconAddImage,
   IconChannel,

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import buttonStyle from '../style/buttons';
+import buttonStyleSheet from '../style/buttons';
 import getClassNames from '../internal/get-class-names';
 
 class Button extends Component {
@@ -38,4 +38,4 @@ class Button extends Component {
   }
 }
 
-export default injectSheet(buttonStyle)(Button);
+export default injectSheet(buttonStyleSheet)(Button);

@@ -1,4 +1,4 @@
-const style = {
+const styleSheet = {
   avatar: {
     width: '40px',
     height: '40px',
@@ -8,4 +8,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;
