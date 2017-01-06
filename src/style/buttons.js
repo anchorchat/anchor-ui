@@ -3,9 +3,9 @@ import darken from '../internal/darken';
 
 const styleSheet = {
   button: {
-    width: '48px',
-    height: '48px',
-    padding: '12px',
+    width: '40px',
+    height: '40px',
+    padding: '8px',
     outline: 0,
     background: 'none',
     border: 0,

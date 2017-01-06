@@ -4,7 +4,9 @@ import darken from '../internal/darken';
 const styleSheet = {
   list: {
     'padding-left': '0',
-    margin: '0'
+    margin: '0',
+    boxSizing: 'border-box',
+    background: colors.white
   },
   listItem: {
     listStyle: 'none',
