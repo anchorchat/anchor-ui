@@ -51,9 +51,11 @@
   },
   "peerDependencies": {
     "classnames": "^2.2.5",
-    "jss": "^6.1.0",
     "moment": "^2.13.0",
     "react": "^15.4.1",
     "react-jss": "^5.1.1"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }

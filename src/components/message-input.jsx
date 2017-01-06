@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import getClassNames from '../get-class-names';
+import getClassNames from '../internal/get-class-names';
 import inputStyle from '../style/inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
@@ -22,8 +22,15 @@ class MessageInput extends Component {
     })
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    const { sheet: { classes }, style } = props;
+    const className = getClassNames(classes, style, 'messageInput', 'MessageInput');
+
+    this.state = {
+      className
+    };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
@@ -37,19 +44,18 @@ class MessageInput extends Component {
   }
 
   render() {
-    const { onChange, sendMessage, placeholder, value, sheet: { classes }, style } = this.props;
+    const { onChange, sendMessage, placeholder, value } = this.props;
+    const { className } = this.state;
 
     const buttonStyle = {
-      button: {
-        position: 'absolute',
-        right: '0'
-      }
+      position: 'absolute',
+      right: '0'
     };
 
     return (
       <section>
         <input
-          className={getClassNames(classes, 'messageInput', style)}
+          className={className}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
