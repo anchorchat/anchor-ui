@@ -6,7 +6,8 @@ import {
   List,
   ListItem,
   Message,
-  colors
+  colors,
+  Badge
 } from '../../dist/index';
 import './app.css';
 
@@ -156,6 +157,7 @@ class App extends Component {
             ))}
           </List>
         </article>
+        <Badge content={4} />
       </section>
     );
   }

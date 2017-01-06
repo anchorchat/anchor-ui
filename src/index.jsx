@@ -1,4 +1,5 @@
 // Components
+import Badge from './components/badge';
 import ChannelHeader from './components/channel-header';
 import List from './components/list';
 import ListItem from './components/list-item';
@@ -26,6 +27,7 @@ import colors from './style/colors';
 
 export {
   // Components
+  Badge,
   ChannelHeader,
   List,
   ListItem,
