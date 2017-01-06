@@ -107,7 +107,8 @@ class App extends Component {
     const listStyle = {
       overflow: 'auto',
       background: colors.background,
-      padding: '10px'
+      padding: '10px',
+      height: 'calc(100% - 127px)'
     };
 
     return (
@@ -121,34 +122,40 @@ class App extends Component {
             Anchor UI
           </a>
         </h1>
-        <MyProfileCard username="Ian" />
-        <ChannelHeader name="Channel 1" />
-        <List style={listStyle}>
-          {this.state.messages.map((message, index) => (
-            <Message
-              message={message} key={`message-${index}`}
-              myMessage={message.username === currentUser}
-            />
-          ))}
-        </List>
-        <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={this.sendMessage} />
-        <List>
-          {channels.map(channel => (
-            <ListItem
-              key={`channel-list-${channel.name}`}
-              primaryText={channel.name}
-              secondaryText={`${channel.users.length}/${channel.maxUsers}`}
-            />
-          ))}
-        </List>
-        <List>
-          {users.map(user => (
-            <ListItem
-              key={`user-list-${user.username}`}
-              primaryText={user.username}
-            />
-          ))}
-        </List>
+        <article>
+          <MyProfileCard username="Ian" />
+          <List>
+            {channels.map(channel => (
+              <ListItem
+                key={`channel-list-${channel.name}`}
+                primaryText={channel.name}
+                secondaryText={`${channel.users.length}/${channel.maxUsers}`}
+              />
+            ))}
+          </List>
+        </article>
+        <article>
+          <ChannelHeader name="Channel 1" />
+          <List style={listStyle}>
+            {this.state.messages.map((message, index) => (
+              <Message
+                message={message} key={`message-${index}`}
+                myMessage={message.username === currentUser}
+              />
+            ))}
+          </List>
+          <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={this.sendMessage} />
+        </article>
+        <article>
+          <List>
+            {users.map(user => (
+              <ListItem
+                key={`user-list-${user.username}`}
+                primaryText={user.username}
+              />
+            ))}
+          </List>
+        </article>
       </section>
     );
   }

@@ -24,8 +24,17 @@
   font-weight: normal;
 }
 
+.demo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
 .demo > h1 {
   font-size: 16px;
+  width: 100%;
 }
 
 .demo > h1 {
@@ -42,4 +51,21 @@
 
 .demo > h1:hover a {
   text-decoration: underline;
+}
+
+.demo > article {
+  height: calc(100% - 69px);
+  position: relative;
+}
+
+.demo > article:first-of-type {
+  width: 250px;
+}
+
+.demo > article:nth-of-type(2) {
+  width: calc(100% - 500px);
+}
+
+.demo > article:last-of-type {
+  width: 250px;
 }
