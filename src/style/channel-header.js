@@ -2,7 +2,8 @@ import colors from './colors';
 
 const style = {
   header: {
-    background: colors.white
+    background: colors.white,
+    borderBottom: `1px solid ${colors.grey}`
   },
   headerText: {
     color: colors.primaryText,

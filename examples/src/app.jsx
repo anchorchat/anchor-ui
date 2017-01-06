@@ -108,11 +108,17 @@ class App extends Component {
       overflow: 'auto',
       background: colors.background,
       padding: '10px',
-      height: 'calc(100% - 96px)'
+      height: 'calc(100% - 112px)'
     };
 
-    const channelList = {
-      height: 'calc(100% - 59px)'
+    const channelListStyle = {
+      height: 'calc(100% - 48px)',
+      borderRight: `1px solid ${colors.grey}`
+    };
+
+    const userListStyle = {
+      height: '100%',
+      borderLeft: `1px solid ${colors.grey}`
     };
 
     return (
@@ -128,7 +134,7 @@ class App extends Component {
         </h1>
         <article>
           <MyProfileCard username="Ian" />
-          <List style={channelList}>
+          <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
                 key={`channel-list-${channel.name}`}
@@ -151,7 +157,7 @@ class App extends Component {
           <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={this.sendMessage} />
         </article>
         <article>
-          <List>
+          <List style={userListStyle}>
             {users.map(user => (
               <ListItem
                 key={`user-list-${user.username}`}

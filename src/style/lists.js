@@ -6,7 +6,7 @@ const style = {
     'padding-left': '0',
     margin: '0',
     boxSizing: 'border-box',
-    background: colors.listBackground
+    background: colors.white
   },
   listItem: {
     listStyle: 'none',

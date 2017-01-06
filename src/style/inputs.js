@@ -1,6 +1,12 @@
 import colors from './colors';
 
 const style = {
+  input: {
+    position: 'relative',
+    padding: '16px',
+    paddingTop: '0',
+    background: colors.background
+  },
   messageInput: {
     appearance: 'none',
     border: '0',
@@ -9,10 +15,10 @@ const style = {
     paddingLeft: '10px',
     boxSizing: 'border-box',
     fontSize: '16px',
+    color: colors.primaryText,
     '&:focus': {
       outline: 'none'
-    },
-    color: colors.primaryText
+    }
   }
 };
 

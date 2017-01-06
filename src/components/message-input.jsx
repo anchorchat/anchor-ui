@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import getClassNames from '../internal/get-class-names';
-import inputStyle from '../style/inputs';
+import inputStyleSheet from '../style/inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
@@ -17,19 +17,20 @@ class MessageInput extends Component {
       }).isRequired
     }).isRequired,
     placeholder: PropTypes.string.isRequired,
-    style: PropTypes.shape({
-      messageInput: PropTypes.object
-    })
+    style: PropTypes.instanceOf(Object),
+    inputStyle: PropTypes.instanceOf(Object)
   }
 
   constructor(props) {
     super(props);
 
-    const { sheet: { classes }, style } = props;
-    const className = getClassNames(classes, style, 'messageInput', 'MessageInput');
+    const { sheet: { classes }, style, inputStyle } = props;
+    const inputClassName = getClassNames(classes, inputStyle, 'messageInput', 'MessageInput');
+    const className = getClassNames(classes, style, 'input', 'MessageInput');
 
     this.state = {
-      className
+      className,
+      inputClassName
     };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -45,18 +46,18 @@ class MessageInput extends Component {
 
   render() {
     const { onChange, sendMessage, placeholder, value } = this.props;
-    const { className } = this.state;
+    const { className, inputClassName } = this.state;
 
     const buttonStyle = {
       position: 'absolute',
-      right: '4px',
+      right: '20px',
       top: '4px'
     };
 
     return (
-      <section style={{ position: 'relative' }}>
+      <section className={className}>
         <input
-          className={className}
+          className={inputClassName}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -71,4 +72,4 @@ class MessageInput extends Component {
   }
 }
 
-export default injectSheet(inputStyle)(MessageInput);
+export default injectSheet(inputStyleSheet)(MessageInput);
