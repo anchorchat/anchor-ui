@@ -1,6 +1,6 @@
 import colors from './colors';
 
-const style = {
+const styleSheet = {
   header: {
     background: colors.white,
     borderBottom: `1px solid ${colors.grey}`
@@ -16,4 +16,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;

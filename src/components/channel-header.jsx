@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import channelHeaderStyle from '../style/channel-header';
+import channelHeaderStyleSheet from '../style/channel-header';
 import getClassNames from '../internal/get-class-names';
 
 class ChannelHeader extends Component {
@@ -42,4 +42,4 @@ class ChannelHeader extends Component {
   }
 }
 
-export default injectSheet(channelHeaderStyle)(ChannelHeader);
+export default injectSheet(channelHeaderStyleSheet)(ChannelHeader);
