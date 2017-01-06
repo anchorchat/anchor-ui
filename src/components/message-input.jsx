@@ -49,11 +49,12 @@ class MessageInput extends Component {
 
     const buttonStyle = {
       position: 'absolute',
-      right: '0'
+      right: '4px',
+      top: '4px'
     };
 
     return (
-      <section>
+      <section style={{ position: 'relative' }}>
         <input
           className={className}
           placeholder={placeholder}
