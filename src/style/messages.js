@@ -16,6 +16,9 @@ const style = {
       marginBottom: '17px'
     }
   },
+  avatar: {
+    marginLeft: '50px'
+  },
   myMessage: {
     float: 'right',
     backgroundColor: colors.green,
@@ -28,6 +31,10 @@ const style = {
       color: colors.primaryText,
       right: 'initial',
       left: '0'
+    },
+    '&$avatar': {
+      marginLeft: '0',
+      marginRight: '50px'
     }
   },
   messageHeader: {
