@@ -7,9 +7,12 @@ import {
   ListItem,
   Message,
   colors,
-  Badge
+  Badge,
+  Avatar
 } from '../../dist/index';
 import './app.css';
+import theDoctor from './assets/images/the_doctor.jpg';
+import dalek from './assets/images/dalek.jpg';
 
 const channels = [
   {
@@ -49,9 +52,9 @@ const messages = [
     username: 'The Doctor'
   },
   {
-    body: 'You\'ve swallowed a planet! They\'re not aliens, they\'re Earth…liens!',
+    body: 'Daleks have no concept of elegance.',
     createdAt: new Date(),
-    username: 'Amy'
+    username: 'Dalek'
   },
   {
     body: 'You hit me with a cricket bat. I\'m nobody\'s taxi service; I\'m not gonna be there to catch you every time you feel like jumping out of a spaceship. Sorry, checking all the water in this area; there\'s an escaped fish.',
@@ -158,6 +161,8 @@ class App extends Component {
           </List>
         </article>
         <Badge content={4} />
+        <Avatar image={theDoctor} />
+        <Avatar image={dalek} />
       </section>
     );
   }

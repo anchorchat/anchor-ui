@@ -1,4 +1,5 @@
 // Components
+import Avatar from './components/avatar';
 import Badge from './components/badge';
 import ChannelHeader from './components/channel-header';
 import List from './components/list';
@@ -27,6 +28,7 @@ import colors from './style/colors';
 
 export {
   // Components
+  Avatar,
   Badge,
   ChannelHeader,
   List,
