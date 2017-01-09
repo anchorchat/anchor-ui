@@ -91,9 +91,9 @@ Props:
 | message.body       | String         | Yes      |         | The message's body text                                                                           |
 | message.createdAt  | String, Date   | Yes      |         | Time when the message was created                                                                 |
 | message.username   | String         | Yes      |         | The sender's username                                                                             |
-| timeFormat         | String         | Yes      |         | The [format](http://momentjs.com/docs/#/displaying/format/) in which to display message.createdAt |
+| timeFormat         | String         |          | 'HH:mm' | The [format](http://momentjs.com/docs/#/displaying/format/) in which to display message.createdAt |
 | avatar             | String         |          |         | Path to the user's profile image, will render <Avatar /> if supplied                              |
-| myMessage          | Boolean        |          |         | Is the message from the current user?                                                             |
+| myMessage          | Boolean        |          | false   | Flag used to change message styles, set to true if the message belongs to the current user        |
 | style              | Object         |          |         | Override the styles of the root element                                                           |
 | messageBodyStyle   | Object         |          |         | Override the styles of the body element                                                           |
 | messageHeaderStyle | Object         |          |         | Override the styles of the header element                                                         |
