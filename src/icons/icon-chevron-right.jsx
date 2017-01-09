@@ -1,19 +1,19 @@
 import React, { PropTypes } from 'react';
 import colors from '../style/colors';
 
-function IconEdit({ color }) {
+function IconChevronRight({ color }) {
   const fill = color || colors.icons;
 
   return (
     <svg fill={fill} height="24" viewBox="0 0 24 24" width="24">
-      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
       <path d="M0 0h24v24H0z" fill="none" />
     </svg>
   );
 }
 
-IconEdit.propTypes = {
+IconChevronRight.propTypes = {
   color: PropTypes.string
 };
 
-export default IconEdit;
+export default IconChevronRight;

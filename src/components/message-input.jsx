@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import getClassNames from '../get-class-names';
-import inputStyle from '../style/inputs';
+import getClassNames from '../internal/get-class-names';
+import inputStyleSheet from '../style/inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
@@ -17,13 +17,21 @@ class MessageInput extends Component {
       }).isRequired
     }).isRequired,
     placeholder: PropTypes.string.isRequired,
-    style: PropTypes.shape({
-      messageInput: PropTypes.object
-    })
+    style: PropTypes.instanceOf(Object),
+    inputStyle: PropTypes.instanceOf(Object)
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    const { sheet: { classes }, style, inputStyle } = props;
+    const inputClassName = getClassNames(classes, inputStyle, 'messageInput', 'MessageInput');
+    const className = getClassNames(classes, style, 'input', 'MessageInput');
+
+    this.state = {
+      className,
+      inputClassName
+    };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
@@ -37,19 +45,19 @@ class MessageInput extends Component {
   }
 
   render() {
-    const { onChange, sendMessage, placeholder, value, sheet: { classes }, style } = this.props;
+    const { onChange, sendMessage, placeholder, value } = this.props;
+    const { className, inputClassName } = this.state;
 
     const buttonStyle = {
-      button: {
-        position: 'absolute',
-        right: '0'
-      }
+      position: 'absolute',
+      right: '20px',
+      top: '4px'
     };
 
     return (
-      <section>
+      <section className={className}>
         <input
-          className={getClassNames(classes, 'messageInput', style)}
+          className={inputClassName}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -64,4 +72,4 @@ class MessageInput extends Component {
   }
 }
 
-export default injectSheet(inputStyle)(MessageInput);
+export default injectSheet(inputStyleSheet)(MessageInput);

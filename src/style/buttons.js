@@ -1,22 +1,24 @@
 import colors from './colors';
+import darken from '../internal/darken';
 
-const style = {
+const styleSheet = {
   button: {
-    width: '48px',
-    height: '48px',
-    padding: '12px',
+    width: '40px',
+    height: '40px',
+    padding: '8px',
     outline: 0,
     background: 'none',
     border: 0,
     borderRadius: '50%',
     transition: 'background-color .3s ease-in-out',
+    backgroundColor: colors.white,
     '&:hover': {
-      backgroundColor: colors.lightGrey
+      backgroundColor: darken(colors.white, 0.05)
     },
     '&:active': {
-      backgroundColor: colors.grey
+      backgroundColor: darken(colors.white, 0.15)
     }
   }
 };
 
-export default style;
+export default styleSheet;

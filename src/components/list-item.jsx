@@ -1,29 +1,54 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import getClassNames from '../get-class-names';
-import listStyle from '../style/lists';
+import listStyleSheet from '../style/lists';
+import getClassNames from '../internal/get-class-names';
 
-function ListItem({ primaryText, secondaryText, onClick, sheet: { classes }, style }) {
-  return (
-    <li onClick={onClick} className={getClassNames(classes, 'listItem', style)}>
-      <h1 className={getClassNames(classes, 'primaryText', style)}>{primaryText}</h1>
-      {secondaryText ? <h2 className={getClassNames(classes, 'secondaryText', style)}>{secondaryText}</h2> : null}
-    </li>
-  );
+class ListItem extends Component {
+  static propTypes = {
+    primaryText: PropTypes.string.isRequired,
+    secondaryText: PropTypes.string,
+    sheet: PropTypes.shape({
+      classes: PropTypes.shape({
+        listItem: PropTypes.string.isRequired,
+        primaryText: PropTypes.string.isRequired,
+        secondaryText: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired,
+    style: PropTypes.instanceOf(PropTypes.object),
+    primaryTextStyle: PropTypes.instanceOf(PropTypes.object),
+    secondaryTextStyle: PropTypes.instanceOf(PropTypes.object),
+    onClick: PropTypes.func
+  }
+
+  constructor(props) {
+    super(props);
+
+    const { sheet: { classes }, style, primaryTextStyle, secondaryTextStyle } = props;
+
+    const className = getClassNames(classes, style, 'listItem', 'ListItem');
+    const primaryTextClassName = getClassNames(classes, primaryTextStyle, 'primaryText', 'ListItem');
+    const secondaryTextClassName = getClassNames(
+      classes, secondaryTextStyle, 'secondaryText', 'ListItem'
+    );
+
+    this.state = {
+      className,
+      primaryTextClassName,
+      secondaryTextClassName
+    };
+  }
+
+  render() {
+    const { primaryText, secondaryText, onClick } = this.props;
+    const { className, primaryTextClassName, secondaryTextClassName } = this.state;
+
+    return (
+      <li onClick={onClick} className={className}>
+        <h1 className={primaryTextClassName}>{primaryText}</h1>
+        {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}
+      </li>
+    );
+  }
 }
 
-ListItem.propTypes = {
-  primaryText: PropTypes.string.isRequired,
-  secondaryText: PropTypes.string,
-  sheet: PropTypes.shape({
-    classes: PropTypes.shape({
-      listItem: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired,
-  style: PropTypes.shape({
-    listItem: PropTypes.object
-  }),
-  onClick: PropTypes.func
-};
-
-export default injectSheet(listStyle)(ListItem);
+export default injectSheet(listStyleSheet)(ListItem);

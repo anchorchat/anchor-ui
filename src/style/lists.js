@@ -1,9 +1,12 @@
 import colors from './colors';
+import darken from '../internal/darken';
 
-const style = {
+const styleSheet = {
   list: {
     'padding-left': '0',
-    margin: '0'
+    margin: '0',
+    boxSizing: 'border-box',
+    background: colors.white
   },
   listItem: {
     listStyle: 'none',
@@ -13,10 +16,10 @@ const style = {
     transition: 'background-color .3s ease-in-out',
     backgroundColor: colors.white,
     '&:hover': {
-      backgroundColor: colors.lightGrey
+      backgroundColor: darken(colors.white, 0.05)
     },
     '&:active': {
-      backgroundColor: colors.grey
+      backgroundColor: darken(colors.white, 0.15)
     }
   },
   primaryText: {
@@ -34,4 +37,4 @@ const style = {
   }
 };
 
-export default style;
+export default styleSheet;
