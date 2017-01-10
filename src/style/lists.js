@@ -22,6 +22,16 @@ const styleSheet = {
       backgroundColor: darken(colors.white, 0.15)
     }
   },
+  active: {
+    color: colors.white,
+    backgroundColor: colors.green,
+    '&:hover': {
+      backgroundColor: darken(colors.green, 0.05)
+    },
+    '&:active': {
+      backgroundColor: darken(colors.green, 0.15)
+    }
+  },
   primaryText: {
     margin: 0,
     fontSize: '16px',
