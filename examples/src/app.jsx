@@ -65,6 +65,7 @@ const messages = [
 ];
 
 const currentUser = 'The Doctor';
+const currentChannel = 'Channel2';
 
 class App extends Component {
   constructor() {
@@ -139,19 +140,20 @@ class App extends Component {
           </a>
         </h1>
         <article>
-          <ProfileCard username={currentUser} />
+          <ProfileCard username={currentUser} avatar={theDoctor} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
                 key={`channel-list-${channel.name}`}
                 primaryText={channel.name}
                 secondaryText={`${channel.users.length}/${channel.maxUsers}`}
+                active={currentChannel === channel.name}
               />
             ))}
           </List>
         </article>
         <article>
-          <ChannelHeader name="Channel 1" />
+          <ChannelHeader name={currentChannel} />
           <List style={listStyle}>
             {this.state.messages.map((message, index) => (
               <Message

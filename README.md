@@ -74,6 +74,7 @@ Props:
 |--------------------|----------|----------|---------|--------------------------------------------------|
 | primaryText        | String   | Yes      |         | The list item's primary text                     |
 | secondaryText      | String   | Yes      |         | The list item's secondary text                   |
+| active             | Boolean  |          |         | Add active styles to ListItem                    |
 | onClick            | Function | Yes      |         | Click function for the root element              |
 | style              | Object   |          |         | Override the styles of the root element          |
 | primaryTextStyle   | Object   |          |         | Override the styles of the primaryText element   |
@@ -118,10 +119,11 @@ Props:
 
 Props:
 
-| Name     | Type   | Required | Default | Description                             |
-|----------|--------|----------|---------|-----------------------------------------|
-| username | String | Yes      |         | The user's username                     |
-| style    | Object |          |         | Override the styles of the root element |
+| Name     | Type   | Required | Default | Description                                                          |
+|----------|--------|----------|---------|----------------------------------------------------------------------|
+| username | String | Yes      |         | The user's username                                                  |
+| avatar   | String | Yes      |         | Path to the user's profile image, will render <Avatar /> if supplied |
+| style    | Object |          |         | Override the styles of the root element                              |
 
 ## Installation
 
