@@ -114,12 +114,12 @@ class App extends Component {
     const listStyle = {
       overflow: 'auto',
       background: colors.background,
-      padding: '10px',
+      padding: '16px',
       height: 'calc(100% - 112px)'
     };
 
     const channelListStyle = {
-      height: 'calc(100% - 48px)',
+      height: 'calc(100% - 70px)',
       borderRight: `1px solid ${colors.grey}`
     };
 
@@ -175,7 +175,6 @@ class App extends Component {
             ))}
           </List>
         </article>
-        <Badge content={4} />
       </section>
     );
   }
