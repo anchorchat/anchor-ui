@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -51,12 +51,12 @@
   },
   "peerDependencies": {
     "classnames": "^2.2.5",
+    "color": "^1.0.3",
     "moment": "^2.13.0",
     "react": "^15.4.1",
     "react-jss": "^5.1.1"
   },
   "dependencies": {
-    "color": "^1.0.3",
     "underscore": "^1.8.3"
   }
 }
