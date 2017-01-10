@@ -7,6 +7,10 @@ const styleSheet = {
     lineHeight: '18px',
     backgroundColor: colors.green,
     color: colors.white
+  },
+  avatar: {
+    lineHeight: '40px',
+    overflow: 'auto'
   }
 };
 
