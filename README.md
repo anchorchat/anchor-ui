@@ -72,8 +72,8 @@ Props:
 
 | Name               | Type     | Required | Default | Description                                      |
 |--------------------|----------|----------|---------|--------------------------------------------------|
-| primaryText        | String   | Yes      |         | The list item's primary text                      |
-| secondaryText      | String   | Yes      |         | The list item's secondary text                    |
+| primaryText        | String   | Yes      |         | The list item's primary text                     |
+| secondaryText      | String   | Yes      |         | The list item's secondary text                   |
 | onClick            | Function | Yes      |         | Click function for the root element              |
 | style              | Object   |          |         | Override the styles of the root element          |
 | primaryTextStyle   | Object   |          |         | Override the styles of the primaryText element   |
