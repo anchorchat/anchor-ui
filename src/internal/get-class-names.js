@@ -1,9 +1,8 @@
 import classNames from 'classnames';
-import _ from 'underscore';
 import createSheet from './create-sheet';
 
 function getClassNames(classes, style, className, component) {
-  if (_.isEmpty(style)) {
+  if (typeof style === 'undefined' || Object.keys(style).length === 0) {
     return classNames(classes[className]);
   }
 
