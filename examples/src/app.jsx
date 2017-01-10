@@ -140,7 +140,7 @@ class App extends Component {
           </a>
         </h1>
         <article>
-          <ProfileCard username={currentUser} />
+          <ProfileCard username={currentUser} avatar={theDoctor} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
