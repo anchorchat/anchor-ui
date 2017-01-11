@@ -39,6 +39,7 @@ Props:
 | Name     | Type    | Required | Default | Description                             |
 |----------|---------|----------|---------|-----------------------------------------|
 | children | Element | Yes      |         | Button content                          |
+| iconButton     | Boolean    |  | false | Switches between  icon-button and normal button                             |
 | style    | Object  |          |         | Override the styles of the root element |
 
 ---
