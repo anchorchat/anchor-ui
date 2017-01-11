@@ -21,6 +21,14 @@ class EmptyState extends Component {
     bodyStyle: PropTypes.instanceOf(Object)
   }
 
+  static defaultProps = {
+    button: null,
+    background: '',
+    style: {},
+    headerStyle: {},
+    bodyStyle: {}
+  }
+
   constructor(props) {
     super(props);
 
