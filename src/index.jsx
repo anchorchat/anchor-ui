@@ -1,6 +1,7 @@
 // Components
 import Avatar from './components/avatar';
 import Badge from './components/badge';
+import Button from './components/button';
 import ChannelHeader from './components/channel-header';
 import List from './components/list';
 import ListItem from './components/list-item';
@@ -31,6 +32,7 @@ export {
   // Components
   Avatar,
   Badge,
+  Button,
   ChannelHeader,
   List,
   ListItem,
