@@ -1,10 +1,10 @@
 const styleSheet = {
   avatar: {
-    width: '40px',
-    height: '40px',
-    backgroundSize: 'cover',
     backgroundPosition: 'center',
-    borderRadius: '50%'
+    backgroundSize: 'cover',
+    borderRadius: '50%',
+    height: '40px',
+    width: '40px',
   }
 };
 

@@ -3,47 +3,47 @@ import darken from '../internal/darken';
 
 const styleSheet = {
   list: {
-    'padding-left': '0',
-    margin: '0',
+    background: colors.white,
     boxSizing: 'border-box',
-    background: colors.white
+    margin: '0',
+    paddingLeft: '0',
   },
   listItem: {
-    listStyle: 'none',
-    padding: '10px',
+    backgroundColor: colors.white,
     boxSizing: 'border-box',
     cursor: 'pointer',
+    listStyle: 'none',
+    padding: '10px',
     transition: 'background-color .3s ease-in-out',
-    backgroundColor: colors.white,
-    '&:hover': {
-      backgroundColor: darken(colors.white, 0.05)
-    },
     '&:active': {
       backgroundColor: darken(colors.white, 0.15)
+    },
+    '&:hover': {
+      backgroundColor: darken(colors.white, 0.05)
     }
   },
   active: {
-    color: colors.white,
     backgroundColor: colors.green,
-    '&:hover': {
-      backgroundColor: darken(colors.green, 0.05)
-    },
+    color: colors.white,
     '&:active': {
       backgroundColor: darken(colors.green, 0.15)
+    },
+    '&:hover': {
+      backgroundColor: darken(colors.green, 0.05)
     }
   },
   primaryText: {
-    margin: 0,
     fontSize: '16px',
-    lineHeight: '16px',
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    margin: 0,
+    lineHeight: '16px'
   },
   secondaryText: {
-    margin: 0,
     fontSize: '14px',
-    lineHeight: '14px',
     fontWeight: 'normal',
-    marginTop: '2.4px'
+    margin: 0,
+    marginTop: '2.4px',
+    lineHeight: '14px'
   }
 };
 

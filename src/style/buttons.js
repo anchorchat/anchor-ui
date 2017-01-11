@@ -3,20 +3,20 @@ import darken from '../internal/darken';
 
 const styleSheet = {
   button: {
-    width: '40px',
-    height: '40px',
-    padding: '8px',
-    outline: 0,
-    background: 'none',
-    border: 0,
-    borderRadius: '50%',
-    transition: 'background-color .3s ease-in-out',
     backgroundColor: colors.white,
-    '&:hover': {
-      backgroundColor: darken(colors.white, 0.05)
-    },
+    background: 'none',
+    borderRadius: '50%',
+    border: 0,
+    height: '40px',
+    outline: 0,
+    padding: '8px',
+    transition: 'background-color .3s ease-in-out',
+    width: '40px',
     '&:active': {
       backgroundColor: darken(colors.white, 0.15)
+    },
+    '&:hover': {
+      backgroundColor: darken(colors.white, 0.05)
     }
   }
 };

@@ -7,11 +7,11 @@ const styleSheet = {
   },
   headerText: {
     color: colors.primaryText,
-    margin: 0,
-    padding: '15px',
     fontSize: '18px',
     fontWeight: 'bold',
     lineHeight: '18px',
+    margin: 0,
+    padding: '15px',
     textAlign: 'center'
   }
 };
