@@ -2,7 +2,7 @@ import colors from './colors';
 import darken from '../internal/darken';
 
 const styleSheet = {
-  button: {
+  iconButton: {
     backgroundColor: colors.white,
     background: 'none',
     borderRadius: '50%',
@@ -17,6 +17,26 @@ const styleSheet = {
     },
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
+    }
+  },
+  button: {
+    backgroundColor: colors.green,
+    background: 'none',
+    borderRadius: '5px',
+    border: 0,
+    color: colors.white,
+    fontSize: '16px',
+    outline: 0,
+    padding: '12px 16px',
+    transition: 'background-color .3s ease-in-out',
+    '&:hover': {
+      backgroundColor: darken(colors.green, 0.15)
+    },
+    '&:active': {
+      backgroundColor: darken(colors.green, 0.25)
+    },
+    '&>*': {
+      margin: '0'
     }
   }
 };
