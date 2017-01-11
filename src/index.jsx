@@ -7,6 +7,7 @@ import ListItem from './components/list-item';
 import Message from './components/message';
 import MessageInput from './components/message-input';
 import ProfileCard from './components/profile-card';
+import EmptyState from './components/empty-state';
 // Icons
 import IconAddImage from './icons/icon-add-image';
 import IconChannel from './icons/icon-channel';
@@ -36,6 +37,7 @@ export {
   Message,
   MessageInput,
   ProfileCard,
+  EmptyState,
   // Icons
   IconAddImage,
   IconChannel,

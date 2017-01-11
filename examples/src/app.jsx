@@ -6,11 +6,13 @@ import {
   List,
   ListItem,
   Message,
+  EmptyState,
   colors
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
 import dalek from './assets/images/dalek.jpg';
+import emptyBackground from './assets/images/empty_state_users.jpg';
 
 const channels = [
   {
@@ -33,13 +35,6 @@ const channels = [
     maxUsers: 50,
     users: ['1', '2', '3']
   }
-];
-
-const users = [
-  { username: 'The Doctor' },
-  { username: 'Dalek' },
-  { username: 'Cyberman' },
-  { username: 'The Tardis' }
 ];
 
 const messages = [
@@ -65,6 +60,12 @@ const messages = [
 
 const currentUser = 'The Doctor';
 const currentChannel = 'Channel2';
+
+const emptyState = {
+  header: 'Empty state',
+  body: 'You have stumbled upon an empty state my good sir.',
+  background: emptyBackground
+};
 
 class App extends Component {
   constructor() {
@@ -165,14 +166,14 @@ class App extends Component {
           <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={this.sendMessage} />
         </article>
         <article>
-          <List style={userListStyle}>
-            {users.map(user => (
-              <ListItem
-                key={`user-list-${user.username}`}
-                primaryText={user.username}
-              />
-            ))}
-          </List>
+          <EmptyState
+            style={userListStyle}
+            background={emptyState.background}
+            headerText={emptyState.header}
+            bodyText={emptyState.body}
+            buttonChildren={<p>Click me!</p>}
+            buttonOnClick={() => {}}
+          />
         </article>
       </section>
     );
