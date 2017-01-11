@@ -40,6 +40,7 @@ Props:
 |----------|---------|----------|---------|-----------------------------------------|
 | children | Element | Yes      |         | Button content                          |
 | iconButton     | Boolean    |  | false | Switches between  icon-button and normal button                             |
+| onClick            | Function   | Yes |  | Button onClick function                            |
 | style    | Object  |          |         | Override the styles of the root element |
 
 ---
@@ -50,9 +51,25 @@ Props:
 
 | Name            | Type   | Required | Default | Description                             |
 |-----------------|--------|----------|---------|-----------------------------------------|
-| name            | String | Yes      |         | Button content                          |
+| name            | String | Yes      |         | Header content                          |
 | style           | Object |          |         | Override the styles of the root element |
 | headerTextStyle | Object |          |         | Override the styles of the text element |
+
+---
+
+`<EmptyState />` used for empty states
+
+Props:
+
+| Name            | Type   | Required | Default | Description                             |
+|-----------------|--------|----------|---------|-----------------------------------------|
+| headerText            | String | Yes      |         | Header text                          |
+| bodyText            | String   | Yes |  | Body text                             |
+| buttonChildren            | Element   |  |  | Button content if button is wanted                            |
+| buttonOnClick            | Function   |  |  | Button onClick function if button is wanted                            |
+| style           | Object |          |         | Override the styles of the root element |
+| headerStyle | Object |          |         | Override the styles of the header text |
+| bodyStyle | Object |          |         | Override the styles of the body text |
 
 ---
 
