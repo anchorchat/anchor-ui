@@ -27,28 +27,23 @@ class Button extends Component {
     super(props);
 
     const { sheet: { classes }, style } = props;
+    const className = getClassNames(classes, style, 'button', 'Button');
     const iconButtonClassName = getClassNames(classes, style, 'iconButton', 'Button');
-    const buttonClassName = getClassNames(classes, style, 'button', 'Button');
 
     this.state = {
-      iconButtonClassName,
-      buttonClassName
+      className,
+      iconButtonClassName
     };
   }
 
   render() {
     const { children, onClick, iconButton } = this.props;
-    const { iconButtonClassName, buttonClassName } = this.state;
+    const { iconButtonClassName, className } = this.state;
 
     return (
       <button
         onClick={onClick}
-        className={
-          classNames({
-            [iconButtonClassName]: iconButton,
-            [buttonClassName]: !iconButton
-          })
-        }
+        className={classNames({ [className]: !iconButton, [iconButtonClassName]: iconButton })}
       >
         {children}
       </button>

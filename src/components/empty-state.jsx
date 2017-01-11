@@ -34,12 +34,12 @@ class EmptyState extends Component {
 
     const { sheet: { classes }, style, headerStyle, bodyStyle } = props;
 
-    const emptyStateClassName = getClassNames(classes, style, 'emptyState', 'EmptyState');
+    const className = getClassNames(classes, style, 'emptyState', 'EmptyState');
     const headerClassName = getClassNames(classes, headerStyle, 'header', 'EmptyState');
     const bodyClassName = getClassNames(classes, bodyStyle, 'body', 'EmptyState');
 
     this.state = {
-      emptyStateClassName,
+      className,
       headerClassName,
       bodyClassName
     };
@@ -47,14 +47,14 @@ class EmptyState extends Component {
 
   render() {
     const { headerText, bodyText, button, background } = this.props;
-    const { emptyStateClassName, headerClassName, bodyClassName } = this.state;
+    const { className, headerClassName, bodyClassName } = this.state;
 
     const style = {
       backgroundImage: `url(${background})`
     };
 
     return (
-      <section style={style} className={emptyStateClassName}>
+      <section style={style} className={className}>
         <h1 className={headerClassName}>{headerText}</h1>
         <p className={bodyClassName}>{bodyText}</p>
         {button}
