@@ -22,15 +22,4 @@ describe('<Button />', () => {
     wrapper.find('Button').simulate('click');
     expect(onButtonClick.calledOnce).to.equal(true);
   });
-
-  it('should add style prop', () => {
-    const wrapper = shallow(<Button onClick={() => {}}>{children}</Button>);
-    const style = {
-      padding: '5px'
-    };
-
-    expect(wrapper.props().style).to.equal(undefined);
-    wrapper.setProps({ style });
-    expect(wrapper.props().style).to.equal(style);
-  });
 });
