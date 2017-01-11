@@ -2,16 +2,16 @@ import colors from './colors';
 
 const styleSheet = {
   badge: {
-    width: '24px',
-    height: '24px',
-    boxSizing: 'border-box',
     backgroundColor: colors.green,
-    fontSize: '12px',
-    lineHeight: '12px',
+    borderRadius: '50%',
+    boxSizing: 'border-box',
     color: colors.white,
+    fontSize: '12px',
+    height: '24px',
+    lineHeight: '12px',
     padding: '6px',
     textAlign: 'center',
-    borderRadius: '50%'
+    width: '24px'
   }
 };
 

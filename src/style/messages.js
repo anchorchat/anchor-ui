@@ -2,78 +2,77 @@ import colors from './colors';
 
 const styleSheet = {
   message: {
-    maxWidth: '75%',
-    padding: '7.5px',
-    boxSizing: 'border-box',
     backgroundColor: colors.white,
     borderRadius: '3px',
-    color: colors.primaryText,
-    position: 'relative',
-    marginBottom: '34px',
-    float: 'left',
+    boxSizing: 'border-box',
     clear: 'both',
+    color: colors.primaryText,
+    float: 'left',
+    marginBottom: '34px',
     marginLeft: '16px',
+    maxWidth: '75%',
+    padding: '7.5px',
+    position: 'relative',
+    '&:before': {
+      borderBottom: '5px solid transparent',
+      borderRight: `10px solid ${colors.white}`,
+      borderTop: '5px solid transparent',
+      content: '""',
+      height: '0',
+      left: '-10px',
+      position: 'absolute',
+      top: '15px'
+    },
     '&:last-of-type': {
       marginBottom: '17px'
-    },
-    '&:before': {
-      content: '""',
-      width: '0',
-      height: '0',
-      borderTop: '5px solid transparent',
-      borderRight: `10px solid ${colors.white}`,
-      borderBottom: '5px solid transparent',
-      position: 'absolute',
-      top: '15px',
-      left: '-10px'
     }
   },
   avatar: {
     marginLeft: '66px'
   },
   myMessage: {
-    float: 'right',
     backgroundColor: colors.green,
     color: 'white',
-    marginRight: '16px',
+    float: 'right',
     marginLeft: '0',
+    marginRight: '16px',
     '& $messageHeader': {
-      textAlign: 'right',
-      color: colors.white
+      color: colors.white,
+      textAlign: 'right'
     },
     '& $messageTime': {
       color: colors.primaryText,
-      right: 'initial',
-      left: '0'
+      left: '0',
+      right: 'initial'
     },
     '&$avatar': {
       marginLeft: '0',
       marginRight: '66px'
     },
     '&:before': {
+      borderRight: `10px solid ${colors.green}`,
       left: 'initial',
       right: '-10px',
-      transform: 'rotate(180deg)',
-      borderRight: `10px solid ${colors.green}`,
+      transform: 'rotate(180deg)'
     }
   },
   messageHeader: {
-    fontWeight: 'bold',
+    color: colors.secondaryText,
     fontSize: '14px',
+    fontWeight: 'bold',
     lineHeight: '14px',
     marginBottom: '5px',
-    color: colors.secondaryText
   },
   messageBody: {
-    margin: '0',
     fontSize: '16px',
-    lineHeight: '18px'
+    lineHeight: '18px',
+    margin: '0'
   },
   messageTime: {
+    bottom: '-17px',
     fontSize: '12px',
     lineHeight: '12px',
     position: 'absolute',
-    bottom: '-17px',
     right: '0'
   }
 };

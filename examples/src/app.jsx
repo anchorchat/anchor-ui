@@ -6,8 +6,7 @@ import {
   List,
   ListItem,
   Message,
-  colors,
-  Badge
+  colors
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -119,7 +118,7 @@ class App extends Component {
     };
 
     const channelListStyle = {
-      height: 'calc(100% - 70px)',
+      height: 'calc(100% - 116px)',
       borderRight: `1px solid ${colors.grey}`
     };
 
