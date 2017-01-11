@@ -64,7 +64,7 @@ class MessageInput extends Component {
           type="text"
           onKeyDown={this.handleKeyDown}
         />
-        <Button onClick={sendMessage} style={buttonStyle}>
+        <Button iconButton onClick={sendMessage} style={buttonStyle}>
           <IconSend color={colors.green} />
         </Button>
       </section>
