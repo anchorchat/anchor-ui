@@ -61,15 +61,14 @@ Props:
 
 Props:
 
-| Name            | Type     | Required | Default | Description                                 |
-|-----------------|----------|----------|---------|---------------------------------------------|
-| headerText      | String   | Yes      |         | Header text                                 |
-| bodyText        | String   | Yes      |         | Body text                                   |
-| buttonChildren  | Element  |          |         | Button content if button is wanted          |
-| buttonOnClick   | Function |          |         | Button onClick function if button is wanted |
-| style           | Object   |          |         | Override the styles of the root element     |
-| headerStyle     | Object   |          |         | Override the styles of the header text      |
-| bodyStyle       | Object   |          |         | Override the styles of the body text        |
+| Name        | Type     | Required | Default | Description                                 |
+|-------------|----------|----------|---------|---------------------------------------------|
+| headerText  | String   | Yes      |         | Header text                                 |
+| bodyText    | String   | Yes      |         | Body text                                   |
+| button      | Node     |          |         | Render a call to action button              |
+| style       | Object   |          |         | Override the styles of the root element     |
+| headerStyle | Object   |          |         | Override the styles of the header text      |
+| bodyStyle   | Object   |          |         | Override the styles of the body text        |
 
 ---
 

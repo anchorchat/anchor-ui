@@ -7,7 +7,8 @@ import {
   ListItem,
   Message,
   EmptyState,
-  colors
+  colors,
+  Button
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -171,8 +172,7 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            buttonChildren={<p>Click me!</p>}
-            buttonOnClick={() => {}}
+            button={<Button onClick={() => {}}><p>Click me</p></Button>}
           />
         </article>
       </section>

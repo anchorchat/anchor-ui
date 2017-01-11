@@ -2,14 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import emptyStateStyleSheet from '../style/empty-state';
 import getClassNames from '../internal/get-class-names';
-import Button from './button';
 
 class EmptyState extends Component {
   static propTypes = {
     headerText: PropTypes.string.isRequired,
     bodyText: PropTypes.string.isRequired,
-    buttonChildren: PropTypes.element,
-    buttonOnClick: PropTypes.func,
+    button: PropTypes.node,
     background: PropTypes.string,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -40,7 +38,7 @@ class EmptyState extends Component {
   }
 
   render() {
-    const { headerText, bodyText, buttonChildren, buttonOnClick, background } = this.props;
+    const { headerText, bodyText, button, background } = this.props;
     const { emptyStateClassName, headerClassName, bodyClassName } = this.state;
 
     const style = {
@@ -51,10 +49,7 @@ class EmptyState extends Component {
       <section style={style} className={emptyStateClassName}>
         <h1 className={headerClassName}>{headerText}</h1>
         <p className={bodyClassName}>{bodyText}</p>
-        {buttonChildren && buttonOnClick
-          ? <Button onClick={buttonOnClick}>{buttonChildren}</Button>
-          : null
-        }
+        {button}
       </section>
     );
   }
