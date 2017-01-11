@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import profileCardStyleSheet from '../style/profile-cards';
+import colors from '../style/colors';
 
 class ProfileCard extends Component {
   static propTypes = {
@@ -14,9 +15,12 @@ class ProfileCard extends Component {
         profileCard: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
-    style: PropTypes.shape({
-      profileCard: PropTypes.object
-    })
+    style: PropTypes.instanceOf(Object)
+  }
+
+  static defaultProps = {
+    avatar: '',
+    style: {}
   }
 
   constructor(props) {
@@ -37,6 +41,9 @@ class ProfileCard extends Component {
     const style = {
       avatar: {
         float: 'left',
+        width: '80px',
+        height: '80px',
+        border: `3px solid ${colors.white}`,
         marginRight: '15px'
       }
     };

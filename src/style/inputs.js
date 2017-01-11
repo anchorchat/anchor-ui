@@ -2,20 +2,20 @@ import colors from './colors';
 
 const styleSheet = {
   input: {
-    position: 'relative',
+    background: colors.background,
     padding: '16px',
     paddingTop: '0',
-    background: colors.background
+    position: 'relative'
   },
   messageInput: {
     appearance: 'none',
     border: '0',
-    width: '100%',
+    boxSizing: 'border-box',
+    color: colors.primaryText,
+    fontSize: '16px',
     height: '48px',
     paddingLeft: '10px',
-    boxSizing: 'border-box',
-    fontSize: '16px',
-    color: colors.primaryText,
+    width: '100%',
     '&:focus': {
       outline: 'none'
     }

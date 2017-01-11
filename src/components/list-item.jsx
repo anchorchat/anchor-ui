@@ -15,11 +15,20 @@ class ListItem extends Component {
         secondaryText: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
-    style: PropTypes.instanceOf(PropTypes.object),
-    primaryTextStyle: PropTypes.instanceOf(PropTypes.object),
-    secondaryTextStyle: PropTypes.instanceOf(PropTypes.object),
+    style: PropTypes.instanceOf(Object),
+    primaryTextStyle: PropTypes.instanceOf(Object),
+    secondaryTextStyle: PropTypes.instanceOf(Object),
     onClick: PropTypes.func,
     active: PropTypes.bool
+  }
+
+  static defaultProps = {
+    style: {},
+    secondaryText: '',
+    primaryTextStyle: {},
+    secondaryTextStyle: {},
+    onClick: null,
+    active: false
   }
 
   constructor(props) {
