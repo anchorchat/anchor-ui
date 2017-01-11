@@ -1,4 +1,1 @@
-**/*.test.*
-**/*.tests.*
 dist
-test
