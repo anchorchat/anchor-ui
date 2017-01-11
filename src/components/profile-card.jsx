@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import profileCardStyleSheet from '../style/profile-cards';
+import colors from '../style/colors';
 
 class ProfileCard extends Component {
   static propTypes = {
@@ -37,6 +38,9 @@ class ProfileCard extends Component {
     const style = {
       avatar: {
         float: 'left',
+        width: '80px',
+        height: '80px',
+        border: `3px solid ${colors.white}`,
         marginRight: '15px'
       }
     };
