@@ -18,6 +18,11 @@ class Button extends Component {
     iconButton: PropTypes.bool
   }
 
+  static defaultProps = {
+    style: {},
+    iconButton: false
+  }
+
   constructor(props) {
     super(props);
 

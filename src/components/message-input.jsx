@@ -21,6 +21,11 @@ class MessageInput extends Component {
     inputStyle: PropTypes.instanceOf(Object)
   }
 
+  static defaultProps = {
+    style: {},
+    inputStyle: {}
+  }
+
   constructor(props) {
     super(props);
 

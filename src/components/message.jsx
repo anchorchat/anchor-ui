@@ -30,6 +30,16 @@ class Message extends Component {
     myMessage: PropTypes.bool
   }
 
+  static defaultProps = {
+    avatar: '',
+    style: {},
+    timeFormat: 'HH:mm',
+    messageHeaderStyle: {},
+    messageBodyStyle: {},
+    messageTimeStyle: {},
+    myMessage: false
+  }
+
   constructor(props) {
     super(props);
 
@@ -62,7 +72,6 @@ class Message extends Component {
       messageBodyClassName,
       messageTimeClassName
     } = this.state;
-    const format = timeFormat || 'HH:mm';
 
     const style = {
       position: 'absolute',
@@ -84,7 +93,7 @@ class Message extends Component {
         {avatar ? <Avatar image={avatar} style={style} /> : null}
         <header className={messageHeaderClassName}>{message.username}</header>
         <p className={messageBodyClassName}>{message.body}</p>
-        <span className={messageTimeClassName}>{moment(message.createdAt).format(format)}</span>
+        <span className={messageTimeClassName}>{moment(message.createdAt).format(timeFormat)}</span>
       </section>
     );
   }

@@ -14,6 +14,10 @@ class List extends Component {
     style: PropTypes.instanceOf(Object)
   }
 
+  static defaultProps = {
+    style: {}
+  }
+
   constructor(props) {
     super(props);
 

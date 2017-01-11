@@ -12,8 +12,13 @@ class ChannelHeader extends Component {
         headerText: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
-    style: PropTypes.instanceOf(PropTypes.object),
-    headerTextStyle: PropTypes.instanceOf(PropTypes.object)
+    style: PropTypes.instanceOf(Object),
+    headerTextStyle: PropTypes.instanceOf(Object)
+  }
+
+  static defaultProps = {
+    style: {},
+    headerTextStyle: {}
   }
 
   constructor(props) {
