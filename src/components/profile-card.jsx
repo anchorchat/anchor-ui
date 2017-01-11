@@ -15,9 +15,12 @@ class ProfileCard extends Component {
         profileCard: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
-    style: PropTypes.shape({
-      profileCard: PropTypes.object
-    })
+    style: PropTypes.instanceOf(Object)
+  }
+
+  static defaultProps = {
+    avatar: '',
+    style: {}
   }
 
   constructor(props) {
