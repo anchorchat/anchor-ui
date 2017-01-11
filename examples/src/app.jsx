@@ -113,7 +113,7 @@ class App extends Component {
     const listStyle = {
       overflow: 'auto',
       background: colors.background,
-      padding: '10px',
+      padding: '16px',
       height: 'calc(100% - 112px)'
     };
 

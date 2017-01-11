@@ -9,7 +9,7 @@ const styleSheet = {
     color: colors.primaryText,
     float: 'left',
     marginBottom: '34px',
-    marginLeft: '10px',
+    marginLeft: '16px',
     maxWidth: '75%',
     padding: '7.5px',
     position: 'relative',
@@ -28,14 +28,14 @@ const styleSheet = {
     }
   },
   avatar: {
-    marginLeft: '60px'
+    marginLeft: '66px'
   },
   myMessage: {
     backgroundColor: colors.green,
     color: 'white',
     float: 'right',
     marginLeft: '0',
-    marginRight: '10px',
+    marginRight: '16px',
     '& $messageHeader': {
       color: colors.white,
       textAlign: 'right'
@@ -47,7 +47,7 @@ const styleSheet = {
     },
     '&$avatar': {
       marginLeft: '0',
-      marginRight: '60px'
+      marginRight: '66px'
     },
     '&:before': {
       borderRight: `10px solid ${colors.green}`,
