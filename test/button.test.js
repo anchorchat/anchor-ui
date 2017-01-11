@@ -15,7 +15,7 @@ describe('<Button />', () => {
     expect(wrapper.contains(children)).to.equal(true);
   });
 
-  it('should simulates click events', () => {
+  it('should simulate click events', () => {
     const onButtonClick = spy();
     const wrapper = shallow(<Button onClick={onButtonClick}>{children}</Button>);
 
@@ -23,7 +23,7 @@ describe('<Button />', () => {
     expect(onButtonClick.calledOnce).to.equal(true);
   });
 
-  it('allows us to overide styles', () => {
+  it('should add style prop', () => {
     const wrapper = shallow(<Button onClick={() => {}}>{children}</Button>);
     const style = {
       padding: '5px'
