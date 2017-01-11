@@ -36,12 +36,12 @@ Props:
 
 Props:
 
-| Name     | Type    | Required | Default | Description                             |
-|----------|---------|----------|---------|-----------------------------------------|
-| children | Element | Yes      |         | Button content                          |
-| iconButton     | Boolean    |  | false | Switches between  icon-button and normal button                             |
-| onClick            | Function   | Yes |  | Button onClick function                            |
-| style    | Object  |          |         | Override the styles of the root element |
+| Name       | Type     | Required | Default | Description                                     |
+|------------|----------|----------|---------|-------------------------------------------------|
+| children   | Element  | Yes      |         | Button content                                  |
+| iconButton | Boolean  |          | false   | Switches between icon-button and normal button  |
+| onClick    | Function | Yes      |         | Button onClick function                         |
+| style      | Object   |          |         | Override the styles of the root element         |
 
 ---
 
@@ -61,15 +61,15 @@ Props:
 
 Props:
 
-| Name            | Type   | Required | Default | Description                             |
-|-----------------|--------|----------|---------|-----------------------------------------|
-| headerText            | String | Yes      |         | Header text                          |
-| bodyText            | String   | Yes |  | Body text                             |
-| buttonChildren            | Element   |  |  | Button content if button is wanted                            |
-| buttonOnClick            | Function   |  |  | Button onClick function if button is wanted                            |
-| style           | Object |          |         | Override the styles of the root element |
-| headerStyle | Object |          |         | Override the styles of the header text |
-| bodyStyle | Object |          |         | Override the styles of the body text |
+| Name            | Type     | Required | Default | Description                                 |
+|-----------------|----------|----------|---------|---------------------------------------------|
+| headerText      | String   | Yes      |         | Header text                                 |
+| bodyText        | String   | Yes      |         | Body text                                   |
+| buttonChildren  | Element  |          |         | Button content if button is wanted          |
+| buttonOnClick   | Function |          |         | Button onClick function if button is wanted |
+| style           | Object   |          |         | Override the styles of the root element     |
+| headerStyle     | Object   |          |         | Override the styles of the header text      |
+| bodyStyle       | Object   |          |         | Override the styles of the body text        |
 
 ---
 
@@ -132,6 +132,8 @@ Props:
 | sendMessage | Function | Yes      |         | Send a message                           |
 | style       | Object   |          |         | Override the styles of the root element  |
 | inputStyle  | Object   |          |         | Override the styles of the input element |
+
+---
 
 `<ProfileCard />` used for rendering a user's profile details.
 
