@@ -12,11 +12,11 @@ const styleSheet = {
     padding: '8px',
     transition: 'background-color .3s ease-in-out',
     width: '40px',
-    '&:active': {
-      backgroundColor: darken(colors.white, 0.15)
-    },
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
+    },
+    '&:active': {
+      backgroundColor: darken(colors.white, 0.15)
     }
   },
   button: {

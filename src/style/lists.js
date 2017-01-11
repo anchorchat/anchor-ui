@@ -15,21 +15,21 @@ const styleSheet = {
     listStyle: 'none',
     padding: '10px',
     transition: 'background-color .3s ease-in-out',
-    '&:active': {
-      backgroundColor: darken(colors.white, 0.15)
-    },
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
+    },
+    '&:active': {
+      backgroundColor: darken(colors.white, 0.15)
     }
   },
   active: {
     backgroundColor: colors.green,
     color: colors.white,
-    '&:active': {
-      backgroundColor: darken(colors.green, 0.15)
-    },
     '&:hover': {
       backgroundColor: darken(colors.green, 0.05)
+    },
+    '&:active': {
+      backgroundColor: darken(colors.green, 0.15)
     }
   },
   primaryText: {
