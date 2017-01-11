@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import emptyStateStyleSheet from '../style/empty-state';
+import emptyStateStyleSheet from '../style/empty-states';
 import getClassNames from '../internal/get-class-names';
 
 class EmptyState extends Component {
