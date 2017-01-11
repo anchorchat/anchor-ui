@@ -5,6 +5,7 @@ const styleSheet = {
     alignItems: 'center',
     backgroundPosition: 'center bottom',
     backgroundSize: 'cover',
+    boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
