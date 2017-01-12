@@ -31,15 +31,22 @@ const styleSheet = {
     },
     '&:active': {
       backgroundColor: darken(colors.green, 0.15)
+    },
+    '& $primaryText': {
+      color: colors.white
+    },
+    '& $secondaryText': {
+      color: colors.white
     }
   },
   primaryText: {
+    color: colors.primaryText,
     fontSize: '16px',
-    fontWeight: 'normal',
     margin: 0,
     lineHeight: '16px'
   },
   secondaryText: {
+    color: colors.secondaryText,
     fontSize: '14px',
     fontWeight: 'normal',
     margin: 0,

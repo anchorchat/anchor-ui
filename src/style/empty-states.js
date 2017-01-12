@@ -14,13 +14,13 @@ const styleSheet = {
   header: {
     fontSize: '16',
     fontWeight: 'bold',
-    color: colors.secondaryText,
+    color: colors.primaryText,
     margin: '0',
     textAlign: 'center'
   },
   body: {
     fontSize: '16',
-    color: colors.secondaryText,
+    color: colors.primaryText,
     marginBottom: '30px',
     marginTop: '16px',
     textAlign: 'center'
