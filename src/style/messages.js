@@ -11,7 +11,7 @@ const styleSheet = {
     marginBottom: '34px',
     marginLeft: '16px',
     maxWidth: '75%',
-    padding: '7.5px',
+    padding: '12px',
     position: 'relative',
     '&:before': {
       borderBottom: '5px solid transparent',
@@ -36,12 +36,15 @@ const styleSheet = {
     float: 'right',
     marginLeft: '0',
     marginRight: '16px',
+    '& $messageBody': {
+      color: colors.white
+    },
     '& $messageHeader': {
       color: colors.white,
       textAlign: 'right'
     },
     '& $messageTime': {
-      color: colors.primaryText,
+      color: colors.secondaryText,
       left: '0',
       right: 'initial'
     },
@@ -64,12 +67,14 @@ const styleSheet = {
     marginBottom: '5px',
   },
   messageBody: {
+    color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
     margin: '0'
   },
   messageTime: {
     bottom: '-17px',
+    color: colors.secondaryText,
     fontSize: '12px',
     lineHeight: '12px',
     position: 'absolute',
