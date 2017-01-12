@@ -131,6 +131,7 @@ Props:
 | sendMessage | Function | Yes      |         | Send a message                           |
 | style       | Object   |          |         | Override the styles of the root element  |
 | inputStyle  | Object   |          |         | Override the styles of the input element |
+| maxLength   | Number   |          | 500     | The input's max length                   |
 
 ---
 
