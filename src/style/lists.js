@@ -14,6 +14,7 @@ const styleSheet = {
     cursor: 'pointer',
     listStyle: 'none',
     padding: '10px',
+    position: 'relative',
     transition: 'background-color .3s ease-in-out',
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
