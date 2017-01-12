@@ -11,7 +11,7 @@
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
-    "prepublish": "npm run lint && npm run compile"
+    "prepublish": "npm run lint && npm run test && npm run compile"
   },
   "repository": {
     "type": "git",
