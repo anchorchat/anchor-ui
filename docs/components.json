@@ -1,0 +1,799 @@
+{
+  "src/components/avatar.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "image": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "avatar": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/badge.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "content": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "node"
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "badge": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/button.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "element"
+        },
+        "required": true,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "iconButton": {
+                  "name": "string",
+                  "required": true
+                },
+                "button": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconButton": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/channel-header.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "header": {
+                  "name": "string",
+                  "required": true
+                },
+                "headerText": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/empty-state.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "bodyText": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "button": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "background": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "emptyState": {
+                  "name": "string",
+                  "required": true
+                },
+                "header": {
+                  "name": "string",
+                  "required": true
+                },
+                "body": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/list-item.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "primaryText": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "secondaryText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "listItem": {
+                  "name": "string",
+                  "required": true
+                },
+                "primaryText": {
+                  "name": "string",
+                  "required": true
+                },
+                "secondaryText": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/list.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "list": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/message-input.jsx": {
+    "description": "",
+    "methods": [
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sendMessage": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "messageInput": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxLength": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/message.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "message": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "body": {
+              "name": "string",
+              "required": true
+            },
+            "createdAt": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "instanceOf",
+                  "value": "Date"
+                }
+              ],
+              "required": true
+            },
+            "username": {
+              "name": "string",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeFormat": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'HH:mm'",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "message": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/profile-card.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "username": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "profileCard": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  }
+}
