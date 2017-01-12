@@ -132,6 +132,7 @@ Props:
 | style       | Object   |          |         | Override the styles of the root element  |
 | inputStyle  | Object   |          |         | Override the styles of the input element |
 | maxLength   | Number   |          | 500     | The input's max length                   |
+| leftButton  | Node     |          | null    | A button for the left side of the input  |
 
 ---
 

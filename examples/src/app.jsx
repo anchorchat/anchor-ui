@@ -9,7 +9,8 @@ import {
   EmptyState,
   colors,
   Button,
-  IconClose
+  IconClose,
+  IconEmoji
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -136,8 +137,18 @@ class App extends Component {
       right: '6px'
     };
 
+    const leftButtonStyle = {
+      position: 'absolute',
+      left: '20px',
+      top: '4px'
+    };
+
     const listItemStyle = {
       paddingRight: '52px'
+    };
+
+    const inputStyle = {
+      paddingLeft: '48px'
     };
 
     return (
@@ -183,7 +194,18 @@ class App extends Component {
               />
             ))}
           </List>
-          <MessageInput onChange={this.changeMessage} placeholder="Type something..." value={this.state.message} sendMessage={this.sendMessage} />
+          <MessageInput
+            onChange={this.changeMessage}
+            placeholder="Type something..."
+            value={this.state.message}
+            sendMessage={this.sendMessage}
+            leftButton={
+              <Button style={leftButtonStyle} iconButton onClick={() => {}}>
+                <IconEmoji />
+              </Button>
+            }
+            inputStyle={inputStyle}
+          />
         </article>
         <article>
           <EmptyState
