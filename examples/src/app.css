@@ -59,13 +59,13 @@
 }
 
 .demo > article:first-of-type {
-  width: 250px;
+  width: 275px;
 }
 
 .demo > article:nth-of-type(2) {
-  width: calc(100% - 500px);
+  width: calc(100% - 550px);
 }
 
 .demo > article:last-of-type {
-  width: 250px;
+  width: 275px;
 }

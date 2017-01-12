@@ -8,7 +8,8 @@ import {
   Message,
   EmptyState,
   colors,
-  Button
+  Button,
+  IconClose
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -129,6 +130,16 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
+    const buttonStyle = {
+      position: 'absolute',
+      top: '6px',
+      right: '6px'
+    };
+
+    const listItemStyle = {
+      paddingRight: '52px'
+    };
+
     return (
       <section className="demo">
         <h1>
@@ -149,6 +160,10 @@ class App extends Component {
                 primaryText={channel.name}
                 secondaryText={`${channel.users.length}/${channel.maxUsers}`}
                 active={currentChannel === channel.name}
+                rightButton={
+                  <Button style={buttonStyle} iconButton onClick={() => {}}><IconClose /></Button>
+                }
+                style={listItemStyle}
               />
             ))}
           </List>
