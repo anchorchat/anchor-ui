@@ -19,7 +19,8 @@ class ListItem extends Component {
     primaryTextStyle: PropTypes.instanceOf(Object),
     secondaryTextStyle: PropTypes.instanceOf(Object),
     onClick: PropTypes.func,
-    active: PropTypes.bool
+    active: PropTypes.bool,
+    rightButton: PropTypes.node
   }
 
   static defaultProps = {
@@ -28,7 +29,8 @@ class ListItem extends Component {
     primaryTextStyle: {},
     secondaryTextStyle: {},
     onClick: null,
-    active: false
+    active: false,
+    rightButton: null
   }
 
   constructor(props) {
@@ -50,13 +52,16 @@ class ListItem extends Component {
   }
 
   render() {
-    const { primaryText, secondaryText, onClick, active, sheet: { classes } } = this.props;
+    const {
+      primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }
+    } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
 
     return (
       <li onClick={onClick} className={classNames(className, { [classes.active]: active })}>
         <h1 className={primaryTextClassName}>{primaryText}</h1>
         {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}
+        {rightButton}
       </li>
     );
   }
