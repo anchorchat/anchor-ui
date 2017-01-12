@@ -1,9 +1,9 @@
 import colors from './colors';
 import darken from '../internal/darken';
+import fade from '../internal/fade';
 
 const styleSheet = {
   iconButton: {
-    backgroundColor: colors.white,
     background: 'none',
     borderRadius: '50%',
     border: 0,
@@ -14,10 +14,10 @@ const styleSheet = {
     transition: 'background-color .3s ease-in-out',
     width: '40px',
     '&:hover': {
-      backgroundColor: darken(colors.white, 0.05)
+      backgroundColor: fade(colors.black, 0.9)
     },
     '&:active': {
-      backgroundColor: darken(colors.white, 0.15)
+      backgroundColor: fade(colors.black, 0.8)
     }
   },
   button: {
