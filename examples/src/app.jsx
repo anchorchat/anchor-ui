@@ -161,7 +161,11 @@ class App extends Component {
                 secondaryText={`${channel.users.length}/${channel.maxUsers}`}
                 active={currentChannel === channel.name}
                 rightButton={
-                  <Button style={buttonStyle} iconButton onClick={() => {}}><IconClose /></Button>
+                  currentChannel === channel.name
+                  ? <Button style={buttonStyle} iconButton onClick={() => {}}>
+                    <IconClose color={colors.white} />
+                  </Button>
+                  : null
                 }
                 style={listItemStyle}
               />
