@@ -18,12 +18,16 @@ class MessageInput extends Component {
     }).isRequired,
     placeholder: PropTypes.string.isRequired,
     style: PropTypes.instanceOf(Object),
-    inputStyle: PropTypes.instanceOf(Object)
+    inputStyle: PropTypes.instanceOf(Object),
+    maxLength: PropTypes.number,
+    leftButton: PropTypes.node
   }
 
   static defaultProps = {
     style: {},
-    inputStyle: {}
+    inputStyle: {},
+    maxLength: 500,
+    leftButton: null
   }
 
   constructor(props) {
@@ -50,7 +54,7 @@ class MessageInput extends Component {
   }
 
   render() {
-    const { onChange, sendMessage, placeholder, value } = this.props;
+    const { onChange, sendMessage, placeholder, value, maxLength, leftButton } = this.props;
     const { className, inputClassName } = this.state;
 
     const buttonStyle = {
@@ -61,6 +65,7 @@ class MessageInput extends Component {
 
     return (
       <section className={className}>
+        {leftButton}
         <input
           className={inputClassName}
           placeholder={placeholder}
@@ -68,6 +73,7 @@ class MessageInput extends Component {
           value={value}
           type="text"
           onKeyDown={this.handleKeyDown}
+          maxLength={maxLength}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
           <IconSend color={colors.green} />
