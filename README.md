@@ -15,9 +15,9 @@ Install from npm
 Props:
 
 | Name  | Type   | Required | Default | Description                             |
-|-------|--------|----------|---------|-----------------------------------------|
+|:------|:-------|:---------|:--------|:----------------------------------------|
 | image | String | Yes      |         | Path to user's profile image            |
-| style | Object |          |         | Override the styles of the root element |
+| style | Object | No       | {}      | Override the styles of the root element |
 
 ---
 
@@ -26,9 +26,9 @@ Props:
 Props:
 
 | Name    | Type                 | Required | Default | Description                             |
-|---------|----------------------|----------|---------|-----------------------------------------|
+|:--------|:---------------------|:---------|:--------|:----------------------------------------|
 | content | String, Number, Node | Yes      |         | Content to be rendered                  |
-| style   | Object               |          |         | Override the styles of the root element |
+| style   | Object               | No       | {}      | Override the styles of the root element |
 
 ---
 
@@ -37,11 +37,11 @@ Props:
 Props:
 
 | Name       | Type     | Required | Default | Description                                     |
-|------------|----------|----------|---------|-------------------------------------------------|
+|:-----------|:---------|:---------|:--------|:------------------------------------------------|
 | children   | Element  | Yes      |         | Button content                                  |
-| iconButton | Boolean  |          | false   | Switches between icon-button and normal button  |
+| iconButton | Boolean  | No       | false   | Switches between icon-button and normal button  |
 | onClick    | Function | Yes      |         | Button onClick function                         |
-| style      | Object   |          |         | Override the styles of the root element         |
+| style      | Object   | No       | {}      | Override the styles of the root element         |
 
 ---
 
@@ -50,10 +50,10 @@ Props:
 Props:
 
 | Name            | Type   | Required | Default | Description                             |
-|-----------------|--------|----------|---------|-----------------------------------------|
+|:----------------|:-------|:---------|:--------|:----------------------------------------|
 | name            | String | Yes      |         | Header content                          |
-| style           | Object |          |         | Override the styles of the root element |
-| headerTextStyle | Object |          |         | Override the styles of the text element |
+| style           | Object | No       | {}      | Override the styles of the root element |
+| headerTextStyle | Object | No       | {}      | Override the styles of the text element |
 
 ---
 
@@ -62,13 +62,13 @@ Props:
 Props:
 
 | Name        | Type     | Required | Default | Description                                 |
-|-------------|----------|----------|---------|---------------------------------------------|
+|:------------|:---------|:---------|:--------|:--------------------------------------------|
 | headerText  | String   | Yes      |         | Header text                                 |
 | bodyText    | String   | Yes      |         | Body text                                   |
-| button      | Node     |          |         | Render a call to action button              |
-| style       | Object   |          |         | Override the styles of the root element     |
-| headerStyle | Object   |          |         | Override the styles of the header text      |
-| bodyStyle   | Object   |          |         | Override the styles of the body text        |
+| button      | Node     | No       | {}      | Render a call to action button              |
+| style       | Object   | No       | {}      | Override the styles of the root element     |
+| headerStyle | Object   | No       | {}      | Override the styles of the header text      |
+| bodyStyle   | Object   | No       | {}      | Override the styles of the body text        |
 
 ---
 
@@ -77,9 +77,9 @@ Props:
 Props:
 
 | Name     | Type   | Required | Default | Description                             |
-|----------|--------|----------|---------|-----------------------------------------|
+|:---------|:-------|:---------|:--------|:----------------------------------------|
 | children | Node   | Yes      |         | List content                            |
-| style    | Object |          |         | Override the styles of the root element |
+| style    | Object | No       | {}      | Override the styles of the root element |
 
 ---
 
@@ -88,14 +88,14 @@ Props:
 Props:
 
 | Name               | Type     | Required | Default | Description                                      |
-|--------------------|----------|----------|---------|--------------------------------------------------|
+|:-------------------|:---------|:---------|:--------|:-------------------------------------------------|
 | primaryText        | String   | Yes      |         | The list item's primary text                     |
 | secondaryText      | String   | Yes      |         | The list item's secondary text                   |
-| active             | Boolean  |          |         | Add active styles to ListItem                    |
+| active             | Boolean  | No       | false   | Add active styles to ListItem                    |
 | onClick            | Function | Yes      |         | Click function for the root element              |
-| style              | Object   |          |         | Override the styles of the root element          |
-| primaryTextStyle   | Object   |          |         | Override the styles of the primaryText element   |
-| secondaryTextStyle | Object   |          |         | Override the styles of the secondaryText element |
+| style              | Object   | No       | {}      | Override the styles of the root element          |
+| primaryTextStyle   | Object   | No       | {}      | Override the styles of the primaryText element   |
+| secondaryTextStyle | Object   | No       | {}      | Override the styles of the secondaryText element |
 
 ---
 
@@ -104,18 +104,18 @@ Props:
 Props:
 
 | Name               | Type           | Required | Default | Description                                                                                       |
-|--------------------|----------------|----------|---------|---------------------------------------------------------------------------------------------------|
+|:-------------------|:---------------|:---------|:--------|:--------------------------------------------------------------------------------------------------|
 | message            | Object         | Yes      |         | Mesage object containing: body, createdAt, username                                               |
 | message.body       | String         | Yes      |         | The message's body text                                                                           |
 | message.createdAt  | String, Date   | Yes      |         | Time when the message was created                                                                 |
 | message.username   | String         | Yes      |         | The sender's username                                                                             |
-| timeFormat         | String         |          | 'HH:mm' | The [format](http://momentjs.com/docs/#/displaying/format/) in which to display message.createdAt |
-| avatar             | String         |          |         | Path to the user's profile image, will render <Avatar /> if supplied                              |
-| myMessage          | Boolean        |          | false   | Flag used to change message styles, set to true if the message belongs to the current user        |
-| style              | Object         |          |         | Override the styles of the root element                                                           |
-| messageBodyStyle   | Object         |          |         | Override the styles of the body element                                                           |
-| messageHeaderStyle | Object         |          |         | Override the styles of the header element                                                         |
-| messageTimeStyle   | Object         |          |         | Override the styles of the time element                                                           |
+| timeFormat         | String         | No       | 'HH:mm' | The [format](http://momentjs.com/docs/#/displaying/format/) in which to display message.createdAt |
+| avatar             | String         | No       | ''      | Path to the user's profile image, will render <Avatar /> if supplied                              |
+| myMessage          | Boolean        | No       | false   | Flag used to change message styles, set to true if the message belongs to the current user        |
+| style              | Object         | No       | {}      | Override the styles of the root element                                                           |
+| messageBodyStyle   | Object         | No       | {}      | Override the styles of the body element                                                           |
+| messageHeaderStyle | Object         | No       | {}      | Override the styles of the header element                                                         |
+| messageTimeStyle   | Object         | No       | {}      | Override the styles of the time element                                                           |
 
 ---
 
@@ -124,15 +124,15 @@ Props:
 Props:
 
 | Name        | Type     | Required | Default | Description                              |
-|-------------|----------|----------|---------|------------------------------------------|
+|:------------|:---------|:---------|:--------|:-----------------------------------------|
 | value       | String   | Yes      |         | The list items primary text              |
 | placeholder | String   | Yes      |         | The list items primary text              |
 | onChange    | Function | Yes      |         | Change the input's value                 |
 | sendMessage | Function | Yes      |         | Send a message                           |
-| style       | Object   |          |         | Override the styles of the root element  |
-| inputStyle  | Object   |          |         | Override the styles of the input element |
-| maxLength   | Number   |          | 500     | The input's max length                   |
-| leftButton  | Node     |          | null    | A button for the left side of the input  |
+| style       | Object   | No       | {}      | Override the styles of the root element  |
+| inputStyle  | Object   | No       | {}      | Override the styles of the input element |
+| maxLength   | Number   | No       | 500     | The input's max length                   |
+| leftButton  | Node     | No       | null    | A button for the left side of the input  |
 
 ---
 
@@ -141,10 +141,10 @@ Props:
 Props:
 
 | Name     | Type   | Required | Default | Description                                                          |
-|----------|--------|----------|---------|----------------------------------------------------------------------|
+|:---------|:-------|:---------|:--------|:---------------------------------------------------------------------|
 | username | String | Yes      |         | The user's username                                                  |
 | avatar   | String | Yes      |         | Path to the user's profile image, will render <Avatar /> if supplied |
-| style    | Object |          |         | Override the styles of the root element                              |
+| style    | Object | No       | {}      | Override the styles of the root element                              |
 
 ## Installation
 
