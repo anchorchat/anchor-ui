@@ -11,7 +11,7 @@ const styleSheet = {
     marginBottom: '34px',
     marginLeft: '16px',
     maxWidth: '75%',
-    padding: '7.5px',
+    padding: '12px',
     position: 'relative',
     '&:before': {
       borderBottom: '5px solid transparent',

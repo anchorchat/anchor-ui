@@ -35,13 +35,11 @@
 .demo > h1 {
   font-size: 16px;
   width: 100%;
-}
-
-.demo > h1 {
   padding: 0 16px;
   padding-bottom: .5rem;
   border-bottom: 1px solid #ededed;
   margin: 20px 0;
+  margin-bottom: 0;
 }
 
 .demo > h1 a {
@@ -54,7 +52,7 @@
 }
 
 .demo > article {
-  height: calc(100% - 69px);
+  height: calc(100% - 49px);
   position: relative;
 }
 
