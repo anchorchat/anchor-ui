@@ -32,27 +32,12 @@
   height: 100vh;
 }
 
-.demo > h1 {
-  font-size: 16px;
+.demo > header {
   width: 100%;
-  padding: 0 16px;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid #ededed;
-  margin: 20px 0;
-  margin-bottom: 0;
-}
-
-.demo > h1 a {
-  color: #4078c0;
-  text-decoration: none;
-}
-
-.demo > h1:hover a {
-  text-decoration: underline;
 }
 
 .demo > article {
-  height: calc(100% - 49px);
+  height: calc(100% - 56px);
   position: relative;
 }
 

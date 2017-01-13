@@ -1,5 +1,6 @@
 // Components
 import Avatar from './components/avatar';
+import AppHeader from './components/app-header';
 import Badge from './components/badge';
 import Button from './components/button';
 import ChannelHeader from './components/channel-header';
@@ -31,6 +32,7 @@ import colors from './style/colors';
 export {
   // Components
   Avatar,
+  AppHeader,
   Badge,
   Button,
   ChannelHeader,
