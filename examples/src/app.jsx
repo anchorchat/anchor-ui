@@ -192,7 +192,7 @@ class App extends Component {
           }
         />
         <article>
-          <ProfileCard username={currentUser} avatar={theDoctor} />
+          <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
