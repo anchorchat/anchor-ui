@@ -25,6 +25,7 @@ import IconMenu from './icons/icon-menu';
 import IconMore from './icons/icon-more';
 import IconPeople from './icons/icon-people';
 import IconPerson from './icons/icon-person';
+import IconPower from './icons/icon-power';
 import IconSend from './icons/icon-send';
 // Settings
 import colors from './style/colors';
@@ -57,6 +58,7 @@ export {
   IconMore,
   IconPeople,
   IconPerson,
+  IconPower,
   IconSend,
   // Settings
   colors
