@@ -8,6 +8,7 @@ const styleSheet = {
     height: '56px',
     padding: '10px 16px',
     position: 'relative',
+    width: '100%',
     zIndex: '1'
   },
   text: {
