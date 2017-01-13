@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import emojione from 'emojione';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import messageStyleSheet from '../style/messages';
@@ -27,7 +28,8 @@ class Message extends Component {
     messageHeaderStyle: PropTypes.instanceOf(Object),
     messageBodyStyle: PropTypes.instanceOf(Object),
     messageTimeStyle: PropTypes.instanceOf(Object),
-    myMessage: PropTypes.bool
+    myMessage: PropTypes.bool,
+    emoji: PropTypes.bool
   }
 
   static defaultProps = {
@@ -37,7 +39,14 @@ class Message extends Component {
     messageHeaderStyle: {},
     messageBodyStyle: {},
     messageTimeStyle: {},
-    myMessage: false
+    myMessage: false,
+    emoji: false
+  }
+
+  static createMarkup(text) {
+    return {
+      __html: emojione.toImage(text)
+    };
   }
 
   constructor(props) {
@@ -65,7 +74,7 @@ class Message extends Component {
   }
 
   render() {
-    const { avatar, message, timeFormat, myMessage, sheet: { classes } } = this.props;
+    const { avatar, message, timeFormat, myMessage, emoji, sheet: { classes } } = this.props;
     const {
       className,
       messageHeaderClassName,
@@ -92,7 +101,13 @@ class Message extends Component {
       >
         {avatar ? <Avatar image={avatar} style={style} /> : null}
         <header className={messageHeaderClassName}>{message.username}</header>
-        <p className={messageBodyClassName}>{message.body}</p>
+        <p className={messageBodyClassName}>
+          {
+            emoji
+            ? <span dangerouslySetInnerHTML={Message.createMarkup(message.body)} />
+            : message.body
+          }
+        </p>
         <span className={messageTimeClassName}>{moment(message.createdAt).format(timeFormat)}</span>
       </section>
     );
