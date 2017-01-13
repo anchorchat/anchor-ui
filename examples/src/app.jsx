@@ -11,7 +11,8 @@ import {
   Button,
   IconClose,
   IconEmoji,
-  AppHeader
+  AppHeader,
+  IconPower
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -159,6 +160,12 @@ class App extends Component {
       marginRight: '16px'
     };
 
+    const rightButtonStyle = {
+      position: 'absolute',
+      top: '8px',
+      right: '16px'
+    };
+
     return (
       <section className="demo">
         <AppHeader
@@ -172,6 +179,11 @@ class App extends Component {
             </a>
           }
           icon={<img src={logo} alt="Anchor Chat" style={logoStyle} />}
+          rightButton={
+            <Button onClick={() => {}} iconButton style={rightButtonStyle}>
+              <IconPower color={colors.white} />
+            </Button>
+          }
         />
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} />

@@ -17,6 +17,7 @@ class AppHeader extends Component {
       }).isRequired
     }).isRequired,
     icon: PropTypes.node,
+    rightButton: PropTypes.node,
     style: PropTypes.instanceOf(Object),
     textStyle: PropTypes.instanceOf(Object),
     iconStyle: PropTypes.instanceOf(Object)
@@ -26,7 +27,8 @@ class AppHeader extends Component {
     style: {},
     textStyle: {},
     iconStyle: {},
-    icon: null
+    icon: null,
+    rightButton: null
   }
 
   constructor(props) {
@@ -46,13 +48,14 @@ class AppHeader extends Component {
   }
 
   render() {
-    const { text, icon } = this.props;
+    const { text, icon, rightButton } = this.props;
     const { textClassName, headerClassName } = this.state;
 
     return (
       <header className={headerClassName}>
         {icon}
         <h1 className={textClassName}>{text}</h1>
+        {rightButton}
       </header>
     );
   }
