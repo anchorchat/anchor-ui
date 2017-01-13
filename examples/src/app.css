@@ -67,3 +67,7 @@
 .demo > article:last-of-type {
   width: 275px;
 }
+
+.emojione {
+  width: 32px;
+}
