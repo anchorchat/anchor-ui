@@ -116,6 +116,7 @@ Props:
 | messageBodyStyle   | Object         | No       | {}      | Override the styles of the body element                                                           |
 | messageHeaderStyle | Object         | No       | {}      | Override the styles of the header element                                                         |
 | messageTimeStyle   | Object         | No       | {}      | Override the styles of the time element                                                           |
+| emoji              | Boolean        | No       | false   | Enable emojione for messages                                                                      |
 
 ---
 
