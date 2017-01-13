@@ -58,7 +58,13 @@ const messages = [
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor
-  }
+  },
+  {
+    body: ':whale2:',
+    createdAt: new Date(),
+    username: 'Dalek',
+    profileImage: dalek
+  },
 ];
 
 const currentUser = 'The Doctor';
@@ -191,6 +197,7 @@ class App extends Component {
                 message={message} key={`message-${index}`}
                 myMessage={message.username === currentUser}
                 avatar={message.profileImage}
+                emoji
               />
             ))}
           </List>
