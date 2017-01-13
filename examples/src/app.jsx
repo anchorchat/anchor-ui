@@ -10,12 +10,15 @@ import {
   colors,
   Button,
   IconClose,
-  IconEmoji
+  IconEmoji,
+  AppHeader,
+  IconPower
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
 import dalek from './assets/images/dalek.jpg';
-import emptyBackground from './assets/images/empty_state_users.jpg';
+import emptyStateBackground from './assets/images/empty_state_users.jpg';
+import logo from './assets/images/logo.svg';
 
 const channels = [
   {
@@ -73,7 +76,7 @@ const currentChannel = 'Channel2';
 const emptyState = {
   header: 'Empty state',
   body: 'You have stumbled upon an empty state my good sir.',
-  background: emptyBackground
+  background: emptyStateBackground
 };
 
 class App extends Component {
@@ -157,17 +160,37 @@ class App extends Component {
       paddingLeft: '48px'
     };
 
+    const logoStyle = {
+      float: 'left',
+      height: '100%',
+      marginRight: '16px'
+    };
+
+    const rightButtonStyle = {
+      position: 'absolute',
+      top: '8px',
+      right: '16px'
+    };
+
     return (
       <section className="demo">
-        <h1>
-          <a
-            href="https://github.com/anchorchat/anchor-ui"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Anchor UI
-          </a>
-        </h1>
+        <AppHeader
+          text={
+            <a
+              href="https://github.com/anchorchat/anchor-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Anchor UI
+            </a>
+          }
+          icon={<img src={logo} alt="Anchor Chat" style={logoStyle} />}
+          rightButton={
+            <Button onClick={() => {}} iconButton style={rightButtonStyle}>
+              <IconPower color={colors.white} />
+            </Button>
+          }
+        />
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} />
           <List style={channelListStyle}>
