@@ -2,7 +2,7 @@ import colors from './colors';
 
 const styleSheet = {
   badge: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.theme,
     borderRadius: '50%',
     boxSizing: 'border-box',
     color: colors.white,

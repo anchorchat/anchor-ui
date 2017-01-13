@@ -24,13 +24,13 @@ const styleSheet = {
     }
   },
   active: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.theme,
     color: colors.white,
     '&:hover': {
-      backgroundColor: darken(colors.green, 0.05)
+      backgroundColor: darken(colors.theme, 0.05)
     },
     '&:active': {
-      backgroundColor: darken(colors.green, 0.15)
+      backgroundColor: darken(colors.theme, 0.15)
     },
     '& $primaryText': {
       color: colors.white
