@@ -8,6 +8,7 @@ import List from './components/list';
 import ListItem from './components/list-item';
 import Message from './components/message';
 import MessageInput from './components/message-input';
+import Theme from './components/theme';
 import ProfileCard from './components/profile-card';
 import EmptyState from './components/empty-state';
 // Icons
@@ -41,6 +42,7 @@ export {
   ListItem,
   Message,
   MessageInput,
+  Theme,
   ProfileCard,
   EmptyState,
   // Icons

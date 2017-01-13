@@ -23,6 +23,10 @@ class ProfileCard extends Component {
     style: {}
   }
 
+  static contextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
   constructor(props) {
     super(props);
 
@@ -37,6 +41,7 @@ class ProfileCard extends Component {
   render() {
     const { username, avatar, sheet: { classes } } = this.props;
     const { className } = this.state;
+    const { color } = this.context;
 
     const style = {
       avatar: {
@@ -49,7 +54,10 @@ class ProfileCard extends Component {
     };
 
     return (
-      <section className={classNames(className, { [classes.avatar]: avatar })}>
+      <section
+        className={classNames(className, { [classes.avatar]: avatar })}
+        style={{ backgroundColor: color }}
+      >
         {avatar ? <Avatar image={avatar} style={style.avatar} /> : null}
         {username}
       </section>

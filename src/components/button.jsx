@@ -23,6 +23,10 @@ class Button extends Component {
     iconButton: false
   }
 
+  static contextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
   constructor(props) {
     super(props);
 
@@ -39,11 +43,13 @@ class Button extends Component {
   render() {
     const { children, onClick, iconButton } = this.props;
     const { iconButtonClassName, className } = this.state;
+    const { color } = this.context;
 
     return (
       <button
         onClick={onClick}
         className={classNames({ [className]: !iconButton, [iconButtonClassName]: iconButton })}
+        style={!iconButton ? { backgroundColor: color } : {}}
       >
         {children}
       </button>

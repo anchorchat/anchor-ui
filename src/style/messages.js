@@ -53,7 +53,8 @@ const styleSheet = {
       marginRight: '66px'
     },
     '&:before': {
-      borderRight: `10px solid ${colors.theme}`,
+      borderRight: '10px solid',
+      borderRightColor: 'inherit',
       left: 'initial',
       right: '-10px',
       transform: 'rotate(180deg)'

@@ -33,6 +33,10 @@ class ListItem extends Component {
     rightButton: null
   }
 
+  static contextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
   constructor(props) {
     super(props);
 
@@ -56,9 +60,14 @@ class ListItem extends Component {
       primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }
     } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
+    const { color } = this.context;
 
     return (
-      <li onClick={onClick} className={classNames(className, { [classes.active]: active })}>
+      <li
+        onClick={onClick}
+        className={classNames(className, { [classes.active]: active })}
+        style={active ? { backgroundColor: color } : {}}
+      >
         <h1 className={primaryTextClassName}>{primaryText}</h1>
         {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}
         {rightButton}

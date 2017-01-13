@@ -43,6 +43,10 @@ class Message extends Component {
     emoji: false
   }
 
+  static contextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
   static createMarkup(text) {
     return {
       __html: emojione.toImage(text)
@@ -81,6 +85,7 @@ class Message extends Component {
       messageBodyClassName,
       messageTimeClassName
     } = this.state;
+    const { color } = this.context;
 
     const style = {
       position: 'absolute',
@@ -98,6 +103,7 @@ class Message extends Component {
         className={
           classNames(className, { [classes.myMessage]: myMessage, [classes.avatar]: avatar })
         }
+        style={myMessage ? { backgroundColor: color, borderRightColor: color } : null}
       >
         {avatar ? <Avatar image={avatar} style={style} /> : null}
         <header className={messageHeaderClassName}>{message.username}</header>

@@ -31,6 +31,10 @@ class AppHeader extends Component {
     rightButton: null
   }
 
+  static contextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
   constructor(props) {
     super(props);
 
@@ -50,9 +54,10 @@ class AppHeader extends Component {
   render() {
     const { text, icon, rightButton } = this.props;
     const { textClassName, headerClassName } = this.state;
+    const { color } = this.context;
 
     return (
-      <header className={headerClassName}>
+      <header className={headerClassName} style={{ backgroundColor: color }}>
         {icon}
         <h1 className={textClassName}>{text}</h1>
         {rightButton}

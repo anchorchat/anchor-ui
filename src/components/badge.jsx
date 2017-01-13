@@ -22,6 +22,10 @@ class Badge extends Component {
     style: {}
   }
 
+  static contextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
   constructor(props) {
     super(props);
 
@@ -36,9 +40,10 @@ class Badge extends Component {
   render() {
     const { content } = this.props;
     const { className } = this.state;
+    const { color } = this.color;
 
     return (
-      <span className={className}>{content}</span>
+      <span className={className} style={{ backgroundColor: color }}>{content}</span>
     );
   }
 }
