@@ -10,6 +10,22 @@ Install from npm
 
 ### Components
 
+`withTheme` higherOrderComponent for providing theme color context
+
+Usage:
+```javascript
+export default withTheme(YourComponent, '#1ba6c4');
+```
+
+Arguments:
+
+| Name           | Type      | Required | Default | Description               |
+|:---------------|:----------|:---------|:--------|:--------------------------|
+| ChildComponent | Component | Yes      |         | Child component to render |
+| color          | String    | Yes      | {}      | Theme color               |
+
+---
+
 `<Avatar />` used for rendering a user's profile image.
 
 Props:
