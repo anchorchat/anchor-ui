@@ -35,11 +35,7 @@ class List extends Component {
     const { children, listRef } = this.props;
     const { className } = this.state;
 
-    if (listRef) {
-      return <ul ref={listRef} className={className}>{children}</ul>;
-    }
-
-    return <ul className={className}>{children}</ul>;
+    return <ul ref={listRef} className={className}>{children}</ul>;
   }
 }
 
