@@ -21,6 +21,21 @@ Props:
 
 ---
 
+`<AppHeader />` the app's header.
+
+Props:
+
+| Name        | Type   | Required | Default | Description                              |
+|:------------|:-------|:---------|:--------|:-----------------------------------------|
+| text        | String | Yes      |         | Title text (your app's name)             |
+| icon        | Node   | No       | null    | Icon (your app's logo)                   |
+| rightButton | Node   | No       | null    | A button for the right side of the input |
+| style       | Object | No       | {}      | Override the styles of the root element  |
+| textStyle   | Object | No       | {}      | Override the styles of the root element  |
+| iconStyle   | Object | No       | {}      | Override the styles of the root element  |
+
+---
+
 `<Badge />` used for notification counter.
 
 Props:
@@ -76,10 +91,11 @@ Props:
 
 Props:
 
-| Name     | Type   | Required | Default | Description                             |
-|:---------|:-------|:---------|:--------|:----------------------------------------|
-| children | Node   | Yes      |         | List content                            |
-| style    | Object | No       | {}      | Override the styles of the root element |
+| Name     | Type     | Required | Default | Description                             |
+|:---------|:---------|:---------|:--------|:----------------------------------------|
+| children | Node     | Yes      |         | List content                            |
+| listRef  | Function | No       |         | Ref function to the <ul /> element      |
+| style    | Object   | No       | {}      | Override the styles of the root element |
 
 ---
 
@@ -134,6 +150,7 @@ Props:
 | inputStyle  | Object   | No       | {}      | Override the styles of the input element |
 | maxLength   | Number   | No       | 500     | The input's max length                   |
 | leftButton  | Node     | No       | null    | A button for the left side of the input  |
+| inputRef    | Function | No       |         | Ref function to the <input /> element    |
 
 ---
 

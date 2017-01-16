@@ -92,6 +92,17 @@ class App extends Component {
     this.sendMessage = this.sendMessage.bind(this);
   }
 
+  componentDidMount() {
+    this.scrollDown();
+  }
+
+  scrollDown() {
+    setTimeout(() => {
+      const node = this.node;
+      node.scrollTop = node.scrollHeight;
+    }, 100);
+  }
+
   changeMessage(event) {
     this.setState({
       message: event.currentTarget.value
@@ -119,6 +130,8 @@ class App extends Component {
       message: ''
     });
 
+    this.scrollDown();
+
     return false;
   }
 
@@ -140,38 +153,6 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
-    const buttonStyle = {
-      position: 'absolute',
-      top: '6px',
-      right: '6px'
-    };
-
-    const leftButtonStyle = {
-      position: 'absolute',
-      left: '20px',
-      top: '4px'
-    };
-
-    const listItemStyle = {
-      paddingRight: '52px'
-    };
-
-    const inputStyle = {
-      paddingLeft: '48px'
-    };
-
-    const logoStyle = {
-      float: 'left',
-      height: '100%',
-      marginRight: '16px'
-    };
-
-    const rightButtonStyle = {
-      position: 'absolute',
-      top: '8px',
-      right: '16px'
-    };
-
     return (
       <section className="demo">
         <AppHeader
@@ -184,15 +165,15 @@ class App extends Component {
               Anchor UI
             </a>
           }
-          icon={<img src={logo} alt="Anchor Chat" style={logoStyle} />}
+          icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
-            <Button onClick={() => {}} iconButton style={rightButtonStyle}>
+            <Button onClick={() => {}} iconButton>
               <IconPower color={colors.white} />
             </Button>
           }
         />
         <article>
-          <ProfileCard username={currentUser} avatar={theDoctor} />
+          <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
@@ -202,19 +183,18 @@ class App extends Component {
                 active={currentChannel === channel.name}
                 rightButton={
                   currentChannel === channel.name
-                  ? <Button style={buttonStyle} iconButton onClick={() => {}}>
+                  ? <Button iconButton onClick={() => {}}>
                     <IconClose color={colors.white} />
                   </Button>
                   : null
                 }
-                style={listItemStyle}
               />
             ))}
           </List>
         </article>
         <article>
           <ChannelHeader name={currentChannel} />
-          <List style={listStyle}>
+          <List listRef={node => (this.node = node)} style={listStyle}>
             {this.state.messages.map((message, index) => (
               <Message
                 message={message} key={`message-${index}`}
@@ -230,11 +210,10 @@ class App extends Component {
             value={this.state.message}
             sendMessage={this.sendMessage}
             leftButton={
-              <Button style={leftButtonStyle} iconButton onClick={() => {}}>
+              <Button iconButton onClick={() => {}}>
                 <IconEmoji />
               </Button>
             }
-            inputStyle={inputStyle}
           />
         </article>
         <article>

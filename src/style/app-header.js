@@ -8,6 +8,7 @@ const styleSheet = {
     height: '56px',
     padding: '10px 16px',
     position: 'relative',
+    width: '100%',
     zIndex: '1'
   },
   text: {
@@ -22,6 +23,16 @@ const styleSheet = {
       lineHeight: 'inherit',
       textDecoration: 'inherit'
     }
+  },
+  button: {
+    position: 'absolute',
+    top: '8px',
+    right: '16px'
+  },
+  icon: {
+    float: 'left',
+    height: '100%',
+    marginRight: '16px'
   }
 };
 

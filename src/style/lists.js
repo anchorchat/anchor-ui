@@ -11,11 +11,16 @@ const styleSheet = {
   listItem: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
+    borderBottom: `1px solid ${colors.white}`,
     cursor: 'pointer',
+    height: '54px',
     listStyle: 'none',
     padding: '10px',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
+    '&:first-of-type': {
+      borderTop: `1px solid ${colors.white}`
+    },
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
@@ -38,6 +43,14 @@ const styleSheet = {
     '& $secondaryText': {
       color: colors.white
     }
+  },
+  rightButton: {
+    paddingRight: '52px'
+  },
+  button: {
+    position: 'absolute',
+    right: '6px',
+    top: '6px'
   },
   primaryText: {
     color: colors.primaryText,
