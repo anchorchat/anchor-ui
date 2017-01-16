@@ -32,14 +32,14 @@ class List extends Component {
   }
 
   render() {
-    const { children, listRef, ...other } = this.props;
+    const { children, listRef } = this.props;
     const { className } = this.state;
 
     if (listRef) {
-      return <ul ref={listRef} {...other} className={className}>{children}</ul>;
+      return <ul ref={listRef} className={className}>{children}</ul>;
     }
 
-    return <ul {...other} className={className}>{children}</ul>;
+    return <ul className={className}>{children}</ul>;
   }
 }
 
