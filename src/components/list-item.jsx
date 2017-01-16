@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class ListItem extends Component {
   static propTypes = {
@@ -35,6 +36,10 @@ class ListItem extends Component {
     rightButton: null
   }
 
+  static contextTypes = {
+    color: PropTypes.string
+  }
+
   constructor(props) {
     super(props);
 
@@ -58,10 +63,13 @@ class ListItem extends Component {
       primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }
     } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
+    const { color } = this.context;
+    const backgroundColor = color || colors.theme;
 
     return (
       <li
         onClick={onClick}
+        style={active ? { backgroundColor } : {}}
         className={
           classNames(className, { [classes.active]: active, [classes.rightButton]: rightButton })
         }

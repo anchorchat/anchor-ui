@@ -12,7 +12,8 @@ import {
   IconClose,
   IconEmoji,
   AppHeader,
-  IconPower
+  IconPower,
+  withTheme
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -230,4 +231,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withTheme(App, '#1ba6c4');

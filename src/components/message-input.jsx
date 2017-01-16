@@ -35,6 +35,10 @@ class MessageInput extends Component {
     leftButton: null
   }
 
+  static contextTypes = {
+    color: PropTypes.string
+  }
+
   constructor(props) {
     super(props);
 
@@ -63,6 +67,8 @@ class MessageInput extends Component {
       onChange, sendMessage, placeholder, value, maxLength, leftButton, inputRef, sheet: { classes }
     } = this.props;
     const { className, inputClassName } = this.state;
+    const { color } = this.context;
+    const iconColor = color || colors.theme;
 
     const buttonStyle = {
       position: 'absolute',
@@ -84,7 +90,7 @@ class MessageInput extends Component {
           ref={inputRef}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
-          <IconSend color={colors.green} />
+          <IconSend color={iconColor} />
         </Button>
       </section>
     );
