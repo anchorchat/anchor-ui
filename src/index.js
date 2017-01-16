@@ -8,7 +8,6 @@ import List from './components/list';
 import ListItem from './components/list-item';
 import Message from './components/message';
 import MessageInput from './components/message-input';
-import Theme from './components/theme';
 import ProfileCard from './components/profile-card';
 import EmptyState from './components/empty-state';
 // Icons
@@ -30,6 +29,8 @@ import IconPower from './icons/icon-power';
 import IconSend from './icons/icon-send';
 // Settings
 import colors from './style/colors';
+// HOC
+import withTheme from './with-theme';
 
 export {
   // Components
@@ -42,7 +43,6 @@ export {
   ListItem,
   Message,
   MessageInput,
-  Theme,
   ProfileCard,
   EmptyState,
   // Icons
@@ -63,5 +63,7 @@ export {
   IconPower,
   IconSend,
   // Settings
-  colors
+  colors,
+  // HOC
+  withTheme
 };
