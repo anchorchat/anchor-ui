@@ -12,6 +12,7 @@ const styleSheet = {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
     cursor: 'pointer',
+    height: '54px',
     listStyle: 'none',
     padding: '10px',
     position: 'relative',
