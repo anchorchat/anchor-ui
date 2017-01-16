@@ -11,11 +11,15 @@ const styleSheet = {
   listItem: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
+    borderBottom: `1px solid ${colors.white}`,
     cursor: 'pointer',
     listStyle: 'none',
     padding: '10px',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
+    '&:first-of-type': {
+      borderTop: `1px solid ${colors.white}`
+    },
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
