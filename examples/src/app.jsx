@@ -153,20 +153,10 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
-    const buttonStyle = {
-      position: 'absolute',
-      top: '6px',
-      right: '6px'
-    };
-
     const leftButtonStyle = {
       position: 'absolute',
       left: '20px',
       top: '4px'
-    };
-
-    const listItemStyle = {
-      paddingRight: '52px'
     };
 
     const inputStyle = {
@@ -215,12 +205,11 @@ class App extends Component {
                 active={currentChannel === channel.name}
                 rightButton={
                   currentChannel === channel.name
-                  ? <Button style={buttonStyle} iconButton onClick={() => {}}>
+                  ? <Button iconButton onClick={() => {}}>
                     <IconClose color={colors.white} />
                   </Button>
                   : null
                 }
-                style={listItemStyle}
               />
             ))}
           </List>

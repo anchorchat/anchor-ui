@@ -12,7 +12,9 @@ class ListItem extends Component {
       classes: PropTypes.shape({
         listItem: PropTypes.string.isRequired,
         primaryText: PropTypes.string.isRequired,
-        secondaryText: PropTypes.string.isRequired
+        secondaryText: PropTypes.string.isRequired,
+        rightButton: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
@@ -58,10 +60,15 @@ class ListItem extends Component {
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
 
     return (
-      <li onClick={onClick} className={classNames(className, { [classes.active]: active })}>
+      <li
+        onClick={onClick}
+        className={
+          classNames(className, { [classes.active]: active, [classes.rightButton]: rightButton })
+        }
+      >
         <h1 className={primaryTextClassName}>{primaryText}</h1>
         {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}
-        {rightButton}
+        {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
       </li>
     );
   }

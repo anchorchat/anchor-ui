@@ -40,6 +40,14 @@ const styleSheet = {
       color: colors.white
     }
   },
+  rightButton: {
+    paddingRight: '52px'
+  },
+  button: {
+    position: 'absolute',
+    right: '6px',
+    top: '6px'
+  },
   primaryText: {
     color: colors.primaryText,
     fontSize: '16px',
