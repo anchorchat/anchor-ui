@@ -29,6 +29,8 @@ import IconPower from './icons/icon-power';
 import IconSend from './icons/icon-send';
 // Settings
 import colors from './style/colors';
+// HOC
+import withTheme from './with-theme';
 
 export {
   // Components
@@ -61,5 +63,7 @@ export {
   IconPower,
   IconSend,
   // Settings
-  colors
+  colors,
+  // HOC
+  withTheme
 };

@@ -11,11 +11,16 @@ const styleSheet = {
   listItem: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
+    borderBottom: `1px solid ${colors.white}`,
     cursor: 'pointer',
+    height: '54px',
     listStyle: 'none',
     padding: '10px',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
+    '&:first-of-type': {
+      borderTop: `1px solid ${colors.white}`
+    },
     '&:hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
@@ -24,13 +29,13 @@ const styleSheet = {
     }
   },
   active: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.theme,
     color: colors.white,
     '&:hover': {
-      backgroundColor: darken(colors.green, 0.05)
+      backgroundColor: darken(colors.theme, 0.05)
     },
     '&:active': {
-      backgroundColor: darken(colors.green, 0.15)
+      backgroundColor: darken(colors.theme, 0.15)
     },
     '& $primaryText': {
       color: colors.white
@@ -38,6 +43,14 @@ const styleSheet = {
     '& $secondaryText': {
       color: colors.white
     }
+  },
+  rightButton: {
+    paddingRight: '52px'
+  },
+  button: {
+    position: 'absolute',
+    right: '6px',
+    top: '6px'
   },
   primaryText: {
     color: colors.primaryText,

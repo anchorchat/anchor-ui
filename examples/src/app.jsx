@@ -12,7 +12,8 @@ import {
   IconClose,
   IconEmoji,
   AppHeader,
-  IconPower
+  IconPower,
+  withTheme
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -153,38 +154,6 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
-    const buttonStyle = {
-      position: 'absolute',
-      top: '6px',
-      right: '6px'
-    };
-
-    const leftButtonStyle = {
-      position: 'absolute',
-      left: '20px',
-      top: '4px'
-    };
-
-    const listItemStyle = {
-      paddingRight: '52px'
-    };
-
-    const inputStyle = {
-      paddingLeft: '48px'
-    };
-
-    const logoStyle = {
-      float: 'left',
-      height: '100%',
-      marginRight: '16px'
-    };
-
-    const rightButtonStyle = {
-      position: 'absolute',
-      top: '8px',
-      right: '16px'
-    };
-
     return (
       <section className="demo">
         <AppHeader
@@ -197,9 +166,9 @@ class App extends Component {
               Anchor UI
             </a>
           }
-          icon={<img src={logo} alt="Anchor Chat" style={logoStyle} />}
+          icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
-            <Button onClick={() => {}} iconButton style={rightButtonStyle}>
+            <Button onClick={() => {}} iconButton>
               <IconPower color={colors.white} />
             </Button>
           }
@@ -215,12 +184,11 @@ class App extends Component {
                 active={currentChannel === channel.name}
                 rightButton={
                   currentChannel === channel.name
-                  ? <Button style={buttonStyle} iconButton onClick={() => {}}>
+                  ? <Button iconButton onClick={() => {}}>
                     <IconClose color={colors.white} />
                   </Button>
                   : null
                 }
-                style={listItemStyle}
               />
             ))}
           </List>
@@ -243,11 +211,10 @@ class App extends Component {
             value={this.state.message}
             sendMessage={this.sendMessage}
             leftButton={
-              <Button style={leftButtonStyle} iconButton onClick={() => {}}>
+              <Button iconButton onClick={() => {}}>
                 <IconEmoji />
               </Button>
             }
-            inputStyle={inputStyle}
           />
         </article>
         <article>
@@ -264,4 +231,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withTheme(App, '#1ba6c4');

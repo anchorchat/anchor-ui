@@ -21,6 +21,14 @@ const styleSheet = {
     '&:focus': {
       outline: 'none'
     }
+  },
+  leftButton: {
+    paddingLeft: '48px'
+  },
+  button: {
+    left: '20px',
+    position: 'absolute',
+    top: '4px'
   }
 };
 

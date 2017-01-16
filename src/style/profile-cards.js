@@ -2,7 +2,7 @@ import colors from './colors';
 
 const styleSheet = {
   profileCard: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.theme,
     color: colors.white,
     fontSize: '18px',
     lineHeight: '18px',

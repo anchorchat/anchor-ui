@@ -1,6 +1,7 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import classNames from 'classnames';
 import getClassNames from '../internal/get-class-names';
 import inputStyleSheet from '../style/inputs';
 import Button from './button';
@@ -14,7 +15,9 @@ class MessageInput extends Component {
     value: PropTypes.string.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
-        messageInput: PropTypes.string.isRequired
+        messageInput: PropTypes.string.isRequired,
+        leftButton: PropTypes.string.isRequired,
+        input: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     placeholder: PropTypes.string.isRequired,
@@ -32,12 +35,16 @@ class MessageInput extends Component {
     leftButton: null
   }
 
+  static contextTypes = {
+    color: PropTypes.string
+  }
+
   constructor(props) {
     super(props);
 
     const { sheet: { classes }, style, inputStyle } = props;
-    const inputClassName = getClassNames(classes, inputStyle, 'messageInput', 'MessageInput');
     const className = getClassNames(classes, style, 'input', 'MessageInput');
+    const inputClassName = getClassNames(classes, inputStyle, 'messageInput', 'MessageInput');
 
     this.state = {
       className,
@@ -57,9 +64,11 @@ class MessageInput extends Component {
 
   render() {
     const {
-      onChange, sendMessage, placeholder, value, maxLength, leftButton, inputRef
+      onChange, sendMessage, placeholder, value, maxLength, leftButton, inputRef, sheet: { classes }
     } = this.props;
     const { className, inputClassName } = this.state;
+    const { color } = this.context;
+    const iconColor = color || colors.theme;
 
     const buttonStyle = {
       position: 'absolute',
@@ -69,9 +78,9 @@ class MessageInput extends Component {
 
     return (
       <section className={className}>
-        {leftButton}
+        {leftButton ? <div className={classes.button}>{leftButton}</div> : null}
         <input
-          className={inputClassName}
+          className={classNames(inputClassName, [classes.leftButton]: leftButton)}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -81,7 +90,7 @@ class MessageInput extends Component {
           ref={inputRef}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
-          <IconSend color={colors.green} />
+          <IconSend color={iconColor} />
         </Button>
       </section>
     );
