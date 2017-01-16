@@ -92,6 +92,17 @@ class App extends Component {
     this.sendMessage = this.sendMessage.bind(this);
   }
 
+  componentDidMount() {
+    this.scrollDown();
+  }
+
+  scrollDown() {
+    setTimeout(() => {
+      const node = this.node;
+      node.scrollTop = node.scrollHeight;
+    }, 100);
+  }
+
   changeMessage(event) {
     this.setState({
       message: event.currentTarget.value
@@ -118,6 +129,8 @@ class App extends Component {
       messages: newMessages,
       message: ''
     });
+
+    this.scrollDown();
 
     return false;
   }
@@ -192,7 +205,7 @@ class App extends Component {
           }
         />
         <article>
-          <ProfileCard username={currentUser} avatar={theDoctor} />
+          <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
@@ -214,7 +227,7 @@ class App extends Component {
         </article>
         <article>
           <ChannelHeader name={currentChannel} />
-          <List style={listStyle}>
+          <List listRef={node => (this.node = node)} style={listStyle}>
             {this.state.messages.map((message, index) => (
               <Message
                 message={message} key={`message-${index}`}
