@@ -28,6 +28,11 @@ const styleSheet = {
     position: 'absolute',
     top: '8px',
     right: '16px'
+  },
+  icon: {
+    float: 'left',
+    height: '100%',
+    marginRight: '16px'
   }
 };
 
