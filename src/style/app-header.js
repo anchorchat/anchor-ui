@@ -23,6 +23,11 @@ const styleSheet = {
       lineHeight: 'inherit',
       textDecoration: 'inherit'
     }
+  },
+  button: {
+    position: 'absolute',
+    top: '8px',
+    right: '16px'
   }
 };
 

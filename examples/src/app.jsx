@@ -159,12 +159,6 @@ class App extends Component {
       marginRight: '16px'
     };
 
-    const rightButtonStyle = {
-      position: 'absolute',
-      top: '8px',
-      right: '16px'
-    };
-
     return (
       <section className="demo">
         <AppHeader
@@ -179,7 +173,7 @@ class App extends Component {
           }
           icon={<img src={logo} alt="Anchor Chat" style={logoStyle} />}
           rightButton={
-            <Button onClick={() => {}} iconButton style={rightButtonStyle}>
+            <Button onClick={() => {}} iconButton>
               <IconPower color={colors.white} />
             </Button>
           }
