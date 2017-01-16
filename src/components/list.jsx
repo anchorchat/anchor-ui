@@ -1,3 +1,4 @@
+/* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import listStyleSheet from '../style/lists';
@@ -6,6 +7,7 @@ import getClassNames from '../internal/get-class-names';
 class List extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    listRef: PropTypes.func,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         list: PropTypes.string.isRequired
@@ -30,10 +32,10 @@ class List extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, listRef } = this.props;
     const { className } = this.state;
 
-    return <ul className={className}>{children}</ul>;
+    return <ul ref={listRef} className={className}>{children}</ul>;
   }
 }
 

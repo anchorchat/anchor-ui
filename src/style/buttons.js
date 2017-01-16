@@ -21,7 +21,7 @@ const styleSheet = {
     }
   },
   button: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.theme,
     background: 'none',
     borderRadius: '5px',
     border: 0,
@@ -32,10 +32,10 @@ const styleSheet = {
     padding: '12px 16px',
     transition: 'background-color .3s ease-in-out',
     '&:hover': {
-      backgroundColor: darken(colors.green, 0.15)
+      backgroundColor: darken(colors.theme, 0.15)
     },
     '&:active': {
-      backgroundColor: darken(colors.green, 0.25)
+      backgroundColor: darken(colors.theme, 0.25)
     },
     '&>*': {
       margin: '0'

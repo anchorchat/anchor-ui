@@ -10,6 +10,22 @@ Install from npm
 
 ### Components
 
+`withTheme` higherOrderComponent for providing theme color context
+
+Usage:
+```javascript
+export default withTheme(YourComponent, '#1ba6c4');
+```
+
+Arguments:
+
+| Name           | Type      | Required | Default | Description               |
+|:---------------|:----------|:---------|:--------|:--------------------------|
+| ChildComponent | Component | Yes      |         | Child component to render |
+| color          | String    | Yes      | {}      | Theme color               |
+
+---
+
 `<Avatar />` used for rendering a user's profile image.
 
 Props:
@@ -18,6 +34,21 @@ Props:
 |:------|:-------|:---------|:--------|:----------------------------------------|
 | image | String | Yes      |         | Path to user's profile image            |
 | style | Object | No       | {}      | Override the styles of the root element |
+
+---
+
+`<AppHeader />` the app's header.
+
+Props:
+
+| Name        | Type   | Required | Default | Description                              |
+|:------------|:-------|:---------|:--------|:-----------------------------------------|
+| text        | String | Yes      |         | Title text (your app's name)             |
+| icon        | Node   | No       | null    | Icon (your app's logo)                   |
+| rightButton | Node   | No       | null    | A button for the right side of the input |
+| style       | Object | No       | {}      | Override the styles of the root element  |
+| textStyle   | Object | No       | {}      | Override the styles of the root element  |
+| iconStyle   | Object | No       | {}      | Override the styles of the root element  |
 
 ---
 
@@ -76,10 +107,11 @@ Props:
 
 Props:
 
-| Name     | Type   | Required | Default | Description                             |
-|:---------|:-------|:---------|:--------|:----------------------------------------|
-| children | Node   | Yes      |         | List content                            |
-| style    | Object | No       | {}      | Override the styles of the root element |
+| Name     | Type     | Required | Default | Description                             |
+|:---------|:---------|:---------|:--------|:----------------------------------------|
+| children | Node     | Yes      |         | List content                            |
+| listRef  | Function | No       |         | Ref function to the <ul /> element      |
+| style    | Object   | No       | {}      | Override the styles of the root element |
 
 ---
 
@@ -116,6 +148,7 @@ Props:
 | messageBodyStyle   | Object         | No       | {}      | Override the styles of the body element                                                           |
 | messageHeaderStyle | Object         | No       | {}      | Override the styles of the header element                                                         |
 | messageTimeStyle   | Object         | No       | {}      | Override the styles of the time element                                                           |
+| emoji              | Boolean        | No       | false   | Enable emojione for messages                                                                      |
 
 ---
 
@@ -133,6 +166,7 @@ Props:
 | inputStyle  | Object   | No       | {}      | Override the styles of the input element |
 | maxLength   | Number   | No       | 500     | The input's max length                   |
 | leftButton  | Node     | No       | null    | A button for the left side of the input  |
+| inputRef    | Function | No       |         | Ref function to the <input /> element    |
 
 ---
 

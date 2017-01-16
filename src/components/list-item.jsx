@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class ListItem extends Component {
   static propTypes = {
@@ -12,7 +13,9 @@ class ListItem extends Component {
       classes: PropTypes.shape({
         listItem: PropTypes.string.isRequired,
         primaryText: PropTypes.string.isRequired,
-        secondaryText: PropTypes.string.isRequired
+        secondaryText: PropTypes.string.isRequired,
+        rightButton: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
@@ -31,6 +34,10 @@ class ListItem extends Component {
     onClick: null,
     active: false,
     rightButton: null
+  }
+
+  static contextTypes = {
+    color: PropTypes.string
   }
 
   constructor(props) {
@@ -56,12 +63,20 @@ class ListItem extends Component {
       primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }
     } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
+    const { color } = this.context;
+    const backgroundColor = color || colors.theme;
 
     return (
-      <li onClick={onClick} className={classNames(className, { [classes.active]: active })}>
+      <li
+        onClick={onClick}
+        style={active ? { backgroundColor } : {}}
+        className={
+          classNames(className, { [classes.active]: active, [classes.rightButton]: rightButton })
+        }
+      >
         <h1 className={primaryTextClassName}>{primaryText}</h1>
         {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}
-        {rightButton}
+        {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
       </li>
     );
   }

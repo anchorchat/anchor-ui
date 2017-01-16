@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import badgeStyleSheet from '../style/badges';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class Badge extends Component {
   static propTypes = {
@@ -22,6 +23,10 @@ class Badge extends Component {
     style: {}
   }
 
+  static contextTypes = {
+    color: PropTypes.string
+  }
+
   constructor(props) {
     super(props);
 
@@ -36,9 +41,11 @@ class Badge extends Component {
   render() {
     const { content } = this.props;
     const { className } = this.state;
+    const { color } = this.color;
+    const backgroundColor = color || colors.theme;
 
     return (
-      <span className={className}>{content}</span>
+      <span className={className} style={{ backgroundColor }}>{content}</span>
     );
   }
 }

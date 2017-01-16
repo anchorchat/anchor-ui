@@ -10,12 +10,16 @@ import {
   colors,
   Button,
   IconClose,
-  IconEmoji
+  IconEmoji,
+  AppHeader,
+  IconPower,
+  withTheme
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
 import dalek from './assets/images/dalek.jpg';
-import emptyBackground from './assets/images/empty_state_users.jpg';
+import emptyStateBackground from './assets/images/empty_state_users.jpg';
+import logo from './assets/images/logo.svg';
 
 const channels = [
   {
@@ -58,7 +62,13 @@ const messages = [
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor
-  }
+  },
+  {
+    body: ':whale2:',
+    createdAt: new Date(),
+    username: 'Dalek',
+    profileImage: dalek
+  },
 ];
 
 const currentUser = 'The Doctor';
@@ -67,7 +77,7 @@ const currentChannel = 'Channel2';
 const emptyState = {
   header: 'Empty state',
   body: 'You have stumbled upon an empty state my good sir.',
-  background: emptyBackground
+  background: emptyStateBackground
 };
 
 class App extends Component {
@@ -81,6 +91,17 @@ class App extends Component {
 
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
+  }
+
+  componentDidMount() {
+    this.scrollDown();
+  }
+
+  scrollDown() {
+    setTimeout(() => {
+      const node = this.node;
+      node.scrollTop = node.scrollHeight;
+    }, 100);
   }
 
   changeMessage(event) {
@@ -110,6 +131,8 @@ class App extends Component {
       message: ''
     });
 
+    this.scrollDown();
+
     return false;
   }
 
@@ -131,39 +154,27 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
-    const buttonStyle = {
-      position: 'absolute',
-      top: '6px',
-      right: '6px'
-    };
-
-    const leftButtonStyle = {
-      position: 'absolute',
-      left: '20px',
-      top: '4px'
-    };
-
-    const listItemStyle = {
-      paddingRight: '52px'
-    };
-
-    const inputStyle = {
-      paddingLeft: '48px'
-    };
-
     return (
       <section className="demo">
-        <h1>
-          <a
-            href="https://github.com/anchorchat/anchor-ui"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Anchor UI
-          </a>
-        </h1>
+        <AppHeader
+          text={
+            <a
+              href="https://github.com/anchorchat/anchor-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Anchor UI
+            </a>
+          }
+          icon={<img src={logo} alt="Anchor Chat" />}
+          rightButton={
+            <Button onClick={() => {}} iconButton>
+              <IconPower color={colors.white} />
+            </Button>
+          }
+        />
         <article>
-          <ProfileCard username={currentUser} avatar={theDoctor} />
+          <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <List style={channelListStyle}>
             {channels.map(channel => (
               <ListItem
@@ -173,24 +184,24 @@ class App extends Component {
                 active={currentChannel === channel.name}
                 rightButton={
                   currentChannel === channel.name
-                  ? <Button style={buttonStyle} iconButton onClick={() => {}}>
+                  ? <Button iconButton onClick={() => {}}>
                     <IconClose color={colors.white} />
                   </Button>
                   : null
                 }
-                style={listItemStyle}
               />
             ))}
           </List>
         </article>
         <article>
           <ChannelHeader name={currentChannel} />
-          <List style={listStyle}>
+          <List listRef={node => (this.node = node)} style={listStyle}>
             {this.state.messages.map((message, index) => (
               <Message
                 message={message} key={`message-${index}`}
                 myMessage={message.username === currentUser}
                 avatar={message.profileImage}
+                emoji
               />
             ))}
           </List>
@@ -200,11 +211,10 @@ class App extends Component {
             value={this.state.message}
             sendMessage={this.sendMessage}
             leftButton={
-              <Button style={leftButtonStyle} iconButton onClick={() => {}}>
+              <Button iconButton onClick={() => {}}>
                 <IconEmoji />
               </Button>
             }
-            inputStyle={inputStyle}
           />
         </article>
         <article>
@@ -221,4 +231,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withTheme(App, '#1ba6c4');
