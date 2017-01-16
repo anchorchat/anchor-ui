@@ -91,10 +91,11 @@ Props:
 
 Props:
 
-| Name     | Type   | Required | Default | Description                             |
-|:---------|:-------|:---------|:--------|:----------------------------------------|
-| children | Node   | Yes      |         | List content                            |
-| style    | Object | No       | {}      | Override the styles of the root element |
+| Name     | Type     | Required | Default | Description                             |
+|:---------|:---------|:---------|:--------|:----------------------------------------|
+| children | Node     | Yes      |         | List content                            |
+| listRef  | Function | No       |         | Ref function to the <ul /> element      |
+| style    | Object   | No       | {}      | Override the styles of the root element |
 
 ---
 
