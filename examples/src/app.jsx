@@ -153,12 +153,6 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
-    const logoStyle = {
-      float: 'left',
-      height: '100%',
-      marginRight: '16px'
-    };
-
     return (
       <section className="demo">
         <AppHeader
@@ -171,7 +165,7 @@ class App extends Component {
               Anchor UI
             </a>
           }
-          icon={<img src={logo} alt="Anchor Chat" style={logoStyle} />}
+          icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
             <Button onClick={() => {}} iconButton>
               <IconPower color={colors.white} />
