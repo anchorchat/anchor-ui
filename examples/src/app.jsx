@@ -153,16 +153,6 @@ class App extends Component {
       borderLeft: `1px solid ${colors.grey}`
     };
 
-    const leftButtonStyle = {
-      position: 'absolute',
-      left: '20px',
-      top: '4px'
-    };
-
-    const inputStyle = {
-      paddingLeft: '48px'
-    };
-
     const logoStyle = {
       float: 'left',
       height: '100%',
@@ -232,11 +222,10 @@ class App extends Component {
             value={this.state.message}
             sendMessage={this.sendMessage}
             leftButton={
-              <Button style={leftButtonStyle} iconButton onClick={() => {}}>
+              <Button iconButton onClick={() => {}}>
                 <IconEmoji />
               </Button>
             }
-            inputStyle={inputStyle}
           />
         </article>
         <article>
