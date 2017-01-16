@@ -1,3 +1,4 @@
+/* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import getClassNames from '../internal/get-class-names';
@@ -20,7 +21,8 @@ class MessageInput extends Component {
     style: PropTypes.instanceOf(Object),
     inputStyle: PropTypes.instanceOf(Object),
     maxLength: PropTypes.number,
-    leftButton: PropTypes.node
+    leftButton: PropTypes.node,
+    inputRef: PropTypes.func,
   }
 
   static defaultProps = {
@@ -54,7 +56,9 @@ class MessageInput extends Component {
   }
 
   render() {
-    const { onChange, sendMessage, placeholder, value, maxLength, leftButton } = this.props;
+    const {
+      onChange, sendMessage, placeholder, value, maxLength, leftButton, inputRef
+    } = this.props;
     const { className, inputClassName } = this.state;
 
     const buttonStyle = {
@@ -74,6 +78,7 @@ class MessageInput extends Component {
           type="text"
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
+          ref={inputRef}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
           <IconSend color={colors.green} />
