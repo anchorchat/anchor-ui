@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import appHeaderStyleSheet from '../style/app-header';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class AppHeader extends Component {
   static propTypes = {
@@ -32,7 +33,7 @@ class AppHeader extends Component {
   }
 
   static contextTypes = {
-    color: PropTypes.string.isRequired
+    color: PropTypes.string
   }
 
   constructor(props) {
@@ -55,9 +56,10 @@ class AppHeader extends Component {
     const { text, icon, rightButton } = this.props;
     const { textClassName, headerClassName } = this.state;
     const { color } = this.context;
+    const backgroundColor = color || colors.theme;
 
     return (
-      <header className={headerClassName} style={{ backgroundColor: color }}>
+      <header className={headerClassName} style={{ backgroundColor }}>
         {icon}
         <h1 className={textClassName}>{text}</h1>
         {rightButton}

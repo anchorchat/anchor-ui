@@ -4,6 +4,7 @@ import getClassNames from '../internal/get-class-names';
 import inputStyleSheet from '../style/inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
+import colors from '../style/colors';
 
 class MessageInput extends Component {
   static propTypes = {
@@ -30,7 +31,7 @@ class MessageInput extends Component {
   }
 
   static contextTypes = {
-    color: PropTypes.string.isRequired
+    color: PropTypes.string
   }
 
   constructor(props) {
@@ -60,6 +61,7 @@ class MessageInput extends Component {
     const { onChange, sendMessage, placeholder, value, maxLength, leftButton } = this.props;
     const { className, inputClassName } = this.state;
     const { color } = this.context;
+    const iconColor = color || colors.theme;
 
     const buttonStyle = {
       position: 'absolute',
@@ -80,7 +82,7 @@ class MessageInput extends Component {
           maxLength={maxLength}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
-          <IconSend color={color} />
+          <IconSend color={iconColor} />
         </Button>
       </section>
     );

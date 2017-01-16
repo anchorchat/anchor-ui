@@ -6,6 +6,7 @@ import emojione from 'emojione';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import messageStyleSheet from '../style/messages';
+import colors from '../style/colors';
 
 class Message extends Component {
   static propTypes = {
@@ -44,7 +45,7 @@ class Message extends Component {
   }
 
   static contextTypes = {
-    color: PropTypes.string.isRequired
+    color: PropTypes.string
   }
 
   static createMarkup(text) {
@@ -86,6 +87,7 @@ class Message extends Component {
       messageTimeClassName
     } = this.state;
     const { color } = this.context;
+    const themeColor = color || colors.theme;
 
     const style = {
       position: 'absolute',
@@ -103,7 +105,7 @@ class Message extends Component {
         className={
           classNames(className, { [classes.myMessage]: myMessage, [classes.avatar]: avatar })
         }
-        style={myMessage ? { backgroundColor: color, borderRightColor: color } : null}
+        style={myMessage ? { backgroundColor: themeColor, borderRightColor: themeColor } : null}
       >
         {avatar ? <Avatar image={avatar} style={style} /> : null}
         <header className={messageHeaderClassName}>{message.username}</header>

@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class ListItem extends Component {
   static propTypes = {
@@ -34,7 +35,7 @@ class ListItem extends Component {
   }
 
   static contextTypes = {
-    color: PropTypes.string.isRequired
+    color: PropTypes.string
   }
 
   constructor(props) {
@@ -61,12 +62,13 @@ class ListItem extends Component {
     } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
     const { color } = this.context;
+    const backgroundColor = color || colors.theme;
 
     return (
       <li
         onClick={onClick}
         className={classNames(className, { [classes.active]: active })}
-        style={active ? { backgroundColor: color } : {}}
+        style={active ? { backgroundColor } : {}}
       >
         <h1 className={primaryTextClassName}>{primaryText}</h1>
         {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}

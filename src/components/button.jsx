@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import buttonStyleSheet from '../style/buttons';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class Button extends Component {
   static propTypes = {
@@ -24,7 +25,7 @@ class Button extends Component {
   }
 
   static contextTypes = {
-    color: PropTypes.string.isRequired
+    color: PropTypes.string
   }
 
   constructor(props) {
@@ -44,12 +45,13 @@ class Button extends Component {
     const { children, onClick, iconButton } = this.props;
     const { iconButtonClassName, className } = this.state;
     const { color } = this.context;
+    const backgroundColor = color || colors.theme;
 
     return (
       <button
         onClick={onClick}
         className={classNames({ [className]: !iconButton, [iconButtonClassName]: iconButton })}
-        style={!iconButton ? { backgroundColor: color } : {}}
+        style={!iconButton ? { backgroundColor } : {}}
       >
         {children}
       </button>
