@@ -150,6 +150,7 @@ Props:
 | inputStyle  | Object   | No       | {}      | Override the styles of the input element |
 | maxLength   | Number   | No       | 500     | The input's max length                   |
 | leftButton  | Node     | No       | null    | A button for the left side of the input  |
+| inputRef    | Function | No       |         | Ref function to the <input /> element    |
 
 ---
 
