@@ -12,6 +12,7 @@ const styleSheet = {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
     cursor: 'pointer',
+    height: '54px',
     listStyle: 'none',
     padding: '10px',
     position: 'relative',
@@ -38,6 +39,14 @@ const styleSheet = {
     '& $secondaryText': {
       color: colors.white
     }
+  },
+  rightButton: {
+    paddingRight: '52px'
+  },
+  button: {
+    position: 'absolute',
+    right: '6px',
+    top: '6px'
   },
   primaryText: {
     color: colors.primaryText,

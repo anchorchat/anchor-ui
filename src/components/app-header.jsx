@@ -13,7 +13,9 @@ class AppHeader extends Component {
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         header: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired
+        text: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     icon: PropTypes.node,
@@ -48,14 +50,14 @@ class AppHeader extends Component {
   }
 
   render() {
-    const { text, icon, rightButton } = this.props;
+    const { text, icon, rightButton, sheet: { classes } } = this.props;
     const { textClassName, headerClassName } = this.state;
 
     return (
       <header className={headerClassName}>
-        {icon}
+        {icon ? <div className={classes.icon}>{icon}</div> : null}
         <h1 className={textClassName}>{text}</h1>
-        {rightButton}
+        {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
       </header>
     );
   }
