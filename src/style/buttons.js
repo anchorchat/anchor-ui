@@ -23,13 +23,14 @@ const styleSheet = {
   button: {
     backgroundColor: colors.theme,
     background: 'none',
-    borderRadius: '5px',
     border: 0,
+    borderRadius: '5px',
+    boxShadow: `0 2px 2px 0 ${colors.boxShadow}`,
     color: colors.white,
     cursor: 'pointer',
     fontSize: '16px',
     outline: 0,
-    padding: '12px 16px',
+    padding: '6.5px 13px',
     transition: 'background-color .3s ease-in-out',
     '&:hover': {
       backgroundColor: darken(colors.theme, 0.15)
