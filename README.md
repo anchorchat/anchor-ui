@@ -158,8 +158,8 @@ Props:
 
 | Name        | Type     | Required | Default | Description                              |
 |:------------|:---------|:---------|:--------|:-----------------------------------------|
-| value       | String   | Yes      |         | The list items primary text              |
-| placeholder | String   | Yes      |         | The list items primary text              |
+| value       | String   | Yes      |         | The input's value                        |
+| placeholder | String   | Yes      |         | The input's placeholder                  |
 | onChange    | Function | Yes      |         | Change the input's value                 |
 | sendMessage | Function | Yes      |         | Send a message                           |
 | style       | Object   | No       | {}      | Override the styles of the root element  |
@@ -179,6 +179,24 @@ Props:
 | username | String | Yes      |         | The user's username                                                  |
 | avatar   | String | Yes      |         | Path to the user's profile image, will render <Avatar /> if supplied |
 | style    | Object | No       | {}      | Override the styles of the root element                              |
+
+---
+
+`<Input />` general input for forms
+
+Props:
+
+| Name        | Type     | Required | Default | Description                              |
+|:------------|:---------|:---------|:--------|:-----------------------------------------|
+| value       | String   | Yes      |         | The input's value                        |
+| label       | String   | Yes      |         | The input's label                        |
+| onChange    | Function | Yes      |         | Change the input's value                 |
+| style       | Object   | No       | {}      | Override the styles of the root element  |
+| inputStyle  | Object   | No       | {}      | Override the styles of the input element |
+| labelStyle  | Object   | No       | {}      | Override the styles of the label element |
+| maxLength   | Number   | No       | 500     | The input's max length                   |
+
+---
 
 ## Installation
 

@@ -13,7 +13,8 @@ import {
   IconEmoji,
   AppHeader,
   IconPower,
-  withTheme
+  withTheme,
+  Input
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -226,6 +227,13 @@ class App extends Component {
             button={<Button onClick={() => {}}><p>Click me</p></Button>}
           />
         </article>
+        <Input
+          onChange={() => {}}
+          value="username"
+          name="username"
+          type="text"
+          label="username"
+        />
       </section>
     );
   }
