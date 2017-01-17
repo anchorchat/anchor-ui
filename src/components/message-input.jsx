@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import getClassNames from '../internal/get-class-names';
-import inputStyleSheet from '../style/inputs';
+import inputStyleSheet from '../style/message-inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
