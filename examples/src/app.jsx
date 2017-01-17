@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   MessageInput,
   ChannelHeader,
   ProfileCard,
@@ -13,7 +14,8 @@ import {
   IconEmoji,
   AppHeader,
   IconPower,
-  withTheme
+  withTheme,
+  Input
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -226,6 +228,17 @@ class App extends Component {
             button={<Button onClick={() => {}}><p>Click me</p></Button>}
           />
         </article>
+        <Alert text="success message" type="success" hideAlert={() => {}} />
+        <Alert text="error message" type="error" hideAlert={() => {}} />
+        <Alert text="warning message" type="warning" hideAlert={() => {}} />
+        <Alert text="info message" type="info" hideAlert={() => {}} />
+        <Input
+          onChange={() => {}}
+          value="username"
+          name="username"
+          type="text"
+          label="username"
+        />
       </section>
     );
   }

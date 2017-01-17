@@ -1,34 +1,33 @@
 import colors from './colors';
 
 const styleSheet = {
-  input: {
-    background: colors.background,
-    padding: '16px',
-    paddingTop: '0',
-    position: 'relative'
+  inputWrapper: {
+    maxWidth: '250px',
+    width: '100%',
   },
-  messageInput: {
+  input: {
     appearance: 'none',
+    backgroundColor: colors.inputs,
     border: '0',
     borderRadius: '3px',
     boxSizing: 'border-box',
-    color: colors.primaryText,
+    color: colors.white,
     fontSize: '16px',
-    height: '48px',
-    paddingLeft: '10px',
-    paddingRight: '48px',
+    lineHeight: '16px',
+    padding: '6.5px',
     width: '100%',
     '&:focus': {
       outline: 'none'
     }
   },
-  leftButton: {
-    paddingLeft: '48px'
-  },
-  button: {
-    left: '20px',
-    position: 'absolute',
-    top: '4px'
+  label: {
+    boxSizing: 'border-box',
+    color: colors.primaryText,
+    display: 'block',
+    paddingBottom: '8px',
+    paddingLeft: '8px',
+    textTransform: 'capitalize',
+    width: '100%'
   }
 };
 
