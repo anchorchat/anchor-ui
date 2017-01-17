@@ -25,14 +25,16 @@ class MessageInput extends Component {
     inputStyle: PropTypes.instanceOf(Object),
     maxLength: PropTypes.number,
     leftButton: PropTypes.node,
-    inputRef: PropTypes.func
+    inputRef: PropTypes.func,
+    disabled: PropTypes.bool
   }
 
   static defaultProps = {
     style: {},
     inputStyle: {},
     maxLength: 500,
-    leftButton: null
+    leftButton: null,
+    disabled: false
   }
 
   static contextTypes = {
@@ -64,7 +66,15 @@ class MessageInput extends Component {
 
   render() {
     const {
-      onChange, sendMessage, placeholder, value, maxLength, leftButton, inputRef, sheet: { classes }
+      onChange,
+      sendMessage,
+      placeholder,
+      value,
+      maxLength,
+      leftButton,
+      inputRef,
+      sheet: { classes },
+      disabled
     } = this.props;
     const { className, inputClassName } = this.state;
     const { color } = this.context;
@@ -88,6 +98,7 @@ class MessageInput extends Component {
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
           ref={inputRef}
+          disabled={!disabled}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
           <IconSend color={iconColor} />
