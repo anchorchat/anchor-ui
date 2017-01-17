@@ -26,6 +26,24 @@ Arguments:
 
 ---
 
+`<Alert />` used for rendering an alert.
+
+Props:
+
+| Name        | Type     | Required | Default | Description                                                                   |
+|:------------|:---------|:---------|:--------|:------------------------------------------------------------------------------|
+| text        | String   | Yes      |         | Text to display                                                               |
+| type        | String   | Yes      |         | Type of alert, either of the following: 'success', 'error', 'warning', 'info' |
+| hideAlert   | Function | Yes      | {}      | Function to hide the alert                                                    |
+| style       | Object   | No       | {}      | Override the styles of the root element                                       |
+| textStyle   | Object   | No       | {}      | Override the styles of the text element                                       |
+| iconStyle   | Object   | No       | {}      | Override the styles of the icon element                                       |
+| buttonStyle | Object   | No       | {}      | Override the styles of the button element                                     |
+
+---
+
+---
+
 `<Avatar />` used for rendering a user's profile image.
 
 Props:
