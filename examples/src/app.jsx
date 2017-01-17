@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   MessageInput,
   ChannelHeader,
   ProfileCard,
@@ -226,6 +227,10 @@ class App extends Component {
             button={<Button onClick={() => {}}><p>Click me</p></Button>}
           />
         </article>
+        <Alert text="success message" type="success" hideAlert={() => {}} />
+        <Alert text="error message" type="error" hideAlert={() => {}} />
+        <Alert text="warning message" type="warning" hideAlert={() => {}} />
+        <Alert text="info message" type="info" hideAlert={() => {}} />
       </section>
     );
   }
