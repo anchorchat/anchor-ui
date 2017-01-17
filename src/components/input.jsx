@@ -1,3 +1,4 @@
+/* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
@@ -22,6 +23,7 @@ class Input extends Component {
     inputStyle: PropTypes.instanceOf(Object),
     labelStyle: PropTypes.instanceOf(Object),
     maxLength: PropTypes.number,
+    inputRef: PropTypes.func
   }
 
   static defaultProps = {
@@ -52,7 +54,7 @@ class Input extends Component {
   }
 
   render() {
-    const { onChange, value, maxLength, label, name, type } = this.props;
+    const { onChange, value, maxLength, label, name, type, inputRef } = this.props;
     const { className, inputClassName, labelClassName } = this.state;
 
     return (
@@ -66,6 +68,7 @@ class Input extends Component {
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
           id={name}
+          ref={inputRef}
         />
       </section>
     );

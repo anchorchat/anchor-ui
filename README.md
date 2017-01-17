@@ -195,6 +195,7 @@ Props:
 | inputStyle  | Object   | No       | {}      | Override the styles of the input element |
 | labelStyle  | Object   | No       | {}      | Override the styles of the label element |
 | maxLength   | Number   | No       | 500     | The input's max length                   |
+| inputRef    | Function | No       |         | Ref function to the <input /> element    |
 
 ---
 

@@ -25,7 +25,7 @@ class MessageInput extends Component {
     inputStyle: PropTypes.instanceOf(Object),
     maxLength: PropTypes.number,
     leftButton: PropTypes.node,
-    inputRef: PropTypes.func,
+    inputRef: PropTypes.func
   }
 
   static defaultProps = {
