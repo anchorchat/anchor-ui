@@ -150,7 +150,6 @@ class App extends Component {
     };
 
     const userListStyle = {
-      height: '100%',
       borderLeft: `1px solid ${colors.grey}`
     };
 
