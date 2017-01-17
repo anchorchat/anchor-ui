@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import getClassNames from '../internal/get-class-names';
-import inputStyleSheet from '../style/inputs';
+import inputStyleSheet from '../style/message-inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
@@ -25,7 +25,7 @@ class MessageInput extends Component {
     inputStyle: PropTypes.instanceOf(Object),
     maxLength: PropTypes.number,
     leftButton: PropTypes.node,
-    inputRef: PropTypes.func,
+    inputRef: PropTypes.func
   }
 
   static defaultProps = {
