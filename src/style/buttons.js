@@ -24,7 +24,7 @@ const styleSheet = {
     backgroundColor: colors.theme,
     background: 'none',
     border: 0,
-    borderRadius: '5px',
+    borderRadius: '3px',
     boxShadow: `0 2px 2px 0 ${colors.boxShadow}`,
     color: colors.white,
     cursor: 'pointer',
