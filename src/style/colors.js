@@ -8,7 +8,8 @@ const colors = {
   secondaryText: '#B4BEC6',
   background: '#F2F7F7',
   icons: '#C4C4C4',
-  inputs: '#6A7591'
+  inputs: '#6A7591',
+  boxShadow: 'rgba(117, 127, 133, 0.23)'
 };
 
 export default colors;
