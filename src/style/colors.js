@@ -14,7 +14,8 @@ const colors = {
     error: '#EDC8C5',
     warning: '#F8F4D5',
     info: '#CDE8F5'
-  }
+  },
+  inputs: '#6A7591'
 };
 
 export default colors;

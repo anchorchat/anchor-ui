@@ -7,6 +7,7 @@ import Button from './components/button';
 import ChannelHeader from './components/channel-header';
 import List from './components/list';
 import ListItem from './components/list-item';
+import Input from './components/input';
 import Message from './components/message';
 import MessageInput from './components/message-input';
 import ProfileCard from './components/profile-card';
@@ -47,6 +48,7 @@ export {
   ChannelHeader,
   List,
   ListItem,
+  Input,
   Message,
   MessageInput,
   ProfileCard,
