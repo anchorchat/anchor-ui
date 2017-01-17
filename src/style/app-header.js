@@ -3,7 +3,7 @@ import colors from './colors';
 const styleSheet = {
   header: {
     background: colors.theme,
-    boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 6px, rgba(0, 0, 0, 0.1) 0px 1px 4px',
+    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
     boxSizing: 'border-box',
     height: '56px',
     padding: '10px 16px',
