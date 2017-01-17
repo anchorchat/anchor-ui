@@ -14,7 +14,8 @@ const styleSheet = {
   icon: {
     height: '24px',
     position: 'absolute',
-    top: '13px',
+    top: '50%',
+    transform: 'translateY(-50%)',
     width: '24px'
   },
   text: {
@@ -27,7 +28,8 @@ const styleSheet = {
   },
   button: {
     position: 'absolute',
-    top: '5px',
+    top: '50%',
+    transform: 'translateY(-50%)',
     right: '5px'
   },
   success: {
