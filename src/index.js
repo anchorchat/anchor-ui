@@ -12,6 +12,7 @@ import Message from './components/message';
 import MessageInput from './components/message-input';
 import ProfileCard from './components/profile-card';
 import EmptyState from './components/empty-state';
+import Loading from './components/loading';
 // Icons
 import IconAddImage from './icons/icon-add-image';
 import IconChannel from './icons/icon-channel';
@@ -53,6 +54,7 @@ export {
   MessageInput,
   ProfileCard,
   EmptyState,
+  Loading,
   // Icons
   IconAddImage,
   IconChannel,
