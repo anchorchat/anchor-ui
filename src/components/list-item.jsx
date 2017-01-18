@@ -7,8 +7,8 @@ import colors from '../style/colors';
 
 class ListItem extends Component {
   static propTypes = {
-    primaryText: PropTypes.string.isRequired,
-    secondaryText: PropTypes.string,
+    primaryText: PropTypes.node.isRequired,
+    secondaryText: PropTypes.node,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         listItem: PropTypes.string.isRequired,

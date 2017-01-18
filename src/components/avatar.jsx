@@ -5,7 +5,7 @@ import getClassNames from '../internal/get-class-names';
 
 class Avatar extends Component {
   static propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         avatar: PropTypes.string.isRequired
