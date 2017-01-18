@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import loaderStyleSheet from '../style/loader';
 import getClassNames from '../internal/get-class-names';
+import colors from '../style/colors';
 
 class Loader extends Component {
   static propTypes = {
@@ -25,6 +26,10 @@ class Loader extends Component {
 
   static defaultProps = {
     style: {}
+  }
+
+  static contextTypes = {
+    color: PropTypes.string
   }
 
   constructor(props) {
@@ -58,14 +63,16 @@ class Loader extends Component {
       loadingBallClassName,
       loadingTextClassName
     } = this.state;
+    const { color } = this.context;
+    const backgroundColor = color || colors.theme;
 
     return (
       <section className={className}>
         <h1 className={headerTextClassName}>{headerText}</h1>
         <div className={classes.ballContainer}>
-          <span className={loadingBallClassName} />
-          <span className={loadingBallClassName} />
-          <span className={loadingBallClassName} />
+          <span className={loadingBallClassName} style={{ backgroundColor }} />
+          <span className={loadingBallClassName} style={{ backgroundColor }} />
+          <span className={loadingBallClassName} style={{ backgroundColor }} />
         </div>
         <h2 className={loadingTextClassName}>{loadingText}</h2>
       </section>
