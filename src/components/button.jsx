@@ -7,7 +7,7 @@ import colors from '../style/colors';
 
 class Button extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     onClick: PropTypes.func.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({

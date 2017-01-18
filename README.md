@@ -87,7 +87,7 @@ Props:
 
 | Name       | Type     | Required | Default | Description                                     |
 |:-----------|:---------|:---------|:--------|:------------------------------------------------|
-| children   | Element  | Yes      |         | Button content                                  |
+| children   | Node  | Yes      |         | Button content                                  |
 | iconButton | Boolean  | No       | false   | Switches between icon-button and normal button  |
 | onClick    | Function | Yes      |         | Button onClick function                         |
 | style      | Object   | No       | {}      | Override the styles of the root element         |
