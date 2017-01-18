@@ -98,7 +98,7 @@ class MessageInput extends Component {
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
           ref={inputRef}
-          disabled={!disabled}
+          disabled={disabled}
         />
         <Button iconButton onClick={sendMessage} style={buttonStyle}>
           <IconSend color={iconColor} />
