@@ -9,7 +9,7 @@ import colors from '../style/colors';
 class ProfileCard extends Component {
   static propTypes = {
     avatar: PropTypes.string,
-    username: PropTypes.string.isRequired,
+    username: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         profileCard: PropTypes.string.isRequired

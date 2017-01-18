@@ -5,7 +5,7 @@ import getClassNames from '../internal/get-class-names';
 
 class ChannelHeader extends Component {
   static propTypes = {
-    name: PropTypes.string.isRequired,
+    name: PropTypes.node.isRequired,
     rightButton: PropTypes.node,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
