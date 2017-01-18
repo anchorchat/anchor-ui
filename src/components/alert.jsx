@@ -21,7 +21,7 @@ const icons = {
 
 class Alert extends Component {
   static propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.node.isRequired,
     type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({

@@ -6,11 +6,7 @@ import colors from '../style/colors';
 
 class Badge extends Component {
   static propTypes = {
-    content: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.node
-    ]).isRequired,
+    content: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         badge: PropTypes.string.isRequired

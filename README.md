@@ -32,7 +32,7 @@ Props:
 
 | Name        | Type     | Required | Default | Description                                                                   |
 |:------------|:---------|:---------|:--------|:------------------------------------------------------------------------------|
-| text        | String   | Yes      |         | Text to display                                                               |
+| text        | Node     | Yes      |         | Text to display                                                               |
 | type        | String   | Yes      |         | Type of alert, either of the following: 'success', 'error', 'warning', 'info' |
 | hideAlert   | Function | Yes      | {}      | Function to hide the alert                                                    |
 | style       | Object   | No       | {}      | Override the styles of the root element                                       |
@@ -61,7 +61,7 @@ Props:
 
 | Name        | Type   | Required | Default | Description                              |
 |:------------|:-------|:---------|:--------|:-----------------------------------------|
-| text        | String | Yes      |         | Title text (your app's name)             |
+| text        | Node   | Yes      |         | Title text (your app's name)             |
 | icon        | Node   | No       | null    | Icon (your app's logo)                   |
 | rightButton | Node   | No       | null    | A button for the right side of the input |
 | style       | Object | No       | {}      | Override the styles of the root element  |
@@ -74,10 +74,10 @@ Props:
 
 Props:
 
-| Name    | Type                 | Required | Default | Description                             |
-|:--------|:---------------------|:---------|:--------|:----------------------------------------|
-| content | String, Number, Node | Yes      |         | Content to be rendered                  |
-| style   | Object               | No       | {}      | Override the styles of the root element |
+| Name    | Type   | Required | Default | Description                             |
+|:--------|:-------|:---------|:--------|:----------------------------------------|
+| content | Node   | Yes      |         | Content to be rendered                  |
+| style   | Object | No       | {}      | Override the styles of the root element |
 
 ---
 
@@ -87,7 +87,7 @@ Props:
 
 | Name       | Type     | Required | Default | Description                                     |
 |:-----------|:---------|:---------|:--------|:------------------------------------------------|
-| children   | Node  | Yes      |         | Button content                                  |
+| children   | Node     | Yes      |         | Button content                                  |
 | iconButton | Boolean  | No       | false   | Switches between icon-button and normal button  |
 | onClick    | Function | Yes      |         | Button onClick function                         |
 | style      | Object   | No       | {}      | Override the styles of the root element         |
@@ -98,12 +98,12 @@ Props:
 
 Props:
 
-| Name              | Type     | Required | Default | Description                              |
-|:------------------|:---------|:---------|:--------|:-----------------------------------------|
-| name              | String   | Yes      |         | Header content                           |
-| style             | Object   | No       | {}      | Override the styles of the root element  |
-| headerTextStyle   | Object   | No       | {}      | Override the styles of the text element  |
-| leftButton        | Node     | No       |         | A button for the left side of the header |
+| Name              | Type   | Required | Default | Description                              |
+|:------------------|:-------|:---------|:--------|:-----------------------------------------|
+| name              | Node   | Yes      |         | Header content                           |
+| style             | Object | No       | {}      | Override the styles of the root element  |
+| headerTextStyle   | Object | No       | {}      | Override the styles of the text element  |
+| leftButton        | Node   | No       |         | A button for the left side of the header |
 
 ---
 
@@ -111,14 +111,14 @@ Props:
 
 Props:
 
-| Name        | Type     | Required | Default | Description                                 |
-|:------------|:---------|:---------|:--------|:--------------------------------------------|
-| headerText  | String   | Yes      |         | Header text                                 |
-| bodyText    | String   | Yes      |         | Body text                                   |
-| button      | Node     | No       | {}      | Render a call to action button              |
-| style       | Object   | No       | {}      | Override the styles of the root element     |
-| headerStyle | Object   | No       | {}      | Override the styles of the header text      |
-| bodyStyle   | Object   | No       | {}      | Override the styles of the body text        |
+| Name        | Type   | Required | Default | Description                                 |
+|:------------|:-------|:---------|:--------|:--------------------------------------------|
+| headerText  | Node   | Yes      |         | Header text                                 |
+| bodyText    | Node   | Yes      |         | Body text                                   |
+| button      | Node   | No       | {}      | Render a call to action button              |
+| style       | Object | No       | {}      | Override the styles of the root element     |
+| headerStyle | Object | No       | {}      | Override the styles of the header text      |
+| bodyStyle   | Object | No       | {}      | Override the styles of the body text        |
 
 ---
 
@@ -140,8 +140,8 @@ Props:
 
 | Name               | Type     | Required | Default | Description                                      |
 |:-------------------|:---------|:---------|:--------|:-------------------------------------------------|
-| primaryText        | String   | Yes      |         | The list item's primary text                     |
-| secondaryText      | String   | Yes      |         | The list item's secondary text                   |
+| primaryText        | Node     | Yes      |         | The list item's primary text                     |
+| secondaryText      | Node     | Yes      |         | The list item's secondary text                   |
 | active             | Boolean  | No       | false   | Add active styles to ListItem                    |
 | onClick            | Function | Yes      |         | Click function for the root element              |
 | style              | Object   | No       | {}      | Override the styles of the root element          |
@@ -195,7 +195,7 @@ Props:
 
 | Name     | Type   | Required | Default | Description                                                          |
 |:---------|:-------|:---------|:--------|:---------------------------------------------------------------------|
-| username | String | Yes      |         | The user's username                                                  |
+| username | Node   | Yes      |         | The user's username                                                  |
 | avatar   | String | Yes      |         | Path to the user's profile image, will render <Avatar /> if supplied |
 | style    | Object | No       | {}      | Override the styles of the root element                              |
 
