@@ -6,10 +6,12 @@ import getClassNames from '../internal/get-class-names';
 class ChannelHeader extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
+    rightButton: PropTypes.node,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         header: PropTypes.string.isRequired,
-        headerText: PropTypes.string.isRequired
+        headerText: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
@@ -18,7 +20,8 @@ class ChannelHeader extends Component {
 
   static defaultProps = {
     style: {},
-    headerTextStyle: {}
+    headerTextStyle: {},
+    rightButton: null
   }
 
   constructor(props) {
@@ -36,12 +39,13 @@ class ChannelHeader extends Component {
   }
 
   render() {
-    const { name } = this.props;
+    const { name, rightButton, sheet: { classes } } = this.props;
     const { textClassName, headerClassName } = this.state;
 
     return (
       <header className={headerClassName}>
         <h1 className={textClassName}>{name}</h1>
+        {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
       </header>
     );
   }
