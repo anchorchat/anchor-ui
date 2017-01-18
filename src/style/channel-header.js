@@ -13,6 +13,11 @@ const styleSheet = {
     margin: 0,
     padding: '15px',
     textAlign: 'center'
+  },
+  button: {
+    position: 'absolute',
+    right: '20px',
+    top: '4px'
   }
 };
 

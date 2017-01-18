@@ -2,17 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import channelHeaderStyleSheet from '../style/channel-header';
 import getClassNames from '../internal/get-class-names';
-import Button from './button';
 
 class ChannelHeader extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    leftButton: PropTypes.node,
-    onLeftButtonClick: PropTypes.func,
+    rightButton: PropTypes.node,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         header: PropTypes.string.isRequired,
-        headerText: PropTypes.string.isRequired
+        headerText: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
@@ -22,8 +21,7 @@ class ChannelHeader extends Component {
   static defaultProps = {
     style: {},
     headerTextStyle: {},
-    leftButton: null,
-    onLeftButtonClick: null
+    rightButton: null
   }
 
   constructor(props) {
@@ -41,13 +39,13 @@ class ChannelHeader extends Component {
   }
 
   render() {
-    const { name, leftButton, onLeftButtonClick } = this.props;
+    const { name, rightButton, sheet: { classes } } = this.props;
     const { textClassName, headerClassName } = this.state;
 
     return (
       <header className={headerClassName}>
         <h1 className={textClassName}>{name}</h1>
-        {leftButton ? <Button iconButton onClick={onLeftButtonClick}>{leftButton}</Button> : null}
+        {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
       </header>
     );
   }
