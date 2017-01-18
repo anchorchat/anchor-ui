@@ -21,7 +21,9 @@ class ChannelHeader extends Component {
 
   static defaultProps = {
     style: {},
-    headerTextStyle: {}
+    headerTextStyle: {},
+    leftButton: null,
+    onLeftButtonClick: null
   }
 
   constructor(props) {
@@ -45,7 +47,7 @@ class ChannelHeader extends Component {
     return (
       <header className={headerClassName}>
         <h1 className={textClassName}>{name}</h1>
-        {leftButton ? <Button iconButton children={leftButton} onClick={onLeftButtonClick} /> : null}
+        {leftButton ? <Button iconButton onClick={onLeftButtonClick}>{leftButton}</Button> : null}
       </header>
     );
   }
