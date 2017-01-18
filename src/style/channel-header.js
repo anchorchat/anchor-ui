@@ -11,12 +11,12 @@ const styleSheet = {
     fontWeight: 'bold',
     lineHeight: '18px',
     margin: 0,
-    padding: '15px',
+    padding: '15px 48px',
     textAlign: 'center'
   },
   button: {
     position: 'absolute',
-    right: '20px',
+    right: '4px',
     top: '4px'
   }
 };
