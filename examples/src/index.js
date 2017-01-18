@@ -1,10 +1,15 @@
 /* eslint react/jsx-filename-extension: [0] */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
 import App from './app';
+import Loader from './loading';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <Router history={browserHistory}>
+    <Route path="/" component={App} />
+    <Route path="loading" component={Loader} />
+  </Router>,
   document.getElementById('root')
 );
