@@ -17,7 +17,8 @@ class MessageInput extends Component {
       classes: PropTypes.shape({
         messageInput: PropTypes.string.isRequired,
         leftButton: PropTypes.string.isRequired,
-        input: PropTypes.string.isRequired
+        input: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     placeholder: PropTypes.string.isRequired,

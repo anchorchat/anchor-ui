@@ -87,7 +87,7 @@ Props:
 
 | Name       | Type     | Required | Default | Description                                     |
 |:-----------|:---------|:---------|:--------|:------------------------------------------------|
-| children   | Element  | Yes      |         | Button content                                  |
+| children   | Node  | Yes      |         | Button content                                  |
 | iconButton | Boolean  | No       | false   | Switches between icon-button and normal button  |
 | onClick    | Function | Yes      |         | Button onClick function                         |
 | style      | Object   | No       | {}      | Override the styles of the root element         |
@@ -98,11 +98,12 @@ Props:
 
 Props:
 
-| Name            | Type   | Required | Default | Description                             |
-|:----------------|:-------|:---------|:--------|:----------------------------------------|
-| name            | String | Yes      |         | Header content                          |
-| style           | Object | No       | {}      | Override the styles of the root element |
-| headerTextStyle | Object | No       | {}      | Override the styles of the text element |
+| Name              | Type     | Required | Default | Description                              |
+|:------------------|:---------|:---------|:--------|:-----------------------------------------|
+| name              | String   | Yes      |         | Header content                           |
+| style             | Object   | No       | {}      | Override the styles of the root element  |
+| headerTextStyle   | Object   | No       | {}      | Override the styles of the text element  |
+| leftButton        | Node     | No       |         | A button for the left side of the header |
 
 ---
 

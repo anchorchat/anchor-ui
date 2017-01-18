@@ -13,7 +13,8 @@ import {
   IconEmoji,
   AppHeader,
   IconPower,
-  withTheme
+  withTheme,
+  IconPeople
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -193,7 +194,14 @@ class App extends Component {
           </List>
         </article>
         <article>
-          <ChannelHeader name={currentChannel} />
+          <ChannelHeader
+            name={currentChannel}
+            rightButton={
+              <Button iconButton onClick={() => {}}>
+                <IconPeople />
+              </Button>
+            }
+          />
           <List listRef={node => (this.node = node)} style={listStyle}>
             {this.state.messages.map((message, index) => (
               <Message
