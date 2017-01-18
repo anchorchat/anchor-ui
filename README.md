@@ -98,11 +98,13 @@ Props:
 
 Props:
 
-| Name            | Type   | Required | Default | Description                             |
-|:----------------|:-------|:---------|:--------|:----------------------------------------|
-| name            | String | Yes      |         | Header content                          |
-| style           | Object | No       | {}      | Override the styles of the root element |
-| headerTextStyle | Object | No       | {}      | Override the styles of the text element |
+| Name              | Type     | Required | Default | Description                             |
+|:------------------|:---------|:---------|:--------|:----------------------------------------|
+| name              | String   | Yes      |         | Header content                          |
+| style             | Object   | No       | {}      | Override the styles of the root element |
+| headerTextStyle   | Object   | No       | {}      | Override the styles of the text element |
+| leftButton        | Node     | No       |         | Left button content                     |
+| onLeftButtonClick | Function | No       |         | Left onClick function                   |
 
 ---
 
