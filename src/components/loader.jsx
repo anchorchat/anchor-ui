@@ -1,10 +1,10 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import loadingStyleSheet from '../style/loading';
+import loaderStyleSheet from '../style/loader';
 import getClassNames from '../internal/get-class-names';
 
-class Loading extends Component {
+class Loader extends Component {
   static propTypes = {
     headerText: PropTypes.node.isRequired,
     loadingText: PropTypes.node.isRequired,
@@ -37,10 +37,10 @@ class Loading extends Component {
       loadingBallStyle,
       loadingTextStyle
     } = props;
-    const className = getClassNames(classes, style, 'loader', 'Loading');
-    const headerTextClassName = getClassNames(classes, headerTextStyle, 'headerText', 'Loading');
-    const loadingBallClassName = getClassNames(classes, loadingBallStyle, 'loadingBall', 'Loading');
-    const loadingTextClassName = getClassNames(classes, loadingTextStyle, 'loadingText', 'Loading');
+    const className = getClassNames(classes, style, 'loader', 'Loader');
+    const headerTextClassName = getClassNames(classes, headerTextStyle, 'headerText', 'Loader');
+    const loadingBallClassName = getClassNames(classes, loadingBallStyle, 'loadingBall', 'Loader');
+    const loadingTextClassName = getClassNames(classes, loadingTextStyle, 'loadingText', 'Loader');
 
     this.state = {
       className,
@@ -73,4 +73,4 @@ class Loading extends Component {
   }
 }
 
-export default injectSheet(loadingStyleSheet)(Loading);
+export default injectSheet(loaderStyleSheet)(Loader);
