@@ -2,10 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import channelHeaderStyleSheet from '../style/channel-header';
 import getClassNames from '../internal/get-class-names';
+import Button from './button';
 
 class ChannelHeader extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
+    leftButton: PropTypes.node,
+    onLeftButtonClick: PropTypes.func,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         header: PropTypes.string.isRequired,
@@ -36,12 +39,13 @@ class ChannelHeader extends Component {
   }
 
   render() {
-    const { name } = this.props;
+    const { name, leftButton, onLeftButtonClick } = this.props;
     const { textClassName, headerClassName } = this.state;
 
     return (
       <header className={headerClassName}>
         <h1 className={textClassName}>{name}</h1>
+        {leftButton ? <Button iconButton children={leftButton} onClick={onLeftButtonClick} /> : null}
       </header>
     );
   }
