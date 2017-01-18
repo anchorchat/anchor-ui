@@ -15,37 +15,41 @@ class ChannelHeader extends Component {
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
-    headerTextStyle: PropTypes.instanceOf(Object)
+    headerTextStyle: PropTypes.instanceOf(Object),
+    rightButtonStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     style: {},
     headerTextStyle: {},
+    rightButtonStyle: {},
     rightButton: null
   }
 
   constructor(props) {
     super(props);
 
-    const { sheet: { classes }, style, headerTextStyle } = props;
+    const { sheet: { classes }, style, headerTextStyle, rightButtonStyle } = props;
 
     const headerClassName = getClassNames(classes, style, 'header', 'ChannelHeader');
     const textClassName = getClassNames(classes, headerTextStyle, 'headerText', 'ChannelHeader');
+    const rightButtonClassName = getClassNames(classes, rightButtonStyle, 'button', 'ChannelHeader');
 
     this.state = {
       textClassName,
-      headerClassName
+      headerClassName,
+      rightButtonClassName
     };
   }
 
   render() {
-    const { name, rightButton, sheet: { classes } } = this.props;
-    const { textClassName, headerClassName } = this.state;
+    const { name, rightButton } = this.props;
+    const { textClassName, headerClassName, rightButtonClassName } = this.state;
 
     return (
       <header className={headerClassName}>
         <h1 className={textClassName}>{name}</h1>
-        {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
+        {rightButton ? <div className={rightButtonClassName}>{rightButton}</div> : null}
       </header>
     );
   }
