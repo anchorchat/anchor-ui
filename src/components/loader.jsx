@@ -1,3 +1,4 @@
+/* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import loaderStyleSheet from '../style/loader';
@@ -16,10 +17,7 @@ class Loader extends Component {
   }
 
   static defaultProps = {
-    style: {},
-    headerTextStyle: {},
-    loadingBallStyle: {},
-    loadingTextStyle: {}
+    style: {}
   }
 
   static contextTypes = {
