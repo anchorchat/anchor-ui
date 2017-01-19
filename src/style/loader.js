@@ -8,7 +8,7 @@ const styleSheet = {
   },
   loadingBall: {
     background: colors.theme,
-    borderRadius: '100%',
+    borderRadius: '50%',
     display: 'block',
     width: '15px',
     height: '15px',
