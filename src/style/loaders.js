@@ -2,11 +2,11 @@ import colors from './colors';
 
 const animationId = 'loader-animation';
 const styleSheet = {
-  ballContainer: {
+  loader: {
     display: 'flex',
     flexDirection: 'row',
   },
-  loadingBall: {
+  dot: {
     background: colors.theme,
     borderRadius: '50%',
     display: 'block',

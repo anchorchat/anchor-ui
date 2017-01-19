@@ -8,15 +8,17 @@ class Loader extends Component {
   static propTypes = {
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
-        ballContainer: PropTypes.string.isRequired,
-        loadingBall: PropTypes.string.isRequired
+        loader: PropTypes.string.isRequired,
+        dot: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
-    style: PropTypes.instanceOf(Object)
+    style: PropTypes.instanceOf(Object),
+    dotStyle: PropTypes.instanceOf(Object),
   }
 
   static defaultProps = {
-    style: {}
+    style: {},
+    dotStyle: {}
   }
 
   static contextTypes = {
@@ -26,28 +28,26 @@ class Loader extends Component {
   constructor(props) {
     super(props);
 
-    const {
-      sheet: { classes },
-      style
-    } = props;
-    const className = getClassNames(classes, style, 'loadingBall', 'Loader');
+    const { sheet: { classes }, style, dotStyle } = props;
+    const className = getClassNames(classes, style, 'loader', 'Loader');
+    const dotClassName = getClassNames(classes, dotStyle, 'dot', 'Loader');
 
     this.state = {
-      className
+      className,
+      dotClassName
     };
   }
 
   render() {
-    const { sheet: { classes } } = this.props;
-    const { className } = this.state;
+    const { className, dotClassName } = this.state;
     const { color } = this.context;
     const backgroundColor = color || colors.theme;
 
     return (
-      <div className={classes.ballContainer}>
-        <span className={className} style={{ backgroundColor }} />
-        <span className={className} style={{ backgroundColor }} />
-        <span className={className} style={{ backgroundColor }} />
+      <div className={className}>
+        <span className={dotClassName} style={{ backgroundColor }} />
+        <span className={dotClassName} style={{ backgroundColor }} />
+        <span className={dotClassName} style={{ backgroundColor }} />
       </div>
     );
   }
