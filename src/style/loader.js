@@ -2,23 +2,6 @@ import colors from './colors';
 
 const animationId = 'loader-animation';
 const styleSheet = {
-  loader: {
-    background: colors.background,
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100vh',
-    justifyContent: 'center',
-    width: '100vw',
-    '& > *': {
-      alignSelf: 'center'
-    }
-  },
-  headerText: {
-    margin: 0,
-    marginBottom: '45px',
-    fontSize: '16px',
-    lineHeight: '16px'
-  },
   ballContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -37,12 +20,6 @@ const styleSheet = {
     '&:last-of-type': {
       animationDelay: '.66s'
     }
-  },
-  loadingText: {
-    margin: 0,
-    marginTop: '45px',
-    fontSize: '16px',
-    lineHeight: '16px'
   },
   [`@keyframes ${animationId}`]: {
     '0%': { opacity: 1 },
