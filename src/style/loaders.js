@@ -5,6 +5,7 @@ const styleSheet = {
   loader: {
     display: 'flex',
     flexDirection: 'row',
+    paddingTop: '10px'
   },
   dot: {
     background: colors.theme,
@@ -25,7 +26,7 @@ const styleSheet = {
     '0%': { opacity: 1 },
     '50%': {
       opacity: 0.25,
-      transform: 'translateY(10px)'
+      transform: 'translateY(-10px)'
     },
     '100%': { opacity: 1 }
   }

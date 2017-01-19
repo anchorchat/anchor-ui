@@ -40,8 +40,9 @@ class Loader extends Component {
 
   render() {
     const { className, dotClassName } = this.state;
+    const { dotStyle } = this.props;
     const { color } = this.context;
-    const backgroundColor = color || colors.theme;
+    const backgroundColor = dotStyle.background || dotStyle.backgroundColor || color || colors.theme;
 
     return (
       <div className={className}>
