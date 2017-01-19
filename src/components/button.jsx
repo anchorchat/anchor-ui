@@ -42,10 +42,10 @@ class Button extends Component {
   }
 
   render() {
-    const { children, onClick, iconButton } = this.props;
+    const { children, onClick, iconButton, style } = this.props;
     const { iconButtonClassName, className } = this.state;
     const { color } = this.context;
-    const backgroundColor = color || colors.theme;
+    const backgroundColor = style.background || style.backgroundColor || color || colors.theme;
 
     return (
       <button
