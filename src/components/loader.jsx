@@ -1,4 +1,3 @@
-/* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import loaderStyleSheet from '../style/loader';
