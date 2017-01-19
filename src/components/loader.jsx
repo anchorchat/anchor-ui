@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import loaderStyleSheet from '../style/loader';
+import loaderStyleSheet from '../style/loaders';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 
