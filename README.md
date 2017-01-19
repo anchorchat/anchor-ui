@@ -150,6 +150,17 @@ Props:
 
 ---
 
+`<Loader />` Loading dots component
+
+Props:
+
+| Name               | Type     | Required | Default | Description                                      |
+|:-------------------|:---------|:---------|:--------|:-------------------------------------------------|
+| style              | Object   | No       | {}      | Override the styles of the root element          |
+| dotStyle           | Object   | No       | {}      | Override the styles of the dot element           |
+
+---
+
 `<Message />`
 
 Props:

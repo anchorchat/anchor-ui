@@ -52,3 +52,29 @@
 .emojione {
   width: 32px;
 }
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loader > * {
+  align-self: center;
+}
+
+.loader > h1 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.loader > h1:nth-of-type(1) {
+  margin-bottom: 45px;
+}
+
+.loader > h1:last-of-type {
+  margin-top: 45px;
+}
