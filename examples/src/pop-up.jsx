@@ -8,7 +8,7 @@ export default withTheme(
       headerText="Trying to reconnect"
       bodyText="Site is unavailable at the moment"
       button={
-        <Button onClick={() => {}} style={{ background: colors.white, color: '#1ba6c4' }}>
+        <Button onClick={() => {}} inverted>
           <p>Logout</p>
         </Button>
       }
