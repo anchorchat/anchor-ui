@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import classNames from 'classnames';
 import loaderStyleSheet from '../style/loaders';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
@@ -14,41 +15,61 @@ class Loader extends Component {
     }).isRequired,
     style: PropTypes.instanceOf(Object),
     dotStyle: PropTypes.instanceOf(Object),
+    inverted: PropTypes.bool
   }
 
   static defaultProps = {
     style: {},
-    dotStyle: {}
+    dotStyle: {},
+    inverted: false
   }
 
   static contextTypes = {
     color: PropTypes.string
   }
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     const { sheet: { classes }, style, dotStyle } = props;
+    const { color } = context;
+
+    const themeStyle = {
+      loader: {
+        backgroundColor: color
+      },
+      inverted: {
+        backgroundColor: colors.white
+      }
+    };
     const className = getClassNames(classes, style, 'loader', 'Loader');
     const dotClassName = getClassNames(classes, dotStyle, 'dot', 'Loader');
+    const themeClassName = getClassNames(classes, themeStyle.loader, 'theme', 'Loader');
+    const invertedClassName = getClassNames(classes, themeStyle.inverted, 'theme', 'Loader');
 
     this.state = {
       className,
-      dotClassName
+      dotClassName,
+      themeClassName,
+      invertedClassName
     };
   }
 
   render() {
-    const { className, dotClassName } = this.state;
-    const { dotStyle } = this.props;
-    const { color } = this.context;
-    const backgroundColor = dotStyle.background || dotStyle.backgroundColor || color || colors.theme;
+    const { inverted } = this.props;
+    const { className, dotClassName, themeClassName, invertedClassName } = this.state;
 
     return (
       <div className={className}>
-        <span className={dotClassName} style={{ backgroundColor }} />
-        <span className={dotClassName} style={{ backgroundColor }} />
-        <span className={dotClassName} style={{ backgroundColor }} />
+        <span
+          className={classNames(dotClassName, themeClassName, { [invertedClassName]: inverted })}
+        />
+        <span
+          className={classNames(dotClassName, themeClassName, { [invertedClassName]: inverted })}
+        />
+        <span
+          className={classNames(dotClassName, themeClassName, { [invertedClassName]: inverted })}
+        />
       </div>
     );
   }
