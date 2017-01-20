@@ -13,6 +13,9 @@ const styleSheet = {
     boxSizing: 'border-box',
     borderBottom: `1px solid ${colors.white}`,
     cursor: 'pointer',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     height: '54px',
     listStyle: 'none',
     padding: '10px',
@@ -65,6 +68,14 @@ const styleSheet = {
     margin: 0,
     marginTop: '2.4px',
     lineHeight: '14px'
+  },
+  leftAvatar: {
+    paddingLeft: '56px'
+  },
+  avatar: {
+    position: 'absolute',
+    left: '8px',
+    top: '6px'
   }
 };
 
