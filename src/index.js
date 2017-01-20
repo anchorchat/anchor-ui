@@ -26,6 +26,7 @@ import IconConversation from './icons/icon-conversation';
 import IconEdit from './icons/icon-edit';
 import IconEmoji from './icons/icon-emoji';
 import IconError from './icons/icon-error';
+import IconExit from './icons/icon-exit';
 import IconInfo from './icons/icon-info';
 import IconMenu from './icons/icon-menu';
 import IconMore from './icons/icon-more';
@@ -69,6 +70,7 @@ export {
   IconEdit,
   IconEmoji,
   IconError,
+  IconExit,
   IconInfo,
   IconMenu,
   IconMore,

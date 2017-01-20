@@ -1,10 +1,10 @@
 import React from 'react';
-import { Loader, colors, withTheme, PopUp, Button } from '../../dist/index';
+import { Loader, withTheme, PopUp, Button } from '../../dist/index';
 
 export default withTheme(
   () =>
     <PopUp
-      image={<Loader dotStyle={{ background: colors.white }} />}
+      image={<Loader inverted />}
       headerText="Trying to reconnect"
       bodyText="Site is unavailable at the moment"
       button={

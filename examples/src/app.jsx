@@ -12,7 +12,7 @@ import {
   IconClose,
   IconEmoji,
   AppHeader,
-  IconPower,
+  IconExit,
   withTheme,
   IconPeople
 } from '../../dist/index';
@@ -169,7 +169,7 @@ class App extends Component {
           icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
             <Button onClick={() => {}} iconButton>
-              <IconPower color={colors.white} />
+              <IconExit color={colors.white} />
             </Button>
           }
         />
