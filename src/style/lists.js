@@ -65,6 +65,14 @@ const styleSheet = {
     margin: 0,
     marginTop: '2.4px',
     lineHeight: '14px'
+  },
+  leftAvatar: {
+    paddingLeft: '56px'
+  },
+  avatar: {
+    position: 'absolute',
+    left: '8px',
+    top: '6px'
   }
 };
 

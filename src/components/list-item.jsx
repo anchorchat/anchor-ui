@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
+import Avatar from './avatar';
 
 class ListItem extends Component {
   static propTypes = {
@@ -15,7 +16,9 @@ class ListItem extends Component {
         primaryText: PropTypes.string.isRequired,
         secondaryText: PropTypes.string.isRequired,
         rightButton: PropTypes.string.isRequired,
-        button: PropTypes.string.isRequired
+        button: PropTypes.string.isRequired,
+        leftAvatar: PropTypes.string.isRequired,
+        avatar: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
@@ -23,7 +26,8 @@ class ListItem extends Component {
     secondaryTextStyle: PropTypes.instanceOf(Object),
     onClick: PropTypes.func,
     active: PropTypes.bool,
-    rightButton: PropTypes.node
+    rightButton: PropTypes.node,
+    avatar: PropTypes.string
   }
 
   static defaultProps = {
@@ -33,7 +37,8 @@ class ListItem extends Component {
     secondaryTextStyle: {},
     onClick: null,
     active: false,
-    rightButton: null
+    rightButton: null,
+    avatar: ''
   }
 
   static contextTypes = {
@@ -60,7 +65,7 @@ class ListItem extends Component {
 
   render() {
     const {
-      primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }
+      primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }, avatar
     } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
     const { color } = this.context;
@@ -71,9 +76,21 @@ class ListItem extends Component {
         onClick={onClick}
         style={active ? { backgroundColor } : {}}
         className={
-          classNames(className, { [classes.active]: active, [classes.rightButton]: rightButton })
+          classNames(
+            className,
+            {
+              [classes.active]: active,
+              [classes.rightButton]: rightButton,
+              [classes.leftAvatar]: avatar
+            }
+          )
         }
       >
+        {
+          avatar
+          ? <div className={classes.avatar}><Avatar image={avatar} /></div>
+          : null
+        }
         <h1 className={primaryTextClassName}>{primaryText}</h1>
         {secondaryText ? <h2 className={secondaryTextClassName}>{secondaryText}</h2> : null}
         {rightButton ? <div className={classes.button}>{rightButton}</div> : null}
