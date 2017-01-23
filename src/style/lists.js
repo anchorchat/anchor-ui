@@ -59,7 +59,8 @@ const styleSheet = {
     color: colors.primaryText,
     fontSize: '16px',
     margin: 0,
-    lineHeight: '16px'
+    lineHeight: '16px',
+    userSelect: 'none'
   },
   secondaryText: {
     color: colors.secondaryText,
@@ -67,7 +68,8 @@ const styleSheet = {
     fontWeight: 'normal',
     margin: 0,
     marginTop: '2.4px',
-    lineHeight: '14px'
+    lineHeight: '14px',
+    userSelect: 'none'
   },
   leftAvatar: {
     paddingLeft: '56px'
