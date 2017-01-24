@@ -15,7 +15,7 @@ import {
   IconExit,
   withTheme,
   IconPeople,
-  IconMenu
+  IconChannels
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -215,7 +215,7 @@ class App extends Component {
             }
             leftButton={
               <Button iconButton onClick={() => {}}>
-                <IconMenu />
+                <IconChannels />
               </Button>
             }
           />
