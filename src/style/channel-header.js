@@ -14,9 +14,14 @@ const styleSheet = {
     padding: '15px 48px',
     textAlign: 'center'
   },
-  button: {
+  buttonRight: {
     position: 'absolute',
     right: '4px',
+    top: '4px'
+  },
+  buttonLeft: {
+    position: 'absolute',
+    left: '4px',
     top: '4px'
   }
 };

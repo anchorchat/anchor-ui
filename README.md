@@ -98,12 +98,15 @@ Props:
 
 Props:
 
-| Name              | Type   | Required | Default | Description                              |
-|:------------------|:-------|:---------|:--------|:-----------------------------------------|
-| name              | Node   | Yes      |         | Header content                           |
-| style             | Object | No       | {}      | Override the styles of the root element  |
-| headerTextStyle   | Object | No       | {}      | Override the styles of the text element  |
-| leftButton        | Node   | No       |         | A button for the left side of the header |
+| Name              | Type   | Required | Default | Description                                    |
+|:------------------|:-------|:---------|:--------|:-----------------------------------------------|
+| name              | Node   | Yes      |         | Header content                                 |
+| style             | Object | No       | {}      | Override the styles of the root element        |
+| headerTextStyle   | Object | No       | {}      | Override the styles of the text element        |
+| leftButton        | Node   | No       |         | A button for the left side of the header       |
+| leftButtonStyle   | Node   | No       | {}      | Override the styles of the leftButton element  |
+| rightButton       | Node   | No       |         | A button for the right side of the header      |
+| rightButtonStyle  | Node   | No       | {}      | Override the styles of the rightButton element |
 
 ---
 
