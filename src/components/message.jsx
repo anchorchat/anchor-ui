@@ -22,7 +22,12 @@ class Message extends Component {
     timeFormat: PropTypes.string,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
-        message: PropTypes.string.isRequired
+        message: PropTypes.string.isRequired,
+        messageHeader: PropTypes.string.isRequired,
+        messageBody: PropTypes.string.isRequired,
+        messageTime: PropTypes.string.isRequired,
+        messageContainer: PropTypes.string.isRequired,
+        myContainer: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
@@ -102,21 +107,31 @@ class Message extends Component {
 
     return (
       <section
-        className={
-          classNames(className, { [classes.myMessage]: myMessage, [classes.avatar]: avatar })
-        }
-        style={myMessage ? { backgroundColor: themeColor, borderRightColor: themeColor } : null}
+        className={classNames(classes.messageContainer, { [classes.myContainer]: myMessage })}
       >
-        {avatar ? <Avatar image={avatar} style={style} /> : null}
-        <header className={messageHeaderClassName}>{message.username}</header>
-        <p className={messageBodyClassName}>
-          {
-            emoji
-            ? <span dangerouslySetInnerHTML={Message.createMarkup(message.body)} />
-            : message.body
+        <section
+          className={
+            classNames(className, { [classes.myMessage]: myMessage, [classes.avatar]: avatar })
           }
-        </p>
-        <span className={messageTimeClassName}>{moment(message.createdAt).format(timeFormat)}</span>
+          style={myMessage ? { backgroundColor: themeColor, borderRightColor: themeColor } : null}
+        >
+          {
+            avatar
+            ? <div style={style}><Avatar image={avatar} /></div>
+            : null
+          }
+          <header className={messageHeaderClassName}>{message.username}</header>
+          <p className={messageBodyClassName}>
+            {
+              emoji
+              ? <span dangerouslySetInnerHTML={Message.createMarkup(message.body)} />
+              : message.body
+            }
+          </p>
+          <span className={messageTimeClassName}>
+            {moment(message.createdAt).format(timeFormat)}
+          </span>
+        </section>
       </section>
     );
   }
