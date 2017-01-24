@@ -1,13 +1,20 @@
 import colors from './colors';
 
 const styleSheet = {
+  messageContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: '16px'
+  },
+  myContainer: {
+    flexDirection: 'row-reverse'
+  },
   message: {
+    display: 'inline-block',
     backgroundColor: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
-    clear: 'both',
     color: colors.primaryText,
-    float: 'left',
     marginBottom: '34px',
     marginLeft: '16px',
     maxWidth: '75%',
@@ -33,7 +40,6 @@ const styleSheet = {
   myMessage: {
     backgroundColor: colors.theme,
     color: 'white',
-    float: 'right',
     marginLeft: '0',
     marginRight: '16px',
     '& $messageBody': {
