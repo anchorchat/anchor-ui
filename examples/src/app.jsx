@@ -14,7 +14,8 @@ import {
   AppHeader,
   IconExit,
   withTheme,
-  IconPeople
+  IconPeople,
+  IconMenu
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -210,6 +211,11 @@ class App extends Component {
             rightButton={
               <Button iconButton onClick={() => {}}>
                 <IconPeople />
+              </Button>
+            }
+            leftButton={
+              <Button iconButton onClick={() => {}}>
+                <IconMenu />
               </Button>
             }
           />
