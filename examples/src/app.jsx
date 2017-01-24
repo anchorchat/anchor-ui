@@ -138,11 +138,22 @@ class App extends Component {
   }
 
   render() {
+    const channelStyle = {
+      background: colors.background,
+      height: 'calc(100% - 112px)',
+      position: 'relative'
+    };
+
     const listStyle = {
       overflow: 'auto',
-      background: colors.background,
+      height: 'auto',
+      maxHeight: '100%',
       padding: '16px',
-      height: 'calc(100% - 112px)'
+      paddingBottom: '0',
+      background: 'none',
+      position: 'absolute',
+      bottom: '0',
+      boxSizing: 'border-box',
     };
 
     const channelListStyle = {
@@ -202,16 +213,18 @@ class App extends Component {
               </Button>
             }
           />
-          <List listRef={node => (this.node = node)} style={listStyle}>
-            {this.state.messages.map((message, index) => (
-              <Message
-                message={message} key={`message-${index}`}
-                myMessage={message.username === currentUser}
-                avatar={message.profileImage}
-                emoji
-              />
-            ))}
-          </List>
+          <article style={channelStyle}>
+            <List listRef={node => (this.node = node)} style={listStyle}>
+              {this.state.messages.map((message, index) => (
+                <Message
+                  message={message} key={`message-${index}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.profileImage}
+                  emoji
+                />
+              ))}
+            </List>
+          </article>
           <MessageInput
             onChange={this.changeMessage}
             placeholder="Type something..."
