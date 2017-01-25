@@ -27,6 +27,7 @@ import IconEdit from './icons/icon-edit';
 import IconEmoji from './icons/icon-emoji';
 import IconError from './icons/icon-error';
 import IconExit from './icons/icon-exit';
+import IconHammer from './icons/icon-hammer';
 import IconHand from './icons/icon-hand';
 import IconInfo from './icons/icon-info';
 import IconLock from './icons/icon-lock';
@@ -75,6 +76,7 @@ export {
   IconEmoji,
   IconError,
   IconExit,
+  IconHammer,
   IconHand,
   IconInfo,
   IconLock,
