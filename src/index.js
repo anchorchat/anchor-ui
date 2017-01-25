@@ -27,12 +27,16 @@ import IconEdit from './icons/icon-edit';
 import IconEmoji from './icons/icon-emoji';
 import IconError from './icons/icon-error';
 import IconExit from './icons/icon-exit';
+import IconHand from './icons/icon-hand';
 import IconInfo from './icons/icon-info';
+import IconLock from './icons/icon-lock';
 import IconMenu from './icons/icon-menu';
 import IconMore from './icons/icon-more';
+import IconMute from './icons/icon-mute';
 import IconPeople from './icons/icon-people';
 import IconPerson from './icons/icon-person';
 import IconPower from './icons/icon-power';
+import IconRocket from './icons/icon-rocket';
 import IconSend from './icons/icon-send';
 import IconSuccess from './icons/icon-success';
 import IconWarning from './icons/icon-warning';
@@ -71,12 +75,16 @@ export {
   IconEmoji,
   IconError,
   IconExit,
+  IconHand,
   IconInfo,
+  IconLock,
   IconMenu,
   IconMore,
+  IconMute,
   IconPeople,
   IconPerson,
   IconPower,
+  IconRocket,
   IconSend,
   IconSuccess,
   IconWarning,
