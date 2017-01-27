@@ -74,10 +74,11 @@ Props:
 
 Props:
 
-| Name    | Type   | Required | Default | Description                             |
-|:--------|:-------|:---------|:--------|:----------------------------------------|
-| content | Node   | Yes      |         | Content to be rendered                  |
-| style   | Object | No       | {}      | Override the styles of the root element |
+| Name     | Type   | Required | Default | Description                                                                  |
+|:---------|:-------|:---------|:--------|:-----------------------------------------------------------------------------|
+| value    | Number | Yes      |         | Content to be rendered                                                       |
+| maxValue | Number | Yes      |         | The badge's max value, will display `${maxValue}+` if this value is exceeded |
+| style    | Object | No       | {}      | Override the styles of the root element                                      |
 
 ---
 
