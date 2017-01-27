@@ -7,14 +7,15 @@ import colors from '../style/colors';
 
 class Badge extends Component {
   static propTypes = {
-    content: PropTypes.node.isRequired,
+    value: PropTypes.number.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         badge: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     style: PropTypes.instanceOf(Object),
-    inverted: PropTypes.bool
+    inverted: PropTypes.bool,
+    maxValue: PropTypes.number.isRequired
   }
 
   static defaultProps = {
@@ -54,8 +55,14 @@ class Badge extends Component {
   }
 
   render() {
-    const { content, inverted } = this.props;
+    const { value, maxValue, inverted } = this.props;
     const { className, themeClassName, invertedClassName } = this.state;
+
+    let content = value;
+
+    if (value > maxValue) {
+      content = `${maxValue}+`;
+    }
 
     return (
       <span
