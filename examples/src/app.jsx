@@ -15,7 +15,8 @@ import {
   IconExit,
   withTheme,
   IconPeople,
-  IconChannels
+  IconChannels,
+  Badge
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -201,6 +202,8 @@ class App extends Component {
                   </Button>
                   : null
                 }
+                avatar={dalek}
+                badge={<Badge inverted={currentChannel === channel.name} content="9+" />}
               />
             ))}
           </List>
