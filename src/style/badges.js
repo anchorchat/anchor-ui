@@ -6,12 +6,13 @@ const styleSheet = {
     borderRadius: '50%',
     boxSizing: 'border-box',
     color: colors.white,
+    display: 'block',
     fontSize: '12px',
-    height: '24px',
-    lineHeight: '12px',
-    padding: '6px',
+    height: '20px',
+    lineHeight: '16px',
+    padding: '3px',
     textAlign: 'center',
-    width: '24px'
+    width: '20px'
   }
 };
 
