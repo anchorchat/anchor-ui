@@ -5,6 +5,7 @@ const styleSheet = {
     backgroundColor: colors.theme,
     borderRadius: '50%',
     boxSizing: 'border-box',
+    boxShadow: `0 4px 4px 0 ${colors.boxShadow}`,
     color: colors.white,
     display: 'block',
     fontSize: '12px',
