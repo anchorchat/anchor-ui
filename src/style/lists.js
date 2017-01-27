@@ -78,6 +78,11 @@ const styleSheet = {
     position: 'absolute',
     left: '8px',
     top: '6px'
+  },
+  badge: {
+    position: 'absolute',
+    right: '-3px',
+    top: '-3px'
   }
 };
 

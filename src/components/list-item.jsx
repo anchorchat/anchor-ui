@@ -27,7 +27,8 @@ class ListItem extends Component {
     onClick: PropTypes.func,
     active: PropTypes.bool,
     rightButton: PropTypes.node,
-    avatar: PropTypes.string
+    avatar: PropTypes.string,
+    badge: PropTypes.node
   }
 
   static defaultProps = {
@@ -38,7 +39,8 @@ class ListItem extends Component {
     onClick: null,
     active: false,
     rightButton: null,
-    avatar: ''
+    avatar: '',
+    badge: null
   }
 
   static contextTypes = {
@@ -65,7 +67,7 @@ class ListItem extends Component {
 
   render() {
     const {
-      primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }, avatar
+      primaryText, secondaryText, onClick, active, rightButton, sheet: { classes }, avatar, badge
     } = this.props;
     const { className, primaryTextClassName, secondaryTextClassName } = this.state;
     const { color } = this.context;
@@ -88,7 +90,10 @@ class ListItem extends Component {
       >
         {
           avatar
-          ? <div className={classes.avatar}><Avatar image={avatar} /></div>
+          ? <div className={classes.avatar}>
+            {badge ? <div className={classes.badge}>{badge}</div> : null}
+            <Avatar image={avatar} />
+          </div>
           : null
         }
         <h1 className={primaryTextClassName}>{primaryText}</h1>
