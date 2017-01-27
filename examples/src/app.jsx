@@ -203,7 +203,7 @@ class App extends Component {
                   : null
                 }
                 avatar={dalek}
-                badge={<Badge inverted={currentChannel === channel.name} content="9+" />}
+                badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
               />
             ))}
           </List>
