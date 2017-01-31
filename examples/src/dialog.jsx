@@ -1,9 +1,9 @@
 import React from 'react';
-import { Loader, withTheme, PopUp, Button } from '../../dist/index';
+import { Loader, withTheme, Dialog, Button } from '../../dist/index';
 
 export default withTheme(
   () =>
-    <PopUp
+    <Dialog
       image={<Loader inverted />}
       headerText="Trying to reconnect"
       bodyText="Site is unavailable at the moment"
@@ -12,7 +12,7 @@ export default withTheme(
           <p>Logout</p>
         </Button>
       }
-      closePopUp={() => console.log('close')}
+      hideDialog={() => console.log('hide')}
     />,
   '#1ba6c4'
 );
