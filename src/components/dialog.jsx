@@ -7,7 +7,7 @@ import colors from '../style/colors';
 import Button from './button';
 import IconClose from '../icons/icon-close';
 
-class PopUp extends Component {
+class Dialog extends Component {
   static propTypes = {
     headerText: PropTypes.node.isRequired,
     bodyText: PropTypes.node.isRequired,
@@ -28,7 +28,7 @@ class PopUp extends Component {
     overlayStyle: PropTypes.instanceOf(Object),
     headerStyle: PropTypes.instanceOf(Object),
     bodyStyle: PropTypes.instanceOf(Object),
-    closePopUp: PropTypes.func.isRequired
+    hideDialog: PropTypes.func.isRequired
   }
 
   static defaultProps = {
@@ -50,10 +50,10 @@ class PopUp extends Component {
 
     const { sheet: { classes }, style, overlayStyle, headerStyle, bodyStyle } = props;
 
-    const className = getClassNames(classes, style, 'popUp', 'PopUp');
-    const overlayClassName = getClassNames(classes, overlayStyle, 'overlay', 'PopUp');
-    const headerClassName = getClassNames(classes, headerStyle, 'headerText', 'PopUp');
-    const bodyClassName = getClassNames(classes, bodyStyle, 'bodyText', 'PopUp');
+    const className = getClassNames(classes, style, 'popUp', 'Dialog');
+    const overlayClassName = getClassNames(classes, overlayStyle, 'overlay', 'Dialog');
+    const headerClassName = getClassNames(classes, headerStyle, 'headerText', 'Dialog');
+    const bodyClassName = getClassNames(classes, bodyStyle, 'bodyText', 'Dialog');
 
     this.state = {
       className,
@@ -64,7 +64,7 @@ class PopUp extends Component {
   }
 
   render() {
-    const { headerText, bodyText, button, image, closePopUp, sheet: { classes } } = this.props;
+    const { headerText, bodyText, button, image, hideDialog, sheet: { classes } } = this.props;
     const { className, overlayClassName, headerClassName, bodyClassName } = this.state;
     const { color } = this.context;
     const backgroundColor = color || colors.theme;
@@ -77,9 +77,9 @@ class PopUp extends Component {
 
     return (
       <section className={overlayClassName}>
-        <section className={classes.clickAway} onClick={closePopUp} />
+        <section className={classes.clickAway} onClick={hideDialog} />
         <section className={className} style={{ backgroundColor }}>
-          <Button style={style} onClick={closePopUp} iconButton>
+          <Button style={style} onClick={hideDialog} iconButton>
             <IconClose color={colors.white} />
           </Button>
           {image}
@@ -96,4 +96,4 @@ class PopUp extends Component {
   }
 }
 
-export default injectSheet(popUpStyleSheet)(PopUp);
+export default injectSheet(popUpStyleSheet)(Dialog);

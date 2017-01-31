@@ -13,7 +13,7 @@ import MessageInput from './components/message-input';
 import ProfileCard from './components/profile-card';
 import EmptyState from './components/empty-state';
 import Loader from './components/loader';
-import PopUp from './components/pop-up';
+import Dialog from './components/dialog';
 // Icons
 import IconAddImage from './icons/icon-add-image';
 import IconChannel from './icons/icon-channel';
@@ -62,7 +62,7 @@ export {
   ProfileCard,
   EmptyState,
   Loader,
-  PopUp,
+  Dialog,
   // Icons
   IconAddImage,
   IconChannel,
