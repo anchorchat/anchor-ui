@@ -3,6 +3,7 @@ import moment from 'moment';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import emojione from 'emojione';
+import escape from 'escape-html';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import messageStyleSheet from '../style/messages';
@@ -54,8 +55,10 @@ class Message extends Component {
   }
 
   static createMarkup(text) {
+    const escapedText = escape(text);
+
     return {
-      __html: emojione.toImage(text)
+      __html: emojione.toImage(escapedText)
     };
   }
 
