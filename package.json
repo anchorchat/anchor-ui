@@ -65,5 +65,7 @@
     "react": "^15.4.1",
     "react-jss": "^5.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "escape-html": "^1.0.3"
+  }
 }
