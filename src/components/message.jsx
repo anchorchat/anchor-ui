@@ -37,7 +37,8 @@ class Message extends Component {
     messageBodyStyle: PropTypes.instanceOf(Object),
     messageTimeStyle: PropTypes.instanceOf(Object),
     myMessage: PropTypes.bool,
-    emoji: PropTypes.bool
+    emoji: PropTypes.bool,
+    enableLinks: PropTypes.bool
   }
 
   static defaultProps = {
@@ -48,29 +49,12 @@ class Message extends Component {
     messageBodyStyle: {},
     messageTimeStyle: {},
     myMessage: false,
-    emoji: false
+    emoji: false,
+    enableLinks: false
   }
 
   static contextTypes = {
     color: PropTypes.string
-  }
-
-  static createMarkup(text) {
-    const escapedText = escape(text);
-
-    const urlSchemeRegex = /^(?:https?:\/\/)/;
-
-    const parsedText = escapedText.replace(urlRegex, (url) => {
-      if (!urlSchemeRegex.test(url)) {
-        // Add default http:// scheme for urls like example.com
-        return (`<a href="http://${url}" target="_blank">${url}</a>`);
-      }
-      return (`<a href="${url}" target="_blank">${url}</a>`);
-    });
-
-    return {
-      __html: emojione.toImage(parsedText)
-    };
   }
 
   constructor(props) {
@@ -94,6 +78,30 @@ class Message extends Component {
       messageHeaderClassName,
       messageBodyClassName,
       messageTimeClassName
+    };
+  }
+
+  createMarkup(text) {
+    const { enableLinks } = this.props;
+
+    const escapedText = escape(text);
+
+    let parsedText = escapedText;
+
+    if (enableLinks) {
+      const urlSchemeRegex = /^(?:https?:\/\/)/;
+
+      parsedText = escapedText.replace(urlRegex, (url) => {
+        if (!urlSchemeRegex.test(url)) {
+          // Add default http:// scheme for urls like example.com
+          return (`<a href="http://${url}" target="_blank">${url}</a>`);
+        }
+        return (`<a href="${url}" target="_blank">${url}</a>`);
+      });
+    }
+
+    return {
+      __html: emojione.toImage(parsedText)
     };
   }
 
@@ -138,7 +146,7 @@ class Message extends Component {
           <p className={messageBodyClassName}>
             {
               emoji
-              ? <span dangerouslySetInnerHTML={Message.createMarkup(message.body)} />
+              ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
               : message.body
             }
           </p>
