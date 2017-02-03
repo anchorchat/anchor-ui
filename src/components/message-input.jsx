@@ -18,7 +18,8 @@ class MessageInput extends Component {
         messageInput: PropTypes.string.isRequired,
         leftButton: PropTypes.string.isRequired,
         input: PropTypes.string.isRequired,
-        button: PropTypes.string.isRequired
+        button: PropTypes.string.isRequired,
+        rightButton: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     placeholder: PropTypes.string.isRequired,
@@ -81,15 +82,15 @@ class MessageInput extends Component {
     const { color } = this.context;
     const iconColor = color || colors.theme;
 
-    const buttonStyle = {
-      position: 'absolute',
-      right: '20px',
-      top: '4px'
-    };
-
     return (
       <section className={className}>
-        {leftButton ? <div className={classes.button}>{leftButton}</div> : null}
+        {
+          leftButton
+          ? <div className={classNames(classes.button, [classes.disabled]: disabled)}>
+            {leftButton}
+          </div>
+          : null
+        }
         <input
           className={classNames(inputClassName, [classes.leftButton]: leftButton)}
           placeholder={placeholder}
@@ -101,9 +102,11 @@ class MessageInput extends Component {
           ref={inputRef}
           disabled={disabled}
         />
-        <Button iconButton onClick={sendMessage} style={buttonStyle}>
-          <IconSend color={iconColor} />
-        </Button>
+        <div className={classNames(classes.rightButton, [classes.disabled]: disabled)}>
+          <Button iconButton onClick={sendMessage}>
+            <IconSend color={iconColor} />
+          </Button>
+        </div>
       </section>
     );
   }
