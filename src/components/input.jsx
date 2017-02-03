@@ -1,7 +1,6 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
-import classNames from 'classnames';
 import getClassNames from '../internal/get-class-names';
 import inputStyleSheet from '../style/inputs';
 
@@ -61,7 +60,7 @@ class Input extends Component {
       <section className={className}>
         <label className={labelClassName} htmlFor={name}>{label}</label>
         <input
-          className={classNames(inputClassName)}
+          className={inputClassName}
           onChange={onChange}
           value={value}
           type={type}
