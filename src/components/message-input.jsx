@@ -86,13 +86,13 @@ class MessageInput extends Component {
       <section className={className}>
         {
           leftButton
-          ? <div className={classNames(classes.button, [classes.disabled]: disabled)}>
+          ? <div className={classNames(classes.button, { [classes.disabled]: disabled })}>
             {leftButton}
           </div>
           : null
         }
         <input
-          className={classNames(inputClassName, [classes.leftButton]: leftButton)}
+          className={classNames(inputClassName, { [classes.leftButton]: leftButton })}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -102,7 +102,7 @@ class MessageInput extends Component {
           ref={inputRef}
           disabled={disabled}
         />
-        <div className={classNames(classes.rightButton, [classes.disabled]: disabled)}>
+        <div className={classNames(classes.rightButton, { [classes.disabled]: disabled })}>
           <Button iconButton onClick={sendMessage}>
             <IconSend color={iconColor} />
           </Button>
