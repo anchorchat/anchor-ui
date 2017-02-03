@@ -8,6 +8,7 @@ import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import messageStyleSheet from '../style/messages';
 import colors from '../style/colors';
+import urlRegex from '../url-regex';
 
 class Message extends Component {
   static propTypes = {
@@ -57,8 +58,18 @@ class Message extends Component {
   static createMarkup(text) {
     const escapedText = escape(text);
 
+    const urlSchemeRegex = /^(?:https?:\/\/)/;
+
+    const parsedText = escapedText.replace(urlRegex, (url) => {
+      if (!urlSchemeRegex.test(url)) {
+        // Add default http:// scheme for urls like example.com
+        return (`<a href="http://${url}" target="_blank">${url}</a>`);
+      }
+      return (`<a href="${url}" target="_blank">${url}</a>`);
+    });
+
     return {
-      __html: emojione.toImage(escapedText)
+      __html: emojione.toImage(parsedText)
     };
   }
 
