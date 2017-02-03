@@ -20,7 +20,13 @@ const styleSheet = {
     width: '100%',
     '&:focus': {
       outline: 'none'
+    },
+    '&:disabled': {
+      opacity: '0.38'
     }
+  },
+  disabled: {
+    opacity: '0.38'
   },
   leftButton: {
     paddingLeft: '48px'
@@ -28,6 +34,11 @@ const styleSheet = {
   button: {
     left: '20px',
     position: 'absolute',
+    top: '4px'
+  },
+  rightButton: {
+    position: 'absolute',
+    right: '20px',
     top: '4px'
   }
 };
