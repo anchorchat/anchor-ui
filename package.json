@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "1.9.4",
+  "version": "1.9.5",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -66,6 +66,7 @@
     "react-jss": "^5.1.1"
   },
   "dependencies": {
-    "escape-html": "^1.0.3"
+    "escape-html": "^1.0.3",
+    "tlds": "^1.182.0"
   }
 }
