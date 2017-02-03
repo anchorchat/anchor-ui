@@ -40,11 +40,14 @@ const styleSheet = {
   },
   myMessage: {
     backgroundColor: colors.theme,
-    color: 'white',
+    color: colors.white,
     marginLeft: '0',
     marginRight: '16px',
     '& $messageBody': {
-      color: colors.white
+      color: colors.white,
+      '& a': {
+        color: colors.white
+      }
     },
     '& $messageHeader': {
       color: colors.white,
@@ -78,7 +81,10 @@ const styleSheet = {
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
-    margin: '0'
+    margin: '0',
+    '& a': {
+      color: colors.primaryText
+    }
   },
   messageTime: {
     bottom: '-17px',
