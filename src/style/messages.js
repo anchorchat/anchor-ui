@@ -20,7 +20,7 @@ const styleSheet = {
     maxWidth: '75%',
     padding: '12px',
     position: 'relative',
-    wordBreak: 'break-all',
+    wordBreak: 'break-word',
     '&:before': {
       borderBottom: '5px solid transparent',
       borderRight: `10px solid ${colors.white}`,
