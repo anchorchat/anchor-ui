@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import buttonStyleSheet from '../style/buttons';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
@@ -70,6 +71,13 @@ class Button extends Component {
       themeClassName,
       invertedClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   render() {

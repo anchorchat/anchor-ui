@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconLock({ color }) {
@@ -21,4 +22,4 @@ IconLock.defaultProps = {
   color: colors.icons
 };
 
-export default IconLock;
+export default pure(IconLock);

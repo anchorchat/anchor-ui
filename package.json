@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "escape-html": "^1.0.3",
+    "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }
 }

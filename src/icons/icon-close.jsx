@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconClose({ color }) {
@@ -19,4 +20,4 @@ IconClose.defaultProps = {
   color: colors.icons
 };
 
-export default IconClose;
+export default pure(IconClose);

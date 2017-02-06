@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconEmoji({ color }) {
@@ -22,4 +23,4 @@ IconEmoji.defaultProps = {
   color: colors.icons
 };
 
-export default IconEmoji;
+export default pure(IconEmoji);

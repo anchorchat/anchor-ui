@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import alertStyleSheet from '../style/alerts';
 import getClassNames from '../internal/get-class-names';
 import IconSuccess from '../icons/icon-success';
@@ -53,10 +54,6 @@ class Alert extends Component {
     rightButton: null
   }
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
-
   constructor(props) {
     super(props);
 
@@ -73,6 +70,10 @@ class Alert extends Component {
       textClassName,
       buttonClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {

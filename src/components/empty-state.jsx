@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import emptyStateStyleSheet from '../style/empty-states';
 import getClassNames from '../internal/get-class-names';
 
@@ -43,6 +44,10 @@ class EmptyState extends Component {
       headerClassName,
       bodyClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconAddImage({ color }) {
@@ -21,4 +22,4 @@ IconAddImage.defaultProps = {
   color: colors.icons
 };
 
-export default IconAddImage;
+export default pure(IconAddImage);
