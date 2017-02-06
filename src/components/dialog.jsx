@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import popUpStyleSheet from '../style/pop-ups';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
@@ -61,6 +62,13 @@ class Dialog extends Component {
       headerClassName,
       bodyClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   render() {

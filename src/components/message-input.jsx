@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import getClassNames from '../internal/get-class-names';
 import inputStyleSheet from '../style/message-inputs';
 import Button from './button';
@@ -56,6 +57,13 @@ class MessageInput extends Component {
     };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   handleKeyDown(event) {

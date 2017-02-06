@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
@@ -63,6 +64,13 @@ class ListItem extends Component {
       primaryTextClassName,
       secondaryTextClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   render() {

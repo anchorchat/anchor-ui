@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconPeople({ color }) {
@@ -22,4 +23,4 @@ IconPeople.defaultProps = {
   color: colors.icons
 };
 
-export default IconPeople;
+export default pure(IconPeople);
