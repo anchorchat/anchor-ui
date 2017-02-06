@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconMute({ color }) {
@@ -32,4 +33,4 @@ IconMute.defaultProps = {
   color: colors.icons
 };
 
-export default IconMute;
+export default pure(IconMute);

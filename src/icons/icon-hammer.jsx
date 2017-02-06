@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconHammer({ color }) {
@@ -25,4 +26,4 @@ IconHammer.defaultProps = {
   color: colors.icons
 };
 
-export default IconHammer;
+export default pure(IconHammer);

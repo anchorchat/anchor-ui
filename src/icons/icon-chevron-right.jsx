@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconChevronRight({ color }) {
@@ -19,4 +20,4 @@ IconChevronRight.defaultProps = {
   color: colors.icons
 };
 
-export default IconChevronRight;
+export default pure(IconChevronRight);

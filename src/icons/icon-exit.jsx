@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconExit({ color }) {
@@ -23,4 +24,4 @@ IconExit.defaultProps = {
   color: colors.icons
 };
 
-export default IconExit;
+export default pure(IconExit);
