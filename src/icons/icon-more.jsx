@@ -1,11 +1,15 @@
 import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
 import colors from '../style/colors';
 
 function IconMore({ color }) {
   return (
     <svg fill={color} height="24" viewBox="0 0 24 24" width="24">
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+      <g fill="#C4C4C4">
+        <circle cx="12.5" cy="19.5" r="1.875" />
+        <circle cx="12.5" cy="12" r="1.875" />
+        <circle cx="12.5" cy="4.5" r="1.875" />
+      </g>
     </svg>
   );
 }
@@ -18,4 +22,4 @@ IconMore.defaultProps = {
   color: colors.icons
 };
 
-export default IconMore;
+export default pure(IconMore);

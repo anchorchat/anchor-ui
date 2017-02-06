@@ -11,8 +11,18 @@ const styleSheet = {
     fontWeight: 'bold',
     lineHeight: '18px',
     margin: 0,
-    padding: '15px',
+    padding: '15px 48px',
     textAlign: 'center'
+  },
+  buttonRight: {
+    position: 'absolute',
+    right: '4px',
+    top: '4px'
+  },
+  buttonLeft: {
+    position: 'absolute',
+    left: '4px',
+    top: '4px'
   }
 };
 

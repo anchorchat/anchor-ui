@@ -1,16 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import appHeaderStyleSheet from '../style/app-header';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 
 class AppHeader extends Component {
   static propTypes = {
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.node
-    ]).isRequired,
+    text: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         header: PropTypes.string.isRequired,
@@ -52,6 +49,13 @@ class AppHeader extends Component {
       headerClassName,
       iconClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   render() {

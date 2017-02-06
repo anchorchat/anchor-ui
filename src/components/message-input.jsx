@@ -2,8 +2,9 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import getClassNames from '../internal/get-class-names';
-import inputStyleSheet from '../style/inputs';
+import inputStyleSheet from '../style/message-inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
@@ -17,7 +18,9 @@ class MessageInput extends Component {
       classes: PropTypes.shape({
         messageInput: PropTypes.string.isRequired,
         leftButton: PropTypes.string.isRequired,
-        input: PropTypes.string.isRequired
+        input: PropTypes.string.isRequired,
+        button: PropTypes.string.isRequired,
+        rightButton: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
     placeholder: PropTypes.string.isRequired,
@@ -26,13 +29,15 @@ class MessageInput extends Component {
     maxLength: PropTypes.number,
     leftButton: PropTypes.node,
     inputRef: PropTypes.func,
+    disabled: PropTypes.bool
   }
 
   static defaultProps = {
     style: {},
     inputStyle: {},
     maxLength: 500,
-    leftButton: null
+    leftButton: null,
+    disabled: false
   }
 
   static contextTypes = {
@@ -54,6 +59,13 @@ class MessageInput extends Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
+  }
+
   handleKeyDown(event) {
     const { sendMessage } = this.props;
 
@@ -64,23 +76,31 @@ class MessageInput extends Component {
 
   render() {
     const {
-      onChange, sendMessage, placeholder, value, maxLength, leftButton, inputRef, sheet: { classes }
+      onChange,
+      sendMessage,
+      placeholder,
+      value,
+      maxLength,
+      leftButton,
+      inputRef,
+      sheet: { classes },
+      disabled
     } = this.props;
     const { className, inputClassName } = this.state;
     const { color } = this.context;
     const iconColor = color || colors.theme;
 
-    const buttonStyle = {
-      position: 'absolute',
-      right: '20px',
-      top: '4px'
-    };
-
     return (
       <section className={className}>
-        {leftButton ? <div className={classes.button}>{leftButton}</div> : null}
+        {
+          leftButton
+          ? <div className={classNames(classes.button, { [classes.disabled]: disabled })}>
+            {leftButton}
+          </div>
+          : null
+        }
         <input
-          className={classNames(inputClassName, [classes.leftButton]: leftButton)}
+          className={classNames(inputClassName, { [classes.leftButton]: leftButton })}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -88,10 +108,13 @@ class MessageInput extends Component {
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
           ref={inputRef}
+          disabled={disabled}
         />
-        <Button iconButton onClick={sendMessage} style={buttonStyle}>
-          <IconSend color={iconColor} />
-        </Button>
+        <div className={classNames(classes.rightButton, { [classes.disabled]: disabled })}>
+          <Button iconButton onClick={sendMessage}>
+            <IconSend color={iconColor} />
+          </Button>
+        </div>
       </section>
     );
   }

@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import emptyStateStyleSheet from '../style/empty-states';
 import getClassNames from '../internal/get-class-names';
 
 class EmptyState extends Component {
   static propTypes = {
-    headerText: PropTypes.string.isRequired,
-    bodyText: PropTypes.string.isRequired,
+    headerText: PropTypes.node.isRequired,
+    bodyText: PropTypes.node.isRequired,
     button: PropTypes.node,
     background: PropTypes.string,
     sheet: PropTypes.shape({
@@ -43,6 +44,10 @@ class EmptyState extends Component {
       headerClassName,
       bodyClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {

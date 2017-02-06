@@ -1,18 +1,26 @@
 import colors from './colors';
 
 const styleSheet = {
+  messageContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: '16px'
+  },
+  myContainer: {
+    flexDirection: 'row-reverse'
+  },
   message: {
+    display: 'inline-block',
     backgroundColor: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
-    clear: 'both',
     color: colors.primaryText,
-    float: 'left',
     marginBottom: '34px',
     marginLeft: '16px',
     maxWidth: '75%',
     padding: '12px',
     position: 'relative',
+    wordBreak: 'break-word',
     '&:before': {
       borderBottom: '5px solid transparent',
       borderRight: `10px solid ${colors.white}`,
@@ -32,12 +40,14 @@ const styleSheet = {
   },
   myMessage: {
     backgroundColor: colors.theme,
-    color: 'white',
-    float: 'right',
+    color: colors.white,
     marginLeft: '0',
     marginRight: '16px',
     '& $messageBody': {
-      color: colors.white
+      color: colors.white,
+      '& a': {
+        color: colors.white
+      }
     },
     '& $messageHeader': {
       color: colors.white,
@@ -71,7 +81,10 @@ const styleSheet = {
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
-    margin: '0'
+    margin: '0',
+    '& a': {
+      color: colors.primaryText
+    }
   },
   messageTime: {
     bottom: '-17px',

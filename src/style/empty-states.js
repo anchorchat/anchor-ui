@@ -8,6 +8,7 @@ const styleSheet = {
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
+    height: '100%',
     justifyContent: 'center',
     padding: '24px'
   },

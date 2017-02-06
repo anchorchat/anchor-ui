@@ -12,8 +12,11 @@ import {
   IconClose,
   IconEmoji,
   AppHeader,
-  IconPower,
-  withTheme
+  IconExit,
+  withTheme,
+  IconPeople,
+  IconChannels,
+  Badge
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -137,11 +140,22 @@ class App extends Component {
   }
 
   render() {
+    const channelStyle = {
+      background: colors.background,
+      height: 'calc(100% - 112px)',
+      position: 'relative'
+    };
+
     const listStyle = {
       overflow: 'auto',
-      background: colors.background,
+      height: 'auto',
+      maxHeight: '100%',
       padding: '16px',
-      height: 'calc(100% - 112px)'
+      paddingBottom: '0',
+      background: 'none',
+      position: 'absolute',
+      bottom: '0',
+      boxSizing: 'border-box',
     };
 
     const channelListStyle = {
@@ -150,7 +164,6 @@ class App extends Component {
     };
 
     const userListStyle = {
-      height: '100%',
       borderLeft: `1px solid ${colors.grey}`
     };
 
@@ -169,7 +182,7 @@ class App extends Component {
           icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
             <Button onClick={() => {}} iconButton>
-              <IconPower color={colors.white} />
+              <IconExit color={colors.white} />
             </Button>
           }
         />
@@ -189,22 +202,38 @@ class App extends Component {
                   </Button>
                   : null
                 }
+                avatar={dalek}
+                badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
               />
             ))}
           </List>
         </article>
         <article>
-          <ChannelHeader name={currentChannel} />
-          <List listRef={node => (this.node = node)} style={listStyle}>
-            {this.state.messages.map((message, index) => (
-              <Message
-                message={message} key={`message-${index}`}
-                myMessage={message.username === currentUser}
-                avatar={message.profileImage}
-                emoji
-              />
-            ))}
-          </List>
+          <ChannelHeader
+            name={currentChannel}
+            rightButton={
+              <Button iconButton onClick={() => {}}>
+                <IconPeople />
+              </Button>
+            }
+            leftButton={
+              <Button iconButton onClick={() => {}}>
+                <IconChannels />
+              </Button>
+            }
+          />
+          <article style={channelStyle}>
+            <List listRef={node => (this.node = node)} style={listStyle}>
+              {this.state.messages.map((message, index) => (
+                <Message
+                  message={message} key={`message-${index}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.profileImage}
+                  emoji
+                />
+              ))}
+            </List>
+          </article>
           <MessageInput
             onChange={this.changeMessage}
             placeholder="Type something..."

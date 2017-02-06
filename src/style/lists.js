@@ -13,6 +13,9 @@ const styleSheet = {
     boxSizing: 'border-box',
     borderBottom: `1px solid ${colors.white}`,
     cursor: 'pointer',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     height: '54px',
     listStyle: 'none',
     padding: '10px',
@@ -56,7 +59,8 @@ const styleSheet = {
     color: colors.primaryText,
     fontSize: '16px',
     margin: 0,
-    lineHeight: '16px'
+    lineHeight: '16px',
+    userSelect: 'none'
   },
   secondaryText: {
     color: colors.secondaryText,
@@ -64,7 +68,21 @@ const styleSheet = {
     fontWeight: 'normal',
     margin: 0,
     marginTop: '2.4px',
-    lineHeight: '14px'
+    lineHeight: '14px',
+    userSelect: 'none'
+  },
+  leftAvatar: {
+    paddingLeft: '56px'
+  },
+  avatar: {
+    position: 'absolute',
+    left: '8px',
+    top: '6px'
+  },
+  badge: {
+    position: 'absolute',
+    right: '-3px',
+    top: '-3px'
   }
 };
 

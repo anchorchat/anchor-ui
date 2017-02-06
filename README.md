@@ -26,6 +26,24 @@ Arguments:
 
 ---
 
+`<Alert />` used for rendering an alert.
+
+Props:
+
+| Name        | Type     | Required | Default | Description                                                                   |
+|:------------|:---------|:---------|:--------|:------------------------------------------------------------------------------|
+| text        | Node     | Yes      |         | Text to display                                                               |
+| type        | String   | Yes      |         | Type of alert, either of the following: 'success', 'error', 'warning', 'info' |
+| hideAlert   | Function | Yes      | {}      | Function to hide the alert                                                    |
+| style       | Object   | No       | {}      | Override the styles of the root element                                       |
+| textStyle   | Object   | No       | {}      | Override the styles of the text element                                       |
+| iconStyle   | Object   | No       | {}      | Override the styles of the icon element                                       |
+| buttonStyle | Object   | No       | {}      | Override the styles of the button element                                     |
+
+---
+
+---
+
 `<Avatar />` used for rendering a user's profile image.
 
 Props:
@@ -43,7 +61,7 @@ Props:
 
 | Name        | Type   | Required | Default | Description                              |
 |:------------|:-------|:---------|:--------|:-----------------------------------------|
-| text        | String | Yes      |         | Title text (your app's name)             |
+| text        | Node   | Yes      |         | Title text (your app's name)             |
 | icon        | Node   | No       | null    | Icon (your app's logo)                   |
 | rightButton | Node   | No       | null    | A button for the right side of the input |
 | style       | Object | No       | {}      | Override the styles of the root element  |
@@ -56,10 +74,11 @@ Props:
 
 Props:
 
-| Name    | Type                 | Required | Default | Description                             |
-|:--------|:---------------------|:---------|:--------|:----------------------------------------|
-| content | String, Number, Node | Yes      |         | Content to be rendered                  |
-| style   | Object               | No       | {}      | Override the styles of the root element |
+| Name     | Type   | Required | Default | Description                                                                  |
+|:---------|:-------|:---------|:--------|:-----------------------------------------------------------------------------|
+| value    | Number | Yes      |         | Content to be rendered                                                       |
+| maxValue | Number | Yes      |         | The badge's max value, will display `${maxValue}+` if this value is exceeded |
+| style    | Object | No       | {}      | Override the styles of the root element                                      |
 
 ---
 
@@ -69,7 +88,7 @@ Props:
 
 | Name       | Type     | Required | Default | Description                                     |
 |:-----------|:---------|:---------|:--------|:------------------------------------------------|
-| children   | Element  | Yes      |         | Button content                                  |
+| children   | Node     | Yes      |         | Button content                                  |
 | iconButton | Boolean  | No       | false   | Switches between icon-button and normal button  |
 | onClick    | Function | Yes      |         | Button onClick function                         |
 | style      | Object   | No       | {}      | Override the styles of the root element         |
@@ -80,11 +99,15 @@ Props:
 
 Props:
 
-| Name            | Type   | Required | Default | Description                             |
-|:----------------|:-------|:---------|:--------|:----------------------------------------|
-| name            | String | Yes      |         | Header content                          |
-| style           | Object | No       | {}      | Override the styles of the root element |
-| headerTextStyle | Object | No       | {}      | Override the styles of the text element |
+| Name              | Type   | Required | Default | Description                                    |
+|:------------------|:-------|:---------|:--------|:-----------------------------------------------|
+| name              | Node   | Yes      |         | Header content                                 |
+| style             | Object | No       | {}      | Override the styles of the root element        |
+| headerTextStyle   | Object | No       | {}      | Override the styles of the text element        |
+| leftButton        | Node   | No       |         | A button for the left side of the header       |
+| leftButtonStyle   | Node   | No       | {}      | Override the styles of the leftButton element  |
+| rightButton       | Node   | No       |         | A button for the right side of the header      |
+| rightButtonStyle  | Node   | No       | {}      | Override the styles of the rightButton element |
 
 ---
 
@@ -92,14 +115,14 @@ Props:
 
 Props:
 
-| Name        | Type     | Required | Default | Description                                 |
-|:------------|:---------|:---------|:--------|:--------------------------------------------|
-| headerText  | String   | Yes      |         | Header text                                 |
-| bodyText    | String   | Yes      |         | Body text                                   |
-| button      | Node     | No       | {}      | Render a call to action button              |
-| style       | Object   | No       | {}      | Override the styles of the root element     |
-| headerStyle | Object   | No       | {}      | Override the styles of the header text      |
-| bodyStyle   | Object   | No       | {}      | Override the styles of the body text        |
+| Name        | Type   | Required | Default | Description                                 |
+|:------------|:-------|:---------|:--------|:--------------------------------------------|
+| headerText  | Node   | Yes      |         | Header text                                 |
+| bodyText    | Node   | Yes      |         | Body text                                   |
+| button      | Node   | No       | {}      | Render a call to action button              |
+| style       | Object | No       | {}      | Override the styles of the root element     |
+| headerStyle | Object | No       | {}      | Override the styles of the header text      |
+| bodyStyle   | Object | No       | {}      | Override the styles of the body text        |
 
 ---
 
@@ -121,13 +144,24 @@ Props:
 
 | Name               | Type     | Required | Default | Description                                      |
 |:-------------------|:---------|:---------|:--------|:-------------------------------------------------|
-| primaryText        | String   | Yes      |         | The list item's primary text                     |
-| secondaryText      | String   | Yes      |         | The list item's secondary text                   |
+| primaryText        | Node     | Yes      |         | The list item's primary text                     |
+| secondaryText      | Node     | Yes      |         | The list item's secondary text                   |
 | active             | Boolean  | No       | false   | Add active styles to ListItem                    |
 | onClick            | Function | Yes      |         | Click function for the root element              |
 | style              | Object   | No       | {}      | Override the styles of the root element          |
 | primaryTextStyle   | Object   | No       | {}      | Override the styles of the primaryText element   |
 | secondaryTextStyle | Object   | No       | {}      | Override the styles of the secondaryText element |
+
+---
+
+`<Loader />` Loading dots component
+
+Props:
+
+| Name               | Type     | Required | Default | Description                                      |
+|:-------------------|:---------|:---------|:--------|:-------------------------------------------------|
+| style              | Object   | No       | {}      | Override the styles of the root element          |
+| dotStyle           | Object   | No       | {}      | Override the styles of the dot element           |
 
 ---
 
@@ -158,8 +192,8 @@ Props:
 
 | Name        | Type     | Required | Default | Description                              |
 |:------------|:---------|:---------|:--------|:-----------------------------------------|
-| value       | String   | Yes      |         | The list items primary text              |
-| placeholder | String   | Yes      |         | The list items primary text              |
+| value       | String   | Yes      |         | The input's value                        |
+| placeholder | String   | Yes      |         | The input's placeholder                  |
 | onChange    | Function | Yes      |         | Change the input's value                 |
 | sendMessage | Function | Yes      |         | Send a message                           |
 | style       | Object   | No       | {}      | Override the styles of the root element  |
@@ -176,9 +210,28 @@ Props:
 
 | Name     | Type   | Required | Default | Description                                                          |
 |:---------|:-------|:---------|:--------|:---------------------------------------------------------------------|
-| username | String | Yes      |         | The user's username                                                  |
+| username | Node   | Yes      |         | The user's username                                                  |
 | avatar   | String | Yes      |         | Path to the user's profile image, will render <Avatar /> if supplied |
 | style    | Object | No       | {}      | Override the styles of the root element                              |
+
+---
+
+`<Input />` general input for forms
+
+Props:
+
+| Name        | Type     | Required | Default | Description                              |
+|:------------|:---------|:---------|:--------|:-----------------------------------------|
+| value       | String   | Yes      |         | The input's value                        |
+| label       | String   | Yes      |         | The input's label                        |
+| onChange    | Function | Yes      |         | Change the input's value                 |
+| style       | Object   | No       | {}      | Override the styles of the root element  |
+| inputStyle  | Object   | No       | {}      | Override the styles of the input element |
+| labelStyle  | Object   | No       | {}      | Override the styles of the label element |
+| maxLength   | Number   | No       | 500     | The input's max length                   |
+| inputRef    | Function | No       |         | Ref function to the <input /> element    |
+
+---
 
 ## Installation
 
