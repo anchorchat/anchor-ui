@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
+import shallowEqual from 'recompose/shallowEqual';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import profileCardStyleSheet from '../style/profile-cards';
@@ -36,6 +37,13 @@ class ProfileCard extends Component {
     this.state = {
       className
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   render() {

@@ -1,6 +1,7 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import listStyleSheet from '../style/lists';
 import getClassNames from '../internal/get-class-names';
 
@@ -29,6 +30,10 @@ class List extends Component {
     this.state = {
       className
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {

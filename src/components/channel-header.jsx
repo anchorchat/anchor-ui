@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import channelHeaderStyleSheet from '../style/channel-header';
 import getClassNames from '../internal/get-class-names';
 
@@ -47,6 +48,10 @@ class ChannelHeader extends Component {
       rightButtonClassName,
       leftButtonClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {

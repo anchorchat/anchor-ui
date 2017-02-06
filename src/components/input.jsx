@@ -1,6 +1,7 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import getClassNames from '../internal/get-class-names';
 import inputStyleSheet from '../style/inputs';
 
@@ -33,10 +34,6 @@ class Input extends Component {
     leftButton: null
   }
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
-
   constructor(props) {
     super(props);
 
@@ -50,6 +47,10 @@ class Input extends Component {
       inputClassName,
       labelClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {

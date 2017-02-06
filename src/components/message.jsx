@@ -4,6 +4,7 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import emojione from 'emojione';
 import escape from 'escape-html';
+import shallowEqual from 'recompose/shallowEqual';
 import Avatar from './avatar';
 import getClassNames from '../internal/get-class-names';
 import messageStyleSheet from '../style/messages';
@@ -79,6 +80,13 @@ class Message extends Component {
       messageBodyClassName,
       messageTimeClassName
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return (
+      !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.context, nextContext)
+    );
   }
 
   createMarkup(text) {

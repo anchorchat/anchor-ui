@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import injectSheet from 'react-jss';
+import shallowEqual from 'recompose/shallowEqual';
 import avatarStyleSheet from '../style/avatars';
 import getClassNames from '../internal/get-class-names';
 
@@ -27,6 +28,10 @@ class Avatar extends Component {
     this.state = {
       className
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return (!shallowEqual(this.props, nextProps));
   }
 
   render() {
