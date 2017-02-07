@@ -1,5 +1,41 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Light.ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
+
+html {
+  background: #FEFEFE;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  height: inherit;;
+}
+
+#root,
+main {
+  height: inherit;
 }
