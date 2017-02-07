@@ -54,7 +54,7 @@ main > article {
 }
 
 main > article article {
-  width: calc(100% - 150px);
+  width: calc(100% - 200px);
   height: 100%;
   overflow-y: scroll;
   padding: 16px;
@@ -67,7 +67,7 @@ main > article article h1 {
 }
 
 nav {
-  width: 150px;
+  width: 200px;
   border-right: 1px solid #DEDEDE;
   height: 100%;
   overflow-y: scroll;
