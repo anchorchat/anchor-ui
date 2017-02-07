@@ -1,22 +1,35 @@
 import React from 'react';
-import _ from 'underscore';
-// import { MessageInput } from 'anchor-ui';
+import { MessageInput, Button, IconEmoji } from 'anchor-ui';
+import PropsTable from './props-table';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function MessageInputDoc() {
   const componentData = components['src/components/message-input.jsx'];
   const props = omitSheetFromProps(componentData.props);
-  console.log(props);
   return (
     <article>
-      <h1>Alert</h1>
-      <section>
-        <h1>Examples</h1>
-      </section>
+      <h1>Message input</h1>
+      <hr />
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+        <hr />
+      </section>
+      <section>
+        <h1>Examples</h1>
+        <MessageInput
+          onChange={() => {}}
+          placeholder="Type something..."
+          value=""
+          sendMessage={() => {}}
+          leftButton={
+            <Button iconButton onClick={() => {}}>
+              <IconEmoji />
+            </Button>
+          }
+        />
+        <hr />
       </section>
       <section>
         <h1>Props</h1>
@@ -30,17 +43,7 @@ function MessageInputDoc() {
               <th>Required</th>
             </tr>
           </thead>
-          <tbody>
-            {_.map(props, (prop, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td> {/* TODO figure out how to display type */} </td>
-                <td>{prop.description}</td>
-                <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-                <td>{prop.required ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
+          <PropsTable props={props} />
         </table>
       </section>
     </article>

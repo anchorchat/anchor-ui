@@ -1,22 +1,50 @@
 import React from 'react';
-import _ from 'underscore';
-// import { ListItem } from 'anchor-ui';
+import { ListItem, Button, IconClose, Badge } from 'anchor-ui';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
+import PropsTable from './props-table';
+import colors from '../style/colors';
+import dalek from '../assets/images/dalek.jpg';
 
 function ListItemDoc() {
   const componentData = components['src/components/list-item.jsx'];
   const props = omitSheetFromProps(componentData.props);
-  console.log(props);
+  const currentChannel = 'Channel';
+  const channel = [
+    {
+      name: 'Channel',
+      maxUsers: 50,
+      users: ['1', '2', '3']
+    }
+  ];
   return (
     <article>
-      <h1>Alert</h1>
-      <section>
-        <h1>Examples</h1>
-      </section>
+      <h1>List item</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        {/* !ATTENTION! NOT WORKING EXAMPLE */}
+        {/* primaryText={channel.name}
+            secondaryText={`${channel.users}/${channel.maxUsers}`}
+        */}
+        <h1>Examples</h1>
+        <ListItem
+          key={`channel-list-${channel.name}`}
+          primaryText={'Channel'}
+          secondaryText={'10/50'}
+          active={currentChannel === channel.name}
+          rightButton={
+            currentChannel === channel.name
+            ? <Button iconButton onClick={() => {}}>
+              <IconClose color={colors.white} />
+            </Button>
+            : null
+          }
+          avatar={dalek}
+          badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
+        />
       </section>
       <section>
         <h1>Props</h1>
@@ -30,17 +58,7 @@ function ListItemDoc() {
               <th>Required</th>
             </tr>
           </thead>
-          <tbody>
-            {_.map(props, (prop, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td> {/* TODO figure out how to display type */} </td>
-                <td>{prop.description}</td>
-                <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-                <td>{prop.required ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
+          <PropsTable props={props} />
         </table>
       </section>
     </article>

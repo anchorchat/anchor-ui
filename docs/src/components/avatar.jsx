@@ -1,22 +1,25 @@
 import React from 'react';
-import _ from 'underscore';
-// import { Avatar } from 'anchor-ui';
+import { Avatar } from 'anchor-ui';
 import components from '../../components.json';
+import PropsTable from './props-table';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
+import theDoctor from '../assets/images/the_doctor.jpg';
+import dalek from '../assets/images/dalek.jpg';
 
 function AvatarDoc() {
   const componentData = components['src/components/avatar.jsx'];
   const props = omitSheetFromProps(componentData.props);
-  console.log(props);
   return (
     <article>
-      <h1>Alert</h1>
-      <section>
-        <h1>Examples</h1>
-      </section>
+      <h1>Avatar</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Examples</h1>
+        <Avatar image={theDoctor} />
+        <Avatar image={dalek} />
       </section>
       <section>
         <h1>Props</h1>
@@ -30,17 +33,7 @@ function AvatarDoc() {
               <th>Required</th>
             </tr>
           </thead>
-          <tbody>
-            {_.map(props, (prop, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td> {/* TODO figure out how to display type */} </td>
-                <td>{prop.description}</td>
-                <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-                <td>{prop.required ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
+          <PropsTable props={props} />
         </table>
       </section>
     </article>

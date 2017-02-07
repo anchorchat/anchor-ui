@@ -1,22 +1,40 @@
 import React from 'react';
-import _ from 'underscore';
-// import { AppHeader } from 'anchor-ui';
+import { AppHeader, Button, IconExit } from 'anchor-ui';
+import PropsTable from './props-table';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
+import colors from '../style/colors';
+import logo from '../assets/images/logo.svg';
 
 function AppHeaderDoc() {
   const componentData = components['src/components/app-header.jsx'];
   const props = omitSheetFromProps(componentData.props);
-  console.log(props);
   return (
     <article>
-      <h1>Alert</h1>
-      <section>
-        <h1>Examples</h1>
-      </section>
+      <h1>App Header</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Examples</h1>
+        <AppHeader
+          text={
+            <a
+              href="https://github.com/anchorchat/anchor-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Anchor UI
+            </a>
+          }
+          icon={<img src={logo} alt="Anchor Chat" />}
+          rightButton={
+            <Button onClick={() => {}} iconButton>
+              <IconExit color={colors.white} />
+            </Button>
+          }
+        />
       </section>
       <section>
         <h1>Props</h1>
@@ -30,17 +48,7 @@ function AppHeaderDoc() {
               <th>Required</th>
             </tr>
           </thead>
-          <tbody>
-            {_.map(props, (prop, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td> {/* TODO figure out how to display type */} </td>
-                <td>{prop.description}</td>
-                <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-                <td>{prop.required ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
+          <PropsTable props={props} />
         </table>
       </section>
     </article>

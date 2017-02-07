@@ -1,22 +1,28 @@
 import React from 'react';
-import _ from 'underscore';
-// import { Dialog } from 'anchor-ui';
+import { Dialog } from 'anchor-ui';
+import PropsTable from './props-table';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function DialogDoc() {
   const componentData = components['src/components/dialog.jsx'];
   const props = omitSheetFromProps(componentData.props);
-  console.log(props);
   return (
     <article>
-      <h1>Alert</h1>
-      <section>
-        <h1>Examples</h1>
-      </section>
+      <h1>Dialog</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Examples</h1>
+        {/* Shows a popup over the current table */}
+        {/* <Dialog
+          headerText="Empty dialog"
+          BodyTest="Such empty"
+          hideDialog={false}
+          onClick={() => {}}
+        /> */}
       </section>
       <section>
         <h1>Props</h1>
@@ -30,17 +36,7 @@ function DialogDoc() {
               <th>Required</th>
             </tr>
           </thead>
-          <tbody>
-            {_.map(props, (prop, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td> {/* TODO figure out how to display type */} </td>
-                <td>{prop.description}</td>
-                <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-                <td>{prop.required ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
+          <PropsTable props={props} />
         </table>
       </section>
     </article>
