@@ -20,8 +20,14 @@ const icons = {
   info: <IconInfo color={darken(colors.alert.info, 0.65)} />
 };
 
+/**
+ * Alert for doing things with alerts ;)
+ */
 class Alert extends Component {
   static propTypes = {
+    /**
+     * The text to display in the alert.
+     */
     text: PropTypes.node.isRequired,
     type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
     sheet: PropTypes.shape({
@@ -45,13 +51,9 @@ class Alert extends Component {
 
   static defaultProps = {
     style: {},
-    secondaryText: '',
     iconStyle: {},
     textStyle: {},
-    buttonStyle: {},
-    onClick: null,
-    active: false,
-    rightButton: null
+    buttonStyle: {}
   }
 
   constructor(props) {
