@@ -17,7 +17,7 @@ function BadgeDoc() {
       <section>
         <h1>Examples</h1>
         <Badge inverted value={10} maxValue={9} />
-        <Badge inverted={false} value={10} maxValue={9} />
+        <Badge value={10} maxValue={9} />
       </section>
       <Props props={props} />
     </article>

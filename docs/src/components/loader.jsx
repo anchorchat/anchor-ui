@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader } from 'anchor-ui';
+import { Loader, colors } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
@@ -7,6 +7,17 @@ import omitSheetFromProps from '../utils/omit-sheet-from-props';
 function LoaderDoc() {
   const componentData = components['src/components/loader.jsx'];
   const props = omitSheetFromProps(componentData.props);
+
+  const style = {
+    inverted: {
+      padding: '10px',
+      background: colors.theme,
+      width: '75px',
+      borderRadius: '3px',
+      margin: '10px 0'
+    }
+  };
+
   return (
     <article>
       <h1>Loader</h1>
@@ -19,26 +30,12 @@ function LoaderDoc() {
       <section>
         <h1>Examples</h1>
         <Loader />
-        <hr />
-        {/* Maybe more than one loader (inverted color?) */}
-        <Loader />{/* <-- todo (doesn't work as expected)*/}
+        <section style={style.inverted}>
+          <Loader inverted />
+        </section>
         <hr />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <Props props={props} />
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }
