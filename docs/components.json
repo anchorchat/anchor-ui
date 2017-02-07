@@ -33,7 +33,7 @@
           ]
         },
         "required": true,
-        "description": "Type of alert : \"Info\", \"Success\", \"Warning\", \"Error\""
+        "description": "Type of alert : \"info\", \"success\", \"warning\", \"error\""
       },
       "sheet": {
         "type": {
@@ -675,12 +675,6 @@
         },
         "required": true,
         "description": "Function to hide dialog element"
-      },
-      "background": {
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
       }
     }
   },
@@ -908,12 +902,6 @@
         },
         "required": false,
         "description": "Ref function to the element"
-      },
-      "leftButton": {
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
       }
     }
   },
@@ -1337,7 +1325,7 @@
     }
   },
   "src/components/message.jsx": {
-    "description": "Override the styles of the root element",
+    "description": "Message styling",
     "methods": [
       {
         "name": "createMarkup",
