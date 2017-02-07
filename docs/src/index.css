@@ -39,3 +39,7 @@ body {
 main {
   height: inherit;
 }
+
+.emojione {
+  width: 32px;
+}
