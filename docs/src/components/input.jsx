@@ -1,11 +1,11 @@
 import React from 'react';
 import _ from 'underscore';
-// import { AppHeader } from 'anchor-ui';
+// import { Input } from 'anchor-ui';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
-function AppHeaderDoc() {
-  const componentData = components['src/components/app-header.jsx'];
+function InputDoc() {
+  const componentData = components['src/components/input.jsx'];
   const props = omitSheetFromProps(componentData.props);
   console.log(props);
   return (
@@ -47,4 +47,4 @@ function AppHeaderDoc() {
   );
 }
 
-export default AppHeaderDoc;
+export default InputDoc;

@@ -1,11 +1,11 @@
 import React from 'react';
 import _ from 'underscore';
-// import { AppHeader } from 'anchor-ui';
+// import { Dialog } from 'anchor-ui';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
-function AppHeaderDoc() {
-  const componentData = components['src/components/app-header.jsx'];
+function DialogDoc() {
+  const componentData = components['src/components/dialog.jsx'];
   const props = omitSheetFromProps(componentData.props);
   console.log(props);
   return (
@@ -47,4 +47,4 @@ function AppHeaderDoc() {
   );
 }
 
-export default AppHeaderDoc;
+export default DialogDoc;
