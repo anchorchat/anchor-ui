@@ -1,6 +1,6 @@
 {
   "src/components/alert.jsx": {
-    "description": "Alert for doing things with alerts ;)",
+    "description": "Alert styling",
     "methods": [],
     "props": {
       "text": {
@@ -8,7 +8,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "The text to display in the alert."
+        "description": "Text to display"
       },
       "type": {
         "type": {
@@ -33,7 +33,7 @@
           ]
         },
         "required": true,
-        "description": ""
+        "description": "Type of alert : \"Info\", \"Success\", \"Warning\", \"Error\""
       },
       "sheet": {
         "type": {
@@ -88,7 +88,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -100,7 +100,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the icon element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -112,7 +112,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the text element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -124,7 +124,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the button element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -135,12 +135,12 @@
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Function to hide the alert(s)"
       }
     }
   },
   "src/components/app-header.jsx": {
-    "description": "",
+    "description": "Appheader styling",
     "methods": [],
     "props": {
       "text": {
@@ -148,7 +148,7 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Title text (Name of the App)"
       },
       "sheet": {
         "type": {
@@ -186,7 +186,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Icon (Logo of the app)",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -197,7 +197,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Right-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -209,7 +209,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -221,7 +221,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the text element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -233,7 +233,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the icon element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -242,7 +242,7 @@
     }
   },
   "src/components/avatar.jsx": {
-    "description": "",
+    "description": "Avatar styling",
     "methods": [],
     "props": {
       "image": {
@@ -250,7 +250,7 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Path to user's profile image"
       },
       "sheet": {
         "type": {
@@ -277,7 +277,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -286,7 +286,7 @@
     }
   },
   "src/components/badge.jsx": {
-    "description": "",
+    "description": "Override the styles of the root element",
     "methods": [],
     "props": {
       "value": {
@@ -294,7 +294,7 @@
           "name": "number"
         },
         "required": true,
-        "description": ""
+        "description": "Value that's being rendered"
       },
       "sheet": {
         "type": {
@@ -321,7 +321,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -332,7 +332,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Inverts color",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -343,12 +343,12 @@
           "name": "number"
         },
         "required": true,
-        "description": ""
+        "description": "Max value that will be renderend\nThis will result in ${maxValue}+ is value is higher then maxValue"
       }
     }
   },
   "src/components/button.jsx": {
-    "description": "",
+    "description": "Button styling",
     "methods": [],
     "props": {
       "children": {
@@ -356,14 +356,14 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Content of the button"
       },
       "onClick": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Button onClick function"
       },
       "sheet": {
         "type": {
@@ -394,7 +394,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -405,7 +405,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Switches between \"icon-button\" | \"normal-button\"",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -416,7 +416,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Inverts color",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -425,7 +425,7 @@
     }
   },
   "src/components/channel-header.jsx": {
-    "description": "",
+    "description": "Channel header styling",
     "methods": [],
     "props": {
       "name": {
@@ -433,14 +433,14 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Content of the header"
       },
       "rightButton": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Right-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -451,7 +451,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Left-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -494,7 +494,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -506,7 +506,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the text element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -518,7 +518,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the rightButton element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -530,7 +530,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the leftButton element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -539,7 +539,7 @@
     }
   },
   "src/components/dialog.jsx": {
-    "description": "",
+    "description": "Dialog styling",
     "methods": [],
     "props": {
       "headerText": {
@@ -547,21 +547,21 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Header text"
       },
       "bodyText": {
         "type": {
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Body text"
       },
       "button": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Render a call to action button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -572,7 +572,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Path to the image will only be rendered if provided",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -627,7 +627,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -639,7 +639,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the overlay element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -651,7 +651,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the header element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -663,7 +663,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the body element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -674,7 +674,7 @@
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Function to hide dialog element"
       },
       "background": {
         "defaultValue": {
@@ -685,7 +685,7 @@
     }
   },
   "src/components/empty-state.jsx": {
-    "description": "",
+    "description": "Empty state styling",
     "methods": [],
     "props": {
       "headerText": {
@@ -693,21 +693,21 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Body text"
       },
       "bodyText": {
         "type": {
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "Header text"
       },
       "button": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Render a call to action button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -718,7 +718,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Path to background image",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -757,7 +757,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -769,7 +769,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the header text element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -781,7 +781,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the body text element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -790,7 +790,7 @@
     }
   },
   "src/components/input.jsx": {
-    "description": "",
+    "description": "Input styling",
     "methods": [],
     "props": {
       "onChange": {
@@ -798,21 +798,21 @@
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Change the input's value"
       },
       "value": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "The input's value"
       },
       "type": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "Type of input"
       },
       "sheet": {
         "type": {
@@ -846,14 +846,14 @@
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "The input's label"
       },
       "name": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "The input's name"
       },
       "style": {
         "type": {
@@ -861,7 +861,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -873,7 +873,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the input element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -885,7 +885,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the label element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -896,7 +896,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "The input's max length",
         "defaultValue": {
           "value": "500",
           "computed": false
@@ -907,7 +907,7 @@
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "Ref function to the element"
       },
       "leftButton": {
         "defaultValue": {
@@ -918,7 +918,7 @@
     }
   },
   "src/components/list-item.jsx": {
-    "description": "",
+    "description": "ListItem styling",
     "methods": [],
     "props": {
       "primaryText": {
@@ -926,14 +926,14 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "The list item's primary text"
       },
       "secondaryText": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "The list item's secondary text",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -988,7 +988,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1000,7 +1000,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the primaryText element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1012,7 +1012,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the secondaryText element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1023,7 +1023,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "",
+        "description": "Click function for the root element",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1034,7 +1034,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Add active styles to ListItem",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1045,7 +1045,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Right-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1056,7 +1056,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Avatar object referenced by the list item",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -1067,7 +1067,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Badge object referenced by the list item",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1076,7 +1076,7 @@
     }
   },
   "src/components/list.jsx": {
-    "description": "",
+    "description": "List styling",
     "methods": [],
     "props": {
       "children": {
@@ -1084,14 +1084,14 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "List of listItems to render"
       },
       "listRef": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "Reference to the corresponding listItems list"
       },
       "sheet": {
         "type": {
@@ -1118,7 +1118,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1127,7 +1127,7 @@
     }
   },
   "src/components/loader.jsx": {
-    "description": "",
+    "description": "Loader styling",
     "methods": [],
     "props": {
       "sheet": {
@@ -1159,7 +1159,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1171,7 +1171,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the dot element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1182,7 +1182,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Inverts the color",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1191,7 +1191,7 @@
     }
   },
   "src/components/message-input.jsx": {
-    "description": "",
+    "description": "Message input styling",
     "methods": [
       {
         "name": "handleKeyDown",
@@ -1212,21 +1212,21 @@
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Change the input's value"
       },
       "sendMessage": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Send a message"
       },
       "value": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "The input's value"
       },
       "sheet": {
         "type": {
@@ -1268,7 +1268,7 @@
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "The input's placeholder"
       },
       "style": {
         "type": {
@@ -1276,7 +1276,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1288,7 +1288,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the input element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1299,7 +1299,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "The input's max length",
         "defaultValue": {
           "value": "500",
           "computed": false
@@ -1310,7 +1310,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "",
+        "description": "Left-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1321,14 +1321,14 @@
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "Ref function to the element"
       },
       "disabled": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Disables the input for the messageInput area",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1337,7 +1337,7 @@
     }
   },
   "src/components/message.jsx": {
-    "description": "",
+    "description": "Override the styles of the root element",
     "methods": [
       {
         "name": "createMarkup",
@@ -1358,7 +1358,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Path to the user's profile image will only be rendered if provided",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -1370,6 +1370,7 @@
           "value": {
             "body": {
               "name": "string",
+              "description": "The message's body text",
               "required": true
             },
             "createdAt": {
@@ -1383,23 +1384,25 @@
                   "value": "Date"
                 }
               ],
+              "description": "Time when the message was created",
               "required": true
             },
             "username": {
               "name": "string",
+              "description": "The sender's username",
               "required": true
             }
           }
         },
         "required": true,
-        "description": ""
+        "description": "Message object containing : body, createdAt, username"
       },
       "timeFormat": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "The format of displaying message.createdAt",
         "defaultValue": {
           "value": "'HH:mm'",
           "computed": false
@@ -1450,7 +1453,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1462,7 +1465,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the header element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1474,7 +1477,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the body element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1486,7 +1489,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the time element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1497,7 +1500,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Flag used to change message styles.\nTrue if the message was sent by the current user",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1508,7 +1511,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Enable emojione for messages",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1519,7 +1522,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Enables links in messages",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1528,7 +1531,7 @@
     }
   },
   "src/components/profile-card.jsx": {
-    "description": "",
+    "description": "ProfileCard styling",
     "methods": [],
     "props": {
       "avatar": {
@@ -1536,7 +1539,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Path to the user's profile image will only be rendered if provided",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -1547,7 +1550,7 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "The user's username"
       },
       "sheet": {
         "type": {
@@ -1574,7 +1577,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
