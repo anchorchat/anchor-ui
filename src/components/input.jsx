@@ -63,8 +63,7 @@ class Input extends Component {
     style: {},
     inputStyle: {},
     labelStyle: {},
-    maxLength: 500,
-    leftButton: null
+    maxLength: 500
   }
 
   constructor(props) {

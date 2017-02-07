@@ -65,7 +65,6 @@ class Dialog extends Component {
   static defaultProps = {
     button: null,
     image: null,
-    background: '',
     style: {},
     overlayStyle: {},
     headerStyle: {},

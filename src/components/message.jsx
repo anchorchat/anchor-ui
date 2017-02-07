@@ -12,7 +12,7 @@ import colors from '../style/colors';
 import urlRegex from '../url-regex';
 
 /**
- * Override the styles of the root element
+ * Message styling
  */
 class Message extends Component {
   static propTypes = {
