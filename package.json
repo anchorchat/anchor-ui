@@ -61,7 +61,6 @@
     "classnames": "^2.2.5",
     "color": "^1.0.3",
     "emojione": "^2.2.7",
-    "moment": "^2.13.0",
     "react": "^15.4.1",
     "react-jss": "^5.1.1"
   },
