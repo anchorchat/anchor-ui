@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { AppHeader } from 'anchor-ui';
 import Menu from './menu';
 import logo from '../assets/images/logo.svg';
 
-function App() {
+function App({ children }) {
   return (
     <main className="app">
       <AppHeader
@@ -18,9 +18,16 @@ function App() {
         }
         icon={<img src={logo} alt="Anchor Chat" />}
       />
-      <Menu />
+      <article>
+        <Menu />
+        {children}
+      </article>
     </main>
   );
 }
+
+App.propTypes = {
+  children: PropTypes.element.isRequired
+};
 
 export default App;
