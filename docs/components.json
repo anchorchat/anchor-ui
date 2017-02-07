@@ -136,6 +136,33 @@
         },
         "required": true,
         "description": ""
+<<<<<<< HEAD
+=======
+      },
+      "secondaryText": {
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "active": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+>>>>>>> origin/docs
       }
     }
   },
