@@ -5,8 +5,14 @@ import appHeaderStyleSheet from '../style/app-header';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 
+/**
+ * Appheader styling
+ */
 class AppHeader extends Component {
   static propTypes = {
+    /**
+     * Title text (Name of the App)
+     */
     text: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -16,10 +22,25 @@ class AppHeader extends Component {
         icon: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Icon (Logo of the app)
+     */
     icon: PropTypes.node,
+    /**
+     * Right-hand side placed button
+     */
     rightButton: PropTypes.node,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the text element
+     */
     textStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the icon element
+     */
     iconStyle: PropTypes.instanceOf(Object)
   }
 

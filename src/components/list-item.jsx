@@ -7,9 +7,18 @@ import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 import Avatar from './avatar';
 
+/**
+ * ListItem styling
+ */
 class ListItem extends Component {
   static propTypes = {
+    /**
+     * The list item's primary text
+     */
     primaryText: PropTypes.node.isRequired,
+    /**
+     * The list item's secondary text
+     */
     secondaryText: PropTypes.node,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -22,13 +31,37 @@ class ListItem extends Component {
         avatar: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the primaryText element
+     */
     primaryTextStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the secondaryText element
+     */
     secondaryTextStyle: PropTypes.instanceOf(Object),
+    /**
+     * Click function for the root element
+     */
     onClick: PropTypes.func,
+    /**
+     * Add active styles to ListItem
+     */
     active: PropTypes.bool,
+    /**
+     * Right-hand side placed button
+     */
     rightButton: PropTypes.node,
+    /**
+     * Avatar object referenced by the list item
+     */
     avatar: PropTypes.string,
+    /**
+     * Badge object referenced by the list item
+     */
     badge: PropTypes.node
   }
 

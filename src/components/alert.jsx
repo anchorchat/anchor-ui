@@ -21,14 +21,17 @@ const icons = {
 };
 
 /**
- * Alert for doing things with alerts ;)
+ * Alert styling
  */
 class Alert extends Component {
   static propTypes = {
     /**
-     * The text to display in the alert.
+     * Text to display
      */
     text: PropTypes.node.isRequired,
+    /**
+     * Type of alert : "Info", "Success", "Warning", "Error"
+     */
     type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -42,10 +45,25 @@ class Alert extends Component {
         info: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the icon element
+     */
     iconStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the text element
+     */
     textStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the button element
+     */
     buttonStyle: PropTypes.instanceOf(Object),
+    /**
+     * Function to hide the alert(s)
+     */
     hideAlert: PropTypes.func.isRequired
   }
 

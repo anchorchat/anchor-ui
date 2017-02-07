@@ -4,14 +4,23 @@ import shallowEqual from 'recompose/shallowEqual';
 import avatarStyleSheet from '../style/avatars';
 import getClassNames from '../internal/get-class-names';
 
+/**
+ * Avatar styling
+ */
 class Avatar extends Component {
   static propTypes = {
+    /**
+     * Path to user's profile image
+     */
     image: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         avatar: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object)
   }
 

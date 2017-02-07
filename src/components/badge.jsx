@@ -6,16 +6,32 @@ import badgeStyleSheet from '../style/badges';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 
+/**
+ * Override the styles of the root element
+ */
 class Badge extends Component {
   static propTypes = {
+    /**
+     * Value that's being rendered
+     */
     value: PropTypes.number.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         badge: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Inverts color
+     */
     inverted: PropTypes.bool,
+    /**
+     * Max value that will be renderend
+     * This will result in ${maxValue}+ is value is higher then maxValue
+     */
     maxValue: PropTypes.number.isRequired
   }
 

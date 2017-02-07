@@ -7,9 +7,18 @@ import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 import darken from '../internal/darken';
 
+/**
+ * Button styling
+ */
 class Button extends Component {
   static propTypes = {
+    /**
+     * Content of the button
+     */
     children: PropTypes.node.isRequired,
+    /**
+     * Button onClick function
+     */
     onClick: PropTypes.func.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -17,8 +26,17 @@ class Button extends Component {
         button: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Switches between "icon-button" | "normal-button"
+     */
     iconButton: PropTypes.bool,
+    /**
+     * Inverts color
+     */
     inverted: PropTypes.bool
   }
 

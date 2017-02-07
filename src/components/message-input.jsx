@@ -9,10 +9,22 @@ import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
 
+/**
+ * Message input styling
+ */
 class MessageInput extends Component {
   static propTypes = {
+    /**
+     * Change the input's value
+     */
     onChange: PropTypes.func.isRequired,
+    /**
+     * Send a message
+     */
     sendMessage: PropTypes.func.isRequired,
+    /**
+     * The input's value
+     */
     value: PropTypes.string.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -23,12 +35,33 @@ class MessageInput extends Component {
         rightButton: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * The input's placeholder
+     */
     placeholder: PropTypes.string.isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the input element
+     */
     inputStyle: PropTypes.instanceOf(Object),
+    /**
+     * The input's max length
+     */
     maxLength: PropTypes.number,
+    /**
+     * Left-hand side placed button
+     */
     leftButton: PropTypes.node,
+    /**
+     * Ref function to the element
+     */
     inputRef: PropTypes.func,
+    /**
+     * Disables the input for the messageInput area
+     */
     disabled: PropTypes.bool
   }
 

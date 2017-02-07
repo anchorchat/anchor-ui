@@ -4,11 +4,26 @@ import shallowEqual from 'recompose/shallowEqual';
 import emptyStateStyleSheet from '../style/empty-states';
 import getClassNames from '../internal/get-class-names';
 
+/**
+ * Empty state styling
+ */
 class EmptyState extends Component {
   static propTypes = {
+    /**
+     * Body text
+     */
     headerText: PropTypes.node.isRequired,
+    /**
+     * Header text
+     */
     bodyText: PropTypes.node.isRequired,
+    /**
+     * Render a call to action button
+     */
     button: PropTypes.node,
+    /**
+     * Path to background image
+     */
     background: PropTypes.string,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -17,8 +32,17 @@ class EmptyState extends Component {
         body: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the header text element
+     */
     headerStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the body text element
+     */
     bodyStyle: PropTypes.instanceOf(Object)
   }
 
