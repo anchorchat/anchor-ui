@@ -43,3 +43,8 @@ main {
 .emojione {
   width: 32px;
 }
+
+li a {
+  color: inherit;
+  text-decoration: none;
+}
