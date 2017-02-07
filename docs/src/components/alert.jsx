@@ -1,6 +1,6 @@
 import React from 'react';
-import _ from 'underscore';
 import { Alert } from 'anchor-ui';
+import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
@@ -21,31 +21,7 @@ function AlertDoc() {
         <Alert text="Warning!" type="warning" hideAlert={() => {}} onClick={() => {}} />
         <Alert text="Error!" type="error" hideAlert={() => {}} onClick={() => {}} />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <tbody>
-            {_.map(props, (prop, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td> {/* TODO figure out how to display type */} </td>
-                <td>{prop.description}</td>
-                <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-                <td>{prop.required ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }

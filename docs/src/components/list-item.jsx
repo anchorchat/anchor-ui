@@ -2,7 +2,7 @@ import React from 'react';
 import { ListItem, Button, IconClose, Badge } from 'anchor-ui';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
-import PropsTable from './props-table';
+import Props from './props';
 import colors from '../style/colors';
 import dalek from '../assets/images/dalek.jpg';
 
@@ -46,21 +46,7 @@ function ListItemDoc() {
           badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
         />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }

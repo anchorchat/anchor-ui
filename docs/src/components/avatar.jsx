@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar } from 'anchor-ui';
 import components from '../../components.json';
-import PropsTable from './props-table';
+import Props from './props';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import theDoctor from '../assets/images/the_doctor.jpg';
 import dalek from '../assets/images/dalek.jpg';
@@ -21,21 +21,7 @@ function AvatarDoc() {
         <Avatar image={theDoctor} />
         <Avatar image={dalek} />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }
