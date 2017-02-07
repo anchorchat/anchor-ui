@@ -9,7 +9,7 @@ function PropsTable({ props }) {
           <td>{name}</td>
           <td>{prop.type.name === 'instanceOf' ? prop.type.value : prop.type.name} </td>
           <td>{prop.description}</td>
-          <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
+          <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : '-'}</td>
           <td>{prop.required ? 'Yes' : 'No'}</td>
         </tr>
       ))}
