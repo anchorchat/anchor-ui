@@ -30,7 +30,7 @@ class Alert extends Component {
      */
     text: PropTypes.node.isRequired,
     /**
-     * Type of alert : "Info", "Success", "Warning", "Error"
+     * Type of alert : "info", "success", "warning", "error"
      */
     type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
     sheet: PropTypes.shape({
