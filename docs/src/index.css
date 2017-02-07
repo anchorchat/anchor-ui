@@ -44,7 +44,6 @@ main {
   width: 32px;
 }
 
-li a {
-  color: inherit;
+a {
   text-decoration: none;
 }

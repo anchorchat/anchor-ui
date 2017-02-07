@@ -6,22 +6,22 @@ function Menu() {
   return (
     <nav>
       <List>
-        <ListItem primaryText={<Link to="/">Home</Link>} />
-        <ListItem primaryText={<Link to="/alert">Alert</Link>} />
-        <ListItem primaryText={<Link to="/app-header">AppHeader</Link>} />
-        <ListItem primaryText={<Link to="/avatar">Avatar</Link>} />
-        <ListItem primaryText={<Link to="/badge">Badge</Link>} />
-        <ListItem primaryText={<Link to="/button">Button</Link>} />
-        <ListItem primaryText={<Link to="/channel-header">ChannelHeader</Link>} />
-        <ListItem primaryText={<Link to="/dialog">Dialog</Link>} />
-        <ListItem primaryText={<Link to="/empty-state">EmptyState</Link>} />
-        <ListItem primaryText={<Link to="/input">Input</Link>} />
-        <ListItem primaryText={<Link to="/list">List</Link>} />
-        <ListItem primaryText={<Link to="/list-item">ListItem</Link>} />
-        <ListItem primaryText={<Link to="/loader">Loader</Link>} />
-        <ListItem primaryText={<Link to="/message">Message</Link>} />
-        <ListItem primaryText={<Link to="/message-input">MessageInput</Link>} />
-        <ListItem primaryText={<Link to="/profile-card">ProfileCard</Link>} />
+        <Link to="/"><ListItem primaryText="Home" /></Link>
+        <Link to="/alert"><ListItem primaryText="Alert" /></Link>
+        <Link to="/app-header"><ListItem primaryText="AppHeader" /></Link>
+        <Link to="/avatar"><ListItem primaryText="Avatar" /></Link>
+        <Link to="/badge"><ListItem primaryText="Badge" /></Link>
+        <Link to="/button"><ListItem primaryText="Button" /></Link>
+        <Link to="/channel-header"><ListItem primaryText="ChannelHeader" /></Link>
+        <Link to="/dialog"><ListItem primaryText="Dialog" /></Link>
+        <Link to="/empty-state"><ListItem primaryText="EmptyState" /></Link>
+        <Link to="/input"><ListItem primaryText="Input" /></Link>
+        <Link to="/list"><ListItem primaryText="List" /></Link>
+        <Link to="/list-item"><ListItem primaryText="ListItem" /></Link>
+        <Link to="/loader"><ListItem primaryText="Loader" /></Link>
+        <Link to="/message"><ListItem primaryText="loader" /></Link>
+        <Link to="/message-input"><ListItem primaryText="MessageInput" /></Link>
+        <Link to="/profile-card"><ListItem primaryText="ProfileCard" /></Link>
       </List>
     </nav>
   );
