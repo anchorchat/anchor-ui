@@ -3,7 +3,8 @@ import colors from './colors';
 const styleSheet = {
   header: {
     background: colors.white,
-    borderBottom: `1px solid ${colors.grey}`
+    borderBottom: `1px solid ${colors.grey}`,
+    position: 'relative'
   },
   headerText: {
     color: colors.primaryText,

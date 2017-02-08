@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import moment from 'moment';
+import format from 'date-fns/format'
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import emojione from 'emojione';
@@ -202,7 +202,7 @@ class Message extends Component {
             }
           </p>
           <span className={messageTimeClassName}>
-            {moment(message.createdAt).format(timeFormat)}
+            {format(message.createdAt, timeFormat)}
           </span>
         </section>
       </section>

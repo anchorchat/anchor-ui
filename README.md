@@ -22,7 +22,7 @@ Arguments:
 | Name           | Type      | Required | Default | Description               |
 |:---------------|:----------|:---------|:--------|:--------------------------|
 | ChildComponent | Component | Yes      |         | Child component to render |
-| color          | String    | Yes      | {}      | Theme color               |
+| color          | String    | Yes      |         | Theme color               |
 
 ---
 
@@ -230,6 +230,21 @@ Props:
 | labelStyle  | Object   | No       | {}      | Override the styles of the label element |
 | maxLength   | Number   | No       | 500     | The input's max length                   |
 | inputRef    | Function | No       |         | Ref function to the <input /> element    |
+
+---
+
+`<MessageList />` render Messages with optional auto scroll
+
+Props:
+
+| Name         | Type     | Required | Default | Description                                                           |
+|:-------------|:---------|:---------|:--------|:----------------------------------------------------------------------|
+| children     | Node     | Yes      |         | MessageList content                                                   |
+| autoScroll   | Boolean  | No       | false   | Enable autoScroll                                                     |
+| scrollOffset | Node     | No       | 100     | The amount of pixels the user has to scroll up to disable auto scroll |
+| addRef       | Function | No       |         | Expose the components methods to the parent                           |
+| style        | Object   | No       | {}      | Override the styles of the root element                               |
+| listStyle    | Object   | No       | {}      | Override the styles of the <ul /> element                             |
 
 ---
 
