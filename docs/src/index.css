@@ -86,3 +86,17 @@ main > article > article section {
 main > article > article section:last-of-type {
   margin-bottom: 0;
 }
+
+table thead th {
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 5px 20px 5px 0;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
