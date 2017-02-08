@@ -1324,6 +1324,119 @@
       }
     }
   },
+  "src/components/message-list.jsx": {
+    "description": "Render a list of items (Messages) with optional auto scroll",
+    "methods": [
+      {
+        "name": "shouldScrollToBottom",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "node",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "scrollDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "MessageList content"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "container": {
+                  "name": "string",
+                  "required": true
+                },
+                "list": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": false
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "scrollOffset": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The amount of pixels the user has to scroll up to disable auto scroll",
+        "defaultValue": {
+          "value": "100",
+          "computed": false
+        }
+      },
+      "addRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Expose the components methods to the parent,\nuseful for calling scrollDown from a parent component",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the <ul /> element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "autoScroll": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable autoScroll",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/message.jsx": {
     "description": "Message styling",
     "methods": [
