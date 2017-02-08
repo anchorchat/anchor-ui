@@ -14,16 +14,13 @@ function ProfileCardDoc() {
   return (
     <article>
       <h1>Profile Card</h1>
-      <hr />
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
-        <hr />
       </section>
       <section>
         <h1>Examples</h1>
         <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
-        <hr />
       </section>
       <Props props={props} />
     </article>

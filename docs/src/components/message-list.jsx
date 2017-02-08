@@ -51,11 +51,9 @@ function MessageListDoc() {
   return (
     <article>
       <h1>MessagesList</h1>
-      <hr />
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
-        <hr />
       </section>
       <section>
         <h1>Examples</h1>
@@ -69,7 +67,6 @@ function MessageListDoc() {
             />
           ))}
         </MessageList>
-        <hr />
       </section>
       <Props props={props} />
     </article>

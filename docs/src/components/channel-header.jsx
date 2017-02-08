@@ -16,8 +16,6 @@ function ChannelHeaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        {/* Channel header displays two buttons
-          on the top left & right of the screen */}
         <ChannelHeader
           name="Channel 1"
           rightButton={
