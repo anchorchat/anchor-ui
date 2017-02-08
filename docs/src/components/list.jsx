@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, Badge, Button, IconClose } from 'anchor-ui';
+import { List, ListItem, Button, IconClose } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
@@ -60,7 +60,6 @@ function ListDoc() {
                 : null
               }
               avatar={dalek}
-              badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
             />
           ))}
         </List>
