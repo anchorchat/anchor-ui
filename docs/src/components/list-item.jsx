@@ -25,10 +25,6 @@ function ListItemDoc() {
         <p>{componentData.description}</p>
       </section>
       <section>
-        {/* !ATTENTION! NOT WORKING EXAMPLE */}
-        {/* primaryText={channel.name}
-            secondaryText={`${channel.users}/${channel.maxUsers}`}
-        */}
         <h1>Examples</h1>
         <ListItem
           key={`channel-list-${channel.name}`}
