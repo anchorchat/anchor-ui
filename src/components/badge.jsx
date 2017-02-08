@@ -33,13 +33,14 @@ class Badge extends Component {
 
     const { sheet: { classes }, style } = props;
     const { color } = context;
+    const themeColor = color || colors.theme;
 
     const themeStyle = {
       button: {
-        backgroundColor: color
+        backgroundColor: themeColor
       },
       inverted: {
-        color,
+        color: themeColor,
         backgroundColor: colors.white,
       }
     };

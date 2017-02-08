@@ -233,6 +233,21 @@ Props:
 
 ---
 
+`<MessageList />` render Messages with optional auto scroll
+
+Props:
+
+| Name         | Type     | Required | Default | Description                                                           |
+|:-------------|:---------|:---------|:--------|:----------------------------------------------------------------------|
+| children     | Node     | Yes      |         | MessageList content                                                   |
+| autoScroll   | Boolean  | No       | false   | Enable autoScroll                                                     |
+| scrollOffset | Node     | No       | 100     | The amount of pixels the user has to scroll up to disable auto scroll |
+| addRef       | Function | No       |         | Expose the components methods to the parent                           |
+| style        | Object   | No       | {}      | Override the styles of the root element                               |
+| listStyle    | Object   | No       | {}      | Override the styles of the <ul /> element                             |
+
+---
+
 ## Installation
 
 ### src
