@@ -16,13 +16,15 @@ import {
   withTheme,
   IconPeople,
   IconChannels,
-  Badge
+  Badge,
+  MessageList
 } from '../../dist/index';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
 import dalek from './assets/images/dalek.jpg';
 import emptyStateBackground from './assets/images/empty_state_users.jpg';
 import logo from './assets/images/logo.svg';
+import channelBackground from './assets/images/channel-background.jpg';
 
 const channels = [
   {
@@ -96,17 +98,6 @@ class App extends Component {
     this.sendMessage = this.sendMessage.bind(this);
   }
 
-  componentDidMount() {
-    this.scrollDown();
-  }
-
-  scrollDown() {
-    setTimeout(() => {
-      const node = this.node;
-      node.scrollTop = node.scrollHeight;
-    }, 100);
-  }
-
   changeMessage(event) {
     this.setState({
       message: event.currentTarget.value
@@ -134,30 +125,12 @@ class App extends Component {
       message: ''
     });
 
-    this.scrollDown();
+    this.messageList.scrollDown();
 
     return false;
   }
 
   render() {
-    const channelStyle = {
-      background: colors.background,
-      height: 'calc(100% - 112px)',
-      position: 'relative'
-    };
-
-    const listStyle = {
-      overflow: 'auto',
-      height: 'auto',
-      maxHeight: '100%',
-      padding: '16px',
-      paddingBottom: '0',
-      background: 'none',
-      position: 'absolute',
-      bottom: '0',
-      boxSizing: 'border-box',
-    };
-
     const channelListStyle = {
       height: 'calc(100% - 116px)',
       borderRight: `1px solid ${colors.grey}`
@@ -165,6 +138,11 @@ class App extends Component {
 
     const userListStyle = {
       borderLeft: `1px solid ${colors.grey}`
+    };
+
+    const channelStyle = {
+      backgroundImage: `url(${channelBackground})`,
+      backgroundSize: '500px'
     };
 
     return (
@@ -208,7 +186,7 @@ class App extends Component {
             ))}
           </List>
         </article>
-        <article>
+        <article style={channelStyle}>
           <ChannelHeader
             name={currentChannel}
             rightButton={
@@ -222,18 +200,16 @@ class App extends Component {
               </Button>
             }
           />
-          <article style={channelStyle}>
-            <List listRef={node => (this.node = node)} style={listStyle}>
-              {this.state.messages.map((message, index) => (
-                <Message
-                  message={message} key={`message-${index}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.profileImage}
-                  emoji
-                />
-              ))}
-            </List>
-          </article>
+          <MessageList addRef={ref => (this.messageList = ref)}>
+            {this.state.messages.map((message, index) => (
+              <Message
+                message={message} key={`message-${index}`}
+                myMessage={message.username === currentUser}
+                avatar={message.profileImage}
+                emoji
+              />
+            ))}
+          </MessageList>
           <MessageInput
             onChange={this.changeMessage}
             placeholder="Type something..."

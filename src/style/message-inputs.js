@@ -2,7 +2,6 @@ import colors from './colors';
 
 const styleSheet = {
   input: {
-    background: colors.background,
     padding: '16px',
     paddingTop: '0',
     position: 'relative'
