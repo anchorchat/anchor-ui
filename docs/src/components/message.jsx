@@ -1,10 +1,11 @@
 import React from 'react';
 import { Message, List } from 'anchor-ui';
-import PropsTable from './props-table';
+import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import theDoctor from '../assets/images/the_doctor.jpg';
 import dalek from '../assets/images/dalek.jpg';
+import background from '../assets/images/channel-background.jpg';
 
 const messages = [
   {
@@ -38,6 +39,15 @@ const currentUser = 'The Doctor';
 function MessageDoc() {
   const componentData = components['src/components/message.jsx'];
   const props = omitSheetFromProps(componentData.props);
+
+  const style = {
+    list: {
+      backgroundImage: `url(${background})`,
+      backgroundSize: '500px',
+      padding: '16px'
+    }
+  };
+
   return (
     <article>
       <h1>Messages</h1>
@@ -49,7 +59,7 @@ function MessageDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <List>
+        <List style={style.list}>
           {messages.map((message, index) => (
             <Message
               message={message} key={`message-${index}`}
@@ -61,22 +71,7 @@ function MessageDoc() {
         </List>
         <hr />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-        <hr />
-      </section>
+      <Props props={props} />
     </article>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageInput, Button, IconEmoji } from 'anchor-ui';
-import PropsTable from './props-table';
+import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
@@ -31,21 +31,7 @@ function MessageInputDoc() {
         />
         <hr />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }

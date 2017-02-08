@@ -2,7 +2,7 @@ import React from 'react';
 import { ProfileCard } from 'anchor-ui';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
-import PropsTable from './props-table';
+import Props from './props';
 import theDoctor from '../assets/images/the_doctor.jpg';
 import colors from '../style/colors';
 
@@ -25,22 +25,7 @@ function ProfileCardDoc() {
         <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
         <hr />
       </section>
-      <section>
-        <h1>Properties</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-        <hr />
-      </section>
+      <Props props={props} />
     </article>
   );
 }

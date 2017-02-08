@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, IconEmoji, IconExit, IconClose, IconPeople, IconChannels } from 'anchor-ui';
-import PropsTable from './props-table';
+import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import colors from '../style/colors';
@@ -34,21 +34,7 @@ function ButtonDoc() {
           <IconChannels />
         </Button>
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }

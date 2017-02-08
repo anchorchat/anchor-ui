@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from 'anchor-ui';
-import PropsTable from './props-table';
+import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
@@ -16,24 +16,10 @@ function BadgeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Badge inverted={true} value={10} maxValue={9} />
-        <Badge inverted={false} value={10} maxValue={9} />
+        <Badge inverted value={10} maxValue={9} />
+        <Badge value={10} maxValue={9} />
       </section>
-      <section>
-        <h1>Props</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Default value</th>
-              <th>Required</th>
-            </tr>
-          </thead>
-          <PropsTable props={props} />
-        </table>
-      </section>
+      <Props props={props} />
     </article>
   );
 }
