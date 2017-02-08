@@ -37,19 +37,20 @@ class Button extends Component {
 
     const { sheet: { classes }, style } = props;
     const { color } = context;
+    const themeColor = color || colors.theme;
 
     const themeStyle = {
       button: {
-        backgroundColor: color,
+        backgroundColor: themeColor,
         '&:hover': {
-          backgroundColor: darken(color, 0.15)
+          backgroundColor: darken(themeColor, 0.15)
         },
         '&:active': {
-          backgroundColor: darken(color, 0.25)
+          backgroundColor: darken(themeColor, 0.25)
         }
       },
       inverted: {
-        color,
+        color: themeColor,
         backgroundColor: colors.white,
         '&:hover': {
           backgroundColor: darken(colors.white, 0.15)
