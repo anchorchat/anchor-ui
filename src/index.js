@@ -10,6 +10,7 @@ import ListItem from './components/list-item';
 import Input from './components/input';
 import Message from './components/message';
 import MessageInput from './components/message-input';
+import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
 import EmptyState from './components/empty-state';
 import Loader from './components/loader';
@@ -59,6 +60,7 @@ export {
   Input,
   Message,
   MessageInput,
+  MessageList,
   ProfileCard,
   EmptyState,
   Loader,

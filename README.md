@@ -233,6 +233,19 @@ Props:
 
 ---
 
+`<MessageList />`
+
+Props:
+
+| Name      | Type     | Required | Default | Description                                 |
+|:----------|:---------|:---------|:--------|:--------------------------------------------|
+| children  | Node     | Yes      |         | MessageList content                         |
+| addRef    | Function | No       |         | Expose the components methods to the parent |
+| style     | Object   | No       | {}      | Override the styles of the root element     |
+| listStyle | Object   | No       | {}      | Override the styles of the <ul /> element   |
+
+---
+
 ## Installation
 
 ### src
