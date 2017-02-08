@@ -19,7 +19,8 @@ function Menu() {
         <Link to="/list"><ListItem primaryText="List" /></Link>
         <Link to="/list-item"><ListItem primaryText="ListItem" /></Link>
         <Link to="/loader"><ListItem primaryText="Loader" /></Link>
-        <Link to="/message"><ListItem primaryText="loader" /></Link>
+        <Link to="/message"><ListItem primaryText="Message" /></Link>
+        <Link to="/message-list"><ListItem primaryText="MessageList" /></Link>
         <Link to="/message-input"><ListItem primaryText="MessageInput" /></Link>
         <Link to="/profile-card"><ListItem primaryText="ProfileCard" /></Link>
       </List>

@@ -18,6 +18,7 @@ import List from './components/list';
 import Loader from './components/loader';
 import MessageInput from './components/message-input';
 import Message from './components/message';
+import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
 import './index.css';
 
@@ -38,6 +39,7 @@ ReactDOM.render(
       <Route path="/list" component={List} />
       <Route path="/loader" component={Loader} />
       <Route path="/message-input" component={MessageInput} />
+      <Route path="/message-list" component={MessageList} />
       <Route path="/message" component={Message} />
       <Route path="/profile-card" component={ProfileCard} />
     </Route>
