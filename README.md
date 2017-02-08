@@ -22,7 +22,7 @@ Arguments:
 | Name           | Type      | Required | Default | Description               |
 |:---------------|:----------|:---------|:--------|:--------------------------|
 | ChildComponent | Component | Yes      |         | Child component to render |
-| color          | String    | Yes      | {}      | Theme color               |
+| color          | String    | Yes      |         | Theme color               |
 
 ---
 
