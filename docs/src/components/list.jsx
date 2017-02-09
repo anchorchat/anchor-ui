@@ -1,9 +1,8 @@
 import React from 'react';
-import { List, ListItem, Button, IconClose } from 'anchor-ui';
+import { List, ListItem, Button, IconClose, colors } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
-import colors from '../style/colors';
 import dalek from '../assets/images/dalek.jpg';
 
 function ListDoc() {

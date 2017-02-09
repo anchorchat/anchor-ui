@@ -1,10 +1,9 @@
 import React from 'react';
-import { ProfileCard } from 'anchor-ui';
+import { ProfileCard, colors } from 'anchor-ui';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import Props from './props';
 import theDoctor from '../assets/images/the_doctor.jpg';
-import colors from '../style/colors';
 
 function ProfileCardDoc() {
   const componentData = components['src/components/profile-card.jsx'];

@@ -1,10 +1,9 @@
 import React from 'react';
-import { EmptyState, Button } from 'anchor-ui';
+import { EmptyState, Button, colors } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import emptyStateBackground from '../assets/images/empty_state_users.jpg';
-import colors from '../style/colors';
 
 function EmptyStateDoc() {
   const componentData = components['src/components/empty-state.jsx'];
