@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button, IconEmoji, IconExit, IconClose, IconPeople, IconChannels } from 'anchor-ui';
+import { Button, IconEmoji, IconExit, IconClose, IconPeople, IconChannels, colors } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
-import colors from '../style/colors';
 
 function ButtonDoc() {
   const componentData = components['src/components/button.jsx'];

@@ -1,9 +1,8 @@
 import React from 'react';
-import { AppHeader, Button, IconExit } from 'anchor-ui';
+import { AppHeader, Button, IconExit, colors } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
-import colors from '../style/colors';
 import logo from '../assets/images/logo.svg';
 
 function AppHeaderDoc() {
