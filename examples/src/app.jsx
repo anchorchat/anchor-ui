@@ -201,7 +201,7 @@ class App extends Component {
               </Button>
             }
           />
-          <MessageList addRef={ref => (this.messageList = ref)}>
+          <MessageList addRef={ref => (this.messageList = ref)} autoScroll>
             {this.state.messages.map((message, index) => (
               <Message
                 message={message} key={`message-${index}`}
