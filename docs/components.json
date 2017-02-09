@@ -580,33 +580,6 @@
         "required": true,
         "description": "Type of input"
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "inputWrapper": {
-                  "name": "string",
-                  "required": true
-                },
-                "input": {
-                  "name": "string",
-                  "required": true
-                },
-                "label": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "label": {
         "type": {
           "name": "string"
@@ -673,7 +646,11 @@
           "name": "func"
         },
         "required": false,
-        "description": "Ref function to the element"
+        "description": "Ref function to the element",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       }
     }
   },

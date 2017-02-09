@@ -7,9 +7,9 @@ import combineStyles from '../internal/combine-styles';
 /**
  * Channel header styling
  */
-function ChannelHeader(
-  { name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle }
-) {
+function ChannelHeader({
+  name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle
+}) {
   return (
     <header style={combineStyles(styles.header, style)}>
       {
