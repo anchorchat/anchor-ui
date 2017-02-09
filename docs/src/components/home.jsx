@@ -14,7 +14,7 @@ function Home() {
       <section>
         <p>
           This set of components is used at Anchor.Chat
-          for creating all sorts of chat based applications.
+          for building all sorts of chat based applications.
         </p>
       </section>
       <section>
@@ -22,13 +22,39 @@ function Home() {
         <h2>Install from npm</h2>
         <ReactMarkdown source={install} className="markdown" />
         <h3>Dependencies</h3>
-        {_.map(npmPackage.dependencies, (version, name) => (
-          <p key={name}>{`${name}: ${version}`}</p>
-        ))}
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            {_.map(npmPackage.dependencies, (version, name) => (
+              <tr key={name}>
+                <td>{name}</td>
+                <td>{version}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         <h3>Peer Dependencies</h3>
-        {_.map(npmPackage.peerDependencies, (version, name) => (
-          <p key={name}>{`${name}: ${version}`}</p>
-        ))}
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            {_.map(npmPackage.peerDependencies, (version, name) => (
+              <tr key={name}>
+                <td>{name}</td>
+                <td>{version}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </article>
   );
