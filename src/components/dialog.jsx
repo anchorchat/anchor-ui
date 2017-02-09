@@ -1,12 +1,35 @@
 import React, { Component, PropTypes } from 'react';
-import injectSheet from 'react-jss';
-import classNames from 'classnames';
 import shallowEqual from 'recompose/shallowEqual';
-import popUpStyleSheet from '../style/pop-ups';
-import getClassNames from '../internal/get-class-names';
+import Radium from 'radium';
+import styles from '../style/dialog';
 import colors from '../style/colors';
 import Button from './button';
 import IconClose from '../icons/icon-close';
+import combineStyles from '../internal/combine-styles';
+
+function getStyle(themeColor, overrideStyle) {
+  const color = themeColor || colors.theme;
+
+  const style = { ...styles.dialog, background: color };
+
+  return combineStyles(style, overrideStyle);
+}
+
+function getHeadingStyle(style, image, overrideStyle) {
+  if (image) {
+    return combineStyles(combineStyles(style, styles.image), overrideStyle);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
+
+function getBodyStyle(style, button, overrideStyle) {
+  if (button) {
+    return combineStyles(combineStyles(style, styles.button), overrideStyle);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
 
 /**
  * Dialog styling
@@ -26,20 +49,9 @@ class Dialog extends Component {
      */
     button: PropTypes.node,
     /**
-     * Path to the image will only be rendered if provided
+     * An image to render in the dialog
      */
     image: PropTypes.node,
-    sheet: PropTypes.shape({
-      classes: PropTypes.shape({
-        overlay: PropTypes.string.isRequired,
-        popUp: PropTypes.string.isRequired,
-        headerText: PropTypes.string.isRequired,
-        bodyText: PropTypes.string.isRequired,
-        button: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        clickAway: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired,
     /**
      * Override the styles of the root element
      */
@@ -51,7 +63,7 @@ class Dialog extends Component {
     /**
      * Override the styles of the header element
      */
-    headerStyle: PropTypes.instanceOf(Object),
+    headingStyle: PropTypes.instanceOf(Object),
     /**
      * Override the styles of the body element
      */
@@ -67,30 +79,12 @@ class Dialog extends Component {
     image: null,
     style: {},
     overlayStyle: {},
-    headerStyle: {},
+    headingStyle: {},
     bodyStyle: {}
   }
 
   static contextTypes = {
     color: PropTypes.string
-  }
-
-  constructor(props) {
-    super(props);
-
-    const { sheet: { classes }, style, overlayStyle, headerStyle, bodyStyle } = props;
-
-    const className = getClassNames(classes, style, 'popUp', 'Dialog');
-    const overlayClassName = getClassNames(classes, overlayStyle, 'overlay', 'Dialog');
-    const headerClassName = getClassNames(classes, headerStyle, 'headerText', 'Dialog');
-    const bodyClassName = getClassNames(classes, bodyStyle, 'bodyText', 'Dialog');
-
-    this.state = {
-      className,
-      overlayClassName,
-      headerClassName,
-      bodyClassName
-    };
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -101,29 +95,23 @@ class Dialog extends Component {
   }
 
   render() {
-    const { headerText, bodyText, button, image, hideDialog, sheet: { classes } } = this.props;
-    const { className, overlayClassName, headerClassName, bodyClassName } = this.state;
+    const {
+      headerText, bodyText, button, image, hideDialog, style, overlayStyle, headingStyle, bodyStyle
+    } = this.props;
     const { color } = this.context;
-    const backgroundColor = color || colors.theme;
-
-    const style = {
-      position: 'absolute',
-      top: '5px',
-      right: '5px'
-    };
 
     return (
-      <section className={overlayClassName}>
-        <section className={classes.clickAway} onClick={hideDialog} />
-        <section className={className} style={{ backgroundColor }}>
-          <Button style={style} onClick={hideDialog} iconButton>
+      <section style={combineStyles(styles.overlay, overlayStyle)}>
+        <section style={styles.clickAway} onClick={hideDialog} />
+        <section style={getStyle(color, style)}>
+          <Button style={styles.closeButton} onClick={hideDialog} iconButton>
             <IconClose color={colors.white} />
           </Button>
           {image}
-          <h1 className={classNames(headerClassName, { [classes.image]: image })}>
+          <h1 style={getHeadingStyle(styles.headingText, image, headingStyle)}>
             {headerText}
           </h1>
-          <p className={classNames(bodyClassName, { [classes.button]: button })}>
+          <p style={getBodyStyle(styles.bodyText, button, bodyStyle)}>
             {bodyText}
           </p>
           {button}
@@ -133,4 +121,4 @@ class Dialog extends Component {
   }
 }
 
-export default injectSheet(popUpStyleSheet)(Dialog);
+export default Radium(Dialog);

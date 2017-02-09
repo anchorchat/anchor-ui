@@ -414,54 +414,11 @@
           "name": "node"
         },
         "required": false,
-        "description": "Path to the image will only be rendered if provided",
+        "description": "An image to render in the dialog",
         "defaultValue": {
           "value": "null",
           "computed": false
         }
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "overlay": {
-                  "name": "string",
-                  "required": true
-                },
-                "popUp": {
-                  "name": "string",
-                  "required": true
-                },
-                "headerText": {
-                  "name": "string",
-                  "required": true
-                },
-                "bodyText": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "image": {
-                  "name": "string",
-                  "required": true
-                },
-                "clickAway": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {
@@ -487,7 +444,7 @@
           "computed": false
         }
       },
-      "headerStyle": {
+      "headingStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
