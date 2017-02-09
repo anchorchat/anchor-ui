@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import format from 'date-fns/format'
+import format from 'date-fns/format';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import emojione from 'emojione';

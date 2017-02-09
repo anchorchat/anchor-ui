@@ -247,29 +247,10 @@
     "props": {
       "image": {
         "type": {
-          "name": "node"
+          "name": "string"
         },
         "required": true,
         "description": "Path to user's profile image"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "avatar": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {
@@ -286,7 +267,7 @@
     }
   },
   "src/components/badge.jsx": {
-    "description": "Override the styles of the root element",
+    "description": "Badge styling",
     "methods": [],
     "props": {
       "value": {
@@ -295,25 +276,6 @@
         },
         "required": true,
         "description": "Value that's being rendered"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "badge": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {
@@ -364,29 +326,6 @@
         },
         "required": true,
         "description": "Button onClick function"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "iconButton": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {

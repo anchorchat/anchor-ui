@@ -1,60 +1,40 @@
-import React, { Component, PropTypes } from 'react';
-import injectSheet from 'react-jss';
-import shallowEqual from 'recompose/shallowEqual';
-import avatarStyleSheet from '../style/avatars';
-import getClassNames from '../internal/get-class-names';
+import React, { PropTypes } from 'react';
+import pure from 'recompose/pure';
+import Radium from 'radium';
+import styles from '../style/avatars';
+
+function getStyle(image, overrideStyle) {
+  const style = { ...styles.avatar, backgroundImage: `url(${image})` };
+
+  if (Object.keys(overrideStyle).length !== 0) {
+    return Object.assign(style, overrideStyle);
+  }
+
+  return style;
+}
 
 /**
  * Avatar styling
  */
-class Avatar extends Component {
-  static propTypes = {
-    /**
-     * Path to user's profile image
-     */
-    image: PropTypes.node.isRequired,
-    sheet: PropTypes.shape({
-      classes: PropTypes.shape({
-        avatar: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired,
-    /**
-     * Override the styles of the root element
-     */
-    style: PropTypes.instanceOf(Object)
-  }
-
-  static defaultProps = {
-    style: {}
-  }
-
-  constructor(props) {
-    super(props);
-
-    const { sheet: { classes }, style } = props;
-    const className = getClassNames(classes, style, 'avatar', 'Avatar');
-
-    this.state = {
-      className
-    };
-  }
-
-  shouldComponentUpdate(nextProps) {
-    return (!shallowEqual(this.props, nextProps));
-  }
-
-  render() {
-    const { image } = this.props;
-    const { className } = this.state;
-
-    const style = {
-      backgroundImage: `url(${image})`
-    };
-
-    return (
-      <section style={style} className={className} />
-    );
-  }
+function Avatar({ image, style }) {
+  return (
+    <section style={getStyle(image, style)} />
+  );
 }
 
-export default injectSheet(avatarStyleSheet)(Avatar);
+Avatar.propTypes = {
+  /**
+   * Path to user's profile image
+   */
+  image: PropTypes.string.isRequired,
+  /**
+   * Override the styles of the root element
+   */
+  style: PropTypes.instanceOf(Object)
+};
+
+Avatar.defaultProps = {
+  style: {}
+};
+
+export default pure(Radium(Avatar));
