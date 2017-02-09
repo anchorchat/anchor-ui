@@ -14,7 +14,7 @@ function getStyle(themeColor, inverted, overrideStyle) {
     return Object.assign(style, invertedStyle);
   }
 
-  if (Object.keys(style).length !== 0) {
+  if (Object.keys(overrideStyle).length !== 0) {
     return Object.assign(style, overrideStyle);
   }
 
