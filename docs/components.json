@@ -35,53 +35,6 @@
         "required": true,
         "description": "Type of alert : \"info\", \"success\", \"warning\", \"error\""
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "alert": {
-                  "name": "string",
-                  "required": true
-                },
-                "icon": {
-                  "name": "string",
-                  "required": true
-                },
-                "text": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "success": {
-                  "name": "string",
-                  "required": true
-                },
-                "error": {
-                  "name": "string",
-                  "required": true
-                },
-                "warning": {
-                  "name": "string",
-                  "required": true
-                },
-                "info": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",
