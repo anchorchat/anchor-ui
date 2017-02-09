@@ -1,0 +1,1628 @@
+{
+  "src/components/alert.jsx": {
+    "description": "Alert styling",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Text to display"
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'success'",
+              "computed": false
+            },
+            {
+              "value": "'error'",
+              "computed": false
+            },
+            {
+              "value": "'warning'",
+              "computed": false
+            },
+            {
+              "value": "'info'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": "Type of alert : \"info\", \"success\", \"warning\", \"error\""
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "alert": {
+                  "name": "string",
+                  "required": true
+                },
+                "icon": {
+                  "name": "string",
+                  "required": true
+                },
+                "text": {
+                  "name": "string",
+                  "required": true
+                },
+                "button": {
+                  "name": "string",
+                  "required": true
+                },
+                "success": {
+                  "name": "string",
+                  "required": true
+                },
+                "error": {
+                  "name": "string",
+                  "required": true
+                },
+                "warning": {
+                  "name": "string",
+                  "required": true
+                },
+                "info": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the button element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "hideAlert": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Function to hide the alert(s)"
+      }
+    }
+  },
+  "src/components/app-header.jsx": {
+    "description": "Appheader styling",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Title text (Name of the App)"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "header": {
+                  "name": "string",
+                  "required": true
+                },
+                "text": {
+                  "name": "string",
+                  "required": true
+                },
+                "button": {
+                  "name": "string",
+                  "required": true
+                },
+                "icon": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon (Logo of the app)",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Right-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/avatar.jsx": {
+    "description": "Avatar styling",
+    "methods": [],
+    "props": {
+      "image": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Path to user's profile image"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/badge.jsx": {
+    "description": "Badge styling",
+    "methods": [],
+    "props": {
+      "value": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "Value that's being rendered"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inverts color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "maxValue": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "Max value that will be renderend\nThis will result in ${maxValue}+ is value is higher then maxValue"
+      }
+    }
+  },
+  "src/components/button.jsx": {
+    "description": "Button styling",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content of the button"
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Button onClick function"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconButton": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Switches between \"icon-button\" | \"normal-button\"",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inverts color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/channel-header.jsx": {
+    "description": "Channel header styling",
+    "methods": [],
+    "props": {
+      "name": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content of the header"
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Right-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Left-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "header": {
+                  "name": "string",
+                  "required": true
+                },
+                "headerText": {
+                  "name": "string",
+                  "required": true
+                },
+                "buttonRight": {
+                  "name": "string",
+                  "required": true
+                },
+                "buttonLeft": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightButtonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the rightButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "leftButtonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the leftButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/dialog.jsx": {
+    "description": "Dialog styling",
+    "methods": [],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Header text"
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Body text"
+      },
+      "button": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Render a call to action button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "image": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Path to the image will only be rendered if provided",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "overlay": {
+                  "name": "string",
+                  "required": true
+                },
+                "popUp": {
+                  "name": "string",
+                  "required": true
+                },
+                "headerText": {
+                  "name": "string",
+                  "required": true
+                },
+                "bodyText": {
+                  "name": "string",
+                  "required": true
+                },
+                "button": {
+                  "name": "string",
+                  "required": true
+                },
+                "image": {
+                  "name": "string",
+                  "required": true
+                },
+                "clickAway": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "overlayStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the overlay element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the body element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "hideDialog": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Function to hide dialog element"
+      }
+    }
+  },
+  "src/components/empty-state.jsx": {
+    "description": "Empty state styling",
+    "methods": [],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Body text"
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Header text"
+      },
+      "button": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Render a call to action button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "background": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to background image",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "emptyState": {
+                  "name": "string",
+                  "required": true
+                },
+                "header": {
+                  "name": "string",
+                  "required": true
+                },
+                "body": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the body text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/input.jsx": {
+    "description": "Input styling",
+    "methods": [],
+    "props": {
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the input's value"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's value"
+      },
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Type of input"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "inputWrapper": {
+                  "name": "string",
+                  "required": true
+                },
+                "input": {
+                  "name": "string",
+                  "required": true
+                },
+                "label": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's label"
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's name"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxLength": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The input's max length",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "inputRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Ref function to the element"
+      }
+    }
+  },
+  "src/components/list-item.jsx": {
+    "description": "ListItem styling",
+    "methods": [],
+    "props": {
+      "primaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The list item's primary text"
+      },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The list item's secondary text",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "listItem": {
+                  "name": "string",
+                  "required": true
+                },
+                "primaryText": {
+                  "name": "string",
+                  "required": true
+                },
+                "secondaryText": {
+                  "name": "string",
+                  "required": true
+                },
+                "rightButton": {
+                  "name": "string",
+                  "required": true
+                },
+                "button": {
+                  "name": "string",
+                  "required": true
+                },
+                "leftAvatar": {
+                  "name": "string",
+                  "required": true
+                },
+                "avatar": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the primaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the secondaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Click function for the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Add active styles to ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Right-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Avatar object referenced by the list item",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Badge object referenced by the list item",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/list.jsx": {
+    "description": "List styling",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "List of listItems to render"
+      },
+      "listRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Reference to the corresponding listItems list"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "list": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/loader.jsx": {
+    "description": "Loader styling",
+    "methods": [],
+    "props": {
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "loader": {
+                  "name": "string",
+                  "required": true
+                },
+                "dot": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "dotStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the dot element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inverts the color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/message-input.jsx": {
+    "description": "Message input styling",
+    "methods": [
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the input's value"
+      },
+      "sendMessage": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Send a message"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's value"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "messageInput": {
+                  "name": "string",
+                  "required": true
+                },
+                "leftButton": {
+                  "name": "string",
+                  "required": true
+                },
+                "input": {
+                  "name": "string",
+                  "required": true
+                },
+                "button": {
+                  "name": "string",
+                  "required": true
+                },
+                "rightButton": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's placeholder"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxLength": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The input's max length",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Left-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "inputRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Ref function to the element"
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the input for the messageInput area",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/message-list.jsx": {
+    "description": "Render a list of items (Messages) with optional auto scroll",
+    "methods": [
+      {
+        "name": "shouldScrollToBottom",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "node",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "scrollDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "MessageList content"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "container": {
+                  "name": "string",
+                  "required": true
+                },
+                "list": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": false
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "scrollOffset": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The amount of pixels the user has to scroll up to disable auto scroll",
+        "defaultValue": {
+          "value": "100",
+          "computed": false
+        }
+      },
+      "addRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Expose the components methods to the parent,\nuseful for calling scrollDown from a parent component",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the <ul /> element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "autoScroll": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable autoScroll",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/message.jsx": {
+    "description": "Message styling",
+    "methods": [
+      {
+        "name": "createMarkup",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to the user's profile image will only be rendered if provided",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "message": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "body": {
+              "name": "string",
+              "description": "The message's body text",
+              "required": true
+            },
+            "createdAt": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "instanceOf",
+                  "value": "Date"
+                }
+              ],
+              "description": "Time when the message was created",
+              "required": true
+            },
+            "username": {
+              "name": "string",
+              "description": "The sender's username",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": "Message object containing : body, createdAt, username"
+      },
+      "timeFormat": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The format of displaying message.createdAt",
+        "defaultValue": {
+          "value": "'HH:mm'",
+          "computed": false
+        }
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "message": {
+                  "name": "string",
+                  "required": true
+                },
+                "messageHeader": {
+                  "name": "string",
+                  "required": true
+                },
+                "messageBody": {
+                  "name": "string",
+                  "required": true
+                },
+                "messageTime": {
+                  "name": "string",
+                  "required": true
+                },
+                "messageContainer": {
+                  "name": "string",
+                  "required": true
+                },
+                "myContainer": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the body element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the time element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Flag used to change message styles.\nTrue if the message was sent by the current user",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "emoji": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable emojione for messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "enableLinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables links in messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/profile-card.jsx": {
+    "description": "ProfileCard styling",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to the user's profile image will only be rendered if provided",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The user's username"
+      },
+      "sheet": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "classes": {
+              "name": "shape",
+              "value": {
+                "profileCard": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  }
+}

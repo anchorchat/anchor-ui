@@ -11,7 +11,8 @@
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
-    "prepublish": "npm run lint && npm run test && npm run compile"
+    "prepublish": "npm run lint && npm run test && npm run compile",
+    "docs": "react-docgen src/components --out docs/components.json --pretty"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "mocha": "^3.2.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
+    "react-docgen": "^2.13.0",
     "react-dom": "^15.4.2",
     "sinon": "^1.17.7"
   },

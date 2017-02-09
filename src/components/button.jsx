@@ -37,12 +37,30 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   return style;
 }
 
+/**
+ * Button styling
+ */
 class Button extends Component {
   static propTypes = {
+    /**
+     * Content of the button
+     */
     children: PropTypes.node.isRequired,
+    /**
+     * Button onClick function
+     */
     onClick: PropTypes.func.isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Switches between "icon-button" | "normal-button"
+     */
     iconButton: PropTypes.bool,
+    /**
+     * Inverts color
+     */
     inverted: PropTypes.bool
   }
 

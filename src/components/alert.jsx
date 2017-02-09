@@ -20,9 +20,18 @@ const icons = {
   info: <IconInfo color={darken(colors.alert.info, 0.65)} />
 };
 
+/**
+ * Alert styling
+ */
 class Alert extends Component {
   static propTypes = {
+    /**
+     * Text to display
+     */
     text: PropTypes.node.isRequired,
+    /**
+     * Type of alert : "info", "success", "warning", "error"
+     */
     type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -36,22 +45,33 @@ class Alert extends Component {
         info: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the icon element
+     */
     iconStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the text element
+     */
     textStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the button element
+     */
     buttonStyle: PropTypes.instanceOf(Object),
+    /**
+     * Function to hide the alert(s)
+     */
     hideAlert: PropTypes.func.isRequired
   }
 
   static defaultProps = {
     style: {},
-    secondaryText: '',
     iconStyle: {},
     textStyle: {},
-    buttonStyle: {},
-    onClick: null,
-    active: false,
-    rightButton: null
+    buttonStyle: {}
   }
 
   constructor(props) {

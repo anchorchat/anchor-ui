@@ -6,6 +6,9 @@ import loaderStyleSheet from '../style/loaders';
 import getClassNames from '../internal/get-class-names';
 import colors from '../style/colors';
 
+/**
+ * Loader styling
+ */
 class Loader extends Component {
   static propTypes = {
     sheet: PropTypes.shape({
@@ -14,8 +17,17 @@ class Loader extends Component {
         dot: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the dot element
+     */
     dotStyle: PropTypes.instanceOf(Object),
+    /**
+     * Inverts the color
+     */
     inverted: PropTypes.bool
   }
 

@@ -8,11 +8,26 @@ import colors from '../style/colors';
 import Button from './button';
 import IconClose from '../icons/icon-close';
 
+/**
+ * Dialog styling
+ */
 class Dialog extends Component {
   static propTypes = {
+    /**
+     * Header text
+     */
     headerText: PropTypes.node.isRequired,
+    /**
+     * Body text
+     */
     bodyText: PropTypes.node.isRequired,
+    /**
+     * Render a call to action button
+     */
     button: PropTypes.node,
+    /**
+     * Path to the image will only be rendered if provided
+     */
     image: PropTypes.node,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -25,17 +40,31 @@ class Dialog extends Component {
         clickAway: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the overlay element
+     */
     overlayStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the header element
+     */
     headerStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the body element
+     */
     bodyStyle: PropTypes.instanceOf(Object),
+    /**
+     * Function to hide dialog element
+     */
     hideDialog: PropTypes.func.isRequired
   }
 
   static defaultProps = {
     button: null,
     image: null,
-    background: '',
     style: {},
     overlayStyle: {},
     headerStyle: {},

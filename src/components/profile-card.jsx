@@ -7,15 +7,27 @@ import getClassNames from '../internal/get-class-names';
 import profileCardStyleSheet from '../style/profile-cards';
 import colors from '../style/colors';
 
+/**
+ * ProfileCard styling
+ */
 class ProfileCard extends Component {
   static propTypes = {
+    /**
+     * Path to the user's profile image will only be rendered if provided
+     */
     avatar: PropTypes.string,
+    /**
+     * The user's username
+     */
     username: PropTypes.node.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
         profileCard: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object)
   }
 

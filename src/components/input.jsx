@@ -5,10 +5,22 @@ import shallowEqual from 'recompose/shallowEqual';
 import getClassNames from '../internal/get-class-names';
 import inputStyleSheet from '../style/inputs';
 
+/**
+ * Input styling
+ */
 class Input extends Component {
   static propTypes = {
+    /**
+     * Change the input's value
+     */
     onChange: PropTypes.func.isRequired,
+    /**
+     * The input's value
+     */
     value: PropTypes.string.isRequired,
+    /**
+     * Type of input
+     */
     type: PropTypes.string.isRequired,
     sheet: PropTypes.shape({
       classes: PropTypes.shape({
@@ -17,12 +29,33 @@ class Input extends Component {
         label: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
+    /**
+     * The input's label
+     */
     label: PropTypes.string.isRequired,
+    /**
+     * The input's name
+     */
     name: PropTypes.string.isRequired,
+    /**
+     * Override the styles of the root element
+     */
     style: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the input element
+     */
     inputStyle: PropTypes.instanceOf(Object),
+    /**
+     * Override the styles of the label element
+     */
     labelStyle: PropTypes.instanceOf(Object),
+    /**
+     * The input's max length
+     */
     maxLength: PropTypes.number,
+    /**
+     * Ref function to the element
+     */
     inputRef: PropTypes.func
   }
 
@@ -30,8 +63,7 @@ class Input extends Component {
     style: {},
     inputStyle: {},
     labelStyle: {},
-    maxLength: 500,
-    leftButton: null
+    maxLength: 500
   }
 
   constructor(props) {
