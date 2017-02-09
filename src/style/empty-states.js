@@ -12,7 +12,7 @@ const styleSheet = {
     justifyContent: 'center',
     padding: '24px'
   },
-  header: {
+  heading: {
     fontSize: '16',
     fontWeight: 'bold',
     color: colors.primaryText,
