@@ -3,6 +3,7 @@ import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from '../style/badges';
 import colors from '../style/colors';
+import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, inverted, overrideStyle) {
   const color = themeColor || colors.theme;
@@ -11,14 +12,10 @@ function getStyle(themeColor, inverted, overrideStyle) {
   const invertedStyle = { ...styles.inverted, color };
 
   if (inverted) {
-    return Object.assign(style, invertedStyle);
+    return combineStyles(invertedStyle, overrideStyle);
   }
 
-  if (Object.keys(overrideStyle).length !== 0) {
-    return Object.assign(style, overrideStyle);
-  }
-
-  return style;
+  return combineStyles(style, overrideStyle);
 }
 
 /**
