@@ -3,12 +3,24 @@ import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from '../style/buttons';
 import colors from '../style/colors';
+import darken from '../internal/darken';
 
 function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  let style = { ...styles.button, backgroundColor: color };
-  const invertedStyle = { ...styles.inverted, color };
+  let style = {
+    ...styles.button,
+    backgroundColor: color,
+    ':hover': { backgroundColor: darken(themeColor, 0.15) },
+    ':active': { backgroundColor: darken(themeColor, 0.25) }
+  };
+  const invertedStyle = {
+    ...styles.inverted,
+    color,
+    backgroundColor: colors.white,
+    ':hover': { backgroundColor: darken(colors.white, 0.15) },
+    ':active': { backgroundColor: darken(colors.white, 0.25) }
+  };
 
   if (inverted) {
     return Object.assign(style, invertedStyle);
