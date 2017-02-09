@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmptyState, Button, colors } from 'anchor-ui';
+import { EmptyState, Button } from 'anchor-ui';
 import Props from './props';
 import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
@@ -8,9 +8,7 @@ import emptyStateBackground from '../assets/images/empty_state_users.jpg';
 function EmptyStateDoc() {
   const componentData = components['src/components/empty-state.jsx'];
   const props = omitSheetFromProps(componentData.props);
-  const userListStyle = {
-    borderLeft: `1px solid ${colors.grey}`
-  };
+
   const emptyState = {
     header: 'Empty state',
     body: 'You have stumbled upon an empty state my good sir.',
@@ -26,7 +24,6 @@ function EmptyStateDoc() {
       <section>
         <h1>Examples</h1>
         <EmptyState
-          style={userListStyle}
           background={emptyState.background}
           headerText={emptyState.header}
           bodyText={emptyState.body}
