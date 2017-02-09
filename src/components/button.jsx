@@ -70,7 +70,7 @@ class Button extends Component {
     const { color } = this.context;
 
     return (
-      <button onClick={onClick} style={getStyle(color, inverted, iconButton, style)}>
+      <button key="button" onClick={onClick} style={getStyle(color, inverted, iconButton, style)}>
         {children}
       </button>
     );
