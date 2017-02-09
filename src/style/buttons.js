@@ -13,16 +13,15 @@ const styleSheet = {
     padding: '8px',
     transition: 'background-color .3s ease-in-out',
     width: '40px',
-    '&:hover': {
-      backgroundColor: fade(colors.black, 0.9)
+    ':hover': {
+      background: fade(colors.black, 0.9)
     },
-    '&:active': {
-      backgroundColor: fade(colors.black, 0.8)
+    ':active': {
+      background: fade(colors.black, 0.8)
     }
   },
   button: {
     backgroundColor: colors.theme,
-    background: 'none',
     border: 0,
     borderRadius: '3px',
     boxShadow: `0 2px 2px 0 ${colors.boxShadow}`,
@@ -32,14 +31,21 @@ const styleSheet = {
     outline: 0,
     padding: '6.5px 13px',
     transition: 'background-color .3s ease-in-out',
-    '&:hover': {
+    ':hover': {
       backgroundColor: darken(colors.theme, 0.15)
     },
-    '&:active': {
+    ':active': {
       backgroundColor: darken(colors.theme, 0.25)
+    }
+  },
+  inverted: {
+    color: colors.theme,
+    backgroundColor: colors.white,
+    ':hover': {
+      backgroundColor: darken(colors.white, 0.15)
     },
-    '&>*': {
-      margin: '0'
+    ':active': {
+      backgroundColor: darken(colors.white, 0.25)
     }
   }
 };
