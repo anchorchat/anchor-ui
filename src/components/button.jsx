@@ -4,6 +4,7 @@ import Radium from 'radium';
 import styles from '../style/buttons';
 import colors from '../style/colors';
 import darken from '../internal/darken';
+import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   const color = themeColor || colors.theme;
@@ -23,18 +24,14 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   };
 
   if (inverted) {
-    return Object.assign(style, invertedStyle);
+    return combineStyles(combineStyles(style, invertedStyle), overrideStyle);
   }
 
   if (iconButton) {
     style = styles.iconButton;
   }
 
-  if (Object.keys(overrideStyle).length !== 0) {
-    return Object.assign(style, overrideStyle);
-  }
-
-  return style;
+  return combineStyles(style, overrideStyle);
 }
 
 /**

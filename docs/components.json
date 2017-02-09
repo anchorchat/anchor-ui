@@ -101,45 +101,14 @@
           "name": "node"
         },
         "required": true,
-        "description": "Title text (Name of the App)"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "header": {
-                  "name": "string",
-                  "required": true
-                },
-                "text": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "icon": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
+        "description": "Title text (your app's name)"
       },
       "icon": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Icon (Logo of the app)",
+        "description": "Icon (your app's icon)",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -187,6 +156,18 @@
         },
         "required": false,
         "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the button element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -349,37 +330,6 @@
           "computed": false
         }
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "header": {
-                  "name": "string",
-                  "required": true
-                },
-                "headerText": {
-                  "name": "string",
-                  "required": true
-                },
-                "buttonRight": {
-                  "name": "string",
-                  "required": true
-                },
-                "buttonLeft": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -392,25 +342,13 @@
           "computed": false
         }
       },
-      "headerTextStyle": {
+      "textStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
         },
         "required": false,
         "description": "Override the styles of the text element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "rightButtonStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the rightButton element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -423,6 +361,18 @@
         },
         "required": false,
         "description": "Override the styles of the leftButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightButtonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the rightButton element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -464,54 +414,11 @@
           "name": "node"
         },
         "required": false,
-        "description": "Path to the image will only be rendered if provided",
+        "description": "An image to render in the dialog",
         "defaultValue": {
           "value": "null",
           "computed": false
         }
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "overlay": {
-                  "name": "string",
-                  "required": true
-                },
-                "popUp": {
-                  "name": "string",
-                  "required": true
-                },
-                "headerText": {
-                  "name": "string",
-                  "required": true
-                },
-                "bodyText": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "image": {
-                  "name": "string",
-                  "required": true
-                },
-                "clickAway": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {
@@ -537,7 +444,7 @@
           "computed": false
         }
       },
-      "headerStyle": {
+      "headingStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"

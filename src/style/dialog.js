@@ -14,11 +14,11 @@ const styleSheet = {
     backgroundColor: fade(colors.black, 0.5),
     zIndex: '2'
   },
-  popUp: {
+  dialog: {
     width: '80%',
     maxWidth: '350px',
     margin: '0 auto',
-    backgroundColor: colors.theme,
+    background: colors.theme,
     borderRadius: '3px',
     padding: '50px 30px',
     boxSizing: 'border-box',
@@ -27,12 +27,14 @@ const styleSheet = {
     alignItems: 'center',
     position: 'relative'
   },
-  headerText: {
+  headingText: {
     color: colors.white,
     fontSize: '24px',
     fontWeight: 'bold',
     textAlign: 'center',
-    margin: '0',
+    marginTop: '0',
+    marginLeft: '0',
+    marginRight: '0',
     marginBottom: '12.5px'
   },
   image: {
@@ -40,12 +42,20 @@ const styleSheet = {
   },
   bodyText: {
     textAlign: 'center',
-    margin: '0',
+    marginTop: '0',
+    marginLeft: '0',
+    marginRight: '0',
+    marginBottom: '0',
     fontSize: '12px',
     color: colors.white
   },
   button: {
     marginBottom: '25px'
+  },
+  closeButton: {
+    position: 'absolute',
+    top: '5px',
+    right: '5px'
   },
   clickAway: {
     width: '100%',

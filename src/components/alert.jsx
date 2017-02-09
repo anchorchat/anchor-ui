@@ -24,14 +24,12 @@ const icons = {
  */
 function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle }) {
   return (
-    <section style={combineStyles(styles.alert, style)}>
+    <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)}>
       <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
       <p style={combineStyles(styles.text, textStyle)}>{text}</p>
-      <div style={combineStyles(styles.button, buttonStyle)}>
-        <Button iconButton onClick={hideAlert}>
-          <IconClose color={darken(colors.alert[type], 0.65)} />
-        </Button>
-      </div>
+      <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
+        <IconClose color={darken(colors.alert[type], 0.65)} />
+      </Button>
     </section>
   );
 }

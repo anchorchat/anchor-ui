@@ -6,7 +6,7 @@ const styleSheet = {
     borderBottom: `1px solid ${colors.grey}`,
     position: 'relative'
   },
-  headerText: {
+  text: {
     color: colors.primaryText,
     fontSize: '18px',
     fontWeight: 'bold',

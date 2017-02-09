@@ -16,13 +16,7 @@ const styleSheet = {
     fontSize: '24px',
     lineHeight: '36px',
     margin: 0,
-    textDecoration: 'none',
-    '& *': {
-      color: 'inherit',
-      fontSize: 'inherit',
-      lineHeight: 'inherit',
-      textDecoration: 'inherit'
-    }
+    textDecoration: 'none'
   },
   button: {
     position: 'absolute',
