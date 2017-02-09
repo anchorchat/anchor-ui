@@ -9,7 +9,7 @@ export default withTheme(
       bodyText="Site is unavailable at the moment"
       button={
         <Button onClick={() => {}} inverted>
-          <p>Logout</p>
+          Logout
         </Button>
       }
       hideDialog={() => console.log('hide')}
