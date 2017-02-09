@@ -12,7 +12,7 @@ function getStyle(themeColor, inverted, overrideStyle) {
   const invertedStyle = { ...styles.inverted, color };
 
   if (inverted) {
-    return combineStyles(invertedStyle, overrideStyle);
+    return combineStyles(combineStyles(style, invertedStyle), overrideStyle);
   }
 
   return combineStyles(style, overrideStyle);

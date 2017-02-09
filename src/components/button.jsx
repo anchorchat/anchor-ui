@@ -24,7 +24,7 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   };
 
   if (inverted) {
-    return combineStyles(invertedStyle, overrideStyle);
+    return combineStyles(combineStyles(style, invertedStyle), overrideStyle);
   }
 
   if (iconButton) {
