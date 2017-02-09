@@ -153,6 +153,7 @@ class App extends Component {
               href="https://github.com/anchorchat/anchor-ui"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ color: colors.white, textDecoration: 'none' }}
             >
               Anchor UI
             </a>
