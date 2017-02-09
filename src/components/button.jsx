@@ -56,52 +56,12 @@ class Button extends Component {
     color: PropTypes.string
   }
 
-  // constructor(props, context) {
-  //   super(props, context);
-  //
-  //   const { sheet: { classes }, style } = props;
-  //   const { color } = context;
-  //   const themeColor = color || colors.theme;
-  //
-  //   const themeStyle = {
-  //     button: {
-  //       backgroundColor: themeColor,
-  //       '&:hover': {
-  //         backgroundColor: darken(themeColor, 0.15)
-  //       },
-  //       '&:active': {
-  //         backgroundColor: darken(themeColor, 0.25)
-  //       }
-  //     },
-  //     inverted: {
-  //       color: themeColor,
-  //       backgroundColor: colors.white,
-  //       '&:hover': {
-  //         backgroundColor: darken(colors.white, 0.15)
-  //       },
-  //       '&:active': {
-  //         backgroundColor: darken(colors.white, 0.25)
-  //       }
-  //     }
-  //   };
-  //
-  //   const className = getClassNames(classes, style, 'button', 'Button');
-  //   const iconButtonClassName = getClassNames(classes, style, 'iconButton', 'Button');
-  //   const themeClassName = getClassNames(classes, themeStyle.button, 'theme', 'Button');
-  //   const invertedClassName = getClassNames(classes, themeStyle.inverted, 'theme', 'Button');
-  //
-  //   this.state = {
-  //     className,
-  //     iconButtonClassName,
-  //     themeClassName,
-  //     invertedClassName
-  //   };
-  // }
-
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext)
+      !shallowEqual(this.context, nextContext) ||
+      Radium.getState(this.state, 'button', ':hover') !== Radium.getState(nextState, 'button', ':hover') ||
+      Radium.getState(this.state, 'button', ':active') !== Radium.getState(nextState, 'button', ':active')
     );
   }
 
