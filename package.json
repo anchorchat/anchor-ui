@@ -67,6 +67,7 @@
   "dependencies": {
     "date-fns": "^1.27.2",
     "escape-html": "^1.0.3",
+    "radium": "^0.18.1",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }
