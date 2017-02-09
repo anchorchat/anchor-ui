@@ -517,33 +517,6 @@
           "computed": false
         }
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "emptyState": {
-                  "name": "string",
-                  "required": true
-                },
-                "header": {
-                  "name": "string",
-                  "required": true
-                },
-                "body": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -556,7 +529,7 @@
           "computed": false
         }
       },
-      "headerStyle": {
+      "headingStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
