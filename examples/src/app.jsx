@@ -228,7 +228,7 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button onClick={() => {}}><p>Click me</p></Button>}
+            button={<Button onClick={() => {}}>Click me</Button>}
           />
         </article>
       </section>
