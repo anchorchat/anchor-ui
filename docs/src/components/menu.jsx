@@ -6,7 +6,7 @@ function Menu() {
   return (
     <nav>
       <List>
-        <Link to="/"><ListItem primaryText="Home" /></Link>
+        <Link to="/"><ListItem primaryText="Getting started" /></Link>
         <Link to="/alert"><ListItem primaryText="Alert" /></Link>
         <Link to="/app-header"><ListItem primaryText="AppHeader" /></Link>
         <Link to="/avatar"><ListItem primaryText="Avatar" /></Link>
