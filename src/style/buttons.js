@@ -14,10 +14,10 @@ const styleSheet = {
     transition: 'background-color .3s ease-in-out',
     width: '40px',
     ':hover': {
-      backgroundColor: fade(colors.black, 0.9)
+      background: fade(colors.black, 0.9)
     },
     ':active': {
-      backgroundColor: fade(colors.black, 0.8)
+      background: fade(colors.black, 0.8)
     }
   },
   button: {
