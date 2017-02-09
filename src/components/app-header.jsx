@@ -5,7 +5,7 @@ import styles from '../style/app-header';
 import colors from '../style/colors';
 import combineStyles from '../internal/combine-styles';
 
-function getSyle(themeColor, overrideStyle) {
+function getStyle(themeColor, overrideStyle) {
   const color = themeColor || colors.theme;
 
   const style = { ...styles.header, background: color };
@@ -73,7 +73,7 @@ class AppHeader extends Component {
     const { color } = this.context;
 
     return (
-      <header style={getSyle(color, style)}>
+      <header style={getStyle(color, style)}>
         {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
         <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1>
         {
