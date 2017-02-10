@@ -12,6 +12,9 @@
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
     "prepublish": "npm run lint && npm run test && npm run compile",
+    "copy": "cp -rf package.json dist",
+    "build": "npm run compile && npm run copy",
+    "publish": "cd dist && npm publish",
     "docs": "react-docgen src/components --out docs/components.json --pretty"
   },
   "repository": {
