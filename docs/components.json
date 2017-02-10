@@ -828,26 +828,11 @@
           "name": "func"
         },
         "required": false,
-        "description": "Reference to the corresponding listItems list"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "list": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
+        "description": "Reference to the corresponding listItems list",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       },
       "style": {
         "type": {
