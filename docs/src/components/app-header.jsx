@@ -1,13 +1,13 @@
 import React from 'react';
 import { AppHeader, Button, IconExit, colors } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import logo from '../assets/images/logo.svg';
 
 function AppHeaderDoc() {
-  const componentData = components['src/components/app-header.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'AppHeader');
+
   return (
     <article>
       <h1>App Header</h1>
@@ -35,7 +35,7 @@ function AppHeaderDoc() {
           }
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

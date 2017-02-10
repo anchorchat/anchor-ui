@@ -1,6 +1,7 @@
 {
-  "src/components/alert.jsx": {
+  "components/alert/index.jsx": {
     "description": "Alert styling",
+    "displayName": "Alert",
     "methods": [],
     "props": {
       "text": {
@@ -92,8 +93,9 @@
       }
     }
   },
-  "src/components/app-header.jsx": {
+  "components/app-header/index.jsx": {
     "description": "Appheader styling",
+    "displayName": "AppHeader",
     "methods": [],
     "props": {
       "text": {
@@ -175,8 +177,9 @@
       }
     }
   },
-  "src/components/avatar.jsx": {
+  "components/avatar/index.jsx": {
     "description": "Avatar styling",
+    "displayName": "Avatar",
     "methods": [],
     "props": {
       "image": {
@@ -200,8 +203,9 @@
       }
     }
   },
-  "src/components/badge.jsx": {
+  "components/badge/index.jsx": {
     "description": "Badge styling",
+    "displayName": "Badge",
     "methods": [],
     "props": {
       "value": {
@@ -243,8 +247,9 @@
       }
     }
   },
-  "src/components/button.jsx": {
+  "components/button/index.jsx": {
     "description": "Button styling",
+    "displayName": "Button",
     "methods": [],
     "props": {
       "children": {
@@ -297,8 +302,9 @@
       }
     }
   },
-  "src/components/channel-header.jsx": {
+  "components/channel-header/index.jsx": {
     "description": "Channel header styling",
+    "displayName": "ChannelHeader",
     "methods": [],
     "props": {
       "name": {
@@ -380,8 +386,9 @@
       }
     }
   },
-  "src/components/dialog.jsx": {
+  "components/dialog/index.jsx": {
     "description": "Dialog styling",
+    "displayName": "Dialog",
     "methods": [],
     "props": {
       "headerText": {
@@ -477,8 +484,9 @@
       }
     }
   },
-  "src/components/empty-state.jsx": {
+  "components/empty-state/index.jsx": {
     "description": "Empty state styling",
+    "displayName": "EmptyState",
     "methods": [],
     "props": {
       "headerText": {
@@ -555,8 +563,9 @@
       }
     }
   },
-  "src/components/input.jsx": {
+  "components/input/index.jsx": {
     "description": "Input styling",
+    "displayName": "Input",
     "methods": [],
     "props": {
       "onChange": {
@@ -654,8 +663,46 @@
       }
     }
   },
-  "src/components/list-item.jsx": {
+  "components/list/index.jsx": {
+    "description": "List styling",
+    "displayName": "List",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "List of listItems to render"
+      },
+      "listRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Reference to the corresponding listItems list",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/list-item/index.jsx": {
     "description": "ListItem styling",
+    "displayName": "ListItem",
     "methods": [],
     "props": {
       "primaryText": {
@@ -769,48 +816,13 @@
       }
     }
   },
-  "src/components/list.jsx": {
-    "description": "List styling",
-    "methods": [],
-    "props": {
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "List of listItems to render"
-      },
-      "listRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Reference to the corresponding listItems list",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "src/components/loader/index.jsx": {
+  "components/loader/index.jsx": {
     "description": "",
     "methods": []
   },
-  "src/components/loader/loader.jsx": {
+  "components/loader/loader.jsx": {
     "description": "Loader styling",
+    "displayName": "Loader",
     "methods": [],
     "props": {
       "style": {
@@ -850,209 +862,9 @@
       }
     }
   },
-  "src/components/message-input.jsx": {
-    "description": "Message input styling",
-    "methods": [
-      {
-        "name": "handleKeyDown",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "onChange": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": "Change the input's value"
-      },
-      "sendMessage": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": "Send a message"
-      },
-      "value": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "The input's value"
-      },
-      "placeholder": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "The input's placeholder"
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "inputStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the input element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "maxLength": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The input's max length",
-        "defaultValue": {
-          "value": "500",
-          "computed": false
-        }
-      },
-      "leftButton": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Left-hand side placed button",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "inputRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Ref function to the element"
-      },
-      "disabled": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Disables the input for the messageInput area",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      }
-    }
-  },
-  "src/components/message-list.jsx": {
-    "description": "Render a list of items (Messages) with optional auto scroll",
-    "methods": [
-      {
-        "name": "shouldScrollToBottom",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "node",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "scrollDown",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "MessageList content"
-      },
-      "scrollOffset": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The amount of pixels the user has to scroll up to disable auto scroll",
-        "defaultValue": {
-          "value": "100",
-          "computed": false
-        }
-      },
-      "addRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Expose the components methods to the parent,\nuseful for calling scrollDown from a parent component",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "listStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the <ul /> element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "autoScroll": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Enable autoScroll",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      }
-    }
-  },
-  "src/components/message.jsx": {
+  "components/message/index.jsx": {
     "description": "Message styling",
+    "displayName": "Message",
     "methods": [
       {
         "name": "createMarkup",
@@ -1206,8 +1018,212 @@
       }
     }
   },
-  "src/components/profile-card.jsx": {
+  "components/message-input/index.jsx": {
+    "description": "Message input styling",
+    "displayName": "MessageInput",
+    "methods": [
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the input's value"
+      },
+      "sendMessage": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Send a message"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's value"
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's placeholder"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxLength": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The input's max length",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Left-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "inputRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Ref function to the element"
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the input for the messageInput area",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/message-list/index.jsx": {
+    "description": "Render a list of items (Messages) with optional auto scroll",
+    "displayName": "MessageList",
+    "methods": [
+      {
+        "name": "shouldScrollToBottom",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "node",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "scrollDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "MessageList content"
+      },
+      "scrollOffset": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The amount of pixels the user has to scroll up to disable auto scroll",
+        "defaultValue": {
+          "value": "100",
+          "computed": false
+        }
+      },
+      "addRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Expose the components methods to the parent,\nuseful for calling scrollDown from a parent component",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the <ul /> element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "autoScroll": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable autoScroll",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/profile-card/index.jsx": {
     "description": "ProfileCard styling",
+    "displayName": "ProfileCard",
     "methods": [],
     "props": {
       "avatar": {

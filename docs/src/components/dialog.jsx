@@ -1,12 +1,12 @@
 import React from 'react';
 import { Dialog } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function DialogDoc() {
-  const componentData = components['src/components/dialog.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Dialog');
+
   return (
     <article>
       <h1>Dialog</h1>
@@ -24,7 +24,7 @@ function DialogDoc() {
           onClick={() => {}}
         /> */}
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Input } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function InputDoc() {
-  const componentData = components['src/components/input.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Input');
+
   return (
     <article>
       <h1>Input</h1>
@@ -38,7 +38,7 @@ function InputDoc() {
           name="example"
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

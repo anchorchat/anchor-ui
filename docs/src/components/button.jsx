@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, IconEmoji, IconExit, IconClose, IconPeople, IconChannels, colors } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function ButtonDoc() {
-  const componentData = components['src/components/button.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Button');
+
   return (
     <article>
       <h1>Button</h1>
@@ -33,7 +33,7 @@ function ButtonDoc() {
           <IconChannels />
         </Button>
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

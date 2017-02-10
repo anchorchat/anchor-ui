@@ -1,12 +1,11 @@
 import React from 'react';
 import { Loader, colors } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function LoaderDoc() {
-  const componentData = components['src/components/loader/loader.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Loader');
 
   const style = {
     inverted: {
@@ -32,7 +31,7 @@ function LoaderDoc() {
           <Loader inverted />
         </section>
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import { ChannelHeader, Button, IconChannels, IconPeople } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function ChannelHeaderDoc() {
-  const componentData = components['src/components/channel-header.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'ChannelHeader');
+
   return (
     <article>
       <h1>Channel header</h1>
@@ -30,7 +30,7 @@ function ChannelHeaderDoc() {
           }
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

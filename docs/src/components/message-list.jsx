@@ -1,8 +1,8 @@
 import React from 'react';
 import { Message, MessageList } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import theDoctor from '../assets/images/the_doctor.jpg';
 import dalek from '../assets/images/dalek.jpg';
 import background from '../assets/images/channel-background.jpg';
@@ -37,8 +37,7 @@ const messages = [
 const currentUser = 'The Doctor';
 
 function MessageListDoc() {
-  const componentData = components['src/components/message-list.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'MessageList');
 
   const style = {
     messageList: {
@@ -68,7 +67,7 @@ function MessageListDoc() {
           ))}
         </MessageList>
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

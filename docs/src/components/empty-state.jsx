@@ -1,13 +1,12 @@
 import React from 'react';
 import { EmptyState, Button } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import emptyStateBackground from '../assets/images/empty_state_users.jpg';
 
 function EmptyStateDoc() {
-  const componentData = components['src/components/empty-state.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'EmptyState');
 
   const emptyState = {
     header: 'Empty state',
@@ -30,7 +29,7 @@ function EmptyStateDoc() {
           button={<Button onClick={() => {}}><p>Click me</p></Button>}
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

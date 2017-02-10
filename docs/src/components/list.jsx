@@ -1,13 +1,13 @@
 import React from 'react';
 import { List, ListItem, Button, IconClose, colors } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import dalek from '../assets/images/dalek.jpg';
 
 function ListDoc() {
-  const componentData = components['src/components/list.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'List');
+
   const currentChannel = 'Channel3';
   const channelListStyle = {
     height: 'calc(100% - 116px)',
@@ -63,7 +63,7 @@ function ListDoc() {
           ))}
         </List>
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

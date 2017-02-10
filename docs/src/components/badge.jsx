@@ -1,12 +1,12 @@
 import React from 'react';
 import { Badge } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function BadgeDoc() {
-  const componentData = components['src/components/badge.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Badge');
+
   return (
     <article>
       <h1>Badge</h1>
@@ -19,7 +19,7 @@ function BadgeDoc() {
         <Badge inverted value={10} maxValue={9} />
         <Badge value={10} maxValue={9} />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { ListItem, Button, IconClose, Badge, colors } from 'anchor-ui';
+import _ from 'underscore';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import Props from './props';
 import dalek from '../assets/images/dalek.jpg';
 
 function ListItemDoc() {
-  const componentData = components['src/components/list-item.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'ListItem');
+
   const currentChannel = 'Channel';
   const channel = [
     {
@@ -41,7 +41,7 @@ function ListItemDoc() {
           badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

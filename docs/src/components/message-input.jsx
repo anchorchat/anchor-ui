@@ -1,12 +1,12 @@
 import React from 'react';
 import { MessageInput, Button, IconEmoji } from 'anchor-ui';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function MessageInputDoc() {
-  const componentData = components['src/components/message-input.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'MessageInput');
+
   return (
     <article>
       <h1>Message input</h1>
@@ -28,7 +28,7 @@ function MessageInputDoc() {
           }
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }
