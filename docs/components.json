@@ -1312,7 +1312,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to the user's profile image will only be rendered if provided",
+        "description": "Path to the user's profile image",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -1324,25 +1324,6 @@
         },
         "required": true,
         "description": "The user's username"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "profileCard": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {

@@ -1,11 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-import injectSheet from 'react-jss';
-import classNames from 'classnames';
+import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from './avatar';
-import getClassNames from '../internal/get-class-names';
-import profileCardStyleSheet from '../style/profile-cards';
+import styles from '../style/profile-cards';
 import colors from '../style/colors';
+import combineStyles from '../internal/combine-styles';
+
+function getStyle(themeColor, avatar, overrideStyle) {
+  const color = themeColor || colors.theme;
+
+  const style = { ...styles.profileCard, backgroundColor: color };
+
+  if (avatar) {
+    return combineStyles(combineStyles(style, styles.avatar), overrideStyle);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
 
 /**
  * ProfileCard styling
@@ -13,18 +24,13 @@ import colors from '../style/colors';
 class ProfileCard extends Component {
   static propTypes = {
     /**
-     * Path to the user's profile image will only be rendered if provided
+     * Path to the user's profile image
      */
     avatar: PropTypes.string,
     /**
      * The user's username
      */
     username: PropTypes.node.isRequired,
-    sheet: PropTypes.shape({
-      classes: PropTypes.shape({
-        profileCard: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired,
     /**
      * Override the styles of the root element
      */
@@ -40,17 +46,6 @@ class ProfileCard extends Component {
     color: PropTypes.string
   }
 
-  constructor(props) {
-    super(props);
-
-    const { sheet: { classes }, style } = props;
-    const className = getClassNames(classes, style, 'profileCard', 'ProfileCard');
-
-    this.state = {
-      className
-    };
-  }
-
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
@@ -59,31 +54,24 @@ class ProfileCard extends Component {
   }
 
   render() {
-    const { username, avatar, sheet: { classes } } = this.props;
-    const { className } = this.state;
+    const { username, avatar, style } = this.props;
     const { color } = this.context;
-    const backgroundColor = color || colors.theme;
 
-    const style = {
-      avatar: {
-        float: 'left',
-        width: '80px',
-        height: '80px',
-        border: `3px solid ${colors.white}`,
-        marginRight: '15px'
-      }
+    const avatarStyle = {
+      float: 'left',
+      width: '80px',
+      height: '80px',
+      border: `3px solid ${colors.white}`,
+      marginRight: '15px'
     };
 
     return (
-      <section
-        className={classNames(className, { [classes.avatar]: avatar })}
-        style={{ backgroundColor }}
-      >
-        {avatar ? <Avatar image={avatar} style={style.avatar} /> : null}
+      <section style={getStyle(color, avatar, style)}>
+        {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         {username}
       </section>
     );
   }
 }
 
-export default injectSheet(profileCardStyleSheet)(ProfileCard);
+export default Radium(ProfileCard);
