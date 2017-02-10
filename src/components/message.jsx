@@ -1,15 +1,59 @@
 import React, { Component, PropTypes } from 'react';
 import format from 'date-fns/format';
-import injectSheet from 'react-jss';
-import classNames from 'classnames';
+import Radium from 'radium';
 import emojione from 'emojione';
 import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from './avatar';
-import getClassNames from '../internal/get-class-names';
-import messageStyleSheet from '../style/messages';
+import styles from '../style/messages';
 import colors from '../style/colors';
 import urlRegex from '../url-regex';
+import combineStyles from '../internal/combine-styles';
+
+function getContainerStyle(myMessage) {
+  if (myMessage) {
+    return combineStyles(styles.messageContainer, styles.myContainer);
+  }
+
+  return styles.messageContainer;
+}
+
+function getStyle(themeColor, myMessage, avatar, overrideStyle) {
+  let style = styles.message;
+
+  const color = themeColor || colors.theme;
+
+  if (myMessage) {
+    style = combineStyles(styles.message, styles.myMessage);
+    style = { ...style, backgroundColor: color, borderRightColor: color };
+  }
+
+  if (avatar) {
+    style = combineStyles(style, styles.avatar);
+  }
+
+  if (myMessage && avatar) {
+    style = combineStyles(style, { marginLeft: '0', marginRight: '66px' });
+  }
+
+  return combineStyles(style, overrideStyle);
+}
+
+function getTextStyle(style, myMessage, overrideStyle) {
+  if (myMessage) {
+    return combineStyles({ ...style, color: colors.white }, overrideStyle);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
+
+function getTimeStyle(style, myMessage, overrideStyle) {
+  if (myMessage) {
+    return combineStyles({ ...style, left: 0, right: 'initial' }, overrideStyle);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
 
 /**
  * Message styling
@@ -44,16 +88,6 @@ class Message extends Component {
      * The format of displaying message.createdAt
      */
     timeFormat: PropTypes.string,
-    sheet: PropTypes.shape({
-      classes: PropTypes.shape({
-        message: PropTypes.string.isRequired,
-        messageHeader: PropTypes.string.isRequired,
-        messageBody: PropTypes.string.isRequired,
-        messageTime: PropTypes.string.isRequired,
-        messageContainer: PropTypes.string.isRequired,
-        myContainer: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired,
     /**
      * Override the styles of the root element
      */
@@ -101,30 +135,6 @@ class Message extends Component {
     color: PropTypes.string
   }
 
-  constructor(props) {
-    super(props);
-
-    const {
-      sheet: { classes },
-      style,
-      messageHeaderStyle,
-      messageBodyStyle,
-      messageTimeStyle
-    } = props;
-
-    const className = getClassNames(classes, style, 'message', 'Message');
-    const messageHeaderClassName = getClassNames(classes, messageHeaderStyle, 'messageHeader', 'Message');
-    const messageBodyClassName = getClassNames(classes, messageBodyStyle, 'messageBody', 'Message');
-    const messageTimeClassName = getClassNames(classes, messageTimeStyle, 'messageTime', 'Message');
-
-    this.state = {
-      className,
-      messageHeaderClassName,
-      messageBodyClassName,
-      messageTimeClassName
-    };
-  }
-
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
@@ -157,51 +167,46 @@ class Message extends Component {
   }
 
   render() {
-    const { avatar, message, timeFormat, myMessage, emoji, sheet: { classes } } = this.props;
     const {
-      className,
-      messageHeaderClassName,
-      messageBodyClassName,
-      messageTimeClassName
-    } = this.state;
+      avatar,
+      message,
+      timeFormat,
+      myMessage,
+      emoji,
+      style,
+      messageHeaderStyle,
+      messageBodyStyle,
+      messageTimeStyle
+    } = this.props;
     const { color } = this.context;
-    const themeColor = color || colors.theme;
 
-    const style = {
+    const avatarStyle = {
       position: 'absolute',
       left: '-66px',
       top: '0'
     };
 
     if (myMessage) {
-      style.left = 'initial';
-      style.right = '-66px';
+      avatarStyle.left = 'initial';
+      avatarStyle.right = '-66px';
     }
 
     return (
-      <section
-        className={classNames(classes.messageContainer, { [classes.myContainer]: myMessage })}
-      >
-        <section
-          className={
-            classNames(className, { [classes.myMessage]: myMessage, [classes.avatar]: avatar })
-          }
-          style={myMessage ? { backgroundColor: themeColor, borderRightColor: themeColor } : null}
-        >
-          {
-            avatar
-            ? <div style={style}><Avatar image={avatar} /></div>
-            : null
-          }
-          <header className={messageHeaderClassName}>{message.username}</header>
-          <p className={messageBodyClassName}>
+      <section style={getContainerStyle(myMessage)}>
+        <section style={getStyle(color, myMessage, avatar, style)}>
+          <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
+          {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
+          <header style={getTextStyle(styles.messageHeader, myMessage, messageHeaderStyle)}>
+            {message.username}
+          </header>
+          <p style={getTextStyle(styles.messageBody, myMessage, messageBodyStyle)}>
             {
               emoji
               ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
               : message.body
             }
           </p>
-          <span className={messageTimeClassName}>
+          <span style={getTimeStyle(styles.messageTime, myMessage, messageTimeStyle)}>
             {format(message.createdAt, timeFormat)}
           </span>
         </section>
@@ -210,4 +215,4 @@ class Message extends Component {
   }
 }
 
-export default injectSheet(messageStyleSheet)(Message);
+export default Radium(Message);

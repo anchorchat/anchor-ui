@@ -1123,45 +1123,6 @@
           "computed": false
         }
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "message": {
-                  "name": "string",
-                  "required": true
-                },
-                "messageHeader": {
-                  "name": "string",
-                  "required": true
-                },
-                "messageBody": {
-                  "name": "string",
-                  "required": true
-                },
-                "messageTime": {
-                  "name": "string",
-                  "required": true
-                },
-                "messageContainer": {
-                  "name": "string",
-                  "required": true
-                },
-                "myContainer": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",

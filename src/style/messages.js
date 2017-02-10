@@ -20,20 +20,23 @@ const styleSheet = {
     maxWidth: '75%',
     padding: '12px',
     position: 'relative',
-    wordBreak: 'break-word',
-    '&:before': {
-      borderBottom: '5px solid transparent',
-      borderRight: `10px solid ${colors.white}`,
-      borderTop: '5px solid transparent',
-      content: '""',
-      height: '0',
-      left: '-10px',
-      position: 'absolute',
-      top: '15px'
-    },
-    '&:last-of-type': {
-      marginBottom: '17px'
-    }
+    wordBreak: 'break-word'
+  },
+  arrow: {
+    borderBottom: '5px solid transparent',
+    borderRight: `10px solid ${colors.white}`,
+    borderTop: '5px solid transparent',
+    height: '0',
+    left: '-10px',
+    position: 'absolute',
+    top: '15px'
+  },
+  myArrow: {
+    borderRight: '10px solid',
+    borderRightColor: 'inherit',
+    left: 'initial',
+    right: '-10px',
+    transform: 'rotate(180deg)'
   },
   avatar: {
     marginLeft: '66px'
@@ -43,32 +46,6 @@ const styleSheet = {
     color: colors.white,
     marginLeft: '0',
     marginRight: '16px',
-    '& $messageBody': {
-      color: colors.white,
-      '& a': {
-        color: colors.white
-      }
-    },
-    '& $messageHeader': {
-      color: colors.white,
-      textAlign: 'right'
-    },
-    '& $messageTime': {
-      color: colors.secondaryText,
-      left: '0',
-      right: 'initial'
-    },
-    '&$avatar': {
-      marginLeft: '0',
-      marginRight: '66px'
-    },
-    '&:before': {
-      borderRight: '10px solid',
-      borderRightColor: 'inherit',
-      left: 'initial',
-      right: '-10px',
-      transform: 'rotate(180deg)'
-    }
   },
   messageHeader: {
     color: colors.secondaryText,
@@ -81,10 +58,7 @@ const styleSheet = {
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
-    margin: '0',
-    '& a': {
-      color: colors.primaryText
-    }
+    margin: '0'
   },
   messageTime: {
     bottom: '-17px',
