@@ -5,7 +5,7 @@ import components from '../../components.json';
 import omitSheetFromProps from '../utils/omit-sheet-from-props';
 
 function LoaderDoc() {
-  const componentData = components['src/components/loader.jsx'];
+  const componentData = components['src/components/loader/loader.jsx'];
   const props = omitSheetFromProps(componentData.props);
 
   const style = {

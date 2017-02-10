@@ -805,33 +805,14 @@
       }
     }
   },
-  "src/components/loader.jsx": {
+  "src/components/loader/index.jsx": {
+    "description": "",
+    "methods": []
+  },
+  "src/components/loader/loader.jsx": {
     "description": "Loader styling",
     "methods": [],
     "props": {
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "loader": {
-                  "name": "string",
-                  "required": true
-                },
-                "dot": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",

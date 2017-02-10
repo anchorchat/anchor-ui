@@ -13,7 +13,7 @@ import MessageInput from './components/message-input';
 import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
 import EmptyState from './components/empty-state';
-import Loader from './components/loader';
+import Loader from './components/loader/index';
 import Dialog from './components/dialog';
 // Icons
 import IconAddImage from './icons/icon-add-image';
