@@ -1,17 +1,19 @@
 {
   "name": "anchor-ui",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
-    "dist/*"
+    "/*"
   ],
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
-    "prepublish": "npm run lint && npm run test && npm run compile",
+    "copy": "cp -rf package.json README.md dist",
+    "build": "npm run compile && npm run copy",
+    "dist": "cd dist && npm publish",
     "docs": "react-docgen src/components --out docs/components.json --pretty"
   },
   "repository": {
