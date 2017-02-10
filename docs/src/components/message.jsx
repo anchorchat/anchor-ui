@@ -1,5 +1,6 @@
 import React from 'react';
-import { Message, List } from 'anchor-ui';
+import Message from 'anchor-ui/message';
+import MessageList from 'anchor-ui/message-list';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
@@ -43,7 +44,7 @@ function MessageDoc() {
     list: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',
-      padding: '16px'
+      height: '300px'
     }
   };
 
@@ -56,16 +57,17 @@ function MessageDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <List style={style.list}>
+        <MessageList style={style.list}>
           {messages.map((message, index) => (
             <Message
-              message={message} key={`message-${index}`}
+              message={message}
+              key={`message-${index}`}
               myMessage={message.username === currentUser}
               avatar={message.profileImage}
               emoji
             />
           ))}
-        </List>
+        </MessageList>
       </section>
       <Props props={componentData.props} />
     </article>

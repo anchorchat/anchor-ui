@@ -21,12 +21,12 @@
 
 * {
   font-weight: normal;
+  font-family: 'Lato', sans-serif;
 }
 
 html {
   background: #FEFEFE;
   height: 100%;
-  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -123,5 +123,9 @@ tr {
 
 .markdown {
   padding: 15px;
-  background: #F7F7F7;font-family: 'Inconsolata', monospace !important;
+  background: #F7F7F7;
+}
+
+.markdown * {
+  font-family: 'Inconsolata', monospace;
 }

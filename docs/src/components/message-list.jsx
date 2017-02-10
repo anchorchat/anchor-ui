@@ -1,5 +1,6 @@
 import React from 'react';
-import { Message, MessageList } from 'anchor-ui';
+import Message from 'anchor-ui/message';
+import MessageList from 'anchor-ui/message-list';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

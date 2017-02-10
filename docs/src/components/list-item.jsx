@@ -1,5 +1,9 @@
 import React from 'react';
-import { ListItem, Button, IconClose, Badge, colors } from 'anchor-ui';
+import ListItem from 'anchor-ui/list-item';
+import Button from 'anchor-ui/button';
+import { IconClose } from 'anchor-ui/icons';
+import Badge from 'anchor-ui/badge';
+import { colors } from 'anchor-ui/settings';
 import _ from 'underscore';
 import components from '../../components.json';
 import Props from './props';

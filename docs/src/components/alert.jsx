@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'anchor-ui';
+import Alert from 'anchor-ui/alert';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

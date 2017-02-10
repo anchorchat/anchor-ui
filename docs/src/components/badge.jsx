@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from 'anchor-ui';
+import Badge from 'anchor-ui/badge';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

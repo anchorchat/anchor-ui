@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { List, ListItem } from 'anchor-ui';
+import List from 'anchor-ui/list';
+import ListItem from 'anchor-ui/list-item';
 
 function Menu() {
   return (

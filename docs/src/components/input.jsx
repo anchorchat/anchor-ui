@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from 'anchor-ui';
+import Input from 'anchor-ui/input';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

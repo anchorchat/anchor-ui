@@ -1,5 +1,7 @@
 import React from 'react';
-import { ChannelHeader, Button, IconChannels, IconPeople } from 'anchor-ui';
+import ChannelHeader from 'anchor-ui/channel-header';
+import Button from 'anchor-ui/button';
+import { IconChannels, IconPeople } from 'anchor-ui/icons';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

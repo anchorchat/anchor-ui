@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, IconEmoji, IconExit, IconClose, IconPeople, IconChannels, colors } from 'anchor-ui';
+import { Button } from 'anchor-ui';
+import { IconEmoji } from 'anchor-ui/icons';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
@@ -19,18 +20,6 @@ function ButtonDoc() {
         <Button onClick={() => {}}><p>Click me</p></Button>
         <Button iconButton onClick={() => {}}>
           <IconEmoji />
-        </Button>
-        <Button onClick={() => {}} iconButton>
-          <IconExit color={colors.white} />
-        </Button>
-        <Button iconButton onClick={() => {}}>
-          <IconClose color={colors.white} />
-        </Button>
-        <Button iconButton onClick={() => {}}>
-          <IconPeople />
-        </Button>
-        <Button iconButton onClick={() => {}}>
-          <IconChannels />
         </Button>
       </section>
       <Props props={componentData.props} />

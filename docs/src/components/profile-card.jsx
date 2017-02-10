@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileCard, colors } from 'anchor-ui';
+import ProfileCard from 'anchor-ui/profile-card';
 import _ from 'underscore';
 import components from '../../components.json';
 import Props from './props';
@@ -19,7 +19,7 @@ function ProfileCardDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
+        <ProfileCard username={currentUser} avatar={theDoctor} />
       </section>
       <Props props={componentData.props} />
     </article>

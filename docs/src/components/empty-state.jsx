@@ -1,5 +1,6 @@
 import React from 'react';
-import { EmptyState, Button } from 'anchor-ui';
+import EmptyState from 'anchor-ui/empty-state';
+import Button from 'anchor-ui/button';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

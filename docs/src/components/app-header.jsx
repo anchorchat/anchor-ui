@@ -1,5 +1,8 @@
 import React from 'react';
-import { AppHeader, Button, IconExit, colors } from 'anchor-ui';
+import AppHeader from 'anchor-ui/app-header';
+import Button from 'anchor-ui/button';
+import { colors } from 'anchor-ui/settings';
+import { IconExit } from 'anchor-ui/icons';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
@@ -18,15 +21,7 @@ function AppHeaderDoc() {
       <section>
         <h1>Examples</h1>
         <AppHeader
-          text={
-            <a
-              href="https://github.com/anchorchat/anchor-ui"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Anchor UI
-            </a>
-          }
+          text="Anchor UI"
           icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
             <Button onClick={() => {}} iconButton>

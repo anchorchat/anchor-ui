@@ -1,5 +1,6 @@
 import React from 'react';
-import { Loader, colors } from 'anchor-ui';
+import Loader from 'anchor-ui/loader';
+import { colors } from 'anchor-ui/settings';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

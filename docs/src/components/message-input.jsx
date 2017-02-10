@@ -1,5 +1,7 @@
 import React from 'react';
-import { MessageInput, Button, IconEmoji } from 'anchor-ui';
+import MessageInput from 'anchor-ui/message-input';
+import Button from 'anchor-ui/button';
+import { IconEmoji } from 'anchor-ui/icons';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';

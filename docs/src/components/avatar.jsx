@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from 'anchor-ui';
+import Avatar from 'anchor-ui/avatar';
 import _ from 'underscore';
 import components from '../../components.json';
 import Props from './props';

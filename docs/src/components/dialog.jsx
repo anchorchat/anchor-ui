@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dialog } from 'anchor-ui';
+import Dialog from 'anchor-ui/dialog';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
