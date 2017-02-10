@@ -38,6 +38,7 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
  * Button styling
  */
 class Button extends Component {
+  static displayName = 'Button';
   static propTypes = {
     /**
      * Content of the button

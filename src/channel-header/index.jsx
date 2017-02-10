@@ -27,6 +27,8 @@ function ChannelHeader({
   );
 }
 
+ChannelHeader.displayName = 'ChannelHeader';
+
 ChannelHeader.propTypes = {
   /**
    * Content of the header
