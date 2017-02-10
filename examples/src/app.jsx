@@ -9,7 +9,6 @@ import {
   EmptyState,
   Button,
   AppHeader,
-  withTheme,
   Badge,
   MessageList
 } from '../../dist';
@@ -233,4 +232,4 @@ class App extends Component {
   }
 }
 
-export default withTheme(App, '#1ba6c4');
+export default App;
