@@ -28,6 +28,8 @@ function getInputStyle(rightButton, overrideStyle) {
  * Message input styling
  */
 class MessageInput extends Component {
+  static displayName = 'MessageInput'
+
   static propTypes = {
     /**
      * Change the input's value

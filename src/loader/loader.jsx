@@ -38,6 +38,8 @@ function getStyle(themeColor, inverted, index, overrideStyle) {
  * Loader styling
  */
 class Loader extends Component {
+  static displayName = 'Loader'
+
   static propTypes = {
     /**
      * Override the styles of the root element

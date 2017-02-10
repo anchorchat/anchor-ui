@@ -11,6 +11,8 @@ function List({ children, listRef, style }) {
   return <ul ref={listRef} style={combineStyles(styles.list, style)}>{children}</ul>;
 }
 
+List.displayName = 'List';
+
 List.propTypes = {
   /**
    * List of listItems to render

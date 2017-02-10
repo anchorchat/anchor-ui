@@ -23,6 +23,8 @@ function EmptyState({ headerText, bodyText, button, background, style, headingSt
   );
 }
 
+EmptyState.displayName = 'EmptyState';
+
 EmptyState.propTypes = {
   /**
    * Body text

@@ -26,6 +26,8 @@ function Input({
   );
 }
 
+Input.displayName = 'Input';
+
 Input.propTypes = {
   /**
    * Change the input's value

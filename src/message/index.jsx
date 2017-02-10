@@ -59,6 +59,8 @@ function getTimeStyle(style, myMessage, overrideStyle) {
  * Message styling
  */
 class Message extends Component {
+  static displayName = 'Message'
+
   static propTypes = {
     /**
      * Path to the user's profile image will only be rendered if provided

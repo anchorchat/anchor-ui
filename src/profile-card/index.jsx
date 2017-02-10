@@ -22,6 +22,8 @@ function getStyle(themeColor, avatar, overrideStyle) {
  * ProfileCard styling
  */
 class ProfileCard extends Component {
+  static displayName = 'ProfileCard'
+
   static propTypes = {
     /**
      * Path to the user's profile image

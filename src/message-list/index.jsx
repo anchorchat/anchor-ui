@@ -8,6 +8,8 @@ import combineStyles from '../internal/combine-styles';
  * Render a list of items (Messages) with optional auto scroll
  */
 class MessageList extends Component {
+  static displayName = 'MessageList'
+
   static propTypes = {
     /**
      * MessageList content

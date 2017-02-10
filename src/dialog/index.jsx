@@ -35,6 +35,8 @@ function getBodyStyle(style, button, overrideStyle) {
  * Dialog styling
  */
 class Dialog extends Component {
+  static displayName = 'Dialog'
+
   static propTypes = {
     /**
      * Header text

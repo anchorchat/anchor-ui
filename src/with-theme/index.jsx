@@ -21,4 +21,6 @@ function withTheme(ChildComponent, color) {
   return Theme;
 }
 
+withTheme.displayName = 'withTheme';
+
 export default withTheme;

@@ -48,6 +48,8 @@ function getTextStyle(textStyle, active, overrideStyle) {
  * ListItem styling
  */
 class ListItem extends Component {
+  static displayName = 'ListItem'
+
   static propTypes = {
     /**
      * The list item's primary text
