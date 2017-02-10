@@ -1,1 +1,0 @@
-export deafult from './list';

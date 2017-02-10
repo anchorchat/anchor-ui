@@ -1,5 +1,6 @@
 import React from 'react';
-import { Loader, colors, withTheme } from '../../dist/index';
+import { Loader, withTheme } from '../../dist';
+import { colors } from '../../dist/settings';
 
 export default withTheme(
   () =>

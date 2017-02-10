@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import pure from 'recompose/pure';
-import colors from '../style/colors';
+import { colors } from '../settings';
 
 function IconConversation({ color }) {
   return (

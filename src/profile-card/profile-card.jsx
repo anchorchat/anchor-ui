@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import Avatar from './avatar';
+import Avatar from '../avatar';
 import styles from '../style/profile-cards';
-import colors from '../style/colors';
+import { colors } from '../settings';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, avatar, overrideStyle) {

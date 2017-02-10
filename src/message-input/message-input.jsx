@@ -3,9 +3,9 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-inputs';
-import Button from './button';
+import Button from '../button';
 import IconSend from '../icons/icon-send';
-import colors from '../style/colors';
+import { colors } from '../settings';
 import combineStyles from '../internal/combine-styles';
 
 function getButtonStyle(style, disabled) {

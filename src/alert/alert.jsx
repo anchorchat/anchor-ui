@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
 import pure from 'recompose/pure';
 import Radium from 'radium';
-import styles from '../../style/alerts';
-import IconSuccess from '../../icons/icon-success';
-import IconError from '../../icons/icon-error';
-import IconWarning from '../../icons/icon-warning';
-import IconInfo from '../../icons/icon-info';
-import IconClose from '../../icons/icon-close';
+import styles from '../style/alerts';
+import IconSuccess from '../icons/icon-success';
+import IconError from '../icons/icon-error';
+import IconWarning from '../icons/icon-warning';
+import IconInfo from '../icons/icon-info';
+import IconClose from '../icons/icon-close';
 import Button from '../button';
-import colors from '../../style/colors';
-import darken from '../../internal/darken';
-import combineStyles from '../../internal/combine-styles';
+import { colors } from '../settings';
+import darken from '../internal/darken';
+import combineStyles from '../internal/combine-styles';
 
 const icons = {
   success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,

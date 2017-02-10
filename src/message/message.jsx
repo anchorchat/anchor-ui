@@ -4,9 +4,9 @@ import Radium from 'radium';
 import emojione from 'emojione';
 import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
-import Avatar from './avatar';
+import Avatar from '../avatar';
 import styles from '../style/messages';
-import colors from '../style/colors';
+import { colors } from '../settings';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
 

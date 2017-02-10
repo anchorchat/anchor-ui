@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
-import colors from '../style/colors';
-import Avatar from './avatar';
+import { colors } from '../settings';
+import Avatar from '../avatar';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 

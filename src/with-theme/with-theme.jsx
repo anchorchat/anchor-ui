@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import colors from './style/colors';
+import colors from '../settings/colors';
 
 function withTheme(ChildComponent, color) {
   class Theme extends Component {
