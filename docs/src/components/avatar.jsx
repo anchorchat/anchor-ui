@@ -10,7 +10,7 @@ function AvatarDoc() {
   const componentData = _.find(components, component => component.displayName === 'Avatar');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Avatar</h1>
       <section>
         <h1>Description</h1>

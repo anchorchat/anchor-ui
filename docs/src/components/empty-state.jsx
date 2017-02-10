@@ -14,7 +14,7 @@ function EmptyStateDoc() {
     background: emptyStateBackground
   };
   return (
-    <article>
+    <article className="doc">
       <h1>Empty state</h1>
       <section>
         <h1>Description</h1>

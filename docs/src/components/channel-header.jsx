@@ -8,7 +8,7 @@ function ChannelHeaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'ChannelHeader');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Channel header</h1>
       <section>
         <h1>Description</h1>

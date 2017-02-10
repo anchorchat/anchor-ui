@@ -8,7 +8,7 @@ function DialogDoc() {
   const componentData = _.find(components, component => component.displayName === 'Dialog');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Dialog</h1>
       <section>
         <h1>Description</h1>

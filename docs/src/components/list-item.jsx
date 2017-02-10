@@ -17,7 +17,7 @@ function ListItemDoc() {
     }
   ];
   return (
-    <article>
+    <article className="doc">
       <h1>List item</h1>
       <section>
         <h1>Description</h1>

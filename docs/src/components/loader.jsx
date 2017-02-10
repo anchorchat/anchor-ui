@@ -18,7 +18,7 @@ function LoaderDoc() {
   };
 
   return (
-    <article>
+    <article className="doc">
       <h1>Loader</h1>
       <section>
         <h1>Description</h1>

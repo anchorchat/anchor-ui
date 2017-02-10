@@ -36,7 +36,7 @@ function ListDoc() {
     }
   ];
   return (
-    <article>
+    <article className="doc">
       <h1>List</h1>
       <section>
         <h1>Description</h1>

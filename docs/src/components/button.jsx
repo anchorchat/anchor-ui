@@ -8,7 +8,7 @@ function ButtonDoc() {
   const componentData = _.find(components, component => component.displayName === 'Button');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Button</h1>
       <section>
         <h1>Description</h1>

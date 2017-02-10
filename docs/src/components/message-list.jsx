@@ -48,7 +48,7 @@ function MessageListDoc() {
   };
 
   return (
-    <article>
+    <article className="doc">
       <h1>MessagesList</h1>
       <section>
         <h1>Description</h1>

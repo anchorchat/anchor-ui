@@ -8,7 +8,7 @@ function BadgeDoc() {
   const componentData = _.find(components, component => component.displayName === 'Badge');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Badge</h1>
       <section>
         <h1>Description</h1>

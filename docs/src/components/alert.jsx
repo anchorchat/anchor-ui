@@ -8,7 +8,7 @@ function AlertDoc() {
   const componentData = _.find(components, component => component.displayName === 'Alert');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Alert</h1>
       <section>
         <h1>Description</h1>

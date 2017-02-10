@@ -8,7 +8,7 @@ function InputDoc() {
   const componentData = _.find(components, component => component.displayName === 'Input');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Input</h1>
       <section>
         <h1>Description</h1>

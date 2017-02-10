@@ -9,7 +9,7 @@ function AppHeaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'AppHeader');
 
   return (
-    <article>
+    <article className="doc">
       <h1>App Header</h1>
       <section>
         <h1>Description</h1>

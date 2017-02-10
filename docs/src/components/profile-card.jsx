@@ -11,7 +11,7 @@ function ProfileCardDoc() {
   const currentUser = 'The Doctor';
 
   return (
-    <article>
+    <article className="doc">
       <h1>Profile Card</h1>
       <section>
         <h1>Description</h1>
