@@ -20,13 +20,13 @@
 }
 
 * {
-  font-family: 'Lato', sans-serif;
   font-weight: normal;
 }
 
 html {
   background: #FEFEFE;
   height: 100%;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -58,14 +58,29 @@ main > article > article {
   width: calc(100% - 200px);
   height: 100%;
   overflow-y: scroll;
-  padding: 16px;
+  padding: 32px;
   box-sizing: border-box;
 }
 
-main > article article h1 {
+main > article article h1,
+h2 {
   margin-top: 0;
   font-weight: bold;
   margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.home > h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 17px;
 }
 
 nav {
@@ -99,4 +114,13 @@ td {
 
 tr {
   border-bottom: 1px solid;
+}
+
+.github {
+  width: 24px;
+}
+
+.markdown {
+  padding: 15px;
+  background: #F7F7F7;font-family: 'Inconsolata', monospace !important;
 }
