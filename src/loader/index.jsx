@@ -6,10 +6,10 @@ import Loader from './loader';
 // by exporting it like this a consumer doesn't need to wrap StyleRoot around their application
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#keyframes
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
-function LoaderWithStyleRoot() {
+function LoaderWithStyleRoot(props) {
   return (
     <StyleRoot>
-      <Loader />
+      <Loader {...props} />
     </StyleRoot>
   );
 }

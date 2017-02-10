@@ -28,7 +28,7 @@ function getStyle(themeColor, inverted, index, overrideStyle) {
   }
 
   if (inverted) {
-    return combineStyles(styles.inverted, overrideStyle);
+    return combineStyles(combineStyles(style, styles.inverted), overrideStyle);
   }
 
   return combineStyles(style, overrideStyle);
