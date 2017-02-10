@@ -1027,29 +1027,6 @@
         "required": true,
         "description": "MessageList content"
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "container": {
-                  "name": "string",
-                  "required": true
-                },
-                "list": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": false
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "scrollOffset": {
         "type": {
           "name": "number"
