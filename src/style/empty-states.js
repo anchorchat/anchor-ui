@@ -1,4 +1,4 @@
-import colors from './colors';
+import { colors } from '../settings';
 
 const styleSheet = {
   emptyState: {
@@ -12,15 +12,15 @@ const styleSheet = {
     justifyContent: 'center',
     padding: '24px'
   },
-  header: {
-    fontSize: '16',
+  heading: {
+    fontSize: '16px',
     fontWeight: 'bold',
     color: colors.primaryText,
     margin: '0',
     textAlign: 'center'
   },
   body: {
-    fontSize: '16',
+    fontSize: '16px',
     color: colors.primaryText,
     marginBottom: '30px',
     marginTop: '16px',

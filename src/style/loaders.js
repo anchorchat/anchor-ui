@@ -1,6 +1,15 @@
-import colors from './colors';
+import Radium from 'radium';
+import { colors } from '../settings';
 
-const animationId = 'loader-animation';
+const loaderAnimation = Radium.keyframes({
+  '0%': { opacity: 1 },
+  '50%': {
+    opacity: 0.25,
+    transform: 'translateY(-10px)'
+  },
+  '100%': { opacity: 1 }
+}, 'loader');
+
 const styleSheet = {
   loader: {
     display: 'flex',
@@ -8,13 +17,14 @@ const styleSheet = {
     paddingTop: '10px'
   },
   dot: {
-    background: colors.theme,
+    backgroundColor: colors.theme,
     borderRadius: '50%',
     display: 'block',
     width: '15px',
     height: '15px',
     margin: '0 5px',
-    animation: `${animationId} 1s ease-in-out infinite`,
+    animation: 'x 1s ease-in-out infinite',
+    animationName: loaderAnimation,
     '&:nth-of-type(2)': {
       animationDelay: '.33s'
     },
@@ -22,13 +32,8 @@ const styleSheet = {
       animationDelay: '.66s'
     }
   },
-  [`@keyframes ${animationId}`]: {
-    '0%': { opacity: 1 },
-    '50%': {
-      opacity: 0.25,
-      transform: 'translateY(-10px)'
-    },
-    '100%': { opacity: 1 }
+  inverted: {
+    backgroundColor: colors.white
   }
 };
 

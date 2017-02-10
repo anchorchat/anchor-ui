@@ -1,4 +1,4 @@
-import colors from './colors';
+import { colors } from '../settings';
 
 const styleSheet = {
   header: {
@@ -16,18 +16,12 @@ const styleSheet = {
     fontSize: '24px',
     lineHeight: '36px',
     margin: 0,
-    textDecoration: 'none',
-    '& *': {
-      color: 'inherit',
-      fontSize: 'inherit',
-      lineHeight: 'inherit',
-      textDecoration: 'inherit'
-    }
+    textDecoration: 'none'
   },
   button: {
     position: 'absolute',
     top: '8px',
-    right: '16px'
+    right: '4px'
   },
   icon: {
     float: 'left',

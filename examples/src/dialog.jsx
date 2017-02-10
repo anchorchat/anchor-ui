@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader, withTheme, Dialog, Button } from '../../dist/index';
+import { Loader, withTheme, Dialog, Button } from '../../dist';
 
 export default withTheme(
   () =>
@@ -9,7 +9,7 @@ export default withTheme(
       bodyText="Site is unavailable at the moment"
       button={
         <Button onClick={() => {}} inverted>
-          <p>Logout</p>
+          Logout
         </Button>
       }
       hideDialog={() => console.log('hide')}

@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "1.11.0",
+  "version": "2.0.0",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -11,7 +11,8 @@
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
-    "prepublish": "npm run lint && npm run test && npm run compile"
+    "prepublish": "npm run lint && npm run test && npm run compile",
+    "docs": "react-docgen src/components --out docs/components.json --pretty"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "mocha": "^3.2.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
+    "react-docgen": "^2.13.0",
     "react-dom": "^15.4.2",
     "sinon": "^1.17.7"
   },
@@ -58,16 +60,15 @@
     ]
   },
   "peerDependencies": {
-    "classnames": "^2.2.5",
-    "color": "^1.0.3",
-    "emojione": "^2.2.7",
-    "react": "^15.4.1",
-    "react-jss": "^5.1.1"
+    "react": "^15.4.1"
   },
   "dependencies": {
     "date-fns": "^1.27.2",
     "escape-html": "^1.0.3",
+    "radium": "^0.18.1",
     "recompose": "^0.22.0",
-    "tlds": "^1.182.0"
+    "tlds": "^1.182.0",
+    "color": "^1.0.3",
+    "emojione": "^2.2.7"
   }
 }

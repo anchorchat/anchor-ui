@@ -7,18 +7,14 @@ import {
   ListItem,
   Message,
   EmptyState,
-  colors,
   Button,
-  IconClose,
-  IconEmoji,
   AppHeader,
-  IconExit,
   withTheme,
-  IconPeople,
-  IconChannels,
   Badge,
   MessageList
-} from '../../dist/index';
+} from '../../dist';
+import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels } from '../../dist/icons';
+import { colors } from '../../dist/settings';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
 import dalek from './assets/images/dalek.jpg';
@@ -153,6 +149,7 @@ class App extends Component {
               href="https://github.com/anchorchat/anchor-ui"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ color: colors.white, textDecoration: 'none' }}
             >
               Anchor UI
             </a>
@@ -200,7 +197,7 @@ class App extends Component {
               </Button>
             }
           />
-          <MessageList addRef={ref => (this.messageList = ref)}>
+          <MessageList addRef={ref => (this.messageList = ref)} autoScroll>
             {this.state.messages.map((message, index) => (
               <Message
                 message={message} key={`message-${index}`}
@@ -228,7 +225,7 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button onClick={() => {}}><p>Click me</p></Button>}
+            button={<Button onClick={() => {}}>Click me</Button>}
           />
         </article>
       </section>

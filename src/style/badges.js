@@ -1,4 +1,4 @@
-import colors from './colors';
+import { colors } from '../settings';
 
 const styleSheet = {
   badge: {
@@ -14,6 +14,10 @@ const styleSheet = {
     padding: '3px',
     textAlign: 'center',
     width: '20px'
+  },
+  inverted: {
+    color: colors.theme,
+    backgroundColor: colors.white
   }
 };
 

@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato/Lato-Light.ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+* {
+  font-weight: normal;
+}
+
+html {
+  background: #FEFEFE;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  color: #757F85;
+}
+
+#root,
+main {
+  height: inherit;
+}
+
+.emojione {
+  width: 32px;
+}
+
+a {
+  text-decoration: none;
+}
+
+main > article {
+  display: flex;
+  height: calc(100% - 56px);
+}
+
+main > article > article {
+  width: calc(100% - 200px);
+  height: 100%;
+  overflow-y: scroll;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+main > article article h1,
+h2 {
+  margin-top: 0;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.home > h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+nav {
+  width: 200px;
+  border-right: 1px solid #DEDEDE;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+p {
+  margin: 0
+}
+
+main > article > article section {
+  margin-bottom: 16px;
+}
+
+main > article > article section:last-of-type {
+  margin-bottom: 0;
+}
+
+table thead th {
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 5px 20px 5px 0;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+.github {
+  width: 24px;
+}
+
+.markdown {
+  padding: 15px;
+  background: #F7F7F7;font-family: 'Inconsolata', monospace !important;
+}

@@ -1,4 +1,4 @@
-import colors from './colors';
+import { colors } from '../settings';
 
 const styleSheet = {
   header: {
@@ -6,7 +6,7 @@ const styleSheet = {
     borderBottom: `1px solid ${colors.grey}`,
     position: 'relative'
   },
-  headerText: {
+  text: {
     color: colors.primaryText,
     fontSize: '18px',
     fontWeight: 'bold',
