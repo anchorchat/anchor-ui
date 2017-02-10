@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import injectSheet from 'react-jss';
+import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import messageListStyleSheet from '../style/message-lists';
-import getClassNames from '../internal/get-class-names';
+import styles from '../style/message-lists';
+import combineStyles from '../internal/combine-styles';
 
 /**
  * Render a list of items (Messages) with optional auto scroll
@@ -13,12 +13,6 @@ class MessageList extends Component {
      * MessageList content
      */
     children: PropTypes.node.isRequired,
-    sheet: PropTypes.shape({
-      classes: PropTypes.shape({
-        container: PropTypes.string.isRequired,
-        list: PropTypes.string.isRequired
-      })
-    }).isRequired,
     /**
      * The amount of pixels the user has to scroll up to disable auto scroll
      */
@@ -48,19 +42,6 @@ class MessageList extends Component {
     style: {},
     listStyle: {},
     autoScroll: false
-  }
-
-  constructor(props) {
-    super(props);
-
-    const { sheet: { classes }, style, listStyle } = props;
-    const className = getClassNames(classes, style, 'container', 'MessageList');
-    const listClassName = getClassNames(classes, listStyle, 'list', 'MessageList');
-
-    this.state = {
-      className,
-      listClassName
-    };
   }
 
   componentDidMount() {
@@ -119,13 +100,12 @@ class MessageList extends Component {
   }
 
   render() {
-    const { children } = this.props;
-    const { className, listClassName } = this.state;
+    const { children, style, listStyle } = this.props;
 
     return (
-      <article className={className}>
+      <article style={combineStyles(styles.container, style)}>
         <ul
-          className={listClassName}
+          style={combineStyles(styles.list, listStyle)}
           ref={messageList => (this.messageList = messageList)}
         >
           {children}
@@ -135,4 +115,4 @@ class MessageList extends Component {
   }
 }
 
-export default injectSheet(messageListStyleSheet)(MessageList);
+export default Radium(MessageList);

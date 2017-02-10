@@ -60,9 +60,7 @@
     ]
   },
   "peerDependencies": {
-    "classnames": "^2.2.5",
-    "react": "^15.4.1",
-    "react-jss": "^5.1.1"
+    "react": "^15.4.1"
   },
   "dependencies": {
     "date-fns": "^1.27.2",
