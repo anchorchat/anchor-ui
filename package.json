@@ -12,7 +12,7 @@
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
     "prepublish": "npm run lint && npm run test && npm run compile",
-    "docs": "react-docgen src/components --out docs/components.json --pretty"
+    "docs": "react-docgen components/ --out docs/components.json --pretty"
   },
   "repository": {
     "type": "git",
