@@ -11,9 +11,9 @@
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
-    "copy": "cp -rf package.json dist",
+    "copy": "cp -rf package.json README.md dist",
     "build": "npm run compile && npm run copy",
-    "publish": "cd dist && npm publish",
+    "dist": "cd dist && npm publish",
     "docs": "react-docgen src/components --out docs/components.json --pretty"
   },
   "repository": {
