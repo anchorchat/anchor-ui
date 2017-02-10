@@ -15,8 +15,8 @@ function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
   const activeStyle = {
     ...styles.listItem,
     backgroundColor: color,
-    ':hover': { backgroundColor: darken(themeColor, 0.05) },
-    ':active': { backgroundColor: darken(themeColor, 0.15) }
+    ':hover': { backgroundColor: darken(color, 0.05) },
+    ':active': { backgroundColor: darken(color, 0.15) }
   };
 
   if (active) {
