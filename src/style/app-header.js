@@ -21,7 +21,7 @@ const styleSheet = {
   button: {
     position: 'absolute',
     top: '8px',
-    right: '16px'
+    right: '4px'
   },
   icon: {
     float: 'left',
