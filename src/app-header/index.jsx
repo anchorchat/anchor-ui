@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from '../style/app-header';
-import colors from '../style/colors';
+import { colors } from '../settings';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, overrideStyle) {

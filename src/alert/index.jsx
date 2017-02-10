@@ -7,8 +7,8 @@ import IconError from '../icons/icon-error';
 import IconWarning from '../icons/icon-warning';
 import IconInfo from '../icons/icon-info';
 import IconClose from '../icons/icon-close';
-import Button from './button';
-import colors from '../style/colors';
+import Button from '../button';
+import { colors } from '../settings';
 import darken from '../internal/darken';
 import combineStyles from '../internal/combine-styles';
 

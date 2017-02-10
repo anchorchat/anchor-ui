@@ -1,4 +1,4 @@
-import colors from './colors';
+import { colors } from '../settings';
 import darken from '../internal/darken';
 
 const styleSheet = {

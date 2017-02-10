@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from '../../style/loaders';
-import colors from '../../style/colors';
-import combineStyles from '../../internal/combine-styles';
+import styles from '../style/loaders';
+import colors from '../settings/colors';
+import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, inverted, index, overrideStyle) {
   const color = themeColor || colors.theme;

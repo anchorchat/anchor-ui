@@ -7,18 +7,14 @@ import {
   ListItem,
   Message,
   EmptyState,
-  colors,
   Button,
-  IconClose,
-  IconEmoji,
   AppHeader,
-  IconExit,
   withTheme,
-  IconPeople,
-  IconChannels,
   Badge,
   MessageList
-} from '../../dist/index';
+} from '../../dist';
+import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels } from '../../dist/icons';
+import { colors } from '../../dist/settings';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
 import dalek from './assets/images/dalek.jpg';

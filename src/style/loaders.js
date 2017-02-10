@@ -1,5 +1,5 @@
 import Radium from 'radium';
-import colors from './colors';
+import { colors } from '../settings';
 
 const loaderAnimation = Radium.keyframes({
   '0%': { opacity: 1 },
