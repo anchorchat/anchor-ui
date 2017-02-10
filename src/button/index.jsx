@@ -12,8 +12,8 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   let style = {
     ...styles.button,
     backgroundColor: color,
-    ':hover': { backgroundColor: darken(themeColor, 0.15) },
-    ':active': { backgroundColor: darken(themeColor, 0.25) }
+    ':hover': { backgroundColor: darken(color, 0.15) },
+    ':active': { backgroundColor: darken(color, 0.25) }
   };
   const invertedStyle = {
     ...styles.inverted,

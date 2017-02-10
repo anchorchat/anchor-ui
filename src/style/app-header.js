@@ -14,6 +14,7 @@ const styleSheet = {
   text: {
     color: colors.white,
     fontSize: '24px',
+    fontWeight: 'normal',
     lineHeight: '36px',
     margin: 0,
     textDecoration: 'none'
