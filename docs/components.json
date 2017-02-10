@@ -676,49 +676,6 @@
           "computed": false
         }
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "listItem": {
-                  "name": "string",
-                  "required": true
-                },
-                "primaryText": {
-                  "name": "string",
-                  "required": true
-                },
-                "secondaryText": {
-                  "name": "string",
-                  "required": true
-                },
-                "rightButton": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "leftAvatar": {
-                  "name": "string",
-                  "required": true
-                },
-                "avatar": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -828,26 +785,11 @@
           "name": "func"
         },
         "required": false,
-        "description": "Reference to the corresponding listItems list"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "list": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
+        "description": "Reference to the corresponding listItems list",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       },
       "style": {
         "type": {
@@ -863,33 +805,14 @@
       }
     }
   },
-  "src/components/loader.jsx": {
+  "src/components/loader/index.jsx": {
+    "description": "",
+    "methods": []
+  },
+  "src/components/loader/loader.jsx": {
     "description": "Loader styling",
     "methods": [],
     "props": {
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "loader": {
-                  "name": "string",
-                  "required": true
-                },
-                "dot": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -1389,7 +1312,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to the user's profile image will only be rendered if provided",
+        "description": "Path to the user's profile image",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -1401,25 +1324,6 @@
         },
         "required": true,
         "description": "The user's username"
-      },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "profileCard": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
       },
       "style": {
         "type": {

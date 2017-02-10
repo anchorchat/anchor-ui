@@ -12,39 +12,34 @@ const styleSheet = {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
     borderBottom: `1px solid ${colors.white}`,
+    borderTop: `1px solid ${colors.white}`,
     cursor: 'pointer',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     height: '54px',
     listStyle: 'none',
-    padding: '10px',
+    paddingTop: '10px',
+    paddingRight: '10px',
+    paddingLeft: '10px',
+    paddingBottom: '10px',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
-    '&:first-of-type': {
-      borderTop: `1px solid ${colors.white}`
-    },
-    '&:hover': {
+    ':hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
-    '&:active': {
+    ':active': {
       backgroundColor: darken(colors.white, 0.15)
     }
   },
   active: {
     backgroundColor: colors.theme,
     color: colors.white,
-    '&:hover': {
+    ':hover': {
       backgroundColor: darken(colors.theme, 0.05)
     },
-    '&:active': {
+    ':active': {
       backgroundColor: darken(colors.theme, 0.15)
-    },
-    '& $primaryText': {
-      color: colors.white
-    },
-    '& $secondaryText': {
-      color: colors.white
     }
   },
   rightButton: {
@@ -66,7 +61,7 @@ const styleSheet = {
     color: colors.secondaryText,
     fontSize: '14px',
     fontWeight: 'normal',
-    margin: 0,
+    marginBottom: 0,
     marginTop: '2.4px',
     lineHeight: '14px',
     userSelect: 'none'
