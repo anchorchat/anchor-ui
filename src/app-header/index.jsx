@@ -17,6 +17,7 @@ function getStyle(themeColor, overrideStyle) {
  * Appheader styling
  */
 class AppHeader extends Component {
+  static displayName = 'AppHeader';
   static propTypes = {
     /**
      * Title text (your app's name)

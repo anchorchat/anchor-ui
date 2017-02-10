@@ -34,6 +34,8 @@ function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle
   );
 }
 
+Alert.displayName = 'Alert';
+
 Alert.propTypes = {
   /**
    * Text to display

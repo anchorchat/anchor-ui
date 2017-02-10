@@ -19,6 +19,8 @@ function Avatar({ image, style }) {
   );
 }
 
+Avatar.displayName = 'Avatar';
+
 Avatar.propTypes = {
   /**
    * Path to user's profile image

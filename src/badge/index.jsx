@@ -22,6 +22,7 @@ function getStyle(themeColor, inverted, overrideStyle) {
  * Badge styling
  */
 class Badge extends Component {
+  static displayName = 'Badge';
   static propTypes = {
     /**
      * Value that's being rendered
