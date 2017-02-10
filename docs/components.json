@@ -676,49 +676,6 @@
           "computed": false
         }
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "listItem": {
-                  "name": "string",
-                  "required": true
-                },
-                "primaryText": {
-                  "name": "string",
-                  "required": true
-                },
-                "secondaryText": {
-                  "name": "string",
-                  "required": true
-                },
-                "rightButton": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "leftAvatar": {
-                  "name": "string",
-                  "required": true
-                },
-                "avatar": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "style": {
         "type": {
           "name": "instanceOf",
