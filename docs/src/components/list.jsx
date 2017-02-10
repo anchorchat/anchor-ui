@@ -13,10 +13,7 @@ function ListDoc() {
   const componentData = _.find(components, component => component.displayName === 'List');
 
   const currentChannel = 'Channel3';
-  const channelListStyle = {
-    height: 'calc(100% - 116px)',
-    borderRight: `1px solid ${colors.grey}`
-  };
+
   const channels = [
     {
       name: 'Channel1',
@@ -48,7 +45,7 @@ function ListDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <List style={channelListStyle} >
+        <List>
           {channels.map(channel => (
             <ListItem
               key={`channel-list-${channel.name}`}
