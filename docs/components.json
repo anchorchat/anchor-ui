@@ -888,41 +888,6 @@
         "required": true,
         "description": "The input's value"
       },
-      "sheet": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "classes": {
-              "name": "shape",
-              "value": {
-                "messageInput": {
-                  "name": "string",
-                  "required": true
-                },
-                "leftButton": {
-                  "name": "string",
-                  "required": true
-                },
-                "input": {
-                  "name": "string",
-                  "required": true
-                },
-                "button": {
-                  "name": "string",
-                  "required": true
-                },
-                "rightButton": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
       "placeholder": {
         "type": {
           "name": "string"

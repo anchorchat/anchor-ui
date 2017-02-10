@@ -1,13 +1,28 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
-import injectSheet from 'react-jss';
-import classNames from 'classnames';
+import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import getClassNames from '../internal/get-class-names';
-import inputStyleSheet from '../style/message-inputs';
+import styles from '../style/message-inputs';
 import Button from './button';
 import IconSend from '../icons/icon-send';
 import colors from '../style/colors';
+import combineStyles from '../internal/combine-styles';
+
+function getButtonStyle(style, disabled) {
+  if (disabled) {
+    return combineStyles(style, styles.disabled);
+  }
+
+  return style;
+}
+
+function getInputStyle(rightButton, overrideStyle) {
+  if (rightButton) {
+    return combineStyles(combineStyles(styles.messageInput, styles.leftButton), overrideStyle);
+  }
+
+  return combineStyles(styles.messageInput, overrideStyle);
+}
 
 /**
  * Message input styling
@@ -26,15 +41,6 @@ class MessageInput extends Component {
      * The input's value
      */
     value: PropTypes.string.isRequired,
-    sheet: PropTypes.shape({
-      classes: PropTypes.shape({
-        messageInput: PropTypes.string.isRequired,
-        leftButton: PropTypes.string.isRequired,
-        input: PropTypes.string.isRequired,
-        button: PropTypes.string.isRequired,
-        rightButton: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired,
     /**
      * The input's placeholder
      */
@@ -77,17 +83,8 @@ class MessageInput extends Component {
     color: PropTypes.string
   }
 
-  constructor(props) {
-    super(props);
-
-    const { sheet: { classes }, style, inputStyle } = props;
-    const className = getClassNames(classes, style, 'input', 'MessageInput');
-    const inputClassName = getClassNames(classes, inputStyle, 'messageInput', 'MessageInput');
-
-    this.state = {
-      className,
-      inputClassName
-    };
+  constructor() {
+    super();
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
@@ -95,7 +92,9 @@ class MessageInput extends Component {
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext)
+      !shallowEqual(this.context, nextContext) ||
+      Radium.getState(this.state, 'input', ':focus') !== Radium.getState(nextState, 'input', ':focus') ||
+      Radium.getState(this.state, 'input', ':disabled') !== Radium.getState(nextState, 'input', ':disabled')
     );
   }
 
@@ -116,24 +115,24 @@ class MessageInput extends Component {
       maxLength,
       leftButton,
       inputRef,
-      sheet: { classes },
-      disabled
+      disabled,
+      style,
+      inputStyle
     } = this.props;
-    const { className, inputClassName } = this.state;
     const { color } = this.context;
     const iconColor = color || colors.theme;
 
     return (
-      <section className={className}>
+      <section style={combineStyles(styles.input, style)}>
         {
           leftButton
-          ? <div className={classNames(classes.button, { [classes.disabled]: disabled })}>
+          ? <div style={getButtonStyle(styles.button, disabled)}>
             {leftButton}
           </div>
           : null
         }
         <input
-          className={classNames(inputClassName, { [classes.leftButton]: leftButton })}
+          style={getInputStyle(leftButton, inputStyle)}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -142,15 +141,18 @@ class MessageInput extends Component {
           maxLength={maxLength}
           ref={inputRef}
           disabled={disabled}
+          key="input"
         />
-        <div className={classNames(classes.rightButton, { [classes.disabled]: disabled })}>
-          <Button iconButton onClick={sendMessage}>
-            <IconSend color={iconColor} />
-          </Button>
-        </div>
+        <Button
+          style={getButtonStyle(styles.rightButton, disabled)}
+          iconButton
+          onClick={sendMessage}
+        >
+          <IconSend color={iconColor} />
+        </Button>
       </section>
     );
   }
 }
 
-export default injectSheet(inputStyleSheet)(MessageInput);
+export default Radium(MessageInput);
