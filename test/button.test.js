@@ -3,8 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { spy } from 'sinon';
-import Button from '../dist/components/button';
+import Button from '../dist/button';
 
 describe('<Button />', () => {
   const children = <p>children</p>;
@@ -13,13 +12,5 @@ describe('<Button />', () => {
     const wrapper = shallow(<Button onClick={() => {}}>{children}</Button>);
 
     expect(wrapper.contains(children)).to.equal(true);
-  });
-
-  it('should simulate click events', () => {
-    const onButtonClick = spy();
-    const wrapper = shallow(<Button onClick={onButtonClick}>{children}</Button>);
-
-    wrapper.find('Button').simulate('click');
-    expect(onButtonClick.calledOnce).to.equal(true);
   });
 });
