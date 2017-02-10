@@ -60,17 +60,15 @@
     ]
   },
   "peerDependencies": {
-    "classnames": "^2.2.5",
-    "color": "^1.0.3",
-    "emojione": "^2.2.7",
-    "react": "^15.4.1",
-    "react-jss": "^5.1.1"
+    "react": "^15.4.1"
   },
   "dependencies": {
     "date-fns": "^1.27.2",
     "escape-html": "^1.0.3",
     "radium": "^0.18.1",
     "recompose": "^0.22.0",
-    "tlds": "^1.182.0"
+    "tlds": "^1.182.0",
+    "color": "^1.0.3",
+    "emojione": "^2.2.7"
   }
 }

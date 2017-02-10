@@ -2,7 +2,9 @@ import colors from './colors';
 
 const styleSheet = {
   input: {
-    padding: '16px',
+    paddingBottom: '16px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
     paddingTop: '0',
     position: 'relative'
   },
@@ -17,10 +19,10 @@ const styleSheet = {
     paddingLeft: '10px',
     paddingRight: '48px',
     width: '100%',
-    '&:focus': {
+    ':focus': {
       outline: 'none'
     },
-    '&:disabled': {
+    ':disabled': {
       opacity: '0.38'
     }
   },
