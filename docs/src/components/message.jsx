@@ -1,41 +1,36 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import Message from 'anchor-ui/message';
 import MessageList from 'anchor-ui/message-list';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import theDoctor from '../assets/images/the_doctor.jpg';
-import dalek from '../assets/images/dalek.jpg';
 import background from '../assets/images/channel-background.jpg';
+
+const usage = '```js\n import Message from \'anchor-ui/message\';';
 
 const messages = [
   {
     body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
-    username: 'The Doctor',
-    profileImage: theDoctor
+    username: 'Sjaak',
+    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
   },
   {
     body: 'Daleks have no concept of elegance.',
     createdAt: new Date(),
-    username: 'Dalek',
-    profileImage: dalek
-  },
-  {
-    body: 'You hit me with a cricket bat. I\'m nobody\'s taxi service; I\'m not gonna be there to catch you every time you feel like jumping out of a spaceship. Sorry, checking all the water in this area; there\'s an escaped fish.',
-    createdAt: new Date(),
-    username: 'The Doctor',
-    profileImage: theDoctor
+    username: 'Ian',
+    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
   },
   {
     body: ':whale2:',
     createdAt: new Date(),
-    username: 'Dalek',
-    profileImage: dalek
+    username: 'Sjaak',
+    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
   },
 ];
 
-const currentUser = 'The Doctor';
+const currentUser = 'Sjaak';
 
 function MessageDoc() {
   const componentData = _.find(components, component => component.displayName === 'Message');
@@ -44,7 +39,7 @@ function MessageDoc() {
     list: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',
-      height: '300px'
+      height: '475px'
     }
   };
 
@@ -56,6 +51,10 @@ function MessageDoc() {
         <p>{componentData.description}</p>
       </section>
       <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
+      </section>
+      <section>
         <h1>Examples</h1>
         <MessageList style={style.list}>
           {messages.map((message, index) => (
@@ -63,7 +62,7 @@ function MessageDoc() {
               message={message}
               key={`message-${index}`}
               myMessage={message.username === currentUser}
-              avatar={message.profileImage}
+              avatar={message.avatar}
               emoji
             />
           ))}

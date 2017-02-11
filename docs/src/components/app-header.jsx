@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import AppHeader from 'anchor-ui/app-header';
 import Button from 'anchor-ui/button';
 import { colors } from 'anchor-ui/settings';
@@ -7,6 +8,8 @@ import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
 import logo from '../assets/images/logo.svg';
+
+const usage = '```js\n import AppHeader from \'anchor-ui/app-header\';';
 
 function AppHeaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'AppHeader');
@@ -17,6 +20,10 @@ function AppHeaderDoc() {
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
       </section>
       <section>
         <h1>Examples</h1>

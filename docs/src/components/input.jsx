@@ -1,8 +1,11 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import Input from 'anchor-ui/input';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
+
+const usage = '```js\n import Input from \'anchor-ui/input\';';
 
 function InputDoc() {
   const componentData = _.find(components, component => component.displayName === 'Input');
@@ -15,10 +18,15 @@ function InputDoc() {
         <p>{componentData.description}</p>
       </section>
       <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
+      </section>
+      <section>
         <h1>Examples</h1>
         <Input
           onChange={() => {}}
           value="Start typing..."
+          placeholder="Start typing..."
           type="text"
           label="Text example"
           name="example"

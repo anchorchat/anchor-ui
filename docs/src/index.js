@@ -1,7 +1,7 @@
 /* eslint react/jsx-filename-extension: [0] */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from './components/app';
 import Home from './components/home';
 import Alert from './components/alert';
@@ -23,7 +23,7 @@ import ProfileCard from './components/profile-card';
 import './index.css';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="/alert" component={Alert} />

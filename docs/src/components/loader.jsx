@@ -1,9 +1,12 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import Loader from 'anchor-ui/loader';
 import { colors } from 'anchor-ui/settings';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
+
+const usage = '```js\n import Loader from \'anchor-ui/loader\';';
 
 function LoaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'Loader');
@@ -24,6 +27,10 @@ function LoaderDoc() {
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
       </section>
       <section>
         <h1>Examples</h1>

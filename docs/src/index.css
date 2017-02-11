@@ -75,9 +75,16 @@ h2 {
   font-size: 22px;
 }
 
+.home a,
+.doc a {
+  font-weight: bold;
+  color: #757F85;
+}
+
 h2 {
   font-weight: normal;
   font-size: 18px;
+  margin-top: 16px;
 }
 
 h3 {
@@ -124,8 +131,18 @@ tr {
 .markdown {
   padding: 15px;
   background: #F7F7F7;
+  margin: 16px 0;
+  width: auto;
 }
 
 .markdown * {
   font-family: 'Inconsolata', monospace;
+}
+
+pre {
+  margin: 0;
+}
+
+code {
+  color: #54D38A;
 }

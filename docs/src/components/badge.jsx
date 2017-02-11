@@ -1,8 +1,11 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import Badge from 'anchor-ui/badge';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
+
+const usage = '```js\n import Badge from \'anchor-ui/badge\';';
 
 function BadgeDoc() {
   const componentData = _.find(components, component => component.displayName === 'Badge');
@@ -13,6 +16,10 @@ function BadgeDoc() {
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
       </section>
       <section>
         <h1>Examples</h1>
