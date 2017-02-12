@@ -23,10 +23,10 @@ const messages = [
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
   },
   {
-    body: ':whale2:',
+    body: ':hammer:',
     createdAt: new Date(),
-    username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
+    username: 'Lars',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400'
   },
 ];
 
