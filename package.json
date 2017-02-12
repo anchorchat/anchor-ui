@@ -14,7 +14,7 @@
     "copy": "cp -rf package.json README.md dist",
     "build": "npm run compile && npm run copy",
     "dist": "cd dist && npm publish",
-    "docs": "react-docgen src/components --out docs/components.json --pretty"
+    "docs": "react-docgen components --out docs/components.json --pretty"
   },
   "repository": {
     "type": "git",

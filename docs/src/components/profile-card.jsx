@@ -1,27 +1,31 @@
 import React from 'react';
-import { ProfileCard, colors } from 'anchor-ui';
+import ReactMarkdown from 'react-markdown';
+import ProfileCard from 'anchor-ui/profile-card';
+import _ from 'underscore';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import Props from './props';
-import theDoctor from '../assets/images/the_doctor.jpg';
+
+const usage = '```js\n import ProfileCard from \'anchor-ui/profile-card\';';
 
 function ProfileCardDoc() {
-  const componentData = components['src/components/profile-card.jsx'];
-  const props = omitSheetFromProps(componentData.props);
-  const currentUser = 'The Doctor';
+  const componentData = _.find(components, component => component.displayName === 'ProfileCard');
 
   return (
-    <article>
+    <article className="doc">
       <h1>Profile Card</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
       <section>
-        <h1>Examples</h1>
-        <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
       </section>
-      <Props props={props} />
+      <section>
+        <h1>Examples</h1>
+        <ProfileCard username="Sjaak" avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+      </section>
+      <Props props={componentData.props} />
     </article>
   );
 }

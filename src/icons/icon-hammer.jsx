@@ -26,4 +26,6 @@ IconHammer.defaultProps = {
   color: colors.icons
 };
 
+IconHammer.displayName = 'IconHammer';
+
 export default pure(IconHammer);

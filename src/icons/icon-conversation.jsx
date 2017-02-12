@@ -20,4 +20,6 @@ IconConversation.defaultProps = {
   color: colors.icons
 };
 
+IconConversation.displayName = 'IconConversation';
+
 export default pure(IconConversation);

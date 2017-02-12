@@ -23,4 +23,6 @@ IconHand.defaultProps = {
   color: colors.icons
 };
 
+IconHand.displayName = 'IconHand';
+
 export default pure(IconHand);

@@ -32,7 +32,7 @@ function getBodyStyle(style, button, overrideStyle) {
 }
 
 /**
- * Dialog styling
+ * General purpose dialog
  */
 class Dialog extends Component {
   static displayName = 'Dialog'

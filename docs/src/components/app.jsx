@@ -30,7 +30,7 @@ function App({ children }) {
           </a>
         }
       />
-      <article>
+      <article className="doc">
         <Menu />
         {children}
       </article>

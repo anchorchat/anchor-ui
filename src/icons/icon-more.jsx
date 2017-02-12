@@ -22,4 +22,6 @@ IconMore.defaultProps = {
   color: colors.icons
 };
 
+IconMore.displayName = 'IconMore';
+
 export default pure(IconMore);

@@ -1,6 +1,22 @@
 import React, { PropTypes } from 'react';
 import _ from 'underscore';
 
+function getPropType(type) {
+  if (type.name === 'instanceOf') {
+    return type.value;
+  }
+
+  if (type.name === 'enum') {
+    return 'string';
+  }
+
+  if (type.name === 'func') {
+    return 'function';
+  }
+
+  return type.name;
+}
+
 function Props({ props }) {
   return (
     <section>
@@ -19,7 +35,7 @@ function Props({ props }) {
           {_.map(props, (prop, name) => (
             <tr key={name}>
               <td>{name}</td>
-              <td>{prop.type.name === 'instanceOf' ? prop.type.value : prop.type.name} </td>
+              <td>{getPropType(prop.type)}</td>
               <td>{prop.description}</td>
               <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
               <td>{prop.required ? 'Yes' : 'No'}</td>

@@ -1,47 +1,37 @@
 import React from 'react';
-import { ListItem, Button, IconClose, Badge, colors } from 'anchor-ui';
+import ReactMarkdown from 'react-markdown';
+import ListItem from 'anchor-ui/list-item';
+import Badge from 'anchor-ui/badge';
+import _ from 'underscore';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
 import Props from './props';
-import dalek from '../assets/images/dalek.jpg';
+
+const usage = '```js\n import ListItem from \'anchor-ui/list-item\';';
 
 function ListItemDoc() {
-  const componentData = components['src/components/list-item.jsx'];
-  const props = omitSheetFromProps(componentData.props);
-  const currentChannel = 'Channel';
-  const channel = [
-    {
-      name: 'Channel',
-      maxUsers: 50,
-      users: ['1', '2', '3']
-    }
-  ];
+  const componentData = _.find(components, component => component.displayName === 'ListItem');
+
   return (
-    <article>
+    <article className="doc">
       <h1>List item</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
       <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
+      </section>
+      <section>
         <h1>Examples</h1>
         <ListItem
-          key={`channel-list-${channel.name}`}
-          primaryText={'Channel'}
-          secondaryText={'10/50'}
-          active={currentChannel === channel.name}
-          rightButton={
-            currentChannel === channel.name
-            ? <Button iconButton onClick={() => {}}>
-              <IconClose color={colors.white} />
-            </Button>
-            : null
-          }
-          avatar={dalek}
-          badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
+          primaryText="Channel"
+          secondaryText="10/50"
+          avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+          badge={<Badge value={4} />}
         />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

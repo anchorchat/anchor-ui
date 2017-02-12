@@ -25,7 +25,7 @@ function getInputStyle(rightButton, overrideStyle) {
 }
 
 /**
- * Message input styling
+ * Message input with send button
  */
 class MessageInput extends Component {
   static displayName = 'MessageInput'

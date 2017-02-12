@@ -22,4 +22,6 @@ IconMenu.defaultProps = {
   color: colors.icons
 };
 
+IconMenu.displayName = 'IconMenu';
+
 export default pure(IconMenu);

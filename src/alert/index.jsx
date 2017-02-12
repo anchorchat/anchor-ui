@@ -20,7 +20,7 @@ const icons = {
 };
 
 /**
- * Alert styling
+ * Four types of (system) messages for alerting your user
  */
 function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle }) {
   return (
@@ -42,7 +42,7 @@ Alert.propTypes = {
    */
   text: PropTypes.node.isRequired,
   /**
-   * Type of alert : "info", "success", "warning", "error"
+   * Type of alert. One of the following: ["info", "success", "warning", "error"]
    */
   type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
   /**
@@ -62,7 +62,7 @@ Alert.propTypes = {
    */
   buttonStyle: PropTypes.instanceOf(Object),
   /**
-   * Function to hide the alert(s)
+   * Function to hide the alert
    */
   hideAlert: PropTypes.func.isRequired
 };

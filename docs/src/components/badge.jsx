@@ -1,25 +1,32 @@
 import React from 'react';
-import { Badge } from 'anchor-ui';
+import ReactMarkdown from 'react-markdown';
+import Badge from 'anchor-ui/badge';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
+
+const usage = '```js\n import Badge from \'anchor-ui/badge\';';
 
 function BadgeDoc() {
-  const componentData = components['src/components/badge.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Badge');
+
   return (
-    <article>
+    <article className="doc">
       <h1>Badge</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
       <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
+      </section>
+      <section>
         <h1>Examples</h1>
         <Badge inverted value={10} maxValue={9} />
         <Badge value={10} maxValue={9} />
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }
