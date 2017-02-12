@@ -5,7 +5,7 @@ import styles from '../style/channel-header';
 import combineStyles from '../internal/combine-styles';
 
 /**
- * Channel header styling
+ * A channel's header
  */
 function ChannelHeader({
   name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle
@@ -31,7 +31,7 @@ ChannelHeader.displayName = 'ChannelHeader';
 
 ChannelHeader.propTypes = {
   /**
-   * Content of the header
+   * The channel's name
    */
   name: PropTypes.node.isRequired,
   /**

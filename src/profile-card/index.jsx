@@ -19,7 +19,7 @@ function getStyle(themeColor, avatar, overrideStyle) {
 }
 
 /**
- * ProfileCard styling
+ * Card containing the user's profile data
  */
 class ProfileCard extends Component {
   static displayName = 'ProfileCard'

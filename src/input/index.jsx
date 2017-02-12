@@ -5,7 +5,7 @@ import styles from '../style/inputs';
 import combineStyles from '../internal/combine-styles';
 
 /**
- * Input styling
+ * General purpose form input
  */
 function Input({
   onChange, value, maxLength, label, name, type, inputRef, style, inputStyle, labelStyle

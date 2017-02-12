@@ -11,7 +11,7 @@ function getStyle(image, overrideStyle) {
 }
 
 /**
- * Empty state styling
+ * Pretty placeholder for empty content
  */
 function EmptyState({ headerText, bodyText, button, background, style, headingStyle, bodyStyle }) {
   return (

@@ -1,6 +1,6 @@
 {
   "components/alert/index.jsx": {
-    "description": "Alert styling",
+    "description": "Four types of (system) messages for alerting your user",
     "displayName": "Alert",
     "methods": [],
     "props": {
@@ -34,7 +34,7 @@
           ]
         },
         "required": true,
-        "description": "Type of alert : \"info\", \"success\", \"warning\", \"error\""
+        "description": "Type of alert. One of the following: [\"info\", \"success\", \"warning\", \"error\"]"
       },
       "style": {
         "type": {
@@ -89,12 +89,12 @@
           "name": "func"
         },
         "required": true,
-        "description": "Function to hide the alert(s)"
+        "description": "Function to hide the alert"
       }
     }
   },
   "components/app-header/index.jsx": {
-    "description": "Appheader styling",
+    "description": "Your app's header",
     "displayName": "AppHeader",
     "methods": [],
     "props": {
@@ -178,7 +178,7 @@
     }
   },
   "components/avatar/index.jsx": {
-    "description": "Avatar styling",
+    "description": "A user's profile image",
     "displayName": "Avatar",
     "methods": [],
     "props": {
@@ -204,7 +204,7 @@
     }
   },
   "components/badge/index.jsx": {
-    "description": "Badge styling",
+    "description": "Used for displaying a (notification) counter",
     "displayName": "Badge",
     "methods": [],
     "props": {
@@ -213,7 +213,7 @@
           "name": "number"
         },
         "required": true,
-        "description": "Value that's being rendered"
+        "description": "The badge's value"
       },
       "style": {
         "type": {
@@ -243,12 +243,12 @@
           "name": "number"
         },
         "required": true,
-        "description": "Max value that will be renderend\nThis will result in ${maxValue}+ is value is higher then maxValue"
+        "description": "Max value that will be renderend\nThis will result in `${maxValue}+` if value exceeds value"
       }
     }
   },
   "components/button/index.jsx": {
-    "description": "Button styling",
+    "description": "General purpose button with two types",
     "displayName": "Button",
     "methods": [],
     "props": {
@@ -283,7 +283,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Switches between \"icon-button\" | \"normal-button\"",
+        "description": "Switches between 'icon-button' and 'normal-button'",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -303,7 +303,7 @@
     }
   },
   "components/channel-header/index.jsx": {
-    "description": "Channel header styling",
+    "description": "A channel's header",
     "displayName": "ChannelHeader",
     "methods": [],
     "props": {
@@ -312,7 +312,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "Content of the header"
+        "description": "The channel's name"
       },
       "rightButton": {
         "type": {
@@ -387,7 +387,7 @@
     }
   },
   "components/dialog/index.jsx": {
-    "description": "Dialog styling",
+    "description": "General purpose dialog",
     "displayName": "Dialog",
     "methods": [],
     "props": {
@@ -485,7 +485,7 @@
     }
   },
   "components/empty-state/index.jsx": {
-    "description": "Empty state styling",
+    "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
     "methods": [],
     "props": {
@@ -1032,7 +1032,7 @@
     }
   },
   "components/input/index.jsx": {
-    "description": "Input styling",
+    "description": "General purpose form input",
     "displayName": "Input",
     "methods": [],
     "props": {
@@ -1132,7 +1132,7 @@
     }
   },
   "components/list/index.jsx": {
-    "description": "List styling",
+    "description": "List",
     "displayName": "List",
     "methods": [],
     "props": {
@@ -1141,14 +1141,14 @@
           "name": "node"
         },
         "required": true,
-        "description": "List of listItems to render"
+        "description": "ListItems to render"
       },
       "listRef": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Reference to the corresponding listItems list",
+        "description": "Reference list element",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -1169,7 +1169,7 @@
     }
   },
   "components/list-item/index.jsx": {
-    "description": "ListItem styling",
+    "description": "A list's item",
     "displayName": "ListItem",
     "methods": [],
     "props": {
@@ -1289,7 +1289,7 @@
     "methods": []
   },
   "components/loader/loader.jsx": {
-    "description": "Loader styling",
+    "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],
     "props": {
@@ -1331,7 +1331,7 @@
     }
   },
   "components/message/index.jsx": {
-    "description": "Message styling",
+    "description": "Messages with optional styling for the current user's message",
     "displayName": "Message",
     "methods": [
       {
@@ -1487,7 +1487,7 @@
     }
   },
   "components/message-input/index.jsx": {
-    "description": "Message input styling",
+    "description": "Message input with send button",
     "displayName": "MessageInput",
     "methods": [
       {
@@ -1690,7 +1690,7 @@
     }
   },
   "components/profile-card/index.jsx": {
-    "description": "ProfileCard styling",
+    "description": "Card containing the user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
     "props": {

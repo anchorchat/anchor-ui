@@ -35,7 +35,7 @@ function getStyle(themeColor, inverted, index, overrideStyle) {
 }
 
 /**
- * Loader styling
+ * Animated loader
  */
 class Loader extends Component {
   static displayName = 'Loader'
