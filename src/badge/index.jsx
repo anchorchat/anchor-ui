@@ -19,13 +19,13 @@ function getStyle(themeColor, inverted, overrideStyle) {
 }
 
 /**
- * Badge styling
+ * Used for displaying a (notification) counter
  */
 class Badge extends Component {
   static displayName = 'Badge';
   static propTypes = {
     /**
-     * Value that's being rendered
+     * The badge's value
      */
     value: PropTypes.number.isRequired,
     /**
@@ -38,7 +38,7 @@ class Badge extends Component {
     inverted: PropTypes.bool,
     /**
      * Max value that will be renderend
-     * This will result in ${maxValue}+ is value is higher then maxValue
+     * This will result in `${maxValue}+` if value exceeds value
      */
     maxValue: PropTypes.number.isRequired
   }

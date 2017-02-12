@@ -11,7 +11,7 @@ function getStyle(image, overrideStyle) {
 }
 
 /**
- * Avatar styling
+ * A user's profile image
  */
 function Avatar({ image, style }) {
   return (

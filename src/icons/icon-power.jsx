@@ -21,4 +21,6 @@ IconPower.defaultProps = {
   color: colors.icons
 };
 
+IconPower.displayName = 'IconPower';
+
 export default pure(IconPower);

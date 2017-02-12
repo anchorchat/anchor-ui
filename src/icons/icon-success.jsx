@@ -18,4 +18,6 @@ IconSuccess.defaultProps = {
   color: colors.icons
 };
 
+IconSuccess.displayName = 'IconSuccess';
+
 export default pure(IconSuccess);

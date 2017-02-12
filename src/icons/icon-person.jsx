@@ -20,4 +20,6 @@ IconPerson.defaultProps = {
   color: colors.icons
 };
 
+IconPerson.displayName = 'IconPerson';
+
 export default pure(IconPerson);

@@ -34,4 +34,6 @@ IconClock.defaultProps = {
   color: colors.icons
 };
 
+IconClock.displayName = 'IconClock';
+
 export default pure(IconClock);

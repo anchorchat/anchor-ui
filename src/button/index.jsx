@@ -35,7 +35,7 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
 }
 
 /**
- * Button styling
+ * General purpose button with two types
  */
 class Button extends Component {
   static displayName = 'Button';
@@ -53,7 +53,7 @@ class Button extends Component {
      */
     style: PropTypes.instanceOf(Object),
     /**
-     * Switches between "icon-button" | "normal-button"
+     * Switches between 'icon-button' and 'normal-button'
      */
     iconButton: PropTypes.bool,
     /**

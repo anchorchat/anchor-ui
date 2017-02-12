@@ -45,7 +45,7 @@ function getTextStyle(textStyle, active, overrideStyle) {
 }
 
 /**
- * ListItem styling
+ * A list's item
  */
 class ListItem extends Component {
   static displayName = 'ListItem'

@@ -21,4 +21,6 @@ IconWarning.defaultProps = {
   color: colors.icons
 };
 
+IconWarning.displayName = 'IconWarning';
+
 export default pure(IconWarning);

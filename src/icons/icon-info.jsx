@@ -21,4 +21,6 @@ IconInfo.defaultProps = {
   color: colors.icons
 };
 
+IconInfo.displayName = 'IconInfo';
+
 export default pure(IconInfo);

@@ -1,50 +1,55 @@
 import React from 'react';
-import { List, ListItem, Button, IconClose, colors } from 'anchor-ui';
+import ReactMarkdown from 'react-markdown';
+import List from 'anchor-ui/list';
+import ListItem from 'anchor-ui/list-item';
+import Button from 'anchor-ui/button';
+import { IconClose } from 'anchor-ui/icons';
+import { colors } from 'anchor-ui/settings';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
-import dalek from '../assets/images/dalek.jpg';
+
+const usage = '```js\n import List from \'anchor-ui/list\';';
 
 function ListDoc() {
-  const componentData = components['src/components/list.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'List');
+
   const currentChannel = 'Channel3';
-  const channelListStyle = {
-    height: 'calc(100% - 116px)',
-    borderRight: `1px solid ${colors.grey}`
-  };
+
   const channels = [
     {
       name: 'Channel1',
-      maxUsers: 50,
-      users: ['1', '2', '3']
+      maxUsers: 20,
+      users: ['1', '2'],
+      avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
     },
     {
       name: 'Channel2',
-      maxUsers: 50,
-      users: ['1', '2', '3']
+      maxUsers: 15,
+      users: ['1', '2', '3'],
+      avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
     },
     {
       name: 'Channel3',
       maxUsers: 50,
-      users: ['1', '2', '3']
-    },
-    {
-      name: 'Channel4',
-      maxUsers: 50,
-      users: ['1', '2', '3']
+      users: ['1', '2', '3', '4', '5'],
+      avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400'
     }
   ];
   return (
-    <article>
+    <article className="doc">
       <h1>List</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
       <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
+      </section>
+      <section>
         <h1>Examples</h1>
-        <List style={channelListStyle} >
+        <List>
           {channels.map(channel => (
             <ListItem
               key={`channel-list-${channel.name}`}
@@ -58,12 +63,12 @@ function ListDoc() {
                 </Button>
                 : null
               }
-              avatar={dalek}
+              avatar={channel.avatar}
             />
           ))}
         </List>
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }

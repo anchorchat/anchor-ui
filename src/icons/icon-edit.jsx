@@ -25,4 +25,6 @@ IconEdit.defaultProps = {
   color: colors.icons
 };
 
+IconEdit.displayName = 'IconEdit';
+
 export default pure(IconEdit);

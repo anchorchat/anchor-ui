@@ -5,7 +5,7 @@ import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
 
 /**
- * List styling
+ * List
  */
 function List({ children, listRef, style }) {
   return <ul ref={listRef} style={combineStyles(styles.list, style)}>{children}</ul>;
@@ -15,11 +15,11 @@ List.displayName = 'List';
 
 List.propTypes = {
   /**
-   * List of listItems to render
+   * ListItems to render
    */
   children: PropTypes.node.isRequired,
   /**
-   * Reference to the corresponding listItems list
+   * Reference list element
    */
   listRef: PropTypes.func,
   /**

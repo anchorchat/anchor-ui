@@ -23,4 +23,6 @@ IconChannel.defaultProps = {
   color: colors.icons
 };
 
+IconChannel.displayName = 'IconChannel';
+
 export default pure(IconChannel);

@@ -33,4 +33,6 @@ IconMute.defaultProps = {
   color: colors.icons
 };
 
+IconMute.displayName = 'IconMute';
+
 export default pure(IconMute);

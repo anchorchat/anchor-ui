@@ -22,4 +22,6 @@ IconLock.defaultProps = {
   color: colors.icons
 };
 
+IconLock.displayName = 'IconLock';
+
 export default pure(IconLock);

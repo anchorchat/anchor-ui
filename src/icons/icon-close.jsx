@@ -20,4 +20,6 @@ IconClose.defaultProps = {
   color: colors.icons
 };
 
+IconClose.displayName = 'IconClose';
+
 export default pure(IconClose);

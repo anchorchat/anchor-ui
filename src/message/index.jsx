@@ -56,7 +56,7 @@ function getTimeStyle(style, myMessage, overrideStyle) {
 }
 
 /**
- * Message styling
+ * Messages with optional styling for the current user's message
  */
 class Message extends Component {
   static displayName = 'Message'

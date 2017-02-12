@@ -1,12 +1,15 @@
 import React from 'react';
-import { Loader, colors } from 'anchor-ui';
+import ReactMarkdown from 'react-markdown';
+import Loader from 'anchor-ui/loader';
+import { colors } from 'anchor-ui/settings';
+import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
-import omitSheetFromProps from '../utils/omit-sheet-from-props';
+
+const usage = '```js\n import Loader from \'anchor-ui/loader\';';
 
 function LoaderDoc() {
-  const componentData = components['src/components/loader/loader.jsx'];
-  const props = omitSheetFromProps(componentData.props);
+  const componentData = _.find(components, component => component.displayName === 'Loader');
 
   const style = {
     inverted: {
@@ -19,11 +22,15 @@ function LoaderDoc() {
   };
 
   return (
-    <article>
+    <article className="doc">
       <h1>Loader</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
+      </section>
+      <section>
+        <h1>Usage</h1>
+        <ReactMarkdown source={usage} className="markdown" />
       </section>
       <section>
         <h1>Examples</h1>
@@ -32,7 +39,7 @@ function LoaderDoc() {
           <Loader inverted />
         </section>
       </section>
-      <Props props={props} />
+      <Props props={componentData.props} />
     </article>
   );
 }
