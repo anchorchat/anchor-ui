@@ -17,6 +17,7 @@ function Menu() {
         <Link to="/dialog"><ListItem primaryText="Dialog" /></Link>
         <Link to="/empty-state"><ListItem primaryText="EmptyState" /></Link>
         <Link to="/input"><ListItem primaryText="Input" /></Link>
+        <Link to="/icons"><ListItem primaryText="Icons" /></Link>
         <Link to="/list"><ListItem primaryText="List" /></Link>
         <Link to="/list-item"><ListItem primaryText="ListItem" /></Link>
         <Link to="/loader"><ListItem primaryText="Loader" /></Link>

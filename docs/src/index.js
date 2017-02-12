@@ -20,6 +20,7 @@ import MessageInput from './components/message-input';
 import Message from './components/message';
 import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
+import Icons from './components/icons';
 import './index.css';
 
 ReactDOM.render(
@@ -42,6 +43,7 @@ ReactDOM.render(
       <Route path="/message-list" component={MessageList} />
       <Route path="/message" component={Message} />
       <Route path="/profile-card" component={ProfileCard} />
+      <Route path="/icons" component={Icons} />
     </Route>
   </Router>,
   document.getElementById('root')
