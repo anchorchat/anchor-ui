@@ -25,4 +25,6 @@ IconRocket.defaultProps = {
   color: colors.icons
 };
 
+IconRocket.displayName = 'IconRocket';
+
 export default pure(IconRocket);

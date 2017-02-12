@@ -20,4 +20,6 @@ IconChevronLeft.defaultProps = {
   color: colors.icons
 };
 
+IconChevronLeft.displayName = 'IconChevronLeft';
+
 export default pure(IconChevronLeft);

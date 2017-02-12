@@ -24,4 +24,6 @@ IconExit.defaultProps = {
   color: colors.icons
 };
 
+IconExit.displayName = 'IconExit';
+
 export default pure(IconExit);

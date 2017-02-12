@@ -21,4 +21,6 @@ IconSend.defaultProps = {
   color: colors.icons
 };
 
+IconSend.displayName = 'IconSend';
+
 export default pure(IconSend);

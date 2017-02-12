@@ -22,4 +22,6 @@ IconAddImage.defaultProps = {
   color: colors.icons
 };
 
+IconAddImage.displayName = 'IconAddImage';
+
 export default pure(IconAddImage);

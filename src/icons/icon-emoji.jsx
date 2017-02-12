@@ -23,4 +23,6 @@ IconEmoji.defaultProps = {
   color: colors.icons
 };
 
+IconEmoji.displayName = 'IconEmoji';
+
 export default pure(IconEmoji);

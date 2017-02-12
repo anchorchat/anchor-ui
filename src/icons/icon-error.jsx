@@ -21,4 +21,6 @@ IconError.defaultProps = {
   color: colors.icons
 };
 
+IconError.displayName = 'IconError';
+
 export default pure(IconError);
