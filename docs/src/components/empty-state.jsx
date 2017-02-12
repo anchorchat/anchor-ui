@@ -35,6 +35,7 @@ function EmptyStateDoc() {
           headerText={emptyState.header}
           bodyText={emptyState.body}
           button={<Button onClick={() => {}}><p>Click me</p></Button>}
+          style={{ width: '275px', height: '600px' }}
         />
       </section>
       <Props props={componentData.props} />
