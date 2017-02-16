@@ -7,6 +7,7 @@ export IconClock from './icon-clock';
 export IconClose from './icon-close';
 export IconConversation from './icon-conversation';
 export IconEdit from './icon-edit';
+export IconError from './icon-error';
 export IconExit from './icon-exit';
 export IconEmoji from './icon-emoji';
 export IconHammer from './icon-hammer';
