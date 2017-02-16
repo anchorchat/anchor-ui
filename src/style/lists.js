@@ -11,7 +11,6 @@ const styleSheet = {
   listItem: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
-    borderBottom: `1px solid ${colors.white}`,
     borderTop: `1px solid ${colors.white}`,
     cursor: 'pointer',
     display: 'flex',
