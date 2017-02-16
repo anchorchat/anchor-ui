@@ -7,7 +7,7 @@ const install = '```bash\n $ npm i -S anchor-ui';
 const font = '```css\n * {\n  font-family: \'Lato\', sans-serif;\n }';
 const named = '```js\n import { AppHeader, Button } from \'anchor-ui\';';
 const defaultImport = '```js\n import AppHeader from \'anchor-ui/app-header\'; \n import Button from \'anchor-ui/button\';';
-const theme = '```js\n import withTheme from \'anchor-ui/withTheme\'; \n export default withTheme(YourApp, \'#1ba6c4\');';
+const theme = '```js\n import withTheme from \'anchor-ui/with-theme\'; \n export default withTheme(YourApp, \'#1ba6c4\');';
 
 function Home() {
   return (
