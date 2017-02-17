@@ -1,4 +1,3 @@
-// Components
 export Alert from './alert';
 export Avatar from './avatar';
 export AppHeader from './app-header';
@@ -15,9 +14,9 @@ export ProfileCard from './profile-card';
 export EmptyState from './empty-state';
 export Loader from './loader/index';
 export Dialog from './dialog';
-// Icons
+
 export icons from './icons';
-// Settings
+
 export settings from './settings';
-// HOC
+
 export withTheme from './with-theme';
