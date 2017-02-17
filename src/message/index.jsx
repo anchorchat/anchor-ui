@@ -60,6 +60,20 @@ function getTextStyle(style, myMessage, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
+function getHeaderStyle(style, myMessage, compact, overrideStyle) {
+  let combinedStyles = style;
+
+  if (myMessage) {
+    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+  }
+
+  if (compact) {
+    combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+  }
+
+  return combineStyles(combinedStyles, overrideStyle);
+}
+
 function getTimeStyle(style, myMessage, overrideStyle) {
   if (myMessage) {
     return combineStyles({ ...style, left: 0, right: 'initial', opacity: '.75' }, overrideStyle);
@@ -221,7 +235,9 @@ class Message extends Component {
             : <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
           }
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
-          <header style={getTextStyle(styles.messageHeader, myMessage, messageHeaderStyle)}>
+          <header
+            style={getHeaderStyle(styles.messageHeader, myMessage, compact, messageHeaderStyle)}
+          >
             {message.username}
           </header>
           <p style={getTextStyle(styles.messageBody, myMessage, messageBodyStyle)}>
