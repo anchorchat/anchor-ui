@@ -779,6 +779,42 @@
       }
     }
   },
+  "components/icons/icon-gender-female.jsx": {
+    "description": "",
+    "displayName": "IconGenderFemale",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-gender-male.jsx": {
+    "description": "",
+    "displayName": "IconGenderMale",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-hammer.jsx": {
     "description": "",
     "displayName": "IconHammer",
@@ -1479,6 +1515,17 @@
         },
         "required": false,
         "description": "Enables links in messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables compact messages",
         "defaultValue": {
           "value": "false",
           "computed": false
