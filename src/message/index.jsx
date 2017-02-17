@@ -49,7 +49,7 @@ function getTextStyle(style, myMessage, overrideStyle) {
 
 function getTimeStyle(style, myMessage, overrideStyle) {
   if (myMessage) {
-    return combineStyles({ ...style, left: 0, right: 'initial' }, overrideStyle);
+    return combineStyles({ ...style, left: 0, right: 'initial', opacity: '.75' }, overrideStyle);
   }
 
   return combineStyles(style, overrideStyle);
@@ -207,10 +207,10 @@ class Message extends Component {
               ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
               : message.body
             }
+            <span style={getTimeStyle(styles.messageTime, myMessage, messageTimeStyle)}>
+              {format(message.createdAt, timeFormat)}
+            </span>
           </p>
-          <span style={getTimeStyle(styles.messageTime, myMessage, messageTimeStyle)}>
-            {format(message.createdAt, timeFormat)}
-          </span>
         </section>
       </section>
     );

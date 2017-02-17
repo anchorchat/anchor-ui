@@ -4,18 +4,16 @@ const styleSheet = {
   messageContainer: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: '16px'
+    marginBottom: '10px'
   },
   myContainer: {
     flexDirection: 'row-reverse'
   },
   message: {
-    display: 'inline-block',
     backgroundColor: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
     color: colors.primaryText,
-    marginBottom: '34px',
     marginLeft: '16px',
     maxWidth: '75%',
     padding: '12px',
@@ -55,18 +53,22 @@ const styleSheet = {
     marginBottom: '5px',
   },
   messageBody: {
+    display: 'flex',
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
     margin: '0'
   },
   messageTime: {
-    bottom: '-17px',
-    color: colors.secondaryText,
+    width: '32px',
+    color: 'currentColor',
     fontSize: '12px',
     lineHeight: '12px',
-    position: 'absolute',
-    right: '0'
+    textAlign: 'right',
+    paddingLeft: '10px',
+    opacity: '.75',
+    flexShrink: '0',
+    alignSelf: 'flex-end'
   }
 };
 
