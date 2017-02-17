@@ -10,7 +10,11 @@ import { colors } from '../settings';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
 
-function getContainerStyle(myMessage) {
+function getContainerStyle(myMessage, compact) {
+  if (compact) {
+    return styles.messageContainer;
+  }
+
   if (myMessage) {
     return combineStyles(styles.messageContainer, styles.myContainer);
   }
@@ -18,7 +22,7 @@ function getContainerStyle(myMessage) {
   return styles.messageContainer;
 }
 
-function getStyle(themeColor, myMessage, avatar, overrideStyle) {
+function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   let style = styles.message;
 
   const color = themeColor || colors.theme;
@@ -36,6 +40,15 @@ function getStyle(themeColor, myMessage, avatar, overrideStyle) {
     style = combineStyles(style, { marginLeft: '0', marginRight: '66px' });
   }
 
+  if (compact) {
+    style = combineStyles(style, {
+      marginLeft: '0',
+      marginRight: '0',
+      maxWidth: '100%',
+      display: 'flex'
+    });
+  }
+
   return combineStyles(style, overrideStyle);
 }
 
@@ -45,6 +58,20 @@ function getTextStyle(style, myMessage, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
+}
+
+function getHeaderStyle(style, myMessage, compact, overrideStyle) {
+  let combinedStyles = style;
+
+  if (myMessage) {
+    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+  }
+
+  if (compact) {
+    combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+  }
+
+  return combineStyles(combinedStyles, overrideStyle);
 }
 
 function getTimeStyle(style, myMessage, overrideStyle) {
@@ -118,7 +145,11 @@ class Message extends Component {
     /**
      * Enables links in messages
      */
-    enableLinks: PropTypes.bool
+    enableLinks: PropTypes.bool,
+    /**
+     * Enables compact messages
+     */
+    compact: PropTypes.bool
   }
 
   static defaultProps = {
@@ -130,7 +161,8 @@ class Message extends Component {
     messageTimeStyle: {},
     myMessage: false,
     emoji: false,
-    enableLinks: false
+    enableLinks: false,
+    compact: false
   }
 
   static contextTypes = {
@@ -178,7 +210,8 @@ class Message extends Component {
       style,
       messageHeaderStyle,
       messageBodyStyle,
-      messageTimeStyle
+      messageTimeStyle,
+      compact
     } = this.props;
     const { color } = this.context;
 
@@ -194,11 +227,17 @@ class Message extends Component {
     }
 
     return (
-      <section style={getContainerStyle(myMessage)}>
-        <section style={getStyle(color, myMessage, avatar, style)}>
-          <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
-          {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
-          <header style={getTextStyle(styles.messageHeader, myMessage, messageHeaderStyle)}>
+      <section style={getContainerStyle(myMessage, compact)}>
+        <section style={getStyle(color, myMessage, avatar, compact, style)}>
+          {
+            compact
+            ? null
+            : <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
+          }
+          {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
+          <header
+            style={getHeaderStyle(styles.messageHeader, myMessage, compact, messageHeaderStyle)}
+          >
             {message.username}
           </header>
           <p style={getTextStyle(styles.messageBody, myMessage, messageBodyStyle)}>
