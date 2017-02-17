@@ -203,7 +203,6 @@ class App extends Component {
                 myMessage={message.username === currentUser}
                 avatar={message.profileImage}
                 emoji
-                compact
               />
             ))}
           </MessageList>
