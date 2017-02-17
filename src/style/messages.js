@@ -69,6 +69,9 @@ const styleSheet = {
     opacity: '.75',
     flexShrink: '0',
     alignSelf: 'flex-end'
+  },
+  compact: {
+    backgroundColor: '#333'
   }
 };
 
