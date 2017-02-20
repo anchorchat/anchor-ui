@@ -81,11 +81,11 @@ function getHeaderStyle(style, myMessage, compact, fontSize, overrideStyle) {
     combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
   }
 
-  if (fontSize && fontSize === 'medium') {
+  if (fontSize === 'medium') {
     combinedStyles = combineStyles({ ...combinedStyles, fontSize: '16px', lineHeight: '16px' }, overrideStyle);
   }
 
-  if (fontSize && fontSize === 'large') {
+  if (fontSize === 'large') {
     combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '20px' }, overrideStyle);
   }
 
