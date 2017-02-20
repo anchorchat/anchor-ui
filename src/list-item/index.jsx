@@ -4,10 +4,11 @@ import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
 import { colors } from '../settings';
 import Avatar from '../avatar';
+import IconMute from '../icons/icon-mute';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 
-function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
+function getStyle(themeColor, active, rightButton, avatar, muted, overrideStyle) {
   let style = styles.listItem;
 
   const color = themeColor || colors.theme;
@@ -29,6 +30,10 @@ function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
 
   if (avatar) {
     style = combineStyles(style, styles.leftAvatar);
+  }
+
+  if (muted) {
+    style = combineStyles(style, { opacity: '.5' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -90,7 +95,11 @@ class ListItem extends Component {
     /**
      * Badge object referenced by the list item
      */
-    badge: PropTypes.node
+    badge: PropTypes.node,
+    /**
+     * Add muted styles to ListItem
+     */
+    muted: PropTypes.bool
   }
 
   static defaultProps = {
@@ -102,7 +111,8 @@ class ListItem extends Component {
     active: false,
     rightButton: null,
     avatar: '',
-    badge: null
+    badge: null,
+    muted: false
   }
 
   static contextTypes = {
@@ -129,15 +139,17 @@ class ListItem extends Component {
       badge,
       style,
       primaryTextStyle,
-      secondaryTextStyle
+      secondaryTextStyle,
+      muted
     } = this.props;
     const { color } = this.context;
 
     return (
-      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, style)}>
+      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, muted, style)}>
         {
           avatar
           ? <div style={styles.avatar}>
+            {muted ? <div style={styles.mutedIcon}><IconMute color={colors.white} /></div> : null}
             {badge ? <div style={styles.badge}>{badge}</div> : null}
             <Avatar image={avatar} />
           </div>

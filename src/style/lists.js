@@ -41,6 +41,18 @@ const styleSheet = {
       backgroundColor: darken(colors.theme, 0.15)
     }
   },
+  mutedIcon: {
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    width: '40px',
+    height: '40px',
+    padding: '8px',
+    boxSizing: 'border-box',
+    backgroundColor: colors.black,
+    borderRadius: '50%',
+    opacity: '.75'
+  },
   rightButton: {
     paddingRight: '52px'
   },
