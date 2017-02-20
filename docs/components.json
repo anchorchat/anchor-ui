@@ -1506,7 +1506,7 @@
           ]
         },
         "required": false,
-        "description": "The font size of messages. One of the following: [\"small\", \"medium\", \"large\"]",
+        "description": "The message size. One of the following: [\"small\", \"medium\", \"large\"]",
         "defaultValue": {
           "value": "'small'",
           "computed": false

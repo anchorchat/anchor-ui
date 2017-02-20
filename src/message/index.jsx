@@ -152,7 +152,7 @@ class Message extends Component {
      */
     messageTimeStyle: PropTypes.instanceOf(Object),
     /**
-     * The font size of messages. One of the following: ["small", "medium", "large"]
+     * The message size. One of the following: ["small", "medium", "large"]
      */
     fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
     /**
