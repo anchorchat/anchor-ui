@@ -1772,5 +1772,30 @@
         }
       }
     }
+  },
+  "components/with-theme/index.jsx": {
+    "description": "",
+    "displayName": "WithTheme",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Your theme's color",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Your app"
+      }
+    }
   }
 }
