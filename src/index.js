@@ -14,6 +14,7 @@ export ProfileCard from './profile-card';
 export EmptyState from './empty-state';
 export Loader from './loader/index';
 export Dialog from './dialog';
+export SearchBox from './search-box';
 
 export icons from './icons';
 

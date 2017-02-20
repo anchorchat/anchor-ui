@@ -10,7 +10,8 @@ import {
   Button,
   AppHeader,
   Badge,
-  MessageList
+  MessageList,
+  SearchBox
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -106,11 +107,13 @@ class App extends Component {
 
     this.state = {
       message: '',
-      messages
+      messages,
+      search: ''
     };
 
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
+    this.changeSearch = this.changeSearch.bind(this);
   }
 
   changeMessage(event) {
@@ -145,7 +148,15 @@ class App extends Component {
     return false;
   }
 
+  changeSearch(event) {
+    this.setState({
+      search: event.currentTarget.value
+    });
+  }
+
   render() {
+    const { search } = this.state;
+
     const channelListStyle = {
       height: 'calc(100% - 116px)',
       borderRight: `1px solid ${colors.grey}`
@@ -183,6 +194,7 @@ class App extends Component {
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <List style={channelListStyle}>
+            <SearchBox value={search} onChange={this.changeSearch} />
             {channels.map(channel => (
               <ListItem
                 key={`channel-list-${channel.name}`}
