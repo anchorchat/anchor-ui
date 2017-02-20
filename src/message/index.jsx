@@ -52,12 +52,22 @@ function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function getTextStyle(style, myMessage, overrideStyle) {
+function getTextStyle(style, myMessage, fontSize, overrideStyle) {
+  let combinedStyles = style;
+
   if (myMessage) {
-    return combineStyles({ ...style, color: colors.white }, overrideStyle);
+    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
   }
 
-  return combineStyles(style, overrideStyle);
+  if (fontSize && fontSize === 'medium') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '22px' }, overrideStyle);
+  }
+
+  if (fontSize && fontSize === 'large') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '24px', lineHeight: '26px' }, overrideStyle);
+  }
+
+  return combineStyles(combinedStyles, overrideStyle);
 }
 
 function getHeaderStyle(style, myMessage, compact, overrideStyle) {
@@ -134,6 +144,11 @@ class Message extends Component {
      */
     messageTimeStyle: PropTypes.instanceOf(Object),
     /**
+     * The font size of messages
+     * Default is small. Possibilities for medium and large
+     */
+    fontSize: PropTypes.string,
+    /**
      * Flag used to change message styles.
      * True if the message was sent by the current user
      */
@@ -159,6 +174,7 @@ class Message extends Component {
     messageHeaderStyle: {},
     messageBodyStyle: {},
     messageTimeStyle: {},
+    fontSize: 'small',
     myMessage: false,
     emoji: false,
     enableLinks: false,
@@ -211,7 +227,8 @@ class Message extends Component {
       messageHeaderStyle,
       messageBodyStyle,
       messageTimeStyle,
-      compact
+      compact,
+      fontSize
     } = this.props;
     const { color } = this.context;
 
@@ -240,7 +257,7 @@ class Message extends Component {
           >
             {message.username}
           </header>
-          <p style={getTextStyle(styles.messageBody, myMessage, messageBodyStyle)}>
+          <p style={getTextStyle(styles.messageBody, myMessage, fontSize, messageBodyStyle)}>
             {
               emoji
               ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
