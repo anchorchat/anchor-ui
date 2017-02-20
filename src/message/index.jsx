@@ -70,7 +70,7 @@ function getTextStyle(style, myMessage, fontSize, overrideStyle) {
   return combineStyles(combinedStyles, overrideStyle);
 }
 
-function getHeaderStyle(style, myMessage, compact, overrideStyle) {
+function getHeaderStyle(style, myMessage, compact, fontSize, overrideStyle) {
   let combinedStyles = style;
 
   if (myMessage) {
@@ -79,6 +79,14 @@ function getHeaderStyle(style, myMessage, compact, overrideStyle) {
 
   if (compact) {
     combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+  }
+
+  if (fontSize && fontSize === 'medium') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '16px', lineHeight: '16px' }, overrideStyle);
+  }
+
+  if (fontSize && fontSize === 'large') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '20px' }, overrideStyle);
   }
 
   return combineStyles(combinedStyles, overrideStyle);
@@ -253,7 +261,9 @@ class Message extends Component {
           }
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
           <header
-            style={getHeaderStyle(styles.messageHeader, myMessage, compact, messageHeaderStyle)}
+            style={
+              getHeaderStyle(styles.messageHeader, myMessage, compact, fontSize, messageHeaderStyle)
+            }
           >
             {message.username}
           </header>
