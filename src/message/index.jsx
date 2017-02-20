@@ -92,6 +92,20 @@ function getHeaderStyle(style, myMessage, compact, fontSize, overrideStyle) {
   return combineStyles(combinedStyles, overrideStyle);
 }
 
+function getHeaderStyle(style, myMessage, compact, overrideStyle) {
+  let combinedStyles = style;
+
+  if (myMessage) {
+    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+  }
+
+  if (compact) {
+    combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+  }
+
+  return combineStyles(combinedStyles, overrideStyle);
+}
+
 function getTimeStyle(style, myMessage, overrideStyle) {
   if (myMessage) {
     return combineStyles({ ...style, left: 0, right: 'initial', opacity: '.75' }, overrideStyle);
