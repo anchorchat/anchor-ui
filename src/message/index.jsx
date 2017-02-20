@@ -59,11 +59,11 @@ function getTextStyle(style, myMessage, fontSize, overrideStyle) {
     combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
   }
 
-  if (fontSize && fontSize === 'medium') {
+  if (fontSize === 'medium') {
     combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '22px' }, overrideStyle);
   }
 
-  if (fontSize && fontSize === 'large') {
+  if (fontSize === 'large') {
     combinedStyles = combineStyles({ ...combinedStyles, fontSize: '24px', lineHeight: '26px' }, overrideStyle);
   }
 
