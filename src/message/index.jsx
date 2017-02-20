@@ -152,10 +152,9 @@ class Message extends Component {
      */
     messageTimeStyle: PropTypes.instanceOf(Object),
     /**
-     * The font size of messages
-     * Default is small. Possibilities for medium and large
+     * The font size of messages. One of the following: ["small", "medium", "large"]
      */
-    fontSize: PropTypes.string,
+    fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
     /**
      * Flag used to change message styles.
      * True if the message was sent by the current user
