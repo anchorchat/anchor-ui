@@ -1487,6 +1487,31 @@
           "computed": false
         }
       },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The message size. One of the following: [\"small\", \"medium\", \"large\"]",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
       "myMessage": {
         "type": {
           "name": "bool"

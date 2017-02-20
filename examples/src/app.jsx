@@ -46,6 +46,26 @@ const channels = [
 
 const messages = [
   {
+    body: 'This is a small message :tada:',
+    createdAt: new Date(),
+    username: 'The Doctor',
+    profileImage: theDoctor
+  },
+  {
+    body: 'This is a medium message :tada:',
+    createdAt: new Date(),
+    username: 'The Doctor',
+    profileImage: theDoctor,
+    fontSize: 'medium',
+  },
+  {
+    body: 'This is a large message :tada:',
+    createdAt: new Date(),
+    username: 'The Doctor',
+    profileImage: theDoctor,
+    fontSize: 'large',
+  },
+  {
     body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
     username: 'The Doctor',
@@ -203,6 +223,7 @@ class App extends Component {
                 myMessage={message.username === currentUser}
                 avatar={message.profileImage}
                 emoji
+                fontSize={message.fontSize ? message.fontSize : null}
               />
             ))}
           </MessageList>
