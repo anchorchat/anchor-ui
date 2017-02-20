@@ -4,6 +4,7 @@ import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
 import { colors } from '../settings';
 import Avatar from '../avatar';
+import IconMute from '../icons/icon-mute';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 
@@ -148,6 +149,7 @@ class ListItem extends Component {
         {
           avatar
           ? <div style={styles.avatar}>
+            {muted ? <div style={styles.mutedIcon}><IconMute color={colors.white} /></div> : null}
             {badge ? <div style={styles.badge}>{badge}</div> : null}
             <Avatar image={avatar} />
           </div>

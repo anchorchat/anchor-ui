@@ -1317,6 +1317,17 @@
           "value": "null",
           "computed": false
         }
+      },
+      "muted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Add muted styles to ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },
@@ -1819,7 +1830,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "Your app"
+        "description": "Children to apply theme color to"
       }
     }
   }
