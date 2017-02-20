@@ -1317,6 +1317,17 @@
           "value": "null",
           "computed": false
         }
+      },
+      "muted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Add muted styles to ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },
@@ -1484,6 +1495,31 @@
         "description": "Override the styles of the time element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The message size. One of the following: [\"small\", \"medium\", \"large\"]",
+        "defaultValue": {
+          "value": "'small'",
           "computed": false
         }
       },
@@ -1770,6 +1806,31 @@
           "value": "{}",
           "computed": false
         }
+      }
+    }
+  },
+  "components/with-theme/index.jsx": {
+    "description": "",
+    "displayName": "WithTheme",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Your theme's color",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Children to apply theme color to"
       }
     }
   }

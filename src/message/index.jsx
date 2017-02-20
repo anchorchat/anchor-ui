@@ -52,12 +52,44 @@ function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function getTextStyle(style, myMessage, overrideStyle) {
+function getTextStyle(style, myMessage, fontSize, overrideStyle) {
+  let combinedStyles = style;
+
   if (myMessage) {
-    return combineStyles({ ...style, color: colors.white }, overrideStyle);
+    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
   }
 
-  return combineStyles(style, overrideStyle);
+  if (fontSize === 'medium') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '22px' }, overrideStyle);
+  }
+
+  if (fontSize === 'large') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '24px', lineHeight: '26px' }, overrideStyle);
+  }
+
+  return combineStyles(combinedStyles, overrideStyle);
+}
+
+function getHeaderStyle(style, myMessage, compact, fontSize, overrideStyle) {
+  let combinedStyles = style;
+
+  if (myMessage) {
+    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+  }
+
+  if (compact) {
+    combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+  }
+
+  if (fontSize === 'medium') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '16px', lineHeight: '16px' }, overrideStyle);
+  }
+
+  if (fontSize === 'large') {
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '20px' }, overrideStyle);
+  }
+
+  return combineStyles(combinedStyles, overrideStyle);
 }
 
 function getHeaderStyle(style, myMessage, compact, overrideStyle) {
@@ -134,6 +166,10 @@ class Message extends Component {
      */
     messageTimeStyle: PropTypes.instanceOf(Object),
     /**
+     * The message size. One of the following: ["small", "medium", "large"]
+     */
+    fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+    /**
      * Flag used to change message styles.
      * True if the message was sent by the current user
      */
@@ -159,6 +195,7 @@ class Message extends Component {
     messageHeaderStyle: {},
     messageBodyStyle: {},
     messageTimeStyle: {},
+    fontSize: 'small',
     myMessage: false,
     emoji: false,
     enableLinks: false,
@@ -211,7 +248,8 @@ class Message extends Component {
       messageHeaderStyle,
       messageBodyStyle,
       messageTimeStyle,
-      compact
+      compact,
+      fontSize
     } = this.props;
     const { color } = this.context;
 
@@ -236,11 +274,13 @@ class Message extends Component {
           }
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
           <header
-            style={getHeaderStyle(styles.messageHeader, myMessage, compact, messageHeaderStyle)}
+            style={
+              getHeaderStyle(styles.messageHeader, myMessage, compact, fontSize, messageHeaderStyle)
+            }
           >
             {message.username}
           </header>
-          <p style={getTextStyle(styles.messageBody, myMessage, messageBodyStyle)}>
+          <p style={getTextStyle(styles.messageBody, myMessage, fontSize, messageBodyStyle)}>
             {
               emoji
               ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
