@@ -19,4 +19,4 @@ export icons from './icons';
 
 export settings from './settings';
 
-export withTheme from './with-theme';
+export WithTheme from './with-theme';
