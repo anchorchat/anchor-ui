@@ -102,8 +102,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Title text (your app's name)"
+        "required": false,
+        "description": "Title text (your app's name)",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "icon": {
         "type": {
