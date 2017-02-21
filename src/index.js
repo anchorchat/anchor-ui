@@ -16,6 +16,7 @@ export Loader from './loader/index';
 export Dialog from './dialog';
 export SearchBox from './search-box';
 export PopOver from './pop-over';
+export MenuItem from './menu-item';
 
 export icons from './icons';
 
