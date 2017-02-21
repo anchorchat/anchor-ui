@@ -60,11 +60,11 @@ function getTextStyle(style, myMessage, fontSize, overrideStyle) {
   }
 
   if (fontSize === 'medium') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '22px' }, overrideStyle);
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '18px', lineHeight: '20px' }, overrideStyle);
   }
 
   if (fontSize === 'large') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '24px', lineHeight: '26px' }, overrideStyle);
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '22px', lineHeight: '24px' }, overrideStyle);
   }
 
   return combineStyles(combinedStyles, overrideStyle);
@@ -86,7 +86,7 @@ function getHeaderStyle(style, myMessage, compact, fontSize, overrideStyle) {
   }
 
   if (fontSize === 'large') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '20px', lineHeight: '20px' }, overrideStyle);
+    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '18px', lineHeight: '18px' }, overrideStyle);
   }
 
   return combineStyles(combinedStyles, overrideStyle);

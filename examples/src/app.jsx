@@ -12,7 +12,7 @@ import {
   Badge,
   MessageList
 } from '../../dist';
-import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels } from '../../dist/icons';
+import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -46,20 +46,20 @@ const channels = [
 
 const messages = [
   {
-    body: 'This is a small message :tada:',
+    body: 'This is a small message',
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor
   },
   {
-    body: 'This is a medium message :tada:',
+    body: 'This is a medium message',
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor,
     fontSize: 'medium',
   },
   {
-    body: 'This is a large message :tada:',
+    body: 'This is a large message',
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor,
@@ -196,7 +196,7 @@ class App extends Component {
                   </Button>
                   : null
                 }
-                avatar={dalek}
+                avatar={<ChannelAvatar inverted={currentChannel === channel.name} />}
                 badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
               />
             ))}

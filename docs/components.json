@@ -251,6 +251,70 @@
       }
     }
   },
+  "components/banner/index.jsx": {
+    "description": "728x90 and 320x50 banners",
+    "displayName": "Banner",
+    "methods": [
+      {
+        "name": "handleMeasure",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "dimensions",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "content": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "desktop": {
+              "name": "node",
+              "description": "728x90 banner",
+              "required": true
+            },
+            "mobile": {
+              "name": "node",
+              "description": "320x50 banner",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": "Content of the Banner"
+      },
+      "hideBanner": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/button/index.jsx": {
     "description": "General purpose button with two types",
     "displayName": "Button",
@@ -562,6 +626,35 @@
         "description": "Override the styles of the body text element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/icons/channel-avatar.jsx": {
+    "description": "",
+    "displayName": "ChannelAvatar",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       }
@@ -1343,10 +1436,10 @@
       },
       "avatar": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": false,
-        "description": "Avatar object referenced by the list item",
+        "description": "The item's avatar, if a string is supplied Avatar component is used",
         "defaultValue": {
           "value": "''",
           "computed": false
