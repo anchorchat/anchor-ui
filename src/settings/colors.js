@@ -6,7 +6,7 @@ const colors = {
   theme: '#54D38A',
   primaryText: '#757F85',
   secondaryText: '#B4BEC6',
-  background: '#F7F7F7',
+  background: '#F2F7F7',
   icons: '#C4C4C4',
   boxShadow: 'rgba(117, 127, 133, 0.23)',
   alert: {
