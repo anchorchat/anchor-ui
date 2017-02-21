@@ -22,7 +22,7 @@ class AppHeader extends Component {
     /**
      * Title text (your app's name)
      */
-    text: PropTypes.node.isRequired,
+    text: PropTypes.node,
     /**
      * Icon (your app's icon)
      */
@@ -50,6 +50,7 @@ class AppHeader extends Component {
   }
 
   static defaultProps = {
+    text: null,
     style: {},
     textStyle: {},
     iconStyle: {},
@@ -76,7 +77,7 @@ class AppHeader extends Component {
     return (
       <header style={getStyle(color, style)}>
         {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1>
+        {text ? <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1> : null}
         {
           rightButton
           ? <div style={combineStyles(styles.button, buttonStyle)}>{rightButton}</div>
