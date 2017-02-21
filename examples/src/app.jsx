@@ -46,20 +46,20 @@ const channels = [
 
 const messages = [
   {
-    body: 'This is a small message :tada:',
+    body: 'This is a small message',
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor
   },
   {
-    body: 'This is a medium message :tada:',
+    body: 'This is a medium message',
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor,
     fontSize: 'medium',
   },
   {
-    body: 'This is a large message :tada:',
+    body: 'This is a large message',
     createdAt: new Date(),
     username: 'The Doctor',
     profileImage: theDoctor,

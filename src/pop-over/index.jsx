@@ -4,9 +4,7 @@ import pure from 'recompose/pure';
 import styles from '../style/pop-over';
 import combineStyles from '../internal/combine-styles';
 
-/**
- * Pop over usefull for showing tooltips or menu options
- */
+/** Pop over useful for showing tooltips or menu options */
 function PopOver({ children, style, open }) {
   return open ? <ul style={combineStyles(styles.popOver, style)}>{children}</ul> : null;
 }

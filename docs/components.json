@@ -251,6 +251,70 @@
       }
     }
   },
+  "components/banner/index.jsx": {
+    "description": "728x90 and 320x50 banners",
+    "displayName": "Banner",
+    "methods": [
+      {
+        "name": "handleMeasure",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "dimensions",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "content": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "desktop": {
+              "name": "node",
+              "description": "728x90 banner",
+              "required": true
+            },
+            "mobile": {
+              "name": "node",
+              "description": "320x50 banner",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": "Content of the Banner"
+      },
+      "hideBanner": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/button/index.jsx": {
     "description": "General purpose button with two types",
     "displayName": "Button",
