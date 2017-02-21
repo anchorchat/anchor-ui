@@ -14,6 +14,7 @@ export ProfileCard from './profile-card';
 export EmptyState from './empty-state';
 export Loader from './loader/index';
 export Dialog from './dialog';
+export PopOver from './pop-over';
 
 export icons from './icons';
 
