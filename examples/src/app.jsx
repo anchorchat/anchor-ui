@@ -114,6 +114,7 @@ class App extends Component {
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
     this.changeSearch = this.changeSearch.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   changeMessage(event) {
@@ -152,6 +153,11 @@ class App extends Component {
     this.setState({
       search: event.currentTarget.value
     });
+  }
+
+  handleSearch(event) {
+
+    console.log(event.currentTarget.value);
   }
 
   render() {
@@ -194,7 +200,11 @@ class App extends Component {
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <List style={channelListStyle}>
-            <SearchBox value={search} onChange={this.changeSearch} />
+            <SearchBox
+              value={search}
+              onChange={this.changeSearch}
+              handleSearch={this.handleSearch}
+            />
             {channels.map(channel => (
               <ListItem
                 key={`channel-list-${channel.name}`}
