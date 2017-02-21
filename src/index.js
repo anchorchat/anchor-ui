@@ -17,6 +17,7 @@ export Dialog from './dialog';
 export SearchBox from './search-box';
 export PopOver from './pop-over';
 export MenuItem from './menu-item';
+export Banner from './banner';
 
 export icons from './icons';
 
