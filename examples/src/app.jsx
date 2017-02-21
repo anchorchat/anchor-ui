@@ -12,7 +12,7 @@ import {
   Badge,
   MessageList
 } from '../../dist';
-import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels } from '../../dist/icons';
+import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -196,7 +196,7 @@ class App extends Component {
                   </Button>
                   : null
                 }
-                avatar={dalek}
+                avatar={<ChannelAvatar inverted={currentChannel === channel.name} />}
                 badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
               />
             ))}

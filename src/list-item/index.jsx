@@ -89,9 +89,9 @@ class ListItem extends Component {
      */
     rightButton: PropTypes.node,
     /**
-     * Avatar object referenced by the list item
+     * The item's avatar, if a string is supplied Avatar component is used
      */
-    avatar: PropTypes.string,
+    avatar: PropTypes.node,
     /**
      * Badge object referenced by the list item
      */
@@ -151,7 +151,7 @@ class ListItem extends Component {
           ? <div style={styles.avatar}>
             {muted ? <div style={styles.mutedIcon}><IconMute color={colors.white} /></div> : null}
             {badge ? <div style={styles.badge}>{badge}</div> : null}
-            <Avatar image={avatar} />
+            {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
           </div>
           : null
         }
