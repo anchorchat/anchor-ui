@@ -14,10 +14,8 @@ export ProfileCard from './profile-card';
 export EmptyState from './empty-state';
 export Loader from './loader/index';
 export Dialog from './dialog';
+export SearchBox from './search-box';
 export PopOver from './pop-over';
-
 export icons from './icons';
-
 export settings from './settings';
-
 export WithTheme from './with-theme';

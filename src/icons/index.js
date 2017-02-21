@@ -26,3 +26,4 @@ export IconRocket from './icon-rocket';
 export IconSend from './icon-send';
 export IconSuccess from './icon-success';
 export IconWarning from './icon-warning';
+export IconSearch from './icon-search';
