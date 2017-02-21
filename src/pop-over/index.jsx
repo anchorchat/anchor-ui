@@ -5,7 +5,7 @@ import styles from '../style/pop-over';
 import combineStyles from '../internal/combine-styles';
 
 /**
- * PopOver
+ * Pop over usefull for showing tooltips or menu options
  */
 function PopOver({ children, style, open }) {
   return open ? <ul style={combineStyles(styles.popOver, style)}>{children}</ul> : null;
@@ -15,7 +15,7 @@ PopOver.displayName = 'PopOver';
 
 PopOver.propTypes = {
   /**
-   * PopOverItems to render
+   * Content of the PopOver
    */
   children: PropTypes.node.isRequired,
   /**
