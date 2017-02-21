@@ -1772,6 +1772,43 @@
       }
     }
   },
+  "components/pop-over/index.jsx": {
+    "description": "Pop over usefull for showing tooltips or menu options",
+    "displayName": "PopOver",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content of the PopOver"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean to check if it should be open",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/profile-card/index.jsx": {
     "description": "Card containing the user's profile data",
     "displayName": "ProfileCard",
