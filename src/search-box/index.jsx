@@ -10,33 +10,19 @@ class SearchBox extends Component {
   static displayName = 'SearchBox'
 
   static propTypes = {
-    /**
-     * Change the input's value, param: event
-     */
+    /** Change the input's value, param: event */
     onChange: PropTypes.func.isRequired,
-    /**
-     * Search based on the input's value, param: event
-     */
+    /** Search based on the input's value, param: event */
     handleSearch: PropTypes.func.isRequired,
-    /**
-     * The input's value
-     */
+    /** The input's value */
     value: PropTypes.string.isRequired,
-    /**
-     * The input's placeholder
-     */
+    /** The input's placeholder */
     placeholder: PropTypes.string,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the input element
-     */
+    /** Override the styles of the input element */
     inputStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the icon element
-     */
+    /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object)
   }
 

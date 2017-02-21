@@ -14,17 +14,11 @@ function PopOver({ children, style, open }) {
 PopOver.displayName = 'PopOver';
 
 PopOver.propTypes = {
-  /**
-   * Content of the PopOver
-   */
+  /** Content of the PopOver */
   children: PropTypes.node.isRequired,
-  /**
-   * Override the styles of the root element
-   */
+  /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /**
-   * Boolean to check if it should be open
-   */
+  /** Boolean to check if it should be open */
   open: PropTypes.bool
 };
 
