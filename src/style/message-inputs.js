@@ -19,6 +19,7 @@ const styleSheet = {
     paddingLeft: '10px',
     paddingRight: '48px',
     width: '100%',
+    outline: 'none',
     ':focus': {
       outline: 'none'
     },

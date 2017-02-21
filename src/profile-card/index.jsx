@@ -18,30 +18,31 @@ function getStyle(themeColor, avatar, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Card containing the user's profile data
- */
+/** Card containing the user's profile data */
 class ProfileCard extends Component {
   static displayName = 'ProfileCard'
 
   static propTypes = {
-    /**
-     * Path to the user's profile image
-     */
+    /** Path to the user's profile image */
     avatar: PropTypes.string,
-    /**
-     * The user's username
-     */
+    /** The user's username */
     username: PropTypes.node.isRequired,
-    /**
-     * Override the styles of the root element
-     */
-    style: PropTypes.instanceOf(Object)
+    /** The user's info */
+    text: PropTypes.node,
+    /** Override the styles of the root element */
+    style: PropTypes.instanceOf(Object),
+    /** Override the styles of the root element */
+    usernameStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the root element */
+    textStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     avatar: '',
-    style: {}
+    style: {},
+    usernameStyle: {},
+    textStyle: {},
+    text: null
   }
 
   static contextTypes = {
@@ -56,7 +57,7 @@ class ProfileCard extends Component {
   }
 
   render() {
-    const { username, avatar, style } = this.props;
+    const { username, avatar, text, style, usernameStyle, textStyle } = this.props;
     const { color } = this.context;
 
     const avatarStyle = {
@@ -70,7 +71,8 @@ class ProfileCard extends Component {
     return (
       <section style={getStyle(color, avatar, style)}>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
-        {username}
+        <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
+        {text ? <p style={combineStyles(styles.text, textStyle)}>{text}</p> : null}
       </section>
     );
   }

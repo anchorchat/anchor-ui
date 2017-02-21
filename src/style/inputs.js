@@ -16,6 +16,7 @@ const styleSheet = {
     lineHeight: '16px',
     padding: '6.5px',
     width: '100%',
+    outline: 'none',
     ':focus': {
       outline: 'none'
     }
