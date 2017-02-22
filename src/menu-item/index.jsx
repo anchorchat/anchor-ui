@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import styles from '../style/menu-item';
@@ -20,15 +20,35 @@ function getStyle(icon, active, overrideStyle) {
 }
 
 /** General purpose menu item */
-function MenuItem({ icon, text, style, textStyle, iconStyle, onClick, active }) {
-  return (
-    <section style={getStyle(icon, active, style)} onClick={onClick}>
-      {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-      <p style={combineStyles(styles.text, textStyle)}>
-        {text}
-      </p>
-    </section>
-  );
+class MenuItem extends Component {
+  constructor() {
+    super();
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { closeMenu, onClick } = this.props;
+
+    if (closeMenu) {
+      closeMenu();
+    }
+
+    onClick();
+  }
+
+  render() {
+    const { icon, text, style, textStyle, iconStyle, active } = this.props;
+
+    return (
+      <section style={getStyle(icon, active, style)} onClick={this.handleClick}>
+        {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
+        <p style={combineStyles(styles.text, textStyle)}>
+          {text}
+        </p>
+      </section>
+    );
+  }
 }
 
 MenuItem.displayName = 'MenuItem';
@@ -47,7 +67,9 @@ MenuItem.propTypes = {
   /** Override the styles of the input element */
   textStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object)
+  iconStyle: PropTypes.instanceOf(Object),
+  /** Closes IconMenu if MenuItem is child */
+  closeMenu: PropTypes.func
 };
 
 MenuItem.defaultProps = {
@@ -55,7 +77,8 @@ MenuItem.defaultProps = {
   active: false,
   style: {},
   textStyle: {},
-  iconStyle: {}
+  iconStyle: {},
+  closeMenu: null
 };
 
 export default pure(Radium(MenuItem));
