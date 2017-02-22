@@ -5,6 +5,9 @@
     "comma-dangle": 0,
     "jsx-a11y/no-static-element-interactions": 0
   },
+  "globals": {
+    "window": true
+  },
   "plugins": [
     "mocha"
   ]
