@@ -12,7 +12,7 @@ const styleSheet = {
     paddingTop: '10px',
     paddingRight: '10px',
     paddingBottom: '10px',
-    paddingLeft: '24px',
+    paddingLeft: '16px',
     margin: '0',
     fontSize: '16px',
     fontWeight: 'bold',
