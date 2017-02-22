@@ -18,12 +18,15 @@ class ProfileSidebar extends Component {
     /** MessageList content */
     children: PropTypes.node,
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object)
+    style: PropTypes.instanceOf(Object),
+    /** Override the styles of the header element */
+    headerStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     children: null,
-    style: {}
+    style: {},
+    headerStyle: {}
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -34,17 +37,16 @@ class ProfileSidebar extends Component {
   }
 
   render() {
-    const { username, avatar, children, style } = this.props;
+    const { username, avatar, children, style, headerStyle } = this.props;
 
     const avatarStyle = {
-      width: '80px',
-      height: '80px',
-      border: `3px solid ${colors.white}`
+      width: '120px',
+      height: '120px',
     };
 
     return (
       <section style={combineStyles(style, styles.profileSidebar)}>
-        <h1>{username}</h1>
+        <h1 style={combineStyles(headerStyle, styles.profileSidebarHeader)}>{username}</h1>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         {children}
       </section>

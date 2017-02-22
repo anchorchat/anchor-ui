@@ -10,7 +10,8 @@ import {
   Button,
   AppHeader,
   Badge,
-  MessageList
+  MessageList,
+  ProfileSidebar
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';

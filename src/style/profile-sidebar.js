@@ -3,7 +3,18 @@ import { colors } from '../settings';
 const styleSheet = {
   profileSidebar: {
     height: '100%',
-    backgroundColor: colors.white
+    padding: '16px',
+    backgroundColor: colors.white,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+    color: colors.primaryText
+  },
+  profileSidebarHeader: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: colors.primaryText
   }
 };
 
