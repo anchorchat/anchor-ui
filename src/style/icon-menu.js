@@ -1,5 +1,3 @@
-import colors from '../settings/colors';
-
 const styleSheet = {
   iconMenu: {
     position: 'relative'
@@ -7,12 +5,12 @@ const styleSheet = {
   clickAway: {
     pointerEvents: 'all',
     position: 'fixed',
-    width: '100%',
-    height: '100%',
+    width: '100vw',
+    height: '100vh',
     top: 0,
     left: 0,
-    opacity: 0,
-    zIndex: 1
+    zIndex: 1,
+    opacity: 0
   }
 };
 

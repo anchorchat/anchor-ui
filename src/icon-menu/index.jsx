@@ -5,6 +5,7 @@ import PopOver from '../pop-over';
 import Button from '../button';
 import styles from '../style/icon-menu';
 import combineStyles from '../internal/combine-styles';
+import getPopOverPosition from '../internal/get-pop-over-position';
 
 /** Menu with Icon and IconMenu */
 class IconMenu extends Component {
@@ -31,31 +32,68 @@ class IconMenu extends Component {
     super();
 
     this.state = {
-      open: false
+      open: false,
+      horizontal: 'left',
+      vertical: 'bottom',
+      positioned: false
     };
 
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.openMenu = this.openMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    this.positionPopOver = this.positionPopOver.bind(this);
   }
 
-  toggleMenu() {
+  componentDidUpdate() {
+    const { open, positioned } = this.state;
+
+    if (open && !positioned) {
+      this.positionPopOver();
+    }
+  }
+
+  positionPopOver() {
+    const button = this.button.getBoundingClientRect();
+    const popOver = this.popOver.getBoundingClientRect();
+
     this.setState({
-      open: !this.state.open
+      positioned: true,
+      position: getPopOverPosition(button, popOver)
+    });
+  }
+
+  openMenu() {
+    this.setState({
+      open: true
+    });
+  }
+
+  closeMenu() {
+    this.setState({
+      open: false,
+      positioned: false
     });
   }
 
   render() {
     const { children, header, icon, style } = this.props;
-    const { open } = this.state;
+    const { open, position } = this.state;
 
     const childrenWithProps = React.Children.map(
-      children, child => React.cloneElement(child, { closeMenu: this.toggleMenu })
+      children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
     );
 
     return (
       <div style={combineStyles(styles.iconMenu, style)}>
-        {open ? <div style={styles.clickAway} onClick={this.toggleMenu} /> : null}
-        <Button iconButton onClick={this.toggleMenu}>{icon}</Button>
-        <PopOver header={header} open={open}>
+        {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
+        <div ref={button => (this.button = button)}>
+          <Button iconButton onClick={this.openMenu}>{icon}</Button>
+        </div>
+        <PopOver
+          header={header}
+          open={open}
+          popOverRef={popOver => (this.popOver = popOver)}
+          position={position}
+        >
           {childrenWithProps}
         </PopOver>
       </div>
