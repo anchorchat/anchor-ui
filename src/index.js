@@ -18,6 +18,7 @@ export SearchBox from './search-box';
 export PopOver from './pop-over';
 export MenuItem from './menu-item';
 export Banner from './banner';
+export IconMenu from './icon-menu';
 
 export icons from './icons';
 
