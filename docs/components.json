@@ -2046,6 +2046,62 @@
       }
     }
   },
+  "components/profile-sidebar/index.jsx": {
+    "description": "ProfileSidebar usefull for showing a users info",
+    "displayName": "ProfileSidebar",
+    "methods": [],
+    "props": {
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The user's username"
+      },
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Path to the user's profile image will only be rendered if there is one"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "MessageList content",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/search-box/index.jsx": {
     "description": "General purpose Search box",
     "displayName": "SearchBox",
