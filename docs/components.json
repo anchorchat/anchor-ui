@@ -631,6 +631,78 @@
       }
     }
   },
+  "components/icon-menu/index.jsx": {
+    "description": "Menu with Icon and IconMenu",
+    "displayName": "IconMenu",
+    "methods": [
+      {
+        "name": "positionPopOver",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "openMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "closeMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Icon to toggle the menu with"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content of the IconMenu (MenuItems)"
+      },
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional header text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/icons/channel-avatar.jsx": {
     "description": "",
     "displayName": "ChannelAvatar",
@@ -1334,7 +1406,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of the header element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1518,14 +1590,26 @@
   "components/menu-item/index.jsx": {
     "description": "General purpose menu item",
     "displayName": "MenuItem",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "icon": {
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "The item's icon"
+        "required": false,
+        "description": "The item's icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "text": {
         "type": {
@@ -1533,6 +1617,17 @@
         },
         "required": true,
         "description": "The item's label"
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "MenuItem active",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       },
       "onClick": {
         "type": {
@@ -1574,6 +1669,17 @@
         "description": "Override the styles of the icon element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "closeMenu": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Closes IconMenu if MenuItem is child",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }
@@ -1969,6 +2075,89 @@
         "description": "Enable autoScroll",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/pop-over/index.jsx": {
+    "description": "",
+    "methods": []
+  },
+  "components/pop-over/pop-over.jsx": {
+    "description": "Pop over useful for showing tooltips or menu options",
+    "displayName": "PopOver",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content of the PopOver"
+      },
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional header text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean to check if it should be open",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "popOverRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Ref to the PopOver"
+      },
+      "position": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "The PopOver's position relative to the anchor",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
