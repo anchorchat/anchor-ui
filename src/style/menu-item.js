@@ -8,10 +8,11 @@ const styleSheet = {
     position: 'relative',
     paddingTop: '10px',
     paddingRight: '10px',
-    paddingLeft: '40px',
+    paddingLeft: '10px',
     paddingBottom: '10px',
     boxSizing: 'border-box',
     cursor: 'pointer',
+    color: colors.icons,
     transition: 'background-color .3s ease-in-out',
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
@@ -22,7 +23,7 @@ const styleSheet = {
   },
   text: {
     margin: 0,
-    color: colors.icons,
+    color: 'inherit',
     lineHeight: '24px'
   },
   icon: {

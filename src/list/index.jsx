@@ -25,7 +25,7 @@ List.propTypes = {
   listRef: PropTypes.func,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /** Override the styles of the root element */
+  /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object)
 };
 
