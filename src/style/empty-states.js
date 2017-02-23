@@ -24,7 +24,8 @@ const styleSheet = {
     color: colors.primaryText,
     marginBottom: '30px',
     marginTop: '16px',
-    textAlign: 'center'
+    textAlign: 'center',
+    maxWidth: '100%'
   }
 };
 
