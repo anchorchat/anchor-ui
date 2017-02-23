@@ -9,20 +9,12 @@ function getPopOverPosition(button, popOver) {
   let horizontal = 'left';
   let vertical = 'bottom';
 
-  if (fitsRightFromButton) {
+  if (fitsRightFromButton && !fitsLeftFromButton) {
     horizontal = 'right';
   }
 
-  if (fitsLeftFromButton && fitsRightFromButton) {
-    horizontal = 'left';
-  }
-
-  if (fitsAboveButton) {
+  if (fitsAboveButton && !fitsBelowButton) {
     vertical = 'top';
-  }
-
-  if (fitsAboveButton && fitsBelowButton) {
-    vertical = 'bottom';
   }
 
   let position = {
