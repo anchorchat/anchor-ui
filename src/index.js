@@ -11,6 +11,7 @@ export Message from './message';
 export MessageInput from './message-input';
 export MessageList from './message-list';
 export ProfileCard from './profile-card';
+export ProfileSidebar from './profile-sidebar';
 export EmptyState from './empty-state';
 export Loader from './loader/index';
 export Dialog from './dialog';
