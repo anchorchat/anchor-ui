@@ -6,7 +6,7 @@ import PopOver from './pop-over';
 // by exporting it like this a consumer doesn't need to wrap StyleRoot around their application
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#keyframes
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
-function LoaderWithStyleRoot(props) {
+function PopOverWithStyleRoot(props) {
   return (
     <StyleRoot>
       <PopOver {...props} />
@@ -14,4 +14,4 @@ function LoaderWithStyleRoot(props) {
   );
 }
 
-export default LoaderWithStyleRoot;
+export default PopOverWithStyleRoot;
