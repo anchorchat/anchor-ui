@@ -13,39 +13,23 @@ function getStyle(themeColor, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Your app's header
- */
+/** Your app's header */
 class AppHeader extends Component {
   static displayName = 'AppHeader';
   static propTypes = {
-    /**
-     * Title text (your app's name)
-     */
+    /** Title text (your app's name) */
     text: PropTypes.node.isRequired,
-    /**
-     * Icon (your app's icon)
-     */
+    /** Icon (your app's icon) */
     icon: PropTypes.node,
-    /**
-     * Right-hand side placed button
-     */
+    /** Right-hand side placed button */
     rightButton: PropTypes.node,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the text element
-     */
+    /** Override the styles of the text element */
     textStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the icon element
-     */
+    /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the button element
-     */
+    /** Override the styles of the button element */
     buttonStyle: PropTypes.instanceOf(Object)
   }
 

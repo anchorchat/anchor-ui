@@ -18,24 +18,16 @@ function getStyle(themeColor, avatar, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Card containing the user's profile data
- */
+/** Card containing the user's profile data */
 class ProfileCard extends Component {
   static displayName = 'ProfileCard'
 
   static propTypes = {
-    /**
-     * Path to the user's profile image
-     */
+    /** Path to the user's profile image */
     avatar: PropTypes.string,
-    /**
-     * The user's username
-     */
+    /** The user's username */
     username: PropTypes.node.isRequired,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object)
   }
 

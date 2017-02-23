@@ -34,31 +34,19 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * General purpose button with two types
- */
+/** General purpose button with two types */
 class Button extends Component {
   static displayName = 'Button';
   static propTypes = {
-    /**
-     * Content of the button
-     */
+    /** Content of the button */
     children: PropTypes.node.isRequired,
-    /**
-     * Button onClick function
-     */
+    /** Button onClick function */
     onClick: PropTypes.func.isRequired,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Switches between 'icon-button' and 'normal-button'
-     */
+    /** Switches between 'icon-button' and 'normal-button' */
     iconButton: PropTypes.bool,
-    /**
-     * Inverts color
-     */
+    /** Inverts color */
     inverted: PropTypes.bool
   }
 

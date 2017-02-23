@@ -4,37 +4,23 @@ import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-lists';
 import combineStyles from '../internal/combine-styles';
 
-/**
- * Render a list of items (Messages) with optional auto scroll
- */
+/** Render a list of items (Messages) with optional auto scroll */
 class MessageList extends Component {
   static displayName = 'MessageList'
 
   static propTypes = {
-    /**
-     * MessageList content
-     */
+    /** MessageList content */
     children: PropTypes.node.isRequired,
-    /**
-     * The amount of pixels the user has to scroll up to disable auto scroll
-     */
+    /** The amount of pixels the user has to scroll up to disable auto scroll */
     scrollOffset: PropTypes.number,
-    /**
-     * Expose the components methods to the parent,
-     * useful for calling scrollDown from a parent component
-     */
+    /** Expose the components methods to the parent,
+     * useful for calling scrollDown from a parent component */
     addRef: PropTypes.func,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the <ul /> element
-     */
+    /** Override the styles of the <ul /> element */
     listStyle: PropTypes.instanceOf(Object),
-    /**
-     * Enable autoScroll
-     */
+    /** Enable autoScroll */
     autoScroll: PropTypes.bool
   }
 

@@ -82,71 +82,43 @@ function getTimeStyle(style, myMessage, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Messages with optional styling for the current user's message
- */
+/** Messages with optional styling for the current user's message */
 class Message extends Component {
   static displayName = 'Message'
 
   static propTypes = {
     /** Path to the user's profile image will only be rendered if provided */
     avatar: PropTypes.string,
-    /**
-     * Message object containing : body, createdAt, username
-     */
+    /** Message object containing : body, createdAt, username */
     message: PropTypes.shape({
-      /**
-       * The message's body text
-       */
+      /** The message's body text */
       body: PropTypes.string.isRequired,
-      /**
-       * Time when the message was created
-       */
+      /** Time when the message was created */
       createdAt: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.instanceOf(Date)
       ]).isRequired,
-      /**
-       * The sender's username
-       */
+      /** The sender's username */
       username: PropTypes.string.isRequired,
     }).isRequired,
-    /**
-     * The format of displaying message.createdAt
-     */
+    /** The format of displaying message.createdAt */
     timeFormat: PropTypes.string,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the header element
-     */
+    /** Override the styles of the header element */
     messageHeaderStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the body element
-     */
+    /** Override the styles of the body element */
     messageBodyStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the time element
-     */
+    /** Override the styles of the time element */
     messageTimeStyle: PropTypes.instanceOf(Object),
-    /**
-     * Flag used to change message styles.
-     * True if the message was sent by the current user
-     */
+    /** Flag used to change message styles.
+     * True if the message was sent by the current user */
     myMessage: PropTypes.bool,
-    /**
-     * Enable emojione for messages
-     */
+    /** Enable emojione for messages */
     emoji: PropTypes.bool,
-    /**
-     * Enables links in messages
-     */
+    /** Enables links in messages */
     enableLinks: PropTypes.bool,
-    /**
-     * Enables compact messages
-     */
+    /** Enables compact messages */
     compact: PropTypes.bool
   }
 

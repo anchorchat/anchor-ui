@@ -44,52 +44,30 @@ function getTextStyle(textStyle, active, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * A list's item
- */
+/** A list's item */
 class ListItem extends Component {
   static displayName = 'ListItem'
 
   static propTypes = {
-    /**
-     * The list item's primary text
-     */
+    /** The list item's primary text */
     primaryText: PropTypes.node.isRequired,
-    /**
-     * The list item's secondary text
-     */
+    /** The list item's secondary text */
     secondaryText: PropTypes.node,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the primaryText element
-     */
+    /** Override the styles of the primaryText element */
     primaryTextStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the secondaryText element
-     */
+    /** Override the styles of the secondaryText element */
     secondaryTextStyle: PropTypes.instanceOf(Object),
-    /**
-     * Click function for the root element
-     */
+    /** Click function for the root element */
     onClick: PropTypes.func,
-    /**
-     * Add active styles to ListItem
-     */
+    /** Add active styles to ListItem */
     active: PropTypes.bool,
-    /**
-     * Right-hand side placed button
-     */
+    /** Right-hand side placed button */
     rightButton: PropTypes.node,
-    /**
-     * Avatar object referenced by the list item
-     */
+    /** Avatar object referenced by the list item */
     avatar: PropTypes.string,
-    /**
-     * Badge object referenced by the list item
-     */
+    /** Badge object referenced by the list item */
     badge: PropTypes.node
   }
 
