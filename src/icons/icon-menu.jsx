@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import pure from 'recompose/pure';
 import { colors } from '../settings';
 
+/** Display icon menu */
 function IconMenu({ color }) {
   return (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24">
@@ -15,6 +16,7 @@ function IconMenu({ color }) {
 }
 
 IconMenu.propTypes = {
+  /** Color icon menu */
   color: PropTypes.string
 };
 

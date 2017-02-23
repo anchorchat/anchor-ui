@@ -888,7 +888,7 @@
     }
   },
   "components/icons/icon-menu.jsx": {
-    "description": "",
+    "description": "Display icon menu",
     "displayName": "IconMenu",
     "methods": [],
     "props": {
@@ -897,7 +897,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Color icon menu",
         "defaultValue": {
           "value": "colors.icons",
           "computed": true

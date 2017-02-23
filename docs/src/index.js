@@ -21,6 +21,7 @@ import Message from './components/message';
 import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
 import Icons from './components/icons';
+import IconMenu from './components/icon-menu';
 import './index.css';
 
 ReactDOM.render(
@@ -44,6 +45,7 @@ ReactDOM.render(
       <Route path="/message" component={Message} />
       <Route path="/profile-card" component={ProfileCard} />
       <Route path="/icons" component={Icons} />
+      <Route path="/icon-menu" component={IconMenu} />
     </Route>
   </Router>,
   document.getElementById('root')
