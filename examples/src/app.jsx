@@ -10,7 +10,9 @@ import {
   Button,
   AppHeader,
   Badge,
-  MessageList
+  MessageList,
+  IconMenu,
+  MenuItem
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -175,9 +177,14 @@ class App extends Component {
           }
           icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
-            <Button onClick={() => {}} iconButton>
-              <IconExit color={colors.white} />
-            </Button>
+            <IconMenu
+              icon={<IconExit color={colors.white} />}
+              header="Language"
+              headerStyle={{ textTransform: 'capitalize' }}
+            >
+              <MenuItem text="Active item" active />
+              <MenuItem text="Inactive item" />
+            </IconMenu>
           }
         />
         <article>
