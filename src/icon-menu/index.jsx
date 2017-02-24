@@ -18,6 +18,8 @@ class IconMenu extends Component {
     children: PropTypes.node.isRequired,
     /** Optional header text */
     header: PropTypes.node,
+    /** Override the styles of the header element */
+    headerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object)
   }
@@ -25,7 +27,8 @@ class IconMenu extends Component {
   static defaultProps = {
     header: null,
     style: {},
-    open: false
+    open: false,
+    headerStyle: {}
   }
 
   constructor() {
@@ -75,7 +78,7 @@ class IconMenu extends Component {
   }
 
   render() {
-    const { children, header, icon, style } = this.props;
+    const { children, header, icon, headerStyle, style } = this.props;
     const { open, position } = this.state;
 
     const childrenWithProps = React.Children.map(
@@ -90,6 +93,7 @@ class IconMenu extends Component {
         </div>
         <PopOver
           header={header}
+          headerStyle={headerStyle}
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}

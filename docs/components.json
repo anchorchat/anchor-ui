@@ -683,6 +683,18 @@
           "computed": false
         }
       },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -1038,6 +1050,24 @@
       }
     }
   },
+  "components/icons/icon-language.jsx": {
+    "description": "",
+    "displayName": "IconLanguage",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
@@ -1203,6 +1233,24 @@
   "components/icons/icon-send.jsx": {
     "description": "",
     "displayName": "IconSend",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-settings.jsx": {
+    "description": "",
+    "displayName": "IconSettings",
     "methods": [],
     "props": {
       "color": {
