@@ -4,9 +4,7 @@ import pure from 'recompose/pure';
 import styles from '../style/channel-header';
 import combineStyles from '../internal/combine-styles';
 
-/**
- * A channel's header
- */
+/** A channel's header */
 function ChannelHeader({
   name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle
 }) {
@@ -30,33 +28,19 @@ function ChannelHeader({
 ChannelHeader.displayName = 'ChannelHeader';
 
 ChannelHeader.propTypes = {
-  /**
-   * The channel's name
-   */
+  /** The channel's name */
   name: PropTypes.node.isRequired,
-  /**
-   * Right-hand side placed button
-   */
+  /** Right-hand side placed button */
   rightButton: PropTypes.node,
-  /**
-   * Left-hand side placed button
-   */
+  /** Left-hand side placed button */
   leftButton: PropTypes.node,
-  /**
-   * Override the styles of the root element
-   */
+  /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the text element
-   */
+  /** Override the styles of the text element */
   textStyle: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the leftButton element
-   */
+  /** Override the styles of the leftButton element */
   leftButtonStyle: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the rightButton element
-   */
+  /** Override the styles of the rightButton element */
   rightButtonStyle: PropTypes.instanceOf(Object)
 };
 

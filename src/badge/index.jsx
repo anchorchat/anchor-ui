@@ -18,28 +18,18 @@ function getStyle(themeColor, inverted, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Used for displaying a (notification) counter
- */
+/** Used for displaying a (notification) counter */
 class Badge extends Component {
   static displayName = 'Badge';
   static propTypes = {
-    /**
-     * The badge's value
-     */
+    /** The badge's value */
     value: PropTypes.number.isRequired,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Inverts color
-     */
+    /** Inverts color */
     inverted: PropTypes.bool,
-    /**
-     * Max value that will be renderend
-     * This will result in `${maxValue}+` if value exceeds value
-     */
+    /** Max value that will be renderd.
+     * This will result in `${maxValue}+` if value exceeds maxValue */
     maxValue: PropTypes.number.isRequired
   }
 

@@ -31,48 +31,28 @@ function getBodyStyle(style, button, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * General purpose dialog
- */
+/** General purpose dialog */
 class Dialog extends Component {
   static displayName = 'Dialog'
 
   static propTypes = {
-    /**
-     * Header text
-     */
+    /** Header text */
     headerText: PropTypes.node.isRequired,
-    /**
-     * Body text
-     */
+    /** Body text */
     bodyText: PropTypes.node.isRequired,
-    /**
-     * Render a call to action button
-     */
+    /** Render a call to action button */
     button: PropTypes.node,
-    /**
-     * An image to render in the dialog
-     */
+    /** An image to render in the dialog */
     image: PropTypes.node,
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the overlay element
-     */
+    /** Override the styles of the overlay element */
     overlayStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the header element
-     */
+    /** Override the styles of the header element */
     headingStyle: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the body element
-     */
+    /** Override the styles of the body element */
     bodyStyle: PropTypes.instanceOf(Object),
-    /**
-     * Function to hide dialog element
-     */
+    /** Function to hide dialog element */
     hideDialog: PropTypes.func.isRequired
   }
 

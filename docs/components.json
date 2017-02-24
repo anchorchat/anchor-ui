@@ -247,7 +247,7 @@
           "name": "number"
         },
         "required": true,
-        "description": "Max value that will be renderend\nThis will result in `${maxValue}+` if value exceeds value"
+        "description": "Max value that will be renderd.\nThis will result in `${maxValue}+` if value exceeds maxValue"
       }
     }
   },

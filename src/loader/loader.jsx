@@ -34,24 +34,16 @@ function getStyle(themeColor, inverted, index, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Animated loader
- */
+/** Animated loader */
 class Loader extends Component {
   static displayName = 'Loader'
 
   static propTypes = {
-    /**
-     * Override the styles of the root element
-     */
+    /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /**
-     * Override the styles of the dot element
-     */
+    /** Override the styles of the dot element */
     dotStyle: PropTypes.instanceOf(Object),
-    /**
-     * Inverts the color
-     */
+    /** Inverts the color */
     inverted: PropTypes.bool
   }
 
