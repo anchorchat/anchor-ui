@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import { Component, PropTypes } from 'react';
 import colors from '../settings/colors';
 
 class WithTheme extends Component {
@@ -26,7 +26,7 @@ class WithTheme extends Component {
   }
 
   render() {
-    return React.cloneElement(this.props.children, { ...this.props });
+    return this.props.children;
   }
 }
 
