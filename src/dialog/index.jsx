@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from '../style/dialog';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
 import combineStyles from '../internal/combine-styles';

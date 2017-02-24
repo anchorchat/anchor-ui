@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import pure from 'recompose/pure';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 
 function ChannelAvatar({ color, inverted }) {
   let background = color;

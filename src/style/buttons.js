@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import darken from '../internal/darken';
 import fade from '../internal/fade';
 
