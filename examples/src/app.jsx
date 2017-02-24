@@ -182,8 +182,8 @@ class App extends Component {
               header="Language"
               headerStyle={{ textTransform: 'capitalize' }}
             >
-              <MenuItem text="Active item" active />
-              <MenuItem text="Inactive item" />
+              <MenuItem text="Active item" onClick={() => {}} active />
+              <MenuItem text="Inactive item" onClick={() => {}} />
             </IconMenu>
           }
         />

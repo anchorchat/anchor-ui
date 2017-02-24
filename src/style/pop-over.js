@@ -11,7 +11,7 @@ const styleSheet = {
     position: 'absolute',
     top: '100%',
     right: '50%',
-    width: '200px',
+    minWidth: '200px',
     backgroundColor: colors.white,
     borderRadius: '3px',
     boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
