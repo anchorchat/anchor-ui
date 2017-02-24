@@ -960,6 +960,24 @@
       }
     }
   },
+  "components/icons/icon-font.jsx": {
+    "description": "",
+    "displayName": "IconFont",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-gender-female.jsx": {
     "description": "",
     "displayName": "IconGenderFemale",

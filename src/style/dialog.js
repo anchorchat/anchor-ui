@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import fade from '../internal/fade';
 
 const styleSheet = {

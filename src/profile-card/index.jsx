@@ -3,7 +3,7 @@ import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from '../style/profile-cards';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, avatar, overrideStyle) {
