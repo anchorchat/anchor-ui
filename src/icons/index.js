@@ -9,6 +9,7 @@ export IconConversation from './icon-conversation';
 export IconEdit from './icon-edit';
 export IconError from './icon-error';
 export IconExit from './icon-exit';
+export IconFont from './icon-font';
 export IconGenderFemale from './icon-gender-female';
 export IconGenderMale from './icon-gender-male';
 export IconEmoji from './icon-emoji';
