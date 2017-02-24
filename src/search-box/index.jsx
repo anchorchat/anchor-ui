@@ -10,10 +10,8 @@ class SearchBox extends Component {
   static displayName = 'SearchBox'
 
   static propTypes = {
-    /** Change the input's value, param: event */
+    /** Change the input's value */
     onChange: PropTypes.func.isRequired,
-    /** Search based on the input's value, param: event */
-    handleSearch: PropTypes.func.isRequired,
     /** The input's value */
     value: PropTypes.string.isRequired,
     /** The input's placeholder */
@@ -33,21 +31,8 @@ class SearchBox extends Component {
     placeholder: 'Search something...'
   }
 
-  constructor() {
-    super();
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { onChange, handleSearch } = this.props;
-
-    onChange(event);
-    handleSearch(event);
-  }
-
   render() {
-    const { value, placeholder, style, inputStyle, iconStyle } = this.props;
+    const { value, placeholder, style, inputStyle, iconStyle, onChange } = this.props;
 
     return (
       <section style={combineStyles(styles.searchBox, style)}>
@@ -55,7 +40,7 @@ class SearchBox extends Component {
         <input
           style={combineStyles(styles.input, inputStyle)}
           value={value}
-          onChange={this.handleChange}
+          onChange={onChange}
           placeholder={placeholder}
         />
       </section>
