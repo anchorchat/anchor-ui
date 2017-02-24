@@ -28,7 +28,7 @@ function ListItemDoc() {
           primaryText="Channel"
           secondaryText="10/50"
           avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-          badge={<Badge value={4} />}
+          badge={<Badge value={4} maxValue={9} />}
         />
       </section>
       <Props props={componentData.props} />
