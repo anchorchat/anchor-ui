@@ -1,28 +1,17 @@
-import React, { PropTypes } from 'react';
-import Radium from 'radium';
-import pure from 'recompose/pure';
-import styles from '../style/pop-over';
-import combineStyles from '../internal/combine-styles';
+import React from 'react';
+import { StyleRoot } from 'radium';
+import PopOver from './pop-over';
 
-/** Pop over useful for showing tooltips or menu options */
-function PopOver({ children, style, open }) {
-  return open ? <ul style={combineStyles(styles.popOver, style)}>{children}</ul> : null;
+// StyleRoot is needed for keyframes to work,
+// by exporting it like this a consumer doesn't need to wrap StyleRoot around their application
+// https://github.com/FormidableLabs/radium/tree/master/docs/api#keyframes
+// https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
+function PopOverWithStyleRoot(props) {
+  return (
+    <StyleRoot>
+      <PopOver {...props} />
+    </StyleRoot>
+  );
 }
 
-PopOver.displayName = 'PopOver';
-
-PopOver.propTypes = {
-  /** Content of the PopOver */
-  children: PropTypes.node.isRequired,
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
-  /** Boolean to check if it should be open */
-  open: PropTypes.bool
-};
-
-PopOver.defaultProps = {
-  style: {},
-  open: false
-};
-
-export default pure(Radium(PopOver));
+export default PopOverWithStyleRoot;

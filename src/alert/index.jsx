@@ -19,9 +19,7 @@ const icons = {
   info: <IconInfo color={darken(colors.alert.info, 0.65)} />
 };
 
-/**
- * Four types of (system) messages for alerting your user
- */
+/** Four types of (system) messages for alerting your user */
 function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle }) {
   return (
     <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)}>
@@ -37,33 +35,19 @@ function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle
 Alert.displayName = 'Alert';
 
 Alert.propTypes = {
-  /**
-   * Text to display
-   */
+  /** Text to display */
   text: PropTypes.node.isRequired,
-  /**
-   * Type of alert. One of the following: ["info", "success", "warning", "error"]
-   */
+  /** Type of alert. One of the following: ["info", "success", "warning", "error"] */
   type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
-  /**
-   * Override the styles of the root element
-   */
+  /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the icon element
-   */
+  /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the text element
-   */
+  /** Override the styles of the text element */
   textStyle: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the button element
-   */
+  /** Override the styles of the button element */
   buttonStyle: PropTypes.instanceOf(Object),
-  /**
-   * Function to hide the alert
-   */
+  /** Function to hide the alert */
   hideAlert: PropTypes.func.isRequired
 };
 

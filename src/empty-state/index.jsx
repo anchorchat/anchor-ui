@@ -10,9 +10,7 @@ function getStyle(image, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * Pretty placeholder for empty content
- */
+/** Pretty placeholder for empty content */
 function EmptyState({ headerText, bodyText, button, background, style, headingStyle, bodyStyle }) {
   return (
     <section style={getStyle(background, style)}>
@@ -26,33 +24,19 @@ function EmptyState({ headerText, bodyText, button, background, style, headingSt
 EmptyState.displayName = 'EmptyState';
 
 EmptyState.propTypes = {
-  /**
-   * Body text
-   */
+  /** Body text */
   headerText: PropTypes.node.isRequired,
-  /**
-   * Header text
-   */
+  /** Header text */
   bodyText: PropTypes.node.isRequired,
-  /**
-   * Render a call to action button
-   */
+  /** Render a call to action button */
   button: PropTypes.node,
-  /**
-   * Path to background image
-   */
+  /** Path to background image */
   background: PropTypes.string,
-  /**
-   * Override the styles of the root element
-   */
+  /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the header text element
-   */
+  /** Override the styles of the header text element */
   headingStyle: PropTypes.instanceOf(Object),
-  /**
-   * Override the styles of the body text element
-   */
+  /** Override the styles of the body text element */
   bodyStyle: PropTypes.instanceOf(Object)
 };
 

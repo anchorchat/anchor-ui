@@ -10,9 +10,7 @@ function getStyle(image, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/**
- * A user's profile image
- */
+/** A user's profile image */
 function Avatar({ image, style }) {
   return (
     <section style={getStyle(image, style)} />
@@ -22,13 +20,9 @@ function Avatar({ image, style }) {
 Avatar.displayName = 'Avatar';
 
 Avatar.propTypes = {
-  /**
-   * Path to user's profile image
-   */
+  /** Path to user's profile image */
   image: PropTypes.string.isRequired,
-  /**
-   * Override the styles of the root element
-   */
+  /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object)
 };
 
