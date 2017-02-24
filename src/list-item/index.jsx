@@ -70,7 +70,7 @@ class ListItem extends Component {
     active: PropTypes.bool,
     /** Right-hand side placed button */
     rightButton: PropTypes.node,
-    /** Avatar object referenced by the list item */
+    /** The item's avatar, if a string is supplied Avatar component is used */
     avatar: PropTypes.node,
     /** Badge object referenced by the list item */
     badge: PropTypes.node,

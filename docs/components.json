@@ -1836,7 +1836,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Flag used to change message styles.\nTrue if the message was sent by the current user",
+        "description": "Flag used to change message styles. True if the message was sent by the current user",
         "defaultValue": {
           "value": "false",
           "computed": false
