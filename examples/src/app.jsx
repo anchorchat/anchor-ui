@@ -181,6 +181,8 @@ class App extends Component {
               icon={<IconExit color={colors.white} />}
               header="Language"
               headerStyle={{ textTransform: 'capitalize' }}
+              secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+              dividerText="More items"
             >
               <MenuItem text="Active item" onClick={() => {}} active />
               <MenuItem text="Inactive item" onClick={() => {}} />

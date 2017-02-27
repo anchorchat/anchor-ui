@@ -16,6 +16,10 @@ class IconMenu extends Component {
     icon: PropTypes.node.isRequired,
     /** Content of the IconMenu (MenuItems) */
     children: PropTypes.node.isRequired,
+    /** Secondary set of MenuItems */
+    secondaryMenuItems: PropTypes.node,
+    /** Text to divide the menu items */
+    dividerText: PropTypes.node,
     /** Optional header text */
     header: PropTypes.node,
     /** Override the styles of the header element */
@@ -28,7 +32,9 @@ class IconMenu extends Component {
     header: null,
     style: {},
     open: false,
-    headerStyle: {}
+    headerStyle: {},
+    secondaryMenuItems: null,
+    dividerText: null
   }
 
   constructor() {
@@ -77,13 +83,24 @@ class IconMenu extends Component {
     });
   }
 
-  render() {
-    const { children, header, icon, headerStyle, style } = this.props;
-    const { open, position } = this.state;
-
-    const childrenWithProps = React.Children.map(
+  applyCloseMenuToChildren(children) {
+    return React.Children.map(
       children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
     );
+  }
+
+  render() {
+    const {
+      children, secondaryMenuItems, header, icon, headerStyle, style, dividerText
+    } = this.props;
+    const { open, position } = this.state;
+
+    const menuItemsWithProps = this.applyCloseMenuToChildren(children);
+    let secondaryMenuItemsWithProps = null;
+
+    if (secondaryMenuItems) {
+      secondaryMenuItemsWithProps = this.applyCloseMenuToChildren(secondaryMenuItems);
+    }
 
     return (
       <div style={combineStyles(styles.iconMenu, style)}>
@@ -97,8 +114,10 @@ class IconMenu extends Component {
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}
+          secondaryMenuItems={secondaryMenuItemsWithProps}
+          dividerText={dividerText}
         >
-          {childrenWithProps}
+          {menuItemsWithProps}
         </PopOver>
       </div>
     );
