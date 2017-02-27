@@ -20,6 +20,7 @@ export PopOver from './pop-over';
 export MenuItem from './menu-item';
 export Banner from './banner';
 export IconMenu from './icon-menu';
+export Divider from './divider';
 
 export icons from './icons';
 
