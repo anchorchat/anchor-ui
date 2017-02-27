@@ -12,7 +12,7 @@ const styleSheet = {
     paddingBottom: '10px',
     boxSizing: 'border-box',
     cursor: 'pointer',
-    color: colors.primary,
+    color: colors.primaryText,
     transition: 'background-color .3s ease-in-out',
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
