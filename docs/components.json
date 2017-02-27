@@ -552,6 +552,48 @@
       }
     }
   },
+  "components/divider/index.jsx": {
+    "description": "",
+    "displayName": "Divider",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional divider text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/empty-state/index.jsx": {
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
@@ -655,6 +697,18 @@
         "modifiers": [],
         "params": [],
         "returns": null
+      },
+      {
+        "name": "applyCloseMenuToChildren",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "children",
+            "type": null
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -671,6 +725,28 @@
         },
         "required": true,
         "description": "Content of the IconMenu (MenuItems)"
+      },
+      "secondaryMenuItems": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Secondary set of MenuItems",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "dividerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to divide the menu items",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "header": {
         "type": {
@@ -2224,6 +2300,28 @@
         "description": "The PopOver's position relative to the anchor",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryMenuItems": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Secondary set of MenuItems",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "dividerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to divide the menu items",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }
