@@ -3,33 +3,44 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import styles from '../style/switch';
 import combineStyles from '../internal/combine-styles';
+import fade from '../internal/fade';
 
-function getKnobStyle(active, overrideStyle) {
+function getKnobStyle(themeColor, active, overrideStyle) {
   let style = styles.knob;
+  let activeStyle = styles.knobActive;
+
+  if (themeColor) {
+    activeStyle = combineStyles(activeStyle, { background: themeColor });
+  }
 
   if (active) {
-    style = combineStyles(style, styles.knobActive);
+    style = combineStyles(style, activeStyle);
   }
 
   return combineStyles(style, overrideStyle);
 }
 
-function getTrackStyle(active, overrideStyle) {
+function getTrackStyle(themeColor, active, overrideStyle) {
   let style = styles.track;
+  let activeStyle = styles.trackActive;
+
+  if (themeColor) {
+    activeStyle = combineStyles(activeStyle, { background: fade(themeColor, 0.5) });
+  }
 
   if (active) {
-    style = combineStyles(style, styles.trackActive);
+    style = combineStyles(style, activeStyle);
   }
 
   return combineStyles(style, overrideStyle);
 }
 
 
-function Switch({ active, toggleSwitch }) {
+function Switch({ active, toggleSwitch }, { color }) {
   return (
     <section style={styles.wrapper} onClick={toggleSwitch}>
-      <div style={getTrackStyle(active, {})} />
-      <div style={getKnobStyle(active, {})} />
+      <div style={getTrackStyle(color, active, {})} />
+      <div style={getKnobStyle(color, active, {})} />
     </section>
   );
 }
@@ -43,6 +54,10 @@ Switch.propTypes = {
 
 Switch.defaultProps = {
   active: false
+};
+
+Switch.contextTypes = {
+  color: PropTypes.string
 };
 
 export default pure(Radium(Switch));
