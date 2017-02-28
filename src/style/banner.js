@@ -6,6 +6,8 @@ const styleSheet = {
     width: '100vw',
     height: '0',
     position: 'absolute',
+    top: '0',
+    left: '0',
     zIndex: '2',
     display: 'flex',
     flexDirection: 'row',
