@@ -8,7 +8,6 @@ const styleSheet = {
     position: 'absolute',
     top: '0',
     left: '0',
-    zIndex: '2',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center'
