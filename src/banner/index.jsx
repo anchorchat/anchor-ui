@@ -22,7 +22,9 @@ class Banner extends Component {
     }).isRequired,
     hideBanner: PropTypes.func.isRequired,
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object)
+    style: PropTypes.instanceOf(Object),
+    /** Toggle banner open */
+    open: PropTypes.bool
   }
 
   static defaultProps = {
@@ -57,8 +59,12 @@ class Banner extends Component {
   }
 
   render() {
-    const { style, content, hideBanner } = this.props;
+    const { style, content, hideBanner, open } = this.props;
     const { type } = this.state;
+
+    if (!open) {
+      return null;
+    }
 
     return (
       <Measure onMeasure={this.handleMeasure}>
