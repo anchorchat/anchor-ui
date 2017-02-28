@@ -2,6 +2,13 @@ import colors from '../settings/colors';
 import fade from '../internal/fade';
 
 const styleSheet = {
+  label: {
+    fontSize: '16px',
+    color: colors.primaryText,
+    fontWeight: 'bold',
+    marginBottom: '10px',
+    display: 'inline-block'
+  },
   wrapper: {
     width: '40px',
     height: '20px',

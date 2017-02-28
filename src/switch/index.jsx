@@ -36,11 +36,16 @@ function getTrackStyle(themeColor, active, overrideStyle) {
 }
 
 
-function Switch({ active, toggleSwitch, style, trackStyle, knobStyle }, { color }) {
+function Switch(
+  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle }, { color }
+) {
   return (
-    <section style={combineStyles(styles.wrapper, style)} onClick={toggleSwitch}>
-      <div style={getTrackStyle(color, active, trackStyle)} />
-      <div style={getKnobStyle(color, active, knobStyle)} />
+    <section>
+      <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
+      <section style={combineStyles(styles.wrapper, style)} onClick={toggleSwitch}>
+        <div style={getTrackStyle(color, active, trackStyle)} />
+        <div style={getKnobStyle(color, active, knobStyle)} />
+      </section>
     </section>
   );
 }
@@ -52,19 +57,25 @@ Switch.propTypes = {
   active: PropTypes.bool,
   /** Toggle the switch's active state */
   toggleSwitch: PropTypes.func.isRequired,
+  /** The switch's label */
+  label: PropTypes.node,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the track element */
   trackStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the knob element */
   knobStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the label element */
+  labelStyle: PropTypes.instanceOf(Object),
 };
 
 Switch.defaultProps = {
   active: false,
+  label: null,
   style: {},
   trackStyle: {},
-  knobStyle: {}
+  knobStyle: {},
+  labelStyle: {}
 };
 
 Switch.contextTypes = {
