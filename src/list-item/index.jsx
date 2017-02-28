@@ -8,7 +8,7 @@ import IconMute from '../icons/icon-mute';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 
-function getStyle(themeColor, active, rightButton, avatar, muted, overrideStyle) {
+function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
   let style = styles.listItem;
 
   const color = themeColor || colors.theme;
@@ -30,10 +30,6 @@ function getStyle(themeColor, active, rightButton, avatar, muted, overrideStyle)
 
   if (avatar) {
     style = combineStyles(style, styles.leftAvatar);
-  }
-
-  if (muted) {
-    style = combineStyles(style, { opacity: '.5' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -121,7 +117,7 @@ class ListItem extends Component {
     const { color } = this.context;
 
     return (
-      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, muted, style)}>
+      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, style)}>
         {
           avatar
           ? <div style={styles.avatar}>

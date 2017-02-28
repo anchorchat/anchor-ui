@@ -59,9 +59,8 @@ const styleSheet = {
     height: '40px',
     padding: '8px',
     boxSizing: 'border-box',
-    backgroundColor: colors.black,
-    borderRadius: '50%',
-    opacity: '.75'
+    backgroundColor: 'rgba(21, 21, 21, .75)',
+    borderRadius: '50%'
   },
   rightButton: {
     paddingRight: '52px'
