@@ -21,6 +21,7 @@ export MenuItem from './menu-item';
 export Banner from './banner';
 export IconMenu from './icon-menu';
 export Divider from './divider';
+export Switch from './switch';
 
 export icons from './icons';
 
