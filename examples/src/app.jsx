@@ -110,12 +110,12 @@ class App extends Component {
     this.state = {
       message: '',
       messages,
-      select: false
+      select: 2
     };
 
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
-    this.toggleSelect = this.toggleSelect.bind(this);
+    this.changeSelect = this.changeSelect.bind(this);
   }
 
   changeMessage(event) {
@@ -150,9 +150,9 @@ class App extends Component {
     return false;
   }
 
-  toggleSelect() {
+  changeSelect(value) {
     this.setState({
-      select: !this.state.select
+      select: value
     });
   }
 
@@ -263,10 +263,14 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button onClick={this.toggleSelect}>Click me</Button>}
+            button={<Button onClick={() => {}}>Click me</Button>}
           />
         </article>
-        <Select open={this.state.select} />
+        <Select open={this.state.select} value={this.state.select}>
+          <MenuItem text="hi1" onClick={() => this.changeSelect(1)} value={1} />
+          <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
+          <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
+        </Select>
       </section>
     );
   }
