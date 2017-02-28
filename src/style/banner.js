@@ -4,7 +4,7 @@ import darken from '../internal/darken';
 const styleSheet = {
   wrapper: {
     width: '100vw',
-    height: '0',
+    height: '1px',
     position: 'absolute',
     top: '0',
     left: '0',
