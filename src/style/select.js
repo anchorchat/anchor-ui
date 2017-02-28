@@ -2,7 +2,15 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 
 const styleSheet = {
-  menuItem: {
+  container: {
+    minWidth: '200px',
+    backgroundColor: colors.theme,
+    borderRadius: '3px',
+    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    overflow: 'hidden',
+    zIndex: '1'
+  },
+  header: {
     minHeight: '44px',
     minWidth: '100%',
     position: 'relative',
@@ -12,33 +20,22 @@ const styleSheet = {
     paddingBottom: '10px',
     boxSizing: 'border-box',
     cursor: 'pointer',
-    color: colors.primaryText,
-    transition: 'background-color .3s ease-in-out',
-    backgroundColor: colors.white,
+    color: colors.white,
+    backgroundColor: colors.theme,
     ':hover': {
-      backgroundColor: darken(colors.white, 0.05)
+      backgroundColor: darken(colors.theme, 0.05)
     },
     ':active': {
-      backgroundColor: darken(colors.white, 0.15)
+      backgroundColor: darken(colors.theme, 0.15)
     }
-  },
-  text: {
-    margin: 0,
-    color: 'inherit',
-    lineHeight: '24px'
   },
   icon: {
     position: 'absolute',
     top: '10px',
-    left: '8px',
-    height: '24px'
-  },
-  activeIcon: {
-    position: 'absolute',
-    top: '10px',
-    right: '8px',
+    right: '10px',
+    width: '24px',
     height: '24px',
-    width: '24px'
+    transition: 'transform .3s ease-in-out',
   }
 };
 

@@ -12,7 +12,8 @@ import {
   Badge,
   MessageList,
   IconMenu,
-  MenuItem
+  MenuItem,
+  Select
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -108,11 +109,13 @@ class App extends Component {
 
     this.state = {
       message: '',
-      messages
+      messages,
+      select: false
     };
 
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
+    this.toggleSelect = this.toggleSelect.bind(this);
   }
 
   changeMessage(event) {
@@ -145,6 +148,12 @@ class App extends Component {
     this.messageList.scrollDown();
 
     return false;
+  }
+
+  toggleSelect() {
+    this.setState({
+      select: !this.state.select
+    });
   }
 
   render() {
@@ -254,9 +263,10 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button onClick={() => {}}>Click me</Button>}
+            button={<Button onClick={this.toggleSelect}>Click me</Button>}
           />
         </article>
+        <Select open={this.state.select} />
       </section>
     );
   }
