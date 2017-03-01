@@ -12,7 +12,7 @@
     "react-scripts": "0.8.4"
   },
   "dependencies": {
-    "anchor-ui": "^2.5.1",
+    "anchor-ui": "^2.6.0",
     "classnames": "^2.2.5",
     "color": "^1.0.3",
     "emojione": "^2.2.7",
