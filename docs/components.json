@@ -2623,7 +2623,7 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "The Select's content (MenuItem), each child should have a value prop"
       },
       "value": {
         "type": {
@@ -2638,7 +2638,54 @@
           ]
         },
         "required": true,
-        "description": ""
+        "description": "The Select's value"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Select's label",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
