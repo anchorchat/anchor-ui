@@ -308,6 +308,11 @@
         }
       },
       "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle banner open",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -470,8 +475,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Body text"
+        "required": false,
+        "description": "Body text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "button": {
         "type": {
@@ -549,6 +558,17 @@
         },
         "required": true,
         "description": "Function to hide dialog element"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional children, will only render children and headerText with other styles",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
@@ -859,6 +879,24 @@
   "components/icons/icon-channels.jsx": {
     "description": "",
     "displayName": "IconChannels",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-chevron-down.jsx": {
+    "description": "",
+    "displayName": "IconChevronDown",
     "methods": [],
     "props": {
       "color": {
@@ -2536,6 +2574,133 @@
         },
         "required": false,
         "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/select/index.jsx": {
+    "description": "",
+    "methods": [
+      {
+        "name": "positionPopOver",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "toggleSelect",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "components/switch/index.jsx": {
+    "description": "",
+    "displayName": "Switch",
+    "methods": [],
+    "props": {
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "The switch's active state",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "toggleSwitch": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Toggle the switch's active state"
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The switch's label",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "trackStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the track element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "knobStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the knob element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
         "defaultValue": {
           "value": "{}",
           "computed": false
