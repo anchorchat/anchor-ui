@@ -13,12 +13,14 @@ function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
 
   const color = themeColor || colors.theme;
 
-  const activeStyle = {
-    ...styles.listItem,
-    backgroundColor: color,
-    ':hover': { backgroundColor: darken(color, 0.05) },
-    ':active': { backgroundColor: darken(color, 0.15) }
-  };
+  const activeStyle = combineStyles(
+    styles.listItem,
+    {
+      backgroundColor: color,
+      ':hover': { backgroundColor: darken(color, 0.05) },
+      ':active': { backgroundColor: darken(color, 0.15) }
+    }
+  );
 
   if (active) {
     style = combineStyles(style, activeStyle);
@@ -39,7 +41,7 @@ function getTextStyle(textStyle, active, overrideStyle) {
   let style = textStyle;
 
   if (active) {
-    style = { ...style, color: colors.white };
+    style = combineStyles(style, { color: colors.white });
   }
 
   return combineStyles(style, overrideStyle);
