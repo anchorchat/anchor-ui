@@ -1480,7 +1480,7 @@
       },
       "label": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "The input's label"
@@ -1811,7 +1811,7 @@
       },
       "text": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "The item's label"
@@ -1917,7 +1917,7 @@
           "name": "shape",
           "value": {
             "body": {
-              "name": "string",
+              "name": "node",
               "description": "The message's body text",
               "required": true
             },
@@ -2116,7 +2116,7 @@
       },
       "placeholder": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "The input's placeholder"
@@ -2552,7 +2552,7 @@
       },
       "placeholder": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": false,
         "description": "The input's placeholder",
