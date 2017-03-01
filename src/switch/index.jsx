@@ -40,9 +40,9 @@ function Switch(
   { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle }, { color }
 ) {
   return (
-    <section>
+    <section style={style}>
       <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
-      <section style={combineStyles(styles.wrapper, style)} onClick={toggleSwitch}>
+      <section style={styles.wrapper} onClick={toggleSwitch}>
         <div style={getTrackStyle(color, active, trackStyle)} />
         <div style={getKnobStyle(color, active, knobStyle)} />
       </section>
