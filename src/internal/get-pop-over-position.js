@@ -1,6 +1,6 @@
 import combineStyles from './combine-styles';
 
-function getPopOverPosition(button, popOver) {
+function getPopOverPosition(button, popOver, type = 'iconMenu') {
   const fitsAboveButton = button.top > popOver.height;
   const fitsRightFromButton = (window.innerWidth - button.right) > popOver.width;
   const fitsLeftFromButton = button.left > popOver.width;
@@ -35,6 +35,10 @@ function getPopOverPosition(button, popOver) {
 
   if (horizontal === 'right') {
     position = combineStyles(position, { left: button.left + (button.width / 2), right: 'initial' });
+  }
+
+  if (type === 'select') {
+    position = combineStyles(position, { left: 'initial', right: 'initial' });
   }
 
   return position;
