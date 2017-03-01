@@ -3,6 +3,7 @@ export IconChannel from './icon-channel';
 export IconChannels from './icon-channels';
 export IconChevronLeft from './icon-chevron-left';
 export IconChevronRight from './icon-chevron-right';
+export IconChevronDown from './icon-chevron-down';
 export IconClock from './icon-clock';
 export IconClose from './icon-close';
 export IconConversation from './icon-conversation';
