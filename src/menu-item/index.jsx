@@ -29,7 +29,7 @@ class MenuItem extends Component {
     /** The item's icon */
     icon: PropTypes.node,
     /** The item's label */
-    text: PropTypes.string.isRequired,
+    text: PropTypes.node.isRequired,
     /** MenuItem active */
     active: PropTypes.bool,
     /** MenuItem onClick function */

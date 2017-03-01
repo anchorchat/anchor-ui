@@ -110,7 +110,7 @@ class Message extends Component {
     /** Message object containing : body, createdAt, username */
     message: PropTypes.shape({
       /** The message's body text */
-      body: PropTypes.string.isRequired,
+      body: PropTypes.node.isRequired,
       /** Time when the message was created */
       createdAt: PropTypes.oneOfType([
         PropTypes.string,

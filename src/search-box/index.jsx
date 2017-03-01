@@ -17,7 +17,7 @@ class SearchBox extends Component {
     /** The input's value */
     value: PropTypes.string.isRequired,
     /** The input's placeholder */
-    placeholder: PropTypes.string,
+    placeholder: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the input element */

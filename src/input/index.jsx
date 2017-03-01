@@ -34,7 +34,7 @@ Input.propTypes = {
   /** Type of input */
   type: PropTypes.string.isRequired,
   /** The input's label */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   /** The input's name */
   name: PropTypes.string.isRequired,
   /** Override the styles of the root element */
