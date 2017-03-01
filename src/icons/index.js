@@ -32,3 +32,4 @@ export IconSuccess from './icon-success';
 export IconWarning from './icon-warning';
 export IconSearch from './icon-search';
 export ChannelAvatar from './channel-avatar';
+export IconMicrophone from './icon-microphone';

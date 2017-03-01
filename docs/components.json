@@ -1236,6 +1236,24 @@
       }
     }
   },
+  "components/icons/icon-microphone.jsx": {
+    "description": "",
+    "displayName": "IconMicrophone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-more.jsx": {
     "description": "",
     "displayName": "IconMore",
