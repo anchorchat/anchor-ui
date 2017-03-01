@@ -14,6 +14,7 @@ const styleSheet = {
     cursor: 'pointer',
     color: colors.primaryText,
     transition: 'background-color .3s ease-in-out',
+    backgroundColor: colors.white,
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
     },

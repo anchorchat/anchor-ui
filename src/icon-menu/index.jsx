@@ -42,8 +42,6 @@ class IconMenu extends Component {
 
     this.state = {
       open: false,
-      horizontal: 'left',
-      vertical: 'bottom',
       positioned: false
     };
 
