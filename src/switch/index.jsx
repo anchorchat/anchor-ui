@@ -66,7 +66,7 @@ Switch.propTypes = {
   /** Override the styles of the knob element */
   knobStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.instanceOf(Object)
 };
 
 Switch.defaultProps = {
