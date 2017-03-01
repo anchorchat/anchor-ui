@@ -28,8 +28,10 @@ function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   const color = themeColor || colors.theme;
 
   if (myMessage) {
-    style = combineStyles(styles.message, styles.myMessage);
-    style = { ...style, backgroundColor: color, borderRightColor: color };
+    style = combineStyles(
+      combineStyles(styles.message, styles.myMessage),
+      { backgroundColor: color, borderRightColor: color }
+    );
   }
 
   if (avatar) {
@@ -41,60 +43,65 @@ function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   }
 
   if (compact) {
-    style = combineStyles(style, {
-      marginLeft: '0',
-      marginRight: '0',
-      maxWidth: '100%',
-      display: 'flex'
-    });
+    style = combineStyles(
+      style,
+      {
+        marginLeft: '0',
+        marginRight: '0',
+        maxWidth: '100%',
+        display: 'flex'
+      }
+    );
   }
 
   return combineStyles(style, overrideStyle);
 }
 
-function getTextStyle(style, myMessage, fontSize, overrideStyle) {
-  let combinedStyles = style;
+function getTextStyle(myMessage, fontSize, overrideStyle) {
+  let style = styles.messageBody;
 
   if (myMessage) {
-    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+    style = combineStyles(style, { color: colors.white });
   }
 
   if (fontSize === 'medium') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '18px', lineHeight: '20px' }, overrideStyle);
+    style = combineStyles(style, { fontSize: '18px', lineHeight: '20px' });
   }
 
   if (fontSize === 'large') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '22px', lineHeight: '24px' }, overrideStyle);
+    style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
   }
 
-  return combineStyles(combinedStyles, overrideStyle);
+  return combineStyles(style, overrideStyle);
 }
 
-function getHeaderStyle(style, myMessage, compact, fontSize, overrideStyle) {
-  let combinedStyles = style;
+function getHeaderStyle(myMessage, compact, fontSize, overrideStyle) {
+  let style = styles.messageHeader;
 
   if (myMessage) {
-    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+    style = combineStyles(style, { color: colors.white });
   }
 
   if (compact) {
-    combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+    style = combineStyles(style, { flexShrink: '0', marginRight: '10px' });
   }
 
   if (fontSize === 'medium') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '16px', lineHeight: '20px' }, overrideStyle);
+    style = combineStyles(style, { fontSize: '16px', lineHeight: '20px' });
   }
 
   if (fontSize === 'large') {
-    combinedStyles = combineStyles({ ...combinedStyles, fontSize: '18px', lineHeight: '24px' }, overrideStyle);
+    style = combineStyles(style, { fontSize: '18px', lineHeight: '24px' });
   }
 
-  return combineStyles(combinedStyles, overrideStyle);
+  return combineStyles(style, overrideStyle);
 }
 
-function getTimeStyle(style, myMessage, overrideStyle) {
+function getTimeStyle(myMessage, overrideStyle) {
+  let style = styles.messageTime;
+
   if (myMessage) {
-    return combineStyles({ ...style, left: 0, right: 'initial', opacity: '.75' }, overrideStyle);
+    style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -228,18 +235,18 @@ class Message extends Component {
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
           <header
             style={
-              getHeaderStyle(styles.messageHeader, myMessage, compact, fontSize, messageHeaderStyle)
+              getHeaderStyle(myMessage, compact, fontSize, messageHeaderStyle)
             }
           >
             {message.username}
           </header>
-          <p style={getTextStyle(styles.messageBody, myMessage, fontSize, messageBodyStyle)}>
+          <p style={getTextStyle(myMessage, fontSize, messageBodyStyle)}>
             {
               emoji
               ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
               : message.body
             }
-            <span style={getTimeStyle(styles.messageTime, myMessage, messageTimeStyle)}>
+            <span style={getTimeStyle(myMessage, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
             </span>
           </p>
