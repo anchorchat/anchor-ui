@@ -44,6 +44,13 @@ const styleSheet = {
     left: 0,
     zIndex: 1,
     opacity: 0
+  },
+  label: {
+    fontSize: '16px',
+    color: colors.primaryText,
+    fontWeight: 'bold',
+    marginBottom: '10px',
+    display: 'inline-block'
   }
 };
 
