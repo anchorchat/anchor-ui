@@ -3,12 +3,8 @@ import darken from '../internal/darken';
 
 const styleSheet = {
   container: {
-    minWidth: '200px',
-    backgroundColor: colors.theme,
-    borderRadius: '3px',
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
-    overflow: 'hidden',
-    zIndex: '1'
+    position: 'relative',
+    minWidth: '200px'
   },
   header: {
     minHeight: '44px',
@@ -22,6 +18,8 @@ const styleSheet = {
     cursor: 'pointer',
     color: colors.white,
     backgroundColor: colors.theme,
+    borderRadius: '3px',
+    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
     ':hover': {
       backgroundColor: darken(colors.theme, 0.05)
     },
@@ -36,6 +34,16 @@ const styleSheet = {
     width: '24px',
     height: '24px',
     transition: 'transform .3s ease-in-out',
+  },
+  clickAway: {
+    pointerEvents: 'all',
+    position: 'fixed',
+    width: '100vw',
+    height: '100vh',
+    top: 0,
+    left: 0,
+    zIndex: 1,
+    opacity: 0
   }
 };
 
