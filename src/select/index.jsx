@@ -113,6 +113,10 @@ class Select extends Component {
       )
     );
 
+    const activeChild = childrenWithProps.find(child => child.props.value === value);
+
+    const headerText = (activeChild && activeChild.props && activeChild.props.text) || value;
+
     return (
       <section style={combineStyles(styles.container, style)}>
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
@@ -122,7 +126,7 @@ class Select extends Component {
           style={getHeaderStyle(color, headerStyle)}
           onClick={this.toggleSelect}
         >
-          {childrenWithProps.find(child => child.props.value === value).props.text}
+          {headerText}
           <div style={getIconStyle(open, {})}>
             <IconChevronDown color={colors.white} />
           </div>
