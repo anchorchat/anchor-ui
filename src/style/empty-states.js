@@ -15,7 +15,7 @@ const styleSheet = {
   heading: {
     fontSize: '16px',
     fontWeight: 'bold',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     margin: '0',
     textAlign: 'center'
   },
