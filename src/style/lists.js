@@ -78,7 +78,7 @@ const styleSheet = {
     userSelect: 'none'
   },
   secondaryText: {
-    color: colors.secondaryText,
+    color: colors.primaryText,
     fontSize: '14px',
     fontWeight: 'normal',
     marginBottom: 0,
