@@ -5,7 +5,7 @@ import styles from '../style/empty-states';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(image, overrideStyle) {
-  const style = { ...styles.emptyState, backgroundImage: `url(${image})` };
+  const style = combineStyles(styles.emptyState, { backgroundImage: `url(${image})` });
 
   return combineStyles(style, overrideStyle);
 }

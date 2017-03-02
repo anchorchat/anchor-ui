@@ -8,7 +8,7 @@ import combineStyles from '../internal/combine-styles';
 function getStyle(themeColor, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  const style = { ...styles.header, background: color };
+  const style = combineStyles(styles.header, { background: color });
 
   return combineStyles(style, overrideStyle);
 }

@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from '../style/select';
+import styles from './styles';
 import IconChevronDown from '../icons/icon-chevron-down';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 import darken from '../internal/darken';
+import './array.find.polyfill';
 
 function getIconStyle(open, overrideStyle) {
   let style = styles.icon;
