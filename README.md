@@ -1,5 +1,7 @@
 # Anchor UI
 
+[![Build Status](https://travis-ci.org/anchorchat/anchor-ui.svg?branch=master)](https://travis-ci.org/anchorchat/anchor-ui)
+
 UI kit for chat engines with React
 
 ## Usage
