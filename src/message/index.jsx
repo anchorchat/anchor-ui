@@ -83,7 +83,7 @@ function getHeaderStyle(myMessage, compact, fontSize, overrideStyle) {
   }
 
   if (compact) {
-    style = combineStyles(style, { flexShrink: '0', marginRight: '10px' });
+    style = combineStyles(style, { flexShrink: '0', marginRight: '10px', marginBottom: '0' });
   }
 
   if (fontSize === 'medium') {
