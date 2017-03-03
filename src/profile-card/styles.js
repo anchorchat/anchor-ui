@@ -13,7 +13,12 @@ export default {
     overflow: 'auto'
   },
   username: {
-    margin: '0'
+    margin: '0',
+    maxWidth: 'calc(100% - 101px)',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    display: 'inline-block'
   },
   text: {
     fontSize: '16px',
