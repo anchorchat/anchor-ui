@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   profileCard: {
     backgroundColor: colors.theme,
     color: colors.white,
@@ -23,5 +23,3 @@ const styleSheet = {
     marginTop: '4px'
   }
 };
-
-export default styleSheet;
