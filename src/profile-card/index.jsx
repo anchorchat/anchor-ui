@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
-import styles from '../style/profile-cards';
+import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
