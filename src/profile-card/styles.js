@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   profileCard: {
     backgroundColor: colors.theme,
     color: colors.white,
@@ -13,7 +13,12 @@ const styleSheet = {
     overflow: 'auto'
   },
   username: {
-    margin: '0'
+    margin: '0',
+    maxWidth: 'calc(100% - 101px)',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    display: 'inline-block'
   },
   text: {
     fontSize: '16px',
@@ -23,5 +28,3 @@ const styleSheet = {
     marginTop: '4px'
   }
 };
-
-export default styleSheet;
