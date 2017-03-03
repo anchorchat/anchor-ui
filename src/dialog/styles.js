@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 import fade from '../internal/fade';
 
-const styleSheet = {
+export default {
   overlay: {
     display: 'flex',
     flexDirection: 'column',
@@ -81,5 +81,3 @@ const styleSheet = {
     cursor: 'pointer'
   }
 };
-
-export default styleSheet;
