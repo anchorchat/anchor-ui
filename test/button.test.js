@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import Button from '../dist/button';
+import Button from '../src/button';
 
 describe('<Button />', () => {
   const children = <p>children</p>;
