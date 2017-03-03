@@ -3,6 +3,14 @@ import { expect } from 'chai';
 import combineStyles from '../../src/internal/combine-styles';
 
 describe('combineStyles', () => {
+  it('should return style if overrideStyle is undefined', () => {
+    const style = {
+      color: 'red'
+    };
+
+    expect(combineStyles(style)).to.deep.equal(style);
+  });
+
   it('should return style if overrideStyle is an empty object', () => {
     const style = {
       color: 'red'
