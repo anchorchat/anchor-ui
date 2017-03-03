@@ -7,7 +7,8 @@
     "/*"
   ],
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "NODE_ENV=test nyc mocha --compilers js:babel-core/register test/*",
+    "test:watch": "NODE_ENV=test mocha --watch --compilers js:babel-core/register test/*",
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
     "lint": "eslint src/*",
@@ -45,6 +46,7 @@
     "eslint-plugin-mocha": "^4.8.0",
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-docgen": "^2.13.0",
