@@ -40,8 +40,10 @@ function getHeaderStyle(themeColor, overrideStyle) {
 }
 
 class Select extends Component {
+  static displayName = 'Select'
+
   static propTypes = {
-    /** The Select's content (MenuItem), each child should have a value prop */
+    /** The Select's content (MenuItem), each child must have a value prop */
     children: PropTypes.node.isRequired,
     /** The Select's value */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

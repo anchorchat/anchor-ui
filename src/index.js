@@ -23,6 +23,8 @@ export IconMenu from './icon-menu';
 export Divider from './divider';
 export Switch from './switch';
 export Select from './select';
+export RadioButton from './radio-button';
+export RadioButtonGroup from './radio-button/radio-button-group';
 
 export icons from './icons';
 
