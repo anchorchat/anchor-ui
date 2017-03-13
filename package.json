@@ -73,6 +73,7 @@
     "escape-html": "^1.0.3",
     "lodash": "^4.17.4",
     "react-measure": "^1.4.5",
+    "react-native": "^0.42.0",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0",
     "uranium": "github:tuckerconnelly/uranium"
