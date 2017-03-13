@@ -23,6 +23,7 @@ import ProfileCard from './components/profile-card';
 import Icons from './components/icons';
 import IconMenu from './components/icon-menu';
 import SearchBox from './components/search-box';
+import MenuItem from './components/menu-item';
 import './index.css';
 
 ReactDOM.render(
@@ -48,6 +49,7 @@ ReactDOM.render(
       <Route path="/icons" component={Icons} />
       <Route path="/icon-menu" component={IconMenu} />
       <Route path="/search-box" component={SearchBox} />
+      <Route path="/menu-item" component={MenuItem} />
     </Route>
   </Router>,
   document.getElementById('root')

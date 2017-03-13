@@ -9,7 +9,6 @@ const usage = '```js\n import IconMenu from \'anchor-ui/icons\';';
 
 function IconMenuDoc() {
   const componentData = _.find(components, component => component.displayName === 'IconMenu');
-  console.log(componentData);
 
   return (
     <article className="doc">
