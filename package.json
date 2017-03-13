@@ -63,18 +63,10 @@
       "add-module-exports"
     ]
   },
-  "peerDependencies": {
-    "react": "^15.4.1"
-  },
   "dependencies": {
     "color": "^1.0.3",
     "date-fns": "^1.27.2",
-    "emojione": "^2.2.7",
-    "escape-html": "^1.0.3",
     "lodash": "^4.17.4",
-    "react-measure": "^1.4.5",
-    "react-native": "^0.42.0",
-    "react-native-dismiss-keyboard": "^1.0.0",
     "react-native-invertible-scroll-view": "^1.0.0",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0",
