@@ -1,6 +1,6 @@
 {
   "name": "react-native-anchor-ui",
-  "version": "2.6.7",
+  "version": "0.0.1",
   "description": "React-native Component UI Kit",
   "main": "dist/index.js",
   "files": [
