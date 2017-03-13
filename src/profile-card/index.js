@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  Text,
+  View,
+} from 'react-native';
 import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
@@ -69,11 +73,11 @@ class ProfileCard extends Component {
     };
 
     return (
-      <section style={getStyle(color, avatar, style)}>
+      <View style={getStyle(color, avatar, style)}>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
-        <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
-        {text ? <p style={combineStyles(styles.text, textStyle)}>{text}</p> : null}
-      </section>
+        <Text style={combineStyles(styles.username, usernameStyle)}>{username}</Text>
+        {text ? <Text style={combineStyles(styles.text, textStyle)}>{text}</Text> : null}
+      </View>
     );
   }
 }

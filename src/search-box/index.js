@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  TextInput,
+  View,
+} from 'react-native';
 import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
@@ -58,15 +62,15 @@ class SearchBox extends Component {
     const { value, placeholder, style, inputStyle, iconStyle } = this.props;
 
     return (
-      <section style={combineStyles(styles.searchBox, style)}>
-        <div style={combineStyles(styles.icon, iconStyle)}><IconSearch /></div>
-        <input
+      <View style={combineStyles(styles.searchBox, style)}>
+        <View style={combineStyles(styles.icon, iconStyle)}><IconSearch /></View>
+        <TextInput
           style={combineStyles(styles.input, inputStyle)}
           value={value}
           onChange={this.handleChange}
           placeholder={placeholder}
         />
-      </section>
+      </View>
     );
   }
 }

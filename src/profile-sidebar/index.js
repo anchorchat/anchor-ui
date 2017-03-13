@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  View,
+  Text
+} from 'react-native';
 import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
@@ -44,11 +48,11 @@ class ProfileSidebar extends Component {
     };
 
     return (
-      <section style={combineStyles(style, styles.profileSidebar)}>
-        <h1 style={combineStyles(headerStyle, styles.profileSidebarHeader)}>{username}</h1>
+      <View style={combineStyles(style, styles.profileSidebar)}>
+        <Text style={combineStyles(headerStyle, styles.profileSidebarHeader)}>{username}</Text>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         {children}
-      </section>
+      </View>
     );
   }
 }
