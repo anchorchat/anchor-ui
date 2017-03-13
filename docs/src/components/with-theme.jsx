@@ -12,7 +12,7 @@ function WithThemeDoc() {
   const componentData = _.find(components, component => component.displayName === 'WithTheme');
   return (
     <article className="doc">
-      <h1>Banner</h1>
+      <h1>With Theme</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
