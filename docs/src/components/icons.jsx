@@ -7,7 +7,7 @@ import components from '../../components.json';
 
 const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import IconHammer from \'anchor-ui/icons/icon-hammer\'';
 
-const icons = _.filter(components, component => component.displayName && component.displayName.includes('Icon'));
+const icons = _.filter(components, (component, key) => key.match(/icons/));
 const iconNames = _.pluck(icons, 'displayName');
 
 function Icons() {

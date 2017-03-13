@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import IconMenu from 'anchor-ui/icons/icon-menu';
+import SearchBox from 'anchor-ui/search-box';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
 
-const usage = '```js\n import IconMenu from \'anchor-ui/icons\';';
+const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
 
-function IconMenuDoc() {
-  const componentData = _.find(components, component => component.displayName === 'IconMenu');
-  console.log(componentData);
+function SearchBoxDoc() {
+  const componentData = _.find(components, component => component.displayName === 'SearchBox');
 
   return (
     <article className="doc">
-      <h1>Icon Menu</h1>
+      <h1>Search Box</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
@@ -24,11 +23,11 @@ function IconMenuDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <IconMenu />
+        <SearchBox onChange={() => {}} changeSearchQuery={() => {}} handleSearch={() => {}} placeholder="Search" value={''} />
       </section>
       <Props props={componentData.props} />
     </article>
   );
 }
 
-export default IconMenuDoc;
+export default SearchBoxDoc;
