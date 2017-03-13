@@ -21,6 +21,11 @@ import Message from './components/message';
 import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
 import Icons from './components/icons';
+import IconMenu from './components/icon-menu';
+import SearchBox from './components/search-box';
+import MenuItem from './components/menu-item';
+import PopOver from './components/pop-over';
+import WithTheme from './components/with-theme';
 import './index.css';
 
 ReactDOM.render(
@@ -44,6 +49,11 @@ ReactDOM.render(
       <Route path="/message" component={Message} />
       <Route path="/profile-card" component={ProfileCard} />
       <Route path="/icons" component={Icons} />
+      <Route path="/icon-menu" component={IconMenu} />
+      <Route path="/search-box" component={SearchBox} />
+      <Route path="/menu-item" component={MenuItem} />
+      <Route path="/pop-over" component={PopOver} />
+      <Route path="/with-theme" component={WithTheme} />
     </Route>
   </Router>,
   document.getElementById('root')
