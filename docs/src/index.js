@@ -25,7 +25,6 @@ import IconMenu from './components/icon-menu';
 import SearchBox from './components/search-box';
 import MenuItem from './components/menu-item';
 import PopOver from './components/pop-over';
-import Banner from './components/banner';
 import WithTheme from './components/with-theme';
 import './index.css';
 
@@ -54,7 +53,6 @@ ReactDOM.render(
       <Route path="/search-box" component={SearchBox} />
       <Route path="/menu-item" component={MenuItem} />
       <Route path="/pop-over" component={PopOver} />
-      <Route path="/banner" component={Banner} />
       <Route path="/with-theme" component={WithTheme} />
     </Route>
   </Router>,
