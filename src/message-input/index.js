@@ -1,5 +1,9 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
+import {
+  TextInput,
+  View
+} from 'react-native';
 import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-inputs';
@@ -103,15 +107,15 @@ class MessageInput extends Component {
     const iconColor = color || colors.theme;
 
     return (
-      <section style={combineStyles(styles.input, style)}>
+      <View style={combineStyles(styles.input, style)}>
         {
           leftButton
-          ? <div style={getButtonStyle(styles.button, disabled)}>
+          ? <View style={getButtonStyle(styles.button, disabled)}>
             {leftButton}
-          </div>
+          </View>
           : null
         }
-        <input
+        <TextInput
           style={getInputStyle(leftButton, inputStyle)}
           placeholder={placeholder}
           onChange={onChange}
@@ -130,7 +134,7 @@ class MessageInput extends Component {
         >
           <IconSend color={iconColor} />
         </Button>
-      </section>
+      </View>
     );
   }
 }

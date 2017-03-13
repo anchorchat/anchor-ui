@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  Text
+} from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
 import Uranium from 'uranium';
 import styles from '../style/badges';
@@ -60,9 +63,9 @@ class Badge extends Component {
     }
 
     return (
-      <span style={getStyle(color, inverted, style)}>
+      <Text style={getStyle(color, inverted, style)}>
         {content}
-      </span>
+      </Text>
     );
   }
 }

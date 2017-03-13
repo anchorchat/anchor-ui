@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  View,
+  Text
+} from 'react-native';
 import format from 'date-fns/format';
 import Radium from 'radium';
 import emojione from 'emojione';
@@ -140,8 +144,6 @@ class Message extends Component {
     fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
     /** Flag used to change message styles. True if the message was sent by the current user */
     myMessage: PropTypes.bool,
-    /** Enable emojione for messages */
-    emoji: PropTypes.bool,
     /** Enables links in messages */
     enableLinks: PropTypes.bool,
     /** Enables compact messages */
@@ -193,7 +195,7 @@ class Message extends Component {
     }
 
     return {
-      __html: emojione.toImage(parsedText)
+      __html: parsedText
     };
   }
 
@@ -203,7 +205,6 @@ class Message extends Component {
       message,
       timeFormat,
       myMessage,
-      emoji,
       style,
       messageHeaderStyle,
       messageBodyStyle,
@@ -225,33 +226,31 @@ class Message extends Component {
     }
 
     return (
-      <section style={getContainerStyle(myMessage, compact)}>
-        <section style={getStyle(color, myMessage, avatar, compact, style)}>
+      <View style={getContainerStyle(myMessage, compact)}>
+        <View style={getStyle(color, myMessage, avatar, compact, style)}>
           {
             compact
             ? null
-            : <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
+            : <View style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
           }
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
-          <header
+          <View
             style={
               getHeaderStyle(myMessage, compact, fontSize, messageHeaderStyle)
             }
           >
             {message.username}
-          </header>
-          <p style={getTextStyle(myMessage, fontSize, messageBodyStyle)}>
+          </View>
+          <Text style={getTextStyle(myMessage, fontSize, messageBodyStyle)}>
             {
-              emoji
-              ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
-              : message.body
+               message.body
             }
-            <span style={getTimeStyle(myMessage, messageTimeStyle)}>
+            <Text style={getTimeStyle(myMessage, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
-            </span>
-          </p>
-        </section>
-      </section>
+            </Text>
+          </Text>
+        </View>
+      </View>
     );
   }
 }

@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  View,
+  Text
+} from 'react-native';
 import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/menu-item';
@@ -78,17 +82,17 @@ class MenuItem extends Component {
     const { color } = this.context;
 
     return (
-      <section style={getStyle(color, icon, active, style)} onClick={this.handleClick}>
-        {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        <p style={combineStyles(styles.text, textStyle)}>
+      <View style={getStyle(color, icon, active, style)} onClick={this.handleClick}>
+        {icon ? <View style={combineStyles(styles.icon, iconStyle)}>{icon}</View> : null}
+        <Text style={combineStyles(styles.text, textStyle)}>
           {text}
-        </p>
+        </Text>
         {
           active
-          ? <div style={styles.activeIcon}><IconSuccess color={color || colors.theme} /></div>
+          ? <View style={styles.activeIcon}><IconSuccess color={color || colors.theme} /></View>
           : null
         }
-      </section>
+      </View>
     );
   }
 }

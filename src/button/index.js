@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  Button as ReactNativeButton
+} from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
 import Uranium from 'uranium';
 import styles from '../style/buttons';
@@ -13,7 +16,6 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
     styles.button,
     {
       backgroundColor: color,
-      ':hover': { backgroundColor: darken(color, 0.15) },
       ':active': { backgroundColor: darken(color, 0.25) }
     }
   );
@@ -69,11 +71,11 @@ class Button extends Component {
     const { color } = this.context;
 
     return (
-      <button key="button" onClick={onClick} style={getStyle(color, inverted, iconButton, style)}>
+      <ReactNativeButton key="button" onClick={onClick} style={getStyle(color, inverted, iconButton, style)}>
         {children}
-      </button>
+      </ReactNativeButton>
     );
   }
 }
 
-export default Radium(Button);
+export default Uranium(Button);

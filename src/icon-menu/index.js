@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  View
+} from 'react-native';
 import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import PopOver from '../pop-over';
@@ -101,11 +104,11 @@ class IconMenu extends Component {
     }
 
     return (
-      <div style={combineStyles(styles.iconMenu, style)}>
-        {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
-        <div ref={button => (this.button = button)}>
+      <View style={combineStyles(styles.iconMenu, style)}>
+        {open ? <View style={styles.clickAway} onClick={this.closeMenu} /> : null}
+        <View ref={button => (this.button = button)}>
           <Button iconButton onClick={this.openMenu}>{icon}</Button>
-        </div>
+        </View>
         <PopOver
           header={header}
           headerStyle={headerStyle}
@@ -117,7 +120,7 @@ class IconMenu extends Component {
         >
           {menuItemsWithProps}
         </PopOver>
-      </div>
+      </View>
     );
   }
 }

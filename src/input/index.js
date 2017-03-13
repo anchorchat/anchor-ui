@@ -1,4 +1,9 @@
 import React, { PropTypes } from 'react';
+import {
+  Text,
+  TextInput,
+  View
+} from 'react-native';
 import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/inputs';
@@ -9,9 +14,9 @@ function Input({
   onChange, value, maxLength, label, name, type, inputRef, style, inputStyle, labelStyle
 }) {
   return (
-    <section style={combineStyles(styles.inputWrapper, style)}>
-      <label style={combineStyles(styles.label, labelStyle)} htmlFor={name}>{label}</label>
-      <input
+    <View style={combineStyles(styles.inputWrapper, style)}>
+      <Text style={combineStyles(styles.label, labelStyle)} htmlFor={name}>{label}</Text>
+      <TextInput
         style={combineStyles(styles.input, inputStyle)}
         onChange={onChange}
         value={value}
@@ -20,7 +25,7 @@ function Input({
         id={name}
         ref={inputRef}
       />
-    </section>
+    </View>
   );
 }
 

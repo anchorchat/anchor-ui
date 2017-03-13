@@ -1,7 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  ListView,
+  View,
+} from 'react-native';
 import Uranium from 'uranium';
+import InvertibleScrollView from 'react-native-invertible-scroll-view';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-lists';
+import Message from '../message';
 import combineStyles from '../internal/combine-styles';
 
 /** Render a list of items (Messages) with optional auto scroll */
@@ -12,7 +18,6 @@ class MessageList extends Component {
     /** MessageList content */
     children: PropTypes.node.isRequired,
     /** The amount of pixels the user has to scroll up to disable auto scroll */
-    scrollOffset: PropTypes.number,
     /** Expose the components methods to the parent,
      * useful for calling scrollDown from a parent component */
     addRef: PropTypes.func,
@@ -21,15 +26,24 @@ class MessageList extends Component {
     /** Override the styles of the <ul /> element */
     listStyle: PropTypes.instanceOf(Object),
     /** Enable autoScroll */
-    autoScroll: PropTypes.bool
+    autoScroll: PropTypes.bool,
+    renderMessage: null
   }
 
   static defaultProps = {
     scrollOffset: 100,
     addRef: () => {},
     style: {},
+    renderMessage: null,
     listStyle: {},
     autoScroll: false
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.renderRow = this.renderRow.bind(this);
+    this.renderScrollComponent = this.renderScrollComponent.bind(this);
   }
 
   componentDidMount() {
@@ -40,7 +54,7 @@ class MessageList extends Component {
     const { autoScroll } = this.props;
 
     if (autoScroll && this.messageList && this.shouldScrollToBottom(this.messageList)) {
-      this.scrollDown();
+      this.scrollTo();
     }
   }
 
@@ -52,53 +66,55 @@ class MessageList extends Component {
     this.props.addRef(undefined);
   }
 
-  shouldScrollToBottom(node) {
-    const { scrollOffset } = this.props;
-
-    const scrollTop = node && (node.scrollTop || node.scrollTop === 0);
-    const offsetHeight = node && (node.offsetHeight || node.offsetHeight === 0);
-    const scrollHeight = node && (node.scrollHeight || node.scrollHeight === 0);
-
-    if (node && scrollTop && offsetHeight && scrollHeight) {
-      return node.scrollTop + node.offsetHeight + scrollOffset >= node.scrollHeight;
-    }
-
-    return false;
+  scrollTo(options) {
+    this._invertibleScrollViewRef.scrollTo(options);
   }
 
-  scrollDown() {
-    const { autoScroll } = this.props;
 
-    if (!autoScroll) {
-      return false;
-    }
-
-    return setTimeout(() => {
-      if (this.messageList) {
-        const node = this.messageList;
-        const scrollTop = node && (node.scrollTop || node.scrollTop === 0);
-        const offsetHeight = node && (node.offsetHeight || node.offsetHeight === 0);
-        const scrollHeight = node && (node.scrollHeight || node.scrollHeight === 0);
-
-        if (scrollTop && offsetHeight && scrollHeight) {
-          this.messageList.scrollTop = this.messageList.scrollHeight;
-        }
-      }
-    }, 100);
+  renderScrollComponent(props) {
+    return (
+      <InvertibleScrollView
+        {...props}
+        ref={component => this._invertibleScrollViewRef = component}
+      />
+    );
   }
+
+  renderRow(message, sectionId, rowId) {
+    const messageProps = {
+      ...this.props,
+      key: message._id,
+      currentMessage: message,
+      previousMessage: message.previousMessage,
+      nextMessage: message.nextMessage,
+      position: message.user._id === this.props.user._id ? 'right' : 'left',
+    };
+
+    if (this.props.renderMessage) {
+      return this.props.renderMessage(messageProps);
+    }
+    return <Message {...messageProps} />;
+  }
+
 
   render() {
     const { children, style, listStyle } = this.props;
 
     return (
-      <article style={combineStyles(styles.container, style)}>
-        <ul
+      <View style={combineStyles(styles.container, style, { flex: 1 })}>
+        <ListView
           style={combineStyles(styles.list, listStyle)}
           ref={messageList => (this.messageList = messageList)}
-        >
-          {children}
-        </ul>
-      </article>
+          enableEmptySections
+          keyboardShouldPersistTaps
+          automaticallyAdjustContentInsets={false}
+          initialListSize={20}
+          pageSize={20}
+          renderRow={this.renderRow}
+          renderHeader={this.renderFooter}
+          renderScrollComponent={this.renderScrollComponent}
+        />
+      </View>
     );
   }
 }
