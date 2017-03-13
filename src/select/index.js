@@ -12,7 +12,6 @@ import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 import darken from '../internal/darken';
-import './array.find.polyfill';
 
 function getIconStyle(open, overrideStyle) {
   let style = styles.icon;
