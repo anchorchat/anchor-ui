@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from '../style/profile-sidebar';
@@ -53,4 +53,4 @@ class ProfileSidebar extends Component {
   }
 }
 
-export default Radium(ProfileSidebar);
+export default Uranium(ProfileSidebar);

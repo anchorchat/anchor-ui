@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/empty-states';
 import combineStyles from '../internal/combine-styles';
@@ -48,4 +48,4 @@ EmptyState.defaultProps = {
   bodyStyle: {}
 };
 
-export default pure(Radium(EmptyState));
+export default pure(Uranium(EmptyState));

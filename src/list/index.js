@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
@@ -36,4 +36,4 @@ List.defaultProps = {
   listRef: () => {}
 };
 
-export default pure(Radium(List));
+export default pure(Uranium(List));

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from './styles';
@@ -78,4 +78,4 @@ class ProfileCard extends Component {
   }
 }
 
-export default Radium(ProfileCard);
+export default Uranium(ProfileCard);

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import PopOver from '../pop-over';
 import Button from '../button';
@@ -122,4 +122,4 @@ class IconMenu extends Component {
   }
 }
 
-export default pure(Radium(IconMenu));
+export default pure(Uranium(IconMenu));

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/inputs';
 import combineStyles from '../internal/combine-styles';
@@ -57,4 +57,4 @@ Input.defaultProps = {
   inputRef: () => {}
 };
 
-export default pure(Radium(Input));
+export default pure(Uranium(Input));

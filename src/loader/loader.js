@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/loaders';
 import colors from '../settings/colors';
@@ -69,4 +69,4 @@ class Loader extends Component {
   }
 }
 
-export default Radium(Loader);
+export default Uranium(Loader);

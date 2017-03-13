@@ -1,6 +1,6 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-inputs';
 import Button from '../button';
@@ -73,8 +73,8 @@ class MessageInput extends Component {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'input', ':focus') !== Radium.getState(nextState, 'input', ':focus') ||
-      Radium.getState(this.state, 'input', ':disabled') !== Radium.getState(nextState, 'input', ':disabled')
+      Uranium.getState(this.state, 'input', ':focus') !== Uranium.getState(nextState, 'input', ':focus') ||
+      Uranium.getState(this.state, 'input', ':disabled') !== Uranium.getState(nextState, 'input', ':disabled')
     );
   }
 
@@ -135,4 +135,4 @@ class MessageInput extends Component {
   }
 }
 
-export default Radium(MessageInput);
+export default Uranium(MessageInput);

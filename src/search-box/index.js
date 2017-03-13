@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
 import IconSearch from '../icons/icon-search';
@@ -71,4 +71,4 @@ class SearchBox extends Component {
   }
 }
 
-export default pure(Radium(SearchBox));
+export default pure(Uranium(SearchBox));

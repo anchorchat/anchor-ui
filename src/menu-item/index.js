@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/menu-item';
 import combineStyles from '../internal/combine-styles';
@@ -93,4 +93,4 @@ class MenuItem extends Component {
   }
 }
 
-export default pure(Radium(MenuItem));
+export default pure(Uranium(MenuItem));

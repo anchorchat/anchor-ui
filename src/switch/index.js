@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/switch';
 import combineStyles from '../internal/combine-styles';
@@ -82,4 +82,4 @@ Switch.contextTypes = {
   color: PropTypes.string
 };
 
-export default pure(Radium(Switch));
+export default pure(Uranium(Switch));

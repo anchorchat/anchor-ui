@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
 import colors from '../settings/colors';
@@ -97,8 +97,7 @@ class ListItem extends Component {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'listItem', ':hover') !== Radium.getState(nextState, 'listItem', ':hover') ||
-      Radium.getState(this.state, 'listItem', ':active') !== Radium.getState(nextState, 'listItem', ':active')
+      Uranium.getState(this.state, 'listItem', ':active') !== Uranium.getState(nextState, 'listItem', ':active')
     );
   }
 
@@ -143,4 +142,4 @@ class ListItem extends Component {
   }
 }
 
-export default Radium(ListItem);
+export default Uranium(ListItem);

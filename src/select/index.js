@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from './styles';
 import IconChevronDown from '../icons/icon-chevron-down';
@@ -27,9 +27,6 @@ function getHeaderStyle(themeColor, overrideStyle) {
     styles.header,
     {
       backgroundColor: color,
-      ':hover': {
-        backgroundColor: darken(color, 0.05)
-      },
       ':active': {
         backgroundColor: darken(color, 0.15)
       }
@@ -143,4 +140,4 @@ class Select extends Component {
   }
 }
 
-export default pure(Radium(Select));
+export default pure(Uranium(Select));

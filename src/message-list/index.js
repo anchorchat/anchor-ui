@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-lists';
 import combineStyles from '../internal/combine-styles';
@@ -103,4 +103,4 @@ class MessageList extends Component {
   }
 }
 
-export default Radium(MessageList);
+export default Uranium(MessageList);

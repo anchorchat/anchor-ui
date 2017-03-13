@@ -4,7 +4,7 @@ import {
   View,
 } from 'react-native';
 import pure from 'recompose/pure';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import styles from '../style/avatars';
 import combineStyles from '../internal/combine-styles';
 

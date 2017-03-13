@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import styles from '../style/buttons';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
@@ -60,8 +60,7 @@ class Button extends Component {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'button', ':hover') !== Radium.getState(nextState, 'button', ':hover') ||
-      Radium.getState(this.state, 'button', ':active') !== Radium.getState(nextState, 'button', ':active')
+      Uranium.getState(this.state, 'button', ':active') !== Uranium.getState(nextState, 'button', ':active')
     );
   }
 

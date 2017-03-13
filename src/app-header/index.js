@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
-import Radium from 'radium';
+import Uranium from 'uranium';
 import styles from '../style/app-header';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
@@ -73,4 +73,4 @@ class AppHeader extends Component {
   }
 }
 
-export default Radium(AppHeader);
+export default Uranium(AppHeader);
