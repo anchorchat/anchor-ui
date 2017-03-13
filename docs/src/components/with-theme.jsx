@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import WithTheme from 'anchor-ui/with-theme';
 import MenuItem from 'anchor-ui/menu-item';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
 
-const usage = '```js\n import PopOver from \'anchor-ui/icons\';';
+const usage = '```js\n import WithTheme from \'anchor-ui/icons\';';
 
-function MenuItemDoc() {
-  const componentData = _.find(components, component => component.displayName === 'MenuItem');
+function WithThemeDoc() {
+  const componentData = _.find(components, component => component.displayName === 'WithTheme');
   return (
     <article className="doc">
-      <h1>Menu Item</h1>
+      <h1>Banner</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
@@ -22,12 +23,11 @@ function MenuItemDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <MenuItem text="Active Menu item" onClick={() => {}} active />
-        <MenuItem text="Menu item" onClick={() => {}} />
+        <WithTheme />
       </section>
       <Props props={componentData.props} />
     </article>
   );
 }
 
-export default MenuItemDoc;
+export default WithThemeDoc;

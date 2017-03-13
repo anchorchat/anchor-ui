@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import PopOver from 'anchor-ui/pop-over';
 import MenuItem from 'anchor-ui/menu-item';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
 
-const usage = '```js\n import PopOver from \'anchor-ui/icons\';';
+const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
 
-function MenuItemDoc() {
-  const componentData = _.find(components, component => component.displayName === 'MenuItem');
+function PopOverDoc() {
+  const componentData = _.find(components, component => component.displayName === 'PopOver');
   return (
     <article className="doc">
-      <h1>Menu Item</h1>
+      <h1>Pop Over</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
@@ -22,12 +23,15 @@ function MenuItemDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <MenuItem text="Active Menu item" onClick={() => {}} active />
-        <MenuItem text="Menu item" onClick={() => {}} />
+        {/* TODO: make popOver visible */}
+        <PopOver popOverRef={() => {}} >
+          <MenuItem text="Active Menu item" onClick={() => {}} active />
+          <MenuItem text="Menu item" onClick={() => {}} />
+        </PopOver>
       </section>
       <Props props={componentData.props} />
     </article>
   );
 }
 
-export default MenuItemDoc;
+export default PopOverDoc;
