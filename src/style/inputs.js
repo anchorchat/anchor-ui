@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 
 const styleSheet = {
   inputWrapper: {
@@ -16,6 +16,7 @@ const styleSheet = {
     lineHeight: '16px',
     padding: '6.5px',
     width: '100%',
+    outline: 'none',
     ':focus': {
       outline: 'none'
     }

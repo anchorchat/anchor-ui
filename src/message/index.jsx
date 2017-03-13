@@ -6,7 +6,7 @@ import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from '../style/messages';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
 
@@ -28,8 +28,10 @@ function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   const color = themeColor || colors.theme;
 
   if (myMessage) {
-    style = combineStyles(styles.message, styles.myMessage);
-    style = { ...style, backgroundColor: color, borderRightColor: color };
+    style = combineStyles(
+      combineStyles(styles.message, styles.myMessage),
+      { backgroundColor: color, borderRightColor: color }
+    );
   }
 
   if (avatar) {
@@ -41,42 +43,65 @@ function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
   }
 
   if (compact) {
-    style = combineStyles(style, {
-      marginLeft: '0',
-      marginRight: '0',
-      maxWidth: '100%',
-      display: 'flex'
-    });
+    style = combineStyles(
+      style,
+      {
+        marginLeft: '0',
+        marginRight: '0',
+        maxWidth: '100%',
+        display: 'flex'
+      }
+    );
   }
 
   return combineStyles(style, overrideStyle);
 }
 
-function getTextStyle(style, myMessage, overrideStyle) {
+function getTextStyle(myMessage, fontSize, overrideStyle) {
+  let style = styles.messageBody;
+
   if (myMessage) {
-    return combineStyles({ ...style, color: colors.white }, overrideStyle);
+    style = combineStyles(style, { color: colors.white });
+  }
+
+  if (fontSize === 'medium') {
+    style = combineStyles(style, { fontSize: '18px', lineHeight: '20px' });
+  }
+
+  if (fontSize === 'large') {
+    style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
   }
 
   return combineStyles(style, overrideStyle);
 }
 
-function getHeaderStyle(style, myMessage, compact, overrideStyle) {
-  let combinedStyles = style;
+function getHeaderStyle(myMessage, compact, fontSize, overrideStyle) {
+  let style = styles.messageHeader;
 
   if (myMessage) {
-    combinedStyles = combineStyles({ ...combinedStyles, color: colors.white }, overrideStyle);
+    style = combineStyles(style, { color: colors.white });
   }
 
   if (compact) {
-    combinedStyles = combineStyles({ ...combinedStyles, flexShrink: '0', marginRight: '10px' }, overrideStyle);
+    style = combineStyles(style, { flexShrink: '0', marginRight: '10px', marginBottom: '0' });
   }
 
-  return combineStyles(combinedStyles, overrideStyle);
+  if (fontSize === 'medium') {
+    style = combineStyles(style, { fontSize: '16px', lineHeight: '20px' });
+  }
+
+  if (fontSize === 'large') {
+    style = combineStyles(style, { fontSize: '18px', lineHeight: '24px' });
+  }
+
+  return combineStyles(style, overrideStyle);
 }
 
-function getTimeStyle(style, myMessage, overrideStyle) {
+function getTimeStyle(myMessage, overrideStyle) {
+  let style = styles.messageTime;
+
   if (myMessage) {
-    return combineStyles({ ...style, left: 0, right: 'initial', opacity: '.75' }, overrideStyle);
+    style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -92,7 +117,7 @@ class Message extends Component {
     /** Message object containing : body, createdAt, username */
     message: PropTypes.shape({
       /** The message's body text */
-      body: PropTypes.string.isRequired,
+      body: PropTypes.node.isRequired,
       /** Time when the message was created */
       createdAt: PropTypes.oneOfType([
         PropTypes.string,
@@ -111,8 +136,9 @@ class Message extends Component {
     messageBodyStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the time element */
     messageTimeStyle: PropTypes.instanceOf(Object),
-    /** Flag used to change message styles.
-     * True if the message was sent by the current user */
+    /** The message size. One of the following: ["small", "medium", "large"] */
+    fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+    /** Flag used to change message styles. True if the message was sent by the current user */
     myMessage: PropTypes.bool,
     /** Enable emojione for messages */
     emoji: PropTypes.bool,
@@ -129,6 +155,7 @@ class Message extends Component {
     messageHeaderStyle: {},
     messageBodyStyle: {},
     messageTimeStyle: {},
+    fontSize: 'small',
     myMessage: false,
     emoji: false,
     enableLinks: false,
@@ -181,7 +208,8 @@ class Message extends Component {
       messageHeaderStyle,
       messageBodyStyle,
       messageTimeStyle,
-      compact
+      compact,
+      fontSize
     } = this.props;
     const { color } = this.context;
 
@@ -206,17 +234,19 @@ class Message extends Component {
           }
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
           <header
-            style={getHeaderStyle(styles.messageHeader, myMessage, compact, messageHeaderStyle)}
+            style={
+              getHeaderStyle(myMessage, compact, fontSize, messageHeaderStyle)
+            }
           >
             {message.username}
           </header>
-          <p style={getTextStyle(styles.messageBody, myMessage, messageBodyStyle)}>
+          <p style={getTextStyle(myMessage, fontSize, messageBodyStyle)}>
             {
               emoji
               ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
               : message.body
             }
-            <span style={getTimeStyle(styles.messageTime, myMessage, messageTimeStyle)}>
+            <span style={getTimeStyle(myMessage, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
             </span>
           </p>

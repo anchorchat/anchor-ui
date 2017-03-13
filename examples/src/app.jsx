@@ -10,9 +10,12 @@ import {
   Button,
   AppHeader,
   Badge,
-  MessageList
+  MessageList,
+  IconMenu,
+  MenuItem,
+  Select
 } from '../../dist';
-import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels } from '../../dist/icons';
+import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
 import './app.css';
 import theDoctor from './assets/images/the_doctor.jpg';
@@ -45,6 +48,26 @@ const channels = [
 ];
 
 const messages = [
+  {
+    body: 'This is a small message',
+    createdAt: new Date(),
+    username: 'The Doctor',
+    profileImage: theDoctor
+  },
+  {
+    body: 'This is a medium message',
+    createdAt: new Date(),
+    username: 'The Doctor',
+    profileImage: theDoctor,
+    fontSize: 'medium',
+  },
+  {
+    body: 'This is a large message',
+    createdAt: new Date(),
+    username: 'The Doctor',
+    profileImage: theDoctor,
+    fontSize: 'large',
+  },
   {
     body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
@@ -86,11 +109,13 @@ class App extends Component {
 
     this.state = {
       message: '',
-      messages
+      messages,
+      select: 2
     };
 
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
+    this.changeSelect = this.changeSelect.bind(this);
   }
 
   changeMessage(event) {
@@ -125,6 +150,12 @@ class App extends Component {
     return false;
   }
 
+  changeSelect(value) {
+    this.setState({
+      select: value
+    });
+  }
+
   render() {
     const channelListStyle = {
       height: 'calc(100% - 116px)',
@@ -155,14 +186,21 @@ class App extends Component {
           }
           icon={<img src={logo} alt="Anchor Chat" />}
           rightButton={
-            <Button onClick={() => {}} iconButton>
-              <IconExit color={colors.white} />
-            </Button>
+            <IconMenu
+              icon={<IconExit color={colors.white} />}
+              header="Language"
+              headerStyle={{ textTransform: 'capitalize' }}
+              secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+              dividerText="More items"
+            >
+              <MenuItem text="Active item" onClick={() => {}} active />
+              <MenuItem text="Inactive item" onClick={() => {}} />
+            </IconMenu>
           }
         />
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
-          <List style={channelListStyle}>
+          <List style={channelListStyle} header="Channels">
             {channels.map(channel => (
               <ListItem
                 key={`channel-list-${channel.name}`}
@@ -176,7 +214,7 @@ class App extends Component {
                   </Button>
                   : null
                 }
-                avatar={dalek}
+                avatar={<ChannelAvatar inverted={currentChannel === channel.name} />}
                 badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
               />
             ))}
@@ -203,6 +241,7 @@ class App extends Component {
                 myMessage={message.username === currentUser}
                 avatar={message.profileImage}
                 emoji
+                fontSize={message.fontSize ? message.fontSize : null}
               />
             ))}
           </MessageList>
@@ -227,6 +266,11 @@ class App extends Component {
             button={<Button onClick={() => {}}>Click me</Button>}
           />
         </article>
+        <Select open={this.state.select} value={this.state.select}>
+          <MenuItem text="hi1" onClick={() => this.changeSelect(1)} value={1} />
+          <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
+          <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
+        </Select>
       </section>
     );
   }

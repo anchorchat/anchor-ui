@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from '../style/app-header';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  const style = { ...styles.header, background: color };
+  const style = combineStyles(styles.header, { background: color });
 
   return combineStyles(style, overrideStyle);
 }
@@ -16,9 +16,10 @@ function getStyle(themeColor, overrideStyle) {
 /** Your app's header */
 class AppHeader extends Component {
   static displayName = 'AppHeader';
+
   static propTypes = {
     /** Title text (your app's name) */
-    text: PropTypes.node.isRequired,
+    text: PropTypes.node,
     /** Icon (your app's icon) */
     icon: PropTypes.node,
     /** Right-hand side placed button */
@@ -34,6 +35,7 @@ class AppHeader extends Component {
   }
 
   static defaultProps = {
+    text: null,
     style: {},
     textStyle: {},
     iconStyle: {},
@@ -60,7 +62,7 @@ class AppHeader extends Component {
     return (
       <header style={getStyle(color, style)}>
         {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1>
+        {text ? <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1> : null}
         {
           rightButton
           ? <div style={combineStyles(styles.button, buttonStyle)}>{rightButton}</div>

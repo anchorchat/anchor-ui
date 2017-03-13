@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import darken from '../internal/darken';
 
 const styleSheet = {
@@ -7,6 +7,16 @@ const styleSheet = {
     boxSizing: 'border-box',
     margin: '0',
     paddingLeft: '0',
+  },
+  listHeader: {
+    paddingTop: '10px',
+    paddingRight: '10px',
+    paddingBottom: '10px',
+    paddingLeft: '16px',
+    margin: '0',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: colors.primaryText
   },
   listItem: {
     backgroundColor: colors.white,
@@ -41,6 +51,17 @@ const styleSheet = {
       backgroundColor: darken(colors.theme, 0.15)
     }
   },
+  mutedIcon: {
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    width: '40px',
+    height: '40px',
+    padding: '8px',
+    boxSizing: 'border-box',
+    backgroundColor: 'rgba(21, 21, 21, .75)',
+    borderRadius: '50%'
+  },
   rightButton: {
     paddingRight: '52px'
   },
@@ -57,7 +78,7 @@ const styleSheet = {
     userSelect: 'none'
   },
   secondaryText: {
-    color: colors.secondaryText,
+    color: colors.primaryText,
     fontSize: '14px',
     fontWeight: 'normal',
     marginBottom: 0,

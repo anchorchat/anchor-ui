@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 
 const styleSheet = {
   input: {
@@ -19,6 +19,7 @@ const styleSheet = {
     paddingLeft: '10px',
     paddingRight: '48px',
     width: '100%',
+    outline: 'none',
     ':focus': {
       outline: 'none'
     },

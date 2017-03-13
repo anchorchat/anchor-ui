@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 
 const styleSheet = {
   emptyState: {
@@ -15,7 +15,7 @@ const styleSheet = {
   heading: {
     fontSize: '16px',
     fontWeight: 'bold',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     margin: '0',
     textAlign: 'center'
   },
@@ -24,7 +24,8 @@ const styleSheet = {
     color: colors.primaryText,
     marginBottom: '30px',
     marginTop: '16px',
-    textAlign: 'center'
+    textAlign: 'center',
+    maxWidth: '100%'
   }
 };
 

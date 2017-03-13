@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import Avatar from '../avatar';
+import IconMute from '../icons/icon-mute';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 
@@ -12,12 +13,14 @@ function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
 
   const color = themeColor || colors.theme;
 
-  const activeStyle = {
-    ...styles.listItem,
-    backgroundColor: color,
-    ':hover': { backgroundColor: darken(color, 0.05) },
-    ':active': { backgroundColor: darken(color, 0.15) }
-  };
+  const activeStyle = combineStyles(
+    styles.listItem,
+    {
+      backgroundColor: color,
+      ':hover': { backgroundColor: darken(color, 0.05) },
+      ':active': { backgroundColor: darken(color, 0.15) }
+    }
+  );
 
   if (active) {
     style = combineStyles(style, activeStyle);
@@ -38,7 +41,7 @@ function getTextStyle(textStyle, active, overrideStyle) {
   let style = textStyle;
 
   if (active) {
-    style = { ...style, color: colors.white };
+    style = combineStyles(style, { color: colors.white });
   }
 
   return combineStyles(style, overrideStyle);
@@ -65,10 +68,12 @@ class ListItem extends Component {
     active: PropTypes.bool,
     /** Right-hand side placed button */
     rightButton: PropTypes.node,
-    /** Avatar object referenced by the list item */
-    avatar: PropTypes.string,
+    /** The item's avatar, if a string is supplied Avatar component is used */
+    avatar: PropTypes.node,
     /** Badge object referenced by the list item */
-    badge: PropTypes.node
+    badge: PropTypes.node,
+    /** Add muted styles to ListItem */
+    muted: PropTypes.bool
   }
 
   static defaultProps = {
@@ -80,7 +85,8 @@ class ListItem extends Component {
     active: false,
     rightButton: null,
     avatar: '',
-    badge: null
+    badge: null,
+    muted: false
   }
 
   static contextTypes = {
@@ -107,7 +113,8 @@ class ListItem extends Component {
       badge,
       style,
       primaryTextStyle,
-      secondaryTextStyle
+      secondaryTextStyle,
+      muted
     } = this.props;
     const { color } = this.context;
 
@@ -116,8 +123,9 @@ class ListItem extends Component {
         {
           avatar
           ? <div style={styles.avatar}>
+            {muted ? <div style={styles.mutedIcon}><IconMute color={colors.white} /></div> : null}
             {badge ? <div style={styles.badge}>{badge}</div> : null}
-            <Avatar image={avatar} />
+            {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
           </div>
           : null
         }

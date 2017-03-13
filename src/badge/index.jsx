@@ -2,14 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from '../style/badges';
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(themeColor, inverted, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  const style = { ...styles.badge, backgroundColor: color };
-  const invertedStyle = { ...styles.inverted, color };
+  const style = combineStyles(styles.badge, { backgroundColor: color });
+  const invertedStyle = combineStyles(styles.inverted, { color });
 
   if (inverted) {
     return combineStyles(combineStyles(style, invertedStyle), overrideStyle);

@@ -8,23 +8,14 @@ import combineStyles from '../internal/combine-styles';
 function getStyle(themeColor, inverted, index, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  let style = {
-    ...styles.dot,
-    backgroundColor: color
-  };
+  let style = combineStyles(styles.dot, { backgroundColor: color });
 
   if (index === 1) {
-    style = {
-      ...style,
-      animationDelay: '.33s'
-    };
+    style = combineStyles(style, { animationDelay: '.33s' });
   }
 
   if (index === 2) {
-    style = {
-      ...style,
-      animationDelay: '.66s'
-    };
+    style = combineStyles(style, { animationDelay: '.66s' });
   }
 
   if (inverted) {

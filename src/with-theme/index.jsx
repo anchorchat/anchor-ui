@@ -1,26 +1,33 @@
-import React, { Component, PropTypes } from 'react';
+import { Component, PropTypes } from 'react';
 import colors from '../settings/colors';
 
-function withTheme(ChildComponent, color) {
-  class Theme extends Component {
-    static childContextTypes = {
-      color: PropTypes.string.isRequired
-    }
+class WithTheme extends Component {
+  static displayName = 'WithTheme'
 
-    getChildContext() {
-      return {
-        color: color || colors.theme
-      };
-    }
-
-    render() {
-      return <ChildComponent {...this.props} />;
-    }
+  static propTypes = {
+    /** Your theme's color */
+    color: PropTypes.string,
+    /** Children to apply theme color to  */
+    children: PropTypes.node.isRequired
   }
 
-  return Theme;
+  static defaultProps = {
+    color: colors.theme
+  }
+
+  static childContextTypes = {
+    color: PropTypes.string.isRequired
+  }
+
+  getChildContext() {
+    return {
+      color: this.props.color
+    };
+  }
+
+  render() {
+    return this.props.children;
+  }
 }
 
-withTheme.displayName = 'withTheme';
-
-export default withTheme;
+export default WithTheme;

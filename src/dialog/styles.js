@@ -1,7 +1,7 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 import fade from '../internal/fade';
 
-const styleSheet = {
+export default {
   overlay: {
     display: 'flex',
     flexDirection: 'column',
@@ -14,22 +14,37 @@ const styleSheet = {
     backgroundColor: fade(colors.black, 0.5),
     zIndex: '2'
   },
-  dialog: {
+  modal: {
     width: '80%',
     maxWidth: '350px',
     margin: '0 auto',
     background: colors.theme,
     borderRadius: '3px',
-    padding: '50px 30px',
+    padding: '30px',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     position: 'relative'
   },
-  headingText: {
+  dialog: {
+    width: '80%',
+    maxWidth: '350px',
+    margin: '0 auto',
+    background: colors.white,
+    borderRadius: '3px',
+    padding: '24px 16px',
+    boxSizing: 'border-box',
+    position: 'relative'
+  },
+  dialogHeading: {
+    margin: '0 0 16px 0',
+    color: colors.primaryText,
+    fontWeight: 'bold'
+  },
+  modalHeading: {
     color: colors.white,
-    fontSize: '24px',
+    fontSize: '22px',
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: '0',
@@ -46,7 +61,7 @@ const styleSheet = {
     marginLeft: '0',
     marginRight: '0',
     marginBottom: '0',
-    fontSize: '12px',
+    fontSize: '14px',
     color: colors.white
   },
   button: {
@@ -66,5 +81,3 @@ const styleSheet = {
     cursor: 'pointer'
   }
 };
-
-export default styleSheet;

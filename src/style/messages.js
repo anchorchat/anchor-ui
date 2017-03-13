@@ -1,4 +1,4 @@
-import { colors } from '../settings';
+import colors from '../settings/colors';
 
 const styleSheet = {
   messageContainer: {
@@ -49,7 +49,7 @@ const styleSheet = {
     color: colors.secondaryText,
     fontSize: '14px',
     fontWeight: 'bold',
-    lineHeight: '14px',
+    lineHeight: '18px',
     marginBottom: '5px',
   },
   messageBody: {

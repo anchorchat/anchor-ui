@@ -5,7 +5,7 @@ import styles from '../style/avatars';
 import combineStyles from '../internal/combine-styles';
 
 function getStyle(image, overrideStyle) {
-  const style = { ...styles.avatar, backgroundImage: `url(${image})` };
+  const style = combineStyles(styles.avatar, { backgroundImage: `url(${image})` });
 
   return combineStyles(style, overrideStyle);
 }
