@@ -1,7 +1,7 @@
+/* "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }] */
 import React, { PropTypes } from 'react';
 import {
-  StyleSheet,
-  View,
+  View
 } from 'react-native';
 import pure from 'recompose/pure';
 import Uranium from 'uranium';
@@ -17,7 +17,7 @@ function getStyle(image, overrideStyle) {
 /** A user's profile image */
 function Avatar({ image, style }) {
   return (
-    <section style={getStyle(image, style)} />
+    <View style={getStyle(image, style)} />
   );
 }
 

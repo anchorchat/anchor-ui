@@ -3,10 +3,11 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": 0,
-    "jsx-a11y/no-static-element-interactions": 0
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
   },
   "globals": {
-    "window": true
+    "window": true,
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
   },
   "plugins": [
     "mocha"
