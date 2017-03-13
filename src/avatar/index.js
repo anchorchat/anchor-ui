@@ -1,4 +1,8 @@
 import React, { PropTypes } from 'react';
+import {
+  StyleSheet,
+  View,
+} from 'react-native';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import styles from '../style/avatars';
@@ -30,4 +34,4 @@ Avatar.defaultProps = {
   style: {}
 };
 
-export default pure(Radium(Avatar));
+export default pure(Uranium(Avatar));
