@@ -47,10 +47,8 @@
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
-    "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-docgen": "^2.13.0",
-    "react-dom": "^15.4.2",
     "sinon": "^1.17.7"
   },
   "babel": {
