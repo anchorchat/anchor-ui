@@ -802,12 +802,6 @@
           "value": "{}",
           "computed": false
         }
-      },
-      "open": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
       }
     }
   },
@@ -2516,6 +2510,18 @@
     "displayName": "SearchBox",
     "methods": [
       {
+        "name": "changeSearchQuery",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "handleChange",
         "docblock": null,
         "modifiers": [],
@@ -2534,14 +2540,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value, param: event"
+        "description": "Change the input's value"
       },
-      "handleSearch": {
+      "changeSearchQuery": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Search based on the input's value, param: event"
+        "description": "Change the search query with debounce"
       },
       "value": {
         "type": {

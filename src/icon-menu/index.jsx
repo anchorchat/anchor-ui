@@ -31,7 +31,6 @@ class IconMenu extends Component {
   static defaultProps = {
     header: null,
     style: {},
-    open: false,
     headerStyle: {},
     secondaryMenuItems: null,
     dividerText: null
