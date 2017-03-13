@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import WithTheme from 'anchor-ui/with-theme';
-import MenuItem from 'anchor-ui/menu-item';
+import Button from 'anchor-ui/button';
 import _ from 'underscore';
 import Props from './props';
 import components from '../../components.json';
@@ -23,7 +23,12 @@ function WithThemeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <WithTheme />
+        <WithTheme color="#f2912c">
+          <Button onClick={() => {}}><p>With theme</p></Button>
+        </WithTheme>
+        <WithTheme color="#22ac55">
+          <Button onClick={() => {}}><p>With theme</p></Button>
+        </WithTheme>
       </section>
       <Props props={componentData.props} />
     </article>

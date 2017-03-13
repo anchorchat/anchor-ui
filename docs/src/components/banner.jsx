@@ -23,7 +23,11 @@ function BannerDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Banner content={bannerThumb} hideBanner={() => {}} />
+        <Banner
+          content={{ desktop: (bannerThumb), mobile: (bannerThumb) }}
+          open
+          hideBanner={() => {}}
+        />
       </section>
       <Props props={componentData.props} />
     </article>
