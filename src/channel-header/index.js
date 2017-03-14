@@ -3,7 +3,6 @@ import {
   View,
   Text
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/channel-header';
 import combineStyles from '../internal/combine-styles';
@@ -57,4 +56,4 @@ ChannelHeader.defaultProps = {
   leftButton: null
 };
 
-export default pure(Uranium(ChannelHeader));
+export default pure(ChannelHeader);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
-import { StyleRoot } from 'uranium';
 
 // StyleRoot is needed for keyframes to work,
 // by exporting it like this a consumer doesn't need to wrap StyleRoot around their application
@@ -8,9 +7,7 @@ import { StyleRoot } from 'uranium';
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
 function LoaderWithStyleRoot() {
   return (
-    <StyleRoot>
-      <ActivityIndicator />
-    </StyleRoot>
+    <ActivityIndicator />
   );
 }
 

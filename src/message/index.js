@@ -4,7 +4,6 @@ import {
   Text
 } from 'react-native';
 import format from 'date-fns/format';
-import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from '../style/messages';
@@ -252,4 +251,4 @@ class Message extends Component {
   }
 }
 
-export default Uranium(Message);
+export default Message;

@@ -3,7 +3,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from './styles';
 import colors from '../settings/colors';
@@ -142,4 +141,4 @@ class Select extends Component {
   }
 }
 
-export default pure(Uranium(Select));
+export default pure(Select);

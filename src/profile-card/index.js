@@ -3,7 +3,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from './styles';
@@ -82,4 +81,4 @@ class ProfileCard extends Component {
   }
 }
 
-export default Uranium(ProfileCard);
+export default ProfileCard;

@@ -3,7 +3,6 @@ import {
   Text
 } from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
-import Uranium from 'uranium';
 import styles from '../style/badges';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
@@ -70,4 +69,4 @@ class Badge extends Component {
   }
 }
 
-export default Uranium(Badge);
+export default Badge;

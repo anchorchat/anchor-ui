@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleRoot } from 'uranium';
 import PopOver from './pop-over';
 
 // StyleRoot is needed for keyframes to work,
@@ -8,9 +7,7 @@ import PopOver from './pop-over';
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
 function PopOverWithStyleRoot(props) {
   return (
-    <StyleRoot>
       <PopOver {...props} />
-    </StyleRoot>
   );
 }
 

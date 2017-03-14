@@ -4,7 +4,6 @@ import {
   Text
 } from 'react-native';
 import pure from 'recompose/pure';
-import Uranium from 'uranium';
 import styles from '../style/divider';
 import combineStyles from '../internal/combine-styles';
 
@@ -34,4 +33,4 @@ Divider.defaultProps = {
 
 Divider.displayName = 'Divider';
 
-export default pure(Uranium(Divider));
+export default pure(Divider);

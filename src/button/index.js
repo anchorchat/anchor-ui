@@ -3,7 +3,6 @@ import {
   Button as ReactNativeButton
 } from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
-import Uranium from 'uranium';
 import styles from '../style/buttons';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
@@ -78,4 +77,4 @@ class Button extends Component {
   }
 }
 
-export default Uranium(Button);
+export default Button;

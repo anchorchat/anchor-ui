@@ -4,7 +4,6 @@ import {
   View
 } from 'react-native';
 import pure from 'recompose/pure';
-import Uranium from 'uranium';
 import styles from '../style/avatars';
 import combineStyles from '../internal/combine-styles';
 
@@ -34,4 +33,4 @@ Avatar.defaultProps = {
   style: {}
 };
 
-export default pure(Uranium(Avatar));
+export default pure(Avatar);

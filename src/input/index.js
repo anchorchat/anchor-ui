@@ -4,7 +4,6 @@ import {
   TextInput,
   View
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/inputs';
 import combineStyles from '../internal/combine-styles';
@@ -62,4 +61,4 @@ Input.defaultProps = {
   inputRef: () => {}
 };
 
-export default pure(Uranium(Input));
+export default pure(Input);

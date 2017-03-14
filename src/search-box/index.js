@@ -3,7 +3,6 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
 import styles from '../style/search-box';
@@ -74,4 +73,4 @@ class SearchBox extends Component {
   }
 }
 
-export default pure(Uranium(SearchBox));
+export default pure(SearchBox);

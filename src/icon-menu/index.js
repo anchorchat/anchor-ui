@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import {
   View
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import PopOver from '../pop-over';
 import Button from '../button';
@@ -125,4 +124,4 @@ class IconMenu extends Component {
   }
 }
 
-export default pure(Uranium(IconMenu));
+export default pure(IconMenu);

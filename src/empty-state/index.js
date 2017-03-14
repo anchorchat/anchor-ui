@@ -3,7 +3,6 @@ import {
   View,
   Text
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/empty-states';
 import combineStyles from '../internal/combine-styles';
@@ -52,4 +51,4 @@ EmptyState.defaultProps = {
   bodyStyle: {}
 };
 
-export default pure(Uranium(EmptyState));
+export default pure(EmptyState);

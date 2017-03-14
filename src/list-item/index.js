@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
 import colors from '../settings/colors';
@@ -141,4 +140,4 @@ class ListItem extends Component {
   }
 }
 
-export default Uranium(ListItem);
+export default ListItem;

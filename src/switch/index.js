@@ -3,7 +3,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/switch';
 import combineStyles from '../internal/combine-styles';
@@ -86,4 +85,4 @@ Switch.contextTypes = {
   color: PropTypes.string
 };
 
-export default pure(Uranium(Switch));
+export default pure(Switch);

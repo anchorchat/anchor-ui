@@ -14,7 +14,6 @@ export {MenuItem} from './menu-item';
 export {Message} from './message';
 export {MessageInput} from './message-input';
 export {MessageList} from './message-list';
-export {PopOver} from './pop-over';
 export {ProfileCard} from './profile-card';
 export {ProfileSidebar} from './profile-sidebar';
 export {SearchBox} from './search-box';

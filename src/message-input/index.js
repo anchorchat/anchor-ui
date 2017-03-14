@@ -4,7 +4,6 @@ import {
   TextInput,
   View
 } from 'react-native';
-import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-inputs';
 import Button from '../button';
@@ -75,9 +74,7 @@ class MessageInput extends Component {
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext) ||
-      Uranium.getState(this.state, 'input', ':focus') !== Uranium.getState(nextState, 'input', ':focus') ||
-      Uranium.getState(this.state, 'input', ':disabled') !== Uranium.getState(nextState, 'input', ':disabled')
+      !shallowEqual(this.context, nextContext)
     );
   }
 
@@ -138,4 +135,4 @@ class MessageInput extends Component {
   }
 }
 
-export default Uranium(MessageInput);
+export default MessageInput;

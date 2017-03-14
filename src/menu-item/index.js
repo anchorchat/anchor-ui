@@ -3,7 +3,6 @@ import {
   View,
   Text
 } from 'react-native';
-import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from '../style/menu-item';
 import combineStyles from '../internal/combine-styles';
@@ -96,4 +95,4 @@ class MenuItem extends Component {
   }
 }
 
-export default pure(Uranium(MenuItem));
+export default pure(MenuItem);

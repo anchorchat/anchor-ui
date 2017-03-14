@@ -3,7 +3,6 @@ import {
   ListView,
   View,
 } from 'react-native';
-import Uranium from 'uranium';
 import InvertibleScrollView from 'react-native-invertible-scroll-view';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-lists';
@@ -119,4 +118,4 @@ class MessageList extends Component {
   }
 }
 
-export default Uranium(MessageList);
+export default MessageList;
