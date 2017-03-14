@@ -6,7 +6,6 @@ import {
 import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
-import IconSearch from '../icons/icon-search';
 import styles from '../style/search-box';
 import combineStyles from '../internal/combine-styles';
 

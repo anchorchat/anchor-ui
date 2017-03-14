@@ -4,7 +4,6 @@ import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/lists';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
-import IconMute from '../icons/icon-mute';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 

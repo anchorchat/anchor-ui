@@ -6,7 +6,6 @@ import {
 import Uranium from 'uranium';
 import pure from 'recompose/pure';
 import styles from './styles';
-import IconChevronDown from '../icons/icon-chevron-down';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';

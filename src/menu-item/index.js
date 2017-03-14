@@ -8,7 +8,6 @@ import pure from 'recompose/pure';
 import styles from '../style/menu-item';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
-import IconSuccess from '../icons/icon-success';
 
 function getStyle(themeColor, icon, active, overrideStyle) {
   let style = styles.menuItem;

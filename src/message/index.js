@@ -4,9 +4,7 @@ import {
   Text
 } from 'react-native';
 import format from 'date-fns/format';
-import Radium from 'radium';
-import emojione from 'emojione';
-import escape from 'escape-html';
+import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from '../style/messages';
@@ -159,7 +157,6 @@ class Message extends Component {
     messageTimeStyle: {},
     fontSize: 'small',
     myMessage: false,
-    emoji: false,
     enableLinks: false,
     compact: false
   }
@@ -255,4 +252,4 @@ class Message extends Component {
   }
 }
 
-export default Radium(Message);
+export default Uranium(Message);

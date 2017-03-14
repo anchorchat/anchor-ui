@@ -8,7 +8,6 @@ import Uranium from 'uranium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-inputs';
 import Button from '../button';
-import IconSend from '../icons/icon-send';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 

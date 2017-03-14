@@ -1,8 +1,8 @@
 {
-  "name": "react-native-anchor-ui",
-  "version": "0.0.1",
+  "name": "react-native-anchor",
+  "version": "1.0.0",
   "description": "React-native Component UI Kit",
-  "main": "dist/index.js",
+  "main": "index.js",
   "files": [
     "/*"
   ],
@@ -32,15 +32,8 @@
     "url": "https://github.com/anchorchat/anchor-ui/issues"
   },
   "homepage": "https://github.com/anchorchat/anchor-ui#readme",
-  "babel": {
-    "presets": [
-      "react",
-      "es2015",
-      "stage-0"
-    ],
-    "plugins": [
-      "add-module-exports"
-    ]
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1"
   },
   "dependencies": {
     "color": "^1.0.3",
@@ -48,8 +41,9 @@
     "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-native-invertible-scroll-view": "^1.0.0",
+    "react-native-match-media": "^0.1.1",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0",
-    "uranium": "github:tuckerconnelly/uranium"
+    "uranium": "github:svenjens/uranium"
   }
 }

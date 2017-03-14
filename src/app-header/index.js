@@ -4,7 +4,6 @@ import {
   Text
 } from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
-import Uranium from 'uranium';
 import styles from '../style/app-header';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
@@ -77,4 +76,4 @@ class AppHeader extends Component {
   }
 }
 
-export default Uranium(AppHeader);
+export default AppHeader;
