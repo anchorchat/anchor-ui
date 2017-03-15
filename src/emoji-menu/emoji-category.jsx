@@ -3,10 +3,11 @@ import Radium, { Style } from 'radium';
 import pure from 'recompose/pure';
 import createMarkup from './create-markup';
 import styles from './styles';
+import combineStyles from '../internal/combine-styles';
 
-function EmojiCategory({ category, emojis, sendEmoji }) {
+function EmojiCategory({ category, emojis, sendEmoji, style, emojiStyle }) {
   return (
-    <article style={styles.category}>
+    <article style={combineStyles(styles.category, style)}>
       <h1 style={styles.category.header}>{category}</h1>
       <section style={styles.category.emojiContainer}>
         {emojis.map(emoji => (
@@ -14,7 +15,7 @@ function EmojiCategory({ category, emojis, sendEmoji }) {
             dangerouslySetInnerHTML={createMarkup(emoji.shortname)}
             key={`emoji-${emoji.shortname}`}
             onClick={() => sendEmoji(emoji)}
-            style={styles.category.emoji}
+            style={combineStyles(styles.category.emoji, emojiStyle)}
             className="emoji"
           />
         ))}
@@ -39,7 +40,14 @@ EmojiCategory.propTypes = {
       shortname: PropTypes.string.isRequired
     })
   ).isRequired,
-  sendEmoji: PropTypes.func.isRequired
+  sendEmoji: PropTypes.func.isRequired,
+  style: PropTypes.instanceOf(Object),
+  emojiStyle: PropTypes.instanceOf(Object)
+};
+
+EmojiCategory.defaultProps = {
+  style: {},
+  emojiStyle: {}
 };
 
 export default pure(Radium(EmojiCategory));

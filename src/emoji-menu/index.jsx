@@ -9,6 +9,7 @@ import EmojiCategories from './emoji-categories';
 import Storage from './storage';
 import colors from '../settings/colors';
 import styles from './styles';
+import combineStyles from '../internal/combine-styles';
 
 const storage = new Storage();
 
@@ -19,12 +20,32 @@ class EmojiMenu extends Component {
     /** Path to svg sprites */
     svgSprites: PropTypes.string,
     /** Send an emoji */
-    sendEmoji: PropTypes.func.isRequired
+    sendEmoji: PropTypes.func.isRequired,
+    /** Override the styles of the root element */
+    style: PropTypes.instanceOf(Object),
+    /** Override the styles of the header element */
+    headerStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the color modifiers */
+    modifierStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the emoji category */
+    categoryStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the emojis */
+    emojiStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the footer element */
+    footerStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the footer icons */
+    iconStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     svgSprites: '',
-    activeColor: ''
+    style: {},
+    headerStyle: {},
+    modifierStyle: {},
+    categoryStyle: {},
+    emojiStyle: {},
+    footerStyle: {},
+    iconStyle: {}
   }
 
   static contextTypes = {
@@ -81,6 +102,9 @@ class EmojiMenu extends Component {
   render() {
     const { tone, storedEmojis, category } = this.state;
     const { color } = this.context;
+    const {
+      style, headerStyle, modifierStyle, categoryStyle, emojiStyle, footerStyle, iconStyle
+    } = this.props;
 
     const activeColor = color || colors.theme;
 
@@ -95,11 +119,13 @@ class EmojiMenu extends Component {
     }).value();
 
     return (
-      <section style={styles.container}>
+      <section style={combineStyles(styles.container, style)}>
         <EmojiModifiers
           modifiers={modifiers}
           changeTone={this.changeTone}
           tone={tone}
+          style={headerStyle}
+          modifierStyle={modifierStyle}
         />
         {
           storedEmojis.length > 0 && category === 'recent'
@@ -107,6 +133,8 @@ class EmojiMenu extends Component {
             emojis={storedEmojis}
             category="recent"
             sendEmoji={this.sendEmoji}
+            style={categoryStyle}
+            emojiStyle={emojiStyle}
           />
           : null
         }
@@ -116,6 +144,8 @@ class EmojiMenu extends Component {
             emojis={filteredEmoji}
             category={category}
             sendEmoji={this.sendEmoji}
+            style={categoryStyle}
+            emojiStyle={emojiStyle}
           />
           : null
         }
@@ -124,6 +154,8 @@ class EmojiMenu extends Component {
           category={category}
           activeColor={activeColor}
           recent={storedEmojis.length > 0}
+          style={footerStyle}
+          iconStyle={iconStyle}
         />
       </section>
     );

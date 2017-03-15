@@ -11,36 +11,37 @@ import IconObjects from '../icons/icon-objects';
 import IconSymbols from '../icons/icon-symbols';
 import colors from '../settings/colors';
 import styles from './styles';
+import combineStyles from '../internal/combine-styles';
 
-function EmojiCategories({ changeCategory, category, activeColor, recent }) {
+function EmojiCategories({ changeCategory, category, activeColor, recent, style, iconStyle }) {
   return (
-    <footer style={styles.categories}>
+    <footer style={combineStyles(styles.categories, style)}>
       {
         recent
-        ? <div style={styles.categories.category} onClick={() => changeCategory('recent')}>
+        ? <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('recent')}>
           <IconClock color={category === 'recent' ? activeColor : colors.icons} />
         </div>
         : null
       }
-      <div style={styles.categories.category} onClick={() => changeCategory('people')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('people')}>
         <IconEmoji color={category === 'people' ? activeColor : colors.icons} />
       </div>
-      <div style={styles.categories.category} onClick={() => changeCategory('nature')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('nature')}>
         <IconNature color={category === 'nature' ? activeColor : colors.icons} />
       </div>
-      <div style={styles.categories.category} onClick={() => changeCategory('food')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('food')}>
         <IconFood color={category === 'food' ? activeColor : colors.icons} />
       </div>
-      <div style={styles.categories.category} onClick={() => changeCategory('activity')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('activity')}>
         <IconActivity color={category === 'activity' ? activeColor : colors.icons} />
       </div>
-      <div style={styles.categories.category} onClick={() => changeCategory('travel')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('travel')}>
         <IconTravel color={category === 'travel' ? activeColor : colors.icons} />
       </div>
-      <div style={styles.categories.category} onClick={() => changeCategory('objects')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('objects')}>
         <IconObjects color={category === 'objects' ? activeColor : colors.icons} />
       </div>
-      <div style={styles.categories.category} onClick={() => changeCategory('symbols')}>
+      <div style={combineStyles(styles.categories.category, iconStyle)} onClick={() => changeCategory('symbols')}>
         <IconSymbols color={category === 'symbols' ? activeColor : colors.icons} />
       </div>
     </footer>
@@ -51,7 +52,14 @@ EmojiCategories.propTypes = {
   changeCategory: PropTypes.func.isRequired,
   category: PropTypes.string.isRequired,
   activeColor: PropTypes.string.isRequired,
-  recent: PropTypes.bool.isRequired
+  recent: PropTypes.bool.isRequired,
+  style: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.instanceOf(Object)
+};
+
+EmojiCategories.defaultProps = {
+  style: {},
+  iconStyle: {}
 };
 
 export default pure(Radium(EmojiCategories));

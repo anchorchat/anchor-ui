@@ -5,14 +5,24 @@ import createMarkup from './create-markup';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function EmojiModifiers({ modifiers, changeTone, tone }) {
+function getStyle(active, overrideStyle) {
+  let style = styles.modifier;
+
+  if (active) {
+    style = combineStyles(style, styles.modifier.active);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
+
+function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   return (
-    <header style={styles.modifiers}>
+    <header style={combineStyles(styles.modifiers, style)}>
       <div
         onClick={() => changeTone('tone0')}
         className="modifier"
         style={
-          combineStyles(styles.modifier, tone === 'tone0' ? styles.modifier.active : {})
+          getStyle(tone === 'tone0', modifierStyle)
         }
       >
         <svg width="50px" height="50px" viewBox="0 0 50 50" className="emojione">
@@ -22,7 +32,7 @@ function EmojiModifiers({ modifiers, changeTone, tone }) {
       {modifiers.map(modifier => (
         <div
           style={
-            combineStyles(styles.modifier, modifier.title === tone ? styles.modifier.active : {})
+            getStyle(modifier.title === tone, modifierStyle)
           }
           dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
           key={`emoji-${modifier.shortname}`}
@@ -51,7 +61,14 @@ EmojiModifiers.propTypes = {
     })
   ).isRequired,
   changeTone: PropTypes.func.isRequired,
-  tone: PropTypes.string.isRequired
+  tone: PropTypes.string.isRequired,
+  style: PropTypes.instanceOf(Object),
+  modifierStyle: PropTypes.instanceOf(Object)
+};
+
+EmojiModifiers.defaultProps = {
+  style: {},
+  modifierStyle: {}
 };
 
 export default pure(Radium(EmojiModifiers));
