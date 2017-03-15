@@ -6,14 +6,20 @@ export default {
     flexDirection: 'row',
     alignItems: 'center',
     padding: '5px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: colors.primaryText,
+    ':hover': {
+      color: colors.theme
+    }
   },
   input: {
     display: 'none'
   },
   label: {
-    color: colors.primaryText,
-    lineHeight: '24px'
+    color: 'inherit',
+    transition: 'all .3s ease-in-out',
+    lineHeight: '24px',
+    borderBottom: '1px solid transparent'
   },
   icon: {
     width: '24px',

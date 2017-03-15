@@ -6,6 +6,14 @@ import IconRadio from '../icons/icon-radio';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
+function getStyle(color, overrideStyle) {
+  let style = styles.container;
+
+  style = combineStyles(style, { ':hover': { color } });
+
+  return combineStyles(style, overrideStyle);
+}
+
 class RadioButton extends Component {
   static displayName = 'RadioButton'
 
@@ -44,7 +52,9 @@ class RadioButton extends Component {
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext)
+      !shallowEqual(this.context, nextContext) ||
+      Radium.getState(this.state, 'radio', ':hover') !== Radium.getState(nextState, 'radio', ':hover') ||
+      Radium.getState(this.state, 'radio', ':focus') !== Radium.getState(nextState, 'radio', ':focus')
     );
   }
 
@@ -56,7 +66,7 @@ class RadioButton extends Component {
     const themeColor = color || colors.theme;
 
     return (
-      <label htmlFor={value} style={combineStyles(styles.container, style)}>
+      <label key="radio" htmlFor={value} style={getStyle(themeColor, style)}>
         <input
           type="radio"
           ref={radio => (this.radio = radio)}
