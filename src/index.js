@@ -25,6 +25,7 @@ export Switch from './switch';
 export Select from './select';
 export RadioButton from './radio-button';
 export RadioButtonGroup from './radio-button/radio-button-group';
+export EmojiMenu from './emoji-menu';
 
 export icons from './icons';
 
