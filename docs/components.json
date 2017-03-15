@@ -614,6 +614,334 @@
       }
     }
   },
+  "components/emoji-menu/emoji-categories.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "changeCategory": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "category": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "activeColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "recent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/emoji-menu/emoji-category.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "category": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "emojis": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "shortname": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "sendEmoji": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "emojiStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/emoji-menu/emoji-modifiers.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "modifiers": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "shortname": {
+                "name": "string",
+                "required": true
+              },
+              "title": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "changeTone": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "tone": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modifierStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/emoji-menu/index.jsx": {
+    "description": "",
+    "displayName": "EmojiMenu",
+    "methods": [
+      {
+        "name": "changeTone",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "tone",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "changeCategory",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "category",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "sendEmoji",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "emoji",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "svgSprites": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to svg sprites",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sendEmoji": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Send an emoji"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modifierStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the color modifiers",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "categoryStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the emoji category",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "emojiStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the emojis",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "footerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer icons",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/empty-state/index.jsx": {
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
@@ -830,6 +1158,24 @@
         "defaultValue": {
           "value": "false",
           "computed": false
+        }
+      }
+    }
+  },
+  "components/icons/icon-activity.jsx": {
+    "description": "",
+    "displayName": "IconActivity",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
         }
       }
     }
@@ -1086,6 +1432,24 @@
       }
     }
   },
+  "components/icons/icon-food.jsx": {
+    "description": "",
+    "displayName": "IconFood",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-gender-female.jsx": {
     "description": "",
     "displayName": "IconGenderFemale",
@@ -1213,7 +1577,7 @@
     }
   },
   "components/icons/icon-menu.jsx": {
-    "description": "Display icon menu",
+    "description": "",
     "displayName": "IconMenu",
     "methods": [],
     "props": {
@@ -1222,7 +1586,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Color icon menu",
+        "description": "",
         "defaultValue": {
           "value": "colors.icons",
           "computed": true
@@ -1284,6 +1648,42 @@
       }
     }
   },
+  "components/icons/icon-nature.jsx": {
+    "description": "",
+    "displayName": "IconNature",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-objects.jsx": {
+    "description": "",
+    "displayName": "IconObjects",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-people.jsx": {
     "description": "",
     "displayName": "IconPeople",
@@ -1323,6 +1723,24 @@
   "components/icons/icon-power.jsx": {
     "description": "",
     "displayName": "IconPower",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-radio.jsx": {
+    "description": "",
+    "displayName": "IconRadio",
     "methods": [],
     "props": {
       "color": {
@@ -1413,6 +1831,42 @@
   "components/icons/icon-success.jsx": {
     "description": "",
     "displayName": "IconSuccess",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-symbols.jsx": {
+    "description": "",
+    "displayName": "IconSymbols",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-travel.jsx": {
+    "description": "",
+    "displayName": "IconTravel",
     "methods": [],
     "props": {
       "color": {
@@ -2505,6 +2959,149 @@
       }
     }
   },
+  "components/radio-button/index.jsx": {
+    "description": "",
+    "displayName": "RadioButton",
+    "methods": [],
+    "props": {
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's value"
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The input's label text"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "The input's onChange function",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Input active",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/radio-button-group/index.jsx": {
+    "description": "",
+    "displayName": "RadioButtonGroup",
+    "methods": [],
+    "props": {
+      "value": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The RadioButtonGroup's value"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The RadioButtonGroup's content (RadioButton), each child must have a value prop"
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The RadioButtonGroup's label",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/search-box/index.jsx": {
     "description": "General purpose Search box",
     "displayName": "SearchBox",
@@ -2607,6 +3204,7 @@
   },
   "components/select/index.jsx": {
     "description": "",
+    "displayName": "Select",
     "methods": [
       {
         "name": "positionPopOver",
@@ -2629,7 +3227,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "The Select's content (MenuItem), each child should have a value prop"
+        "description": "The Select's content (MenuItem), each child must have a value prop"
       },
       "value": {
         "type": {

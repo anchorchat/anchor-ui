@@ -25,6 +25,7 @@ export IconMute from './icon-mute';
 export IconPeople from './icon-people';
 export IconPerson from './icon-person';
 export IconPower from './icon-power';
+export IconRadio from './icon-radio';
 export IconRocket from './icon-rocket';
 export IconSend from './icon-send';
 export IconSettings from './icon-settings';

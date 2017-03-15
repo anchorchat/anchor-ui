@@ -13,7 +13,9 @@ import {
   MessageList,
   IconMenu,
   MenuItem,
-  Select
+  Select,
+  RadioButton,
+  RadioButtonGroup
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -110,12 +112,14 @@ class App extends Component {
     this.state = {
       message: '',
       messages,
-      select: 2
+      select: 2,
+      radio: 'test'
     };
 
     this.changeMessage = this.changeMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
     this.changeSelect = this.changeSelect.bind(this);
+    this.changeRadio = this.changeRadio.bind(this);
   }
 
   changeMessage(event) {
@@ -153,6 +157,12 @@ class App extends Component {
   changeSelect(value) {
     this.setState({
       select: value
+    });
+  }
+
+  changeRadio(event) {
+    this.setState({
+      radio: event.currentTarget.value
     });
   }
 
@@ -266,11 +276,15 @@ class App extends Component {
             button={<Button onClick={() => {}}>Click me</Button>}
           />
         </article>
-        <Select open={this.state.select} value={this.state.select}>
+        <Select open={this.state.select} value={this.state.select} label="Select">
           <MenuItem text="hi1" onClick={() => this.changeSelect(1)} value={1} />
           <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
           <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
         </Select>
+        <RadioButtonGroup value={this.state.radio} label="Radio">
+          <RadioButton value="test" label="test" onChange={this.changeRadio} />
+          <RadioButton value="test1" label="test1" onChange={this.changeRadio} />
+        </RadioButtonGroup>
       </section>
     );
   }
