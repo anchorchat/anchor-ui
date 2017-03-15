@@ -1,10 +1,4 @@
-import Radium from 'radium';
 import colors from '../settings/colors';
-
-const popOverAnimation = Radium.keyframes({
-  '0%': { opacity: 0 },
-  '100%': { opacity: 1 }
-}, 'pop-over');
 
 const styleSheet = {
   popOver: {
@@ -18,9 +12,7 @@ const styleSheet = {
     margin: 0,
     paddingLeft: 0,
     overflow: 'hidden',
-    zIndex: '1',
-    animation: 'x .3s ease-in-out',
-    animationName: popOverAnimation,
+    zIndex: '1'
   },
   header: {
     paddingTop: '10px',

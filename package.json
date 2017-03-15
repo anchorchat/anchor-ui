@@ -33,13 +33,24 @@
   },
   "homepage": "https://github.com/anchorchat/anchor-ui#readme",
   "devDependencies": {
-    "babel-plugin-add-module-exports": "^0.2.1"
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "peerDependencies": {
+    "react-native": "0.41.2",
+    "react": "15.4.2"
   },
   "dependencies": {
     "color": "^1.0.3",
     "date-fns": "^1.27.2",
     "lodash": "^4.17.4",
-    "react": "15.4.2",
+    "react-native": "^0.42.0",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }

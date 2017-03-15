@@ -3,7 +3,6 @@ import {
   ListView,
   View,
 } from 'react-native';
-import InvertibleScrollView from 'react-native-invertible-scroll-view';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-lists';
 import Message from '../message';
@@ -66,17 +65,18 @@ class MessageList extends Component {
   }
 
   scrollTo(options) {
-    this._invertibleScrollViewRef.scrollTo(options);
+    // this._invertibleScrollViewRef.scrollTo(options);
   }
 
 
   renderScrollComponent(props) {
-    return (
-      <InvertibleScrollView
-        {...props}
-        ref={component => this._invertibleScrollViewRef = component}
-      />
-    );
+    return false;
+    // return (
+    //   // <InvertibleScrollView
+    //   //   {...props}
+    //   //   ref={component => this._invertibleScrollViewRef = component}
+    //   // />
+    // );
   }
 
   renderRow(message, sectionId, rowId) {
