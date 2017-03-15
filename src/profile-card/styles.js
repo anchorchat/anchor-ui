@@ -4,8 +4,8 @@ export default {
   profileCard: {
     backgroundColor: colors.theme,
     color: colors.white,
-    fontSize: '20px',
-    lineHeight: '18px',
+    fontSize: '18px',
+    lineHeight: '20px',
     padding: '15px'
   },
   avatar: {
@@ -22,7 +22,7 @@ export default {
   },
   text: {
     fontSize: '16px',
-    lineHeight: '16px',
+    lineHeight: '18px',
     marginBottom: '0',
     wordBreak: 'break-word',
     marginTop: '4px'
