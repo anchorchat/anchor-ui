@@ -23,6 +23,7 @@ export IconMenu from './icon-menu';
 export Divider from './divider';
 export Switch from './switch';
 export Select from './select';
+export EmojiMenu from './emoji-menu';
 
 export icons from './icons';
 

@@ -1,2 +1,3 @@
 dist
 *.polyfill.js
+emoji.js
