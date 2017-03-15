@@ -281,9 +281,9 @@ class App extends Component {
           <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
           <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
         </Select>
-        <RadioButtonGroup value={this.state.radio} name="radio" label="Radio">
-          <RadioButton value="test" name="radio" label="test" onChange={this.changeRadio} />
-          <RadioButton value="test1" name="radio" label="test1" onChange={this.changeRadio} />
+        <RadioButtonGroup value={this.state.radio} label="Radio">
+          <RadioButton value="test" label="test" onChange={this.changeRadio} />
+          <RadioButton value="test1" label="test1" onChange={this.changeRadio} />
         </RadioButtonGroup>
       </section>
     );

@@ -10,8 +10,6 @@ class RadioButton extends Component {
   static displayName = 'RadioButton'
 
   static propTypes = {
-    /** The input's name */
-    name: PropTypes.string.isRequired,
     /** The input's value */
     value: PropTypes.string.isRequired,
     /** The input's label text */
@@ -52,7 +50,7 @@ class RadioButton extends Component {
 
   render() {
     const {
-      name, value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked
+      value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked
     } = this.props;
     const { color } = this.context;
     const themeColor = color || colors.theme;
@@ -62,7 +60,6 @@ class RadioButton extends Component {
         <input
           type="radio"
           ref={radio => (this.radio = radio)}
-          name={name}
           value={value}
           id={value}
           onChange={onChange}
