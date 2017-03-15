@@ -71,8 +71,8 @@ class RadioButton extends Component {
           scopeSelector=".radio-button"
           rules={{
             'input:focus ~ span': {
-              color: themeColor,
-              borderBottom: `2px solid ${themeColor}`
+              color: `${themeColor} !important`,
+              borderBottom: `2px solid ${themeColor} !important`
             }
           }}
         />
