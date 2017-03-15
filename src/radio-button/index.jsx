@@ -72,7 +72,7 @@ class RadioButton extends Component {
           rules={{
             'input:focus ~ span': {
               color: themeColor,
-              border: `2px solid ${themeColor}`
+              borderBottom: `2px solid ${themeColor}`
             }
           }}
         />

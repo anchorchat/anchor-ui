@@ -21,7 +21,7 @@ export default {
     color: 'inherit',
     transition: 'all .3s ease-in-out',
     lineHeight: '24px',
-    borderBottom: '1px solid transparent'
+    borderBottom: '2px solid transparent'
   },
   icon: {
     width: '24px',
