@@ -1,11 +1,9 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import { TextInput, View } from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from '../style/message-inputs';
 import Button from '../button';
-import IconSend from '../icons/icon-send';
-import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
 function getButtonStyle(style, disabled) {
@@ -36,15 +34,10 @@ class MessageInput extends Component {
     /** The input's value */
     value: PropTypes.string.isRequired,
     /** The input's placeholder */
-    placeholder: PropTypes.node.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the input element */
     inputStyle: PropTypes.instanceOf(Object),
-    /** The input's max length */
-    maxLength: PropTypes.number,
-    /** Left-hand side placed button */
-    leftButton: PropTypes.node,
     /** Ref function to the element */
     inputRef: PropTypes.func,
     /** Disables the input for the messageInput area */
@@ -72,67 +65,51 @@ class MessageInput extends Component {
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'input', ':focus') !== Radium.getState(nextState, 'input', ':focus') ||
-      Radium.getState(this.state, 'input', ':disabled') !== Radium.getState(nextState, 'input', ':disabled')
+      !shallowEqual(this.context, nextContext)
     );
-  }
-
-  handleKeyDown(event) {
-    const { sendMessage } = this.props;
-
-    if (event.which === 13) {
-      sendMessage();
-    }
   }
 
   render() {
     const {
       onChange,
       sendMessage,
-      placeholder,
       value,
-      maxLength,
       leftButton,
       inputRef,
       disabled,
       style,
       inputStyle
     } = this.props;
-    const { color } = this.context;
-    const iconColor = color || colors.theme;
+
+    console.log('test');
 
     return (
-      <section style={combineStyles(styles.input, style)}>
+      <View style={combineStyles(styles.input, style)}>
         {
           leftButton
-          ? <div style={getButtonStyle(styles.button, disabled)}>
+          ? <View style={getButtonStyle(styles.button, disabled)}>
             {leftButton}
-          </div>
+          </View>
           : null
         }
-        <input
+        <TextInput
           style={getInputStyle(leftButton, inputStyle)}
-          placeholder={placeholder}
-          onChange={onChange}
+          onChangeText={onChange}
           value={value}
-          type="text"
-          onKeyDown={this.handleKeyDown}
-          maxLength={maxLength}
           ref={inputRef}
+          onSubmitEditing={sendMessage}
           disabled={disabled}
+          returnKeyType="send"
           key="input"
         />
         <Button
           style={getButtonStyle(styles.rightButton, disabled)}
           iconButton
           onClick={sendMessage}
-        >
-          <IconSend color={iconColor} />
-        </Button>
-      </section>
+        />
+      </View>
     );
   }
 }
 
-export default Radium(MessageInput);
+export default MessageInput;

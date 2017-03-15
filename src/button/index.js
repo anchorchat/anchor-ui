@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  Button as ReactNativeButton
+} from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
-import Radium from 'radium';
 import styles from '../style/buttons';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
@@ -13,7 +15,6 @@ function getStyle(themeColor, inverted, iconButton, overrideStyle) {
     styles.button,
     {
       backgroundColor: color,
-      ':hover': { backgroundColor: darken(color, 0.15) },
       ':active': { backgroundColor: darken(color, 0.25) }
     }
   );
@@ -60,8 +61,7 @@ class Button extends Component {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'button', ':hover') !== Radium.getState(nextState, 'button', ':hover') ||
-      Radium.getState(this.state, 'button', ':active') !== Radium.getState(nextState, 'button', ':active')
+      Uranium.getState(this.state, 'button', ':active') !== Uranium.getState(nextState, 'button', ':active')
     );
   }
 
@@ -70,11 +70,11 @@ class Button extends Component {
     const { color } = this.context;
 
     return (
-      <button key="button" onClick={onClick} style={getStyle(color, inverted, iconButton, style)}>
+      <ReactNativeButton key="button" onClick={onClick} style={getStyle(color, inverted, iconButton, style)}>
         {children}
-      </button>
+      </ReactNativeButton>
     );
   }
 }
 
-export default Radium(Button);
+export default Button;

@@ -1,15 +1,18 @@
 import React, { PropTypes } from 'react';
+import {
+  View,
+  Text
+} from 'react-native';
 import pure from 'recompose/pure';
-import Radium from 'radium';
 import styles from '../style/divider';
 import combineStyles from '../internal/combine-styles';
 
 function Divider({ text, style, textStyle }) {
   if (!text) {
-    return <hr style={combineStyles(styles.hr, style)} />;
+    return <View style={combineStyles(styles.hr, style)} />;
   }
 
-  return <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1>;
+  return <Text style={combineStyles(styles.text, textStyle)}>{text}</Text>;
 }
 
 Divider.propTypes = {
@@ -30,4 +33,4 @@ Divider.defaultProps = {
 
 Divider.displayName = 'Divider';
 
-export default pure(Radium(Divider));
+export default pure(Divider);

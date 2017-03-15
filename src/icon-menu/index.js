@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  View
+} from 'react-native';
 import pure from 'recompose/pure';
 import PopOver from '../pop-over';
 import Button from '../button';
@@ -101,11 +103,11 @@ class IconMenu extends Component {
     }
 
     return (
-      <div style={combineStyles(styles.iconMenu, style)}>
-        {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
-        <div ref={button => (this.button = button)}>
+      <View style={combineStyles(styles.iconMenu, style)}>
+        {open ? <View style={styles.clickAway} onClick={this.closeMenu} /> : null}
+        <View ref={button => (this.button = button)}>
           <Button iconButton onClick={this.openMenu}>{icon}</Button>
-        </div>
+        </View>
         <PopOver
           header={header}
           headerStyle={headerStyle}
@@ -117,9 +119,9 @@ class IconMenu extends Component {
         >
           {menuItemsWithProps}
         </PopOver>
-      </div>
+      </View>
     );
   }
 }
 
-export default pure(Radium(IconMenu));
+export default pure(IconMenu);

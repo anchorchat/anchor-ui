@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  View,
+  Text
+} from 'react-native';
 import pure from 'recompose/pure';
 import styles from '../style/channel-header';
 import combineStyles from '../internal/combine-styles';
@@ -9,19 +12,19 @@ function ChannelHeader({
   name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle
 }) {
   return (
-    <header style={combineStyles(styles.header, style)}>
+    <View style={combineStyles(styles.header, style)}>
       {
         leftButton
-        ? <div style={combineStyles(styles.buttonLeft, leftButtonStyle)}>{leftButton}</div>
+        ? <View style={combineStyles(styles.buttonLeft, leftButtonStyle)}>{leftButton}</View>
         : null
       }
-      <h1 style={combineStyles(styles.text, textStyle)}>{name}</h1>
+      <Text style={combineStyles(styles.text, textStyle)}>{name}</Text>
       {
         rightButton
-        ? <div style={combineStyles(styles.buttonRight, rightButtonStyle)}>{rightButton}</div>
+        ? <View style={combineStyles(styles.buttonRight, rightButtonStyle)}>{rightButton}</View>
         : null
       }
-    </header>
+    </View>
   );
 }
 
@@ -53,4 +56,4 @@ ChannelHeader.defaultProps = {
   leftButton: null
 };
 
-export default pure(Radium(ChannelHeader));
+export default pure(ChannelHeader);

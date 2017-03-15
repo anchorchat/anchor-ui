@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  TextInput,
+  View,
+} from 'react-native';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
-import IconSearch from '../icons/icon-search';
 import styles from '../style/search-box';
 import combineStyles from '../internal/combine-styles';
 
@@ -58,17 +60,17 @@ class SearchBox extends Component {
     const { value, placeholder, style, inputStyle, iconStyle } = this.props;
 
     return (
-      <section style={combineStyles(styles.searchBox, style)}>
-        <div style={combineStyles(styles.icon, iconStyle)}><IconSearch /></div>
-        <input
+      <View style={combineStyles(styles.searchBox, style)}>
+        <View style={combineStyles(styles.icon, iconStyle)}><IconSearch /></View>
+        <TextInput
           style={combineStyles(styles.input, inputStyle)}
           value={value}
           onChange={this.handleChange}
           placeholder={placeholder}
         />
-      </section>
+      </View>
     );
   }
 }
 
-export default pure(Radium(SearchBox));
+export default pure(SearchBox);

@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  View,
+  Text
+} from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
-import Radium from 'radium';
 import styles from '../style/app-header';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
@@ -60,17 +63,17 @@ class AppHeader extends Component {
     const { color } = this.context;
 
     return (
-      <header style={getStyle(color, style)}>
-        {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        {text ? <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1> : null}
+      <View style={getStyle(color, style)}>
+        {icon ? <View style={combineStyles(styles.icon, iconStyle)}>{icon}</View> : null}
+        {text ? <Text style={combineStyles(styles.text, textStyle)}>{text}</Text> : null}
         {
           rightButton
-          ? <div style={combineStyles(styles.button, buttonStyle)}>{rightButton}</div>
+          ? <View style={combineStyles(styles.button, buttonStyle)}>{rightButton}</View>
           : null
         }
-      </header>
+      </View>
     );
   }
 }
 
-export default Radium(AppHeader);
+export default AppHeader;

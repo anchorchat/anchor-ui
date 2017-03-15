@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
 import pure from 'recompose/pure';
 import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
@@ -8,7 +7,7 @@ import combineStyles from '../internal/combine-styles';
 function List({ children, header, listRef, style, headerStyle }) {
   return (
     <ul ref={listRef} style={combineStyles(styles.list, style)}>
-      {header ? <h1 style={combineStyles(styles.listHeader, headerStyle)}>{header}</h1> : null}
+      {header ? <Text style={combineStyles(styles.listHeader, headerStyle)}>{header}</Text> : null}
       {children}
     </ul>
   );
@@ -36,4 +35,4 @@ List.defaultProps = {
   listRef: () => {}
 };
 
-export default pure(Radium(List));
+export default pure(List);

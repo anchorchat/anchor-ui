@@ -1,6 +1,9 @@
+/* "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }] */
 import React, { PropTypes } from 'react';
+import {
+  View
+} from 'react-native';
 import pure from 'recompose/pure';
-import Radium from 'radium';
 import styles from '../style/avatars';
 import combineStyles from '../internal/combine-styles';
 
@@ -13,7 +16,7 @@ function getStyle(image, overrideStyle) {
 /** A user's profile image */
 function Avatar({ image, style }) {
   return (
-    <section style={getStyle(image, style)} />
+    <View style={getStyle(image, style)} />
   );
 }
 
@@ -30,4 +33,4 @@ Avatar.defaultProps = {
   style: {}
 };
 
-export default pure(Radium(Avatar));
+export default pure(Avatar);

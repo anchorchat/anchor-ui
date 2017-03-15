@@ -1,14 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  Text,
+  View,
+} from 'react-native';
 import pure from 'recompose/pure';
 import styles from './styles';
-import IconChevronDown from '../icons/icon-chevron-down';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 import darken from '../internal/darken';
-import './array.find.polyfill';
 
 function getIconStyle(open, overrideStyle) {
   let style = styles.icon;
@@ -27,9 +28,6 @@ function getHeaderStyle(themeColor, overrideStyle) {
     styles.header,
     {
       backgroundColor: color,
-      ':hover': {
-        backgroundColor: darken(color, 0.05)
-      },
       ':active': {
         backgroundColor: darken(color, 0.15)
       }
@@ -118,19 +116,19 @@ class Select extends Component {
     const headerText = (activeChild && activeChild.props && activeChild.props.text) || value;
 
     return (
-      <section style={combineStyles(styles.container, style)}>
+      <View style={combineStyles(styles.container, style)}>
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
-        {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}
-        <header
+        {open ? <View style={styles.clickAway} onClick={this.toggleSelect} /> : null}
+        <Text
           ref={button => (this.button = button)}
           style={getHeaderStyle(color, headerStyle)}
           onClick={this.toggleSelect}
         >
           {headerText}
-          <div style={getIconStyle(open, {})}>
+          <View style={getIconStyle(open, {})}>
             <IconChevronDown color={colors.white} />
-          </div>
-        </header>
+          </View>
+        </Text>
         <PopOver
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
@@ -138,9 +136,9 @@ class Select extends Component {
         >
           {childrenWithProps}
         </PopOver>
-      </section>
+      </View>
     );
   }
 }
 
-export default pure(Radium(Select));
+export default pure(Select);

@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  Text,
+  View,
+} from 'react-native';
 import pure from 'recompose/pure';
 import styles from '../style/switch';
 import combineStyles from '../internal/combine-styles';
@@ -40,13 +43,13 @@ function Switch(
   { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle }, { color }
 ) {
   return (
-    <section style={style}>
-      <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
-      <section style={styles.wrapper} onClick={toggleSwitch}>
-        <div style={getTrackStyle(color, active, trackStyle)} />
-        <div style={getKnobStyle(color, active, knobStyle)} />
-      </section>
-    </section>
+    <View style={style}>
+      <Text style={combineStyles(styles.label, labelStyle)}>{label}</Text>
+      <View style={styles.wrapper} onClick={toggleSwitch}>
+        <View style={getTrackStyle(color, active, trackStyle)} />
+        <View style={getKnobStyle(color, active, knobStyle)} />
+      </View>
+    </View>
   );
 }
 
@@ -82,4 +85,4 @@ Switch.contextTypes = {
   color: PropTypes.string
 };
 
-export default pure(Radium(Switch));
+export default pure(Switch);

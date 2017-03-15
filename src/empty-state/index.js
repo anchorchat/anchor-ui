@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  View,
+  Text
+} from 'react-native';
 import pure from 'recompose/pure';
 import styles from '../style/empty-states';
 import combineStyles from '../internal/combine-styles';
@@ -13,11 +16,11 @@ function getStyle(image, overrideStyle) {
 /** Pretty placeholder for empty content */
 function EmptyState({ headerText, bodyText, button, background, style, headingStyle, bodyStyle }) {
   return (
-    <section style={getStyle(background, style)}>
-      <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
-      <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
+    <View style={getStyle(background, style)}>
+      <Text style={combineStyles(styles.heading, headingStyle)}>{headerText}</Text>
+      <Text style={combineStyles(styles.body, bodyStyle)}>{bodyText}</Text>
       {button}
-    </section>
+    </View>
   );
 }
 
@@ -48,4 +51,4 @@ EmptyState.defaultProps = {
   bodyStyle: {}
 };
 
-export default pure(Radium(EmptyState));
+export default pure(EmptyState);

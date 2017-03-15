@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
 import pure from 'recompose/pure';
 import styles from '../style/pop-over';
 import combineStyles from '../internal/combine-styles';
@@ -66,4 +65,4 @@ PopOver.defaultProps = {
   dividerText: null
 };
 
-export default pure(Radium(PopOver));
+export default pure(PopOver);

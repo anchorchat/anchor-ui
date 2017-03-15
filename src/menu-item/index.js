@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import {
+  View,
+  Text
+} from 'react-native';
 import pure from 'recompose/pure';
 import styles from '../style/menu-item';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
-import IconSuccess from '../icons/icon-success';
 
 function getStyle(themeColor, icon, active, overrideStyle) {
   let style = styles.menuItem;
@@ -78,19 +80,19 @@ class MenuItem extends Component {
     const { color } = this.context;
 
     return (
-      <section style={getStyle(color, icon, active, style)} onClick={this.handleClick}>
-        {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        <p style={combineStyles(styles.text, textStyle)}>
+      <View style={getStyle(color, icon, active, style)} onClick={this.handleClick}>
+        {icon ? <View style={combineStyles(styles.icon, iconStyle)}>{icon}</View> : null}
+        <Text style={combineStyles(styles.text, textStyle)}>
           {text}
-        </p>
+        </Text>
         {
           active
-          ? <div style={styles.activeIcon}><IconSuccess color={color || colors.theme} /></div>
+          ? <View style={styles.activeIcon}><IconSuccess color={color || colors.theme} /></View>
           : null
         }
-      </section>
+      </View>
     );
   }
 }
 
-export default pure(Radium(MenuItem));
+export default pure(MenuItem);

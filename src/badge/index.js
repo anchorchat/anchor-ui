@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import {
+  Text
+} from 'react-native';
 import shallowEqual from 'recompose/shallowEqual';
-import Radium from 'radium';
 import styles from '../style/badges';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
@@ -60,11 +62,11 @@ class Badge extends Component {
     }
 
     return (
-      <span style={getStyle(color, inverted, style)}>
+      <Text style={getStyle(color, inverted, style)}>
         {content}
-      </span>
+      </Text>
     );
   }
 }
 
-export default Radium(Badge);
+export default Badge;

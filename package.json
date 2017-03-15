@@ -1,8 +1,8 @@
 {
-  "name": "anchor-ui",
-  "version": "2.6.7",
-  "description": "React Component UI Kit",
-  "main": "dist/index.js",
+  "name": "react-native-anchor",
+  "version": "1.0.0",
+  "description": "React-native Component UI Kit",
+  "main": "index.js",
   "files": [
     "/*"
   ],
@@ -22,7 +22,9 @@
     "url": "git+https://github.com/anchorchat/anchor-ui.git"
   },
   "keywords": [
-    "react"
+    "react-native",
+    "react",
+    "ui-kit"
   ],
   "author": "Sjaak Luthart",
   "license": "MIT",
@@ -31,49 +33,24 @@
   },
   "homepage": "https://github.com/anchorchat/anchor-ui#readme",
   "devDependencies": {
-    "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "chai": "^3.5.0",
-    "enzyme": "^2.7.0",
     "eslint": "^3.13.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-mocha": "^4.8.0",
-    "eslint-plugin-react": "^6.9.0",
-    "mocha": "^3.2.0",
-    "nyc": "^10.1.2",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-docgen": "^2.13.0",
-    "react-dom": "^15.4.2",
-    "sinon": "^1.17.7"
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "es2015",
-      "stage-0"
-    ],
-    "plugins": [
-      "add-module-exports"
-    ]
+    "eslint-plugin-react": "^6.9.0"
   },
   "peerDependencies": {
-    "react": "^15.4.1"
+    "react-native": "0.41.2",
+    "react": "15.4.2"
   },
   "dependencies": {
     "color": "^1.0.3",
     "date-fns": "^1.27.2",
-    "emojione": "^2.2.7",
-    "escape-html": "^1.0.3",
     "lodash": "^4.17.4",
-    "radium": "^0.18.1",
-    "react-measure": "^1.4.5",
+    "react-native": "^0.42.0",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }
