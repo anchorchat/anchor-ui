@@ -2,8 +2,6 @@
 
 rm -rf components
 cp -r src components
-rm -rf components/internal components/style components/settings
-rm components/icons/index.js
-rm components/index.js components/url-regex.js
+rm -rf components/*/*.js components/*.js
 npm run docs
 rm -rf components
