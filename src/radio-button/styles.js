@@ -13,7 +13,9 @@ export default {
     }
   },
   input: {
-    display: 'none'
+    opacity: 0,
+    zIndex: -999,
+    position: 'absolute'
   },
   label: {
     color: 'inherit',

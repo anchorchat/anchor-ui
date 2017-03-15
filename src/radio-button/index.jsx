@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
+import Radium, { Style } from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import colors from '../settings/colors';
 import IconRadio from '../icons/icon-radio';
@@ -66,7 +66,16 @@ class RadioButton extends Component {
     const themeColor = color || colors.theme;
 
     return (
-      <label key="radio" htmlFor={value} style={getStyle(themeColor, style)}>
+      <label className="radio-button" key="radio" htmlFor={value} style={getStyle(themeColor, style)}>
+        <Style
+          scopeSelector=".radio-button"
+          rules={{
+            'input:focus ~ span': {
+              color: themeColor,
+              border: `2px solid ${themeColor}`
+            }
+          }}
+        />
         <input
           type="radio"
           ref={radio => (this.radio = radio)}
