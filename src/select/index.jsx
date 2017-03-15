@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
+import find from 'lodash/find';
 import styles from './styles';
 import IconChevronDown from '../icons/icon-chevron-down';
 import colors from '../settings/colors';
@@ -8,7 +9,6 @@ import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 import darken from '../internal/darken';
-import './array.find.polyfill';
 
 function getIconStyle(open, overrideStyle) {
   let style = styles.icon;
@@ -40,8 +40,10 @@ function getHeaderStyle(themeColor, overrideStyle) {
 }
 
 class Select extends Component {
+  static displayName = 'Select'
+
   static propTypes = {
-    /** The Select's content (MenuItem), each child should have a value prop */
+    /** The Select's content (MenuItem), each child must have a value prop */
     children: PropTypes.node.isRequired,
     /** The Select's value */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -113,7 +115,7 @@ class Select extends Component {
       )
     );
 
-    const activeChild = childrenWithProps.find(child => child.props.value === value);
+    const activeChild = find(childrenWithProps, child => child.props.value === value);
 
     const headerText = (activeChild && activeChild.props && activeChild.props.text) || value;
 
