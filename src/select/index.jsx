@@ -3,41 +3,12 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import find from 'lodash/find';
 import styles from './styles';
+import getStyles from './get-styles';
 import IconChevronDown from '../icons/icon-chevron-down';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
-import darken from '../internal/darken';
-
-function getIconStyle(open, overrideStyle) {
-  let style = styles.icon;
-
-  if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg)' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getHeaderStyle(themeColor, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = combineStyles(
-    styles.header,
-    {
-      backgroundColor: color,
-      ':hover': {
-        backgroundColor: darken(color, 0.05)
-      },
-      ':active': {
-        backgroundColor: darken(color, 0.15)
-      }
-    }
-  );
-
-  return combineStyles(style, overrideStyle);
-}
 
 class Select extends Component {
   static displayName = 'Select'
@@ -125,11 +96,11 @@ class Select extends Component {
         {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}
         <header
           ref={button => (this.button = button)}
-          style={getHeaderStyle(color, headerStyle)}
+          style={getStyles.header(color, headerStyle)}
           onClick={this.toggleSelect}
         >
           {headerText}
-          <div style={getIconStyle(open, {})}>
+          <div style={getStyles.icon(open, {})}>
             <IconChevronDown color={colors.white} />
           </div>
         </header>
