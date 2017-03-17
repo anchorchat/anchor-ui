@@ -125,6 +125,8 @@ class Message extends Component {
       ]).isRequired,
       /** The sender's username */
       username: PropTypes.string.isRequired,
+      /** The message's type */
+      type: PropTypes.oneOf(['text', 'image']).isRequired
     }).isRequired,
     /** The format of displaying message.createdAt */
     timeFormat: PropTypes.string,
@@ -197,13 +199,25 @@ class Message extends Component {
     };
   }
 
+  renderMessageBody() {
+    const { emoji, message } = this.props;
+    if (message.type === 'image') {
+      return <img src={message.body} alt="user-upload" />;
+    }
+
+    if (emoji) {
+      return <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />;
+    }
+
+    return message.body;
+  }
+
   render() {
     const {
       avatar,
       message,
       timeFormat,
       myMessage,
-      emoji,
       style,
       messageHeaderStyle,
       messageBodyStyle,
@@ -241,11 +255,7 @@ class Message extends Component {
             {message.username}
           </header>
           <p style={getTextStyle(myMessage, fontSize, messageBodyStyle)}>
-            {
-              emoji
-              ? <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />
-              : message.body
-            }
+            {this.renderMessageBody()}
             <span style={getTimeStyle(myMessage, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
             </span>
