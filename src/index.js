@@ -27,6 +27,7 @@ export RadioButton from './radio-button';
 export RadioButtonGroup from './radio-button-group';
 export EmojiMenu from './emoji-menu';
 export Paper from './paper';
+export Modal from './modal';
 
 export icons from './icons';
 
