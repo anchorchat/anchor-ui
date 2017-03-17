@@ -49,7 +49,7 @@ function root(themeColor, myMessage, avatar, compact, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function text(myMessage, fontSize, overrideStyle) {
+function text(myMessage, fontSize, type, overrideStyle) {
   let style = styles.messageBody;
 
   if (myMessage) {
@@ -62,6 +62,10 @@ function text(myMessage, fontSize, overrideStyle) {
 
   if (fontSize === 'large') {
     style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
+  }
+
+  if (type === 'image') {
+    style = combineStyles(style, { flexDirection: 'column' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -89,11 +93,15 @@ function header(myMessage, compact, fontSize, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function time(myMessage, overrideStyle) {
+function time(myMessage, type, overrideStyle) {
   let style = styles.messageTime;
 
   if (myMessage) {
     style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75' });
+  }
+
+  if (type === 'image') {
+    style = combineStyles(style, { marginTop: '10px' });
   }
 
   return combineStyles(style, overrideStyle);

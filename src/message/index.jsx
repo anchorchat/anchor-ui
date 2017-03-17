@@ -105,7 +105,7 @@ class Message extends Component {
   renderMessageBody() {
     const { emoji, message } = this.props;
     if (message.type === 'image') {
-      return <img src={message.body} alt="user-upload" />;
+      return <img style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
 
     if (emoji) {
@@ -157,9 +157,9 @@ class Message extends Component {
           >
             {message.username}
           </header>
-          <p style={getStyles.text(myMessage, fontSize, messageBodyStyle)}>
+          <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
             {this.renderMessageBody()}
-            <span style={getStyles.time(myMessage, messageTimeStyle)}>
+            <span style={getStyles.time(myMessage, message.type, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
             </span>
           </p>

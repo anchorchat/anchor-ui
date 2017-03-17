@@ -59,6 +59,9 @@ export default {
     lineHeight: '18px',
     margin: '0'
   },
+  messageImage: {
+    borderRadius: '3px'
+  },
   messageTime: {
     width: '32px',
     color: 'currentColor',
