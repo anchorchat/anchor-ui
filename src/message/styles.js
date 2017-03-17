@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   messageContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -59,6 +59,9 @@ const styleSheet = {
     lineHeight: '18px',
     margin: '0'
   },
+  messageImage: {
+    borderRadius: '3px'
+  },
   messageTime: {
     width: '32px',
     color: 'currentColor',
@@ -71,5 +74,3 @@ const styleSheet = {
     alignSelf: 'flex-end'
   }
 };
-
-export default styleSheet;
