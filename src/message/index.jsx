@@ -5,7 +5,7 @@ import emojione from 'emojione';
 import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
-import styles from '../style/messages';
+import styles from './styles';
 import colors from '../settings/colors';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
