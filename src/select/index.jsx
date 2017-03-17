@@ -44,7 +44,8 @@ class Select extends Component {
 
     this.state = {
       open: false,
-      positioned: false
+      positioned: false,
+      popOverWidth: '200px'
     };
 
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -62,10 +63,12 @@ class Select extends Component {
   positionPopOver() {
     const button = this.button.getBoundingClientRect();
     const popOver = this.popOver.getBoundingClientRect();
+    const container = this.container.getBoundingClientRect();
 
     this.setState({
       positioned: true,
-      position: getPopOverPosition(button, popOver, 'select')
+      position: getPopOverPosition(button, popOver, 'select'),
+      popOverWidth: `${container.width}px`
     });
   }
 
@@ -76,7 +79,7 @@ class Select extends Component {
   }
 
   render() {
-    const { open, position } = this.state;
+    const { open, position, popOverWidth } = this.state;
     const { children, value, label, style, headerStyle, labelStyle } = this.props;
     const { color } = this.context;
 
@@ -91,7 +94,10 @@ class Select extends Component {
     const headerText = (activeChild && activeChild.props && activeChild.props.text) || value;
 
     return (
-      <section style={combineStyles(styles.container, style)}>
+      <section
+        ref={container => (this.container = container)}
+        style={combineStyles(styles.container, style)}
+      >
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}
         <header
@@ -105,6 +111,7 @@ class Select extends Component {
           </div>
         </header>
         <PopOver
+          style={{ minWidth: popOverWidth }}
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}
