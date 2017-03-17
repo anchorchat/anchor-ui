@@ -104,6 +104,7 @@ class Message extends Component {
 
   renderMessageBody() {
     const { emoji, message } = this.props;
+
     if (message.type === 'image') {
       return <img style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
