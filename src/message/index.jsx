@@ -6,106 +6,9 @@ import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from './styles';
-import colors from '../settings/colors';
+import getStyles from './get-styles';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
-
-function getContainerStyle(myMessage, compact) {
-  if (compact) {
-    return styles.messageContainer;
-  }
-
-  if (myMessage) {
-    return combineStyles(styles.messageContainer, styles.myContainer);
-  }
-
-  return styles.messageContainer;
-}
-
-function getStyle(themeColor, myMessage, avatar, compact, overrideStyle) {
-  let style = styles.message;
-
-  const color = themeColor || colors.theme;
-
-  if (myMessage) {
-    style = combineStyles(
-      combineStyles(styles.message, styles.myMessage),
-      { backgroundColor: color, borderRightColor: color }
-    );
-  }
-
-  if (avatar) {
-    style = combineStyles(style, styles.avatar);
-  }
-
-  if (myMessage && avatar) {
-    style = combineStyles(style, { marginLeft: '0', marginRight: '66px' });
-  }
-
-  if (compact) {
-    style = combineStyles(
-      style,
-      {
-        marginLeft: '0',
-        marginRight: '0',
-        maxWidth: '100%',
-        display: 'flex'
-      }
-    );
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getTextStyle(myMessage, fontSize, overrideStyle) {
-  let style = styles.messageBody;
-
-  if (myMessage) {
-    style = combineStyles(style, { color: colors.white });
-  }
-
-  if (fontSize === 'medium') {
-    style = combineStyles(style, { fontSize: '18px', lineHeight: '20px' });
-  }
-
-  if (fontSize === 'large') {
-    style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getHeaderStyle(myMessage, compact, fontSize, overrideStyle) {
-  let style = styles.messageHeader;
-
-  if (myMessage) {
-    style = combineStyles(style, { color: colors.white });
-  }
-
-  if (compact) {
-    style = combineStyles(style, { flexShrink: '0', marginRight: '10px', marginBottom: '0' });
-  }
-
-  if (fontSize === 'medium') {
-    style = combineStyles(style, { fontSize: '16px', lineHeight: '20px' });
-  }
-
-  if (fontSize === 'large') {
-    style = combineStyles(style, { fontSize: '18px', lineHeight: '24px' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getTimeStyle(myMessage, overrideStyle) {
-  let style = styles.messageTime;
-
-  if (myMessage) {
-    style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
 
 /** Messages with optional styling for the current user's message */
 class Message extends Component {
@@ -239,8 +142,8 @@ class Message extends Component {
     }
 
     return (
-      <section style={getContainerStyle(myMessage, compact)}>
-        <section style={getStyle(color, myMessage, avatar, compact, style)}>
+      <section style={getStyles.container(myMessage, compact)}>
+        <section style={getStyles.root(color, myMessage, avatar, compact, style)}>
           {
             compact
             ? null
@@ -249,14 +152,14 @@ class Message extends Component {
           {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
           <header
             style={
-              getHeaderStyle(myMessage, compact, fontSize, messageHeaderStyle)
+              getStyles.header(myMessage, compact, fontSize, messageHeaderStyle)
             }
           >
             {message.username}
           </header>
-          <p style={getTextStyle(myMessage, fontSize, messageBodyStyle)}>
+          <p style={getStyles.text(myMessage, fontSize, messageBodyStyle)}>
             {this.renderMessageBody()}
-            <span style={getTimeStyle(myMessage, messageTimeStyle)}>
+            <span style={getStyles.time(myMessage, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
             </span>
           </p>
