@@ -15,7 +15,8 @@ import {
   MenuItem,
   Select,
   RadioButton,
-  RadioButtonGroup
+  RadioButtonGroup,
+  Paper
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -285,6 +286,21 @@ class App extends Component {
           <RadioButton value="test" label="test" onChange={this.changeRadio} />
           <RadioButton value="test1" label="test1" onChange={this.changeRadio} />
         </RadioButtonGroup>
+        <Paper depth={1}>
+          <h1>Paper: depth 1</h1>
+        </Paper>
+        <Paper depth={2}>
+          <h1>Paper: depth 2</h1>
+        </Paper>
+        <Paper depth={3}>
+          <h1>Paper: depth 3</h1>
+        </Paper>
+        <Paper depth={4}>
+          <h1>Paper: depth 4</h1>
+        </Paper>
+        <Paper depth={5}>
+          <h1>Paper: depth 5</h1>
+        </Paper>
       </section>
     );
   }
