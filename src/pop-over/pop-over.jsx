@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from '../style/pop-over';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import Divider from '../divider';
 
