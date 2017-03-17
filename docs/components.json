@@ -2346,6 +2346,13 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "renderMessageBody",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
@@ -2386,6 +2393,21 @@
             "username": {
               "name": "string",
               "description": "The sender's username",
+              "required": true
+            },
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'text'",
+                  "computed": false
+                },
+                {
+                  "value": "'image'",
+                  "computed": false
+                }
+              ],
+              "description": "The message's type",
               "required": true
             }
           }
