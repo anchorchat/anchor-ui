@@ -1,18 +1,9 @@
 import React, { PropTypes } from 'react';
-import combineStyles from '../internal/combine-styles';
-import styles from './styles';
-
-function getStyle(depth, overrideStyle) {
-  let style = styles.paper;
-
-  style = combineStyles(style, { boxShadow: styles.depthShadows[depth - 1] });
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 function Paper({ children, depth, style }) {
   return (
-    <section style={getStyle(depth, style)}>
+    <section style={getStyles.root(depth, style)}>
       {children}
     </section>
   );
