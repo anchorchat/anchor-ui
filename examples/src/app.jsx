@@ -17,7 +17,9 @@ import {
   RadioButton,
   RadioButtonGroup,
   Paper,
-  Menu
+  Menu,
+  Tabs,
+  Tab
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar, IconMenu as MenuIcon } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -239,25 +241,34 @@ class App extends Component {
         />
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
-          <List style={channelListStyle} header="Channels">
-            {channels.map(channel => (
-              <ListItem
-                key={`channel-list-${channel.name}`}
-                primaryText={channel.name}
-                secondaryText={`${channel.users.length}/${channel.maxUsers}`}
-                active={currentChannel === channel.name}
-                rightButton={
-                  currentChannel === channel.name
-                  ? <Button iconButton onClick={() => {}}>
-                    <IconClose color={colors.white} />
-                  </Button>
-                  : null
-                }
-                avatar={<ChannelAvatar inverted={currentChannel === channel.name} />}
-                badge={<Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />}
-              />
-            ))}
-          </List>
+          <Tabs style={channelListStyle}>
+            <Tab label="1">
+              <List header="Channels">
+                {channels.map(channel => (
+                  <ListItem
+                    key={`channel-list-${channel.name}`}
+                    primaryText={channel.name}
+                    secondaryText={`${channel.users.length}/${channel.maxUsers}`}
+                    active={currentChannel === channel.name}
+                    rightButton={
+                      currentChannel === channel.name
+                      ? <Button iconButton onClick={() => {}}>
+                        <IconClose color={colors.white} />
+                      </Button>
+                      : null
+                    }
+                    avatar={<ChannelAvatar inverted={currentChannel === channel.name} />}
+                    badge={
+                      <Badge inverted={currentChannel === channel.name} value={10} maxValue={9} />
+                    }
+                  />
+                ))}
+              </List>
+            </Tab>
+            <Tab label="2">
+              <p>2</p>
+            </Tab>
+          </Tabs>
         </article>
         <article style={channelStyle}>
           <ChannelHeader
