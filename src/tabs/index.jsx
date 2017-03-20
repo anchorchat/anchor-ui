@@ -76,7 +76,7 @@ class Tabs extends Component {
 
     return (
       <section style={style}>
-        <section>
+        <section style={{ display: 'flex' }}>
           {tabs}
         </section>
         <section>
