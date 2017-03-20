@@ -1,12 +1,24 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, createElement, cloneElement } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
+import styles from './styles';
+import combineStyles from '../internal/combine-styles';
+
+function getTabContentStyle(selected) {
+  let style = styles.tabContent;
+
+  if (selected) {
+    style = combineStyles(style, { display: 'block' });
+  }
+
+  return style;
+}
 
 class Tabs extends Component {
   static displayName = 'Tabs'
 
   static propTypes = {
-    /** The Tabs's content (Tab), each child must have a value & label prop */
+    /** The Tabs's content (Tab) */
     children: PropTypes.node.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object)
@@ -24,8 +36,10 @@ class Tabs extends Component {
     super();
 
     this.state = {
-      value: 1
+      value: 0
     };
+
+    this.toggleTab = this.toggleTab.bind(this);
   }
 
   toggleTab(value) {
@@ -37,26 +51,34 @@ class Tabs extends Component {
   render() {
     const { children, style } = this.props;
     const { value } = this.state;
+    const tabContent = [];
 
-    const tabsWithProps = React.Children.map(
-      children, child => React.cloneElement(
-        child,
-        { onClick: () => this.toggleTab(child.props.value), active: child.props.value === value }
-      )
-    );
+    const tabs = children.map((tab, index) => {
+      tabContent.push(
+        createElement(
+          'div', {
+            style: getTabContentStyle(index === value)
+          },
+          tab.props.children
+        )
+      );
 
-    const tabChildrenWithProps = React.Children.map(
-      children,
-      child => React.Children.map(child.props.children, infant => React.cloneElement(infant))
-    );
+      return cloneElement(
+        tab,
+        {
+          selected: index === value,
+          onClick: () => this.toggleTab(index)
+        }
+      );
+    });
 
     return (
       <section style={style}>
         <section>
-          {tabsWithProps}
+          {tabs}
         </section>
         <section>
-          {tabChildrenWithProps}
+          {tabContent}
         </section>
       </section>
     );
