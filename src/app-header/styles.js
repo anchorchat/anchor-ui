@@ -1,15 +1,20 @@
 import colors from '../settings/colors';
 
 const styleSheet = {
-  header: {
+  root: {
     background: colors.theme,
     boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
     boxSizing: 'border-box',
     height: '56px',
-    padding: '10px 16px',
+    paddingTop: '10px',
+    paddingRight: '16px',
+    paddingBottom: '10px',
+    paddingLeft: '16px',
     position: 'relative',
     width: '100%',
-    zIndex: '1'
+    zIndex: '1',
+    display: 'flex',
+    alignItems: 'center'
   },
   text: {
     color: colors.white,
@@ -19,13 +24,15 @@ const styleSheet = {
     margin: 0,
     textDecoration: 'none'
   },
-  button: {
+  leftButton: {
     position: 'absolute',
-    top: '8px',
-    right: '4px'
+    left: '8px'
+  },
+  rightButton: {
+    position: 'absolute',
+    right: '8px'
   },
   icon: {
-    float: 'left',
     height: '100%',
     marginRight: '16px'
   }

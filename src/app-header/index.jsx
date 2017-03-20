@@ -1,17 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
-import styles from '../style/app-header';
-import colors from '../settings/colors';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = combineStyles(styles.header, { background: color });
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** Your app's header */
 class AppHeader extends Component {
@@ -30,8 +22,12 @@ class AppHeader extends Component {
     textStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the button element */
-    buttonStyle: PropTypes.instanceOf(Object)
+    /** Override the styles of the right button */
+    rightButtonStyle: PropTypes.instanceOf(Object),
+    /** Left-hand side placed button */
+    leftButton: PropTypes.node,
+    /** Override the styles of the left button */
+    leftButtonStyle: PropTypes.instanceOf(Object),
   }
 
   static defaultProps = {
@@ -39,9 +35,11 @@ class AppHeader extends Component {
     style: {},
     textStyle: {},
     iconStyle: {},
-    buttonStyle: {},
+    rightButtonStyle: {},
     icon: null,
-    rightButton: null
+    rightButton: null,
+    leftButton: null,
+    leftButtonStyle: {}
   }
 
   static contextTypes = {
@@ -56,16 +54,31 @@ class AppHeader extends Component {
   }
 
   render() {
-    const { text, icon, rightButton, style, iconStyle, textStyle, buttonStyle } = this.props;
+    const {
+      text,
+      icon,
+      rightButton,
+      style,
+      iconStyle,
+      textStyle,
+      rightButtonStyle,
+      leftButton,
+      leftButtonStyle
+    } = this.props;
     const { color } = this.context;
 
     return (
-      <header style={getStyle(color, style)}>
-        {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        {text ? <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1> : null}
+      <header style={getStyles.root(color, style, leftButton, rightButton)}>
+        {
+          leftButton
+          ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
+          : null
+        }
+        {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
+        {text ? <h1 style={getStyles.text(textStyle)}>{text}</h1> : null}
         {
           rightButton
-          ? <div style={combineStyles(styles.button, buttonStyle)}>{rightButton}</div>
+          ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
           : null
         }
       </header>
