@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
 import getStyles from './get-styles';
 
 /** Your app's header */
