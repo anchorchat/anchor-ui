@@ -3,6 +3,8 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
+import styles from './styles';
+import getStyles from './get-styles';
 
 function getStyle(themeColor, icon, selected, overrideStyle) {
   let style = {};
@@ -56,9 +58,9 @@ class Tab extends Component {
     const { color } = this.context;
 
     return (
-      <button style={getStyle(color, icon, selected, style)} onClick={onClick}>
-        {icon ? <div style={iconStyle}>{icon}</div> : null}
-        <span style={labelStyle}>{label}</span>
+      <button style={getStyles.root(color, selected, style)} onClick={onClick}>
+        {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
+        <span style={getStyles.label(labelStyle)}>{label}</span>
       </button>
     );
   }
