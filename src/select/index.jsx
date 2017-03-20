@@ -3,41 +3,12 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import find from 'lodash/find';
 import styles from './styles';
+import getStyles from './get-styles';
 import IconChevronDown from '../icons/icon-chevron-down';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
-import darken from '../internal/darken';
-
-function getIconStyle(open, overrideStyle) {
-  let style = styles.icon;
-
-  if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg)' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getHeaderStyle(themeColor, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = combineStyles(
-    styles.header,
-    {
-      backgroundColor: color,
-      ':hover': {
-        backgroundColor: darken(color, 0.05)
-      },
-      ':active': {
-        backgroundColor: darken(color, 0.15)
-      }
-    }
-  );
-
-  return combineStyles(style, overrideStyle);
-}
 
 class Select extends Component {
   static displayName = 'Select'
@@ -73,7 +44,8 @@ class Select extends Component {
 
     this.state = {
       open: false,
-      positioned: false
+      positioned: false,
+      popOverWidth: '200px'
     };
 
     this.toggleSelect = this.toggleSelect.bind(this);
@@ -91,10 +63,12 @@ class Select extends Component {
   positionPopOver() {
     const button = this.button.getBoundingClientRect();
     const popOver = this.popOver.getBoundingClientRect();
+    const container = this.container.getBoundingClientRect();
 
     this.setState({
       positioned: true,
-      position: getPopOverPosition(button, popOver, 'select')
+      position: getPopOverPosition(button, popOver, 'select'),
+      popOverWidth: `${container.width}px`
     });
   }
 
@@ -105,7 +79,7 @@ class Select extends Component {
   }
 
   render() {
-    const { open, position } = this.state;
+    const { open, position, popOverWidth } = this.state;
     const { children, value, label, style, headerStyle, labelStyle } = this.props;
     const { color } = this.context;
 
@@ -120,20 +94,24 @@ class Select extends Component {
     const headerText = (activeChild && activeChild.props && activeChild.props.text) || value;
 
     return (
-      <section style={combineStyles(styles.container, style)}>
+      <section
+        ref={container => (this.container = container)}
+        style={combineStyles(styles.container, style)}
+      >
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}
         <header
           ref={button => (this.button = button)}
-          style={getHeaderStyle(color, headerStyle)}
+          style={getStyles.header(color, headerStyle)}
           onClick={this.toggleSelect}
         >
           {headerText}
-          <div style={getIconStyle(open, {})}>
+          <div style={getStyles.icon(open, {})}>
             <IconChevronDown color={colors.white} />
           </div>
         </header>
         <PopOver
+          style={{ minWidth: popOverWidth }}
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}

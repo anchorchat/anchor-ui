@@ -26,6 +26,11 @@ export Select from './select';
 export RadioButton from './radio-button';
 export RadioButtonGroup from './radio-button-group';
 export EmojiMenu from './emoji-menu';
+export Paper from './paper';
+export Tabs from './tabs';
+export Tab from './tab';
+export Modal from './modal';
+export Menu from './menu';
 
 export icons from './icons';
 
