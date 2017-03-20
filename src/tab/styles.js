@@ -17,7 +17,8 @@ export default {
     display: 'flex',
     alignItems: 'center',
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    height: '50px'
   },
   label: {
     color: colors.primaryText,

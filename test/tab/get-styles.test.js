@@ -28,8 +28,7 @@ describe('Tab.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.root('red', false, { color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 
@@ -43,8 +42,7 @@ describe('Tab.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.label({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 
@@ -58,8 +56,7 @@ describe('Tab.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.icon({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 });

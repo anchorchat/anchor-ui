@@ -3720,6 +3720,45 @@
           "value": "{}",
           "computed": false
         }
+<<<<<<< HEAD
+      },
+      "tabContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the tab container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the tab content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the tab content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+=======
+>>>>>>> origin/master
       }
     }
   },
