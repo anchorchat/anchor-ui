@@ -4,7 +4,7 @@ import pure from 'recompose/pure';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function getStyle(themeColor, icon, active, overrideStyle) {
+function getStyle(themeColor, icon, selected, overrideStyle) {
   let style = {};
   const color = themeColor || colors.theme;
 
@@ -12,7 +12,7 @@ function getStyle(themeColor, icon, active, overrideStyle) {
     style = combineStyles(style, { paddingLeft: '40px' });
   }
 
-  if (active) {
+  if (selected) {
     style = combineStyles(style, { color, paddingRight: '40px' });
   }
 
@@ -27,8 +27,8 @@ class Tab extends Component {
     icon: PropTypes.node,
     /** The Tab's label */
     label: PropTypes.node.isRequired,
-    /** Tab active */
-    active: PropTypes.bool,
+    /** Tab selected */
+    selected: PropTypes.bool,
     /** Tab onClick function */
     onClick: PropTypes.func.isRequired,
     /** Override the styles of the root element */
@@ -41,7 +41,7 @@ class Tab extends Component {
 
   static defaultProps = {
     icon: null,
-    active: false,
+    selected: false,
     style: {},
     labelStyle: {},
     iconStyle: {}
@@ -52,11 +52,11 @@ class Tab extends Component {
   }
 
   render() {
-    const { onClick, icon, label, active, style, iconStyle, labelStyle } = this.props;
+    const { onClick, icon, label, selected, style, iconStyle, labelStyle } = this.props;
     const { color } = this.context;
 
     return (
-      <button style={getStyle(color, icon, active, style)} onClick={onClick}>
+      <button style={getStyle(color, icon, selected, style)} onClick={onClick}>
         {icon ? <div style={iconStyle}>{icon}</div> : null}
         <span style={labelStyle}>{label}</span>
       </button>
