@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "2.6.8",
+  "version": "2.7.0",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
