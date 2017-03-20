@@ -12,7 +12,7 @@ export default {
     `0 ${d[0]}px ${d[1]}px ${fade(colors.black, d[2])},
     0 ${d[3]}px ${d[4]}px ${fade(colors.black, d[5])}`
   )),
-  paper: {
+  root: {
     padding: '10px',
     borderRadius: '3px',
     background: colors.white,
