@@ -1,18 +1,7 @@
 import React, { Component, PropTypes, createElement, cloneElement } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
-
-function getTabContentStyle(selected) {
-  let style = styles.tabContent;
-
-  if (selected) {
-    style = combineStyles(style, { display: 'block' });
-  }
-
-  return style;
-}
+import getStyles from './get-styles';
 
 class Tabs extends Component {
   static displayName = 'Tabs'
@@ -58,7 +47,7 @@ class Tabs extends Component {
         createElement(
           'div', {
             key: index,
-            style: getTabContentStyle(index === value)
+            style: getStyles.tabContent(index === value)
           },
           tab.props.children
         )
