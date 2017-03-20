@@ -29,6 +29,7 @@ export EmojiMenu from './emoji-menu';
 export Paper from './paper';
 export Tabs from './tabs';
 export Tab from './tab';
+export Modal from './modal';
 
 export icons from './icons';
 
