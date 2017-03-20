@@ -167,13 +167,36 @@
           "computed": false
         }
       },
-      "buttonStyle": {
+      "rightButtonStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the button element",
+        "description": "Override the styles of the right button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Left-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "leftButtonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the left button",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2233,6 +2256,73 @@
       }
     }
   },
+  "components/menu/index.jsx": {
+    "description": "",
+    "displayName": "Menu",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The Menu's content (MenuItem)"
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Menu open",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "toggleMenu": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Toggle the Menu's visibility"
+      },
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Menu's header",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/menu-item/index.jsx": {
     "description": "General purpose menu item",
     "displayName": "MenuItem",
@@ -2743,6 +2833,63 @@
         "description": "Enable autoScroll",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/modal/index.jsx": {
+    "description": "",
+    "displayName": "Modal",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "actions": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "footerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
@@ -3451,6 +3598,124 @@
         },
         "required": false,
         "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/tab/index.jsx": {
+    "description": "",
+    "displayName": "Tab",
+    "methods": [],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Tab's icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The Tab's label"
+      },
+      "selected": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Tab selected",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Tab onClick function"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/tabs/index.jsx": {
+    "description": "",
+    "displayName": "Tabs",
+    "methods": [
+      {
+        "name": "toggleTab",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The Tabs's content (Tab)"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
