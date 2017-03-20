@@ -10,11 +10,20 @@ class Tabs extends Component {
     /** The Tabs's content (Tab) */
     children: PropTypes.node.isRequired,
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object)
+    style: PropTypes.instanceOf(Object),
+    /** Override the styles of the tab container */
+    tabContainerStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the tab content container */
+    contentContainerStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the tab content container */
+    contentStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     style: {},
+    tabContainerStyle: {},
+    contentContainerStyle: {},
+    contentStyle: {}
   }
 
   static contextTypes = {
@@ -38,7 +47,7 @@ class Tabs extends Component {
   }
 
   render() {
-    const { children, style } = this.props;
+    const { children, style, tabContainerStyle, contentContainerStyle, contentStyle } = this.props;
     const { value } = this.state;
     const tabContent = [];
 
@@ -47,7 +56,7 @@ class Tabs extends Component {
         createElement(
           'div', {
             key: index,
-            style: getStyles.tabContent(index === value)
+            style: getStyles.tabContent(index === value, contentStyle)
           },
           tab.props.children
         )
@@ -64,11 +73,11 @@ class Tabs extends Component {
     });
 
     return (
-      <section style={style}>
-        <section style={{ display: 'flex' }}>
+      <section style={getStyles.root(style)}>
+        <section style={getStyles.tabContainer(tabContainerStyle)}>
           {tabs}
         </section>
-        <section>
+        <section style={getStyles.contentContainer(contentContainerStyle)}>
           {tabContent}
         </section>
       </section>
