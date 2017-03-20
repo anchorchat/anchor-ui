@@ -3720,6 +3720,7 @@
           "value": "{}",
           "computed": false
         }
+<<<<<<< HEAD
       },
       "tabContainerStyle": {
         "type": {
@@ -3756,6 +3757,8 @@
           "value": "{}",
           "computed": false
         }
+=======
+>>>>>>> origin/master
       }
     }
   },
