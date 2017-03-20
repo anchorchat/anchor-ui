@@ -57,6 +57,7 @@ class Tabs extends Component {
       tabContent.push(
         createElement(
           'div', {
+            key: index,
             style: getTabContentStyle(index === value)
           },
           tab.props.children
@@ -66,6 +67,7 @@ class Tabs extends Component {
       return cloneElement(
         tab,
         {
+          key: index,
           selected: index === value,
           onClick: () => this.toggleTab(index)
         }
