@@ -91,7 +91,8 @@ class Dialog extends Component {
       overlayStyle,
       headingStyle,
       bodyStyle,
-      children
+      children,
+      ...custom
     } = this.props;
     const { color } = this.context;
 
@@ -126,7 +127,7 @@ class Dialog extends Component {
     }
 
     return (
-      <section style={combineStyles(styles.overlay, overlayStyle)}>
+      <section style={combineStyles(styles.overlay, overlayStyle)} {...custom}>
         <section style={styles.clickAway} onClick={hideDialog} />
         {dialog}
       </section>

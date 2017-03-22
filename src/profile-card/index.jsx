@@ -57,7 +57,7 @@ class ProfileCard extends Component {
   }
 
   render() {
-    const { username, avatar, text, style, usernameStyle, textStyle } = this.props;
+    const { username, avatar, text, style, usernameStyle, textStyle, ...custom } = this.props;
     const { color } = this.context;
 
     const avatarStyle = {
@@ -69,7 +69,7 @@ class ProfileCard extends Component {
     };
 
     return (
-      <section style={getStyle(color, avatar, style)}>
+      <section style={getStyle(color, avatar, style)} {...custom}>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
         {text ? <p style={combineStyles(styles.text, textStyle)}>{text}</p> : null}

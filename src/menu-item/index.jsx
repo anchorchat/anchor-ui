@@ -74,11 +74,11 @@ class MenuItem extends Component {
   }
 
   render() {
-    const { icon, text, style, textStyle, iconStyle, active } = this.props;
+    const { icon, text, style, textStyle, iconStyle, active, ...custom } = this.props;
     const { color } = this.context;
 
     return (
-      <section style={getStyle(color, icon, active, style)} onClick={this.handleClick}>
+      <section style={getStyle(color, icon, active, style)} onClick={this.handleClick} {...custom}>
         {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
         <p style={combineStyles(styles.text, textStyle)}>
           {text}

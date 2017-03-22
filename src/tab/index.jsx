@@ -3,7 +3,9 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
-function Tab({ onClick, icon, label, selected, style, iconStyle, labelStyle }, { color }) {
+function Tab(
+  { onClick, icon, label, selected, style, iconStyle, labelStyle, ...custom }, { color }
+) {
   return (
     <button style={getStyles.root(color, selected, style)} onClick={onClick}>
       {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}

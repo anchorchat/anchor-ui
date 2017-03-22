@@ -80,7 +80,7 @@ class Select extends Component {
 
   render() {
     const { open, position, popOverWidth } = this.state;
-    const { children, value, label, style, headerStyle, labelStyle } = this.props;
+    const { children, value, label, style, headerStyle, labelStyle, ...custom } = this.props;
     const { color } = this.context;
 
     const childrenWithProps = React.Children.map(
@@ -97,6 +97,7 @@ class Select extends Component {
       <section
         ref={container => (this.container = container)}
         style={combineStyles(styles.container, style)}
+        {...custom}
       >
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}

@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import getStyles from './get-styles';
 
-function Modal({ children, actions, style, contentStyle, footerStyle }, { color }) {
+function Modal({ children, actions, style, contentStyle, footerStyle, ...custom }, { color }) {
   return (
     <section style={getStyles.overlay()}>
-      <section style={getStyles.root(style)}>
+      <section style={getStyles.root(style)} {...custom}>
         <section style={getStyles.content(contentStyle)}>
           {children}
         </section>

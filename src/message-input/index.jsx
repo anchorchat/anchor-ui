@@ -97,7 +97,8 @@ class MessageInput extends Component {
       inputRef,
       disabled,
       style,
-      inputStyle
+      inputStyle,
+      ...custom
     } = this.props;
     const { color } = this.context;
     const iconColor = color || colors.theme;
@@ -122,6 +123,7 @@ class MessageInput extends Component {
           ref={inputRef}
           disabled={disabled}
           key="input"
+          {...custom}
         />
         <Button
           style={getButtonStyle(styles.rightButton, disabled)}

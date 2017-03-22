@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
-function IconMore({ color }) {
+function IconMore({ color, ...custom }) {
   return (
-    <svg fill={color} height="24" viewBox="0 0 24 24" width="24">
+    <svg fill={color} height="24" viewBox="0 0 24 24" width="24" {...custom}>
       <g fill="#C4C4C4">
         <circle cx="12.5" cy="19.5" r="1.875" />
         <circle cx="12.5" cy="12" r="1.875" />

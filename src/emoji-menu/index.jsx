@@ -103,7 +103,14 @@ class EmojiMenu extends Component {
     const { tone, storedEmojis, category } = this.state;
     const { color } = this.context;
     const {
-      style, headerStyle, modifierStyle, categoryStyle, emojiStyle, footerStyle, iconStyle
+      style,
+      headerStyle,
+      modifierStyle,
+      categoryStyle,
+      emojiStyle,
+      footerStyle,
+      iconStyle,
+      ...custom
     } = this.props;
 
     const activeColor = color || colors.theme;
@@ -119,7 +126,7 @@ class EmojiMenu extends Component {
     }).value();
 
     return (
-      <section style={combineStyles(styles.container, style)}>
+      <section style={combineStyles(styles.container, style)} {...custom}>
         <EmojiModifiers
           modifiers={modifiers}
           changeTone={this.changeTone}

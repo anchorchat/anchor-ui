@@ -1,7 +1,7 @@
 import React, { PropTypes, cloneElement } from 'react';
 import getStyles from './get-styles';
 
-function Menu({ children, open, header, toggleMenu, style, headerStyle }) {
+function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custom }) {
   const menuItems = children.map((tab, index) => (
     cloneElement(
       tab,
@@ -13,7 +13,7 @@ function Menu({ children, open, header, toggleMenu, style, headerStyle }) {
   ));
 
   return (
-    <section style={getStyles.container()}>
+    <section style={getStyles.container()} {...custom}>
       <div style={getStyles.overlay(open)} onClick={toggleMenu} />
       <nav style={getStyles.root(open, style)}>
         {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}

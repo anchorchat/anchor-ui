@@ -5,9 +5,9 @@ import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
 
 /** List */
-function List({ children, header, listRef, style, headerStyle }) {
+function List({ children, header, listRef, style, headerStyle, ...custom }) {
   return (
-    <ul ref={listRef} style={combineStyles(styles.list, style)}>
+    <ul ref={listRef} style={combineStyles(styles.list, style)} {...custom}>
       {header ? <h1 style={combineStyles(styles.listHeader, headerStyle)}>{header}</h1> : null}
       {children}
     </ul>

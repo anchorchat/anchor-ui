@@ -359,8 +359,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Button onClick function"
+        "required": false,
+        "description": "Button onClick function",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "style": {
         "type": {
@@ -391,6 +395,17 @@
         },
         "required": false,
         "description": "Inverts color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the button",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -1937,7 +1952,15 @@
       },
       "value": {
         "type": {
-          "name": "string"
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
         },
         "required": true,
         "description": "The input's value"
@@ -1946,8 +1969,12 @@
         "type": {
           "name": "string"
         },
-        "required": true,
-        "description": "Type of input"
+        "required": false,
+        "description": "Type of input",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
       },
       "label": {
         "type": {
@@ -2017,7 +2044,41 @@
         "required": false,
         "description": "Ref function to the element",
         "defaultValue": {
-          "value": "() => {}",
+          "value": "null",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the input",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
@@ -3720,7 +3781,6 @@
           "value": "{}",
           "computed": false
         }
-<<<<<<< HEAD
       },
       "tabContainerStyle": {
         "type": {
@@ -3757,8 +3817,6 @@
           "value": "{}",
           "computed": false
         }
-=======
->>>>>>> origin/master
       }
     }
   },
