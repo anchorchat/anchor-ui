@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import Radium from 'radium';
+import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 function Card({ children, style, ...custom }) {
@@ -22,4 +24,4 @@ Card.defaultProps = {
   style: {}
 };
 
-export default Card;
+export default pure(Radium(Card));
