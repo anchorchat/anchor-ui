@@ -20,9 +20,9 @@ const icons = {
 };
 
 /** Four types of (system) messages for alerting your user */
-function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle }) {
+function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) {
   return (
-    <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)}>
+    <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
       <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
       <p style={combineStyles(styles.text, textStyle)}>{text}</p>
       <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>

@@ -88,10 +88,10 @@ class MessageList extends Component {
   }
 
   render() {
-    const { children, style, listStyle } = this.props;
+    const { children, style, listStyle, ...custom } = this.props;
 
     return (
-      <article style={combineStyles(styles.container, style)}>
+      <article style={combineStyles(styles.container, style)} {...custom}>
         <ul
           style={combineStyles(styles.list, listStyle)}
           ref={messageList => (this.messageList = messageList)}

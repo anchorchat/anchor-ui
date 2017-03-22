@@ -50,7 +50,7 @@ class Badge extends Component {
   }
 
   render() {
-    const { value, maxValue, inverted, style } = this.props;
+    const { value, maxValue, inverted, style, ...custom } = this.props;
     const { color } = this.context;
 
     let content = value;
@@ -60,7 +60,7 @@ class Badge extends Component {
     }
 
     return (
-      <span style={getStyle(color, inverted, style)}>
+      <span style={getStyle(color, inverted, style)} {...custom}>
         {content}
       </span>
     );

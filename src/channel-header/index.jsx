@@ -6,10 +6,10 @@ import combineStyles from '../internal/combine-styles';
 
 /** A channel's header */
 function ChannelHeader({
-  name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle
+  name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle, ...custom
 }) {
   return (
-    <header style={combineStyles(styles.header, style)}>
+    <header style={combineStyles(styles.header, style)} {...custom}>
       {
         leftButton
         ? <div style={combineStyles(styles.buttonLeft, leftButtonStyle)}>{leftButton}</div>

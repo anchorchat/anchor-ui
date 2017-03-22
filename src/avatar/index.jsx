@@ -11,9 +11,9 @@ function getStyle(image, overrideStyle) {
 }
 
 /** A user's profile image */
-function Avatar({ image, style }) {
+function Avatar({ image, style, ...custom }) {
   return (
-    <section style={getStyle(image, style)} />
+    <section style={getStyle(image, style)} {...custom} />
   );
 }
 
