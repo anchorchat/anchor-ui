@@ -32,5 +32,11 @@ export default {
   },
   disabled: {
     opacity: '0.38'
+  },
+  error: {
+    display: 'block',
+    paddingTop: '8px',
+    paddingLeft: '8px',
+    color: colors.error
   }
 };

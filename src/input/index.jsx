@@ -16,6 +16,8 @@ function Input({
   inputStyle,
   labelStyle,
   disabled,
+  error,
+  errorStyle,
   ...custom
 }) {
   return (
@@ -31,6 +33,7 @@ function Input({
         ref={inputRef}
         {...custom}
       />
+      {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
     </section>
   );
 }
@@ -43,7 +46,7 @@ Input.propTypes = {
   /** The input's value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** Type of input */
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   /** The input's label */
   label: PropTypes.node.isRequired,
   /** The input's name */
@@ -59,7 +62,11 @@ Input.propTypes = {
   /** Ref function to the element */
   inputRef: PropTypes.func,
   /** Disables the input */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /** Display an error message */
+  error: PropTypes.node,
+  /** Override the styles of the label element */
+  errorStyle: PropTypes.instanceOf(Object)
 };
 
 Input.defaultProps = {
@@ -68,7 +75,10 @@ Input.defaultProps = {
   labelStyle: {},
   maxLength: 500,
   inputRef: null,
-  disabled: false
+  disabled: false,
+  error: null,
+  type: 'text',
+  errorStyle: {}
 };
 
 export default pure(Radium(Input));

@@ -19,8 +19,13 @@ function input(overrideStyle) {
   return combineStyles(styles.input, overrideStyle);
 }
 
+function error(overrideStyle) {
+  return combineStyles(styles.error, overrideStyle);
+}
+
 export default {
   root,
   label,
-  input
+  input,
+  error
 };
