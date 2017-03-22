@@ -31,6 +31,9 @@ export Tabs from './tabs';
 export Tab from './tab';
 export Modal from './modal';
 export Menu from './menu';
+export Card from './card';
+export CardHeader from './card-header';
+export CardContent from './card-content';
 
 export icons from './icons';
 
