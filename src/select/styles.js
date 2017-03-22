@@ -2,7 +2,6 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 import styles from '../settings/styles';
 
-
 export default {
   container: {
     position: 'relative',
