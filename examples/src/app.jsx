@@ -265,7 +265,7 @@ class App extends Component {
                 ))}
               </List>
             </Tab>
-            <Tab label="2">
+            <Tab label="2" badge={<Badge value={2} maxValue={9} />}>
               <p>2</p>
             </Tab>
           </Tabs>
