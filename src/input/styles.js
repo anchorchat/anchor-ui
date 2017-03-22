@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
-  inputWrapper: {
+export default {
+  root: {
     maxWidth: '250px',
     width: '100%',
   },
@@ -29,7 +29,8 @@ const styleSheet = {
     paddingLeft: '8px',
     textTransform: 'capitalize',
     width: '100%'
+  },
+  disabled: {
+    opacity: '0.38'
   }
 };
-
-export default styleSheet;
