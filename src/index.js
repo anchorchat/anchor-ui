@@ -34,6 +34,7 @@ export Menu from './menu';
 export Card from './card';
 export CardHeader from './card-header';
 export CardContent from './card-content';
+export Checkbox from './checkbox';
 
 export icons from './icons';
 
