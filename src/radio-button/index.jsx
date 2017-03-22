@@ -60,7 +60,7 @@ class RadioButton extends Component {
 
   render() {
     const {
-      value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked
+      value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, ...custom
     } = this.props;
     const { color } = this.context;
     const themeColor = color || colors.theme;
@@ -85,6 +85,7 @@ class RadioButton extends Component {
           onBlur={this.handleBlur}
           checked={checked}
           style={combineStyles(styles.input, inputStyle)}
+          {...custom}
         />
         <div style={combineStyles(styles.icon, iconStyle)}>
           <IconRadio color={checked ? themeColor : colors.icons} />

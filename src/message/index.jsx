@@ -127,7 +127,8 @@ class Message extends Component {
       messageBodyStyle,
       messageTimeStyle,
       compact,
-      fontSize
+      fontSize,
+      ...custom
     } = this.props;
     const { color } = this.context;
 
@@ -143,7 +144,7 @@ class Message extends Component {
     }
 
     return (
-      <section style={getStyles.container(myMessage, compact)}>
+      <section style={getStyles.container(myMessage, compact)} {...custom}>
         <section style={getStyles.root(color, myMessage, avatar, compact, style)}>
           {
             compact

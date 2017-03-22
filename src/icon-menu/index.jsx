@@ -88,7 +88,7 @@ class IconMenu extends Component {
 
   render() {
     const {
-      children, secondaryMenuItems, header, icon, headerStyle, style, dividerText
+      children, secondaryMenuItems, header, icon, headerStyle, style, dividerText, ...custom
     } = this.props;
     const { open, position } = this.state;
 
@@ -100,7 +100,7 @@ class IconMenu extends Component {
     }
 
     return (
-      <div style={combineStyles(styles.iconMenu, style)}>
+      <div style={combineStyles(styles.iconMenu, style)} {...custom}>
         {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
         <div ref={button => (this.button = button)}>
           <Button iconButton onClick={this.openMenu}>{icon}</Button>

@@ -36,7 +36,7 @@ class ProfileSidebar extends Component {
   }
 
   render() {
-    const { username, avatar, children, style, headerStyle } = this.props;
+    const { username, avatar, children, style, headerStyle, ...custom } = this.props;
 
     const avatarStyle = {
       width: '120px',
@@ -44,7 +44,7 @@ class ProfileSidebar extends Component {
     };
 
     return (
-      <section style={combineStyles(style, styles.profileSidebar)}>
+      <section style={combineStyles(style, styles.profileSidebar)} {...custom}>
         <h1 style={combineStyles(headerStyle, styles.profileSidebarHeader)}>{username}</h1>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         {children}

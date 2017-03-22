@@ -37,10 +37,10 @@ function getTrackStyle(themeColor, active, overrideStyle) {
 
 
 function Switch(
-  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle }, { color }
+  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, ...custom }, { color }
 ) {
   return (
-    <section style={style}>
+    <section style={style} {...custom}>
       <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
       <section style={styles.wrapper} onClick={toggleSwitch}>
         <div style={getTrackStyle(color, active, trackStyle)} />

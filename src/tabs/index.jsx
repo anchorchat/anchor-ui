@@ -47,7 +47,9 @@ class Tabs extends Component {
   }
 
   render() {
-    const { children, style, tabContainerStyle, contentContainerStyle, contentStyle } = this.props;
+    const {
+      children, style, tabContainerStyle, contentContainerStyle, contentStyle, ...custom
+    } = this.props;
     const { value } = this.state;
     const tabContent = [];
 
@@ -73,7 +75,7 @@ class Tabs extends Component {
     });
 
     return (
-      <section style={getStyles.root(style)}>
+      <section style={getStyles.root(style)} {...custom}>
         <section style={getStyles.tabContainer(tabContainerStyle)}>
           {tabs}
         </section>

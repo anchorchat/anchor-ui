@@ -14,12 +14,13 @@ function AppHeader(
     textStyle,
     rightButtonStyle,
     leftButton,
-    leftButtonStyle
+    leftButtonStyle,
+    ...custom
   },
   { color }
 ) {
   return (
-    <header style={getStyles.root(color, style, leftButton, rightButton)}>
+    <header style={getStyles.root(color, style, leftButton, rightButton)} {...custom}>
       {
         leftButton
         ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>

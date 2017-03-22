@@ -7,7 +7,16 @@ import Divider from '../divider';
 
 /** Pop over useful for showing tooltips or menu options */
 function PopOver({
-  children, header, style, headerStyle, open, popOverRef, position, secondaryMenuItems, dividerText
+  children,
+  header,
+  style,
+  headerStyle,
+  open,
+  popOverRef,
+  position,
+  secondaryMenuItems,
+  dividerText,
+  ...custom
 }) {
   if (!open) {
     return null;
@@ -24,12 +33,16 @@ function PopOver({
   }
 
   return (
-    <ul style={combineStyles(combineStyles(styles.popOver, position), style)} ref={popOverRef}>
+    <section
+      style={combineStyles(combineStyles(styles.popOver, position), style)}
+      ref={popOverRef}
+      {...custom}
+    >
       {header ? <h1 style={combineStyles(styles.header, headerStyle)}>{header}</h1> : null}
       {children}
       {divider}
       {secondaryMenuItems}
-    </ul>
+    </section>
   );
 }
 

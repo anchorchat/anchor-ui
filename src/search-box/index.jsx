@@ -55,10 +55,10 @@ class SearchBox extends Component {
   }
 
   render() {
-    const { value, placeholder, style, inputStyle, iconStyle } = this.props;
+    const { value, placeholder, style, inputStyle, iconStyle, ...custom } = this.props;
 
     return (
-      <section style={combineStyles(styles.searchBox, style)}>
+      <section style={combineStyles(styles.searchBox, style)} {...custom}>
         <div style={combineStyles(styles.icon, iconStyle)}><IconSearch /></div>
         <input
           style={combineStyles(styles.input, inputStyle)}

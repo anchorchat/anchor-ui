@@ -114,12 +114,13 @@ class ListItem extends Component {
       style,
       primaryTextStyle,
       secondaryTextStyle,
-      muted
+      muted,
+      ...custom
     } = this.props;
     const { color } = this.context;
 
     return (
-      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, style)}>
+      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, style)} {...custom}>
         {
           avatar
           ? <div style={styles.avatar}>

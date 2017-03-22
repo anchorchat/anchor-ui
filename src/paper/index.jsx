@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import getStyles from './get-styles';
 
-function Paper({ children, depth, style }) {
+function Paper({ children, depth, style, ...custom }) {
   return (
-    <section style={getStyles.root(depth, style)}>
+    <section style={getStyles.root(depth, style)} {...custom}>
       {children}
     </section>
   );

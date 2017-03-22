@@ -56,11 +56,11 @@ class Loader extends Component {
   }
 
   render() {
-    const { inverted, style, dotStyle } = this.props;
+    const { inverted, style, dotStyle, ...custom } = this.props;
     const { color } = this.context;
 
     return (
-      <div style={combineStyles(styles.loader, style)}>
+      <div style={combineStyles(styles.loader, style)} {...custom}>
         <span style={getStyle(color, inverted, 0, dotStyle)} />
         <span style={getStyle(color, inverted, 1, dotStyle)} />
         <span style={getStyle(color, inverted, 2, dotStyle)} />

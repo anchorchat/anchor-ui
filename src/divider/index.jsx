@@ -4,12 +4,12 @@ import Radium from 'radium';
 import styles from '../style/divider';
 import combineStyles from '../internal/combine-styles';
 
-function Divider({ text, style, textStyle }) {
+function Divider({ text, style, textStyle, ...custom }) {
   if (!text) {
-    return <hr style={combineStyles(styles.hr, style)} />;
+    return <hr style={combineStyles(styles.hr, style)} {...custom} />;
   }
 
-  return <h1 style={combineStyles(styles.text, textStyle)}>{text}</h1>;
+  return <h1 style={combineStyles(styles.text, textStyle)} {...custom}>{text}</h1>;
 }
 
 Divider.propTypes = {
