@@ -19,16 +19,16 @@ function getStyle(themeColor, inverted, iconButton, disabled, overrideStyle) {
   );
   const invertedStyle = combineStyles(styles.inverted, { color });
 
-  if (inverted) {
-    return combineStyles(combineStyles(style, invertedStyle), overrideStyle);
-  }
-
   if (iconButton) {
     style = styles.iconButton;
   }
 
   if (disabled) {
     style = combineStyles(style, styles.disabled);
+  }
+
+  if (inverted) {
+    return combineStyles(combineStyles(style, invertedStyle), overrideStyle);
   }
 
   return combineStyles(style, overrideStyle);
