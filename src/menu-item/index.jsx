@@ -74,7 +74,16 @@ class MenuItem extends Component {
   }
 
   render() {
-    const { icon, text, style, textStyle, iconStyle, active, ...custom } = this.props;
+    const {
+      icon,
+      text,
+      style,
+      textStyle,
+      iconStyle,
+      active,
+      closeMenu, // eslint-disable-line no-unused-vars
+      ...custom
+    } = this.props;
     const { color } = this.context;
 
     return (

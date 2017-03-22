@@ -88,7 +88,15 @@ class MessageList extends Component {
   }
 
   render() {
-    const { children, style, listStyle, ...custom } = this.props;
+    const {
+      children,
+      style,
+      listStyle,
+      addRef, // eslint-disable-line no-unused-vars
+      scrollOffset, // eslint-disable-line no-unused-vars
+      autoScroll, // eslint-disable-line no-unused-vars
+      ...custom
+    } = this.props;
 
     return (
       <article style={combineStyles(styles.container, style)} {...custom}>
