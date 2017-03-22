@@ -40,3 +40,4 @@ export IconNature from './icon-nature';
 export IconObjects from './icon-objects';
 export IconSymbols from './icon-symbols';
 export IconTravel from './icon-travel';
+export IconCheckbox from './icon-checkbox';
