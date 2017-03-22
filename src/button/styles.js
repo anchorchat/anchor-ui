@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 import fade from '../internal/fade';
 
-const styleSheet = {
+export default {
   iconButton: {
     background: 'none',
     borderRadius: '50%',
@@ -47,7 +47,8 @@ const styleSheet = {
     ':active': {
       backgroundColor: darken(colors.white, 0.25)
     }
+  },
+  disabled: {
+    opacity: '0.38'
   }
 };
-
-export default styleSheet;
