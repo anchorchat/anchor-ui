@@ -1,4 +1,5 @@
 import colors from '../settings/colors';
+import styles from '../settings/styles';
 
 export default {
   container: {
@@ -7,7 +8,7 @@ export default {
     background: colors.background,
     overflow: 'hidden',
     borderRadius: '3px',
-    boxShadow: `0 2px 2px 0 ${colors.boxShadow}`
+    boxShadow: styles.depthShadows[0],
   },
   modifiers: {
     display: 'flex',

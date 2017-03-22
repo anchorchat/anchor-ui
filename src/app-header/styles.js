@@ -1,9 +1,10 @@
 import colors from '../settings/colors';
+import styles from '../settings/styles';
 
 const styleSheet = {
   root: {
     background: colors.theme,
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    boxShadow: styles.depthShadows[0],
     boxSizing: 'border-box',
     height: '56px',
     paddingTop: '10px',
