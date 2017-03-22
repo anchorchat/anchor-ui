@@ -82,6 +82,7 @@ class MenuItem extends Component {
       iconStyle,
       active,
       closeMenu, // eslint-disable-line no-unused-vars
+      onClick, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
     const { color } = this.context;
