@@ -18,7 +18,8 @@ export default {
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
-    height: '50px'
+    height: '50px',
+    position: 'relative'
   },
   label: {
     color: colors.primaryText,
@@ -28,5 +29,10 @@ export default {
   },
   icon: {
     marginRight: '10px'
+  },
+  badge: {
+    position: 'absolute',
+    right: '3px',
+    top: '3px'
   }
 };

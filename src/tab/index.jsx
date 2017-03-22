@@ -4,12 +4,14 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 function Tab(
-  { onClick, icon, label, selected, style, iconStyle, labelStyle, ...custom }, { color }
+  { onClick, icon, label, selected, style, iconStyle, labelStyle, badge, badgeStyle, ...custom },
+  { color }
 ) {
   return (
     <button style={getStyles.root(color, selected, style)} onClick={onClick}>
       {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
       <span style={getStyles.label(labelStyle)}>{label}</span>
+      {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
     </button>
   );
 }
@@ -30,7 +32,11 @@ Tab.propTypes = {
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object)
+  iconStyle: PropTypes.instanceOf(Object),
+  /** Badge for the tab */
+  badge: PropTypes.node,
+  /** Override the styles of the badge element */
+  badgeStyle: PropTypes.instanceOf(Object),
 };
 
 Tab.defaultProps = {
@@ -38,7 +44,9 @@ Tab.defaultProps = {
   selected: false,
   style: {},
   labelStyle: {},
-  iconStyle: {}
+  iconStyle: {},
+  badge: null,
+  badgeStyle: {}
 };
 
 Tab.contextTypes = {

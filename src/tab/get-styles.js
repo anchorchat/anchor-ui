@@ -20,8 +20,13 @@ function icon(overrideStyle) {
   return combineStyles(styles.icon, overrideStyle);
 }
 
+function badge(overrideStyle) {
+  return combineStyles(styles.badge, overrideStyle);
+}
+
 export default {
   root,
   label,
-  icon
+  icon,
+  badge
 };
