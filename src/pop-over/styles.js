@@ -1,5 +1,6 @@
 import Radium from 'radium';
 import colors from '../settings/colors';
+import styles from '../settings/styles';
 
 const popOverAnimation = Radium.keyframes({
   '0%': { opacity: 0 },
@@ -14,7 +15,7 @@ const styleSheet = {
     minWidth: '200px',
     backgroundColor: colors.white,
     borderRadius: '3px',
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    boxShadow: styles.depthShadows[0],
     margin: 0,
     paddingLeft: 0,
     overflow: 'hidden',

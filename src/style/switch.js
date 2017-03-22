@@ -1,5 +1,6 @@
 import colors from '../settings/colors';
 import fade from '../internal/fade';
+import styles from '../settings/styles';
 
 const styleSheet = {
   label: {
@@ -19,7 +20,7 @@ const styleSheet = {
     background: colors.white,
     width: '20px',
     height: '20px',
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    boxShadow: styles.depthShadows[0],
     borderRadius: '50%',
     position: 'absolute',
     top: '0',
