@@ -128,6 +128,8 @@ class Message extends Component {
       messageTimeStyle,
       compact,
       fontSize,
+      emoji, // eslint-disable-line no-unused-vars
+      enableLinks, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
     const { color } = this.context;
