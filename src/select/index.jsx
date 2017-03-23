@@ -18,6 +18,8 @@ class Select extends Component {
     children: PropTypes.node.isRequired,
     /** The Select's value */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    /** Change the Select's value */
+    onChange: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
@@ -80,12 +82,19 @@ class Select extends Component {
 
   render() {
     const { open, position, popOverWidth } = this.state;
-    const { children, value, label, style, headerStyle, labelStyle, ...custom } = this.props;
+    const {
+      children, value, onChange, label, style, headerStyle, labelStyle, ...custom
+    } = this.props;
     const { color } = this.context;
 
     const childrenWithProps = React.Children.map(
       children, child => React.cloneElement(
-        child, { closeMenu: this.toggleSelect, active: child.props.value === value }
+        child,
+        {
+          closeMenu: this.toggleSelect,
+          active: child.props.value === value,
+          onClick: () => onChange(child.props.value)
+        }
       )
     );
 
