@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import Radium from 'radium';
+import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 function Modal({ children, actions, style, contentStyle, footerStyle, ...custom }, { color }) {
@@ -41,4 +43,4 @@ Modal.contextTypes = {
   color: PropTypes.string
 };
 
-export default Modal;
+export default pure(Radium(Modal));

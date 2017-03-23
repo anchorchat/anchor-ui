@@ -1,6 +1,7 @@
 import colors from '../settings/colors';
 import darken from '../internal/darken';
 import fade from '../internal/fade';
+import styles from '../settings/styles';
 
 export default {
   iconButton: {
@@ -24,7 +25,7 @@ export default {
     backgroundColor: colors.theme,
     border: 0,
     borderRadius: '3px',
-    boxShadow: `0 2px 2px 0 ${colors.boxShadow}`,
+    boxShadow: styles.depthShadows[0],
     color: colors.white,
     cursor: 'pointer',
     fontSize: '16px',

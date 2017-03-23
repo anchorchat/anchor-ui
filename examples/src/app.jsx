@@ -265,7 +265,7 @@ class App extends Component {
                 ))}
               </List>
             </Tab>
-            <Tab label="2">
+            <Tab label="2" badge={<Badge value={2} maxValue={9} />}>
               <p>2</p>
             </Tab>
           </Tabs>
@@ -321,14 +321,14 @@ class App extends Component {
           <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
           <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
         </Menu>
-        <Select open={this.state.select} value={this.state.select} label="Select">
-          <MenuItem text="hi1" onClick={() => this.changeSelect(1)} value={1} />
-          <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
-          <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
+        <Select open={this.state.select} value={this.state.select} onChange={this.changeSelect} label="Select">
+          <MenuItem text="hi1" value={1} />
+          <MenuItem text="hi2" value={2} />
+          <MenuItem text="hi3" value={3} />
         </Select>
-        <RadioButtonGroup value={this.state.radio} label="Radio">
-          <RadioButton value="test" label="test" onChange={this.changeRadio} />
-          <RadioButton value="test1" label="test1" onChange={this.changeRadio} />
+        <RadioButtonGroup value={this.state.radio} label="Radio" onChange={this.changeRadio}>
+          <RadioButton value="test" label="test" />
+          <RadioButton value="test1" label="test1" />
         </RadioButtonGroup>
         <Paper depth={1}>
           <h1>Paper: depth 1</h1>

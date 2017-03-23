@@ -1,5 +1,6 @@
 import colors from '../settings/colors';
 import darken from '../internal/darken';
+import styles from '../settings/styles';
 
 export default {
   container: {
@@ -20,7 +21,7 @@ export default {
     backgroundColor: colors.theme,
     borderRadius: '3px',
     lineHeight: '24px',
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    boxShadow: styles.depthShadows[0],
     ':hover': {
       backgroundColor: darken(colors.theme, 0.05)
     },

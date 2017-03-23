@@ -1,11 +1,12 @@
 import colors from '../settings/colors';
+import styles from '../settings/styles';
 
 const styleSheet = {
   badge: {
     backgroundColor: colors.theme,
     borderRadius: '50%',
     boxSizing: 'border-box',
-    boxShadow: `0 4px 4px 0 ${colors.boxShadow}`,
+    boxShadow: styles.depthShadows[0],
     color: colors.white,
     display: 'block',
     fontSize: '12px',

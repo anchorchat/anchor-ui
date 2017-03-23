@@ -59,4 +59,18 @@ describe('Tab.getStyles', () => {
       expect(style).to.have.property('color', 'red');
     });
   });
+
+  describe('badge', () => {
+    it('should get styles', () => {
+      const style = getStyles.badge();
+
+      expect(style).to.deep.equal(styles.badge);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.badge({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
 });

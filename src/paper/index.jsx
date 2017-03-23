@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import Radium from 'radium';
+import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 function Paper({ children, depth, style, ...custom }) {
@@ -25,4 +27,4 @@ Paper.defaultProps = {
   style: {}
 };
 
-export default Paper;
+export default pure(Radium(Paper));

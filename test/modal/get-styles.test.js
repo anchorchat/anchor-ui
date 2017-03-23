@@ -22,8 +22,21 @@ describe('Modal.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.root({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('content', () => {
+    it('should get styles', () => {
+      const style = getStyles.content();
+
+      expect(style).to.deep.equal(styles.content);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.content({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
     });
   });
 
@@ -43,8 +56,7 @@ describe('Modal.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.footer('red', { color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 });

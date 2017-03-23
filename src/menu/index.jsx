@@ -1,10 +1,12 @@
 import React, { PropTypes, cloneElement } from 'react';
+import Radium from 'radium';
+import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custom }) {
-  const menuItems = children.map((tab, index) => (
+  const menuItems = children.map((menuItem, index) => (
     cloneElement(
-      tab,
+      menuItem,
       {
         key: index,
         closeMenu: toggleMenu
@@ -47,4 +49,4 @@ Menu.defaultProps = {
   headerStyle: {}
 };
 
-export default Menu;
+export default pure(Radium(Menu));

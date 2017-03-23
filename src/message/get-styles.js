@@ -49,7 +49,7 @@ function root(themeColor, myMessage, avatar, compact, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function text(myMessage, fontSize, type, overrideStyle) {
+function text(myMessage, fontSize, type = 'text', overrideStyle) {
   let style = styles.messageBody;
 
   if (myMessage) {

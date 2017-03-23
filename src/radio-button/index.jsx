@@ -37,7 +37,6 @@ class RadioButton extends Component {
   }
 
   static defaultProps = {
-    onChange: () => {},
     style: {},
     inputStyle: {},
     iconStyle: {},
@@ -78,11 +77,9 @@ class RadioButton extends Component {
         />
         <input
           type="radio"
-          ref={radio => (this.radio = radio)}
           value={value}
           id={value}
           onChange={onChange}
-          onBlur={this.handleBlur}
           checked={checked}
           style={combineStyles(styles.input, inputStyle)}
           {...custom}

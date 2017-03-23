@@ -1,5 +1,6 @@
 import colors from '../settings/colors';
 import darken from '../internal/darken';
+import styles from '../settings/styles';
 
 const styleSheet = {
   wrapper: {
@@ -16,7 +17,7 @@ const styleSheet = {
     position: 'relative',
     backgroundColor: colors.white,
     borderRadius: '3px',
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    boxShadow: styles.depthShadows[0],
     overflow: 'hidden'
   },
   desktop: {
@@ -31,7 +32,7 @@ const styleSheet = {
     position: 'absolute',
     top: '4px',
     right: '4px',
-    boxShadow: `${colors.boxShadow} 0px 1px 6px, ${colors.boxShadow} 0px 1px 4px`,
+    boxShadow: styles.depthShadows[0],
     background: colors.primaryText,
     ':hover': {
       background: darken(colors.primaryText, 0.15)

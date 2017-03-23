@@ -29,7 +29,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image']).isRequired
+      type: PropTypes.oneOf(['text', 'image'])
     }).isRequired,
     /** The format of displaying message.createdAt */
     timeFormat: PropTypes.string,
