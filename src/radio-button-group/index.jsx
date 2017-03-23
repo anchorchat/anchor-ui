@@ -3,10 +3,14 @@ import pure from 'recompose/pure';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function RadioButtonGroup({ value, children, label, labelStyle, ...custom }) {
+function RadioButtonGroup({ value, onChange, children, label, labelStyle, ...custom }) {
   const childrenWithProps = React.Children.map(
     children, child => React.cloneElement(
-      child, { checked: child.props.value === value }
+      child,
+      {
+        checked: child.props.value === value,
+        onChange
+      }
     )
   );
 
@@ -21,6 +25,8 @@ function RadioButtonGroup({ value, children, label, labelStyle, ...custom }) {
 RadioButtonGroup.propTypes = {
   /** The RadioButtonGroup's value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  /** Change the RadioButtonGroup's value */
+  onChange: PropTypes.func.isRequired,
   /** The RadioButtonGroup's content (RadioButton), each child must have a value prop */
   children: PropTypes.node.isRequired,
   /** The RadioButtonGroup's label */
