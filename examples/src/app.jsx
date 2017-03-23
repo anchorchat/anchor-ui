@@ -175,7 +175,6 @@ class App extends Component {
   }
 
   changeSelect(value) {
-    console.log(value);
     this.setState({
       select: value
     });
