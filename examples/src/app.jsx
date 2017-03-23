@@ -326,9 +326,9 @@ class App extends Component {
           <MenuItem text="hi2" value={2} />
           <MenuItem text="hi3" value={3} />
         </Select>
-        <RadioButtonGroup value={this.state.radio} label="Radio">
-          <RadioButton value="test" label="test" onChange={this.changeRadio} />
-          <RadioButton value="test1" label="test1" onChange={this.changeRadio} />
+        <RadioButtonGroup value={this.state.radio} label="Radio" onChange={this.changeRadio}>
+          <RadioButton value="test" label="test" />
+          <RadioButton value="test1" label="test1" />
         </RadioButtonGroup>
         <Paper depth={1}>
           <h1>Paper: depth 1</h1>
