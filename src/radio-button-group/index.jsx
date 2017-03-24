@@ -3,7 +3,7 @@ import pure from 'recompose/pure';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function RadioButtonGroup({ value, onChange, children, label, labelStyle, ...custom }) {
+function RadioButtonGroup({ value, onChange, children, label, labelStyle, style, ...custom }) {
   const childrenWithProps = React.Children.map(
     children, child => React.cloneElement(
       child,
@@ -17,7 +17,9 @@ function RadioButtonGroup({ value, onChange, children, label, labelStyle, ...cus
   return (
     <section {...custom}>
       <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
-      {childrenWithProps}
+      <section style={combineStyles(styles.root, style)}>
+        {childrenWithProps}
+      </section>
     </section>
   );
 }
@@ -32,12 +34,15 @@ RadioButtonGroup.propTypes = {
   /** The RadioButtonGroup's label */
   label: PropTypes.node,
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object)
+  labelStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object)
 };
 
 RadioButtonGroup.defaultProps = {
   label: null,
-  labelStyle: {}
+  labelStyle: {},
+  style: {}
 };
 
 RadioButtonGroup.displayName = 'RadioButtonGroup';
