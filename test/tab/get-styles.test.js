@@ -39,8 +39,14 @@ describe('Tab.getStyles', () => {
       expect(style).to.deep.equal(styles.label);
     });
 
+    it('should add selected styles', () => {
+      const style = getStyles.label(true);
+
+      expect(style).to.have.property('transform', 'none');
+    });
+
     it('should combine styles', () => {
-      const style = getStyles.label({ color: 'red' });
+      const style = getStyles.label(false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -53,8 +59,14 @@ describe('Tab.getStyles', () => {
       expect(style).to.deep.equal(styles.icon);
     });
 
+    it('should add selected styles', () => {
+      const style = getStyles.icon(true);
+
+      expect(style).to.have.property('transform', 'none');
+    });
+
     it('should combine styles', () => {
-      const style = getStyles.icon({ color: 'red' });
+      const style = getStyles.icon(false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });

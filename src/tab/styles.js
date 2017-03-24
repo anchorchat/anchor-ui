@@ -15,24 +15,31 @@ export default {
     transition: 'all .3s ease-in-out',
     opacity: '0.5',
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     flex: 1,
+    flexGrow: 'none',
     justifyContent: 'center',
-    height: '50px',
+    height: '60px',
     position: 'relative'
   },
   label: {
     color: colors.primaryText,
     textTransform: 'capitalize',
-    fontSize: '16px',
+    fontSize: '12px',
     fontWeight: 'bold',
+    transform: 'scale(0.85)',
+    transition: 'all .3s ease-in-out'
   },
   icon: {
-    marginRight: '10px'
+    width: '24px',
+    height: '24px',
+    transform: 'scale(0.85)',
+    transition: 'all .3s ease-in-out'
   },
   badge: {
     position: 'absolute',
-    right: '3px',
-    top: '3px'
+    right: '20px',
+    top: '5px'
   }
 };
