@@ -21,7 +21,7 @@ class RadioButton extends Component {
     /** The input's value */
     value: PropTypes.string.isRequired,
     /** The input's label text */
-    label: PropTypes.string.isRequired,
+    label: PropTypes.node.isRequired,
     /** The input's onChange function */
     onChange: PropTypes.func.isRequired,
     /** Input active */

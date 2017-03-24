@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import Radium, { Style } from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
@@ -18,12 +18,14 @@ function Input({
   disabled,
   error,
   errorStyle,
+  placeholder,
   ...custom
 }) {
   return (
     <section style={getStyles.root(disabled, style)}>
       <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
       <input
+        className="input"
         style={getStyles.input(inputStyle)}
         onChange={onChange}
         value={value}
@@ -31,7 +33,15 @@ function Input({
         maxLength={maxLength}
         id={name}
         ref={inputRef}
+        placeholder={placeholder}
         {...custom}
+      />
+      <Style
+        rules={{
+          '.input::placeholder': {
+            color: 'white'
+          }
+        }}
       />
       {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
     </section>
@@ -47,8 +57,10 @@ Input.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** Type of input */
   type: PropTypes.string,
+  /** Type of input */
+  placeholder: PropTypes.string,
   /** The input's label */
-  label: PropTypes.node.isRequired,
+  label: PropTypes.node,
   /** The input's name */
   name: PropTypes.string.isRequired,
   /** Override the styles of the root element */
@@ -78,7 +90,9 @@ Input.defaultProps = {
   disabled: false,
   error: null,
   type: 'text',
-  errorStyle: {}
+  errorStyle: {},
+  placeholder: '',
+  label: null
 };
 
 export default pure(Radium(Input));
