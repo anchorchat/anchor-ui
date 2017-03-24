@@ -1,5 +1,4 @@
 import colors from '../settings/colors';
-import styles from '../settings/styles';
 
 export default {
   cover: {
