@@ -2,22 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from './styles';
-import colors from '../settings/colors';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
-import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = combineStyles(styles.modal, { background: color });
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getHeadingStyle(style, overrideStyle) {
-  return combineStyles(style, overrideStyle);
-}
+import colors from '../settings/colors';
+import getStyles from './get-styles';
 
 /** General purpose dialog */
 class Dialog extends Component {
@@ -25,13 +13,13 @@ class Dialog extends Component {
 
   static propTypes = {
     /** Header text */
-    headerText: PropTypes.node.isRequired,
+    header: PropTypes.node.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the overlay element */
     overlayStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
-    headingStyle: PropTypes.instanceOf(Object),
+    headerStyle: PropTypes.instanceOf(Object),
     /** Function to hide dialog element */
     hideDialog: PropTypes.func.isRequired,
     /** Optional children, will only render children and headerText with other styles */
@@ -41,7 +29,7 @@ class Dialog extends Component {
   static defaultProps = {
     style: {},
     overlayStyle: {},
-    headingStyle: {},
+    headerStyle: {},
     children: null
   }
 
@@ -58,25 +46,25 @@ class Dialog extends Component {
 
   render() {
     const {
-      headerText,
+      header,
       hideDialog,
       style,
       overlayStyle,
-      headingStyle,
+      headerStyle,
       children,
       ...custom
     } = this.props;
     const { color } = this.context;
 
     return (
-      <section style={combineStyles(styles.overlay, overlayStyle)} {...custom}>
+      <section style={getStyles.overlay(overlayStyle)} {...custom}>
         <section style={styles.clickAway} onClick={hideDialog} />
-        <section style={getStyle(color, style)}>
+        <section style={getStyles.root(color, style)}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-            <IconClose />
+            <IconClose color={colors.white} />
           </Button>
-          <h1 style={getHeadingStyle(styles.modalHeading, headingStyle)}>
-            {headerText}
+          <h1 style={getStyles.header(headerStyle)}>
+            {header}
           </h1>
           {children}
         </section>
