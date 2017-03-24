@@ -39,7 +39,7 @@ export default {
     top: '16px',
     right: '32px'
   },
-  profile: {
+  root: {
     height: '100%',
     backgroundColor: colors.white,
     display: 'flex',

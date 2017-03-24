@@ -6,7 +6,7 @@ import Button from '../button';
 import IconClose from '../icons/icon-close';
 import styles from './styles';
 import colors from '../settings/colors';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 
 /** Profile usefull for showing a users info */
 class Profile extends Component {
@@ -30,7 +30,11 @@ class Profile extends Component {
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
-    headerStyle: PropTypes.instanceOf(Object)
+    headerStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the secondaryText element */
+    secondaryStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the avatar element */
+    avatarStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
@@ -40,7 +44,9 @@ class Profile extends Component {
     editButton: null,
     secondaryText: '',
     style: {},
-    headerStyle: {}
+    headerStyle: {},
+    secondaryStyle: {},
+    avatarStyle: {}
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -61,6 +67,8 @@ class Profile extends Component {
       editButton,
       style,
       headerStyle,
+      secondaryStyle,
+      avatarStyle,
       ...custom
     } = this.props;
 
@@ -69,17 +77,21 @@ class Profile extends Component {
     };
 
     return (
-      <section style={combineStyles(style, styles.profile)} {...custom}>
+      <section style={getStyles.root(style)} {...custom}>
         <section style={styles.cover}>
-          <section style={combineStyles(coverBackground, styles.coverImage)} />
+          <section style={getStyles.coverImage(coverBackground)} />
           <section style={styles.coverOverlay} />
-          {avatar ? <Avatar image={avatar} style={styles.avatar} /> : null}
+          {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
           <Button style={styles.close} onClick={closeProfile} iconButton>
             <IconClose color={colors.white} />
           </Button>
         </section>
-        <h1 style={combineStyles(headerStyle, styles.profileHeader)}>{headerText}</h1>
-        {secondaryText ? <p style={styles.secondaryText}>{secondaryText}</p> : null}
+        <h1 style={getStyles.headerText(headerStyle)}>{headerText}</h1>
+        {
+          secondaryText
+          ? <p style={getStyles.secondaryText(secondaryStyle)}>{secondaryText}</p>
+          : null
+        }
         {editButton}
         {children}
       </section>
