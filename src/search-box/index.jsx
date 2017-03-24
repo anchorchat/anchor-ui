@@ -55,7 +55,16 @@ class SearchBox extends Component {
   }
 
   render() {
-    const { value, placeholder, style, inputStyle, iconStyle, ...custom } = this.props;
+    const {
+      value,
+      placeholder,
+      style,
+      inputStyle,
+      iconStyle,
+      changeSearchQuery, // eslint-disable-line no-unused-vars
+      onChange, // eslint-disable-line no-unused-vars
+      ...custom
+    } = this.props;
 
     return (
       <section style={combineStyles(styles.searchBox, style)} {...custom}>
