@@ -13,8 +13,8 @@ function avatar(overrideStyles) {
   return combineStyles(styles.avatar, overrideStyles);
 }
 
-function headerText(overrideStyles) {
-  return combineStyles(styles.icon, overrideStyles);
+function header(overrideStyles) {
+  return combineStyles(styles.header, overrideStyles);
 }
 
 function secondaryText(overrideStyles) {
@@ -25,6 +25,6 @@ export default {
   root,
   coverImage,
   avatar,
-  headerText,
+  header,
   secondaryText
 };

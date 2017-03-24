@@ -47,7 +47,7 @@ export default {
     boxSizing: 'border-box',
     color: colors.primaryText
   },
-  profileHeader: {
+  header: {
     fontSize: '18px',
     fontWeight: 'bold',
     marginTop: '16px',

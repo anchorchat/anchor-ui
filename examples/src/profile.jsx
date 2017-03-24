@@ -6,7 +6,7 @@ import theTim from './assets/images/the_tim.gif';
 export default () => (
   <section className="profile" style={{ background: colors.background }}>
     <Profile
-      headerText="The Doctor"
+      header="The Doctor"
       secondaryText="over 2000, Male"
       avatar={theTim}
       coverImage={theTim}

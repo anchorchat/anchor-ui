@@ -14,7 +14,7 @@ class Profile extends Component {
 
   static propTypes = {
     /** The user's username */
-    headerText: PropTypes.node.isRequired,
+    header: PropTypes.node.isRequired,
     /** Secondary text line */
     secondaryText: PropTypes.node,
     /** Path to the user's profile image will only be rendered if there is one */
@@ -26,7 +26,7 @@ class Profile extends Component {
     /** Overide the default icon */
     closeIcon: PropTypes.node,
     /** Profile action button */
-    editButton: PropTypes.node,
+    button: PropTypes.node,
     /** Profile content */
     children: PropTypes.node,
     /** Override the styles of the root element */
@@ -34,7 +34,7 @@ class Profile extends Component {
     /** Override the styles of the header element */
     headerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the secondaryText element */
-    secondaryStyle: PropTypes.instanceOf(Object),
+    secondaryTextStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the avatar element */
     avatarStyle: PropTypes.instanceOf(Object)
   }
@@ -43,12 +43,12 @@ class Profile extends Component {
     avatar: '',
     coverImage: '',
     children: null,
-    editButton: null,
+    button: null,
     closeIcon: null,
     secondaryText: '',
     style: {},
     headerStyle: {},
-    secondaryStyle: {},
+    secondaryTextStyle: {},
     avatarStyle: {}
   }
 
@@ -61,17 +61,17 @@ class Profile extends Component {
 
   render() {
     const {
-      headerText,
+      header,
       secondaryText,
       avatar,
       coverImage,
       children,
       closeProfile,
       closeIcon,
-      editButton,
+      button,
       style,
       headerStyle,
-      secondaryStyle,
+      secondaryTextStyle,
       avatarStyle,
       ...custom
     } = this.props;
@@ -90,13 +90,13 @@ class Profile extends Component {
             {closeIcon || <IconClose color={colors.white} />}
           </Button>
         </section>
-        <h1 style={getStyles.headerText(headerStyle)}>{headerText}</h1>
+        <h1 style={getStyles.header(headerStyle)}>{header}</h1>
         {
           secondaryText
-          ? <p style={getStyles.secondaryText(secondaryStyle)}>{secondaryText}</p>
+          ? <p style={getStyles.secondaryText(secondaryTextStyle)}>{secondaryText}</p>
           : null
         }
-        {editButton}
+        {button}
         {children}
       </section>
     );
