@@ -1,16 +1,15 @@
 import React from 'react';
 import { Profile, Button } from '../../dist';
 import { colors } from '../../dist/settings';
-import theDoctor from './assets/images/the_doctor.jpg';
-import dalek from './assets/images/dalek.jpg';
+import theTim from './assets/images/the_tim.gif';
 
 export default () => (
   <section className="profile" style={{ background: colors.background }}>
     <Profile
       headerText="The Doctor"
       secondaryText="over 2000, Male"
-      avatar={theDoctor}
-      coverImage={dalek}
+      avatar={theTim}
+      coverImage={theTim}
       editButton={<Button>Edit Information</Button>}
       closeProfile={() => {}}
     >
