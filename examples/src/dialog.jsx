@@ -2,15 +2,11 @@ import React from 'react';
 import { Loader, Dialog, Button } from '../../dist';
 
 export default () => (
-  <Dialog
-    image={<Loader inverted />}
-    headerText="Trying to reconnect"
-    bodyText="Site is unavailable at the moment"
-    button={
-      <Button onClick={() => {}} inverted>
-        Logout
-      </Button>
-    }
-    hideDialog={() => console.log('hide')}
-  />
+  <Dialog headerText="Trying to reconnect" hideDialog={() => console.log('hide')}>
+    <Loader inverted />
+    <p style={{ color: 'inherit' }}>Site is unavailable at the moment</p>
+    <Button onClick={() => {}} inverted>
+      Logout
+    </Button>
+  </Dialog>
 );
