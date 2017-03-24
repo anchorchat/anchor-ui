@@ -10,7 +10,7 @@ export default () => (
       secondaryText="over 2000, Male"
       avatar={theTim}
       coverImage={theTim}
-      editButton={<Button>Edit Information</Button>}
+      button={<Button>Edit Information</Button>}
       closeProfile={() => {}}
     >
       <section style={{ padding: '16px', maxWidth: '40em', margin: '0a auto' }}>
