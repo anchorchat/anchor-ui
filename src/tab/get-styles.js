@@ -12,12 +12,24 @@ function root(color = colors.theme, selected, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function label(overrideStyle) {
-  return combineStyles(styles.label, overrideStyle);
+function label(selected, overrideStyle) {
+  let style = styles.label;
+
+  if (selected) {
+    style = combineStyles(styles.label, { transform: 'none' });
+  }
+
+  return combineStyles(style, overrideStyle);
 }
 
-function icon(overrideStyle) {
-  return combineStyles(styles.icon, overrideStyle);
+function icon(selected, overrideStyle) {
+  let style = styles.icon;
+
+  if (selected) {
+    style = combineStyles(styles, { transform: 'none' });
+  }
+
+  return combineStyles(style, overrideStyle);
 }
 
 function badge(overrideStyle) {
