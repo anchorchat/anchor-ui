@@ -18,4 +18,4 @@ function overlay(overrideStyle) {
   return combineStyles(styles.overlay, overrideStyle);
 }
 
-export default { root, header, overlay }
+export default { root, header, overlay };
