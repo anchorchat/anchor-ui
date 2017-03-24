@@ -242,7 +242,7 @@ class App extends Component {
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
           <Tabs style={channelListStyle}>
-            <Tab label="1">
+            <Tab label="channels" icon={<IconEmoji />}>
               <List header="Channels">
                 {channels.map(channel => (
                   <ListItem
@@ -265,8 +265,11 @@ class App extends Component {
                 ))}
               </List>
             </Tab>
-            <Tab label="2" badge={<Badge value={2} maxValue={9} />}>
-              <p>2</p>
+            <Tab icon={<IconEmoji />} label="Conversations" badge={<Badge value={2} maxValue={9} />}>
+              <p>Conversations</p>
+            </Tab>
+            <Tab icon={<IconEmoji />} label="friends" badge={<Badge value={2} maxValue={9} />}>
+              <p>Friends</p>
             </Tab>
           </Tabs>
         </article>
