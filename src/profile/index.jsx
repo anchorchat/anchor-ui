@@ -23,7 +23,7 @@ class Profile extends Component {
     coverImage: PropTypes.string,
     /** Function for closing the profile */
     closeProfile: PropTypes.func.isRequired,
-    /** Function for closing the profile */
+    /** Overide the default icon */
     closeIcon: PropTypes.node,
     /** Profile action button */
     editButton: PropTypes.node,
