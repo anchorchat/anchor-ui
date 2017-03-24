@@ -15,19 +15,7 @@ function getStyle(themeColor, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function getHeadingStyle(style, image, overrideStyle) {
-  if (image) {
-    return combineStyles(combineStyles(style, styles.image), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getBodyStyle(style, button, overrideStyle) {
-  if (button) {
-    return combineStyles(combineStyles(style, styles.button), overrideStyle);
-  }
-
+function getHeadingStyle(style, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
@@ -38,20 +26,12 @@ class Dialog extends Component {
   static propTypes = {
     /** Header text */
     headerText: PropTypes.node.isRequired,
-    /** Body text */
-    bodyText: PropTypes.node,
-    /** Render a call to action button */
-    button: PropTypes.node,
-    /** An image to render in the dialog */
-    image: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the overlay element */
     overlayStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
     headingStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the body element */
-    bodyStyle: PropTypes.instanceOf(Object),
     /** Function to hide dialog element */
     hideDialog: PropTypes.func.isRequired,
     /** Optional children, will only render children and headerText with other styles */
@@ -59,14 +39,10 @@ class Dialog extends Component {
   }
 
   static defaultProps = {
-    button: null,
-    image: null,
     style: {},
     overlayStyle: {},
     headingStyle: {},
-    bodyStyle: {},
-    children: null,
-    bodyText: null
+    children: null
   }
 
   static contextTypes = {
@@ -83,53 +59,27 @@ class Dialog extends Component {
   render() {
     const {
       headerText,
-      bodyText,
-      button,
-      image,
       hideDialog,
       style,
       overlayStyle,
       headingStyle,
-      bodyStyle,
       children,
       ...custom
     } = this.props;
     const { color } = this.context;
 
-    let dialog = (
-      <section style={getStyle(color, style)}>
-        <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-          <IconClose color={colors.white} />
-        </Button>
-        {image}
-        <h1 style={getHeadingStyle(styles.modalHeading, image, headingStyle)}>
-          {headerText}
-        </h1>
-        <p style={getBodyStyle(styles.bodyText, button, bodyStyle)}>
-          {bodyText}
-        </p>
-        {button}
-      </section>
-    );
-
-    if (children) {
-      dialog = (
-        <section style={combineStyles(styles.dialog, style)}>
+    return (
+      <section style={combineStyles(styles.overlay, overlayStyle)} {...custom}>
+        <section style={styles.clickAway} onClick={hideDialog} />
+        <section style={getStyle(color, style)}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
             <IconClose />
           </Button>
-          <h1 style={combineStyles(styles.dialogHeading, headingStyle)}>
+          <h1 style={getHeadingStyle(styles.modalHeading, headingStyle)}>
             {headerText}
           </h1>
           {children}
         </section>
-      );
-    }
-
-    return (
-      <section style={combineStyles(styles.overlay, overlayStyle)} {...custom}>
-        <section style={styles.clickAway} onClick={hideDialog} />
-        {dialog}
       </section>
     );
   }
