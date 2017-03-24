@@ -23,6 +23,8 @@ class Profile extends Component {
     coverImage: PropTypes.string,
     /** Function for closing the profile */
     closeProfile: PropTypes.func.isRequired,
+    /** Function for closing the profile */
+    closeIcon: PropTypes.node,
     /** Profile action button */
     editButton: PropTypes.node,
     /** Profile content */
@@ -42,6 +44,7 @@ class Profile extends Component {
     coverImage: '',
     children: null,
     editButton: null,
+    closeIcon: null,
     secondaryText: '',
     style: {},
     headerStyle: {},
@@ -64,6 +67,7 @@ class Profile extends Component {
       coverImage,
       children,
       closeProfile,
+      closeIcon,
       editButton,
       style,
       headerStyle,
@@ -83,7 +87,7 @@ class Profile extends Component {
           <section style={styles.coverOverlay} />
           {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
           <Button style={styles.close} onClick={closeProfile} iconButton>
-            <IconClose color={colors.white} />
+            {closeIcon || <IconClose color={colors.white} />}
           </Button>
         </section>
         <h1 style={getStyles.headerText(headerStyle)}>{headerText}</h1>
