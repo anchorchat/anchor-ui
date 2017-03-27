@@ -1,5 +1,6 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
+import colors from '../settings/colors';
 
 function root(disabled, overrideStyle) {
   let style = styles.root;
@@ -15,8 +16,14 @@ function label(overrideStyle) {
   return combineStyles(styles.label, overrideStyle);
 }
 
-function input(overrideStyle) {
-  return combineStyles(styles.input, overrideStyle);
+function input(errorMessage = null, overrideStyle) {
+  let style = styles.input;
+
+  if (errorMessage) {
+    style = combineStyles(style, { border: `1px solid ${colors.error}`, color: colors.error });
+  }
+
+  return combineStyles(style, overrideStyle);
 }
 
 function error(overrideStyle) {
