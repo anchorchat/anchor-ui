@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import ProfileCard from 'anchor-ui/profile-card';
 import _ from 'underscore';
+import ProfileCard from '../../../dist/profile-card';
 import components from '../../components.json';
 import Props from './props';
 

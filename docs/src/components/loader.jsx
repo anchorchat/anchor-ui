@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Loader from 'anchor-ui/loader';
-import { colors } from 'anchor-ui/settings';
 import _ from 'underscore';
+import Loader from '../../../dist/loader';
+import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
 

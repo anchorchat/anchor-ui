@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Alert from 'anchor-ui/alert';
 import _ from 'underscore';
 import Props from './props';
+import Alert from '../../../dist/alert';
 import components from '../../components.json';
 
 const usage = '```js\n import Alert from \'anchor-ui/alert\';';

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import SearchBox from 'anchor-ui/search-box';
 import _ from 'underscore';
+import SearchBox from '../../../dist/search-box';
 import Props from './props';
 import components from '../../components.json';
 

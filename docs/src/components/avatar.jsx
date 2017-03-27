@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Avatar from 'anchor-ui/avatar';
 import _ from 'underscore';
+import Avatar from '../../../dist/avatar';
 import components from '../../components.json';
 import Props from './props';
 

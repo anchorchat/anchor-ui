@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Input from 'anchor-ui/input';
 import _ from 'underscore';
+import Input from '../../../dist/input';
 import Props from './props';
 import components from '../../components.json';
 

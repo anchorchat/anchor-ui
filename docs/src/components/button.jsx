@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Button } from 'anchor-ui';
-import { IconEmoji } from 'anchor-ui/icons';
 import _ from 'underscore';
+import IconEmoji from '../../../dist/icons/icon-emoji';
+import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 

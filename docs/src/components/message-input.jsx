@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import MessageInput from 'anchor-ui/message-input';
-import Button from 'anchor-ui/button';
-import { IconEmoji } from 'anchor-ui/icons';
 import _ from 'underscore';
+import MessageInput from '../../../dist/message-input';
+import Button from '../../../dist/button';
+import IconEmoji from '../../../dist/icons/icon-emoji';
 import Props from './props';
 import components from '../../components.json';
 

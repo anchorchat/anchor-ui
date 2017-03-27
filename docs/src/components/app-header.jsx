@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import AppHeader from 'anchor-ui/app-header';
-import Button from 'anchor-ui/button';
-import { colors } from 'anchor-ui/settings';
-import { IconExit } from 'anchor-ui/icons';
 import _ from 'underscore';
+import AppHeader from '../../../dist/app-header';
+import Button from '../../../dist/button';
+import { colors } from '../../../dist/settings';
+import { IconExit } from '../../../dist/icons';
 import Props from './props';
 import components from '../../components.json';
 import logo from '../assets/images/logo.svg';

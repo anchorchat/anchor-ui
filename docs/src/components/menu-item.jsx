@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import MenuItem from 'anchor-ui/menu-item';
 import _ from 'underscore';
+import MenuItem from '../../../dist/menu-item';
 import Props from './props';
 import components from '../../components.json';
 

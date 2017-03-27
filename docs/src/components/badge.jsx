@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Badge from 'anchor-ui/badge';
 import _ from 'underscore';
+import Badge from '../../../dist/badge';
 import Props from './props';
 import components from '../../components.json';
 

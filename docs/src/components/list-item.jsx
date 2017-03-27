@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import ListItem from 'anchor-ui/list-item';
-import Badge from 'anchor-ui/badge';
 import _ from 'underscore';
+import ListItem from '../../../dist/list-item';
+import Badge from '../../../dist/badge';
 import components from '../../components.json';
 import Props from './props';
 

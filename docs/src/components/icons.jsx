@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import IconEmoji from 'anchor-ui/icons/icon-emoji';
-import IconHammer from 'anchor-ui/icons/icon-hammer';
+import IconEmoji from '../../../dist/icons/icon-emoji';
+import IconHammer from '../../../dist/icons/icon-hammer';
 import components from '../../components.json';
 
 const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import IconHammer from \'anchor-ui/icons/icon-hammer\'';

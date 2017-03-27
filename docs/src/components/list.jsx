@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import List from 'anchor-ui/list';
-import ListItem from 'anchor-ui/list-item';
-import Button from 'anchor-ui/button';
-import { IconClose } from 'anchor-ui/icons';
-import { colors } from 'anchor-ui/settings';
 import _ from 'underscore';
+import List from '../../../dist/list';
+import ListItem from '../../../dist/list-item';
+import Button from '../../../dist/button';
+import { IconClose } from '../../../dist/icons';
+import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
 

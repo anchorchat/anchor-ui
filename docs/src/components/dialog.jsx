@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import Dialog from 'anchor-ui/dialog';
-import Button from 'anchor-ui/button';
-import Loader from 'anchor-ui/loader';
 import _ from 'underscore';
+import Dialog from '../../../dist/dialog';
+import Button from '../../../dist/button';
+import Loader from '../../../dist/loader';
 import Props from './props';
 import components from '../../components.json';
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import IconMenu from 'anchor-ui/icons/icon-menu';
 import _ from 'underscore';
+import IconMenu from 'anchor-ui/icon-menu';
+import MenuItem from 'anchor-ui/menu-item';
+import IconLanguage from 'anchor-ui/icons/icon-language';
 import Props from './props';
 import components from '../../components.json';
 
@@ -23,7 +25,17 @@ function IconMenuDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <IconMenu />
+        <IconMenu
+          style={{ width: '40px' }}
+          icon={<IconLanguage />}
+          header="Language"
+          headerStyle={{ textTransform: 'capitalize' }}
+          secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+          dividerText="More items"
+        >
+          <MenuItem text="Active item" onClick={() => {}} active />
+          <MenuItem text="Inactive item" onClick={() => {}} />
+        </IconMenu>
       </section>
       <Props props={componentData.props} />
     </article>

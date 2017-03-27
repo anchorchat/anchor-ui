@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import List from 'anchor-ui/list';
-import ListItem from 'anchor-ui/list-item';
+import List from '../../../dist/list';
+import ListItem from '../../../dist/list-item';
 import npmPackage from '../../../package.json';
 
 function Menu(props, context) {
