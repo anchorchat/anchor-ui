@@ -35,7 +35,7 @@ export default {
   },
   error: {
     display: 'block',
-    paddingTop: '8px',
+    paddingTop: '6px',
     paddingLeft: '8px',
     color: colors.error
   }

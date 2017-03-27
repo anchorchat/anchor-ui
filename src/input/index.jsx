@@ -26,7 +26,7 @@ function Input({
       <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
       <input
         className="input"
-        style={getStyles.input(inputStyle)}
+        style={getStyles.input(error, inputStyle)}
         onChange={onChange}
         value={value}
         type={type}
