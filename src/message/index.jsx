@@ -10,7 +10,8 @@ import getStyles from './get-styles';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
 
-/** Messages with optional styling for the current user's message */
+/** Messages with optional styling for the current user's message,
+different font sizes and message styles */
 class Message extends Component {
   static displayName = 'Message'
 

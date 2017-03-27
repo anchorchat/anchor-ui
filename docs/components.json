@@ -125,7 +125,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Right-hand side placed button",
+        "description": "Button on the right side of the AppHeader",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -184,7 +184,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Left-hand side placed button",
+        "description": "Button on the left side of the AppHeader",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -205,7 +205,7 @@
     }
   },
   "components/avatar/index.jsx": {
-    "description": "A user's profile image",
+    "description": "An user's profile image",
     "displayName": "Avatar",
     "methods": [],
     "props": {
@@ -270,7 +270,7 @@
           "name": "number"
         },
         "required": true,
-        "description": "Max value that will be renderd.\nThis will result in `${maxValue}+` if value exceeds maxValue"
+        "description": "Maximum value that will be shown.\nThis will result in `${maxValue}+` if value exceeds maxValue"
       }
     }
   },
@@ -353,7 +353,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "Content of the button"
+        "description": "The Button's content"
       },
       "onClick": {
         "type": {
@@ -383,7 +383,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Switches between 'icon-button' and 'normal-button'",
+        "description": "Toggle IconButton type",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -394,7 +394,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Inverts color",
+        "description": "Inverts colors",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -414,7 +414,7 @@
     }
   },
   "components/card/index.jsx": {
-    "description": "",
+    "description": "A Card is a piece of paper with unique related data",
     "displayName": "Card",
     "methods": [],
     "props": {
@@ -440,7 +440,7 @@
     }
   },
   "components/card-content/index.jsx": {
-    "description": "",
+    "description": "A Card is a piece of paper with unique related data",
     "displayName": "CardContent",
     "methods": [],
     "props": {
@@ -466,7 +466,7 @@
     }
   },
   "components/card-header/index.jsx": {
-    "description": "",
+    "description": "A Card is a piece of paper with unique related data",
     "displayName": "CardHeader",
     "methods": [],
     "props": {
@@ -566,7 +566,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Right-hand side placed button",
+        "description": "Button on the right side of the ChannelHeader",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -577,7 +577,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Left-hand side placed button",
+        "description": "Button on the left side of the ChannelHeader",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -634,8 +634,8 @@
     }
   },
   "components/checkbox/index.jsx": {
-    "description": "",
-    "displayName": "RadioButton",
+    "description": "A checkbox is used to verify which options you want selected from a group.",
+    "displayName": "Checkbox",
     "methods": [],
     "props": {
       "label": {
@@ -834,7 +834,7 @@
     }
   },
   "components/divider/index.jsx": {
-    "description": "",
+    "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",
     "methods": [],
     "props": {
@@ -1058,7 +1058,7 @@
     }
   },
   "components/emoji-menu/index.jsx": {
-    "description": "",
+    "description": "Menu for sending messages with emoji",
     "displayName": "EmojiMenu",
     "methods": [
       {
@@ -1227,7 +1227,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Render a call to action button",
+        "description": "A call to action button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1283,7 +1283,7 @@
     }
   },
   "components/icon-menu/index.jsx": {
-    "description": "Menu with Icon and IconMenu",
+    "description": "Open a menu from an Icon, give options related to the icon",
     "displayName": "IconMenu",
     "methods": [
       {
@@ -2332,7 +2332,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the label element",
+        "description": "Override the styles of the error element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2341,7 +2341,7 @@
     }
   },
   "components/list/index.jsx": {
-    "description": "List",
+    "description": "A wrapper for ListItems",
     "displayName": "List",
     "methods": [],
     "props": {
@@ -2574,7 +2574,7 @@
     }
   },
   "components/menu/index.jsx": {
-    "description": "",
+    "description": "Menu that slides in from the left",
     "displayName": "Menu",
     "methods": [],
     "props": {
@@ -2739,7 +2739,7 @@
     }
   },
   "components/message/index.jsx": {
-    "description": "Messages with optional styling for the current user's message",
+    "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
     "methods": [
       {
@@ -3156,7 +3156,7 @@
     }
   },
   "components/modal/index.jsx": {
-    "description": "",
+    "description": "A dialog that can only be closed by selecting one of the actions.",
     "displayName": "Modal",
     "methods": [],
     "props": {
@@ -3213,7 +3213,7 @@
     }
   },
   "components/paper/index.jsx": {
-    "description": "",
+    "description": "A Paper element is a basic container that can give depth to the page.",
     "displayName": "Paper",
     "methods": [],
     "props": {
@@ -3377,7 +3377,7 @@
     }
   },
   "components/profile/index.jsx": {
-    "description": "Profile usefull for showing a users info",
+    "description": "Profile useful for showing a user's info",
     "displayName": "Profile",
     "methods": [],
     "props": {
@@ -3584,7 +3584,7 @@
     }
   },
   "components/profile-sidebar/index.jsx": {
-    "description": "ProfileSidebar usefull for showing a users info",
+    "description": "ProfileSidebar useful for showing a user's info",
     "displayName": "ProfileSidebar",
     "methods": [],
     "props": {

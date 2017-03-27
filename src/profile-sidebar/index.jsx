@@ -5,7 +5,7 @@ import Avatar from '../avatar';
 import styles from '../style/profile-sidebar';
 import combineStyles from '../internal/combine-styles';
 
-/** ProfileSidebar usefull for showing a users info */
+/** ProfileSidebar useful for showing a user's info */
 class ProfileSidebar extends Component {
   static displayName = 'ProfileSidebar'
 

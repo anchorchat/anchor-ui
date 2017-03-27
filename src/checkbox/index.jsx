@@ -5,6 +5,7 @@ import getStyles from './get-styles';
 import IconCheckbox from '../icons/icon-checkbox';
 import styles from './styles';
 
+/** A checkbox is used to verify which options you want selected from a group. */
 function Checkbox(
   { onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle },
   { color }
@@ -39,7 +40,7 @@ function Checkbox(
   );
 }
 
-Checkbox.displayName = 'RadioButton';
+Checkbox.displayName = 'Checkbox';
 
 Checkbox.propTypes = {
   /** The input's label text */

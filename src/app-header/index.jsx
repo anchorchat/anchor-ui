@@ -44,7 +44,7 @@ AppHeader.propTypes = {
   text: PropTypes.node,
   /** Icon (your app's icon) */
   icon: PropTypes.node,
-  /** Right-hand side placed button */
+  /** Button on the right side of the AppHeader */
   rightButton: PropTypes.node,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
@@ -54,7 +54,7 @@ AppHeader.propTypes = {
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the right button */
   rightButtonStyle: PropTypes.instanceOf(Object),
-  /** Left-hand side placed button */
+  /** Button on the left side of the AppHeader */
   leftButton: PropTypes.node,
   /** Override the styles of the left button */
   leftButtonStyle: PropTypes.instanceOf(Object),

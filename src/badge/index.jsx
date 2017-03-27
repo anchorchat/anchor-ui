@@ -20,7 +20,8 @@ function getStyle(themeColor, inverted, overrideStyle) {
 
 /** Used for displaying a (notification) counter */
 class Badge extends Component {
-  static displayName = 'Badge';
+  static displayName = 'Badge'
+
   static propTypes = {
     /** The badge's value */
     value: PropTypes.number.isRequired,
@@ -28,7 +29,7 @@ class Badge extends Component {
     style: PropTypes.instanceOf(Object),
     /** Inverts color */
     inverted: PropTypes.bool,
-    /** Max value that will be renderd.
+    /** Maximum value that will be shown.
      * This will result in `${maxValue}+` if value exceeds maxValue */
     maxValue: PropTypes.number.isRequired
   }

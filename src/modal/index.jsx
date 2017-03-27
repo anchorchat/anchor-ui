@@ -3,6 +3,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
+/** A dialog that can only be closed by selecting one of the actions. */
 function Modal({ children, actions, style, contentStyle, footerStyle, ...custom }, { color }) {
   return (
     <section style={getStyles.overlay()}>

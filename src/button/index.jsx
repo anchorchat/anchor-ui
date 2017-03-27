@@ -8,15 +8,15 @@ class Button extends Component {
   static displayName = 'Button'
 
   static propTypes = {
-    /** Content of the button */
+    /** The Button's content */
     children: PropTypes.node.isRequired,
     /** Button onClick function */
     onClick: PropTypes.func,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /** Switches between 'icon-button' and 'normal-button' */
+    /** Toggle IconButton type */
     iconButton: PropTypes.bool,
-    /** Inverts color */
+    /** Inverts colors */
     inverted: PropTypes.bool,
     /** Disables the button */
     disabled: PropTypes.bool
