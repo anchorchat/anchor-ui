@@ -75,11 +75,11 @@ class Tabs extends Component {
     });
 
     return (
-      <section style={getStyles.root(style)} {...custom}>
+      <section style={style} {...custom}>
         <section style={getStyles.tabContainer(tabContainerStyle)}>
           {tabs}
         </section>
-        <section style={getStyles.contentContainer(contentContainerStyle)}>
+        <section style={contentContainerStyle}>
           {tabContent}
         </section>
       </section>
