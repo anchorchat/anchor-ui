@@ -14,58 +14,27 @@ export default {
     backgroundColor: fade(colors.black, 0.5),
     zIndex: '2'
   },
-  modal: {
-    width: '80%',
-    maxWidth: '350px',
-    margin: '0 auto',
-    background: colors.theme,
-    borderRadius: '3px',
-    padding: '30px',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    position: 'relative'
-  },
   dialog: {
     width: '80%',
     maxWidth: '350px',
     margin: '0 auto',
-    background: colors.white,
+    background: colors.theme,
+    color: colors.white,
     borderRadius: '3px',
-    padding: '24px 16px',
+    padding: '40px 30px',
     boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'column',
     position: 'relative'
   },
-  dialogHeading: {
-    margin: '0 0 16px 0',
-    color: colors.primaryText,
-    fontWeight: 'bold'
-  },
-  modalHeading: {
-    color: colors.white,
+  header: {
+    color: 'inherit',
     fontSize: '22px',
     fontWeight: 'bold',
-    textAlign: 'center',
     marginTop: '0',
     marginLeft: '0',
     marginRight: '0',
     marginBottom: '12.5px'
-  },
-  image: {
-    marginTop: '25px'
-  },
-  bodyText: {
-    textAlign: 'center',
-    marginTop: '0',
-    marginLeft: '0',
-    marginRight: '0',
-    marginBottom: '0',
-    fontSize: '14px',
-    color: colors.white
-  },
-  button: {
-    marginBottom: '25px'
   },
   closeButton: {
     position: 'absolute',

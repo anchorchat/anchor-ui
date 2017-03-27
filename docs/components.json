@@ -725,45 +725,12 @@
     "displayName": "Dialog",
     "methods": [],
     "props": {
-      "headerText": {
+      "header": {
         "type": {
           "name": "node"
         },
         "required": true,
         "description": "Header text"
-      },
-      "bodyText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Body text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "button": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Render a call to action button",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "image": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "An image to render in the dialog",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
       },
       "style": {
         "type": {
@@ -789,25 +756,13 @@
           "computed": false
         }
       },
-      "headingStyle": {
+      "headerStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
         },
         "required": false,
         "description": "Override the styles of the header element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "bodyStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the body element",
         "defaultValue": {
           "value": "{}",
           "computed": false
