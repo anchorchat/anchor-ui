@@ -785,6 +785,17 @@
           "value": "null",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The close button's icon color",
+        "defaultValue": {
+          "value": "colors.white",
+          "computed": true
+        }
       }
     }
   },
@@ -1396,9 +1407,45 @@
       }
     }
   },
+  "components/icons/icon-add-friend.jsx": {
+    "description": "",
+    "displayName": "IconAddFriend",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-add-image.jsx": {
     "description": "",
     "displayName": "IconAddImage",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-block.jsx": {
+    "description": "",
+    "displayName": "IconBlock",
     "methods": [],
     "props": {
       "color": {
@@ -1954,6 +2001,24 @@
       }
     }
   },
+  "components/icons/icon-picture.jsx": {
+    "description": "",
+    "displayName": "IconPicture",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-power.jsx": {
     "description": "",
     "displayName": "IconPower",
@@ -1975,6 +2040,24 @@
   "components/icons/icon-radio.jsx": {
     "description": "",
     "displayName": "IconRadio",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-report.jsx": {
+    "description": "",
+    "displayName": "IconReport",
     "methods": [],
     "props": {
       "color": {
@@ -2479,12 +2562,48 @@
           "value": "false",
           "computed": false
         }
+      },
+      "blocked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Add blocked styles to ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },
   "components/loader/index.jsx": {
     "description": "",
-    "methods": []
+    "methods": [],
+    "props": {
+      "dotStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the dot element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inverts the color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
   },
   "components/loader/loader.jsx": {
     "description": "Animated loader",
