@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import Radium, { Style } from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
+import colors from '../settings/colors';
+import fade from '../internal/fade';
 
 /** General purpose form input */
 function Input({
@@ -26,7 +28,7 @@ function Input({
       <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
       <input
         className="input"
-        style={getStyles.input(inputStyle)}
+        style={getStyles.input(error, inputStyle)}
         onChange={onChange}
         value={value}
         type={type}
@@ -39,7 +41,7 @@ function Input({
       <Style
         rules={{
           '.input::placeholder': {
-            color: 'white'
+            color: fade(colors.white, 0.38)
           }
         }}
       />

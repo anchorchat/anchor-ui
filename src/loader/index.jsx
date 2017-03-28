@@ -8,7 +8,7 @@ import Loader from './loader';
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
 function LoaderWithStyleRoot(props) {
   return (
-    <StyleRoot>
+    <StyleRoot {...props}>
       <Loader {...props} />
     </StyleRoot>
   );

@@ -413,6 +413,142 @@
       }
     }
   },
+  "components/card/index.jsx": {
+    "description": "",
+    "displayName": "Card",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The Card's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/card-content/index.jsx": {
+    "description": "",
+    "displayName": "CardContent",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The CardContent's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/card-header/index.jsx": {
+    "description": "",
+    "displayName": "CardHeader",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the title element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "title": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The CardHeader's title"
+      },
+      "subtitleStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the subtitle element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "subtitle": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The CardHeader's subtitle",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to an Avatar image",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "avatarStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the subtitle element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/channel-header/index.jsx": {
     "description": "A channel's header",
     "displayName": "ChannelHeader",
@@ -497,50 +633,104 @@
       }
     }
   },
+  "components/checkbox/index.jsx": {
+    "description": "",
+    "displayName": "RadioButton",
+    "methods": [],
+    "props": {
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The input's label text"
+      },
+      "name": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The input's name"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "The input's onChange function"
+      },
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Checkbox checked",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/dialog/index.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
     "methods": [],
     "props": {
-      "headerText": {
+      "header": {
         "type": {
           "name": "node"
         },
         "required": true,
         "description": "Header text"
-      },
-      "bodyText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Body text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "button": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Render a call to action button",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "image": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "An image to render in the dialog",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
       },
       "style": {
         "type": {
@@ -566,25 +756,13 @@
           "computed": false
         }
       },
-      "headingStyle": {
+      "headerStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
         },
         "required": false,
         "description": "Override the styles of the header element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "bodyStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the body element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1257,6 +1435,24 @@
   "components/icons/icon-channels.jsx": {
     "description": "",
     "displayName": "IconChannels",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-checkbox.jsx": {
+    "description": "",
+    "displayName": "IconCheckbox",
     "methods": [],
     "props": {
       "color": {
@@ -1976,12 +2172,27 @@
           "computed": false
         }
       },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Type of input",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "label": {
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "The input's label"
+        "required": false,
+        "description": "The input's label",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "name": {
         "type": {
@@ -2559,7 +2770,7 @@
                 }
               ],
               "description": "The message's type",
-              "required": true
+              "required": false
             }
           }
         },
@@ -3120,6 +3331,141 @@
       }
     }
   },
+  "components/profile/index.jsx": {
+    "description": "Profile usefull for showing a users info",
+    "displayName": "Profile",
+    "methods": [],
+    "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The user's username"
+      },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Secondary text line",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to the user's profile image will only be rendered if there is one",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "coverImage": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to the user's coverimage will only be rendered if there is one",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "closeProfile": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Function for closing the profile"
+      },
+      "closeIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Overide the default icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "button": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Profile action button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Profile content",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the secondaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "avatarStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the avatar element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/profile-card/index.jsx": {
     "description": "Card containing the user's profile data",
     "displayName": "ProfileCard",
@@ -3262,7 +3608,7 @@
       },
       "label": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "The input's label text"
@@ -3272,11 +3618,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "The input's onChange function",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
+        "description": "The input's onChange function"
       },
       "checked": {
         "type": {
@@ -3359,6 +3701,13 @@
         "required": true,
         "description": "The RadioButtonGroup's value"
       },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the RadioButtonGroup's value"
+      },
       "children": {
         "type": {
           "name": "node"
@@ -3384,6 +3733,18 @@
         },
         "required": false,
         "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3532,6 +3893,13 @@
         },
         "required": true,
         "description": "The Select's value"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the Select's value"
       },
       "style": {
         "type": {
@@ -3738,6 +4106,29 @@
         },
         "required": false,
         "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Badge for the tab",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "badgeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the badge element",
         "defaultValue": {
           "value": "{}",
           "computed": false
