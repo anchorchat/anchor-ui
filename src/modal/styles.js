@@ -12,7 +12,7 @@ export default {
     overflow: 'hidden'
   },
   content: {
-    padding: '10px',
+    padding: '24px 16pxpx',
     color: colors.primaryText
   },
   footer: {
