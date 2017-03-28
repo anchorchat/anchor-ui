@@ -4,11 +4,14 @@ import Radium from 'radium';
 import emojione from 'emojione';
 import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
+import Tappable from 'react-tappable/lib/Tappable';
 import Avatar from '../avatar';
 import styles from './styles';
 import getStyles from './get-styles';
 import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
+import PopOver from '../pop-over';
+import getPopOverPosition from '../internal/get-pop-over-position';
 
 /** Messages with optional styling for the current user's message */
 class Message extends Component {
@@ -50,7 +53,9 @@ class Message extends Component {
     /** Enables links in messages */
     enableLinks: PropTypes.bool,
     /** Enables compact messages */
-    compact: PropTypes.bool
+    compact: PropTypes.bool,
+    /** Enables PopOver with MenuItems */
+    menuItems: PropTypes.node
   }
 
   static defaultProps = {
@@ -64,18 +69,53 @@ class Message extends Component {
     myMessage: false,
     emoji: false,
     enableLinks: false,
-    compact: false
+    compact: false,
+    menuItems: null
   }
 
   static contextTypes = {
     color: PropTypes.string
   }
 
+  constructor() {
+    super();
+
+    this.state = {
+      open: false,
+      positioned: false,
+      position: {}
+    };
+
+    this.handlePress = this.handlePress.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    this.renderMenuItems = this.renderMenuItems.bind(this);
+  }
+
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
+      !shallowEqual(this.state, nextState) ||
       !shallowEqual(this.context, nextContext)
     );
+  }
+
+  componentDidUpdate() {
+    const { open, positioned } = this.state;
+    const { menuItems } = this.props;
+
+    if (menuItems && open && !positioned) {
+      this.positionPopOver();
+    }
+  }
+
+  positionPopOver() {
+    const button = this.button.getBoundingClientRect();
+    const popOver = this.popOver.getBoundingClientRect();
+
+    this.setState({
+      positioned: true,
+      position: getPopOverPosition(button, popOver)
+    });
   }
 
   createMarkup(text) {
@@ -102,6 +142,25 @@ class Message extends Component {
     };
   }
 
+  handlePress() {
+    const { menuItems } = this.props;
+
+    if (!menuItems) {
+      return false;
+    }
+
+    return this.setState({
+      open: true
+    });
+  }
+
+  closeMenu() {
+    this.setState({
+      open: false,
+      positioned: false
+    });
+  }
+
   renderMessageBody() {
     const { emoji, message } = this.props;
 
@@ -114,6 +173,32 @@ class Message extends Component {
     }
 
     return message.body;
+  }
+
+  renderMenuItems() {
+    const { menuItems } = this.props;
+    const { open, position } = this.state;
+
+    if (!menuItems) {
+      return null;
+    }
+
+    const menuItemsWithProps = React.Children.map(
+      menuItems, child => React.cloneElement(child, { closeMenu: this.closeMenu })
+    );
+
+    return (
+      <div>
+        {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
+        <PopOver
+          open={open}
+          popOverRef={popOver => (this.popOver = popOver)}
+          position={position}
+        >
+          {menuItemsWithProps}
+        </PopOver>
+      </div>
+    );
   }
 
   render() {
@@ -130,6 +215,7 @@ class Message extends Component {
       fontSize,
       emoji, // eslint-disable-line no-unused-vars
       enableLinks, // eslint-disable-line no-unused-vars
+      menuItems, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -147,7 +233,11 @@ class Message extends Component {
 
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
-        <section style={getStyles.root(color, myMessage, avatar, compact, style)}>
+        <Tappable
+          pressDelay={500}
+          onPress={this.handlePress}
+          style={getStyles.root(color, myMessage, avatar, compact, style)}
+        >
           {
             compact
             ? null
@@ -163,11 +253,15 @@ class Message extends Component {
           </header>
           <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
             {this.renderMessageBody()}
-            <span style={getStyles.time(myMessage, message.type, messageTimeStyle)}>
+            <span
+              ref={button => (this.button = button)}
+              style={getStyles.time(myMessage, message.type, messageTimeStyle)}
+            >
               {format(message.createdAt, timeFormat)}
             </span>
           </p>
-        </section>
+          {this.renderMenuItems()}
+        </Tappable>
       </section>
     );
   }

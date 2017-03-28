@@ -295,6 +295,11 @@ class App extends Component {
                 avatar={message.profileImage}
                 emoji
                 fontSize={message.fontSize ? message.fontSize : null}
+                menuItems={[
+                  <MenuItem onClick={() => console.log('hi')} text="hi1" value={1} />,
+                  <MenuItem onClick={() => console.log('hi2')} text="hi2" value={2} />,
+                  <MenuItem onClick={() => console.log('hi3')} text="hi3" value={3} />
+                ]}
               />
             ))}
           </MessageList>

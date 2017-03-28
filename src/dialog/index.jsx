@@ -2,34 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import styles from './styles';
-import colors from '../settings/colors';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
-import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = combineStyles(styles.modal, { background: color });
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getHeadingStyle(style, image, overrideStyle) {
-  if (image) {
-    return combineStyles(combineStyles(style, styles.image), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getBodyStyle(style, button, overrideStyle) {
-  if (button) {
-    return combineStyles(combineStyles(style, styles.button), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import colors from '../settings/colors';
+import getStyles from './get-styles';
 
 /** General purpose dialog */
 class Dialog extends Component {
@@ -37,21 +13,13 @@ class Dialog extends Component {
 
   static propTypes = {
     /** Header text */
-    headerText: PropTypes.node.isRequired,
-    /** Body text */
-    bodyText: PropTypes.node,
-    /** Render a call to action button */
-    button: PropTypes.node,
-    /** An image to render in the dialog */
-    image: PropTypes.node,
+    header: PropTypes.node.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the overlay element */
     overlayStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
-    headingStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the body element */
-    bodyStyle: PropTypes.instanceOf(Object),
+    headerStyle: PropTypes.instanceOf(Object),
     /** Function to hide dialog element */
     hideDialog: PropTypes.func.isRequired,
     /** Optional children, will only render children and headerText with other styles */
@@ -59,14 +27,10 @@ class Dialog extends Component {
   }
 
   static defaultProps = {
-    button: null,
-    image: null,
     style: {},
     overlayStyle: {},
-    headingStyle: {},
-    bodyStyle: {},
-    children: null,
-    bodyText: null
+    headerStyle: {},
+    children: null
   }
 
   static contextTypes = {
@@ -82,54 +46,28 @@ class Dialog extends Component {
 
   render() {
     const {
-      headerText,
-      bodyText,
-      button,
-      image,
+      header,
       hideDialog,
       style,
       overlayStyle,
-      headingStyle,
-      bodyStyle,
+      headerStyle,
       children,
       ...custom
     } = this.props;
     const { color } = this.context;
 
-    let dialog = (
-      <section style={getStyle(color, style)}>
-        <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-          <IconClose color={colors.white} />
-        </Button>
-        {image}
-        <h1 style={getHeadingStyle(styles.modalHeading, image, headingStyle)}>
-          {headerText}
-        </h1>
-        <p style={getBodyStyle(styles.bodyText, button, bodyStyle)}>
-          {bodyText}
-        </p>
-        {button}
-      </section>
-    );
-
-    if (children) {
-      dialog = (
-        <section style={combineStyles(styles.dialog, style)}>
+    return (
+      <section style={getStyles.overlay(overlayStyle)} {...custom}>
+        <section style={styles.clickAway} onClick={hideDialog} />
+        <section style={getStyles.root(color, style)}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-            <IconClose />
+            <IconClose color={colors.white} />
           </Button>
-          <h1 style={combineStyles(styles.dialogHeading, headingStyle)}>
-            {headerText}
+          <h1 style={getStyles.header(headerStyle)}>
+            {header}
           </h1>
           {children}
         </section>
-      );
-    }
-
-    return (
-      <section style={combineStyles(styles.overlay, overlayStyle)} {...custom}>
-        <section style={styles.clickAway} onClick={hideDialog} />
-        {dialog}
       </section>
     );
   }
