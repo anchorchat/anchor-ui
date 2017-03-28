@@ -20,15 +20,15 @@ function Modal({ children, actions, style, contentStyle, footerStyle, ...custom 
 }
 
 Modal.propTypes = {
-  /* The Modal's children */
+  /** The Modal's children */
   children: PropTypes.node.isRequired,
-  /* The Modal's actions */
+  /** The Modal's actions */
   actions: PropTypes.node.isRequired,
-  /* Override the style of the root element */
+  /** Override the style of the root element */
   style: PropTypes.instanceOf(Object),
-  /* Override the style of the content element */
+  /** Override the style of the content element */
   contentStyle: PropTypes.instanceOf(Object),
-  /* Override the style of the footer element */
+  /** Override the style of the footer element */
   footerStyle: PropTypes.instanceOf(Object)
 };
 
