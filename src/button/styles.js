@@ -31,7 +31,7 @@ export default {
     fontSize: '16px',
     outline: 0,
     padding: '6.5px 13px',
-    transition: 'background-color .3s ease-in-out',
+    transition: 'all .3s ease-in-out',
     ':hover': {
       backgroundColor: darken(colors.theme, 0.15)
     },
@@ -51,5 +51,16 @@ export default {
   },
   disabled: {
     opacity: '0.38'
+  },
+  flatButton: {
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    textTransform: 'uppercase',
+    ':hover': {
+      backgroundColor: fade(colors.black, 0.95)
+    },
+    ':active': {
+      backgroundColor: fade(colors.black, 0.85)
+    }
   }
 };
