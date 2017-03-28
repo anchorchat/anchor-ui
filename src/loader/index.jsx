@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { StyleRoot } from 'radium';
 import Loader from './loader';
 
@@ -7,11 +7,29 @@ import Loader from './loader';
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#keyframes
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
 function LoaderWithStyleRoot(props) {
+  const {
+    dotStyle, // eslint-disable-line no-unused-vars
+    inverted, // eslint-disable-line no-unused-vars
+    ...custom
+  } = props;
+
   return (
-    <StyleRoot {...props}>
+    <StyleRoot {...custom}>
       <Loader {...props} />
     </StyleRoot>
   );
 }
+
+LoaderWithStyleRoot.propTypes = {
+  /** Override the styles of the dot element */
+  dotStyle: PropTypes.instanceOf(Object),
+  /** Inverts the color */
+  inverted: PropTypes.bool
+};
+
+LoaderWithStyleRoot.defaultProps = {
+  dotStyle: {},
+  inverted: false
+};
 
 export default LoaderWithStyleRoot;
