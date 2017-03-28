@@ -3,7 +3,7 @@ import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
 import getStyles from './get-styles';
 
-/** General purpose button with two types */
+/** General purpose button with three types */
 class Button extends Component {
   static displayName = 'Button'
 
@@ -14,12 +14,14 @@ class Button extends Component {
     onClick: PropTypes.func,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /** Switches between 'icon-button' and 'normal-button' */
+    /** Toggle IconButton type */
     iconButton: PropTypes.bool,
     /** Inverts color */
     inverted: PropTypes.bool,
     /** Disables the button */
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    /** Toggle FlatButton type */
+    flatButton: PropTypes.bool
   }
 
   static defaultProps = {
@@ -27,7 +29,8 @@ class Button extends Component {
     iconButton: false,
     inverted: false,
     onClick: null,
-    disabled: false
+    disabled: false,
+    flatButton: false
   }
 
   static contextTypes = {
@@ -44,14 +47,16 @@ class Button extends Component {
   }
 
   render() {
-    const { children, onClick, iconButton, inverted, style, disabled, ...custom } = this.props;
+    const {
+      children, onClick, iconButton, inverted, style, disabled, flatButton, ...custom
+    } = this.props;
     const { color } = this.context;
 
     return (
       <button
         key="button"
         onClick={onClick}
-        style={getStyles.root(color, inverted, iconButton, disabled, style)}
+        style={getStyles.root(color, inverted, iconButton, disabled, flatButton, style)}
         disabled={disabled}
         {...custom}
       >
