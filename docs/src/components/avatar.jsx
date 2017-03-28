@@ -4,6 +4,7 @@ import _ from 'underscore';
 import Avatar from '../../../dist/avatar';
 import components from '../../components.json';
 import Props from './props';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Avatar from \'anchor-ui/avatar\';';
 
@@ -23,8 +24,10 @@ function AvatarDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Avatar image="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
-        <Avatar image="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400" />
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', margin: 0 }}>
+          <Avatar style={{ margin: '10px' }} image="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+          <Avatar style={{ margin: '10px' }} image="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400" />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

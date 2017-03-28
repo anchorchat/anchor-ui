@@ -6,6 +6,7 @@ import Button from '../../../dist/button';
 import IconEmoji from '../../../dist/icons/icon-emoji';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import MessageInput from \'anchor-ui/message-input\';';
 
@@ -25,17 +26,20 @@ function MessageInputDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <MessageInput
-          onChange={() => {}}
-          placeholder="Type something..."
-          value=""
-          sendMessage={() => {}}
-          leftButton={
-            <Button iconButton onClick={() => {}}>
-              <IconEmoji />
-            </Button>
-          }
-        />
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
+          <MessageInput
+            onChange={() => {}}
+            placeholder="Type something..."
+            value=""
+            sendMessage={() => {}}
+            leftButton={
+              <Button iconButton onClick={() => {}}>
+                <IconEmoji />
+              </Button>
+            }
+            style={{ padding: '0 16px' }}
+          />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

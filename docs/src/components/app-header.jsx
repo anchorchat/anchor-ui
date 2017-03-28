@@ -8,6 +8,7 @@ import { IconExit } from '../../../dist/icons';
 import Props from './props';
 import components from '../../components.json';
 import logo from '../assets/images/logo.svg';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import AppHeader from \'anchor-ui/app-header\';';
 
@@ -27,15 +28,17 @@ function AppHeaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <AppHeader
-          text="Anchor UI"
-          icon={<img src={logo} alt="Anchor Chat" />}
-          rightButton={
-            <Button onClick={() => {}} iconButton>
-              <IconExit color={colors.white} />
-            </Button>
-          }
-        />
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <AppHeader
+            text="Anchor UI"
+            icon={<img src={logo} alt="Anchor Chat" />}
+            rightButton={
+              <Button onClick={() => {}} iconButton>
+                <IconExit color={colors.white} />
+              </Button>
+            }
+          />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

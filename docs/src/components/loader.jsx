@@ -5,6 +5,7 @@ import Loader from '../../../dist/loader';
 import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Loader from \'anchor-ui/loader\';';
 
@@ -17,7 +18,7 @@ function LoaderDoc() {
       background: colors.theme,
       width: '75px',
       borderRadius: '3px',
-      margin: '10px 0'
+      margin: '10px'
     }
   };
 
@@ -34,10 +35,12 @@ function LoaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Loader />
-        <section style={style.inverted}>
-          <Loader inverted />
-        </section>
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <Loader style={{ margin: '10px' }} />
+          <section style={style.inverted}>
+            <Loader inverted />
+          </section>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

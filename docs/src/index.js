@@ -1,4 +1,5 @@
 /* eslint react/jsx-filename-extension: [0] */
+/* global document */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
@@ -26,6 +27,7 @@ import SearchBox from './components/search-box';
 import MenuItem from './components/menu-item';
 import PopOver from './components/pop-over';
 import WithTheme from './components/with-theme';
+import Paper from './components/paper';
 import './index.css';
 
 ReactDOM.render(
@@ -53,6 +55,7 @@ ReactDOM.render(
       <Route path="/search-box" component={SearchBox} />
       <Route path="/menu-item" component={MenuItem} />
       <Route path="/pop-over" component={PopOver} />
+      <Route path="/paper" component={Paper} />
       <Route path="/with-theme" component={WithTheme} />
     </Route>
   </Router>,

@@ -4,6 +4,7 @@ import _ from 'underscore';
 import Input from '../../../dist/input';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Input from \'anchor-ui/input\';';
 
@@ -23,28 +24,33 @@ function InputDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Input
-          onChange={() => {}}
-          value="Start typing..."
-          placeholder="Start typing..."
-          type="text"
-          label="Text example"
-          name="example"
-        />
-        <Input
-          onChange={() => {}}
-          value="20"
-          type="number"
-          label="Number example"
-          name="example"
-        />
-        <Input
-          onChange={() => {}}
-          value=""
-          type="date"
-          label="Date example"
-          name="example"
-        />
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <Input
+            onChange={() => {}}
+            value="Start typing..."
+            placeholder="Start typing..."
+            type="text"
+            label="Text example"
+            name="example"
+            style={{ margin: '10px' }}
+          />
+          <Input
+            onChange={() => {}}
+            value="20"
+            type="number"
+            label="Number example"
+            name="example"
+            style={{ margin: '10px' }}
+          />
+          <Input
+            onChange={() => {}}
+            value=""
+            type="date"
+            label="Date example"
+            name="example"
+            style={{ margin: '10px' }}
+          />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

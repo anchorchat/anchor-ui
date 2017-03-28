@@ -3289,14 +3289,14 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "The Modal's children"
       },
       "actions": {
         "type": {
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "The Modal's actions"
       },
       "style": {
         "type": {
@@ -3304,7 +3304,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the style of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3316,7 +3316,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the style of the content element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3328,7 +3328,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the style of the footer element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3346,7 +3346,7 @@
           "name": "node"
         },
         "required": true,
-        "description": ""
+        "description": "The Paper's children"
       },
       "depth": {
         "type": {
@@ -3375,7 +3375,7 @@
           ]
         },
         "required": false,
-        "description": "",
+        "description": "The Paper's shadow depth. One of the following: [1, 2, 3, 4, 5]",
         "defaultValue": {
           "value": "1",
           "computed": false
@@ -3387,7 +3387,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "Override the style of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false

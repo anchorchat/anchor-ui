@@ -5,6 +5,8 @@ import IconEmoji from '../../../dist/icons/icon-emoji';
 import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
+import colors from '../../../dist/settings/colors';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Button from \'anchor-ui/button\';';
 
@@ -24,10 +26,16 @@ function ButtonDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Button onClick={() => {}}><p>Click me</p></Button>
-        <Button iconButton onClick={() => {}}>
-          <IconEmoji />
-        </Button>
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: 0 }}>
+          <Button style={{ margin: '10px' }} onClick={() => {}}><p>Click me</p></Button>
+          <Button style={{ margin: '10px' }} inverted onClick={() => {}}><p>Click me</p></Button>
+          <Button style={{ margin: '10px', color: colors.primaryText }} flatButton onClick={() => {}}>
+            <p>Click me</p>
+          </Button>
+          <Button style={{ margin: '10px' }} iconButton onClick={() => {}}>
+            <IconEmoji />
+          </Button>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

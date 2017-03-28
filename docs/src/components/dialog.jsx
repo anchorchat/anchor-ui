@@ -3,9 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import Dialog from '../../../dist/dialog';
 import Button from '../../../dist/button';
-import Loader from '../../../dist/loader';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Dialog from \'anchor-ui/dialog\';';
 
@@ -43,17 +43,19 @@ class DialogDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Button onClick={this.toggleDialog}>Open Dialog</Button>
-          {
-            open
-            ? <Dialog
-              headerText="Hi!"
-              bodyText="I'm a dialog"
-              hideDialog={this.toggleDialog}
-              image={<Loader inverted />}
-            />
-            : null
-          }
+          <Paper style={{ margin: 0, padding: '20px' }}>
+            <Button onClick={this.toggleDialog}>Open Dialog</Button>
+            {
+              open
+              ? <Dialog
+                header="Hi!"
+                hideDialog={this.toggleDialog}
+              >
+                <p>I&apos;m a dialog</p>
+              </Dialog>
+              : null
+            }
+          </Paper>
         </section>
         <Props props={componentData.props} />
       </article>

@@ -6,6 +6,7 @@ import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import emptyStateBackground from '../assets/images/empty_state_users.jpg';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import EmptyState from \'anchor-ui/empty-state\';';
 
@@ -30,13 +31,15 @@ function EmptyStateDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <EmptyState
-          background={emptyState.background}
-          headerText={emptyState.header}
-          bodyText={emptyState.body}
-          button={<Button onClick={() => {}}><p>Click me</p></Button>}
-          style={{ width: '275px', height: '600px' }}
-        />
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <EmptyState
+            background={emptyState.background}
+            headerText={emptyState.header}
+            bodyText={emptyState.body}
+            button={<Button onClick={() => {}}><p>Click me</p></Button>}
+            style={{ width: '275px', height: '600px' }}
+          />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>
