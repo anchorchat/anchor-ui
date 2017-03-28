@@ -344,7 +344,7 @@
     }
   },
   "components/button/index.jsx": {
-    "description": "General purpose button with two types",
+    "description": "General purpose button with three types",
     "displayName": "Button",
     "methods": [],
     "props": {
@@ -383,7 +383,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Switches between 'icon-button' and 'normal-button'",
+        "description": "Toggle IconButton type",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -406,6 +406,17 @@
         },
         "required": false,
         "description": "Disables the button",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "flatButton": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle FlatButton type",
         "defaultValue": {
           "value": "false",
           "computed": false
