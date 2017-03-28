@@ -295,6 +295,11 @@ class App extends Component {
                 avatar={message.profileImage}
                 emoji
                 fontSize={message.fontSize ? message.fontSize : null}
+                menuItems={[
+                  <MenuItem onClick={() => console.log('hi')} text="hi1" value={1} />,
+                  <MenuItem onClick={() => console.log('hi2')} text="hi2" value={2} />,
+                  <MenuItem onClick={() => console.log('hi3')} text="hi3" value={3} />
+                ]}
               />
             ))}
           </MessageList>
@@ -316,7 +321,7 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button disabled>Click me</Button>}
+            button={<Button flatButton>Click me</Button>}
           />
         </article>
         <Menu open={this.state.menu} toggleMenu={this.toggleMenu} header="Menu">

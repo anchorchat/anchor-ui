@@ -23,7 +23,7 @@ class RadioButton extends Component {
     /** The input's label text */
     label: PropTypes.node.isRequired,
     /** The input's onChange function */
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     /** Input active */
     checked: PropTypes.bool,
     /** Override the styles of the root element */
@@ -41,7 +41,8 @@ class RadioButton extends Component {
     inputStyle: {},
     iconStyle: {},
     labelStyle: {},
-    checked: false
+    checked: false,
+    onChange: null
   }
 
   static contextTypes = {

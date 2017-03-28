@@ -3,7 +3,7 @@ import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
 
-function root(color = colors.theme, inverted, iconButton, disabled, overrideStyle) {
+function root(color = colors.theme, inverted, iconButton, disabled, flatButton, overrideStyle) {
   let style = combineStyles(
     styles.button,
     {
@@ -20,6 +20,10 @@ function root(color = colors.theme, inverted, iconButton, disabled, overrideStyl
 
   if (disabled) {
     style = combineStyles(style, styles.disabled);
+  }
+
+  if (flatButton) {
+    style = combineStyles(style, styles.flatButton);
   }
 
   if (inverted) {

@@ -23,14 +23,17 @@ class Dialog extends Component {
     /** Function to hide dialog element */
     hideDialog: PropTypes.func.isRequired,
     /** Optional children, will only render children and headerText with other styles */
-    children: PropTypes.node
+    children: PropTypes.node,
+    /** The close button's icon color */
+    iconColor: PropTypes.string
   }
 
   static defaultProps = {
     style: {},
     overlayStyle: {},
     headerStyle: {},
-    children: null
+    children: null,
+    iconColor: colors.white
   }
 
   static contextTypes = {
@@ -52,6 +55,7 @@ class Dialog extends Component {
       overlayStyle,
       headerStyle,
       children,
+      iconColor,
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -61,7 +65,7 @@ class Dialog extends Component {
         <section style={styles.clickAway} onClick={hideDialog} />
         <section style={getStyles.root(color, style)}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-            <IconClose color={colors.white} />
+            <IconClose color={iconColor} />
           </Button>
           <h1 style={getStyles.header(headerStyle)}>
             {header}
