@@ -37,6 +37,7 @@ export default {
     display: 'block',
     paddingTop: '6px',
     paddingLeft: '8px',
-    color: colors.error
+    color: colors.error,
+    fontSize: '14px'
   }
 };
