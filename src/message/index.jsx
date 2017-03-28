@@ -101,8 +101,9 @@ class Message extends Component {
 
   componentDidUpdate() {
     const { open, positioned } = this.state;
+    const { menuItems } = this.props;
 
-    if (open && !positioned) {
+    if (menuItems && open && !positioned) {
       this.positionPopOver();
     }
   }
