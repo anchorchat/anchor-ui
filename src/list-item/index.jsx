@@ -5,6 +5,7 @@ import styles from '../style/lists';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
 import IconMute from '../icons/icon-mute';
+import IconBlock from '../icons/icon-block';
 import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 
@@ -73,7 +74,9 @@ class ListItem extends Component {
     /** Badge object referenced by the list item */
     badge: PropTypes.node,
     /** Add muted styles to ListItem */
-    muted: PropTypes.bool
+    muted: PropTypes.bool,
+    /** Add blocked styles to ListItem */
+    blocked: PropTypes.bool
   }
 
   static defaultProps = {
@@ -86,7 +89,8 @@ class ListItem extends Component {
     rightButton: null,
     avatar: '',
     badge: null,
-    muted: false
+    muted: false,
+    muted: blocked
   }
 
   static contextTypes = {
@@ -115,6 +119,7 @@ class ListItem extends Component {
       primaryTextStyle,
       secondaryTextStyle,
       muted,
+      blocked,
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -124,7 +129,8 @@ class ListItem extends Component {
         {
           avatar
           ? <div style={styles.avatar}>
-            {muted ? <div style={styles.mutedIcon}><IconMute color={colors.white} /></div> : null}
+            {muted && !blocked ? <div style={styles.icon}><IconMute color={colors.white} /></div> : null}
+            {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
             {badge ? <div style={styles.badge}>{badge}</div> : null}
             {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
           </div>
