@@ -2698,6 +2698,13 @@
     "displayName": "Message",
     "methods": [
       {
+        "name": "positionPopOver",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "createMarkup",
         "docblock": null,
         "modifiers": [],
@@ -2710,7 +2717,28 @@
         "returns": null
       },
       {
+        "name": "handlePress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "closeMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "renderMessageBody",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderMenuItems",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -2902,6 +2930,17 @@
         "description": "Enables compact messages",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "menuItems": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Enables PopOver with MenuItems",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }
@@ -3617,8 +3656,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "The input's onChange function"
+        "required": false,
+        "description": "The input's onChange function",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "checked": {
         "type": {
