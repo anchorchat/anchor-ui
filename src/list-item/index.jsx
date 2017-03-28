@@ -90,7 +90,7 @@ class ListItem extends Component {
     avatar: '',
     badge: null,
     muted: false,
-    muted: blocked
+    blocked: false
   }
 
   static contextTypes = {
