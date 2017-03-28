@@ -41,3 +41,7 @@ export IconObjects from './icon-objects';
 export IconSymbols from './icon-symbols';
 export IconTravel from './icon-travel';
 export IconCheckbox from './icon-checkbox';
+export IconAddFriend from './icon-add-friend';
+export IconBlock from './icon-block';
+export IconPicture from './icon-picture';
+export IconReport from './icon-report';
