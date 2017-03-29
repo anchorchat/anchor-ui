@@ -321,7 +321,7 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button flatButton>Click me</Button>}
+            button={<Button>Click me</Button>}
           />
         </article>
         <Menu open={this.state.menu} toggleMenu={this.toggleMenu} header="Menu">
