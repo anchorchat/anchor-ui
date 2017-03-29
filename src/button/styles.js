@@ -12,13 +12,13 @@ export default {
     height: '40px',
     outline: 0,
     padding: '8px',
-    transition: 'background-color .3s ease-in-out',
+    transition: 'all .3s ease-in-out',
     width: '40px',
     ':hover': {
       background: fade(colors.black, 0.9)
     },
     ':active': {
-      background: fade(colors.black, 0.8)
+      boxShadow: styles.depthShadows[0]
     }
   },
   button: {
@@ -36,7 +36,7 @@ export default {
       backgroundColor: darken(colors.theme, 0.15)
     },
     ':active': {
-      backgroundColor: darken(colors.theme, 0.25)
+      boxShadow: styles.depthShadows[1]
     }
   },
   inverted: {
@@ -46,7 +46,7 @@ export default {
       backgroundColor: darken(colors.white, 0.15)
     },
     ':active': {
-      backgroundColor: darken(colors.white, 0.25)
+      boxShadow: styles.depthShadows[1]
     }
   },
   disabled: {
