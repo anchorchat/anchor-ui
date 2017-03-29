@@ -4,6 +4,7 @@ import _ from 'underscore';
 import SearchBox from '../../../dist/search-box';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
 
@@ -23,7 +24,9 @@ function SearchBoxDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <SearchBox onChange={() => {}} changeSearchQuery={() => {}} handleSearch={() => {}} placeholder="Search" value={''} />
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <SearchBox onChange={() => {}} changeSearchQuery={() => {}} handleSearch={() => {}} placeholder="Search" value={''} />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

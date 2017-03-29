@@ -26,7 +26,7 @@ function IconMenuDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
+        <Paper style={{ margin: 0, padding: '20px' }}>
           <IconMenu
             style={{ width: '40px' }}
             icon={<IconRocket />}

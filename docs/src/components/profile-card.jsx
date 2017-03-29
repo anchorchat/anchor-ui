@@ -4,6 +4,7 @@ import _ from 'underscore';
 import ProfileCard from '../../../dist/profile-card';
 import components from '../../components.json';
 import Props from './props';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import ProfileCard from \'anchor-ui/profile-card\';';
 
@@ -23,7 +24,9 @@ function ProfileCardDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <ProfileCard username="Sjaak" avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <ProfileCard username="Sjaak" avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

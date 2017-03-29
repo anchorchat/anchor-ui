@@ -6,6 +6,7 @@ import MenuItem from 'anchor-ui/menu-item';
 import IconLanguage from 'anchor-ui/icons/icon-language';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
 
@@ -24,17 +25,19 @@ function PopOverDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <IconMenu
-          style={{ width: '40px' }}
-          icon={<IconLanguage />}
-          header="Language"
-          headerStyle={{ textTransform: 'capitalize' }}
-          secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
-          dividerText="More items"
-        >
-          <MenuItem text="Active item" onClick={() => {}} active />
-          <MenuItem text="Inactive item" onClick={() => {}} />
-        </IconMenu>
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <IconMenu
+            style={{ width: '40px' }}
+            icon={<IconLanguage />}
+            header="Language"
+            headerStyle={{ textTransform: 'capitalize' }}
+            secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+            dividerText="More items"
+          >
+            <MenuItem text="Active item" onClick={() => {}} active />
+            <MenuItem text="Inactive item" onClick={() => {}} />
+          </IconMenu>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

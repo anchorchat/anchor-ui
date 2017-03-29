@@ -5,6 +5,7 @@ import WithTheme from '../../../dist/with-theme';
 import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import WithTheme from \'anchor-ui/icons\';';
 
@@ -23,12 +24,14 @@ function WithThemeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <WithTheme color="#f2912c">
-          <Button onClick={() => {}}>Orange Button</Button>
-        </WithTheme>
-        <WithTheme color="#22ac55">
-          <Button style={{ marginLeft: '16px' }} onClick={() => {}}>Green Button</Button>
-        </WithTheme>
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <WithTheme color="#f2912c">
+            <Button style={{ margin: '10px' }} onClick={() => {}}>Orange Button</Button>
+          </WithTheme>
+          <WithTheme color="#22ac55">
+            <Button style={{ margin: '10px' }} onClick={() => {}}>Green Button</Button>
+          </WithTheme>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>
