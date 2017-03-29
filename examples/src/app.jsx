@@ -241,7 +241,7 @@ class App extends Component {
         />
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
-          <Tabs style={channelListStyle}>
+          <Tabs style={channelListStyle} initialSelectedIndex={1}>
             <Tab label="channels" icon={<IconEmoji />}>
               <List header="Channels">
                 {channels.map(channel => (
