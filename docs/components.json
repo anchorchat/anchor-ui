@@ -353,7 +353,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "The Button's content"
+        "description": "Content of the button"
       },
       "onClick": {
         "type": {
@@ -394,7 +394,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Inverts colors",
+        "description": "Inverts color",
         "defaultValue": {
           "value": "false",
           "computed": false
