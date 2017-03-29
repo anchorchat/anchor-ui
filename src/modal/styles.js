@@ -1,5 +1,6 @@
 import colors from '../settings/colors';
 import fade from '../internal/fade';
+import styles from '../settings/styles';
 
 export default {
   root: {
@@ -9,7 +10,8 @@ export default {
     background: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    boxShadow: styles.depthShadows[0]
   },
   content: {
     padding: '24px 16pxpx',
