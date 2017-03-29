@@ -344,7 +344,7 @@
     }
   },
   "components/button/index.jsx": {
-    "description": "General purpose button with two types",
+    "description": "General purpose button with three types",
     "displayName": "Button",
     "methods": [],
     "props": {
@@ -383,7 +383,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Switches between 'icon-button' and 'normal-button'",
+        "description": "Toggle IconButton type",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -406,6 +406,17 @@
         },
         "required": false,
         "description": "Disables the button",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "flatButton": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle FlatButton type",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -784,6 +795,17 @@
         "defaultValue": {
           "value": "null",
           "computed": false
+        }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The close button's icon color",
+        "defaultValue": {
+          "value": "colors.white",
+          "computed": true
         }
       }
     }
@@ -1396,9 +1418,45 @@
       }
     }
   },
+  "components/icons/icon-add-friend.jsx": {
+    "description": "",
+    "displayName": "IconAddFriend",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-add-image.jsx": {
     "description": "",
     "displayName": "IconAddImage",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-block.jsx": {
+    "description": "",
+    "displayName": "IconBlock",
     "methods": [],
     "props": {
       "color": {
@@ -1954,6 +2012,24 @@
       }
     }
   },
+  "components/icons/icon-picture.jsx": {
+    "description": "",
+    "displayName": "IconPicture",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-power.jsx": {
     "description": "",
     "displayName": "IconPower",
@@ -1975,6 +2051,24 @@
   "components/icons/icon-radio.jsx": {
     "description": "",
     "displayName": "IconRadio",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-report.jsx": {
+    "description": "",
+    "displayName": "IconReport",
     "methods": [],
     "props": {
       "color": {
@@ -2479,12 +2573,48 @@
           "value": "false",
           "computed": false
         }
+      },
+      "blocked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Add blocked styles to ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },
   "components/loader/index.jsx": {
     "description": "",
-    "methods": []
+    "methods": [],
+    "props": {
+      "dotStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the dot element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inverts the color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
   },
   "components/loader/loader.jsx": {
     "description": "Animated loader",
@@ -4184,6 +4314,20 @@
     "displayName": "Tabs",
     "methods": [
       {
+        "name": "getSelectedTab",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "toggleTab",
         "docblock": null,
         "modifiers": [],
@@ -4249,6 +4393,17 @@
         "description": "Override the styles of the tab content container",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "initialSelectedIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify initial visible tab index.\nIf `initialSelectedIndex` is set but larger than the total amount of specified tabs,\n`initialSelectedIndex` will revert back to default.",
+        "defaultValue": {
+          "value": "0",
           "computed": false
         }
       }

@@ -12,13 +12,13 @@ export default {
     height: '40px',
     outline: 0,
     padding: '8px',
-    transition: 'background-color .3s ease-in-out',
+    transition: 'all .3s ease-in-out',
     width: '40px',
     ':hover': {
       background: fade(colors.black, 0.9)
     },
     ':active': {
-      background: fade(colors.black, 0.8)
+      boxShadow: styles.depthShadows[0]
     }
   },
   button: {
@@ -31,12 +31,12 @@ export default {
     fontSize: '16px',
     outline: 0,
     padding: '6.5px 13px',
-    transition: 'background-color .3s ease-in-out',
+    transition: 'all .3s ease-in-out',
     ':hover': {
       backgroundColor: darken(colors.theme, 0.15)
     },
     ':active': {
-      backgroundColor: darken(colors.theme, 0.25)
+      boxShadow: styles.depthShadows[1]
     }
   },
   inverted: {
@@ -46,10 +46,21 @@ export default {
       backgroundColor: darken(colors.white, 0.15)
     },
     ':active': {
-      backgroundColor: darken(colors.white, 0.25)
+      boxShadow: styles.depthShadows[1]
     }
   },
   disabled: {
     opacity: '0.38'
+  },
+  flatButton: {
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    textTransform: 'uppercase',
+    ':hover': {
+      backgroundColor: fade(colors.black, 0.95)
+    },
+    ':active': {
+      backgroundColor: fade(colors.black, 0.85)
+    }
   }
 };

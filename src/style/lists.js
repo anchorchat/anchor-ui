@@ -51,7 +51,7 @@ const styleSheet = {
       backgroundColor: darken(colors.theme, 0.15)
     }
   },
-  mutedIcon: {
+  icon: {
     position: 'absolute',
     top: '0',
     left: '0',
