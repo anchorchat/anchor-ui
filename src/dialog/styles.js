@@ -1,5 +1,6 @@
 import colors from '../settings/colors';
 import fade from '../internal/fade';
+import styles from '../settings/styles';
 
 export default {
   overlay: {
@@ -25,7 +26,8 @@ export default {
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
-    position: 'relative'
+    position: 'relative',
+    boxShadow: styles.depthShadows[0]
   },
   header: {
     color: 'inherit',

@@ -241,7 +241,7 @@ class App extends Component {
         />
         <article>
           <ProfileCard username={currentUser} avatar={theDoctor} style={{ borderRight: `1px solid ${colors.grey}` }} />
-          <Tabs style={channelListStyle}>
+          <Tabs style={channelListStyle} initialSelectedIndex={1}>
             <Tab label="channels" icon={<IconEmoji />}>
               <List header="Channels">
                 {channels.map(channel => (
@@ -321,7 +321,7 @@ class App extends Component {
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
-            button={<Button flatButton>Click me</Button>}
+            button={<Button>Click me</Button>}
           />
         </article>
         <Menu open={this.state.menu} toggleMenu={this.toggleMenu} header="Menu">
