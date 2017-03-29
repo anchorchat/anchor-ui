@@ -29,6 +29,7 @@ function Menu(props, context) {
         <Link to="/message"><ListItem active={router.isActive('/message')} primaryText="Message" /></Link>
         <Link to="/message-list"><ListItem active={router.isActive('/message-list')} primaryText="MessageList" /></Link>
         <Link to="/message-input"><ListItem active={router.isActive('/message-input')} primaryText="MessageInput" /></Link>
+        <Link to="/modal"><ListItem active={router.isActive('/modal')} primaryText="Modal" /></Link>
         <Link to="/paper"><ListItem active={router.isActive('/paper')} primaryText="Paper" /></Link>
         <Link to="/pop-over"><ListItem active={router.isActive('/pop-over')} primaryText="PopOver" /></Link>
         <Link to="/profile-card"><ListItem active={router.isActive('/profile-card')} primaryText="ProfileCard" /></Link>

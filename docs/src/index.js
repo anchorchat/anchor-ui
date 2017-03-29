@@ -28,6 +28,7 @@ import MenuItem from './components/menu-item';
 import PopOver from './components/pop-over';
 import WithTheme from './components/with-theme';
 import Paper from './components/paper';
+import Modal from './components/modal';
 import './index.css';
 
 ReactDOM.render(
@@ -57,6 +58,7 @@ ReactDOM.render(
       <Route path="/pop-over" component={PopOver} />
       <Route path="/paper" component={Paper} />
       <Route path="/with-theme" component={WithTheme} />
+      <Route path="/modal" component={Modal} />
     </Route>
   </Router>,
   document.getElementById('root')
