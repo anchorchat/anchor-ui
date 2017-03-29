@@ -4314,6 +4314,20 @@
     "displayName": "Tabs",
     "methods": [
       {
+        "name": "getSelectedTab",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "toggleTab",
         "docblock": null,
         "modifiers": [],
@@ -4379,6 +4393,17 @@
         "description": "Override the styles of the tab content container",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "initialSelectedIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify initial visible tab index.\nIf `initialSelectedIndex` is set but larger than the total amount of specified tabs,\n`initialSelectedIndex` will revert back to default.",
+        "defaultValue": {
+          "value": "0",
           "computed": false
         }
       }
