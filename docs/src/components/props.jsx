@@ -18,7 +18,6 @@ function getPropType(type) {
 }
 
 function Props({ props }) {
-  console.log(props);
   return (
     <section>
       <h1>Props</h1>
