@@ -2,10 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
-import Button from '../button';
-import IconClose from '../icons/icon-close';
 import styles from './styles';
-import colors from '../settings/colors';
 import getStyles from './get-styles';
 
 /** Profile useful for showing a user's info */
@@ -21,10 +18,6 @@ class Profile extends Component {
     avatar: PropTypes.string,
     /** Path to the user's coverimage will only be rendered if there is one */
     coverImage: PropTypes.string,
-    /** Function for closing the profile */
-    closeProfile: PropTypes.func.isRequired,
-    /** Overide the default icon */
-    closeIcon: PropTypes.node,
     /** Profile action button */
     button: PropTypes.node,
     /** Profile content */
@@ -44,7 +37,6 @@ class Profile extends Component {
     coverImage: '',
     children: null,
     button: null,
-    closeIcon: null,
     secondaryText: '',
     style: {},
     headerStyle: {},
@@ -66,8 +58,6 @@ class Profile extends Component {
       avatar,
       coverImage,
       children,
-      closeProfile,
-      closeIcon,
       button,
       style,
       headerStyle,
@@ -86,9 +76,6 @@ class Profile extends Component {
           <section style={getStyles.coverImage(coverBackground)} />
           <section style={styles.coverOverlay} />
           {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
-          <Button style={styles.close} onClick={closeProfile} iconButton>
-            {closeIcon || <IconClose color={colors.white} />}
-          </Button>
         </section>
         <h1 style={getStyles.header(headerStyle)}>{header}</h1>
         {

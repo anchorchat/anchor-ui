@@ -13,7 +13,7 @@ class Dialog extends Component {
 
   static propTypes = {
     /** Header text */
-    header: PropTypes.node.isRequired,
+    header: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the overlay element */
@@ -33,7 +33,8 @@ class Dialog extends Component {
     overlayStyle: {},
     headerStyle: {},
     children: null,
-    iconColor: colors.white
+    iconColor: colors.white,
+    header: null
   }
 
   static contextTypes = {
@@ -67,9 +68,7 @@ class Dialog extends Component {
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
             <IconClose color={iconColor} />
           </Button>
-          <h1 style={getStyles.header(headerStyle)}>
-            {header}
-          </h1>
+          {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
           {children}
         </section>
       </section>
