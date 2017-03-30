@@ -27,7 +27,8 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
-    boxShadow: styles.depthShadows[0]
+    boxShadow: styles.depthShadows[0],
+    overflow: 'auto'
   },
   header: {
     color: 'inherit',

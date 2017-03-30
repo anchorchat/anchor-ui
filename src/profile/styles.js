@@ -45,7 +45,8 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     boxSizing: 'border-box',
-    color: colors.primaryText
+    color: colors.primaryText,
+    overflow: 'hidden'
   },
   header: {
     fontSize: '18px',
