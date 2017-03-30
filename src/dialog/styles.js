@@ -41,7 +41,8 @@ export default {
   closeButton: {
     position: 'absolute',
     top: '5px',
-    right: '5px'
+    right: '5px',
+    zIndex: 1
   },
   clickAway: {
     width: '100%',
