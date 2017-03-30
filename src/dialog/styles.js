@@ -27,7 +27,8 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
-    boxShadow: styles.depthShadows[0]
+    boxShadow: styles.depthShadows[0],
+    overflow: 'auto'
   },
   header: {
     color: 'inherit',
@@ -41,7 +42,8 @@ export default {
   closeButton: {
     position: 'absolute',
     top: '5px',
-    right: '5px'
+    right: '5px',
+    zIndex: 1
   },
   clickAway: {
     width: '100%',
