@@ -3,6 +3,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
+/** A Card is a piece of paper with unique related data */
 function Card({ children, style, ...custom }) {
   return (
     <section style={getStyles.root(style)} {...custom}>

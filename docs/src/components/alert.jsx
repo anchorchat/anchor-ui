@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Alert from 'anchor-ui/alert';
 import _ from 'underscore';
 import Props from './props';
+import Alert from '../../../dist/alert';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Alert from \'anchor-ui/alert\';';
 
@@ -23,10 +24,12 @@ function AlertDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Alert text="Success!" type="success" hideAlert={() => {}} onClick={() => {}} />
-        <Alert text="Info!" type="info" hideAlert={() => {}} onClick={() => {}} />
-        <Alert text="Warning!" type="warning" hideAlert={() => {}} onClick={() => {}} />
-        <Alert text="Error!" type="error" hideAlert={() => {}} onClick={() => {}} />
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center', margin: 0 }}>
+          <Alert style={{ margin: '10px' }} text="Success!" type="success" hideAlert={() => {}} onClick={() => {}} />
+          <Alert style={{ margin: '10px' }} text="Info!" type="info" hideAlert={() => {}} onClick={() => {}} />
+          <Alert style={{ margin: '10px' }} text="Warning!" type="warning" hideAlert={() => {}} onClick={() => {}} />
+          <Alert style={{ margin: '10px' }} text="Error!" type="error" hideAlert={() => {}} onClick={() => {}} />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

@@ -8,8 +8,7 @@ function root(color = colors.theme, inverted, iconButton, disabled, flatButton, 
     styles.button,
     {
       backgroundColor: color,
-      ':hover': { backgroundColor: darken(color, 0.15) },
-      ':active': { backgroundColor: darken(color, 0.25) }
+      ':hover': { backgroundColor: darken(color, 0.15) }
     }
   );
   const invertedStyle = combineStyles(styles.inverted, { color });

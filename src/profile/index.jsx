@@ -5,7 +5,7 @@ import Avatar from '../avatar';
 import styles from './styles';
 import getStyles from './get-styles';
 
-/** Profile usefull for showing a users info */
+/** Profile useful for showing a user's info */
 class Profile extends Component {
   static displayName = 'Profile'
 

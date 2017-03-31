@@ -102,7 +102,7 @@ p {
   margin: 0
 }
 
-main > article > article section {
+main > article > article > section {
   margin-bottom: 16px;
 }
 

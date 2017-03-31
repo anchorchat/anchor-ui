@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Badge from 'anchor-ui/badge';
 import _ from 'underscore';
+import Badge from '../../../dist/badge';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Badge from \'anchor-ui/badge\';';
 
@@ -23,8 +24,10 @@ function BadgeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Badge inverted value={10} maxValue={9} />
-        <Badge value={10} maxValue={9} />
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <Badge style={{ margin: '10px' }} inverted value={10} maxValue={9} />
+          <Badge style={{ margin: '10px' }} value={10} maxValue={9} />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

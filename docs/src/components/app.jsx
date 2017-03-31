@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import { AppHeader, Button } from 'anchor-ui';
+import AppHeader from '../../../dist/app-header';
+import Button from '../../../dist/button';
 import Menu from './menu';
 import logo from '../assets/images/logo.svg';
 import github from '../assets/images/github.svg';

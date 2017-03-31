@@ -4,6 +4,7 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 import Avatar from '../avatar';
 
+/** A Card is a piece of paper with unique related data */
 function CardHeader({
   style, title, titleStyle, subtitle, subtitleStyle, avatar, avatarStyle, ...custom
 }) {
