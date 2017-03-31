@@ -79,7 +79,7 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   /** Display an error message */
   error: PropTypes.node,
-  /** Override the styles of the label element */
+  /** Override the styles of the error element */
   errorStyle: PropTypes.instanceOf(Object)
 };
 

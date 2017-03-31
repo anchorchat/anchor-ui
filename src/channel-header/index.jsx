@@ -30,9 +30,9 @@ ChannelHeader.displayName = 'ChannelHeader';
 ChannelHeader.propTypes = {
   /** The channel's name */
   name: PropTypes.node.isRequired,
-  /** Right-hand side placed button */
+  /** Button on the right side of the ChannelHeader */
   rightButton: PropTypes.node,
-  /** Left-hand side placed button */
+  /** Button on the left side of the ChannelHeader */
   leftButton: PropTypes.node,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),

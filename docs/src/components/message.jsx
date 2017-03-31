@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Message from 'anchor-ui/message';
-import MessageList from 'anchor-ui/message-list';
 import _ from 'underscore';
+import Message from '../../../dist/message';
+import MessageList from '../../../dist/message-list';
 import Props from './props';
 import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Message from \'anchor-ui/message\';';
 
@@ -56,17 +57,19 @@ function MessageDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <MessageList style={style.list}>
-          {messages.map((message, index) => (
-            <Message
-              message={message}
-              key={`message-${index}`}
-              myMessage={message.username === currentUser}
-              avatar={message.avatar}
-              emoji
-            />
-          ))}
-        </MessageList>
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <MessageList style={style.list}>
+            {messages.map((message, index) => (
+              <Message
+                message={message}
+                key={`message-${index}`}
+                myMessage={message.username === currentUser}
+                avatar={message.avatar}
+                emoji
+              />
+            ))}
+          </MessageList>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

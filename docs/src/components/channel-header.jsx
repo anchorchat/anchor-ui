@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import ChannelHeader from 'anchor-ui/channel-header';
-import Button from 'anchor-ui/button';
-import { IconChannels, IconPeople } from 'anchor-ui/icons';
 import _ from 'underscore';
+import ChannelHeader from '../../../dist/channel-header';
+import Button from '../../../dist/button';
+import IconChannels from '../../../dist/icons/icon-channels';
+import IconPeople from '../../../dist/icons/icon-people';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import ChannelHeader from \'anchor-ui/channel-header\';';
 
@@ -25,19 +27,22 @@ function ChannelHeaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <ChannelHeader
-          name="Channel 1"
-          rightButton={
-            <Button iconButton onClick={() => {}}>
-              <IconPeople />
-            </Button>
-          }
-          leftButton={
-            <Button iconButton onClick={() => {}}>
-              <IconChannels />
-            </Button>
-          }
-        />
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <ChannelHeader
+            name="Channel 1"
+            style={{ width: '100%' }}
+            rightButton={
+              <Button iconButton onClick={() => {}}>
+                <IconPeople />
+              </Button>
+            }
+            leftButton={
+              <Button iconButton onClick={() => {}}>
+                <IconChannels />
+              </Button>
+            }
+          />
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import IconEmoji from 'anchor-ui/icons/icon-emoji';
-import IconHammer from 'anchor-ui/icons/icon-hammer';
+import IconEmoji from '../../../dist/icons/icon-emoji';
+import IconHammer from '../../../dist/icons/icon-hammer';
+import IconRocket from '../../../dist/icons/icon-rocket';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import IconHammer from \'anchor-ui/icons/icon-hammer\'';
 
@@ -24,7 +26,11 @@ function Icons() {
       </section>
       <section>
         <h1>Examples</h1>
-        <IconEmoji /><IconHammer color="#1ba6c4" />
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <IconEmoji style={{ margin: '10px' }} />
+          <IconHammer color="#1ba6c4" style={{ margin: '10px' }} />
+          <IconRocket color="red" style={{ margin: '10px' }} />
+        </Paper>
         <h2>Available icons</h2>
         <ul>
           {iconNames.map(icon => <li key={icon}>{icon}</li>)}

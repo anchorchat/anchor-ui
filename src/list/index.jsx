@@ -4,7 +4,7 @@ import pure from 'recompose/pure';
 import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
 
-/** List */
+/** A wrapper for ListItems */
 function List({ children, header, listRef, style, headerStyle, ...custom }) {
   return (
     <ul ref={listRef} style={combineStyles(styles.list, style)} {...custom}>

@@ -3,6 +3,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
+/** Menu that slides in from the left */
 function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custom }) {
   const menuItems = children.map((menuItem, index) => (
     cloneElement(

@@ -13,7 +13,8 @@ import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 
-/** Messages with optional styling for the current user's message */
+/** Messages with optional styling for the current user's message,
+different font sizes and message styles */
 class Message extends Component {
   static displayName = 'Message'
 

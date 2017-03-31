@@ -30,7 +30,7 @@ EmptyState.propTypes = {
   headerText: PropTypes.node.isRequired,
   /** Header text */
   bodyText: PropTypes.node.isRequired,
-  /** Render a call to action button */
+  /** A call to action button */
   button: PropTypes.node,
   /** Path to background image */
   background: PropTypes.string,

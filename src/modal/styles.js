@@ -14,7 +14,7 @@ export default {
     boxShadow: styles.depthShadows[0]
   },
   content: {
-    padding: '24px 16pxpx',
+    padding: '24px 16px',
     color: colors.primaryText
   },
   footer: {

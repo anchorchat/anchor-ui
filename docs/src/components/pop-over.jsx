@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import PopOver from 'anchor-ui/pop-over';
-import MenuItem from 'anchor-ui/menu-item';
 import _ from 'underscore';
+import IconMenu from 'anchor-ui/icon-menu';
+import MenuItem from 'anchor-ui/menu-item';
+import IconLanguage from 'anchor-ui/icons/icon-language';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
 
@@ -23,11 +25,19 @@ function PopOverDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        {/* TODO: make popOver visible */}
-        <PopOver popOverRef={() => {}} >
-          <MenuItem text="Active Menu item" onClick={() => {}} active />
-          <MenuItem text="Menu item" onClick={() => {}} />
-        </PopOver>
+        <Paper style={{ margin: 0, padding: '20px' }}>
+          <IconMenu
+            style={{ width: '40px' }}
+            icon={<IconLanguage />}
+            header="Language"
+            headerStyle={{ textTransform: 'capitalize' }}
+            secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+            dividerText="More items"
+          >
+            <MenuItem text="Active item" onClick={() => {}} active />
+            <MenuItem text="Inactive item" onClick={() => {}} />
+          </IconMenu>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>

@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import List from 'anchor-ui/list';
-import ListItem from 'anchor-ui/list-item';
-import Button from 'anchor-ui/button';
-import { IconClose } from 'anchor-ui/icons';
-import { colors } from 'anchor-ui/settings';
 import _ from 'underscore';
+import List from '../../../dist/list';
+import ListItem from '../../../dist/list-item';
+import Button from '../../../dist/button';
+import { IconClose } from '../../../dist/icons';
+import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
+import Paper from '../../../dist/paper';
 
 const usage = '```js\n import List from \'anchor-ui/list\';';
 
@@ -49,24 +50,26 @@ function ListDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <List>
-          {channels.map(channel => (
-            <ListItem
-              key={`channel-list-${channel.name}`}
-              primaryText={channel.name}
-              secondaryText={`${channel.users.length}/${channel.maxUsers}`}
-              active={currentChannel === channel.name}
-              rightButton={
-                currentChannel === channel.name
-                ? <Button iconButton onClick={() => {}}>
-                  <IconClose color={colors.white} />
-                </Button>
-                : null
-              }
-              avatar={channel.avatar}
-            />
-          ))}
-        </List>
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
+          <List>
+            {channels.map(channel => (
+              <ListItem
+                key={`channel-list-${channel.name}`}
+                primaryText={channel.name}
+                secondaryText={`${channel.users.length}/${channel.maxUsers}`}
+                active={currentChannel === channel.name}
+                rightButton={
+                  currentChannel === channel.name
+                  ? <Button iconButton onClick={() => {}}>
+                    <IconClose color={colors.white} />
+                  </Button>
+                  : null
+                }
+                avatar={channel.avatar}
+              />
+            ))}
+          </List>
+        </Paper>
       </section>
       <Props props={componentData.props} />
     </article>
