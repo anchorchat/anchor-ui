@@ -29,8 +29,9 @@ export default {
     color: colors.white,
     cursor: 'pointer',
     fontSize: '16px',
+    lineHeight: '20px',
     outline: 0,
-    padding: '6.5px 13px',
+    padding: '6px 12px',
     transition: 'all .3s ease-in-out',
     ':hover': {
       backgroundColor: darken(colors.theme, 0.15)
