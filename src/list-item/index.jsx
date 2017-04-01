@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from '../style/lists';
+import styles from './styles';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
 import IconMute from '../icons/icon-mute';
