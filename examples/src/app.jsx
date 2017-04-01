@@ -19,7 +19,8 @@ import {
   Paper,
   Menu,
   Tabs,
-  Tab
+  Tab,
+  Slider
 } from '../../dist';
 import { IconClose, IconEmoji, IconExit, IconPeople, IconChannels, ChannelAvatar, IconMenu as MenuIcon } from '../../dist/icons';
 import { colors } from '../../dist/settings';
@@ -132,7 +133,8 @@ class App extends Component {
       messages,
       select: 2,
       radio: 'test',
-      menu: false
+      menu: false,
+      slider: 0
     };
 
     this.changeMessage = this.changeMessage.bind(this);
@@ -140,6 +142,7 @@ class App extends Component {
     this.changeSelect = this.changeSelect.bind(this);
     this.changeRadio = this.changeRadio.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.changeSlider = this.changeSlider.bind(this);
   }
 
   changeMessage(event) {
@@ -183,6 +186,12 @@ class App extends Component {
   changeRadio(event) {
     this.setState({
       radio: event.currentTarget.value
+    });
+  }
+
+  changeSlider(event) {
+    this.setState({
+      slider: event.currentTarget.value * 1
     });
   }
 
@@ -329,7 +338,7 @@ class App extends Component {
           <MenuItem text="hi2" onClick={() => this.changeSelect(2)} value={2} />
           <MenuItem text="hi3" onClick={() => this.changeSelect(3)} value={3} />
         </Menu>
-        <Select open={this.state.select} value={this.state.select} onChange={this.changeSelect} label="Select">
+        <Select value={this.state.select} onChange={this.changeSelect} label="Select">
           <MenuItem text="hi1" value={1} />
           <MenuItem text="hi2" value={2} />
           <MenuItem text="hi3" value={3} />
@@ -353,6 +362,7 @@ class App extends Component {
         <Paper depth={5}>
           <h1>Paper: depth 5</h1>
         </Paper>
+        <Slider min={0} max={50} value={this.state.slider} onChange={this.changeSlider} label="Daan is gek" name="slider" />
       </section>
     );
   }
