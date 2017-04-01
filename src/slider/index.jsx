@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 
 const minMaxProptype = (props, propName, componentName, ...rest) => {
   const error = PropTypes.number(props, propName, componentName, ...rest);
@@ -81,6 +81,10 @@ class Slider extends Component {
     errorStyle: {}
   };
 
+  static contextTypes = {
+    color: PropTypes.string
+  }
+
   render() {
     const {
       name,
@@ -96,6 +100,7 @@ class Slider extends Component {
       error,
       ...custom
     } = this.props;
+    const { color } = this.context;
     const percent = getPercent(value, min, max);
 
     return (
@@ -103,9 +108,9 @@ class Slider extends Component {
         <label htmlFor={name}>{label}</label>
         <div style={styles.sliderRoot}>
           <div style={styles.slider}>
-            <div style={combineStyles({ width: `${percent * 100}%` }, styles.sliderFilled)} />
-            <div style={combineStyles({ width: `${(1 - percent) * 100}%` }, styles.sliderRemaining)} />
-            <div style={combineStyles({ left: `${percent * 100}%` }, styles.sliderButton)} />
+            <div style={getStyles.sliderFilled(color, percent)} />
+            <div style={getStyles.sliderRemaining(percent)} />
+            <div style={getStyles.sliderButton(color, percent)} />
           </div>
         </div>
         <input

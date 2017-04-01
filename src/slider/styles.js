@@ -16,14 +16,14 @@ export default {
     height: '2px'
   },
   sliderFilled: {
-    background: colors.theme,
+    backgroundColor: colors.theme,
     height: '100%',
     position: 'absolute',
     left: 0,
     top: 0
   },
   sliderRemaining: {
-    background: colors.grey,
+    backgroundColor: colors.grey,
     height: '100%',
     position: 'absolute',
     right: 0,
@@ -34,8 +34,10 @@ export default {
     width: '10px',
     height: '10px',
     borderRadius: '50%',
+    border: `2px solid ${colors.theme}`,
     top: '1px',
-    background: 'black',
-    transform: 'translate(-50%, -50%)'
+    backgroundColor: colors.theme,
+    transform: 'translate(-50%, -50%)',
+    transition: 'boreder .1s ease-in-out, background-color .1s ease-in-out'
   }
 };
