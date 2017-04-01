@@ -145,8 +145,10 @@ class ListItem extends Component {
           {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
           {
             nestedList
-            ? <div style={styles.button}>
-              <Button iconButton onClick={this.toggleNestedList}><IconChevronDown /></Button>
+            ? <div style={getStyles.nestedListButton(open)}>
+              <Button iconButton onClick={this.toggleNestedList}>
+                <IconChevronDown />
+              </Button>
             </div>
             : null
           }

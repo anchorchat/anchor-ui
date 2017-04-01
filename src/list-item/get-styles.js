@@ -42,5 +42,14 @@ function text(textStyle, active, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
+function nestedListButton(open) {
+  let style = styles.button;
 
-export default { root, text };
+  if (open) {
+    style = combineStyles(style, { transform: 'rotate(180deg)' });
+  }
+
+  return style;
+}
+
+export default { root, text, nestedListButton };
