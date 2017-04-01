@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
+import styles from './styles';
+import combineStyles from '../internal/combine-styles';
 
 const minMaxProptype = (props, propName, componentName, ...rest) => {
   const error = PropTypes.number(props, propName, componentName, ...rest);
@@ -99,11 +101,11 @@ class Slider extends Component {
     return (
       <section>
         <label htmlFor={name}>{label}</label>
-        <div style={{ height: '18px', width: '100%', position: 'relative', marginTop: '24px', marginBottom: '48px' }}>
-          <div style={{ position: 'absolute', top: '8px', left: '0px', width: '100%', height: '2px' }}>
-            <div style={{ background: 'blue', width: `${percent * 100}%`, height: '100%', position: 'absolute', left: 0, top: 0 }} />
-            <div style={{ background: 'grey', width: `${(1 - percent) * 100}%`, height: '100%', position: 'absolute', right: 0, top: 0 }} />
-            <div style={{ position: 'absolute', width: '10px', height: '10px', left: `${percent * 100}%`, top: 0, background: 'black', transform: 'translate(-50%, -50%)' }} />
+        <div style={styles.sliderRoot}>
+          <div style={styles.slider}>
+            <div style={combineStyles({ width: `${percent * 100}%` }, styles.sliderFilled)} />
+            <div style={combineStyles({ width: `${(1 - percent) * 100}%` }, styles.sliderRemaining)} />
+            <div style={combineStyles({ left: `${percent * 100}%` }, styles.sliderButton)} />
           </div>
         </div>
         <input
