@@ -40,7 +40,7 @@ class ListItem extends Component {
     muted: PropTypes.bool,
     /** Add blocked styles to ListItem */
     blocked: PropTypes.bool,
-    /** Add a NestedList to ListItem */
+    /** ListItems to render in a NestedList */
     children: PropTypes.node
   }
 
