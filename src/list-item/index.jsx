@@ -6,47 +6,7 @@ import colors from '../settings/colors';
 import Avatar from '../avatar';
 import IconMute from '../icons/icon-mute';
 import IconBlock from '../icons/icon-block';
-import combineStyles from '../internal/combine-styles';
-import darken from '../internal/darken';
-
-function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
-  let style = styles.listItem;
-
-  const color = themeColor || colors.theme;
-
-  const activeStyle = combineStyles(
-    styles.listItem,
-    {
-      backgroundColor: color,
-      ':hover': { backgroundColor: darken(color, 0.05) },
-      ':active': { backgroundColor: darken(color, 0.15) }
-    }
-  );
-
-  if (active) {
-    style = combineStyles(style, activeStyle);
-  }
-
-  if (rightButton) {
-    style = combineStyles(style, styles.rightButton);
-  }
-
-  if (avatar) {
-    style = combineStyles(style, styles.leftAvatar);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getTextStyle(textStyle, active, overrideStyle) {
-  let style = textStyle;
-
-  if (active) {
-    style = combineStyles(style, { color: colors.white });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** A list's item */
 class ListItem extends Component {
@@ -125,7 +85,7 @@ class ListItem extends Component {
     const { color } = this.context;
 
     return (
-      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, style)} {...custom}>
+      <li key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
         {
           avatar
           ? <div style={styles.avatar}>
@@ -136,10 +96,10 @@ class ListItem extends Component {
           </div>
           : null
         }
-        <h1 style={getTextStyle(styles.primaryText, active, primaryTextStyle)}>{primaryText}</h1>
+        <h1 style={getStyles.text(styles.primaryText, active, primaryTextStyle)}>{primaryText}</h1>
         {
           secondaryText
-          ? <h2 style={getTextStyle(styles.secondaryText, active, secondaryTextStyle)}>
+          ? <h2 style={getStyles.text(styles.secondaryText, active, secondaryTextStyle)}>
             {secondaryText}
           </h2>
           : null
