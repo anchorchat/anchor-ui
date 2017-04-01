@@ -38,6 +38,6 @@ export default {
     top: '1px',
     backgroundColor: colors.theme,
     transform: 'translate(-50%, -50%)',
-    transition: 'boreder .1s ease-in-out, background-color .1s ease-in-out'
+    transition: 'border .1s ease-in-out, background-color .1s ease-in-out'
   }
 };
