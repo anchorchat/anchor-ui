@@ -6,7 +6,10 @@ import colors from '../settings/colors';
 import Avatar from '../avatar';
 import IconMute from '../icons/icon-mute';
 import IconBlock from '../icons/icon-block';
+import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
+import Button from '../button';
+import NestedList from '../nested-list';
 
 /** A list's item */
 class ListItem extends Component {
@@ -36,7 +39,9 @@ class ListItem extends Component {
     /** Add muted styles to ListItem */
     muted: PropTypes.bool,
     /** Add blocked styles to ListItem */
-    blocked: PropTypes.bool
+    blocked: PropTypes.bool,
+    /** Add a NestedList to ListItem */
+    children: PropTypes.node
   }
 
   static defaultProps = {
@@ -50,11 +55,22 @@ class ListItem extends Component {
     avatar: '',
     badge: null,
     muted: false,
-    blocked: false
+    blocked: false,
+    children: null
   }
 
   static contextTypes = {
     color: PropTypes.string
+  }
+
+  constructor() {
+    super();
+
+    this.state = {
+      open: false
+    };
+
+    this.toggleNestedList = this.toggleNestedList.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -62,8 +78,15 @@ class ListItem extends Component {
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.context, nextContext) ||
       Radium.getState(this.state, 'listItem', ':hover') !== Radium.getState(nextState, 'listItem', ':hover') ||
-      Radium.getState(this.state, 'listItem', ':active') !== Radium.getState(nextState, 'listItem', ':active')
+      Radium.getState(this.state, 'listItem', ':active') !== Radium.getState(nextState, 'listItem', ':active') ||
+      !shallowEqual(this.state, nextState)
     );
+  }
+
+  toggleNestedList() {
+    this.setState({
+      open: !this.state.open
+    });
   }
 
   render() {
@@ -80,32 +103,56 @@ class ListItem extends Component {
       secondaryTextStyle,
       muted,
       blocked,
+      children,
       ...custom
     } = this.props;
     const { color } = this.context;
+    const { open } = this.state;
+
+    const nestedList = children ? (
+      <NestedList open={open}>
+        {children}
+      </NestedList>
+      ) : null;
 
     return (
-      <li key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
-        {
-          avatar
-          ? <div style={styles.avatar}>
-            {muted && !blocked ? <div style={styles.icon}><IconMute color={colors.white} /></div> : null}
-            {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-            {badge ? <div style={styles.badge}>{badge}</div> : null}
-            {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
-          </div>
-          : null
-        }
-        <h1 style={getStyles.text(styles.primaryText, active, primaryTextStyle)}>{primaryText}</h1>
-        {
-          secondaryText
-          ? <h2 style={getStyles.text(styles.secondaryText, active, secondaryTextStyle)}>
-            {secondaryText}
-          </h2>
-          : null
-        }
-        {rightButton ? <div style={styles.button}>{rightButton}</div> : null}
-      </li>
+      <div>
+        <li key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
+          {
+            avatar
+            ? <div style={styles.avatar}>
+              {
+                muted && !blocked
+                ? <div style={styles.icon}><IconMute color={colors.white} /></div>
+                : null
+              }
+              {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+              {badge ? <div style={styles.badge}>{badge}</div> : null}
+              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
+            </div>
+            : null
+          }
+          <h1 style={getStyles.text(styles.primaryText, active, primaryTextStyle)}>
+            {primaryText}
+          </h1>
+          {
+            secondaryText
+            ? <h2 style={getStyles.text(styles.secondaryText, active, secondaryTextStyle)}>
+              {secondaryText}
+            </h2>
+            : null
+          }
+          {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
+          {
+            nestedList
+            ? <div style={styles.button}>
+              <Button iconButton onClick={this.toggleNestedList}><IconChevronDown /></Button>
+            </div>
+            : null
+          }
+        </li>
+        {nestedList}
+      </div>
     );
   }
 }
