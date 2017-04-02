@@ -32,7 +32,7 @@ class ListItem extends Component {
     active: PropTypes.bool,
     /** Right-hand side placed button */
     rightButton: PropTypes.node,
-    /** The item's avatar, if a string is supplied Avatar component is used */
+    /** The item's avatar, if a string is provided Avatar component is used */
     avatar: PropTypes.node,
     /** Add a badge to the ListItem */
     badge: PropTypes.node,
@@ -40,7 +40,8 @@ class ListItem extends Component {
     muted: PropTypes.bool,
     /** Add blocked styles to ListItem */
     blocked: PropTypes.bool,
-    /** ListItems to render in a NestedList */
+    /** ListItems to render in a NestedList,
+    if rightButton is also provided only the NestedList will render */
     children: PropTypes.node
   }
 
