@@ -9,16 +9,16 @@ import IconBlock from '../icons/icon-block';
 import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import Button from '../button';
-import NestedList from '../nested-list';
+import List from '../list';
 
 /** A list's item */
 class ListItem extends Component {
   static displayName = 'ListItem'
 
   static propTypes = {
-    /** The list item's primary text */
+    /** The ListItem's primary text */
     primaryText: PropTypes.node.isRequired,
-    /** The list item's secondary text */
+    /** The ListItem's secondary text */
     secondaryText: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -34,7 +34,7 @@ class ListItem extends Component {
     rightButton: PropTypes.node,
     /** The item's avatar, if a string is supplied Avatar component is used */
     avatar: PropTypes.node,
-    /** Badge object referenced by the list item */
+    /** Add a badge to the ListItem */
     badge: PropTypes.node,
     /** Add muted styles to ListItem */
     muted: PropTypes.bool,
@@ -109,11 +109,15 @@ class ListItem extends Component {
     const { color } = this.context;
     const { open } = this.state;
 
-    const nestedList = children ? (
-      <NestedList open={open}>
-        {children}
-      </NestedList>
-      ) : null;
+    let nestedList = null;
+
+    if (children) {
+      nestedList = (
+        <List open={open}>
+          {children}
+        </List>
+      );
+    }
 
     return (
       <div>
