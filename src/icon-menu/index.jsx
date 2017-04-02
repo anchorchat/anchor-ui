@@ -7,7 +7,7 @@ import styles from '../style/icon-menu';
 import combineStyles from '../internal/combine-styles';
 import getPopOverPosition from '../internal/get-pop-over-position';
 
-/** Menu with Icon and IconMenu */
+/** Open a menu from an Icon, give options related to the icon */
 class IconMenu extends Component {
   static displayName = 'IconMenu'
 

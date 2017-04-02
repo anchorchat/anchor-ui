@@ -4,8 +4,12 @@ import pure from 'recompose/pure';
 import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
 
-/** List */
-function List({ children, header, listRef, style, headerStyle, ...custom }) {
+/** A wrapper for ListItems */
+function List({ children, header, listRef, style, headerStyle, open, ...custom }) {
+  if (!open) {
+    return null;
+  }
+
   return (
     <ul ref={listRef} style={combineStyles(styles.list, style)} {...custom}>
       {header ? <h1 style={combineStyles(styles.listHeader, headerStyle)}>{header}</h1> : null}
@@ -26,14 +30,17 @@ List.propTypes = {
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object)
+  headerStyle: PropTypes.instanceOf(Object),
+  /** Toggle the List's visibility */
+  open: PropTypes.bool
 };
 
 List.defaultProps = {
   header: null,
   style: {},
   headerStyle: {},
-  listRef: () => {}
+  listRef: () => {},
+  open: true
 };
 
 export default pure(Radium(List));

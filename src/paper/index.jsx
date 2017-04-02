@@ -3,6 +3,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
+/** A Paper element is a basic container that can give depth to the page. */
 function Paper({ children, depth, style, ...custom }) {
   return (
     <section style={getStyles.root(depth, style)} {...custom}>
@@ -14,11 +15,11 @@ function Paper({ children, depth, style, ...custom }) {
 Paper.displayName = 'Paper';
 
 Paper.propTypes = {
-  /* The Paper's children */
+  /** The Paper's children */
   children: PropTypes.node.isRequired,
-  /* The Paper's shadow depth */
+  /** The Paper's shadow depth. One of the following: [1, 2, 3, 4, 5] */
   depth: PropTypes.oneOf([1, 2, 3, 4, 5]),
-  /* Override the style of the root element */
+  /** Override the style of the root element */
   style: PropTypes.instanceOf(Object)
 };
 

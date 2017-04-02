@@ -10,7 +10,7 @@ function getStyle(image, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-/** A user's profile image */
+/** An user's profile image */
 function Avatar({ image, style, ...custom }) {
   return (
     <section style={getStyle(image, style)} {...custom} />

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import Dialog from '../../../dist/dialog';
+import Modal from '../../../dist/modal';
 import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import Dialog from \'anchor-ui/dialog\';';
+const usage = '```js\n import Modal from \'anchor-ui/modal\';';
 
-class DialogDoc extends Component {
+class ModalDoc extends Component {
   constructor() {
     super();
 
@@ -17,10 +17,10 @@ class DialogDoc extends Component {
       open: false
     };
 
-    this.toggleDialog = this.toggleDialog.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleDialog() {
+  toggleModal() {
     this.setState({
       open: !this.state.open
     });
@@ -28,11 +28,11 @@ class DialogDoc extends Component {
 
   render() {
     const { open } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Dialog');
+    const componentData = _.find(components, component => component.displayName === 'Modal');
 
     return (
       <article className="doc">
-        <h1>Dialog</h1>
+        <h1>Modal</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
@@ -44,15 +44,17 @@ class DialogDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={{ margin: 0, padding: '20px' }}>
-            <Button onClick={this.toggleDialog}>Open Dialog</Button>
+            <Button onClick={this.toggleModal}>Open Modal</Button>
             {
               open
-              ? <Dialog
-                header="Hi!"
-                hideDialog={this.toggleDialog}
+              ? <Modal
+                actions={[
+                  <Button key="button" flatButton onClick={this.toggleModal}>Cancel</Button>,
+                  <Button key="button1" flatButton onClick={this.toggleModal}>Ok</Button>
+                ]}
               >
-                <p>I&apos;m a dialog</p>
-              </Dialog>
+                <p>I&apos;m a modal</p>
+              </Modal>
               : null
             }
           </Paper>
@@ -63,4 +65,4 @@ class DialogDoc extends Component {
   }
 }
 
-export default DialogDoc;
+export default ModalDoc;

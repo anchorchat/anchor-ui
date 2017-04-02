@@ -1,61 +1,24 @@
 import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from '../style/lists';
+import styles from './styles';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
 import IconMute from '../icons/icon-mute';
 import IconBlock from '../icons/icon-block';
-import combineStyles from '../internal/combine-styles';
-import darken from '../internal/darken';
-
-function getStyle(themeColor, active, rightButton, avatar, overrideStyle) {
-  let style = styles.listItem;
-
-  const color = themeColor || colors.theme;
-
-  const activeStyle = combineStyles(
-    styles.listItem,
-    {
-      backgroundColor: color,
-      ':hover': { backgroundColor: darken(color, 0.05) },
-      ':active': { backgroundColor: darken(color, 0.15) }
-    }
-  );
-
-  if (active) {
-    style = combineStyles(style, activeStyle);
-  }
-
-  if (rightButton) {
-    style = combineStyles(style, styles.rightButton);
-  }
-
-  if (avatar) {
-    style = combineStyles(style, styles.leftAvatar);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getTextStyle(textStyle, active, overrideStyle) {
-  let style = textStyle;
-
-  if (active) {
-    style = combineStyles(style, { color: colors.white });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import IconChevronDown from '../icons/icon-chevron-down';
+import getStyles from './get-styles';
+import Button from '../button';
+import List from '../list';
 
 /** A list's item */
 class ListItem extends Component {
   static displayName = 'ListItem'
 
   static propTypes = {
-    /** The list item's primary text */
+    /** The ListItem's primary text */
     primaryText: PropTypes.node.isRequired,
-    /** The list item's secondary text */
+    /** The ListItem's secondary text */
     secondaryText: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -69,14 +32,17 @@ class ListItem extends Component {
     active: PropTypes.bool,
     /** Right-hand side placed button */
     rightButton: PropTypes.node,
-    /** The item's avatar, if a string is supplied Avatar component is used */
+    /** The item's avatar, if a string is provided Avatar component is used */
     avatar: PropTypes.node,
-    /** Badge object referenced by the list item */
+    /** Add a badge to the ListItem */
     badge: PropTypes.node,
     /** Add muted styles to ListItem */
     muted: PropTypes.bool,
     /** Add blocked styles to ListItem */
-    blocked: PropTypes.bool
+    blocked: PropTypes.bool,
+    /** ListItems to render in a NestedList,
+    if rightButton is also provided only the NestedList will render */
+    children: PropTypes.node
   }
 
   static defaultProps = {
@@ -90,11 +56,22 @@ class ListItem extends Component {
     avatar: '',
     badge: null,
     muted: false,
-    blocked: false
+    blocked: false,
+    children: null
   }
 
   static contextTypes = {
     color: PropTypes.string
+  }
+
+  constructor() {
+    super();
+
+    this.state = {
+      open: false
+    };
+
+    this.toggleNestedList = this.toggleNestedList.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -102,8 +79,15 @@ class ListItem extends Component {
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.context, nextContext) ||
       Radium.getState(this.state, 'listItem', ':hover') !== Radium.getState(nextState, 'listItem', ':hover') ||
-      Radium.getState(this.state, 'listItem', ':active') !== Radium.getState(nextState, 'listItem', ':active')
+      Radium.getState(this.state, 'listItem', ':active') !== Radium.getState(nextState, 'listItem', ':active') ||
+      !shallowEqual(this.state, nextState)
     );
+  }
+
+  toggleNestedList() {
+    this.setState({
+      open: !this.state.open
+    });
   }
 
   render() {
@@ -120,32 +104,62 @@ class ListItem extends Component {
       secondaryTextStyle,
       muted,
       blocked,
+      children,
       ...custom
     } = this.props;
     const { color } = this.context;
+    const { open } = this.state;
+
+    let nestedList = null;
+
+    if (children) {
+      nestedList = (
+        <List open={open}>
+          {children}
+        </List>
+      );
+    }
 
     return (
-      <li key="listItem" onClick={onClick} style={getStyle(color, active, rightButton, avatar, style)} {...custom}>
-        {
-          avatar
-          ? <div style={styles.avatar}>
-            {muted && !blocked ? <div style={styles.icon}><IconMute color={colors.white} /></div> : null}
-            {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-            {badge ? <div style={styles.badge}>{badge}</div> : null}
-            {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
-          </div>
-          : null
-        }
-        <h1 style={getTextStyle(styles.primaryText, active, primaryTextStyle)}>{primaryText}</h1>
-        {
-          secondaryText
-          ? <h2 style={getTextStyle(styles.secondaryText, active, secondaryTextStyle)}>
-            {secondaryText}
-          </h2>
-          : null
-        }
-        {rightButton ? <div style={styles.button}>{rightButton}</div> : null}
-      </li>
+      <div>
+        <li key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
+          {
+            avatar
+            ? <div style={styles.avatar}>
+              {
+                muted && !blocked
+                ? <div style={styles.icon}><IconMute color={colors.white} /></div>
+                : null
+              }
+              {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+              {badge ? <div style={styles.badge}>{badge}</div> : null}
+              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
+            </div>
+            : null
+          }
+          <h1 style={getStyles.text(styles.primaryText, active, primaryTextStyle)}>
+            {primaryText}
+          </h1>
+          {
+            secondaryText
+            ? <h2 style={getStyles.text(styles.secondaryText, active, secondaryTextStyle)}>
+              {secondaryText}
+            </h2>
+            : null
+          }
+          {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
+          {
+            nestedList
+            ? <div style={getStyles.nestedListButton(open)}>
+              <Button iconButton onClick={this.toggleNestedList}>
+                <IconChevronDown />
+              </Button>
+            </div>
+            : null
+          }
+        </li>
+        {nestedList}
+      </div>
     );
   }
 }

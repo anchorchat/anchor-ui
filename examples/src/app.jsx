@@ -275,7 +275,12 @@ class App extends Component {
               </List>
             </Tab>
             <Tab icon={<IconEmoji />} label="Conversations" badge={<Badge value={2} maxValue={9} />}>
-              <p>Conversations</p>
+              <List>
+                <ListItem avatar={<ChannelAvatar />} primaryText="Conversation 1">
+                  <ListItem primaryText="The Doctor" avatar={theDoctor} />
+                  <ListItem primaryText="Dalek" avatar={dalek} />
+                </ListItem>
+              </List>
             </Tab>
             <Tab icon={<IconEmoji />} label="friends" badge={<Badge value={2} maxValue={9} />}>
               <p>Friends</p>

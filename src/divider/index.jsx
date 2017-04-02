@@ -4,6 +4,7 @@ import Radium from 'radium';
 import styles from '../style/divider';
 import combineStyles from '../internal/combine-styles';
 
+/** Dividers group and separate content within lists and page layouts. */
 function Divider({ text, style, textStyle, ...custom }) {
   if (!text) {
     return <hr style={combineStyles(styles.hr, style)} {...custom} />;

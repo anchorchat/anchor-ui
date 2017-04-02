@@ -22,6 +22,10 @@ function Button(
 
 Button.displayName = 'Button';
 
+Button.contextTypes = {
+  color: PropTypes.string
+};
+
 Button.propTypes = {
   /** Content of the button */
   children: PropTypes.node.isRequired,

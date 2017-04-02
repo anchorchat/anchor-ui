@@ -13,6 +13,7 @@ import combineStyles from '../internal/combine-styles';
 
 const storage = new Storage();
 
+/** Menu for sending messages with emoji */
 class EmojiMenu extends Component {
   static displayName = 'EmojiMenu'
 
