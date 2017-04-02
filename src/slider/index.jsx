@@ -3,6 +3,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import styles from './styles';
 import getStyles from './get-styles';
+import getPercentage from '../internal/get-percentage';
 
 const minMaxProptype = (props, propName, componentName, ...rest) => {
   const error = PropTypes.number(props, propName, componentName, ...rest);
@@ -31,15 +32,6 @@ const valueInRangePropType = (props, propName, componentName, ...rest) => {
 
   return null;
 };
-
-function getPercentage(value, min, max) {
-  let percentage = (value - min) / (max - min);
-  if (isNaN(percentage)) {
-    percentage = 0;
-  }
-
-  return percentage;
-}
 
 /** General purpose form slider */
 function Slider({
