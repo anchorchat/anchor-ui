@@ -52,7 +52,8 @@ export default {
   nestedListButton: {
     position: 'absolute',
     right: '6px',
-    top: '6px'
+    top: '6px',
+    transition: 'transform .3s ease-in-out'
   },
   primaryText: {
     color: colors.primaryText,
