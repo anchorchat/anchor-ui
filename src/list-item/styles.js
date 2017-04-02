@@ -49,7 +49,7 @@ export default {
   rightButton: {
     paddingRight: '52px'
   },
-  button: {
+  nestedListButton: {
     position: 'absolute',
     right: '6px',
     top: '6px'
