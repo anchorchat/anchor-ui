@@ -43,7 +43,7 @@ function text(textStyle, active, overrideStyle) {
 }
 
 function nestedListButton(open) {
-  let style = styles.nestedListButton;
+  let style = styles.button;
 
   if (open) {
     style = combineStyles(style, { transform: 'rotate(180deg)' });
