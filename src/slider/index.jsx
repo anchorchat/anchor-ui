@@ -32,13 +32,13 @@ const valueInRangePropType = (props, propName, componentName, ...rest) => {
   return null;
 };
 
-function getPercent(value, min, max) {
-  let percent = (value - min) / (max - min);
-  if (isNaN(percent)) {
-    percent = 0;
+function getPercentage(value, min, max) {
+  let percentage = (value - min) / (max - min);
+  if (isNaN(percentage)) {
+    percentage = 0;
   }
 
-  return percent;
+  return percentage;
 }
 
 /** General purpose form slider */
@@ -48,20 +48,18 @@ class Slider extends Component {
   static propTypes = {
     /** Change the slider's value */
     onChange: PropTypes.func.isRequired,
-    /** The slider's value. Cannot be outside of the range of min and max */
+    /** The slider's value. Must between min and max */
     value: valueInRangePropType,
     /** The slider's label */
     label: PropTypes.node.isRequired,
     /** The slider's name */
     name: PropTypes.string.isRequired,
-    /** The slider's max length. Cannot be equal to min. */
+    /** The slider's max value. Cannot be equal to min. */
     max: minMaxProptype,
-    /** The slider's min length. Cannot be equal to max. */
+    /** The slider's min value. Cannot be equal to max. */
     min: minMaxProptype,
-    /** The slider's step length */
+    /** The slider's step value */
     step: PropTypes.number,
-    /** Ref function to the element */
-    sliderRef: PropTypes.func,
     /** Disables the slider */
     disabled: PropTypes.bool,
     /** Display an error message */
@@ -94,14 +92,13 @@ class Slider extends Component {
       max,
       min,
       step,
-      sliderRef,
       disabled,
       errorStyle,
       error,
       ...custom
     } = this.props;
     const { color } = this.context;
-    const percent = getPercent(value, min, max);
+    const percent = getPercentage(value, min, max);
 
     return (
       <section>
@@ -122,7 +119,6 @@ class Slider extends Component {
           min={min}
           id={name}
           step={step}
-          ref={sliderRef}
           disabled={disabled}
           {...custom}
         />
