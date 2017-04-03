@@ -4083,6 +4083,139 @@
       }
     }
   },
+  "components/slider/index.jsx": {
+    "description": "General purpose form slider",
+    "displayName": "Slider",
+    "methods": [],
+    "props": {
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the slider's value"
+      },
+      "value": {
+        "type": {
+          "name": "custom",
+          "raw": "propTypes.valueInRange"
+        },
+        "required": false,
+        "description": "The slider's value. Must between min and max",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The slider's label"
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The slider's name"
+      },
+      "max": {
+        "type": {
+          "name": "custom",
+          "raw": "propTypes.minMax"
+        },
+        "required": false,
+        "description": "The slider's max value. Cannot be equal to min.",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "min": {
+        "type": {
+          "name": "custom",
+          "raw": "propTypes.minMax"
+        },
+        "required": false,
+        "description": "The slider's min value. Cannot be equal to max.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "step": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The slider's step value",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the slider",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/switch/index.jsx": {
     "description": "",
     "displayName": "Switch",
