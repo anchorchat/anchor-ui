@@ -740,8 +740,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Header text"
+        "required": false,
+        "description": "Header text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "style": {
         "type": {
@@ -2446,27 +2450,46 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the List's visibility",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       }
     }
   },
   "components/list-item/index.jsx": {
     "description": "A list's item",
     "displayName": "ListItem",
-    "methods": [],
+    "methods": [
+      {
+        "name": "toggleNestedList",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "primaryText": {
         "type": {
           "name": "node"
         },
         "required": true,
-        "description": "The list item's primary text"
+        "description": "The ListItem's primary text"
       },
       "secondaryText": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "The list item's secondary text",
+        "description": "The ListItem's secondary text",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -2546,7 +2569,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "The item's avatar, if a string is supplied Avatar component is used",
+        "description": "The item's avatar, if a string is provided Avatar component is used",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -2557,7 +2580,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Badge object referenced by the list item",
+        "description": "Add a badge to the ListItem",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2582,6 +2605,17 @@
         "description": "Add blocked styles to ListItem",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "ListItems to render in a NestedList,\n    if rightButton is also provided only the NestedList will render",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }
@@ -3545,24 +3579,6 @@
           "computed": false
         }
       },
-      "closeProfile": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": "Function for closing the profile"
-      },
-      "closeIcon": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Overide the default icon",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "button": {
         "type": {
           "name": "node"
@@ -3700,62 +3716,6 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/profile-sidebar/index.jsx": {
-    "description": "ProfileSidebar useful for showing a user's info",
-    "displayName": "ProfileSidebar",
-    "methods": [],
-    "props": {
-      "username": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "The user's username"
-      },
-      "avatar": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Path to the user's profile image will only be rendered if there is one"
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "MessageList content",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the header element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4106,6 +4066,139 @@
         "description": "The Select's label",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/slider/index.jsx": {
+    "description": "General purpose form slider",
+    "displayName": "Slider",
+    "methods": [],
+    "props": {
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Change the slider's value"
+      },
+      "value": {
+        "type": {
+          "name": "custom",
+          "raw": "propTypes.valueInRange"
+        },
+        "required": false,
+        "description": "The slider's value. Must between min and max",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The slider's label"
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The slider's name"
+      },
+      "max": {
+        "type": {
+          "name": "custom",
+          "raw": "propTypes.minMax"
+        },
+        "required": false,
+        "description": "The slider's max value. Cannot be equal to min.",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "min": {
+        "type": {
+          "name": "custom",
+          "raw": "propTypes.minMax"
+        },
+        "required": false,
+        "description": "The slider's min value. Cannot be equal to max.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "step": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The slider's step value",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the slider",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },

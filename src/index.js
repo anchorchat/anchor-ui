@@ -35,6 +35,7 @@ export CardHeader from './card-header';
 export CardContent from './card-content';
 export Checkbox from './checkbox';
 export Profile from './profile';
+export Slider from './slider';
 
 export icons from './icons';
 
