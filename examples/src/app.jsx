@@ -367,7 +367,7 @@ class App extends Component {
         <Paper depth={5}>
           <h1>Paper: depth 5</h1>
         </Paper>
-        <Slider min={0} max={50} value={this.state.slider} onChange={this.changeSlider} label="Daan is gek" name="slider" />
+        <Slider min={0} max={50} value={this.state.slider} onChange={this.changeSlider} label="Slider" name="slider" />
       </section>
     );
   }
