@@ -1,4 +1,45 @@
 {
+  "components/admin-badge/index.jsx": {
+    "description": "Used for displaying a user's Admin status",
+    "displayName": "AdminBadge",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The badge's text",
+        "defaultValue": {
+          "value": "'Admin'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inverted": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Inverts color",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/alert/index.jsx": {
     "description": "Four types of (system) messages for alerting your user",
     "displayName": "Alert",
