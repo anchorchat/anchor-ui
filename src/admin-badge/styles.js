@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import styles from '../settings/styles';
 
 const styleSheet = {
-  badge: {
+  root: {
     backgroundColor: colors.theme,
     boxShadow: styles.depthShadows[0],
     color: colors.white,
@@ -10,7 +10,8 @@ const styleSheet = {
     lineHeight: '10px',
     padding: '3px',
     textAlign: 'center',
-    borderRadius: '3px'
+    borderRadius: '3px',
+    fontFamily: 'inherit'
   },
   inverted: {
     color: colors.theme,
