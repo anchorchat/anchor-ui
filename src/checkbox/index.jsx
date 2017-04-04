@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium, { Style } from 'radium';
+import Radium from 'radium';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
 import IconCheckbox from '../icons/icon-checkbox';
@@ -7,22 +7,11 @@ import styles from './styles';
 
 /** A checkbox is used to verify which options you want selected from a group. */
 function Checkbox(
-  { onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle },
+  { onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, ...custom },
   { color }
 ) {
-  const themeColor = color || colors.theme;
-
   return (
-    <label htmlFor={name} className="checkbox" style={getStyles.root(style)}>
-      <Style
-        scopeSelector=".checkbox"
-        rules={{
-          'input:focus ~ span': {
-            color: `${themeColor} !important`,
-            borderBottom: `2px solid ${themeColor} !important`
-          }
-        }}
-      />
+    <label htmlFor={name} style={getStyles.root(color, style)} {...custom}>
       <input
         type="checkbox"
         id={name}
@@ -31,7 +20,11 @@ function Checkbox(
         style={getStyles.input(inputStyle)}
       />
       <div style={getStyles.icon(iconStyle)}>
-        {checked ? <IconCheckbox color={themeColor} /> : <div style={styles.unchecked} />}
+        {
+          checked
+          ? <IconCheckbox color={color || colors.theme} />
+          : <div style={styles.unchecked} />
+        }
       </div>
       <span style={getStyles.label(labelStyle)}>
         {label}
