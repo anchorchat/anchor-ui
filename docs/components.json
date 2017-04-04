@@ -1,6 +1,6 @@
 {
   "components/admin-badge/index.jsx": {
-    "description": "Used for displaying a user's Admin status",
+    "description": "Used for displaying an user's Admin status",
     "displayName": "AdminBadge",
     "methods": [],
     "props": {
