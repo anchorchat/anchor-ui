@@ -29,12 +29,14 @@ import PopOver from './components/pop-over';
 import WithTheme from './components/with-theme';
 import Paper from './components/paper';
 import Modal from './components/modal';
+import AdminBadge from './components/admin-badge';
 import './index.css';
 
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
+      <Route path="/admin-badge" component={AdminBadge} />
       <Route path="/alert" component={Alert} />
       <Route path="/app-header" component={AppHeader} />
       <Route path="/avatar" component={Avatar} />
