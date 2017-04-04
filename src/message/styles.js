@@ -60,7 +60,9 @@ export default {
     margin: '0'
   },
   messageImage: {
-    borderRadius: '3px'
+    borderRadius: '3px',
+    width: '100%',
+    height: 'auto'
   },
   messageTime: {
     width: '32px',
