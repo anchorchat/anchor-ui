@@ -15,7 +15,7 @@ function IconMenuDoc() {
 
   return (
     <article className="doc">
-      <h1>Icon Menu</h1>
+      <h1>IconMenu</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

@@ -14,7 +14,7 @@ function ListItemDoc() {
 
   return (
     <article className="doc">
-      <h1>List item</h1>
+      <h1>ListItem</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

@@ -46,7 +46,7 @@ function MessageDoc() {
 
   return (
     <article className="doc">
-      <h1>Messages</h1>
+      <h1>Message</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

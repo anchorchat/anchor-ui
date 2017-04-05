@@ -12,7 +12,7 @@ function PaperDoc() {
 
   return (
     <article className="doc">
-      <h1>Button</h1>
+      <h1>Paper</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

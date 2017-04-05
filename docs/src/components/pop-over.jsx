@@ -8,13 +8,13 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
+const usage = '```js\n import SearchBox from \'anchor-ui/pop-over\';';
 
 function PopOverDoc() {
   const componentData = _.find(components, component => component.displayName === 'PopOver');
   return (
     <article className="doc">
-      <h1>Pop Over</h1>
+      <h1>PopOver</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

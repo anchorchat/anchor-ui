@@ -15,7 +15,7 @@ function DividerDoc() {
 
   return (
     <article className="doc">
-      <h1>App Header</h1>
+      <h1>Divider</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
