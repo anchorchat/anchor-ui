@@ -19,6 +19,7 @@ function Menu(props, context) {
         <Link to="/button"><ListItem active={router.isActive('/button')} primaryText="Button" /></Link>
         <Link to="/channel-header"><ListItem active={router.isActive('/channel-header')} primaryText="ChannelHeader" /></Link>
         <Link to="/dialog"><ListItem active={router.isActive('/dialog')} primaryText="Dialog" /></Link>
+        <Link to="/divider"><ListItem active={router.isActive('/divider')} primaryText="Divider" /></Link>
         <Link to="/empty-state"><ListItem active={router.isActive('/empty-state')} primaryText="EmptyState" /></Link>
         <Link to="/icons"><ListItem active={router.isActive('/icons')} primaryText="Icons" /></Link>
         <Link to="/icon-menu"><ListItem active={router.isActive('/icon-menu')} primaryText="IconMenu" /></Link>
