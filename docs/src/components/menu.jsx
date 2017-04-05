@@ -36,6 +36,7 @@ function Menu(props, context) {
         <Link to="/pop-over"><ListItem active={router.isActive('/pop-over')} primaryText="PopOver" /></Link>
         <Link to="/profile-card"><ListItem active={router.isActive('/profile-card')} primaryText="ProfileCard" /></Link>
         <Link to="/search-box"><ListItem active={router.isActive('/search-box')} primaryText="SearchBox" /></Link>
+        <Link to="/select"><ListItem active={router.isActive('/select')} primaryText="Select" /></Link>
         <Link to="/with-theme"><ListItem active={router.isActive('/with-theme')} primaryText="WithTheme" /></Link>
       </List>
     </nav>
