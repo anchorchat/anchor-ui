@@ -8,7 +8,7 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import IconMenu from \'anchor-ui/icons\';';
+const usage = '```js\n import IconMenu from \'anchor-ui/icon-menu\';';
 
 function IconMenuDoc() {
   const componentData = _.find(components, component => component.displayName === 'IconMenu');
