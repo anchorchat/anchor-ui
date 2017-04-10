@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 function minMax(props, propName, componentName, ...rest) {
   const error = PropTypes.number(props, propName, componentName, ...rest);

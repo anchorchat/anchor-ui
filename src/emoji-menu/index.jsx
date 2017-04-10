@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import _ from 'lodash';
 import Radium from 'radium';

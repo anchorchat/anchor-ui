@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
