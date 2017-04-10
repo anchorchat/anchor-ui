@@ -15,7 +15,7 @@ function MessageInputDoc() {
 
   return (
     <article className="doc">
-      <h1>Message input</h1>
+      <h1>MessageInput</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

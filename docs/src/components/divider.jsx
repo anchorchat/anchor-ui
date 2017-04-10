@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import ProfileCard from '../../../dist/profile-card';
-import components from '../../components.json';
+import Divider from '../../../dist/divider';
+import List from '../../../dist/list';
+import ListItem from '../../../dist/list-item';
 import Props from './props';
+import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import ProfileCard from \'anchor-ui/profile-card\';';
+const usage = '```js\n import Divider from \'anchor-ui/divider\';';
 
-function ProfileCardDoc() {
-  const componentData = _.find(components, component => component.displayName === 'ProfileCard');
+function DividerDoc() {
+  const componentData = _.find(components, component => component.displayName === 'Divider');
 
   return (
     <article className="doc">
-      <h1>ProfileCard</h1>
+      <h1>Divider</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
@@ -25,7 +27,11 @@ function ProfileCardDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={{ margin: 0, padding: '20px' }}>
-          <ProfileCard username="Sjaak" avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+          <List>
+            <ListItem primaryText="ListItem" />
+            <Divider text="Divider" />
+            <ListItem primaryText="ListItem 2" />
+          </List>
         </Paper>
       </section>
       <Props props={componentData.props} />
@@ -33,4 +39,4 @@ function ProfileCardDoc() {
   );
 }
 
-export default ProfileCardDoc;
+export default DividerDoc;
