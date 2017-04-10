@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import IconMenu from 'anchor-ui/icon-menu';
-import MenuItem from 'anchor-ui/menu-item';
-import IconLanguage from 'anchor-ui/icons/icon-language';
+import IconMenu from '../../../dist/icon-menu';
+import MenuItem from '../../../dist/menu-item';
+import IconLanguage from '../../../dist/icons/icon-language';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import SearchBox from \'anchor-ui/search-box\';';
+const usage = '```js\n import PopOver from \'anchor-ui/pop-over\';';
 
 function PopOverDoc() {
   const componentData = _.find(components, component => component.displayName === 'PopOver');
   return (
     <article className="doc">
-      <h1>Pop Over</h1>
+      <h1>PopOver</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

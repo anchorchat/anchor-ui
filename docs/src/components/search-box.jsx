@@ -13,7 +13,7 @@ function SearchBoxDoc() {
 
   return (
     <article className="doc">
-      <h1>Search Box</h1>
+      <h1>SearchBox</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
