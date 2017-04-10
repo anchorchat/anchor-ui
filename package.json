@@ -65,6 +65,7 @@
     ]
   },
   "peerDependencies": {
+    "prop-types": "^15.4.1",
     "react": "^15.4.1"
   },
   "dependencies": {
