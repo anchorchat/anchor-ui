@@ -20,7 +20,7 @@ function EmptyStateDoc() {
   };
   return (
     <article className="doc">
-      <h1>Empty state</h1>
+      <h1>EmptyState</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

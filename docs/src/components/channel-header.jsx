@@ -16,7 +16,7 @@ function ChannelHeaderDoc() {
 
   return (
     <article className="doc">
-      <h1>Channel header</h1>
+      <h1>ChannelHeader</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

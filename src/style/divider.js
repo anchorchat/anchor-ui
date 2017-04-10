@@ -10,12 +10,13 @@ const styleSheet = {
   },
   text: {
     fontSize: '16px',
-    color: colors.secondaryText,
-    padding: '10px 10px 10px 16px',
+    color: colors.icons,
+    padding: '8px 8px 8px 16px',
     borderTop: `1px solid ${colors.grey}`,
     margin: 0,
     cursor: 'default',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    fontWeight: 'normal'
   }
 };
 

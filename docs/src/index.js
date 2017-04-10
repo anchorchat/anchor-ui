@@ -30,6 +30,8 @@ import WithTheme from './components/with-theme';
 import Paper from './components/paper';
 import Modal from './components/modal';
 import AdminBadge from './components/admin-badge';
+import Divider from './components/divider';
+import Select from './components/select';
 import './index.css';
 
 ReactDOM.render(
@@ -61,6 +63,8 @@ ReactDOM.render(
       <Route path="/paper" component={Paper} />
       <Route path="/with-theme" component={WithTheme} />
       <Route path="/modal" component={Modal} />
+      <Route path="/divider" component={Divider} />
+      <Route path="/select" component={Select} />
     </Route>
   </Router>,
   document.getElementById('root')
