@@ -17,7 +17,7 @@ function AppHeaderDoc() {
 
   return (
     <article className="doc">
-      <h1>App Header</h1>
+      <h1>AppHeader</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

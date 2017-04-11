@@ -2,7 +2,7 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 import propTypes from '../../src/internal/prop-types';
 
 chai.use(sinonChai);
@@ -17,7 +17,7 @@ describe('propTypes', () => {
       };
       const propName = 'min';
 
-      const error = propTypes.minMax(props, propName);
+      const error = propTypes.minMax(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error).to.equal('isNaN');
 
@@ -33,7 +33,7 @@ describe('propTypes', () => {
       };
       const propName = 'min';
 
-      const error = propTypes.minMax(props, propName);
+      const error = propTypes.minMax(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error.message).to.equal('min should be less than max');
 
@@ -49,7 +49,7 @@ describe('propTypes', () => {
       };
       const propName = 'max';
 
-      const error = propTypes.minMax(props, propName);
+      const error = propTypes.minMax(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error.message).to.equal('max should be greater than min');
 
@@ -66,7 +66,7 @@ describe('propTypes', () => {
       };
       const propName = 'value';
 
-      const error = propTypes.valueInRange(props, propName);
+      const error = propTypes.valueInRange(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error).to.equal('isNaN');
 
@@ -83,7 +83,7 @@ describe('propTypes', () => {
       };
       const propName = 'value';
 
-      const error = propTypes.valueInRange(props, propName);
+      const error = propTypes.valueInRange(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error.message).to.equal('value should be within the range specified by min and max');
 

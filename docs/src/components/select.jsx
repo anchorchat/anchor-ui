@@ -2,15 +2,15 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import MenuItem from '../../../dist/menu-item';
+import Select from '../../../dist/select';
 import Props from './props';
 import components from '../../components.json';
-import IconReport from '../../../dist/icons/icon-report';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
+const usage = '```js\n import Select from \'anchor-ui/select\';';
 
-function MenuItemDoc() {
-  const componentData = _.find(components, component => component.displayName === 'MenuItem');
+function SelectDoc() {
+  const componentData = _.find(components, component => component.displayName === 'Select');
   return (
     <article className="doc">
       <h1>Menu Item</h1>
@@ -25,9 +25,10 @@ function MenuItemDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <MenuItem text="Active Menu item" onClick={() => {}} active />
-          <MenuItem text="Menu item" onClick={() => {}} />
-          <MenuItem icon={<IconReport />} text="Menu item with icon" onClick={() => {}} />
+          <Select value={1} label="Select" onChange={() => {}}>
+            <MenuItem text="Menu item" onClick={() => {}} value={1} />
+            <MenuItem text="Menu item" onClick={() => {}} value={2} />
+          </Select>
         </Paper>
       </section>
       <Props props={componentData.props} />
@@ -35,4 +36,4 @@ function MenuItemDoc() {
   );
 }
 
-export default MenuItemDoc;
+export default SelectDoc;
