@@ -48,3 +48,5 @@ export IconReport from './icon-report';
 export IconRemoveFriend from './icon-remove-friend';
 export IconThumbsUp from './icon-thumbs-up';
 export IconThumbsDown from './icon-thumbs-down';
+export IconRules from './icon-rules';
+export IconQuestion from './icon-question';
