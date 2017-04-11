@@ -45,3 +45,6 @@ export IconAddFriend from './icon-add-friend';
 export IconBlock from './icon-block';
 export IconPicture from './icon-picture';
 export IconReport from './icon-report';
+export IconRemoveFriend from './icon-remove-friend';
+export IconThumbsUp from './icon-thumbs-up';
+export IconThumbsDown from './icon-thumbs-down';
