@@ -7,7 +7,7 @@ import components from '../../components.json';
 import IconReport from '../../../dist/icons/icon-report';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import PopOver from \'anchor-ui/icons\';';
+const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
 
 function MenuItemDoc() {
   const componentData = _.find(components, component => component.displayName === 'MenuItem');

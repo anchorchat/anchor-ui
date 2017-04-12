@@ -13,7 +13,7 @@ function ProfileCardDoc() {
 
   return (
     <article className="doc">
-      <h1>Profile Card</h1>
+      <h1>ProfileCard</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>

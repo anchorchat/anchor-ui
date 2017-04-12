@@ -29,12 +29,16 @@ import PopOver from './components/pop-over';
 import WithTheme from './components/with-theme';
 import Paper from './components/paper';
 import Modal from './components/modal';
+import AdminBadge from './components/admin-badge';
+import Divider from './components/divider';
+import Select from './components/select';
 import './index.css';
 
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
+      <Route path="/admin-badge" component={AdminBadge} />
       <Route path="/alert" component={Alert} />
       <Route path="/app-header" component={AppHeader} />
       <Route path="/avatar" component={Avatar} />
@@ -59,6 +63,8 @@ ReactDOM.render(
       <Route path="/paper" component={Paper} />
       <Route path="/with-theme" component={WithTheme} />
       <Route path="/modal" component={Modal} />
+      <Route path="/divider" component={Divider} />
+      <Route path="/select" component={Select} />
     </Route>
   </Router>,
   document.getElementById('root')
