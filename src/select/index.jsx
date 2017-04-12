@@ -27,14 +27,17 @@ class Select extends Component {
     /** The Select's label */
     label: PropTypes.node,
     /** Override the styles of the label element */
-    labelStyle: PropTypes.instanceOf(Object)
+    labelStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the content container */
+    contentStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     label: null,
     style: {},
     headerStyle: {},
-    labelStyle: {}
+    labelStyle: {},
+    contentStyle: {}
   }
 
   static contextTypes = {
@@ -83,7 +86,7 @@ class Select extends Component {
   render() {
     const { open, position, popOverWidth } = this.state;
     const {
-      children, value, onChange, label, style, headerStyle, labelStyle, ...custom
+      children, value, onChange, label, style, headerStyle, labelStyle, contentStyle, ...custom
     } = this.props;
     const { color } = this.context;
 
@@ -121,7 +124,7 @@ class Select extends Component {
           </div>
         </header>
         <PopOver
-          style={{ minWidth: popOverWidth }}
+          style={combineStyles({ minWidth: popOverWidth }, contentStyle)}
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}

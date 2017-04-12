@@ -21,8 +21,7 @@ const styleSheet = {
     overflow: 'auto',
     zIndex: '1',
     animation: 'x .3s ease-in-out',
-    animationName: popOverAnimation,
-    maxHeight: '250px',
+    animationName: popOverAnimation
   },
   header: {
     paddingTop: '10px',
