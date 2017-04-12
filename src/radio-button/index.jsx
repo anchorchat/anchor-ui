@@ -1,12 +1,13 @@
-import React, { Component, PropTypes } from 'react';
-import Radium, { Style } from 'radium';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import colors from '../settings/colors';
 import IconRadio from '../icons/icon-radio';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function getStyle(color, overrideStyle) {
+function getStyle(color = colors.theme, overrideStyle) {
   let style = styles.container;
 
   style = combineStyles(style, { ':hover': { color } });
@@ -63,19 +64,9 @@ class RadioButton extends Component {
       value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, ...custom
     } = this.props;
     const { color } = this.context;
-    const themeColor = color || colors.theme;
 
     return (
-      <label className="radio-button" key="radio" htmlFor={value} style={getStyle(themeColor, style)}>
-        <Style
-          scopeSelector=".radio-button"
-          rules={{
-            'input:focus ~ span': {
-              color: `${themeColor} !important`,
-              borderBottom: `2px solid ${themeColor} !important`
-            }
-          }}
-        />
+      <label key="radio" htmlFor={value} style={getStyle(color, style)}>
         <input
           type="radio"
           value={value}
@@ -86,7 +77,7 @@ class RadioButton extends Component {
           {...custom}
         />
         <div style={combineStyles(styles.icon, iconStyle)}>
-          <IconRadio color={checked ? themeColor : colors.icons} />
+          <IconRadio color={checked ? color || colors.theme : colors.icons} />
         </div>
         <span style={combineStyles(styles.label, labelStyle)}>
           {label}

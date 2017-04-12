@@ -1,8 +1,13 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
+import colors from '../settings/colors';
 
-function root(overrideStyles) {
-  return combineStyles(styles.root, overrideStyles);
+function root(color = colors.theme, overrideStyles) {
+  let style = styles.root;
+
+  style = combineStyles(style, { ':hover': { color } });
+
+  return combineStyles(style, overrideStyles);
 }
 
 function input(overrideStyles) {

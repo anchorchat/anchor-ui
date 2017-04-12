@@ -36,6 +36,7 @@ export CardContent from './card-content';
 export Checkbox from './checkbox';
 export Profile from './profile';
 export Slider from './slider';
+export AdminBadge from './admin-badge';
 
 export icons from './icons';
 

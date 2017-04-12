@@ -13,8 +13,9 @@
   "dependencies": {
     "emojione": "^2.2.7",
     "jss": "^6.1.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "prop-types": "^15.5.6",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
     "react-jss": "^5.1.1",
     "react-router": "^3.0.2"
   },
