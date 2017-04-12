@@ -5,6 +5,7 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 import colors from '../settings/colors';
 import fade from '../internal/fade';
+import combineStyles from '../internal/combine-styles';
 
 /** General purpose form input */
 function Input({
@@ -22,6 +23,7 @@ function Input({
   error,
   errorStyle,
   placeholder,
+  placeholderStyle,
   ...custom
 }) {
   return (
@@ -41,9 +43,7 @@ function Input({
       />
       <Style
         rules={{
-          '.input::placeholder': {
-            color: fade(colors.white, 0.38)
-          }
+          '.input::placeholder': combineStyles({ color: fade(colors.white, 0.38) }, placeholderStyle)
         }}
       />
       {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
@@ -81,7 +81,9 @@ Input.propTypes = {
   /** Display an error message */
   error: PropTypes.node,
   /** Override the styles of the error element */
-  errorStyle: PropTypes.instanceOf(Object)
+  errorStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the placeholder */
+  placeholderStyle: PropTypes.instanceOf(Object)
 };
 
 Input.defaultProps = {
@@ -95,7 +97,8 @@ Input.defaultProps = {
   type: 'text',
   errorStyle: {},
   placeholder: '',
-  label: null
+  label: null,
+  placeholderStyle: {}
 };
 
 export default pure(Radium(Input));
