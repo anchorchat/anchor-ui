@@ -18,10 +18,10 @@ const styleSheet = {
     boxShadow: styles.depthShadows[0],
     margin: 0,
     paddingLeft: 0,
-    overflow: 'hidden',
+    overflow: 'auto',
     zIndex: '1',
     animation: 'x .3s ease-in-out',
-    animationName: popOverAnimation,
+    animationName: popOverAnimation
   },
   header: {
     paddingTop: '10px',

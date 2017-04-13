@@ -11,7 +11,7 @@ function Menu(props, context) {
     <nav>
       <List>
         <Link to="/"><ListItem active={router.location.pathname === '/'} primaryText="Getting started" secondaryText={`Version: ${npmPackage.version}`} /></Link>
-        <Link to="/admin-badge"><ListItem active={router.isActive('/alert')} primaryText="AdminBadge" /></Link>
+        <Link to="/admin-badge"><ListItem active={router.isActive('/admin-badge')} primaryText="AdminBadge" /></Link>
         <Link to="/alert"><ListItem active={router.isActive('/alert')} primaryText="Alert" /></Link>
         <Link to="/app-header"><ListItem active={router.isActive('/app-header')} primaryText="AppHeader" /></Link>
         <Link to="/avatar"><ListItem active={router.isActive('/avatar')} primaryText="Avatar" /></Link>
