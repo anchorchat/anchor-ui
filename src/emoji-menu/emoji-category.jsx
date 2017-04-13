@@ -26,7 +26,8 @@ function EmojiCategory({ category, emojis, sendEmoji, style, emojiStyle }) {
         rules={{
           '.emojione': {
             width: 'inherit',
-            height: 'inherit'
+            height: 'inherit',
+            pointerEvents: 'none'
           }
         }}
       />
