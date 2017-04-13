@@ -15,30 +15,34 @@ class Select extends Component {
   static displayName = 'Select'
 
   static propTypes = {
-    /** The Select's content (MenuItem), each child must have a value prop */
+    /** The Selects content (MenuItem), each child must have a value prop */
     children: PropTypes.node.isRequired,
-    /** The Select's value */
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    /** Change the Select's value */
+    /** The Selects value */
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    /** Change the Selects value */
     onChange: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
     headerStyle: PropTypes.instanceOf(Object),
-    /** The Select's label */
+    /** The Selects label */
     label: PropTypes.node,
     /** Override the styles of the label element */
     labelStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the content container */
-    contentStyle: PropTypes.instanceOf(Object)
+    contentStyle: PropTypes.instanceOf(Object),
+    /** The Selects placeholder */
+    placeholder: PropTypes.string
   }
 
   static defaultProps = {
+    value: '',
     label: null,
     style: {},
     headerStyle: {},
     labelStyle: {},
-    contentStyle: {}
+    contentStyle: {},
+    placeholder: ''
   }
 
   static contextTypes = {
@@ -87,7 +91,16 @@ class Select extends Component {
   render() {
     const { open, position, popOverWidth } = this.state;
     const {
-      children, value, onChange, label, style, headerStyle, labelStyle, contentStyle, ...custom
+      children,
+      value,
+      onChange,
+      label,
+      style,
+      headerStyle,
+      labelStyle,
+      contentStyle,
+      placeholder,
+      ...custom
     } = this.props;
     const { color } = this.context;
 
@@ -104,7 +117,9 @@ class Select extends Component {
 
     const activeChild = find(childrenWithProps, child => child.props.value === value);
 
-    const headerText = (activeChild && activeChild.props && activeChild.props.text) || value;
+    const headerText = (
+      (activeChild && activeChild.props && activeChild.props.text) || value || placeholder
+    );
 
     return (
       <section
