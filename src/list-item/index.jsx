@@ -43,7 +43,11 @@ class ListItem extends Component {
     blocked: PropTypes.bool,
     /** ListItems to render in a NestedList,
     if rightButton is also provided only the NestedList will render */
-    children: PropTypes.node
+    children: PropTypes.node,
+    /** Control toggle state of nested list. */
+    open: PropTypes.bool,
+    /** Callback function fired when the ListItem toggles its nested list */
+    onNestedListToggle: PropTypes.func
   }
 
   static defaultProps = {
@@ -58,7 +62,9 @@ class ListItem extends Component {
     badge: null,
     muted: false,
     blocked: false,
-    children: null
+    children: null,
+    open: null,
+    onNestedListToggle: () => {}
   }
 
   static contextTypes = {
@@ -75,6 +81,22 @@ class ListItem extends Component {
     this.toggleNestedList = this.toggleNestedList.bind(this);
   }
 
+  componentWillMount() {
+    if (this.props.open !== null) {
+      this.setState({
+        open: this.props.open
+      });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.open !== null) {
+      this.setState({
+        open: nextProps.open
+      });
+    }
+  }
+
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
@@ -86,9 +108,10 @@ class ListItem extends Component {
   }
 
   toggleNestedList() {
-    this.setState({
-      open: !this.state.open
-    });
+    const { onNestedListToggle } = this.props;
+
+    this.setState({ open: !this.state.open });
+    onNestedListToggle(!this.state.open);
   }
 
   render() {
@@ -106,16 +129,17 @@ class ListItem extends Component {
       muted,
       blocked,
       children,
+      open, // eslint-disable-line no-unused-vars
+      onNestedListToggle, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
     const { color } = this.context;
-    const { open } = this.state;
 
     let nestedList = null;
 
     if (children) {
       nestedList = (
-        <List open={open}>
+        <List open={this.state.open}>
           {children}
         </List>
       );
@@ -151,7 +175,7 @@ class ListItem extends Component {
           {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
           {
             nestedList
-            ? <div style={getStyles.nestedListButton(open)}>
+            ? <div style={getStyles.nestedListButton(this.state.open)}>
               <Button iconButton onClick={this.toggleNestedList}>
                 <IconChevronDown />
               </Button>
