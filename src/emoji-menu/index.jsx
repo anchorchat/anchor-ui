@@ -112,6 +112,8 @@ class EmojiMenu extends Component {
       emojiStyle,
       footerStyle,
       iconStyle,
+      sendEmoji,
+      svgSprites,
       ...custom
     } = this.props;
 
