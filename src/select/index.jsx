@@ -83,9 +83,17 @@ class Select extends Component {
   }
 
   toggleSelect() {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
+
+    if (open) {
+      this.setState({
+        positioned: false
+      });
+    }
   }
 
   render() {
