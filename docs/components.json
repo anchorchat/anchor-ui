@@ -884,12 +884,6 @@
         }
       },
       "textStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the text element",
         "defaultValue": {
           "value": "{}",
           "computed": false
