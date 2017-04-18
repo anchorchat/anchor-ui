@@ -76,6 +76,7 @@
     "escape-html": "^1.0.3",
     "lodash": "^4.17.4",
     "radium": "^0.18.1",
+    "react-event-listener": "^0.4.5",
     "react-measure": "^1.4.5",
     "react-tappable": "^0.8.4",
     "recompose": "^0.22.0",
