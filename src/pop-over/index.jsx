@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import Divider from '../divider';
@@ -17,6 +18,7 @@ function PopOver({
   position,
   secondaryMenuItems,
   dividerText,
+  onScroll,
   ...custom
 }) {
   if (!open) {
@@ -43,6 +45,7 @@ function PopOver({
       {children}
       {divider}
       {secondaryMenuItems}
+      {onScroll ? <EventListener target="window" onScroll={onScroll} /> : null}
     </section>
   );
 }
@@ -68,6 +71,8 @@ PopOver.propTypes = {
   secondaryMenuItems: PropTypes.node,
   /** Text to divide the menu items */
   dividerText: PropTypes.node,
+  /** Scroll event on the window object https://github.com/oliviertassinari/react-event-listener */
+  onScroll: PropTypes.func
 };
 
 PopOver.defaultProps = {
@@ -77,7 +82,8 @@ PopOver.defaultProps = {
   open: false,
   position: {},
   secondaryMenuItems: null,
-  dividerText: null
+  dividerText: null,
+  onScroll: null
 };
 
 export default pure(Radium(PopOver));
