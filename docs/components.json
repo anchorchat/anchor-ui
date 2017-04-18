@@ -1499,6 +1499,24 @@
       }
     }
   },
+  "components/icons/icon-admin.jsx": {
+    "description": "",
+    "displayName": "IconClose",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-block.jsx": {
     "description": "",
     "displayName": "IconBlock",
@@ -1664,6 +1682,24 @@
   "components/icons/icon-conversation.jsx": {
     "description": "",
     "displayName": "IconConversation",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-delete.jsx": {
+    "description": "",
+    "displayName": "IconClose",
     "methods": [],
     "props": {
       "color": {
@@ -2093,9 +2129,45 @@
       }
     }
   },
+  "components/icons/icon-question.jsx": {
+    "description": "",
+    "displayName": "IconQuestion",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-radio.jsx": {
     "description": "",
     "displayName": "IconRadio",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-remove-friend.jsx": {
+    "description": "",
+    "displayName": "IconRemoveFriend",
     "methods": [],
     "props": {
       "color": {
@@ -2132,6 +2204,24 @@
   "components/icons/icon-rocket.jsx": {
     "description": "",
     "displayName": "IconRocket",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-rules.jsx": {
+    "description": "",
+    "displayName": "IconRules",
     "methods": [],
     "props": {
       "color": {
@@ -2222,6 +2312,42 @@
   "components/icons/icon-symbols.jsx": {
     "description": "",
     "displayName": "IconSymbols",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-thumbs-down.jsx": {
+    "description": "",
+    "displayName": "IconThumbsDown",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-thumbs-up.jsx": {
+    "description": "",
+    "displayName": "IconThumbsUp",
     "methods": [],
     "props": {
       "color": {
@@ -2427,6 +2553,18 @@
         },
         "required": false,
         "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the placeholder",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2657,6 +2795,28 @@
         "description": "ListItems to render in a NestedList,\n    if rightButton is also provided only the NestedList will render",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Control toggle state of nested list.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onNestedListToggle": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback function fired when the ListItem toggles its nested list",
+        "defaultValue": {
+          "value": "() => {}",
           "computed": false
         }
       }
@@ -4051,7 +4211,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "The Select's content (MenuItem), each child must have a value prop"
+        "description": "The Selects content (MenuItem), each child must have a value prop"
       },
       "value": {
         "type": {
@@ -4065,15 +4225,19 @@
             }
           ]
         },
-        "required": true,
-        "description": "The Select's value"
+        "required": false,
+        "description": "The Selects value",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "onChange": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Change the Select's value"
+        "description": "Change the Selects value"
       },
       "style": {
         "type": {
@@ -4104,7 +4268,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "The Select's label",
+        "description": "The Selects label",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -4119,6 +4283,29 @@
         "description": "Override the styles of the label element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The Selects placeholder",
+        "defaultValue": {
+          "value": "''",
           "computed": false
         }
       }
