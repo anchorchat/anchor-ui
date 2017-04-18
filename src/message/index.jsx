@@ -196,6 +196,7 @@ class Message extends Component {
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}
+          onScroll={this.closeMenu}
         >
           {menuItemsWithProps}
         </PopOver>

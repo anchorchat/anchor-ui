@@ -114,6 +114,7 @@ class IconMenu extends Component {
           position={position}
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}
+          onScroll={this.closeMenu}
         >
           {menuItemsWithProps}
         </PopOver>
