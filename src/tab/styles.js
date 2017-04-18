@@ -12,7 +12,7 @@ export default {
     cursor: 'pointer',
     boxSizing: 'border-box',
     padding: '10px',
-    transition: 'all .3s ease-in-out',
+    transition: 'opacity .3s ease-in-out',
     opacity: '0.5',
     display: 'flex',
     flexDirection: 'column',
@@ -27,15 +27,11 @@ export default {
     color: colors.primaryText,
     textTransform: 'capitalize',
     fontSize: '12px',
-    fontWeight: 'bold',
-    transform: 'scale(0.85)',
-    transition: 'all .3s ease-in-out'
+    fontWeight: 'bold'
   },
   icon: {
     width: '24px',
-    height: '24px',
-    transform: 'scale(0.85)',
-    transition: 'all .3s ease-in-out'
+    height: '24px'
   },
   badge: {
     position: 'absolute',

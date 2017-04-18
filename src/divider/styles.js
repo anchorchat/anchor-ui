@@ -2,7 +2,9 @@ import colors from '../settings/colors';
 
 const styleSheet = {
   hr: {
-    margin: 0,
+    marginRight: 0,
+    marginLeft: 0,
+    marginBottom: 0,
     marginTop: -1,
     height: 1,
     border: 'none',
