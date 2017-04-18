@@ -9,11 +9,11 @@ function Tab(
   { color }
 ) {
   return (
-    <button style={getStyles.root(color, selected, style)} onClick={onClick}>
+    <section style={getStyles.root(color, selected, style)} onClick={onClick}>
       {icon ? <div style={getStyles.icon(selected, iconStyle)}>{icon}</div> : null}
       <span style={getStyles.label(selected, labelStyle)}>{label}</span>
       {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
-    </button>
+    </section>
   );
 }
 
