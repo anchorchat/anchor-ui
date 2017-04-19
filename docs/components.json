@@ -882,12 +882,6 @@
           "value": "{}",
           "computed": false
         }
-      },
-      "textStyle": {
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
       }
     }
   },
@@ -3625,10 +3619,6 @@
     }
   },
   "components/pop-over/index.jsx": {
-    "description": "",
-    "methods": []
-  },
-  "components/pop-over/pop-over.jsx": {
     "description": "Pop over useful for showing tooltips or menu options",
     "displayName": "PopOver",
     "methods": [],
@@ -4193,6 +4183,13 @@
       },
       {
         "name": "toggleSelect",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "closeSelect",
         "docblock": null,
         "modifiers": [],
         "params": [],

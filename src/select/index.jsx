@@ -60,6 +60,7 @@ class Select extends Component {
 
     this.toggleSelect = this.toggleSelect.bind(this);
     this.positionPopOver = this.positionPopOver.bind(this);
+    this.closeSelect = this.closeSelect.bind(this);
   }
 
   componentDidUpdate() {
@@ -83,8 +84,23 @@ class Select extends Component {
   }
 
   toggleSelect() {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
+    });
+
+    if (open) {
+      this.setState({
+        positioned: false
+      });
+    }
+  }
+
+  closeSelect() {
+    this.setState({
+      open: false,
+      positioned: false
     });
   }
 
@@ -108,7 +124,7 @@ class Select extends Component {
       children, child => React.cloneElement(
         child,
         {
-          closeMenu: this.toggleSelect,
+          closeMenu: this.closeSelect,
           active: child.props.value === value,
           onClick: () => onChange(child.props.value)
         }
