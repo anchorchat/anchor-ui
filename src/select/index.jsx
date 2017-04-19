@@ -160,7 +160,6 @@ class Select extends Component {
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}
-          onScroll={this.closeSelect}
         >
           {childrenWithProps}
         </PopOver>
