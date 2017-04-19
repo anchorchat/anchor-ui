@@ -23,8 +23,7 @@ Divider.propTypes = {
 
 Divider.defaultProps = {
   text: null,
-  style: {},
-  textStyle: {}
+  style: {}
 };
 
 Divider.displayName = 'Divider';
