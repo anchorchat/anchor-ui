@@ -6,7 +6,7 @@
     "props": {
       "text": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": false,
         "description": "The badge's text",
@@ -3586,6 +3586,36 @@
         },
         "required": false,
         "description": "Override the styles of the overlay element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/overlay/index.jsx": {
+    "description": "Overlay with dark transparent background, useful for rendering Dialogs in",
+    "displayName": "Overlay",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Overlays children",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the style of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false

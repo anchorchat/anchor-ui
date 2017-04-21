@@ -2,6 +2,7 @@ import React, { PropTypes, cloneElement } from 'react';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
+import Overlay from '../overlay';
 
 /** Menu that slides in from the left */
 function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custom }) {
@@ -16,9 +17,9 @@ function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custo
   ));
 
   return (
-    <section style={getStyles.container()} {...custom}>
-      <div style={getStyles.overlay(open)} onClick={toggleMenu} />
-      <nav style={getStyles.root(open, style)}>
+    <section style={getStyles.container()}>
+      <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
+      <nav style={getStyles.root(open, style)} {...custom}>
         {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
         {menuItems}
       </nav>
