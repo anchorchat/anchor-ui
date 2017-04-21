@@ -3923,17 +3923,6 @@
         "required": true,
         "description": "The user's username"
       },
-      "text": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "The user's info",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -3952,19 +3941,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of the username element",
         "defaultValue": {
           "value": "{}",
           "computed": false
