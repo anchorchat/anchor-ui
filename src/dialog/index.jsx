@@ -7,6 +7,7 @@ import Button from '../button';
 import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
+import Overlay from '../overlay';
 
 /** General purpose dialog */
 class Dialog extends Component {
@@ -71,7 +72,7 @@ class Dialog extends Component {
     }
 
     return (
-      <section style={getStyles.overlay(overlayStyle)}>
+      <Overlay style={overlayStyle}>
         <section style={styles.clickAway} onClick={hideDialog} />
         <section style={getStyles.root(color, style)} {...custom}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
@@ -80,7 +81,7 @@ class Dialog extends Component {
           {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
           {children}
         </section>
-      </section>
+      </Overlay>
     );
   }
 }

@@ -1,5 +1,4 @@
 import colors from '../settings/colors';
-import fade from '../internal/fade';
 import styles from '../settings/styles';
 
 export default {
@@ -26,17 +25,5 @@ export default {
     color: colors.white,
     textTransform: 'uppercase',
     fontWeight: 'bold'
-  },
-  overlay: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    top: '0',
-    left: '0',
-    backgroundColor: fade(colors.black, 0.5),
-    zIndex: '2'
   }
 };
