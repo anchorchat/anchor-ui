@@ -45,16 +45,13 @@ class DialogDoc extends Component {
           <h1>Examples</h1>
           <Paper style={{ margin: 0, padding: '20px' }}>
             <Button onClick={this.toggleDialog}>Open Dialog</Button>
-            {
-              open
-              ? <Dialog
-                header="Hi!"
-                hideDialog={this.toggleDialog}
-              >
-                <p>I&apos;m a dialog</p>
-              </Dialog>
-              : null
-            }
+            <Dialog
+              header="Hi!"
+              hideDialog={this.toggleDialog}
+              open={open}
+            >
+              <p>I&apos;m a dialog</p>
+            </Dialog>
           </Paper>
         </section>
         <Props props={componentData.props} />
