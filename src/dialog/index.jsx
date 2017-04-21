@@ -26,7 +26,9 @@ class Dialog extends Component {
     /** Optional children, will only render children and headerText with other styles */
     children: PropTypes.node,
     /** The close button's icon color */
-    iconColor: PropTypes.string
+    iconColor: PropTypes.string,
+    /** Toggle the Dialogs visibility */
+    open: PropTypes.bool
   }
 
   static defaultProps = {
@@ -35,7 +37,8 @@ class Dialog extends Component {
     headerStyle: {},
     children: null,
     iconColor: colors.white,
-    header: null
+    header: null,
+    open: false
   }
 
   static contextTypes = {
@@ -58,14 +61,19 @@ class Dialog extends Component {
       headerStyle,
       children,
       iconColor,
+      open,
       ...custom
     } = this.props;
     const { color } = this.context;
 
+    if (!open) {
+      return null;
+    }
+
     return (
-      <section style={getStyles.overlay(overlayStyle)} {...custom}>
+      <section style={getStyles.overlay(overlayStyle)}>
         <section style={styles.clickAway} onClick={hideDialog} />
-        <section style={getStyles.root(color, style)}>
+        <section style={getStyles.root(color, style)} {...custom}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
             <IconClose color={iconColor} />
           </Button>
