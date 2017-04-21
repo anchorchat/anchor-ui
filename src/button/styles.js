@@ -13,6 +13,7 @@ export default {
     outline: 0,
     padding: '8px',
     transition: 'all .3s ease-in-out',
+    flexShrink: 0,
     width: '40px',
     ':hover': {
       background: fade(colors.black, 0.9)
@@ -33,6 +34,7 @@ export default {
     outline: 0,
     padding: '6px 12px',
     transition: 'all .3s ease-in-out',
+    flexShrink: 0,
     ':hover': {
       backgroundColor: darken(colors.theme, 0.15)
     },
@@ -57,6 +59,7 @@ export default {
     backgroundColor: 'transparent',
     boxShadow: 'none',
     textTransform: 'uppercase',
+    flexShrink: 0,
     ':hover': {
       backgroundColor: fade(colors.black, 0.95)
     },
