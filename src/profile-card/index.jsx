@@ -27,8 +27,6 @@ class ProfileCard extends Component {
     avatar: '',
     style: {},
     usernameStyle: {},
-    textStyle: {},
-    text: null
   }
 
   static contextTypes = {
