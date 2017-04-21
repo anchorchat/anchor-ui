@@ -3593,6 +3593,36 @@
       }
     }
   },
+  "components/overlay/index.jsx": {
+    "description": "Overlay with dark transparent background, useful for rendering Dialogs in",
+    "displayName": "Overlay",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Overlays children",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/paper/index.jsx": {
     "description": "A Paper element is a basic container that can give depth to the page.",
     "displayName": "Paper",
