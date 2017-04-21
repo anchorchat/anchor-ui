@@ -15,7 +15,7 @@ const colors = {
     warning: '#F8F4D5',
     info: '#CDE8F5'
   },
-  inputs: '#4D546E',
+  inputs: 'rgba(254,254,254, 0.1)',
   error: '#FD2A43'
 };
 
