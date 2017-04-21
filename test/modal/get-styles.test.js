@@ -4,14 +4,6 @@ import getStyles from '../../src/modal/get-styles';
 import styles from '../../src/modal/styles';
 
 describe('Modal.getStyles', () => {
-  describe('overlay', () => {
-    it('should get styles', () => {
-      const style = getStyles.overlay();
-
-      expect(style).to.deep.equal(styles.overlay);
-    });
-  });
-
   describe('root', () => {
     it('should get styles', () => {
       const style = getStyles.root();

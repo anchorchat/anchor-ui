@@ -9,7 +9,7 @@ class AdminBadge extends Component {
 
   static propTypes = {
     /** The badge's text */
-    text: PropTypes.string,
+    text: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Inverts color */

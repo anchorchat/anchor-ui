@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
+import Overlay from '../overlay';
 
 /** A dialog that can only be closed by selecting one of the actions. */
 function Modal({
@@ -13,7 +14,7 @@ function Modal({
   }
 
   return (
-    <section style={getStyles.overlay(overlayStyle)}>
+    <Overlay style={overlayStyle}>
       <section style={getStyles.root(style)} {...custom}>
         <section style={getStyles.content(contentStyle)}>
           {children}
@@ -22,7 +23,7 @@ function Modal({
           {actions}
         </footer>
       </section>
-    </section>
+    </Overlay>
   );
 }
 
