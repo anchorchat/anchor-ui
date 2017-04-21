@@ -852,6 +852,17 @@
           "value": "colors.white",
           "computed": true
         }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the Dialogs visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },
@@ -3556,6 +3567,29 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the Dialogs visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "overlayStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the overlay element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -3658,7 +3692,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Boolean to check if it should be open",
+        "description": "Toggle the PopOvers visibility",
         "defaultValue": {
           "value": "false",
           "computed": false

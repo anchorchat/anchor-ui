@@ -5,9 +5,15 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A dialog that can only be closed by selecting one of the actions. */
-function Modal({ children, actions, style, contentStyle, footerStyle, ...custom }, { color }) {
+function Modal({
+  children, actions, style, contentStyle, footerStyle, open, overlayStyle, ...custom }, { color }
+) {
+  if (!open) {
+    return null;
+  }
+
   return (
-    <section style={getStyles.overlay()}>
+    <section style={getStyles.overlay(overlayStyle)}>
       <section style={getStyles.root(style)} {...custom}>
         <section style={getStyles.content(contentStyle)}>
           {children}
@@ -30,7 +36,11 @@ Modal.propTypes = {
   /** Override the style of the content element */
   contentStyle: PropTypes.instanceOf(Object),
   /** Override the style of the footer element */
-  footerStyle: PropTypes.instanceOf(Object)
+  footerStyle: PropTypes.instanceOf(Object),
+  /** Toggle the Dialogs visibility */
+  open: PropTypes.bool,
+  /** Override the styles of the overlay element */
+  overlayStyle: PropTypes.instanceOf(Object)
 };
 
 Modal.displayName = 'Modal';
@@ -38,7 +48,9 @@ Modal.displayName = 'Modal';
 Modal.defaultProps = {
   style: {},
   contentStyle: {},
-  footerStyle: {}
+  footerStyle: {},
+  open: false,
+  overlayStyle: {}
 };
 
 Modal.contextTypes = {
