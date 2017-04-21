@@ -5,7 +5,7 @@ import theTim from './assets/images/the_tim.gif';
 
 export default () => (
   <section className="profile" style={{ background: colors.background }}>
-    <Dialog hideDialog={() => console.log('hide')} style={{ padding: '0' }}>
+    <Dialog hideDialog={() => console.log('hide')} style={{ padding: '0' }} open>
       <Profile
         header="The Doctor"
         secondaryText="over 2000, Male"
