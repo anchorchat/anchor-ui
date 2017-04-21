@@ -6,18 +6,7 @@ import Avatar from '../avatar';
 import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, avatar, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = { ...styles.profileCard, backgroundColor: color };
-
-  if (avatar) {
-    return combineStyles(combineStyles(style, styles.avatar), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** Card containing the user's profile data */
 class ProfileCard extends Component {
@@ -66,7 +55,7 @@ class ProfileCard extends Component {
     };
 
     return (
-      <section style={getStyle(color, avatar, style)} {...custom}>
+      <section style={getStyles.root(color, avatar, style)} {...custom}>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
       </section>
