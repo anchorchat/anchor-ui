@@ -6,7 +6,7 @@
     "props": {
       "text": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": false,
         "description": "The badge's text",
