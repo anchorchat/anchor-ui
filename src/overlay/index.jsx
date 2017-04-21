@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
+/** Overlay with dark transparent background, useful for rendering Dialogs in */
 function Overlay({ children, style, ...custom }) {
   return <section style={getStyles.root(style)} {...custom}>{children}</section>;
 }
