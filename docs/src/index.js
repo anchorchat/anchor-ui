@@ -37,6 +37,9 @@ import Select from './components/select';
 import RadioButton from './components/radio-button';
 import Switch from './components/switch';
 import EmojiMenu from './components/emoji-menu';
+import Tabs from './components/tabs';
+import Profile from './components/profile';
+import Menu from './components/menu-sidebar';
 import './index.css';
 
 ReactDOM.render(
@@ -75,6 +78,9 @@ ReactDOM.render(
       <Route path="/radio-button" component={RadioButton} />
       <Route path="/switch" component={Switch} />
       <Route path="/emoji-menu" component={EmojiMenu} />
+      <Route path="/tabs" component={Tabs} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/menu" component={Menu} />
     </Route>
   </Router>,
   document.getElementById('root')
