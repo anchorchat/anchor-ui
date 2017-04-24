@@ -5,13 +5,26 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 function Tab(
-  { onClick, icon, label, selected, style, iconStyle, labelStyle, badge, badgeStyle, ...custom },
+  {
+    onClick,
+    icon,
+    label,
+    selected,
+    style,
+    iconStyle,
+    labelStyle,
+    badge,
+    badgeStyle,
+    activeStyle,
+    activeLabelStyle,
+    ...custom
+  },
   { color }
 ) {
   return (
-    <section style={getStyles.root(color, selected, style)} onClick={onClick}>
+    <section style={getStyles.root(color, selected, style, activeStyle)} onClick={onClick}>
       {icon ? <div style={getStyles.icon(selected, iconStyle)}>{icon}</div> : null}
-      <span style={getStyles.label(selected, labelStyle)}>{label}</span>
+      <span style={getStyles.label(selected, labelStyle, activeLabelStyle)}>{label}</span>
       {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
     </section>
   );
@@ -28,9 +41,9 @@ Tab.propTypes = {
   selected: PropTypes.bool,
   /** Tab onClick function */
   onClick: PropTypes.func.isRequired,
-  /** Override the styles of the root element */
+  /** Override the styles of an inactive root element */
   style: PropTypes.instanceOf(Object),
-  /** Override the styles of the label element */
+  /** Override the styles of an inactive label element */
   labelStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
@@ -38,6 +51,10 @@ Tab.propTypes = {
   badge: PropTypes.node,
   /** Override the styles of the badge element */
   badgeStyle: PropTypes.instanceOf(Object),
+  /** Overide the styles of an active root element. */
+  activeStyle: PropTypes.instanceOf(Object),
+  /** Overide the styles of an active label element. */
+  activeLabelStyle: PropTypes.instanceOf(Object)
 };
 
 Tab.defaultProps = {
@@ -47,7 +64,9 @@ Tab.defaultProps = {
   labelStyle: {},
   iconStyle: {},
   badge: null,
-  badgeStyle: {}
+  badgeStyle: {},
+  activeStyle: {},
+  activeLabelStyle: {}
 };
 
 Tab.contextTypes = {
