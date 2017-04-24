@@ -63,8 +63,8 @@ export default {
     borderRadius: '3px',
     width: 'auto',
     height: 'auto',
-    maxWidth: '400px',
-    maxHeight: '300px'
+    maxWidth: '100%',
+    maxHeight: '250px'
   },
   messageTime: {
     width: '32px',
