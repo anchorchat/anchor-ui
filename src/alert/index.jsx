@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
-import styles from '../style/alerts';
+import styles from './styles';
 import IconSuccess from '../icons/icon-success';
 import IconError from '../icons/icon-error';
 import IconWarning from '../icons/icon-warning';
