@@ -6,18 +6,7 @@ import Avatar from '../avatar';
 import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, avatar, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = { ...styles.profileCard, backgroundColor: color };
-
-  if (avatar) {
-    return combineStyles(combineStyles(style, styles.avatar), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** Card containing the user's profile data */
 class ProfileCard extends Component {
@@ -28,22 +17,16 @@ class ProfileCard extends Component {
     avatar: PropTypes.string,
     /** The user's username */
     username: PropTypes.node.isRequired,
-    /** The user's info */
-    text: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /** Override the styles of the root element */
-    usernameStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the root element */
-    textStyle: PropTypes.instanceOf(Object)
+    /** Override the styles of the username element */
+    usernameStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
     avatar: '',
     style: {},
     usernameStyle: {},
-    textStyle: {},
-    text: null
   }
 
   static contextTypes = {
@@ -58,7 +41,7 @@ class ProfileCard extends Component {
   }
 
   render() {
-    const { username, avatar, text, style, usernameStyle, textStyle, ...custom } = this.props;
+    const { username, avatar, style, usernameStyle, ...custom } = this.props;
     const { color } = this.context;
 
     const avatarStyle = {
@@ -70,10 +53,9 @@ class ProfileCard extends Component {
     };
 
     return (
-      <section style={getStyle(color, avatar, style)} {...custom}>
+      <section style={getStyles.root(color, avatar, style)} {...custom}>
         {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
         <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
-        {text ? <p style={combineStyles(styles.text, textStyle)}>{text}</p> : null}
       </section>
     );
   }
