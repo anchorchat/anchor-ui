@@ -155,7 +155,7 @@ class Select extends Component {
         {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}
         <header
           ref={button => (this.button = button)}
-          style={getStyles.header(color, headerStyle)}
+          style={getStyles.header(error, color, headerStyle)}
           onClick={this.toggleSelect}
         >
           {headerText}

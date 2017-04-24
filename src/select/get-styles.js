@@ -13,10 +13,10 @@ function icon(open, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function header(themeColor, overrideStyle) {
+function header(errorMessage = null, themeColor, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  const style = combineStyles(
+  let style = combineStyles(
     styles.header,
     {
       backgroundColor: color,
@@ -28,6 +28,10 @@ function header(themeColor, overrideStyle) {
       }
     }
   );
+
+  if (errorMessage) {
+    style = combineStyles(style, { border: `1px solid ${colors.error}` });
+  }
 
   return combineStyles(style, overrideStyle);
 }
