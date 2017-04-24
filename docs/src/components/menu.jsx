@@ -17,9 +17,12 @@ function Menu(props, context) {
         <Link to="/avatar"><ListItem active={router.isActive('/avatar')} primaryText="Avatar" /></Link>
         <Link to="/badge"><ListItem active={router.isActive('/badge')} primaryText="Badge" /></Link>
         <Link to="/button"><ListItem active={router.isActive('/button')} primaryText="Button" /></Link>
+        <Link to="/card"><ListItem active={router.isActive('/card')} primaryText="Card" /></Link>
         <Link to="/channel-header"><ListItem active={router.isActive('/channel-header')} primaryText="ChannelHeader" /></Link>
+        <Link to="/checkbox"><ListItem active={router.isActive('/checkbox')} primaryText="Checkbox" /></Link>
         <Link to="/dialog"><ListItem active={router.isActive('/dialog')} primaryText="Dialog" /></Link>
         <Link to="/divider"><ListItem active={router.isActive('/divider')} primaryText="Divider" /></Link>
+        <Link to="/emoji-menu"><ListItem active={router.isActive('/emoji-menu')} primaryText="EmojiMenu" /></Link>
         <Link to="/empty-state"><ListItem active={router.isActive('/empty-state')} primaryText="EmptyState" /></Link>
         <Link to="/icons"><ListItem active={router.isActive('/icons')} primaryText="Icons" /></Link>
         <Link to="/icon-menu"><ListItem active={router.isActive('/icon-menu')} primaryText="IconMenu" /></Link>
@@ -35,8 +38,10 @@ function Menu(props, context) {
         <Link to="/paper"><ListItem active={router.isActive('/paper')} primaryText="Paper" /></Link>
         <Link to="/pop-over"><ListItem active={router.isActive('/pop-over')} primaryText="PopOver" /></Link>
         <Link to="/profile-card"><ListItem active={router.isActive('/profile-card')} primaryText="ProfileCard" /></Link>
+        <Link to="/radio-button"><ListItem active={router.isActive('/radio-button')} primaryText="RadioButton" /></Link>
         <Link to="/search-box"><ListItem active={router.isActive('/search-box')} primaryText="SearchBox" /></Link>
         <Link to="/select"><ListItem active={router.isActive('/select')} primaryText="Select" /></Link>
+        <Link to="/switch"><ListItem active={router.isActive('/switch')} primaryText="Switch" /></Link>
         <Link to="/with-theme"><ListItem active={router.isActive('/with-theme')} primaryText="WithTheme" /></Link>
       </List>
     </nav>
