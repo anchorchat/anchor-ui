@@ -65,7 +65,7 @@ function text(myMessage, fontSize, type = 'text', overrideStyle) {
   }
 
   if (type === 'image') {
-    style = combineStyles(style, { flexDirection: 'column' });
+    style = combineStyles(style, { flexDirection: 'column', maxWidth: '400px', maxHeight: '200px', width: 'auto', height: 'auto' });
   }
 
   return combineStyles(style, overrideStyle);
