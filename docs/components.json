@@ -1412,6 +1412,17 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "visibleItems": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Amount of visible items. Height will be based on an item height of 44px",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
@@ -3780,6 +3791,17 @@
           "value": "null",
           "computed": false
         }
+      },
+      "visibleItems": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Amount of visible items. Height based on an item height of 44px and header height of 39px",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
@@ -4361,6 +4383,17 @@
         "description": "The Selects placeholder",
         "defaultValue": {
           "value": "''",
+          "computed": false
+        }
+      },
+      "visibleItems": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Amount of visible items. Height will be based on an item height of 44px",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }
