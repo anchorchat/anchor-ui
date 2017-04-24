@@ -23,7 +23,7 @@ class Tabs extends Component {
      * If `initialSelectedIndex` is set but larger than the total amount of specified tabs,
      * `initialSelectedIndex` will revert back to default.
      */
-    initialSelectedIndex: PropTypes.number,
+    initialSelectedIndex: PropTypes.number
   }
 
   static defaultProps = {

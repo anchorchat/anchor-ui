@@ -37,6 +37,7 @@ export Checkbox from './checkbox';
 export Profile from './profile';
 export Slider from './slider';
 export AdminBadge from './admin-badge';
+export Overlay from './overlay';
 
 export icons from './icons';
 

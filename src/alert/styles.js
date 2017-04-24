@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 import darken from '../internal/darken';
 
-const styleSheet = {
+export default {
   alert: {
     borderRadius: '3px',
     boxSizing: 'border-box',
@@ -9,7 +9,8 @@ const styleSheet = {
     lineHeight: '20px',
     padding: '14px 10px',
     position: 'relative',
-    width: '300px'
+    minWidth: '275px',
+    maxWidth: '500px'
   },
   icon: {
     height: '24px',
@@ -53,5 +54,3 @@ const styleSheet = {
     color: darken(colors.alert.info, 0.65)
   }
 };
-
-export default styleSheet;

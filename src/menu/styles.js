@@ -1,5 +1,4 @@
 import colors from '../settings/colors';
-import fade from '../internal/fade';
 
 export default {
   container: {
@@ -17,13 +16,7 @@ export default {
     left: 0
   },
   overlay: {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    top: '0',
-    left: '0',
-    backgroundColor: fade(colors.black, 0.5),
+    zIndex: 'initial',
     pointerEvents: 'none',
     opacity: 0,
     transition: 'opacity .3s ease-in-out'

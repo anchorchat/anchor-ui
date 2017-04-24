@@ -2,10 +2,6 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function overlay() {
-  return styles.overlay;
-}
-
 function root(overrideStyle) {
   return combineStyles(styles.root, overrideStyle);
 }
@@ -21,7 +17,6 @@ function footer(color = colors.theme, overrideStyle) {
 }
 
 export default {
-  overlay,
   root,
   content,
   footer

@@ -45,18 +45,15 @@ class ModalDoc extends Component {
           <h1>Examples</h1>
           <Paper style={{ margin: 0, padding: '20px' }}>
             <Button onClick={this.toggleModal}>Open Modal</Button>
-            {
-              open
-              ? <Modal
-                actions={[
-                  <Button key="button" flatButton onClick={this.toggleModal}>Cancel</Button>,
-                  <Button key="button1" flatButton onClick={this.toggleModal}>Ok</Button>
-                ]}
-              >
-                <p>I&apos;m a modal</p>
-              </Modal>
-              : null
-            }
+            <Modal
+              actions={[
+                <Button key="button" flatButton onClick={this.toggleModal}>Cancel</Button>,
+                <Button key="button1" flatButton onClick={this.toggleModal}>Ok</Button>
+              ]}
+              open={open}
+            >
+              <p>I&apos;m a modal</p>
+            </Modal>
           </Paper>
         </section>
         <Props props={componentData.props} />

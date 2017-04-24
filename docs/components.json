@@ -6,7 +6,7 @@
     "props": {
       "text": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": false,
         "description": "The badge's text",
@@ -851,6 +851,17 @@
         "defaultValue": {
           "value": "colors.white",
           "computed": true
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the Dialogs visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       }
     }
@@ -3556,6 +3567,59 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the Dialogs visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "overlayStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the overlay element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/overlay/index.jsx": {
+    "description": "Overlay with dark transparent background, useful for rendering Dialogs in",
+    "displayName": "Overlay",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Overlays children",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -3658,7 +3722,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Boolean to check if it should be open",
+        "description": "Toggle the PopOvers visibility",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3859,17 +3923,6 @@
         "required": true,
         "description": "The user's username"
       },
-      "text": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "The user's info",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -3888,19 +3941,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of the username element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4299,6 +4340,29 @@
           "value": "''",
           "computed": false
         }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -4566,7 +4630,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of an inactive root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4578,7 +4642,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the label element",
+        "description": "Override the styles of an inactive label element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4614,6 +4678,30 @@
         },
         "required": false,
         "description": "Override the styles of the badge element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Overide the styles of an active root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeLabelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Overide the styles of an active label element.",
         "defaultValue": {
           "value": "{}",
           "computed": false

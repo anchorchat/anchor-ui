@@ -7,6 +7,7 @@ import Button from '../button';
 import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
+import Overlay from '../overlay';
 
 /** General purpose dialog */
 class Dialog extends Component {
@@ -26,7 +27,9 @@ class Dialog extends Component {
     /** Optional children, will only render children and headerText with other styles */
     children: PropTypes.node,
     /** The close button's icon color */
-    iconColor: PropTypes.string
+    iconColor: PropTypes.string,
+    /** Toggle the Dialogs visibility */
+    open: PropTypes.bool
   }
 
   static defaultProps = {
@@ -35,7 +38,8 @@ class Dialog extends Component {
     headerStyle: {},
     children: null,
     iconColor: colors.white,
-    header: null
+    header: null,
+    open: false
   }
 
   static contextTypes = {
@@ -58,21 +62,26 @@ class Dialog extends Component {
       headerStyle,
       children,
       iconColor,
+      open,
       ...custom
     } = this.props;
     const { color } = this.context;
 
+    if (!open) {
+      return null;
+    }
+
     return (
-      <section style={getStyles.overlay(overlayStyle)} {...custom}>
+      <Overlay style={overlayStyle}>
         <section style={styles.clickAway} onClick={hideDialog} />
-        <section style={getStyles.root(color, style)}>
+        <section style={getStyles.root(color, style)} {...custom}>
           <Button style={styles.closeButton} onClick={hideDialog} iconButton>
             <IconClose color={iconColor} />
           </Button>
           {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
           {children}
         </section>
-      </section>
+      </Overlay>
     );
   }
 }

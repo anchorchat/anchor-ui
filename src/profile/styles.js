@@ -4,7 +4,7 @@ export default {
   cover: {
     width: '100%',
     position: 'relative',
-    padding: '16px',
+    padding: '16px 0',
     marginBottom: '78px',
   },
   coverImage: {

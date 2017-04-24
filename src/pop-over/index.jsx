@@ -56,7 +56,7 @@ PopOver.propTypes = {
   header: PropTypes.node,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /** Boolean to check if it should be open */
+  /** Toggle the PopOvers visibility */
   open: PropTypes.bool,
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
