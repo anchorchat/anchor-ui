@@ -2,18 +2,28 @@ import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
-function root(color = colors.theme, selected, overrideStyle) {
+function root(color = colors.theme, selected, inactiveStyle, overrideStyle) {
   let style = styles.root;
 
   if (selected) {
     style = combineStyles(style, { opacity: 1, borderBottom: `3px solid ${color}` });
   }
 
+  if (inactiveStyle && !selected) {
+    style = combineStyles(style, inactiveStyle);
+  }
+
   return combineStyles(style, overrideStyle);
 }
 
-function label(selected, overrideStyle) {
-  return combineStyles(styles.label, overrideStyle);
+function label(selected, inactiveStyle, overrideStyle) {
+  let style = styles.label;
+
+  if (inactiveStyle && !selected) {
+    style = combineStyles(style, inactiveStyle);
+  }
+
+  return combineStyles(style, overrideStyle);
 }
 
 function icon(selected, overrideStyle) {
