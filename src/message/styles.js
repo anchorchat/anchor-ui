@@ -61,8 +61,10 @@ export default {
   },
   messageImage: {
     borderRadius: '3px',
-    width: '100%',
-    height: 'auto'
+    width: 'auto',
+    height: 'auto',
+    maxWidth: '400px',
+    maxHeight: '300px'
   },
   messageTime: {
     width: '32px',
