@@ -24,7 +24,7 @@ function InputDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, background: 'rgba(45, 55, 104, 0.85)' }}>
           <Input
             onChange={() => {}}
             value="Start typing..."
