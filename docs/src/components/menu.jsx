@@ -30,6 +30,7 @@ function Menu(props, context) {
         <Link to="/list"><ListItem active={router.isActive('/list')} primaryText="List" /></Link>
         <Link to="/list-item"><ListItem active={router.isActive('/list-item')} primaryText="ListItem" /></Link>
         <Link to="/loader"><ListItem active={router.isActive('/loader')} primaryText="Loader" /></Link>
+        <Link to="/menu"><ListItem active={router.isActive('/menu')} primaryText="Menu" /></Link>
         <Link to="/menu-item"><ListItem active={router.isActive('/menu-item')} primaryText="MenuItem" /></Link>
         <Link to="/message"><ListItem active={router.isActive('/message')} primaryText="Message" /></Link>
         <Link to="/message-list"><ListItem active={router.isActive('/message-list')} primaryText="MessageList" /></Link>
@@ -37,11 +38,13 @@ function Menu(props, context) {
         <Link to="/modal"><ListItem active={router.isActive('/modal')} primaryText="Modal" /></Link>
         <Link to="/paper"><ListItem active={router.isActive('/paper')} primaryText="Paper" /></Link>
         <Link to="/pop-over"><ListItem active={router.isActive('/pop-over')} primaryText="PopOver" /></Link>
+        <Link to="/profile"><ListItem active={router.isActive('/profile')} primaryText="Profile" /></Link>
         <Link to="/profile-card"><ListItem active={router.isActive('/profile-card')} primaryText="ProfileCard" /></Link>
         <Link to="/radio-button"><ListItem active={router.isActive('/radio-button')} primaryText="RadioButton" /></Link>
         <Link to="/search-box"><ListItem active={router.isActive('/search-box')} primaryText="SearchBox" /></Link>
         <Link to="/select"><ListItem active={router.isActive('/select')} primaryText="Select" /></Link>
         <Link to="/switch"><ListItem active={router.isActive('/switch')} primaryText="Switch" /></Link>
+        <Link to="/tabs"><ListItem active={router.isActive('/tabs')} primaryText="Tabs" /></Link>
         <Link to="/with-theme"><ListItem active={router.isActive('/with-theme')} primaryText="WithTheme" /></Link>
       </List>
     </nav>
