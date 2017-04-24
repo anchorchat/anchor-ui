@@ -37,7 +37,7 @@ function PopOver({
 
   return (
     <section
-      style={getStyles.root(visibleItems, position, style)}
+      style={getStyles.root(visibleItems, header, position, style)}
       ref={popOverRef}
       {...custom}
     >
@@ -70,7 +70,7 @@ PopOver.propTypes = {
   secondaryMenuItems: PropTypes.node,
   /** Text to divide the menu items */
   dividerText: PropTypes.node,
-  /** Amount of visible items. Height will be based on an item height of 44px */
+  /** Amount of visible items. Height based on an item height of 44px and header height of 39px */
   visibleItems: PropTypes.number
 };
 
