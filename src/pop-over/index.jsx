@@ -70,7 +70,7 @@ PopOver.propTypes = {
   secondaryMenuItems: PropTypes.node,
   /** Text to divide the menu items */
   dividerText: PropTypes.node,
-  /** Amount of visible items */
+  /** Amount of visible items. Height will be based on an item height of 44px */
   visibleItems: PropTypes.number
 };
 

@@ -33,7 +33,7 @@ class Select extends Component {
     contentStyle: PropTypes.instanceOf(Object),
     /** The Selects placeholder */
     placeholder: PropTypes.string,
-    /** Amount of visible items */
+    /** Amount of visible items. Height will be based on an item height of 44px */
     visibleItems: PropTypes.number
   }
 
