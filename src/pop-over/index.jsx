@@ -5,6 +5,7 @@ import pure from 'recompose/pure';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import Divider from '../divider';
+import getStyles from './get-styles';
 
 /** Pop over useful for showing tooltips or menu options */
 function PopOver({
@@ -17,6 +18,7 @@ function PopOver({
   position,
   secondaryMenuItems,
   dividerText,
+  visibleItems,
   ...custom
 }) {
   if (!open) {
@@ -35,7 +37,7 @@ function PopOver({
 
   return (
     <section
-      style={combineStyles(combineStyles(styles.popOver, position), style)}
+      style={getStyles.root(visibleItems, header, position, style)}
       ref={popOverRef}
       {...custom}
     >
@@ -67,7 +69,9 @@ PopOver.propTypes = {
   /** Secondary set of MenuItems */
   secondaryMenuItems: PropTypes.node,
   /** Text to divide the menu items */
-  dividerText: PropTypes.node
+  dividerText: PropTypes.node,
+  /** Amount of visible items. Height based on an item height of 44px and header height of 39px */
+  visibleItems: PropTypes.number
 };
 
 PopOver.defaultProps = {
@@ -77,7 +81,8 @@ PopOver.defaultProps = {
   open: false,
   position: {},
   secondaryMenuItems: null,
-  dividerText: null
+  dividerText: null,
+  visibleItems: null
 };
 
 export default pure(Radium(PopOver));

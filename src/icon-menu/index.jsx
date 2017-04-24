@@ -26,7 +26,9 @@ class IconMenu extends Component {
     /** Override the styles of the header element */
     headerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object)
+    style: PropTypes.instanceOf(Object),
+    /** Amount of visible items. Height will be based on an item height of 44px */
+    visibleItems: PropTypes.number
   }
 
   static defaultProps = {
@@ -34,7 +36,8 @@ class IconMenu extends Component {
     style: {},
     headerStyle: {},
     secondaryMenuItems: null,
-    dividerText: null
+    dividerText: null,
+    visibleItems: null
   }
 
   constructor() {
@@ -89,7 +92,15 @@ class IconMenu extends Component {
 
   render() {
     const {
-      children, secondaryMenuItems, header, icon, headerStyle, style, dividerText, ...custom
+      children,
+      secondaryMenuItems,
+      header,
+      icon,
+      headerStyle,
+      style,
+      dividerText,
+      visibleItems,
+      ...custom
     } = this.props;
     const { open, position } = this.state;
 
@@ -114,6 +125,7 @@ class IconMenu extends Component {
           position={position}
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}
+          visibleItems={visibleItems}
         >
           {menuItemsWithProps}
         </PopOver>
