@@ -32,7 +32,9 @@ class Select extends Component {
     /** Override the styles of the content container */
     contentStyle: PropTypes.instanceOf(Object),
     /** The Selects placeholder */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    /** Amount of visible items */
+    visibleItems: PropTypes.number
   }
 
   static defaultProps = {
@@ -42,7 +44,8 @@ class Select extends Component {
     headerStyle: {},
     labelStyle: {},
     contentStyle: {},
-    placeholder: ''
+    placeholder: '',
+    visibleItems: null
   }
 
   static contextTypes = {
@@ -116,6 +119,7 @@ class Select extends Component {
       labelStyle,
       contentStyle,
       placeholder,
+      visibleItems,
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -160,6 +164,7 @@ class Select extends Component {
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}
+          visibleItems={visibleItems}
         >
           {childrenWithProps}
         </PopOver>
