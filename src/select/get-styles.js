@@ -32,4 +32,8 @@ function header(themeColor, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-export default { icon, header };
+function error(overrideStyle) {
+  return combineStyles(styles.error, overrideStyle);
+}
+
+export default { icon, header, error };

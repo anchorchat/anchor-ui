@@ -32,7 +32,11 @@ class Select extends Component {
     /** Override the styles of the content container */
     contentStyle: PropTypes.instanceOf(Object),
     /** The Selects placeholder */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    /** Display an error message */
+    error: PropTypes.node,
+    /** Override the styles of the error element */
+    errorStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
@@ -42,7 +46,9 @@ class Select extends Component {
     headerStyle: {},
     labelStyle: {},
     contentStyle: {},
-    placeholder: ''
+    placeholder: '',
+    error: null,
+    errorStyle: {}
   }
 
   static contextTypes = {
@@ -116,6 +122,8 @@ class Select extends Component {
       labelStyle,
       contentStyle,
       placeholder,
+      error,
+      errorStyle,
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -163,6 +171,7 @@ class Select extends Component {
         >
           {childrenWithProps}
         </PopOver>
+        {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
       </section>
     );
   }
