@@ -39,7 +39,7 @@ import Switch from './components/switch';
 import EmojiMenu from './components/emoji-menu';
 import Tabs from './components/tabs';
 import Profile from './components/profile';
-import Menu from './components/menu-sidebar';
+import Menu from './components/menu';
 import './index.css';
 
 ReactDOM.render(
