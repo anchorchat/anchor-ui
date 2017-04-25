@@ -60,6 +60,10 @@ $ cd docs && npm run start
 
 Webpack wil compile on changes in `./docs/src`.
 
+## Contribute
+
+If you'd like to help with the development of this module please consider our [contributing guidelines](https://github.com/anchorchat/anchor-ui/blob/master/CONTRIBUTING.md).
+
 ## License
 
 This project is licensed under the terms of the [MIT license](https://github.com/anchorchat/anchor-ui/blob/master/LICENSE).
