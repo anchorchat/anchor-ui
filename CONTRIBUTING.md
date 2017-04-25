@@ -43,7 +43,7 @@ When adding new features or modifying existing code, please attempt to include t
 
 ### Branch Structure
 
-All stable releases are tagged ([view tags](https://github.com/anchorchat/anchor-ui/tags)). At any given time, `master` represents the latest development version of the library.
+All stable releases are tagged ([view tags](https://github.com/anchorchat/anchor-ui/tags)). At any given time, `master` represents the latest stable version of the library.
 
 When making a new branch consider the following:
 * issue-#[number] for issues
