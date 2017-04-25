@@ -15,19 +15,22 @@ const messages = [
     body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
     username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
+    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+    id: 1
   },
   {
     body: 'Daleks have no concept of elegance.',
     createdAt: new Date(),
     username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
+    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    id: 2
   },
   {
     body: ':hammer:',
     createdAt: new Date(),
     username: 'Lars',
-    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400'
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 3
   },
 ];
 
@@ -59,10 +62,10 @@ function MessageDoc() {
         <h1>Examples</h1>
         <Paper style={{ margin: 0, padding: '20px' }}>
           <MessageList style={style.list}>
-            {messages.map((message, index) => (
+            {messages.map(message => (
               <Message
                 message={message}
-                key={`message-${index}`}
+                key={`message-${message.id}`}
                 myMessage={message.username === currentUser}
                 avatar={message.avatar}
                 emoji
