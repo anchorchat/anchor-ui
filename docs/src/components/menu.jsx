@@ -47,14 +47,14 @@ class MenuDoc extends Component {
           <Paper style={{ margin: 0, padding: '20px' }}>
             <Button onClick={this.toggleMenu}>Open Menu</Button>
             <Menu
-              toggleMenu={() => {}}
+              toggleMenu={this.toggleMenu}
               header="Menu"
               open={open}
               style={{ zIndex: '1' }}
             >
               <MenuItem text="Active Menu item" onClick={() => {}} active />
-              <MenuItem text="Menu item" onClick={() => {}}/>
-              <MenuItem text="Menu item" onClick={() => {}}/>
+              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Menu item" onClick={() => {}} />
             </Menu>
           </Paper>
         </section>
