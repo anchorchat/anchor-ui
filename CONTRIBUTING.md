@@ -4,7 +4,7 @@ If you're reading this, you're awesome! Thank you for helping us make this proje
 
 ## Asking Questions
 
-For how-to questions and other non-issues, please contact [Sjaak Luthart](sjaak.luthart@anchor.chat) or [Ian Stewart](ian.stewart@anchor.chat) instead of Github issues.
+For how-to questions and other non-issues, please contact [Sjaak Luthart](mailto:sjaak.luthart@anchor.chat) or [Ian Stewart](mailto:ian.stewart@anchor.chat) instead of Github issues.
 
 ## Opening an Issue
 
@@ -25,7 +25,7 @@ For feature requests please include a link to the relevant feature spec, or a sc
 
 ### Issue Guidelines
 
-Please begin the title with '[ComponentName]' where appropriate, and use a succint description. "doesn't work" doesn't help others find similar issues.
+Please begin the title with '[ComponentName]' where appropriate, and use a brief description. "doesn't work" doesn't help others find similar issues.
 
 Please don't group multiple topics into one issue, but instead each should be its own issue.
 
@@ -49,15 +49,14 @@ When making a new branch consider the following:
 * issue-#[number] for issues
 * feature/[feature-name] for new features
 
-
 ## Getting started
 
 Please create a new branch from an up to date develop on your fork.
 
 1. Fork the Anchor-UI repository on Github
 2. Clone your fork to your local machine
-3. Create a branch `git checkout -b my-topic-branch`
-4. Make your changes, lint, then push to github with `git push --set-upstream origin my-topic-branch`.
+3. Create a branch `git checkout -b feature/[my-feature]`
+4. Make your changes, lint, then push to github with `git push --set-upstream origin feature/[my-feature]`.
 5. Visit github and make your pull request.
 
 If you have an existing local repository, please update it before you start, to minimise the chance of merge conflicts.
@@ -98,8 +97,7 @@ While making a commit please consider the following:
 * Clear commit message.
 * Commit message reflects the done work.
 * When fixing an issue reflect this in the message `fixes #[issue-number]`
-* Please commit in English
-
+* Only commit in English
 
 ## License
 
