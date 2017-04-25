@@ -46,19 +46,18 @@ class MenuDoc extends Component {
           <h1>Examples</h1>
           <Paper style={{ margin: 0, padding: '20px' }}>
             <Button onClick={this.toggleMenu}>Open Menu</Button>
-            <Menu
-              toggleMenu={() => {}}
-              header="Menu"
-              open={open}
-              style={{ zIndex: '1' }}
-            >
-              <MenuItem text="Active Menu item" onClick={() => {}} active />
-              <MenuItem text="Menu item" onClick={() => {}}/>
-              <MenuItem text="Menu item" onClick={() => {}}/>
-            </Menu>
           </Paper>
         </section>
         <Props props={componentData.props} />
+        <Menu
+          toggleMenu={this.toggleMenu}
+          header="Menu"
+          open={open}
+        >
+          <MenuItem text="Active Menu item" onClick={() => {}} active />
+          <MenuItem text="Menu item" onClick={() => {}} />
+          <MenuItem text="Menu item" onClick={() => {}} />
+        </Menu>
       </article>
     );
   }
