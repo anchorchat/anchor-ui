@@ -1,5 +1,8 @@
 language: node_js
 node_js:
   - "6"
+before_install:
+  cd docs && npm install && cd ../
+  cd examples && npm install && cd ../
 before_script:
   npm run lint
