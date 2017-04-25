@@ -26,12 +26,12 @@ function SwitchDoc() {
         <h1>Examples</h1>
         <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
           <Switch
-          	toggleSwitch={() => {}}
+            toggleSwitch={() => {}}
             label="Inactive"
             style={{ margin: '10px' }}>
           </Switch>
-          <Switch 
-          	toggleSwitch={() => {}}
+          <Switch
+            toggleSwitch={() => {}}
             label="Active"
             style={{ margin: '10px' }}
           	active>
