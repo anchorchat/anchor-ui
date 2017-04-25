@@ -35,7 +35,7 @@ And please don't just '+1' an issue. It spams the maintainers and doesn't help m
 
 Anchor-UI is a public project, so pull requests are always welcome, but before working on a large change, it is best to open an issue first to discuss it with the maintainers.
 
-When in doubt, keep your pull requests small. To give a PR the best chance of getting accepted, don't bundle more than one feature or bug fix per pull request. It's always best to create two smaller PRs than one big PR.
+When in doubt, keep your pull requests small. To give a PR the best chance of getting accepted, don't bundle more than one feature or bug fix per pull request. It's always better to create two smaller PRs than one big PR.
 
 As with issues, please begin the title with [ComponentName].
 
@@ -71,7 +71,7 @@ npm update
 ### Testing the documentation site
 
 The documentation site is built with Anchor-UI, and contains examples of all the components. To get started:
-```js
+```bash
 npm install
 cd docs
 npm install
@@ -101,4 +101,4 @@ While making a commit please consider the following:
 
 ## License
 
-By contributing your code to the anchorchat/anchor-ui GitHub repository, you agree to license your contribution under the MIT license.
+By contributing your code to the anchorchat/anchor-ui GitHub repository, you agree to license your contribution under the [MIT license](https://github.com/anchorchat/anchor-ui/blob/master/LICENSE).
