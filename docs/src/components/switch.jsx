@@ -28,14 +28,13 @@ function SwitchDoc() {
           <Switch
             toggleSwitch={() => {}}
             label="Inactive"
-            style={{ margin: '10px' }}>
-          </Switch>
+            style={{ margin: '10px' }}
+          />
           <Switch
             toggleSwitch={() => {}}
-            label="Active"
+            label="Inactive"
             style={{ margin: '10px' }}
-          	active>
-          </Switch>
+          />
         </Paper>
       </section>
       <Props props={componentData.props} />

@@ -31,8 +31,8 @@ function ProfileDoc() {
             avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
             coverImage="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
             button={<button>Edit Information</button>}
-            style={{ margin: '10px', width: '100%'}}>
-          </Profile>
+            style={{ margin: '10px', width: '100%' }}
+          />
         </Paper>
       </section>
       <Props props={componentData.props} />
