@@ -21,7 +21,7 @@ class SliderDoc extends Component {
 
   toggleSlider(event) {
     this.setState({
-      value: event.currentTarget.value
+      value: parseInt(event.currentTarget.value, 10)
     });
   }
 
