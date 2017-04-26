@@ -1,3 +1,5 @@
+import colors from '../settings/colors';
+
 const styleSheet = {
   avatar: {
     backgroundPosition: 'center',
@@ -5,7 +7,7 @@ const styleSheet = {
     borderRadius: '50%',
     height: '40px',
     width: '40px',
-    backgroundColor: 'white'
+    backgroundColor: colors.white
   }
 };
 
