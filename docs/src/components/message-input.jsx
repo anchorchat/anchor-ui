@@ -10,40 +10,56 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import MessageInput from \'anchor-ui/message-input\';';
 
-function MessageInputDoc() {
-  const componentData = _.find(components, component => component.displayName === 'MessageInput');
+class MessageInputDoc extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  return (
-    <article className="doc">
-      <h1>MessageInput</h1>
-      <section>
-        <h1>Description</h1>
-        <p>{componentData.description}</p>
-      </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
-      <section>
-        <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
-          <MessageInput
-            onChange={() => {}}
-            placeholder="Type something..."
-            value=""
-            sendMessage={() => {}}
-            leftButton={
-              <Button iconButton onClick={() => {}}>
-                <IconEmoji />
-              </Button>
-            }
-            style={{ padding: '0 16px' }}
-          />
-        </Paper>
-      </section>
-      <Props props={componentData.props} />
-    </article>
-  );
+  handleChange(name) {
+    this.setState({
+      name: name.target.value
+    });
+  }
+
+  render() {
+    const componentData = _.find(components, component => component.displayName === 'MessageInput');
+
+    return (
+      <article className="doc">
+        <h1>MessageInput</h1>
+        <section>
+          <h1>Description</h1>
+          <p>{componentData.description}</p>
+        </section>
+        <section>
+          <h1>Usage</h1>
+          <ReactMarkdown source={usage} className="markdown" />
+        </section>
+        <section>
+          <h1>Examples</h1>
+          <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
+            <MessageInput
+              onChange={this.handleChange}
+              placeholder="Type something..."
+              value={this.state.name}
+              sendMessage={() => {}}
+              leftButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconEmoji />
+                </Button>
+              }
+              style={{ padding: '0 16px' }}
+            />
+          </Paper>
+        </section>
+        <Props props={componentData.props} />
+      </article>
+    );
+  }
 }
 
 export default MessageInputDoc;
