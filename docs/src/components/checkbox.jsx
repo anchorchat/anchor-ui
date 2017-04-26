@@ -17,12 +17,19 @@ class CheckboxDoc extends Component {
       two: false
     };
 
-    this.toggleCheckbox = this.toggleCheckbox.bind(this);
+    this.toggleCheckboxOne = this.toggleCheckboxOne.bind(this);
+    this.toggleCheckboxTwo = this.toggleCheckboxTwo.bind(this);
   }
 
-  toggleCheckbox(event) {
+  toggleCheckboxOne(event) {
     this.setState({
       one: event.currentTarget.checked
+    });
+  }
+
+  toggleCheckboxTwo(event) {
+    this.setState({
+      two: event.currentTarget.checked
     });
   }
 
@@ -46,14 +53,14 @@ class CheckboxDoc extends Component {
           <h1>Examples</h1>
           <Paper style={{ margin: 0, padding: '20px' }}>
             <Checkbox
-              onChange={this.toggleCheckbox}
+              onChange={this.toggleCheckboxOne}
               label="Default checked"
               name="one"
               style={{ margin: '10px' }}
               checked={one}
             />
             <Checkbox
-              onChange={() => {}}
+              onChange={this.toggleCheckboxTwo}
               label="Unchecked"
               name="two"
               style={{ margin: '10px' }}

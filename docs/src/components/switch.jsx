@@ -13,20 +13,27 @@ class SwitchDoc extends Component {
     super();
 
     this.state = {
-      active: false
+      one: false,
+      two: true
     };
 
-    this.toggleSwitch = this.toggleSwitch.bind(this);
+    this.toggleSwitchOne = this.toggleSwitchOne.bind(this);
+    this.toggleSwitchTwo = this.toggleSwitchTwo.bind(this);
   }
 
-  toggleSwitch() {
+  toggleSwitchOne() {
     this.setState({
-      active: !this.state.active
+      one: !this.state.one
+    });
+  }
+
+  toggleSwitchTwo() {
+    this.setState({
+      two: !this.state.two
     });
   }
 
   render() {
-    const { active } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Switch');
 
     return (
@@ -44,10 +51,16 @@ class SwitchDoc extends Component {
           <h1>Examples</h1>
           <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
             <Switch
-              toggleSwitch={this.toggleSwitch}
+              toggleSwitch={this.toggleSwitchOne}
               label="Switch"
               style={{ margin: '10px' }}
-              active={active}
+              active={this.state.one}
+            />
+            <Switch
+              toggleSwitch={this.toggleSwitchTwo}
+              label="Default enabled"
+              style={{ margin: '10px' }}
+              active={this.state.two}
             />
           </Paper>
         </section>
