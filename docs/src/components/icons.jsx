@@ -33,7 +33,7 @@ function Icons() {
         </Paper>
         <h2>Available icons</h2>
         <ul>
-          {iconNames.map(icon => <li key={icon}>{icon}</li>)}
+          {iconNames.map((icon, key) => <li key={key}>{icon}</li>)}
         </ul>
       </section>
       <section>
