@@ -2,19 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
-import styles from '../style/avatars';
-import combineStyles from '../internal/combine-styles';
-
-function getStyle(image, overrideStyle) {
-  const style = combineStyles(styles.avatar, { backgroundImage: `url(${image})` });
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** An user's profile image */
 function Avatar({ image, style, ...custom }) {
   return (
-    <section style={getStyle(image, style)} {...custom} />
+    <section style={getStyles.root(image, style)} {...custom} />
   );
 }
 

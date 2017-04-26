@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
-  avatar: {
+export default {
+  root: {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     borderRadius: '50%',
@@ -10,5 +10,3 @@ const styleSheet = {
     backgroundColor: colors.white
   }
 };
-
-export default styleSheet;
