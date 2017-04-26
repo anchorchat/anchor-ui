@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import Profile from '../../../dist/profile';
+import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
@@ -30,7 +31,7 @@ function ProfileDoc() {
             secondaryText="Secondary text"
             avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
             coverImage="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
-            button={<button>Edit Information</button>}
+            button={<Button>Edit Information</Button>}
             style={{ margin: '10px', width: '100%' }}
           />
         </Paper>
