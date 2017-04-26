@@ -26,7 +26,7 @@ function TabsDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <Tabs style={{ margin: '10px'}}>
+          <Tabs style={{ margin: '10px' }}>
             <Tab label="Tab 1">Content 1</Tab>
             <Tab label="Tab 2">Content 2</Tab>
             <Tab label="Tab 3">Content 3</Tab>

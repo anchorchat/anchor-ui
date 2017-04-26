@@ -37,7 +37,7 @@ function MessageInputDoc() {
                 <IconEmoji />
               </Button>
             }
-            style={{ padding: '0 16px' }}
+            style={{ paddingTop: 0, paddingBottom: 0 }}
           />
         </Paper>
       </section>
