@@ -10,6 +10,7 @@ describe('Input.getStyles', () => {
 
       expect(style).to.deep.equal(styles.root);
     });
+
     it('should change letter color', () => {
       const style = getStyles.root(false, { color: 'green' });
 
@@ -31,9 +32,9 @@ describe('Input.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.label(false, { display: 'block' });
+      const style = getStyles.label({ color: 'red' });
 
-      expect(style).to.have.property('display', 'block');
+      expect(style).to.have.property('color', 'red');
     });
   });
 
