@@ -40,9 +40,15 @@ describe('Input.getStyles', () => {
 
   describe('error', () => {
     it('should disable styles', () => {
-      const style = getStyles.error(false, {});
+      const style = getStyles.error();
 
-      expect(style).to.have.property('fontSize', '14px');
+      expect(style).to.deep.equal(styles.error);
+    });
+
+    it('should change styles', () => {
+      const style = getStyles.error({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
     });
   });
 
