@@ -48,5 +48,4 @@ class SearchBoxDoc extends React.Component {
   }
 }
 
-
 export default SearchBoxDoc;
