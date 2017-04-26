@@ -3923,17 +3923,6 @@
         "required": true,
         "description": "The user's username"
       },
-      "text": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "The user's info",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -3952,19 +3941,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of the username element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4363,6 +4340,29 @@
           "value": "''",
           "computed": false
         }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -4630,7 +4630,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of an inactive root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4642,7 +4642,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the label element",
+        "description": "Override the styles of an inactive label element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4678,6 +4678,30 @@
         },
         "required": false,
         "description": "Override the styles of the badge element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Overide the styles of an active root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeLabelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Overide the styles of an active label element.",
         "defaultValue": {
           "value": "{}",
           "computed": false
