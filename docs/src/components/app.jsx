@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import AppHeader from '../../../dist/app-header';
 import Button from '../../../dist/button';
-import Menu from './menu';
+import Nav from './nav';
 import logo from '../assets/images/logo.svg';
 import github from '../assets/images/github.svg';
 
@@ -32,7 +32,7 @@ function App({ children }) {
         }
       />
       <article className="doc">
-        <Menu />
+        <Nav />
         {children}
       </article>
     </main>
