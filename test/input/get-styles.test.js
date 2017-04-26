@@ -39,13 +39,13 @@ describe('Input.getStyles', () => {
   });
 
   describe('error', () => {
-    it('should disable styles', () => {
+    it('should get styles', () => {
       const style = getStyles.error();
 
       expect(style).to.deep.equal(styles.error);
     });
 
-    it('should change styles', () => {
+    it('should combine styles', () => {
       const style = getStyles.error({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
@@ -54,9 +54,22 @@ describe('Input.getStyles', () => {
 
   describe('input', () => {
     it('should get styles', () => {
-      const style = getStyles.input(true, {});
+      const style = getStyles.input();
 
-      expect(style).to.have.property('width', '100%');
+      expect(style).to.deep.equal(styles.input);
+    });
+
+    it('should get error styles', () => {
+      const style = getStyles.input(true);
+
+      expect(style).to.have.property('border': '1px solid #FD2A43');
+      expect(style).to.have.property('color': '#FD2A43');
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.input(false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
     });
   });
 });
