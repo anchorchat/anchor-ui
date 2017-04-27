@@ -1,44 +1,36 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import Switch from '../../../dist/switch';
+import Slider from '../../../dist/slider';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import Switch from \'anchor-ui/switch\';';
+const usage = '```js\n import Slider from \'anchor-ui/slider\';';
 
-class SwitchDoc extends Component {
+class SliderDoc extends Component {
   constructor() {
     super();
 
     this.state = {
-      one: false,
-      two: true
+      value: 50
     };
 
-    this.toggleSwitchOne = this.toggleSwitchOne.bind(this);
-    this.toggleSwitchTwo = this.toggleSwitchTwo.bind(this);
+    this.toggleSlider = this.toggleSlider.bind(this);
   }
 
-  toggleSwitchOne() {
+  toggleSlider(event) {
     this.setState({
-      one: !this.state.one
-    });
-  }
-
-  toggleSwitchTwo() {
-    this.setState({
-      two: !this.state.two
+      value: parseInt(event.currentTarget.value, 10)
     });
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Switch');
+    const componentData = _.find(components, component => component.displayName === 'Slider');
 
     return (
       <article className="doc">
-        <h1>Switch</h1>
+        <h1>Slider</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
@@ -50,17 +42,14 @@ class SwitchDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-            <Switch
-              toggleSwitch={this.toggleSwitchOne}
-              label="Switch"
+            <Slider
+              onChange={this.toggleSlider}
+              label="Slider"
+              name="slider"
+              min={0}
+              max={100}
+              value={this.state.value}
               style={{ margin: '10px' }}
-              active={this.state.one}
-            />
-            <Switch
-              toggleSwitch={this.toggleSwitchTwo}
-              label="Default enabled"
-              style={{ margin: '10px' }}
-              active={this.state.two}
             />
           </Paper>
         </section>
@@ -70,4 +59,4 @@ class SwitchDoc extends Component {
   }
 }
 
-export default SwitchDoc;
+export default SliderDoc;

@@ -50,7 +50,6 @@ class MenuDoc extends Component {
               toggleMenu={this.toggleMenu}
               header="Menu"
               open={open}
-              style={{ zIndex: '1' }}
             >
               <MenuItem text="Active Menu item" onClick={() => {}} active />
               <MenuItem text="Menu item" onClick={() => {}} />

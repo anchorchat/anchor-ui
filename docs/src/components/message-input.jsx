@@ -11,11 +11,13 @@ import Paper from '../../../dist/paper';
 const usage = '```js\n import MessageInput from \'anchor-ui/message-input\';';
 
 class MessageInputDoc extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+
     this.state = {
       name: ''
     };
+
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -52,7 +54,7 @@ class MessageInputDoc extends React.Component {
                   <IconEmoji />
                 </Button>
               }
-              style={{ padding: '0 16px' }}
+              style={{ paddingTop: 0, paddingBottom: 0 }}
             />
           </Paper>
         </section>

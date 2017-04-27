@@ -17,7 +17,7 @@ function RadioButtonGroup({ value, onChange, children, label, labelStyle, style,
 
   return (
     <section {...custom}>
-      <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
+      {label ? <span style={combineStyles(styles.label, labelStyle)}>{label}</span> : null}
       <section style={combineStyles(styles.root, style)}>
         {childrenWithProps}
       </section>

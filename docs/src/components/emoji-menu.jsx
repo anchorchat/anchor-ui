@@ -27,7 +27,8 @@ function EmojiMenuDoc() {
         <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
           <EmojiMenu
             sendEmoji={() => {}}
-            style={{ margin: '10px' }}/>
+            style={{ margin: '10px' }}
+          />
         </Paper>
       </section>
       <Props props={componentData.props} />

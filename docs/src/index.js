@@ -40,6 +40,7 @@ import EmojiMenu from './components/emoji-menu';
 import Tabs from './components/tabs';
 import Profile from './components/profile';
 import Menu from './components/menu';
+import Slider from './components/slider';
 import './index.css';
 
 ReactDOM.render(
@@ -81,6 +82,7 @@ ReactDOM.render(
       <Route path="/tabs" component={Tabs} />
       <Route path="/profile" component={Profile} />
       <Route path="/menu" component={Menu} />
+      <Route path="/slider" component={Slider} />
     </Route>
   </Router>,
   document.getElementById('root')
