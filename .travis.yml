@@ -4,6 +4,6 @@ node_js:
 before_install:
   cd docs && npm install
   cd examples && npm install
-  npm run compile
 before_script:
+  npm run compile
   npm run lint
