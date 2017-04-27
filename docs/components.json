@@ -1500,7 +1500,7 @@
   },
   "components/icons/icon-admin.jsx": {
     "description": "",
-    "displayName": "IconClose",
+    "displayName": "IconAdmin",
     "methods": [],
     "props": {
       "color": {
@@ -1698,7 +1698,7 @@
   },
   "components/icons/icon-delete.jsx": {
     "description": "",
-    "displayName": "IconClose",
+    "displayName": "IconDelete",
     "methods": [],
     "props": {
       "color": {

@@ -1,3 +1,4 @@
+/* eslint-disable max-len, no-console */
 import React from 'react';
 import { Profile, Button, Dialog } from '../../dist';
 import { colors } from '../../dist/settings';

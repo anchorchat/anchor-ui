@@ -1,4 +1,5 @@
 /* eslint react/jsx-filename-extension: [0] */
+/* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
