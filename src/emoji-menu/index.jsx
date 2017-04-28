@@ -112,8 +112,8 @@ class EmojiMenu extends Component {
       emojiStyle,
       footerStyle,
       iconStyle,
-      sendEmoji,
-      svgSprites,
+      sendEmoji, // eslint-disable-line no-unused-vars
+      svgSprites, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
 

@@ -91,7 +91,7 @@ h3 {
   font-size: 17px;
 }
 
-nav {
+.doc > nav {
   width: 200px;
   border-right: 1px solid #DEDEDE;
   height: 100%;

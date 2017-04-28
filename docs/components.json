@@ -1500,7 +1500,7 @@
   },
   "components/icons/icon-admin.jsx": {
     "description": "",
-    "displayName": "IconClose",
+    "displayName": "IconAdmin",
     "methods": [],
     "props": {
       "color": {
@@ -1698,7 +1698,7 @@
   },
   "components/icons/icon-delete.jsx": {
     "description": "",
-    "displayName": "IconClose",
+    "displayName": "IconDelete",
     "methods": [],
     "props": {
       "color": {
@@ -4630,7 +4630,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of an inactive root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4642,7 +4642,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the label element",
+        "description": "Override the styles of an inactive label element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4678,6 +4678,30 @@
         },
         "required": false,
         "description": "Override the styles of the badge element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Overide the styles of an active root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeLabelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Overide the styles of an active label element.",
         "defaultValue": {
           "value": "{}",
           "computed": false

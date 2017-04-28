@@ -10,7 +10,9 @@ import AppHeader from './components/app-header';
 import Avatar from './components/avatar';
 import Badge from './components/badge';
 import Button from './components/button';
+import Card from './components/card';
 import ChannelHeader from './components/channel-header';
+import Checkbox from './components/checkbox';
 import Dialog from './components/dialog';
 import EmptyState from './components/empty-state';
 import Input from './components/input';
@@ -32,6 +34,13 @@ import Modal from './components/modal';
 import AdminBadge from './components/admin-badge';
 import Divider from './components/divider';
 import Select from './components/select';
+import RadioButton from './components/radio-button';
+import Switch from './components/switch';
+import EmojiMenu from './components/emoji-menu';
+import Tabs from './components/tabs';
+import Profile from './components/profile';
+import Menu from './components/menu';
+import Slider from './components/slider';
 import './index.css';
 
 ReactDOM.render(
@@ -44,7 +53,9 @@ ReactDOM.render(
       <Route path="/avatar" component={Avatar} />
       <Route path="/badge" component={Badge} />
       <Route path="/button" component={Button} />
+      <Route path="/card" component={Card} />
       <Route path="/channel-header" component={ChannelHeader} />
+      <Route path="/checkbox" component={Checkbox} />
       <Route path="/dialog" component={Dialog} />
       <Route path="/empty-state" component={EmptyState} />
       <Route path="/input" component={Input} />
@@ -65,6 +76,13 @@ ReactDOM.render(
       <Route path="/modal" component={Modal} />
       <Route path="/divider" component={Divider} />
       <Route path="/select" component={Select} />
+      <Route path="/radio-button" component={RadioButton} />
+      <Route path="/switch" component={Switch} />
+      <Route path="/emoji-menu" component={EmojiMenu} />
+      <Route path="/tabs" component={Tabs} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/menu" component={Menu} />
+      <Route path="/slider" component={Slider} />
     </Route>
   </Router>,
   document.getElementById('root')

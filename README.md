@@ -30,12 +30,12 @@ Compile `./src` with Babel:
 $ npm run compile
 ```
 
-### examples
+### Docs
 
 Install `node_modules` used in `./examples`:
 
 ```bash
-$ cd examples && npm i
+$ cd docs && npm i
 ```
 
 ## Development
@@ -50,15 +50,19 @@ $ npm run watch
 
 Babel will compile `./src` on changes.
 
-### examples
+### docs
 
 To start the webpack server run:
 
 ```bash
-$ cd examples && npm run start
+$ cd docs && npm run start
 ```
 
-Webpack wil compile on changes in `./examples/src`.
+Webpack wil compile on changes in `./docs/src`.
+
+## Contribute
+
+If you'd like to help with the development of this module please consider our [contributing guidelines](https://github.com/anchorchat/anchor-ui/blob/master/CONTRIBUTING.md).
 
 ## License
 

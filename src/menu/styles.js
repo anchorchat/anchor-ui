@@ -2,7 +2,8 @@ import colors from '../settings/colors';
 
 export default {
   container: {
-    zIndex: 1
+    zIndex: 1,
+    position: 'relative'
   },
   root: {
     width: '256px',
@@ -11,7 +12,7 @@ export default {
     overflowY: 'scroll',
     transform: 'translateX(-256px)',
     transition: 'all .3s ease-in-out',
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     left: 0
   },
