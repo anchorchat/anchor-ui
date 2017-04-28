@@ -1,37 +1,36 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import MenuItem from '../../../dist/menu-item';
-import Select from '../../../dist/select';
+import Slider from '../../../dist/slider';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import Select from \'anchor-ui/select\';';
+const usage = '```js\n import Slider from \'anchor-ui/slider\';';
 
-class SelectDoc extends Component {
+class SliderDoc extends Component {
   constructor() {
     super();
 
     this.state = {
-      value: 1
+      value: 50
     };
 
-    this.changeValue = this.changeValue.bind(this);
+    this.toggleSlider = this.toggleSlider.bind(this);
   }
 
-  changeValue(value) {
+  toggleSlider(event) {
     this.setState({
-      value
+      value: parseInt(event.currentTarget.value, 10)
     });
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Select');
+    const componentData = _.find(components, component => component.displayName === 'Slider');
 
     return (
       <article className="doc">
-        <h1>Menu Item</h1>
+        <h1>Slider</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
@@ -43,10 +42,15 @@ class SelectDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-            <Select value={this.state.value} label="Select" onChange={this.changeValue}>
-              <MenuItem text="Menu item" value={1} />
-              <MenuItem text="Menu item 2" value={2} />
-            </Select>
+            <Slider
+              onChange={this.toggleSlider}
+              label="Slider"
+              name="slider"
+              min={0}
+              max={100}
+              value={this.state.value}
+              style={{ margin: '10px' }}
+            />
           </Paper>
         </section>
         <Props props={componentData.props} />
@@ -55,4 +59,4 @@ class SelectDoc extends Component {
   }
 }
 
-export default SelectDoc;
+export default SliderDoc;

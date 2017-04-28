@@ -1,3 +1,4 @@
 dist
 *.polyfill.js
 emoji.js
+node_modules
