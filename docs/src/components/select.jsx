@@ -14,20 +14,34 @@ class SelectDoc extends Component {
     super();
 
     this.state = {
-      value: 1
+      valueDefault: 1,
+      valueError: 1,
     };
 
-    this.changeValue = this.changeValue.bind(this);
+    this.changeValueDefault = this.changeValueDefault.bind(this);
+    this.changeValueError = this.changeValueError.bind(this);
   }
 
-  changeValue(value) {
+  changeValueDefault(valueDefault) {
     this.setState({
-      value
+      valueDefault
+    });
+  }
+
+  changeValueError(valueError) {
+    this.setState({
+      valueError
     });
   }
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Select');
+    const style = {
+      paper: {
+        margin: 0,
+        padding: '20px' },
+      select: { margin: '10px' }
+    };
 
     return (
       <article className="doc">
@@ -42,8 +56,23 @@ class SelectDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-            <Select value={this.state.value} label="Select" onChange={this.changeValue}>
+          <Paper style={style.paper}>
+            <Select
+              value={this.state.valueDefault}
+              label="Select"
+              onChange={this.changeValueDefault}
+              style={style.select}
+            >
+              <MenuItem text="Menu item" value={1} />
+              <MenuItem text="Menu item 2" value={2} />
+            </Select>
+            <Select
+              value={this.state.valueError}
+              label="Error example"
+              onChange={this.changeValueError}
+              style={style.select}
+              error="Error message"
+            >
               <MenuItem text="Menu item" value={1} />
               <MenuItem text="Menu item 2" value={2} />
             </Select>
