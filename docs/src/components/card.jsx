@@ -12,6 +12,8 @@ const usage = '```js\n import Card from \'anchor-ui/card\';';
 
 function CardDoc() {
   const componentData = _.find(components, component => component.displayName === 'Card');
+  const headerData = _.find(components, component => component.displayName === 'CardHeader');
+  const contentData = _.find(components, component => component.displayName === 'CardContent');
 
   return (
     <article className="doc">
@@ -35,7 +37,12 @@ function CardDoc() {
           </Card>
         </Paper>
       </section>
+      <h2>Card</h2>
       <Props props={componentData.props} />
+      <h2>CardHeader</h2>
+      <Props props={headerData.props} />
+      <h2>CardContent</h2>
+      <Props props={contentData.props} />
     </article>
   );
 }
