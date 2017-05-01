@@ -14,6 +14,9 @@ const usage = '```js\n import ListItem from \'anchor-ui/list-item\';';
 
 function ListItemDoc() {
   const componentData = _.find(components, component => component.displayName === 'ListItem');
+  const styleItem = { margin: '10px' };
+  const styleNestedList = { margin: '10px 10px 0 10px' };
+  const styleNestedItem = { margin: '0 10px 0 10px' };
 
   return (
     <article className="doc">
@@ -33,25 +36,25 @@ function ListItemDoc() {
             <ListItem
               primaryText="Default item"
               secondaryText="Secondary text"
-              style={{ margin: '10px' }}
+              style={styleItem}
             />
             <ListItem
               primaryText="Active item"
               secondaryText="Secondary text"
-              style={{ margin: '10px' }}
+              style={styleItem}
               active
             />
             <ListItem
               primaryText="With avatar"
               secondaryText="10/50"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px' }}
+              style={styleItem}
             />
             <ListItem
               primaryText="With rightButton"
               secondaryText="10/50"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px' }}
+              style={styleItem}
               rightButton={
                 <Button iconButton onClick={() => {}}>
                   <IconClose />
@@ -62,60 +65,60 @@ function ListItemDoc() {
               primaryText="With badge"
               secondaryText="10/50"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px' }}
+              style={styleItem}
               badge={<Badge value={4} maxValue={9} />}
             />
             <ListItem
               primaryText="Muted"
               secondaryText="10/50"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px' }}
+              style={styleItem}
               muted
             />
             <ListItem
               primaryText="Blocked"
               secondaryText="10/50"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px' }}
+              style={styleItem}
               blocked
             />
             <ListItem
               primaryText="Nested list"
               secondaryText="Default open"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px 10px 0 10px' }}
+              style={styleNestedList}
               open
             >
               <ListItem
                 primaryText="Item"
                 secondaryText="10/50"
                 avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-                style={{ margin: '0 10px 0 10px' }}
+                style={styleNestedItem}
               />
               <ListItem
                 primaryText="Item"
                 secondaryText="10/50"
                 avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-                style={{ margin: '0 10px 0 10px' }}
+                style={styleNestedItem}
               />
             </ListItem>
             <ListItem
               primaryText="Nested list"
               secondaryText="Default closed"
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              style={{ margin: '10px 10px 0 10px' }}
+              style={styleNestedList}
             >
               <ListItem
                 primaryText="Item"
                 secondaryText="10/50"
                 avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-                style={{ margin: '0 10px 0 10px' }}
+                style={styleNestedItem}
               />
               <ListItem
                 primaryText="Item"
                 secondaryText="10/50"
                 avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-                style={{ margin: '0 10px 0 10px' }}
+                style={styleNestedItem}
               />
             </ListItem>
           </List>
