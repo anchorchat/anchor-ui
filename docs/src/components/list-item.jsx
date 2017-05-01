@@ -2,6 +2,9 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import ListItem from '../../../dist/list-item';
+import List from '../../../dist/list';
+import Button from '../../../dist/button';
+import { IconClose } from '../../../dist/icons';
 import Badge from '../../../dist/badge';
 import components from '../../components.json';
 import Props from './props';
@@ -26,12 +29,96 @@ function ListItemDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
-          <ListItem
-            primaryText="Channel"
-            secondaryText="10/50"
-            avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-            badge={<Badge value={4} maxValue={9} />}
-          />
+          <List>
+            <ListItem
+              primaryText="Default item"
+              secondaryText="Secondary text"
+              style={{ margin: '10px' }}
+            />
+            <ListItem
+              primaryText="Active item"
+              secondaryText="Secondary text"
+              style={{ margin: '10px' }}
+              active
+            />
+            <ListItem
+              primaryText="With avatar"
+              secondaryText="10/50"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px' }}
+            />
+            <ListItem
+              primaryText="With rightButton"
+              secondaryText="10/50"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px' }}
+              rightButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconClose />
+                </Button>
+              }
+            />
+            <ListItem
+              primaryText="With badge"
+              secondaryText="10/50"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px' }}
+              badge={<Badge value={4} maxValue={9} />}
+            />
+            <ListItem
+              primaryText="Muted"
+              secondaryText="10/50"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px' }}
+              muted
+            />
+            <ListItem
+              primaryText="Blocked"
+              secondaryText="10/50"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px' }}
+              blocked
+            />
+            <ListItem
+              primaryText="Nested list"
+              secondaryText="Default open"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px 10px 0 10px' }}
+              open
+            >
+              <ListItem
+                primaryText="Item"
+                secondaryText="10/50"
+                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+                style={{ margin: '0 10px 0 10px' }}
+              />
+              <ListItem
+                primaryText="Item"
+                secondaryText="10/50"
+                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+                style={{ margin: '0 10px 0 10px' }}
+              />
+            </ListItem>
+            <ListItem
+              primaryText="Nested list"
+              secondaryText="Default closed"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={{ margin: '10px 10px 0 10px' }}
+            >
+              <ListItem
+                primaryText="Item"
+                secondaryText="10/50"
+                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+                style={{ margin: '0 10px 0 10px' }}
+              />
+              <ListItem
+                primaryText="Item"
+                secondaryText="10/50"
+                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+                style={{ margin: '0 10px 0 10px' }}
+              />
+            </ListItem>
+          </List>
         </Paper>
       </section>
       <Props props={componentData.props} />
