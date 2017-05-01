@@ -68,6 +68,7 @@ class MessageInput extends Component {
     super();
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -77,6 +78,12 @@ class MessageInput extends Component {
       Radium.getState(this.state, 'input', ':focus') !== Radium.getState(nextState, 'input', ':focus') ||
       Radium.getState(this.state, 'input', ':disabled') !== Radium.getState(nextState, 'input', ':disabled')
     );
+  }
+
+  handleKeyPress(e) {
+    if (e.nativeEvent.keyCode === 13) {
+      if (this.nativeEvent.shiftKey);
+    }
   }
 
   handleKeyDown(event) {
@@ -113,7 +120,7 @@ class MessageInput extends Component {
           </div>
           : null
         }
-        <input
+        <textarea
           style={getInputStyle(leftButton, inputStyle)}
           placeholder={placeholder}
           onChange={onChange}
@@ -124,6 +131,7 @@ class MessageInput extends Component {
           ref={inputRef}
           disabled={disabled}
           key="input"
+          onKeyUp={this.handleKeyPress}
           {...custom}
         />
         <Button
