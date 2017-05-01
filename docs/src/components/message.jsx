@@ -38,8 +38,10 @@ const currentUser = 'Sjaak';
 
 function MessageDoc() {
   const componentData = _.find(components, component => component.displayName === 'Message');
-
   const style = {
+    paper: {
+      margin: '0 0 20px 0',
+      padding: '20px' },
     list: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',
@@ -60,7 +62,7 @@ function MessageDoc() {
       </section>
       <section>
         <h1>Default example</h1>
-        <Paper style={{ margin: '0 0 20px 0', padding: '20px' }}>
+        <Paper style={style.paper}>
           <MessageList style={style.list}>
             {messages.map(message => (
               <Message
@@ -74,7 +76,7 @@ function MessageDoc() {
           </MessageList>
         </Paper>
         <h1>Medium font size</h1>
-        <Paper style={{ margin: '0 0 20px 0', padding: '20px' }}>
+        <Paper style={style.paper}>
           <MessageList style={style.list}>
             {messages.map(message => (
               <Message
@@ -89,7 +91,7 @@ function MessageDoc() {
           </MessageList>
         </Paper>
         <h1>Large font size</h1>
-        <Paper style={{ margin: '0 0 20px 0', padding: '20px' }}>
+        <Paper style={style.paper}>
           <MessageList style={style.list}>
             {messages.map(message => (
               <Message
@@ -104,7 +106,7 @@ function MessageDoc() {
           </MessageList>
         </Paper>
         <h1>Compact message</h1>
-        <Paper style={{ margin: '0 0 20px 0', padding: '20px' }}>
+        <Paper style={style.paper}>
           <MessageList style={style.list}>
             {messages.map(message => (
               <Message

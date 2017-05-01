@@ -67,6 +67,15 @@ class InputDoc extends Component {
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Input');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px' },
+      input: { margin: '10px' }
+    };
 
     return (
       <article className="doc">
@@ -81,7 +90,7 @@ class InputDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <Paper style={style.paper}>
             <Input
               onChange={this.handleChangeText}
               value={this.state.valueText}
@@ -89,7 +98,7 @@ class InputDoc extends Component {
               type="text"
               label="Text example"
               name="exampleText"
-              style={{ margin: '10px' }}
+              style={style.input}
             />
             <Input
               onChange={this.handleChangeDefault}
@@ -98,7 +107,7 @@ class InputDoc extends Component {
               type="text"
               label="Default value example"
               name="exampleDefault"
-              style={{ margin: '10px' }}
+              style={style.input}
             />
             <Input
               onChange={this.handleChangeNumber}
@@ -107,7 +116,7 @@ class InputDoc extends Component {
               type="number"
               label="Number example"
               name="example"
-              style={{ margin: '10px' }}
+              style={style.input}
             />
             <Input
               onChange={this.handleChangeDate}
@@ -115,7 +124,7 @@ class InputDoc extends Component {
               type="date"
               label="Date example"
               name="exampleDate"
-              style={{ margin: '10px' }}
+              style={style.input}
             />
             <Input
               onChange={this.handleChangeMaxLength}
@@ -125,7 +134,7 @@ class InputDoc extends Component {
               label="Max length example"
               name="exampleMaxLength"
               maxLength={3}
-              style={{ margin: '10px' }}
+              style={style.input}
             />
             <Input
               onChange={() => {}}
@@ -134,7 +143,7 @@ class InputDoc extends Component {
               type="text"
               label="Disabled example"
               name="exampleDisabled"
-              style={{ margin: '10px' }}
+              style={style.input}
               disabled
             />
             <Input
@@ -145,7 +154,7 @@ class InputDoc extends Component {
               label="Error example"
               name="exampleError"
               error="Error message"
-              style={{ margin: '10px' }}
+              style={style.input}
             />
           </Paper>
         </section>
