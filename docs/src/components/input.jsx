@@ -14,18 +14,30 @@ class InputDoc extends Component {
 
     this.state = {
       valueText: '',
+      valueDefault: 'Default value',
       valueNumber: '',
-      valueDate: ''
+      valueDate: '',
+      valueMaxLength: '',
+      valueError: 'Value'
     };
 
     this.handleChangeText = this.handleChangeText.bind(this);
+    this.handleChangeDefault = this.handleChangeDefault.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
     this.handleChangeDate = this.handleChangeDate.bind(this);
+    this.handleChangeMaxLength = this.handleChangeMaxLength.bind(this);
+    this.handleChangeError = this.handleChangeError.bind(this);
   }
 
   handleChangeText(event) {
     this.setState({
       valueText: event.currentTarget.value
+    });
+  }
+
+  handleChangeDefault(event) {
+    this.setState({
+      valueDefault: event.currentTarget.value
     });
   }
 
@@ -38,6 +50,18 @@ class InputDoc extends Component {
   handleChangeDate(event) {
     this.setState({
       valueDate: event.currentTarget.value
+    });
+  }
+
+  handleChangeMaxLength(event) {
+    this.setState({
+      valueMaxLength: event.currentTarget.value
+    });
+  }
+
+  handleChangeError(event) {
+    this.setState({
+      valueError: event.currentTarget.value
     });
   }
 
@@ -64,7 +88,16 @@ class InputDoc extends Component {
               placeholder="Placeholder text.."
               type="text"
               label="Text example"
-              name="example"
+              name="exampleText"
+              style={{ margin: '10px' }}
+            />
+            <Input
+              onChange={this.handleChangeDefault}
+              value={this.state.valueDefault}
+              placeholder="Placeholder text.."
+              type="text"
+              label="Default value example"
+              name="exampleDefault"
               style={{ margin: '10px' }}
             />
             <Input
@@ -81,7 +114,37 @@ class InputDoc extends Component {
               value={this.state.valueDate}
               type="date"
               label="Date example"
-              name="example"
+              name="exampleDate"
+              style={{ margin: '10px' }}
+            />
+            <Input
+              onChange={this.handleChangeMaxLength}
+              value={this.state.valueMaxLength}
+              placeholder="Placeholder text.."
+              type="text"
+              label="Max length example"
+              name="exampleMaxLength"
+              maxLength={3}
+              style={{ margin: '10px' }}
+            />
+            <Input
+              onChange={() => {}}
+              value=""
+              placeholder="Enter text.."
+              type="text"
+              label="Disabled example"
+              name="exampleDisabled"
+              style={{ margin: '10px' }}
+              disabled
+            />
+            <Input
+              onChange={this.handleChangeError}
+              value={this.state.valueError}
+              placeholder="Placeholder text.."
+              type="text"
+              label="Error example"
+              name="exampleError"
+              error="Error message"
               style={{ margin: '10px' }}
             />
           </Paper>
