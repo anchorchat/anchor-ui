@@ -64,5 +64,8 @@ export default {
     paddingLeft: '8px',
     color: colors.error,
     fontSize: '14px'
+  },
+  disabled: {
+    opacity: '0.38'
   }
 };
