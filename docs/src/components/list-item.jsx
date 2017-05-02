@@ -20,7 +20,8 @@ function ListItemDoc() {
       flexWrap: 'wrap',
       alignItems: 'center',
       margin: 0,
-      padding: '20px' },
+      padding: '20px'
+    },
     item: { margin: '10px' },
     itemNested: { margin: '0 10px 0 10px' },
     list: { margin: '10px 10px 0 10px' }

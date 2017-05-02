@@ -13,22 +13,22 @@ class SliderDoc extends Component {
     super();
 
     this.state = {
-      valueDefault: 0,
+      value: 0,
       valueCustom: 50,
       valueStep: 0,
       valueDisabled: 0.5,
       valueError: 0
     };
 
-    this.toggleSliderDefault = this.toggleSliderDefault.bind(this);
+    this.toggleSlider = this.toggleSlider.bind(this);
     this.toggleSliderCustom = this.toggleSliderCustom.bind(this);
     this.toggleSliderStep = this.toggleSliderStep.bind(this);
     this.toggleSliderError = this.toggleSliderError.bind(this);
   }
 
-  toggleSliderDefault(event) {
+  toggleSlider(event) {
     this.setState({
-      valueDefault: parseInt(event.currentTarget.value, 10)
+      value: parseInt(event.currentTarget.value, 10)
     });
   }
 
@@ -55,7 +55,8 @@ class SliderDoc extends Component {
     const style = {
       paper: {
         margin: 0,
-        padding: '20px' },
+        padding: '20px'
+      },
       slider: { margin: '0 10px 30px 10px' }
     };
 
@@ -74,10 +75,10 @@ class SliderDoc extends Component {
           <h1>Examples</h1>
           <Paper style={style.paper}>
             <Slider
-              onChange={this.toggleSliderDefault}
+              onChange={this.toggleSlider}
               label="Default slider example (0-1)"
-              name="sliderDefault"
-              value={this.state.valueDefault}
+              name="slider"
+              value={this.state.value}
               style={style.slider}
             />
             <Slider

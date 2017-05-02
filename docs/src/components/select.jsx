@@ -14,17 +14,17 @@ class SelectDoc extends Component {
     super();
 
     this.state = {
-      valueDefault: 1,
+      value: 1,
       valueError: 1,
     };
 
-    this.changeValueDefault = this.changeValueDefault.bind(this);
+    this.changeValue = this.changeValue.bind(this);
     this.changeValueError = this.changeValueError.bind(this);
   }
 
-  changeValueDefault(valueDefault) {
+  changeValue(value) {
     this.setState({
-      valueDefault
+      value
     });
   }
 
@@ -39,7 +39,8 @@ class SelectDoc extends Component {
     const style = {
       paper: {
         margin: 0,
-        padding: '20px' },
+        padding: '20px'
+      },
       select: { margin: '10px' }
     };
 
@@ -58,9 +59,9 @@ class SelectDoc extends Component {
           <h1>Examples</h1>
           <Paper style={style.paper}>
             <Select
-              value={this.state.valueDefault}
+              value={this.state.value}
               label="Select"
-              onChange={this.changeValueDefault}
+              onChange={this.changeValue}
               style={style.select}
             >
               <MenuItem text="Menu item" value={1} />

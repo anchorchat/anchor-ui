@@ -41,7 +41,8 @@ function MessageDoc() {
   const style = {
     paper: {
       margin: '0 0 20px 0',
-      padding: '20px' },
+      padding: '20px'
+    },
     list: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',

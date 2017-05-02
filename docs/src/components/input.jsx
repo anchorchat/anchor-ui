@@ -13,31 +13,31 @@ class InputDoc extends Component {
     super();
 
     this.state = {
+      value: 'Default value',
       valueText: '',
-      valueDefault: 'Default value',
       valueNumber: '',
       valueDate: '',
       valueMaxLength: '',
       valueError: 'Value'
     };
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
-    this.handleChangeDefault = this.handleChangeDefault.bind(this);
     this.handleChangeNumber = this.handleChangeNumber.bind(this);
     this.handleChangeDate = this.handleChangeDate.bind(this);
     this.handleChangeMaxLength = this.handleChangeMaxLength.bind(this);
     this.handleChangeError = this.handleChangeError.bind(this);
   }
 
-  handleChangeText(event) {
+  handleChange(event) {
     this.setState({
-      valueText: event.currentTarget.value
+      value: event.currentTarget.value
     });
   }
 
-  handleChangeDefault(event) {
+  handleChangeText(event) {
     this.setState({
-      valueDefault: event.currentTarget.value
+      valueText: event.currentTarget.value
     });
   }
 
@@ -73,7 +73,8 @@ class InputDoc extends Component {
         flexWrap: 'wrap',
         alignItems: 'center',
         margin: 0,
-        padding: '20px' },
+        padding: '20px'
+      },
       input: { margin: '10px' }
     };
 
@@ -92,21 +93,21 @@ class InputDoc extends Component {
           <h1>Examples</h1>
           <Paper style={style.paper}>
             <Input
+              onChange={this.handleChange}
+              value={this.state.value}
+              placeholder="Placeholder text.."
+              type="text"
+              label="Default value example"
+              name="example"
+              style={style.input}
+            />
+            <Input
               onChange={this.handleChangeText}
               value={this.state.valueText}
               placeholder="Placeholder text.."
               type="text"
               label="Text example"
               name="exampleText"
-              style={style.input}
-            />
-            <Input
-              onChange={this.handleChangeDefault}
-              value={this.state.valueDefault}
-              placeholder="Placeholder text.."
-              type="text"
-              label="Default value example"
-              name="exampleDefault"
               style={style.input}
             />
             <Input
