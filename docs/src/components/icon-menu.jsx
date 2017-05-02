@@ -12,6 +12,19 @@ const usage = '```js\n import IconMenu from \'anchor-ui/icon-menu\';';
 
 function IconMenuDoc() {
   const componentData = _.find(components, component => component.displayName === 'IconMenu');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    iconMenu: {
+      width: '40px',
+      margin: '10px'
+    }
+  };
 
   return (
     <article className="doc">
@@ -26,9 +39,9 @@ function IconMenuDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <IconMenu
-            style={{ width: '40px' }}
+            style={style.iconMenu}
             icon={<IconRocket />}
             header="Items"
             headerStyle={{ textTransform: 'capitalize' }}

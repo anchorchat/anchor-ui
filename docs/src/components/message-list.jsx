@@ -40,10 +40,15 @@ function MessageListDoc() {
   const componentData = _.find(components, component => component.displayName === 'MessageList');
 
   const style = {
+    paper: {
+      margin: 0,
+      padding: '20px'
+    },
     messageList: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',
-      height: '475px'
+      height: '475px',
+      margin: '10px'
     }
   };
 
@@ -60,7 +65,7 @@ function MessageListDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <MessageList style={style.messageList}>
             {messages.map(message => (
               <Message

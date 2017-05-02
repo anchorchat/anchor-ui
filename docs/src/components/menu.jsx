@@ -30,6 +30,16 @@ class MenuDoc extends Component {
   render() {
     const { open } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Menu');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px'
+      },
+      button: { margin: '10px' }
+    };
 
     return (
       <article className="doc">
@@ -44,8 +54,13 @@ class MenuDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ margin: 0, padding: '20px' }}>
-            <Button onClick={this.toggleMenu}>Open Menu</Button>
+          <Paper style={style.paper}>
+            <Button
+              style={style.button}
+              onClick={this.toggleMenu}
+            >
+              Open Menu
+            </Button>
             <Menu
               toggleMenu={this.toggleMenu}
               header="Menu"

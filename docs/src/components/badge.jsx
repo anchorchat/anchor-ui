@@ -10,6 +10,16 @@ const usage = '```js\n import Badge from \'anchor-ui/badge\';';
 
 function BadgeDoc() {
   const componentData = _.find(components, component => component.displayName === 'Badge');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    badge: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -24,9 +34,9 @@ function BadgeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <Badge style={{ margin: '10px' }} inverted value={10} maxValue={9} />
-          <Badge style={{ margin: '10px' }} value={10} maxValue={9} />
+        <Paper style={style.paper}>
+          <Badge style={style.badge} inverted value={10} maxValue={9} />
+          <Badge style={style.badge} value={10} maxValue={9} />
         </Paper>
       </section>
       <Props props={componentData.props} />

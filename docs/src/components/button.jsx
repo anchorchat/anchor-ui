@@ -12,6 +12,20 @@ const usage = '```js\n import Button from \'anchor-ui/button\';';
 
 function ButtonDoc() {
   const componentData = _.find(components, component => component.displayName === 'Button');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    flatbutton: {
+      color: colors.primaryText,
+      margin: '10px'
+    },
+    button: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -26,13 +40,13 @@ function ButtonDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: 0 }}>
-          <Button style={{ margin: '10px' }} onClick={() => {}}><p>Click me</p></Button>
-          <Button style={{ margin: '10px' }} inverted onClick={() => {}}><p>Click me</p></Button>
-          <Button style={{ margin: '10px', color: colors.primaryText }} flatButton onClick={() => {}}>
+        <Paper style={style.paper}>
+          <Button style={style.button} onClick={() => {}}><p>Click me</p></Button>
+          <Button style={style.button} inverted onClick={() => {}}><p>Click me</p></Button>
+          <Button style={style.flatbutton} flatButton onClick={() => {}}>
             <p>Click me</p>
           </Button>
-          <Button style={{ margin: '10px' }} iconButton onClick={() => {}}>
+          <Button style={style.button} iconButton onClick={() => {}}>
             <IconEmoji />
           </Button>
         </Paper>

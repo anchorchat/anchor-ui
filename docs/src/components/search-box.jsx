@@ -24,6 +24,15 @@ class SearchBoxDoc extends React.Component {
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'SearchBox');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px'
+      }
+    };
 
     return (
       <article className="doc">
@@ -38,7 +47,7 @@ class SearchBoxDoc extends React.Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ margin: 0, padding: '20px' }}>
+          <Paper style={style.paper}>
             <SearchBox onChange={this.handleChange} changeSearchQuery={() => {}} handleSearch={() => {}} placeholder="Search" value={this.state.value} />
           </Paper>
         </section>
