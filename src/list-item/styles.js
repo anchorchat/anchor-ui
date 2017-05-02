@@ -60,7 +60,9 @@ export default {
     fontSize: '16px',
     margin: 0,
     lineHeight: '16px',
-    userSelect: 'none'
+    userSelect: 'none',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   secondaryText: {
     color: colors.primaryText,
@@ -69,7 +71,9 @@ export default {
     marginBottom: 0,
     marginTop: '2.4px',
     lineHeight: '14px',
-    userSelect: 'none'
+    userSelect: 'none',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   leftAvatar: {
     paddingLeft: '56px'
