@@ -55,6 +55,7 @@ class MessageInputDoc extends React.Component {
                 </Button>
               }
               style={{ paddingTop: 0, paddingBottom: 0 }}
+              multiline
             />
           </Paper>
         </section>
