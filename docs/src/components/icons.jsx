@@ -11,6 +11,16 @@ const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import 
 
 const icons = _.filter(components, (component, key) => key.match(/icons/));
 const iconNames = _.pluck(icons, 'displayName');
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  icon: { margin: '10px' }
+};
 
 function Icons() {
   return (
@@ -26,10 +36,10 @@ function Icons() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <IconEmoji style={{ margin: '10px' }} />
-          <IconHammer color="#1ba6c4" style={{ margin: '10px' }} />
-          <IconRocket color="red" style={{ margin: '10px' }} />
+        <Paper style={style.paper}>
+          <IconEmoji style={style.icon} />
+          <IconHammer color="#1ba6c4" style={style.icon} />
+          <IconRocket color="red" style={style.icon} />
         </Paper>
         <h2>Available icons</h2>
         <ul>

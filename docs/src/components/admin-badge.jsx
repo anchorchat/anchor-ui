@@ -10,6 +10,16 @@ const usage = '```js\n import AdminBadge from \'anchor-ui/admin-badge\';';
 
 function AdminBadgeDoc() {
   const componentData = _.find(components, component => component.displayName === 'AdminBadge');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    adminBadge: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -24,9 +34,9 @@ function AdminBadgeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <AdminBadge style={{ margin: '10px' }} inverted />
-          <AdminBadge style={{ margin: '10px' }} />
+        <Paper style={style.paper}>
+          <AdminBadge style={style.adminBadge} inverted />
+          <AdminBadge style={style.adminBadge} />
         </Paper>
       </section>
       <Props props={componentData.props} />

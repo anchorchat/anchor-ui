@@ -35,6 +35,16 @@ class SwitchDoc extends Component {
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Switch');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px'
+      },
+      switch: { margin: '10px' }
+    };
 
     return (
       <article className="doc">
@@ -49,17 +59,17 @@ class SwitchDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+          <Paper style={style.paper}>
             <Switch
               toggleSwitch={this.toggleSwitchOne}
               label="Switch"
-              style={{ margin: '10px' }}
+              style={style.switch}
               active={this.state.one}
             />
             <Switch
               toggleSwitch={this.toggleSwitchTwo}
               label="Default enabled"
-              style={{ margin: '10px' }}
+              style={style.switch}
               active={this.state.two}
             />
           </Paper>

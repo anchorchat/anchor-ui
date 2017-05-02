@@ -2,24 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from '../style/channel-header';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 
 /** A channel's header */
 function ChannelHeader({
   name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle, ...custom
 }) {
   return (
-    <header style={combineStyles(styles.header, style)} {...custom}>
+    <header style={getStyles.root(style)} {...custom}>
       {
         leftButton
-        ? <div style={combineStyles(styles.buttonLeft, leftButtonStyle)}>{leftButton}</div>
+        ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
         : null
       }
-      <h1 style={combineStyles(styles.text, textStyle)}>{name}</h1>
+      <h1 style={getStyles.text(textStyle)}>{name}</h1>
       {
         rightButton
-        ? <div style={combineStyles(styles.buttonRight, rightButtonStyle)}>{rightButton}</div>
+        ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
         : null
       }
     </header>

@@ -11,6 +11,16 @@ const usage = '```js\n import Tabs from \'anchor-ui/tabs\';';
 
 function TabsDoc() {
   const componentData = _.find(components, component => component.displayName === 'Tabs');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    tabs: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -25,8 +35,8 @@ function TabsDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <Tabs style={{ margin: '10px' }}>
+        <Paper style={style.paper}>
+          <Tabs style={style.tabs}>
             <Tab label="Tab 1">Content 1</Tab>
             <Tab label="Tab 2">Content 2</Tab>
             <Tab label="Tab 3">Content 3</Tab>

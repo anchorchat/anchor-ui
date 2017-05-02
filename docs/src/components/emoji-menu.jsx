@@ -10,6 +10,16 @@ const usage = '```js\n import EmojiMenu from \'anchor-ui/emoji-menu\';';
 
 function EmojiMenuDoc() {
   const componentData = _.find(components, component => component.displayName === 'EmojiMenu');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    emojiMenu: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -24,10 +34,10 @@ function EmojiMenuDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+        <Paper style={style.paper}>
           <EmojiMenu
             sendEmoji={() => {}}
-            style={{ margin: '10px' }}
+            style={style.emojiMenu}
           />
         </Paper>
       </section>

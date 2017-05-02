@@ -11,6 +11,18 @@ const usage = '```js\n import Profile from \'anchor-ui/profile\';';
 
 function ProfileDoc() {
   const componentData = _.find(components, component => component.displayName === 'Profile');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    profile: {
+      width: '100%',
+      margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -25,14 +37,14 @@ function ProfileDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+        <Paper style={style.paper}>
           <Profile
             header="Sjaak"
             secondaryText="Secondary text"
             avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
             coverImage="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
             button={<Button>Edit Information</Button>}
-            style={{ margin: '10px', width: '100%' }}
+            style={style.profile}
           />
         </Paper>
       </section>
