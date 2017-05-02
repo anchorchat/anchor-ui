@@ -29,6 +29,20 @@ class MessageInputDoc extends React.Component {
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'MessageInput');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px'
+      },
+      messageInput: {
+        paddingTop: 0,
+        paddingBottom: 0,
+        margin: '10px'
+      }
+    };
 
     return (
       <article className="doc">
@@ -43,7 +57,7 @@ class MessageInputDoc extends React.Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
+          <Paper style={style.paper}>
             <MessageInput
               onChange={this.handleChange}
               placeholder="Type something..."
@@ -54,8 +68,8 @@ class MessageInputDoc extends React.Component {
                   <IconEmoji />
                 </Button>
               }
-              style={{ paddingTop: 0, paddingBottom: 0 }}
               multiline
+              style={style.messageInput}
             />
           </Paper>
         </section>

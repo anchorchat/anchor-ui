@@ -13,7 +13,8 @@ const styleSheet = {
     margin: 0,
     paddingLeft: 0,
     overflow: 'auto',
-    zIndex: '1'
+    zIndex: '1',
+    maxWidth: '85%'
   },
   header: {
     paddingTop: '10px',
@@ -23,7 +24,9 @@ const styleSheet = {
     margin: '0',
     fontSize: '16px',
     fontWeight: 'bold',
-    color: colors.primaryText
+    color: colors.primaryText,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   }
 };
 

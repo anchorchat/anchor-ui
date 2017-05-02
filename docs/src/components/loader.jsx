@@ -13,13 +13,21 @@ function LoaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'Loader');
 
   const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
     inverted: {
       padding: '10px',
       background: colors.theme,
       width: '75px',
       borderRadius: '3px',
       margin: '10px'
-    }
+    },
+    loader: { margin: '10px' }
   };
 
   return (
@@ -35,8 +43,8 @@ function LoaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <Loader style={{ margin: '10px' }} />
+        <Paper style={style.paper}>
+          <Loader style={style.loader} />
           <section style={style.inverted}>
             <Loader inverted />
           </section>

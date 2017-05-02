@@ -27,7 +27,7 @@ function Slider({
   const percentage = getPercentage(value, min, max);
 
   return (
-    <section style={getStyles.root(style)}>
+    <section style={getStyles.root(style, disabled)}>
       <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
       <div style={styles.sliderRoot}>
         <div style={styles.slider}>
@@ -48,7 +48,7 @@ function Slider({
           {...custom}
         />
       </div>
-      {error ? <span style={errorStyle}>{error}</span> : null}
+      {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
     </section>
   );
 }

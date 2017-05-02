@@ -37,6 +37,16 @@ class CheckboxDoc extends Component {
     const { one } = this.state;
     const { two } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Checkbox');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px'
+      },
+      checkbox: { margin: '10px' }
+    };
 
     return (
       <article className="doc">
@@ -51,19 +61,19 @@ class CheckboxDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ margin: 0, padding: '20px' }}>
+          <Paper style={style.paper}>
             <Checkbox
               onChange={this.toggleCheckboxOne}
               label="Default checked"
               name="one"
-              style={{ margin: '10px' }}
+              style={style.checkbox}
               checked={one}
             />
             <Checkbox
               onChange={this.toggleCheckboxTwo}
               label="Unchecked"
               name="two"
-              style={{ margin: '10px' }}
+              style={style.checkbox}
               checked={two}
             />
           </Paper>

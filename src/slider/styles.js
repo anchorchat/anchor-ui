@@ -57,5 +57,15 @@ export default {
     fontWeight: 'bold',
     marginBottom: '10px',
     display: 'inline-block'
+  },
+  error: {
+    display: 'block',
+    paddingTop: '6px',
+    paddingLeft: '8px',
+    color: colors.error,
+    fontSize: '14px'
+  },
+  disabled: {
+    opacity: '0.38'
   }
 };
