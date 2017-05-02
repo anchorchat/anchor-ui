@@ -17,9 +17,15 @@ function getButtonStyle(style, disabled) {
   return style;
 }
 
-function getInputStyle(rightButton, overrideStyle) {
+function getInputStyle(rightButton, multiline = false, overrideStyle) {
+  let style = styles.messageInput;
+
+  if (multiline) {
+    style = combineStyles(style, styles.multiline);
+  }
+
   if (rightButton) {
-    return combineStyles(combineStyles(styles.messageInput, styles.leftButton), overrideStyle);
+    return combineStyles(combineStyles(style, styles.leftButton), overrideStyle);
   }
 
   return combineStyles(styles.messageInput, overrideStyle);
@@ -110,7 +116,7 @@ class MessageInput extends Component {
 
     let input = (
       <input
-        style={getInputStyle(leftButton, inputStyle)}
+        style={getInputStyle(leftButton, multiline, inputStyle)}
         placeholder={placeholder}
         onChange={onChange}
         value={value}
@@ -127,7 +133,7 @@ class MessageInput extends Component {
     if (multiline) {
       input = (
         <textarea
-          style={getInputStyle(leftButton, inputStyle)}
+          style={getInputStyle(leftButton, multiline, inputStyle)}
           value={value}
           onChange={onChange}
           format="multiline"
