@@ -1,26 +1,29 @@
 import colors from '../settings/colors';
 
 const styleSheet = {
-  header: {
+  root: {
     background: colors.white,
     borderBottom: `1px solid ${colors.grey}`,
-    position: 'relative'
+    position: 'relative',
+    padding: '0 48px',
+    boxSizing: 'border-box'
   },
   text: {
     color: colors.primaryText,
     fontSize: '18px',
     fontWeight: 'bold',
-    lineHeight: '18px',
     margin: 0,
-    padding: '15px 48px',
-    textAlign: 'center'
+    textAlign: 'center',
+    lineHeight: '48px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
-  buttonRight: {
+  rightButton: {
     position: 'absolute',
     right: '4px',
     top: '4px'
   },
-  buttonLeft: {
+  leftButton: {
     position: 'absolute',
     left: '4px',
     top: '4px'

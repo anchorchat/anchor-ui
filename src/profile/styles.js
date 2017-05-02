@@ -54,12 +54,20 @@ export default {
     fontWeight: 'bold',
     marginTop: '16px',
     marginBottom: '8px',
-    color: colors.primaryText
+    color: colors.primaryText,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    width: '100%',
+    textAlign: 'center'
   },
   secondaryText: {
     fontSize: '16px',
     marginTop: 0,
     marginBottom: '16px',
-    color: colors.grey
+    color: colors.grey,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    width: '100%',
+    textAlign: 'center'
   }
 };
