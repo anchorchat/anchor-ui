@@ -18,6 +18,8 @@ export default {
     paddingBottom: '10px',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
@@ -60,7 +62,7 @@ export default {
     fontSize: '16px',
     margin: 0,
     lineHeight: '16px',
-    userSelect: 'none'
+    userSelect: 'none',
   },
   secondaryText: {
     color: colors.primaryText,
