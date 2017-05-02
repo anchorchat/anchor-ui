@@ -11,6 +11,16 @@ const usage = '```js\n import WithTheme from \'anchor-ui/icons\';';
 
 function WithThemeDoc() {
   const componentData = _.find(components, component => component.displayName === 'WithTheme');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    button: { margin: '10px' }
+  };
   return (
     <article className="doc">
       <h1>With Theme</h1>
@@ -24,12 +34,12 @@ function WithThemeDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+        <Paper style={style.paper}>
           <WithTheme color="#f2912c">
-            <Button style={{ margin: '10px' }} onClick={() => {}}>Orange Button</Button>
+            <Button style={style.button} onClick={() => {}}>Orange Button</Button>
           </WithTheme>
           <WithTheme color="#22ac55">
-            <Button style={{ margin: '10px' }} onClick={() => {}}>Green Button</Button>
+            <Button style={style.button} onClick={() => {}}>Green Button</Button>
           </WithTheme>
         </Paper>
       </section>

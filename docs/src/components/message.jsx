@@ -38,8 +38,11 @@ const currentUser = 'Sjaak';
 
 function MessageDoc() {
   const componentData = _.find(components, component => component.displayName === 'Message');
-
   const style = {
+    paper: {
+      margin: '0 0 20px 0',
+      padding: '20px'
+    },
     list: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',
@@ -59,8 +62,8 @@ function MessageDoc() {
         <ReactMarkdown source={usage} className="markdown" />
       </section>
       <section>
-        <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <h1>Default example</h1>
+        <Paper style={style.paper}>
           <MessageList style={style.list}>
             {messages.map(message => (
               <Message
@@ -69,6 +72,51 @@ function MessageDoc() {
                 myMessage={message.username === currentUser}
                 avatar={message.avatar}
                 emoji
+              />
+            ))}
+          </MessageList>
+        </Paper>
+        <h1>Medium font size</h1>
+        <Paper style={style.paper}>
+          <MessageList style={style.list}>
+            {messages.map(message => (
+              <Message
+                message={message}
+                key={`message-${message.id}`}
+                myMessage={message.username === currentUser}
+                avatar={message.avatar}
+                fontSize="medium"
+                emoji
+              />
+            ))}
+          </MessageList>
+        </Paper>
+        <h1>Large font size</h1>
+        <Paper style={style.paper}>
+          <MessageList style={style.list}>
+            {messages.map(message => (
+              <Message
+                message={message}
+                key={`message-${message.id}`}
+                myMessage={message.username === currentUser}
+                avatar={message.avatar}
+                fontSize="large"
+                emoji
+              />
+            ))}
+          </MessageList>
+        </Paper>
+        <h1>Compact message</h1>
+        <Paper style={style.paper}>
+          <MessageList style={style.list}>
+            {messages.map(message => (
+              <Message
+                message={message}
+                key={`message-${message.id}`}
+                myMessage={message.username === currentUser}
+                avatar={message.avatar}
+                emoji
+                compact
               />
             ))}
           </MessageList>

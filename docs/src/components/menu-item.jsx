@@ -11,6 +11,16 @@ const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
 
 function MenuItemDoc() {
   const componentData = _.find(components, component => component.displayName === 'MenuItem');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    }
+  };
+
   return (
     <article className="doc">
       <h1>Menu Item</h1>
@@ -24,7 +34,7 @@ function MenuItemDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
+        <Paper style={style.paper}>
           <MenuItem text="Active Menu item" onClick={() => {}} active />
           <MenuItem text="Menu item" onClick={() => {}} />
           <MenuItem icon={<IconReport />} text="Menu item with icon" onClick={() => {}} />

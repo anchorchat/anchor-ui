@@ -48,7 +48,7 @@ function Slider({
           {...custom}
         />
       </div>
-      {error ? <span style={errorStyle}>{error}</span> : null}
+      {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
     </section>
   );
 }

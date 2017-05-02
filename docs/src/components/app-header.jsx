@@ -14,6 +14,16 @@ const usage = '```js\n import AppHeader from \'anchor-ui/app-header\';';
 
 function AppHeaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'AppHeader');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    appHeader: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -28,8 +38,9 @@ function AppHeaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <AppHeader
+            style={style.appHeader}
             text="Anchor UI"
             icon={<img src={logo} alt="Anchor Chat" />}
             rightButton={
