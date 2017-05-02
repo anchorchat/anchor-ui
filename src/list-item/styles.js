@@ -59,7 +59,7 @@ export default {
     color: colors.primaryText,
     fontSize: '16px',
     margin: 0,
-    lineHeight: '16px',
+    lineHeight: '18px',
     userSelect: 'none',
     overflow: 'hidden',
     textOverflow: 'ellipsis'
