@@ -18,8 +18,6 @@ export default {
     paddingBottom: '10px',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
@@ -63,6 +61,8 @@ export default {
     margin: 0,
     lineHeight: '16px',
     userSelect: 'none',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   secondaryText: {
     color: colors.primaryText,
@@ -71,7 +71,9 @@ export default {
     marginBottom: 0,
     marginTop: '2.4px',
     lineHeight: '14px',
-    userSelect: 'none'
+    userSelect: 'none',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   leftAvatar: {
     paddingLeft: '56px'
