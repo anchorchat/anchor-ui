@@ -23,7 +23,9 @@ const styleSheet = {
     fontWeight: 'normal',
     lineHeight: '36px',
     margin: 0,
-    textDecoration: 'none'
+    textDecoration: 'none',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   leftButton: {
     position: 'absolute',

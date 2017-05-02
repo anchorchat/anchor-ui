@@ -23,8 +23,6 @@ class InputDoc extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
-    this.handleChangeNumber = this.handleChangeNumber.bind(this);
-    this.handleChangeDate = this.handleChangeDate.bind(this);
     this.handleChangeMaxLength = this.handleChangeMaxLength.bind(this);
     this.handleChangeError = this.handleChangeError.bind(this);
   }
@@ -38,18 +36,6 @@ class InputDoc extends Component {
   handleChangeText(event) {
     this.setState({
       valueText: event.currentTarget.value
-    });
-  }
-
-  handleChangeNumber(event) {
-    this.setState({
-      valueNumber: event.currentTarget.value
-    });
-  }
-
-  handleChangeDate(event) {
-    this.setState({
-      valueDate: event.currentTarget.value
     });
   }
 
@@ -70,10 +56,10 @@ class InputDoc extends Component {
     const style = {
       paper: {
         display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
+        flexDirection: 'column',
         margin: 0,
-        padding: '20px'
+        padding: '20px',
+        backgroundColor: 'rgba(45, 55, 104, 0.75)'
       },
       input: { margin: '10px' }
     };
@@ -95,7 +81,6 @@ class InputDoc extends Component {
             <Input
               onChange={this.handleChange}
               value={this.state.value}
-              placeholder="Placeholder text.."
               type="text"
               label="Default value example"
               name="example"
@@ -108,23 +93,6 @@ class InputDoc extends Component {
               type="text"
               label="Text example"
               name="exampleText"
-              style={style.input}
-            />
-            <Input
-              onChange={this.handleChangeNumber}
-              value={this.state.valueNumber}
-              placeholder="Enter numbers.."
-              type="number"
-              label="Number example"
-              name="example"
-              style={style.input}
-            />
-            <Input
-              onChange={this.handleChangeDate}
-              value={this.state.valueDate}
-              type="date"
-              label="Date example"
-              name="exampleDate"
               style={style.input}
             />
             <Input

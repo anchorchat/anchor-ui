@@ -2,8 +2,14 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function root(overrideStyle) {
-  return combineStyles(styles.root, overrideStyle);
+function root(overrideStyle, disabled) {
+  let style = styles.root;
+
+  if (disabled) {
+    style = combineStyles(style, styles.disabled);
+  }
+
+  return combineStyles(style, overrideStyle);
 }
 
 function label(overrideStyle) {

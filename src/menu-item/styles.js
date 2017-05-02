@@ -2,9 +2,9 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 
 const styleSheet = {
-  menuItem: {
+  root: {
     minHeight: '44px',
-    minWidth: '100%',
+    width: '100%',
     position: 'relative',
     paddingTop: '10px',
     paddingRight: '10px',
@@ -25,7 +25,9 @@ const styleSheet = {
   text: {
     margin: 0,
     color: 'inherit',
-    lineHeight: '24px'
+    lineHeight: '24px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   icon: {
     position: 'absolute',
