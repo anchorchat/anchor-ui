@@ -20,8 +20,6 @@ const styleSheet = {
     paddingRight: '48px',
     width: '100%',
     outline: 'none',
-    resize: 'none',
-    paddingTop: '13px',
     ':focus': {
       outline: 'none'
     },
@@ -45,6 +43,13 @@ const styleSheet = {
     right: '20px',
     top: '4px'
   },
+  multiline: {
+    resize: 'none',
+    paddingTop: '14px',
+    color: colors.primaryText,
+    height: '48px',
+    boxSizing: 'border-box'
+  }
 };
 
 export default styleSheet;

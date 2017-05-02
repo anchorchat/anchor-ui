@@ -127,7 +127,7 @@ class MessageInput extends Component {
     if (multiline) {
       input = (
         <textarea
-          style={getInputStyle(leftButton, inputStyle)}
+          style={getInputStyle(leftButton, styles.multiline, inputStyle)}
           value={value}
           onChange={onChange}
           format="multiline"

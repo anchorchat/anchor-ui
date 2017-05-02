@@ -68,8 +68,21 @@ class MessageInputDoc extends React.Component {
                   <IconEmoji />
                 </Button>
               }
-              multiline
               style={style.messageInput}
+            />
+
+            <MessageInput
+              onChange={this.handleChange}
+              placeholder="Type multiline..."
+              value={this.state.name}
+              sendMessage={() => {}}
+              leftButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconEmoji />
+                </Button>
+              }
+              multiline
+              style={style.multiline}
             />
           </Paper>
         </section>
