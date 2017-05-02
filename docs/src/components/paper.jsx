@@ -9,6 +9,15 @@ const usage = '```js\n import Paper from \'anchor-ui/paper\';';
 
 function PaperDoc() {
   const componentData = _.find(components, component => component.displayName === 'Paper');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    }
+  };
 
   return (
     <article className="doc">
@@ -23,7 +32,7 @@ function PaperDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', margin: 0 }}>
+        <Paper style={style.paper}>
           <Paper>
             Depth: 1
           </Paper>

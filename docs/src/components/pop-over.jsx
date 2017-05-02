@@ -12,6 +12,20 @@ const usage = '```js\n import PopOver from \'anchor-ui/pop-over\';';
 
 function PopOverDoc() {
   const componentData = _.find(components, component => component.displayName === 'PopOver');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    iconMenu: {
+      width: '40px',
+      margin: '10px'
+    }
+  };
+
   return (
     <article className="doc">
       <h1>PopOver</h1>
@@ -25,9 +39,9 @@ function PopOverDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <IconMenu
-            style={{ width: '40px' }}
+            style={style.iconMenu}
             icon={<IconLanguage />}
             header="Language"
             headerStyle={{ textTransform: 'capitalize' }}

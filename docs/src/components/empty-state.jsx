@@ -18,6 +18,22 @@ function EmptyStateDoc() {
     body: 'You have stumbled upon an empty state my good sir.',
     background: emptyStateBackground
   };
+
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    emojiMenu: {
+      width: '275px',
+      height: '600px',
+      margin: '10px'
+    }
+  };
+
   return (
     <article className="doc">
       <h1>EmptyState</h1>
@@ -31,13 +47,13 @@ function EmptyStateDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <EmptyState
             background={emptyState.background}
             headerText={emptyState.header}
             bodyText={emptyState.body}
             button={<Button onClick={() => {}}><p>Click me</p></Button>}
-            style={{ width: '275px', height: '600px' }}
+            style={style.emojiMenu}
           />
         </Paper>
       </section>
