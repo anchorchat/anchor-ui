@@ -62,7 +62,7 @@ export default {
     fontSize: '16px',
     margin: 0,
     lineHeight: '16px',
-    userSelect: 'none',
+    userSelect: 'none'
   },
   secondaryText: {
     color: colors.primaryText,
