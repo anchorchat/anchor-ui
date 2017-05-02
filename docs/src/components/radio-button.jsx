@@ -29,6 +29,16 @@ class RadioButtonDoc extends Component {
   render() {
     const componentData = _.find(components, component => component.displayName === 'RadioButton');
     const groupData = _.find(components, component => component.displayName === 'RadioButtonGroup');
+    const style = {
+      paper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        margin: 0,
+        padding: '20px'
+      },
+      radioButtonGroup: { margin: '10px' }
+    };
 
     return (
       <article className="doc">
@@ -43,11 +53,11 @@ class RadioButtonDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: 0 }}>
+          <Paper style={style.paper}>
             <RadioButtonGroup
               onChange={this.toggleRadio}
               value={this.state.value}
-              style={{ margin: '10px' }}
+              style={style.radioButtonGroup}
             >
               <RadioButton
                 label="Default checked"
