@@ -12,6 +12,16 @@ const usage = '```js\n import Divider from \'anchor-ui/divider\';';
 
 function DividerDoc() {
   const componentData = _.find(components, component => component.displayName === 'Divider');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    list: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -26,8 +36,8 @@ function DividerDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
-          <List>
+        <Paper style={style.paper}>
+          <List style={style.list}>
             <ListItem primaryText="ListItem" />
             <Divider text="Divider" />
             <ListItem primaryText="ListItem 2" />

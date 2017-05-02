@@ -10,6 +10,16 @@ const usage = '```js\n import Avatar from \'anchor-ui/avatar\';';
 
 function AvatarDoc() {
   const componentData = _.find(components, component => component.displayName === 'Avatar');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    avatar: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -24,9 +34,9 @@ function AvatarDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <Avatar style={{ margin: '10px' }} image="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
-          <Avatar style={{ margin: '10px' }} image="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400" />
+        <Paper style={style.paper}>
+          <Avatar style={style.avatar} image="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+          <Avatar style={style.avatar} image="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400" />
         </Paper>
       </section>
       <Props props={componentData.props} />
