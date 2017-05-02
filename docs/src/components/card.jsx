@@ -14,6 +14,16 @@ function CardDoc() {
   const componentData = _.find(components, component => component.displayName === 'Card');
   const headerData = _.find(components, component => component.displayName === 'CardHeader');
   const contentData = _.find(components, component => component.displayName === 'CardContent');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    card: { margin: '10px' }
+  };
 
   return (
     <article className="doc">
@@ -28,8 +38,8 @@ function CardDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0 }}>
-          <Card style={{ margin: '10px' }}>
+        <Paper style={style.paper}>
+          <Card style={style.card}>
             <CardHeader title="Title" />
             <CardContent>
               <p>Content</p>

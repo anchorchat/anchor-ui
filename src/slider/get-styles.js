@@ -32,10 +32,15 @@ function button(color = colors.theme, percentage, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
+function error(overrideStyle) {
+  return combineStyles(styles.error, overrideStyle);
+}
+
 export default {
   root,
   label,
   filled,
   remaining,
-  button
+  button,
+  error
 };

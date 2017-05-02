@@ -10,6 +10,12 @@ const usage = '```js\n import ProfileCard from \'anchor-ui/profile-card\';';
 
 function ProfileCardDoc() {
   const componentData = _.find(components, component => component.displayName === 'ProfileCard');
+  const style = {
+    paper: {
+      margin: 0,
+      padding: '20px'
+    }
+  };
 
   return (
     <article className="doc">
@@ -24,7 +30,7 @@ function ProfileCardDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <ProfileCard username="Sjaak" avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
         </Paper>
       </section>

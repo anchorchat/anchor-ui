@@ -13,6 +13,19 @@ const usage = '```js\n import ChannelHeader from \'anchor-ui/channel-header\';';
 
 function ChannelHeaderDoc() {
   const componentData = _.find(components, component => component.displayName === 'ChannelHeader');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    channelHeader: {
+      width: '100%',
+      margin: '10px'
+    }
+  };
 
   return (
     <article className="doc">
@@ -27,10 +40,10 @@ function ChannelHeaderDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <ChannelHeader
             name="Channel 1"
-            style={{ width: '100%' }}
+            style={style.channelHeader}
             rightButton={
               <Button iconButton onClick={() => {}}>
                 <IconPeople />

@@ -37,6 +37,17 @@ function ListDoc() {
       avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400'
     }
   ];
+
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    }
+  };
+
   return (
     <article className="doc">
       <h1>List</h1>
@@ -50,7 +61,7 @@ function ListDoc() {
       </section>
       <section>
         <h1>Examples</h1>
-        <Paper style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', margin: 0, padding: '20px' }}>
+        <Paper style={style.paper}>
           <List>
             {channels.map(channel => (
               <ListItem
