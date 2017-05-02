@@ -20,6 +20,8 @@ const styleSheet = {
     paddingRight: '48px',
     width: '100%',
     outline: 'none',
+    resize: 'none',
+    paddingTop: '13px',
     ':focus': {
       outline: 'none'
     },
@@ -42,7 +44,7 @@ const styleSheet = {
     position: 'absolute',
     right: '20px',
     top: '4px'
-  }
+  },
 };
 
 export default styleSheet;

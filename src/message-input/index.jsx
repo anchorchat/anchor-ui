@@ -49,7 +49,9 @@ class MessageInput extends Component {
     /** Ref function to the element */
     inputRef: PropTypes.func,
     /** Disables the input for the messageInput area */
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    /** Enable multiline messages */
+    multiline: PropTypes.bool
   }
 
   static defaultProps = {
@@ -57,7 +59,8 @@ class MessageInput extends Component {
     inputStyle: {},
     maxLength: 500,
     leftButton: null,
-    disabled: false
+    disabled: false,
+    multiline: false
   }
 
   static contextTypes = {
@@ -68,7 +71,6 @@ class MessageInput extends Component {
     super();
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -80,16 +82,10 @@ class MessageInput extends Component {
     );
   }
 
-  handleKeyPress(e) {
-    if (e.nativeEvent.keyCode === 13) {
-      if (this.nativeEvent.shiftKey);
-    }
-  }
-
   handleKeyDown(event) {
     const { sendMessage } = this.props;
 
-    if (event.which === 13) {
+    if (event.which === 13 && !event.shiftKey) {
       sendMessage();
     }
   }
@@ -106,10 +102,45 @@ class MessageInput extends Component {
       disabled,
       style,
       inputStyle,
+      multiline,
       ...custom
     } = this.props;
     const { color } = this.context;
     const iconColor = color || colors.theme;
+
+    let input = (
+      <input
+        style={getInputStyle(leftButton, inputStyle)}
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+        type="text"
+        onKeyDown={this.handleKeyDown}
+        maxLength={maxLength}
+        ref={inputRef}
+        disabled={disabled}
+        key="input"
+        {...custom}
+      />
+    );
+
+    if (multiline) {
+      input = (
+        <textarea
+          style={getInputStyle(leftButton, inputStyle)}
+          value={value}
+          onChange={onChange}
+          format="multiline"
+          placeholder={placeholder}
+          maxLength={maxLength}
+          onKeyDown={this.handleKeyDown}
+          ref={inputRef}
+          disabled={disabled}
+          key="input"
+          {...custom}
+        />
+      );
+    }
 
     return (
       <section style={combineStyles(styles.input, style)}>
@@ -120,20 +151,7 @@ class MessageInput extends Component {
           </div>
           : null
         }
-        <textarea
-          style={getInputStyle(leftButton, inputStyle)}
-          placeholder={placeholder}
-          onChange={onChange}
-          value={value}
-          type="text"
-          onKeyDown={this.handleKeyDown}
-          maxLength={maxLength}
-          ref={inputRef}
-          disabled={disabled}
-          key="input"
-          onKeyUp={this.handleKeyPress}
-          {...custom}
-        />
+        {input}
         <Button
           style={getButtonStyle(styles.rightButton, disabled)}
           iconButton
