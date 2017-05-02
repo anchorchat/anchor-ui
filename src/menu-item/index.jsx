@@ -2,25 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from '../style/menu-item';
-import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 import IconSuccess from '../icons/icon-success';
-
-function getStyle(themeColor, icon, active, overrideStyle) {
-  let style = styles.menuItem;
-  const color = themeColor || colors.theme;
-
-  if (icon) {
-    style = combineStyles(style, { paddingLeft: '40px' });
-  }
-
-  if (active) {
-    style = combineStyles(style, { color, paddingRight: '40px' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** General purpose menu item */
 class MenuItem extends Component {
@@ -89,14 +73,20 @@ class MenuItem extends Component {
     const { color } = this.context;
 
     return (
-      <section style={getStyle(color, icon, active, style)} onClick={this.handleClick} {...custom}>
-        {icon ? <div style={combineStyles(styles.icon, iconStyle)}>{icon}</div> : null}
-        <p style={combineStyles(styles.text, textStyle)}>
+      <section
+        style={getStyles.root(color, icon, active, style)}
+        onClick={this.handleClick}
+        {...custom}
+      >
+        {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
+        <p style={getStyles.text(textStyle)}>
           {text}
         </p>
         {
           active
-          ? <div style={styles.activeIcon}><IconSuccess color={color || colors.theme} /></div>
+          ? <div style={getStyles.activeIcon(iconStyle)}>
+            <IconSuccess color={color || colors.theme} />
+          </div>
           : null
         }
       </section>
