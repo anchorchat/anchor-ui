@@ -64,10 +64,7 @@ export default {
     width: 'auto',
     height: 'auto',
     maxWidth: '100%',
-    maxHeight: '300px',
-    // '@media screen and(maxWidth: 835px)': {
-    //   maxHeight: '100px'
-    // }
+    maxHeight: '200px',
   },
   messageTime: {
     width: '32px',
