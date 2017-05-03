@@ -10,7 +10,7 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: '54px',
+    height: '64px',
     listStyle: 'none',
     paddingTop: '10px',
     paddingRight: '10px',
@@ -52,7 +52,7 @@ export default {
   button: {
     position: 'absolute',
     right: '6px',
-    top: '6px',
+    top: '12px',
     transition: 'transform .3s ease-in-out'
   },
   primaryText: {
@@ -61,6 +61,7 @@ export default {
     margin: 0,
     lineHeight: '18px',
     userSelect: 'none',
+    whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis'
   },
@@ -70,8 +71,9 @@ export default {
     fontWeight: 'normal',
     marginBottom: 0,
     marginTop: '2.4px',
-    lineHeight: '16px',
+    lineHeight: '22px',
     userSelect: 'none',
+    whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis'
   },
@@ -81,7 +83,7 @@ export default {
   avatar: {
     position: 'absolute',
     left: '8px',
-    top: '6px'
+    top: '12px'
   },
   badge: {
     position: 'absolute',
