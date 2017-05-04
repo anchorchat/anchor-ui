@@ -5,7 +5,7 @@ const styleSheet = {
     backgroundColor: colors.theme,
     color: colors.white,
     fontSize: '10px',
-    lineHeight: '10px',
+    lineHeight: '23px',
     padding: '3px',
     textAlign: 'center',
     borderRadius: '3px',
