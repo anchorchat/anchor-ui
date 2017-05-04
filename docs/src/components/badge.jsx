@@ -35,8 +35,22 @@ function BadgeDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <Badge style={style.badge} inverted value={10} maxValue={9} />
-          <Badge style={style.badge} value={10} maxValue={9} />
+          <Badge
+            style={style.badge}
+            value={9}
+            maxValue={9}
+          />
+          <Badge
+            style={style.badge}
+            value={10}
+            maxValue={9}
+          />
+          <Badge
+            style={style.badge}
+            value={10}
+            maxValue={9}
+            inverted
+          />
         </Paper>
       </section>
       <Props props={componentData.props} />
