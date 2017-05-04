@@ -41,12 +41,38 @@ function ButtonDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <Button style={style.button} onClick={() => {}}><p>Click me</p></Button>
-          <Button style={style.button} inverted onClick={() => {}}><p>Click me</p></Button>
-          <Button style={style.flatbutton} flatButton onClick={() => {}}>
-            <p>Click me</p>
+          <Button
+            style={style.button}
+            onClick={() => {}}
+          >
+            <p>Default</p>
           </Button>
-          <Button style={style.button} iconButton onClick={() => {}}>
+          <Button
+            style={style.button}
+            onClick={() => {}}
+            inverted
+          >
+            <p>Inverted</p>
+          </Button>
+          <Button
+            style={style.button}
+            onClick={() => {}}
+            disabled
+          >
+            <p>Disabled</p>
+          </Button>
+          <Button
+            style={style.flatbutton}
+            onClick={() => {}}
+            flatButton
+          >
+            <p>Flatbutton</p>
+          </Button>
+          <Button
+            style={style.button}
+            onClick={() => {}}
+            iconButton
+          >
             <IconEmoji />
           </Button>
         </Paper>
