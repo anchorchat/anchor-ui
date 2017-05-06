@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
+import styles from './styles';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
+import getStyles from './get-styles';
 import Overlay from '../overlay';
 
 /** General purpose dialog */
@@ -29,7 +31,7 @@ class Lightbox extends Component {
   static defaultProps = {
     style: {},
     overlayStyle: {},
-    iconColor: colors.white,
+    iconColor: colors.grey,
     open: false
   }
 
@@ -57,12 +59,12 @@ class Lightbox extends Component {
 
     return (
       <Overlay style={overlayStyle}>
-        <section onClick={hideLightbox} />
-        <section style={style} {...custom}>
-          <Button onClick={hideLightbox} iconButton>
+        <section style={styles.clickAway} onClick={hideLightbox} />
+        <section style={getStyles.root(style)} {...custom}>
+          <Button style={styles.closeButton} onClick={hideLightbox} iconButton>
             <IconClose color={iconColor} />
           </Button>
-          <img src={image} alt="lightbox" />
+          <img style={styles.image} src={image} alt="lightbox" />
         </section>
       </Overlay>
     );
