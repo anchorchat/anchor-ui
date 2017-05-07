@@ -58,10 +58,10 @@ class InputDoc extends Component {
         display: 'flex',
         flexDirection: 'column',
         margin: 0,
-        padding: '20px'
+        padding: '20px',
+        backgroundColor: 'rgba(45, 55, 104, 0.75)'
       },
-      input: { margin: '10px' },
-      inputStyle: { backgroundColor: 'rgba(45, 55, 104, 0.75)' }
+      input: { margin: '10px' }
     };
 
     return (
@@ -85,7 +85,6 @@ class InputDoc extends Component {
               label="Default value example"
               name="example"
               style={style.input}
-              inputStyle={style.inputStyle}
             />
             <Input
               onChange={this.handleChangeText}
@@ -95,7 +94,6 @@ class InputDoc extends Component {
               label="Text example"
               name="exampleText"
               style={style.input}
-              inputStyle={style.inputStyle}
             />
             <Input
               onChange={this.handleChangeMaxLength}
@@ -106,7 +104,6 @@ class InputDoc extends Component {
               name="exampleMaxLength"
               maxLength={3}
               style={style.input}
-              inputStyle={style.inputStyle}
             />
             <Input
               onChange={() => {}}
@@ -116,7 +113,6 @@ class InputDoc extends Component {
               label="Disabled example"
               name="exampleDisabled"
               style={style.input}
-              inputStyle={style.inputStyle}
               disabled
             />
             <Input
@@ -128,7 +124,6 @@ class InputDoc extends Component {
               name="exampleError"
               error="Error message"
               style={style.input}
-              inputStyle={style.inputStyle}
             />
           </Paper>
         </section>
