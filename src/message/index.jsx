@@ -13,6 +13,7 @@ import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
+import Lightbox from '../lightbox';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -85,12 +86,14 @@ class Message extends Component {
     this.state = {
       open: false,
       positioned: false,
-      position: {}
+      position: {},
+      lightbox: false
     };
 
     this.handlePress = this.handlePress.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
     this.renderMenuItems = this.renderMenuItems.bind(this);
+    this.toggleLightbox = this.toggleLightbox.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -163,11 +166,17 @@ class Message extends Component {
     });
   }
 
+  toggleLightbox() {
+    this.setState({
+      lightbox: !this.state.lightbox
+    });
+  }
+
   renderMessageBody() {
     const { emoji, message } = this.props;
 
     if (message.type === 'image') {
-      return <img style={styles.messageImage} src={message.body} alt="user-upload" />;
+      return <img onClick={this.toggleLightbox} style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
 
     if (emoji) {
@@ -201,6 +210,22 @@ class Message extends Component {
           {menuItemsWithProps}
         </PopOver>
       </div>
+    );
+  }
+
+  renderLightbox(message) {
+    const { lightbox } = this.state;
+
+    if (message.type !== 'image') {
+      return null;
+    }
+
+    return (
+      <Lightbox
+        open={lightbox}
+        image={message.body}
+        hideLightbox={this.toggleLightbox}
+      />
     );
   }
 
@@ -264,6 +289,7 @@ class Message extends Component {
             </span>
           </p>
           {this.renderMenuItems()}
+          {this.renderLightbox(message)}
         </Tappable>
       </section>
     );
