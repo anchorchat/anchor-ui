@@ -2571,6 +2571,73 @@
       }
     }
   },
+  "components/lightbox/index.jsx": {
+    "description": "Lightbox for images",
+    "displayName": "Lightbox",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "overlayStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the overlay element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "hideLightbox": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Function to hide dialog element"
+      },
+      "image": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Link to the image"
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The close button's icon color",
+        "defaultValue": {
+          "value": "colors.grey",
+          "computed": true
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the Lightboxs visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/list/index.jsx": {
     "description": "A wrapper for ListItems",
     "displayName": "List",
@@ -3095,6 +3162,13 @@
         "returns": null
       },
       {
+        "name": "toggleLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "renderMessageBody",
         "docblock": null,
         "modifiers": [],
@@ -3106,6 +3180,18 @@
         "docblock": null,
         "modifiers": [],
         "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "message",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],

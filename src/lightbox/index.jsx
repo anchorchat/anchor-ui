@@ -9,7 +9,7 @@ import colors from '../settings/colors';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
 
-/** General purpose dialog */
+/** Lightbox for images */
 class Lightbox extends Component {
   static displayName = 'Lightbox'
 
