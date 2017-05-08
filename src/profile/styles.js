@@ -58,7 +58,8 @@ export default {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    display: 'table'
   },
   secondaryText: {
     fontSize: '16px',
@@ -68,6 +69,7 @@ export default {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    display: 'table'
   }
 };
