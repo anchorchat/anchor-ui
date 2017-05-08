@@ -170,16 +170,26 @@ class Message extends Component {
   }
 
   toggleLightbox() {
-    this.setState({
+    const { enableLightbox } = this.props;
+
+    if (!enableLightbox) {
+      return false;
+    }
+
+    return this.setState({
       lightbox: !this.state.lightbox
     });
   }
 
   renderMessageBody() {
-    const { emoji, message } = this.props;
+    const { emoji, message, enableLightbox } = this.props;
 
     if (message.type === 'image') {
-      return <img onClick={this.toggleLightbox} style={styles.messageImage} src={message.body} alt="user-upload" />;
+      if (enableLightbox) {
+        return <img onClick={this.toggleLightbox} style={styles.messageImage} src={message.body} alt="user-upload" />;
+      }
+
+      return <img style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
 
     if (emoji) {
@@ -248,6 +258,7 @@ class Message extends Component {
       emoji, // eslint-disable-line no-unused-vars
       enableLinks, // eslint-disable-line no-unused-vars
       menuItems, // eslint-disable-line no-unused-vars
+      enableLightbox, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
     const { color } = this.context;
