@@ -60,8 +60,7 @@ class InputDoc extends Component {
         margin: 0,
         padding: '20px'
       },
-      input: { margin: '10px' },
-      inputStyle: { backgroundColor: 'rgba(45, 55, 104, 0.75)' }
+      input: { margin: '10px' }
     };
 
     return (
@@ -85,7 +84,6 @@ class InputDoc extends Component {
               label="Default value example"
               name="example"
               style={style.input}
-              inputStyle={style.inputStyle}
             />
             <Input
               onChange={this.handleChangeText}
@@ -95,7 +93,6 @@ class InputDoc extends Component {
               label="Text example"
               name="exampleText"
               style={style.input}
-              inputStyle={style.inputStyle}
             />
             <Input
               onChange={this.handleChangeMaxLength}
@@ -106,7 +103,6 @@ class InputDoc extends Component {
               name="exampleMaxLength"
               maxLength={3}
               style={style.input}
-              inputStyle={style.inputStyle}
             />
             <Input
               onChange={() => {}}

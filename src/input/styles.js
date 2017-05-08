@@ -7,7 +7,7 @@ export default {
   },
   input: {
     appearance: 'none',
-    backgroundColor: colors.inputs,
+    backgroundColor: 'rgba(45, 55, 104, 0.75)',
     border: '0',
     borderRadius: '3px',
     boxSizing: 'border-box',
