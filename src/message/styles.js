@@ -64,7 +64,7 @@ export default {
     width: 'auto',
     height: 'auto',
     maxWidth: '100%',
-    maxHeight: '400px'
+    maxHeight: '200px',
   },
   messageTime: {
     width: '32px',
