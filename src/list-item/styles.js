@@ -89,5 +89,8 @@ export default {
     position: 'absolute',
     right: '-3px',
     top: '-3px'
+  },
+  container: {
+    width: '100%'
   }
 };
