@@ -3393,6 +3393,17 @@
           "value": "null",
           "computed": false
         }
+      },
+      "enableLightbox": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables Lighbox for image messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },
