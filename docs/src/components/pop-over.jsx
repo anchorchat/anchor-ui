@@ -23,7 +23,8 @@ function PopOverDoc() {
     iconMenu: {
       width: '40px',
       margin: '10px'
-    }
+    },
+    headerStyle: { textTransform: 'capitalize' }
   };
 
   return (
@@ -44,7 +45,7 @@ function PopOverDoc() {
             style={style.iconMenu}
             icon={<IconLanguage />}
             header="Language"
-            headerStyle={{ textTransform: 'capitalize' }}
+            headerStyle={style.headerStyle}
             secondaryMenuItems={[<MenuItem text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
             dividerText="More items"
           >
