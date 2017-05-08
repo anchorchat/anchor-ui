@@ -78,12 +78,14 @@ class Profile extends Component {
           <section style={styles.coverOverlay} />
           {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
         </section>
-        <h1 style={getStyles.header(headerStyle)}>{header}</h1>
-        {
-          secondaryText
-          ? <p style={getStyles.secondaryText(secondaryTextStyle)}>{secondaryText}</p>
-          : null
-        }
+        <section>
+          <h1 style={getStyles.header(headerStyle)}>{header}</h1>
+          {
+            secondaryText
+            ? <p style={getStyles.secondaryText(secondaryTextStyle)}>{secondaryText}</p>
+            : null
+          }
+        </section>
         {button}
         {children}
       </section>
