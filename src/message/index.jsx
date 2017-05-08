@@ -58,7 +58,9 @@ class Message extends Component {
     /** Enables compact messages */
     compact: PropTypes.bool,
     /** Enables PopOver with MenuItems */
-    menuItems: PropTypes.node
+    menuItems: PropTypes.node,
+    /** Enables Lighbox for image messages */
+    enableLightbox: PropTypes.bool
   }
 
   static defaultProps = {
@@ -73,7 +75,8 @@ class Message extends Component {
     emoji: false,
     enableLinks: false,
     compact: false,
-    menuItems: null
+    menuItems: null,
+    enableLightbox: false
   }
 
   static contextTypes = {
@@ -215,8 +218,9 @@ class Message extends Component {
 
   renderLightbox(message) {
     const { lightbox } = this.state;
+    const { enableLightbox } = this.props;
 
-    if (message.type !== 'image') {
+    if (message.type !== 'image' && !enableLightbox) {
       return null;
     }
 
