@@ -11,7 +11,7 @@ import Paper from '../../../dist/paper';
 const usage = '```js\n import Lightbox from \'anchor-ui/message\';';
 
 const message = {
-  body: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+  body: 'https://source.unsplash.com/random/375x667',
   createdAt: new Date(),
   username: 'Sjaak',
   avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
@@ -30,7 +30,7 @@ function LightboxDoc() {
     list: {
       backgroundImage: `url(${background})`,
       backgroundSize: '500px',
-      height: '475px'
+      height: '495px'
     }
   };
 
