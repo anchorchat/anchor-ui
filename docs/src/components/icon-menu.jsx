@@ -23,7 +23,8 @@ function IconMenuDoc() {
     iconMenu: {
       width: '40px',
       margin: '10px'
-    }
+    },
+    headerStyle: { textTransform: 'capitalize' }
   };
 
   return (
@@ -44,7 +45,7 @@ function IconMenuDoc() {
             style={style.iconMenu}
             icon={<IconRocket />}
             header="Items"
-            headerStyle={{ textTransform: 'capitalize' }}
+            headerStyle={style.headerStyle}
             secondaryMenuItems={[<MenuItem icon={<IconRocket />} text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
             dividerText="More items"
           >
