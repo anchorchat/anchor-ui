@@ -1,4 +1,4 @@
-const styleSheet = {
+export default {
   iconMenu: {
     position: 'relative'
   },
@@ -13,5 +13,3 @@ const styleSheet = {
     opacity: 0
   }
 };
-
-export default styleSheet;

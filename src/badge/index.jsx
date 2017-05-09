@@ -2,22 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
-import styles from '../style/badges';
-import colors from '../settings/colors';
-import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, inverted, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  const style = combineStyles(styles.badge, { backgroundColor: color });
-  const invertedStyle = combineStyles(styles.inverted, { color });
-
-  if (inverted) {
-    return combineStyles(combineStyles(style, invertedStyle), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
+import getStyles from './get-styles';
 
 /** Used for displaying a (notification) counter */
 class Badge extends Component {
@@ -62,7 +47,7 @@ class Badge extends Component {
     }
 
     return (
-      <span style={getStyle(color, inverted, style)} {...custom}>
+      <span style={getStyles.root(color, inverted, style)} {...custom}>
         {content}
       </span>
     );

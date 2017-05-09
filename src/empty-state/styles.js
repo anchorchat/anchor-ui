@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   emptyState: {
     alignItems: 'center',
     backgroundPosition: 'center bottom',
@@ -28,5 +28,3 @@ const styleSheet = {
     maxWidth: '100%'
   }
 };
-
-export default styleSheet;
