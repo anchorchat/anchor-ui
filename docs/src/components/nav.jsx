@@ -27,6 +27,7 @@ function Nav(props, context) {
         <Link to="/icons"><ListItem active={router.isActive('/icons')} primaryText="Icons" /></Link>
         <Link to="/icon-menu"><ListItem active={router.isActive('/icon-menu')} primaryText="IconMenu" /></Link>
         <Link to="/input"><ListItem active={router.isActive('/input')} primaryText="Input" /></Link>
+        <Link to="/lightbox"><ListItem active={router.isActive('/lightbox')} primaryText="Lightbox" /></Link>
         <Link to="/list"><ListItem active={router.isActive('/list')} primaryText="List" /></Link>
         <Link to="/list-item"><ListItem active={router.isActive('/list-item')} primaryText="ListItem" /></Link>
         <Link to="/loader"><ListItem active={router.isActive('/loader')} primaryText="Loader" /></Link>
