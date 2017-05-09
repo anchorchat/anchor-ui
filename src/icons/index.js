@@ -52,3 +52,4 @@ export IconRules from './icon-rules';
 export IconQuestion from './icon-question';
 export IconDelete from './icon-delete';
 export IconAdmin from './icon-admin';
+export IconNotification from './icon-notification';
