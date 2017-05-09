@@ -183,13 +183,14 @@ class Message extends Component {
 
   renderMessageBody() {
     const { emoji, message, enableLightbox } = this.props;
+    let onClick = null;
+
+    if (enableLightbox) {
+      onClick = this.toggleLightbox;
+    }
 
     if (message.type === 'image') {
-      if (enableLightbox) {
-        return <img onClick={this.toggleLightbox} style={styles.messageImage} src={message.body} alt="user-upload" />;
-      }
-
-      return <img style={styles.messageImage} src={message.body} alt="user-upload" />;
+      return <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
 
     if (emoji) {
@@ -258,7 +259,7 @@ class Message extends Component {
       emoji, // eslint-disable-line no-unused-vars
       enableLinks, // eslint-disable-line no-unused-vars
       menuItems, // eslint-disable-line no-unused-vars
-      enableLightbox, // eslint-disable-line no-unused-vars
+      enableLightbox,
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -304,7 +305,7 @@ class Message extends Component {
             </span>
           </p>
           {this.renderMenuItems()}
-          {this.renderLightbox(message)}
+          {enableLightbox ? this.renderLightbox(message) : null}
         </Tappable>
       </section>
     );
