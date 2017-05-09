@@ -15,15 +15,23 @@ class MessageInputDoc extends React.Component {
     super();
 
     this.state = {
-      name: ''
+      name: '',
+      nameMultiline: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeMultiLine = this.handleChangeMultiLine.bind(this);
   }
 
   handleChange(name) {
     this.setState({
       name: name.target.value
+    });
+  }
+
+  handleChangeMultiLine(nameMultiline) {
+    this.setState({
+      nameMultiline: nameMultiline.target.value
     });
   }
 
@@ -41,6 +49,9 @@ class MessageInputDoc extends React.Component {
         paddingTop: 0,
         paddingBottom: 0,
         margin: '10px'
+      },
+      multiline: {
+        marginTop: '19px'
       }
     };
 
@@ -72,9 +83,9 @@ class MessageInputDoc extends React.Component {
             />
 
             <MessageInput
-              onChange={this.handleChange}
+              onChange={this.handleChangeMultiLine}
               placeholder="Type multiline..."
-              value={this.state.name}
+              value={this.state.nameMultiline}
               sendMessage={() => {}}
               leftButton={
                 <Button iconButton onClick={() => {}}>
