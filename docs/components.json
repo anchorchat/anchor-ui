@@ -1412,6 +1412,17 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "onMenuClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback function fired when the IconMenu closes",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       }
     }
   },
