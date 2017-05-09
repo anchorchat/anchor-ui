@@ -4,12 +4,12 @@ import darken from '../internal/darken';
 import styles from './styles';
 
 function root(themeColor, active, rightButton, avatar, overrideStyle) {
-  let style = styles.listItem;
+  let style = styles.root;
 
   const color = themeColor || colors.theme;
 
   const activeStyle = combineStyles(
-    styles.listItem,
+    styles.root,
     {
       backgroundColor: color,
       ':hover': { backgroundColor: darken(color, 0.05) },

@@ -7,7 +7,7 @@ export default {
   },
   input: {
     appearance: 'none',
-    backgroundColor: colors.inputs,
+    backgroundColor: 'rgba(45, 55, 104, 0.75)',
     border: '0',
     borderRadius: '3px',
     boxSizing: 'border-box',
@@ -23,7 +23,7 @@ export default {
   },
   label: {
     boxSizing: 'border-box',
-    color: colors.white,
+    color: colors.primaryText,
     display: 'block',
     paddingBottom: '8px',
     paddingLeft: '8px',

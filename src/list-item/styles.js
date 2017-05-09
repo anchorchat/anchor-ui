@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 
 export default {
-  listItem: {
+  root: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
     borderTop: `1px solid ${colors.white}`,
@@ -89,5 +89,8 @@ export default {
     position: 'absolute',
     right: '-3px',
     top: '-3px'
+  },
+  container: {
+    width: '100%'
   }
 };
