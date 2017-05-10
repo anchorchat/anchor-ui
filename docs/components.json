@@ -292,7 +292,7 @@
           ]
         },
         "required": false,
-        "description": "A user's status. One of the following: [\"online\", \"away\", \"offline\"]",
+        "description": "An user's status. One of the following: [\"online\", \"away\", \"offline\"]",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -4062,6 +4062,35 @@
         "description": "Override the styles of the avatar element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "status": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'online'",
+              "computed": false
+            },
+            {
+              "value": "'away'",
+              "computed": false
+            },
+            {
+              "value": "'offline'",
+              "computed": false
+            },
+            {
+              "value": "''",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "An user's status. One of the following: [\"online\", \"away\", \"offline\"]",
+        "defaultValue": {
+          "value": "''",
           "computed": false
         }
       }
