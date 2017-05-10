@@ -7,6 +7,17 @@ export default {
     borderRadius: '50%',
     height: '40px',
     width: '40px',
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
+    position: 'relative'
+  },
+  status: {
+    width: '10px',
+    height: '10px',
+    border: `1px solid ${colors.white}`,
+    backgroundColor: colors.online,
+    borderRadius: '50%',
+    position: 'absolute',
+    right: 0,
+    top: 0
   }
 };
