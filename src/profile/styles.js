@@ -56,7 +56,10 @@ export default {
     marginBottom: '8px',
     color: colors.primaryText,
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    minHeight: '22px'
   },
   secondaryText: {
     fontSize: '16px',
@@ -64,6 +67,9 @@ export default {
     marginBottom: '16px',
     color: colors.grey,
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    minHeight: '20px'
   }
 };
