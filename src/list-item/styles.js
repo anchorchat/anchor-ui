@@ -60,13 +60,12 @@ export default {
     color: colors.primaryText,
     fontSize: '16px',
     margin: 0,
-    lineHeight: '18px',
+    lineHeight: '16px',
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    position: 'relative',
-    top: '-2.5px'
+    paddingBottom: '1px'
   },
   secondaryText: {
     color: colors.primaryText,
@@ -75,6 +74,7 @@ export default {
     margin: 0,
     lineHeight: '14px',
     userSelect: 'none',
+    paddingTop: '2px'
   },
   leftAvatar: {
     paddingLeft: '56px'
