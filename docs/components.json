@@ -268,6 +268,47 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "status": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'online'",
+              "computed": false
+            },
+            {
+              "value": "'away'",
+              "computed": false
+            },
+            {
+              "value": "'offline'",
+              "computed": false
+            },
+            {
+              "value": "''",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "A user's status. One of the following: [\"online\", \"away\", \"offline\"]",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "statusStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the status indicator",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },

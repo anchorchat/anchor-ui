@@ -16,7 +16,10 @@ const colors = {
     info: '#CDE8F5'
   },
   inputs: 'rgba(254,254,254, 0.1)',
-  error: '#FD2A43'
+  error: '#FD2A43',
+  online: '#54D38A',
+  away: '#F6A623',
+  offline: '#D0011B'
 };
 
 export default colors;
