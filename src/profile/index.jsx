@@ -83,7 +83,7 @@ class Profile extends Component {
           secondaryText
           ? <p style={getStyles.secondaryText(secondaryTextStyle)}>{secondaryText}</p>
           : null
-          }
+        }
         {button}
         {children}
       </section>

@@ -55,21 +55,15 @@ export default {
     marginTop: '16px',
     marginBottom: '8px',
     color: colors.primaryText,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
     width: '100%',
-    textAlign: 'center',
-    display: 'table'
+    textAlign: 'center'
   },
   secondaryText: {
     fontSize: '16px',
     marginTop: 0,
     marginBottom: '16px',
     color: colors.grey,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
     width: '100%',
-    textAlign: 'center',
-    display: 'table'
+    textAlign: 'center'
   }
 };
