@@ -69,5 +69,12 @@ export default {
     textOverflow: 'ellipsis',
     width: '100%',
     textAlign: 'center'
+  },
+  status: {
+    width: '15px',
+    height: '15px',
+    border: `2px solid ${colors.white}`,
+    top: '10px',
+    right: '10px'
   }
 };
