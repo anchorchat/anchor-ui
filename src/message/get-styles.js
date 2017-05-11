@@ -68,6 +68,10 @@ function text(myMessage, fontSize, type = 'text', overrideStyle) {
     style = combineStyles(style, { flexDirection: 'column' });
   }
 
+  if (type === 'sticker') {
+    style = combineStyles(style, { flexDirection: 'column' });
+  }
+
   return combineStyles(style, overrideStyle);
 }
 

@@ -6,14 +6,13 @@ import emojione from 'emojione';
 import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
 import Tappable from 'react-tappable/lib/Tappable';
-import Avatar from '../avatar';
 import styles from './styles';
 import getStyles from './get-styles';
 import urlRegex from '../url-regex';
-import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 import Lightbox from '../lightbox';
+import MessageHeader from './message-header';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -35,7 +34,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker'])
     }).isRequired,
     /** The format of displaying message.createdAt */
     timeFormat: PropTypes.string,
@@ -193,6 +192,10 @@ class Message extends Component {
       return <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
 
+    if (message.type === 'sticker') {
+      return <img style={styles.messageSticker} src={message.body} alt="user-upload" />;
+    }
+
     if (emoji) {
       return <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />;
     }
@@ -264,17 +267,6 @@ class Message extends Component {
     } = this.props;
     const { color } = this.context;
 
-    const avatarStyle = {
-      position: 'absolute',
-      left: '-66px',
-      top: '0'
-    };
-
-    if (myMessage) {
-      avatarStyle.left = 'initial';
-      avatarStyle.right = '-66px';
-    }
-
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
         <Tappable
@@ -282,19 +274,14 @@ class Message extends Component {
           onPress={this.handlePress}
           style={getStyles.root(color, myMessage, avatar, compact, style)}
         >
-          {
-            compact
-            ? null
-            : <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
-          }
-          {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
-          <header
-            style={
-              getStyles.header(myMessage, compact, fontSize, messageHeaderStyle)
-            }
-          >
-            {message.username}
-          </header>
+          <MessageHeader
+            avatar={avatar}
+            compact={compact}
+            myMessage={myMessage}
+            fontSize={fontSize}
+            headerStyle={messageHeaderStyle}
+            username={message.username}
+          />
           <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
             {this.renderMessageBody()}
             <span

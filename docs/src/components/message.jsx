@@ -32,6 +32,22 @@ const messages = [
     avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
     id: 3
   },
+  {
+    body: 'https://telegram.org/file/811140066/1/7fM-CwKk4F0/53f9f1fc731c63547d',
+    createdAt: new Date(),
+    username: 'Lars',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 4,
+    type: 'sticker'
+  },
+  {
+    body: 'https://telegram.org/file/811140750/1/KwtOAxwo1SA/452620c767366798d3',
+    createdAt: new Date(),
+    username: 'Sjaak',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 5,
+    type: 'sticker'
+  },
 ];
 
 const currentUser = 'Sjaak';

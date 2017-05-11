@@ -66,6 +66,9 @@ export default {
     maxWidth: '100%',
     maxHeight: '200px',
   },
+  messageSticker: {
+    width: '120px'
+  },
   messageTime: {
     width: '32px',
     color: 'currentColor',
