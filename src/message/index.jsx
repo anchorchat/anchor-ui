@@ -5,7 +5,6 @@ import Radium from 'radium';
 import emojione from 'emojione';
 import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
-import Tappable from 'react-tappable/lib/Tappable';
 import styles from './styles';
 import getStyles from './get-styles';
 import urlRegex from '../url-regex';
@@ -92,7 +91,6 @@ class Message extends Component {
       lightbox: false
     };
 
-    this.handlePress = this.handlePress.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
     this.renderMenuItems = this.renderMenuItems.bind(this);
     this.toggleLightbox = this.toggleLightbox.bind(this);
@@ -147,18 +145,6 @@ class Message extends Component {
     return {
       __html: emojione.toImage(parsedText)
     };
-  }
-
-  handlePress() {
-    const { menuItems } = this.props;
-
-    if (!menuItems) {
-      return false;
-    }
-
-    return this.setState({
-      open: true
-    });
   }
 
   closeMenu() {
@@ -269,11 +255,7 @@ class Message extends Component {
 
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
-        <Tappable
-          pressDelay={500}
-          onPress={this.handlePress}
-          style={getStyles.root(color, myMessage, avatar, compact, style)}
-        >
+        <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
           <MessageHeader
             avatar={avatar}
             compact={compact}
@@ -284,16 +266,13 @@ class Message extends Component {
           />
           <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
             {this.renderMessageBody()}
-            <span
-              ref={button => (this.button = button)}
-              style={getStyles.time(myMessage, message.type, messageTimeStyle)}
-            >
+            <span style={getStyles.time(myMessage, message.type, messageTimeStyle)}>
               {format(message.createdAt, timeFormat)}
             </span>
           </p>
           {this.renderMenuItems()}
           {enableLightbox ? this.renderLightbox(message) : null}
-        </Tappable>
+        </div>
       </section>
     );
   }
