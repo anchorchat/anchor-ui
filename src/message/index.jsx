@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import emojione from 'emojione';
-import escape from 'escape-html';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from './styles';
 import getStyles from './get-styles';
-import urlRegex from '../url-regex';
-import PopOver from '../pop-over';
-import getPopOverPosition from '../internal/get-pop-over-position';
 import Lightbox from '../lightbox';
-import MessageHeader from './message-header';
-import MessageTime from './message-time';
+import TextMessage from './text-message';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -91,8 +85,6 @@ class Message extends Component {
       lightbox: false
     };
 
-    this.closeMenu = this.closeMenu.bind(this);
-    this.renderMenuItems = this.renderMenuItems.bind(this);
     this.toggleLightbox = this.toggleLightbox.bind(this);
   }
 
@@ -102,56 +94,6 @@ class Message extends Component {
       !shallowEqual(this.state, nextState) ||
       !shallowEqual(this.context, nextContext)
     );
-  }
-
-  componentDidUpdate() {
-    const { open, positioned } = this.state;
-    const { menuItems } = this.props;
-
-    if (menuItems && open && !positioned) {
-      this.positionPopOver();
-    }
-  }
-
-  positionPopOver() {
-    const button = this.button.getBoundingClientRect();
-    const popOver = this.popOver.getBoundingClientRect();
-
-    this.setState({
-      positioned: true,
-      position: getPopOverPosition(button, popOver)
-    });
-  }
-
-  createMarkup(text) {
-    const { enableLinks } = this.props;
-
-    const escapedText = escape(text);
-
-    let parsedText = escapedText;
-
-    if (enableLinks) {
-      const urlSchemeRegex = /^(?:https?:\/\/)/;
-
-      parsedText = escapedText.replace(urlRegex, (url) => {
-        if (!urlSchemeRegex.test(url)) {
-          // Add default http:// scheme for urls like example.com
-          return (`<a href="http://${url}" target="_blank">${url}</a>`);
-        }
-        return (`<a href="${url}" target="_blank">${url}</a>`);
-      });
-    }
-
-    return {
-      __html: emojione.toImage(parsedText)
-    };
-  }
-
-  closeMenu() {
-    this.setState({
-      open: false,
-      positioned: false
-    });
   }
 
   toggleLightbox() {
@@ -187,33 +129,6 @@ class Message extends Component {
     }
 
     return message.body;
-  }
-
-  renderMenuItems() {
-    const { menuItems } = this.props;
-    const { open, position } = this.state;
-
-    if (!menuItems) {
-      return null;
-    }
-
-    const menuItemsWithProps = React.Children.map(
-      menuItems, child => React.cloneElement(child, { closeMenu: this.closeMenu })
-    );
-
-    return (
-      <div>
-        {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
-        <PopOver
-          open={open}
-          popOverRef={popOver => (this.popOver = popOver)}
-          position={position}
-          onScroll={this.closeMenu}
-        >
-          {menuItemsWithProps}
-        </PopOver>
-      </div>
-    );
   }
 
   renderLightbox(message) {
@@ -253,30 +168,25 @@ class Message extends Component {
     } = this.props;
     const { color } = this.context;
 
+    let onClick = null;
+
+    if (enableLightbox) {
+      onClick = this.toggleLightbox;
+    }
+
+    let messageElement = <TextMessage color={color} {...this.props} />;
+
+    if (message.type === 'image') {
+      messageElement = <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />;
+    }
+
+    if (message.type === 'sticker') {
+      messageElement = <img style={styles.messageSticker} src={message.body} alt="user-upload" />;
+    }
+
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
-        <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
-          <MessageHeader
-            avatar={avatar}
-            compact={compact}
-            myMessage={myMessage}
-            fontSize={fontSize}
-            headerStyle={messageHeaderStyle}
-            username={message.username}
-          />
-          <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
-            {this.renderMessageBody()}
-            <MessageTime
-              myMessage={myMessage}
-              type={message.type}
-              style={messageTimeStyle}
-              createdAt={message.createdAt}
-              timeFormat={timeFormat}
-            />
-          </p>
-          {this.renderMenuItems()}
-          {enableLightbox ? this.renderLightbox(message) : null}
-        </div>
+        {messageElement}
       </section>
     );
   }

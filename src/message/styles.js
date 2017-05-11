@@ -67,7 +67,8 @@ export default {
     maxHeight: '200px',
   },
   messageSticker: {
-    width: '120px'
+    width: 'auto',
+    height: '120px'
   },
   messageTime: {
     width: '32px',
