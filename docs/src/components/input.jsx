@@ -58,8 +58,7 @@ class InputDoc extends Component {
         display: 'flex',
         flexDirection: 'column',
         margin: 0,
-        padding: '20px',
-        backgroundColor: 'rgba(45, 55, 104, 0.75)'
+        padding: '20px'
       },
       input: { margin: '10px' }
     };
@@ -113,6 +112,7 @@ class InputDoc extends Component {
               label="Disabled example"
               name="exampleDisabled"
               style={style.input}
+              inputStyle={style.inputStyle}
               disabled
             />
             <Input
@@ -124,6 +124,7 @@ class InputDoc extends Component {
               name="exampleError"
               error="Error message"
               style={style.input}
+              inputStyle={style.inputStyle}
             />
           </Paper>
         </section>

@@ -146,7 +146,7 @@ class ListItem extends Component {
     }
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={styles.container}>
         <li key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
           {
             avatar

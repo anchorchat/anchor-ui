@@ -13,6 +13,7 @@ import urlRegex from '../url-regex';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
+import Lightbox from '../lightbox';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -57,7 +58,9 @@ class Message extends Component {
     /** Enables compact messages */
     compact: PropTypes.bool,
     /** Enables PopOver with MenuItems */
-    menuItems: PropTypes.node
+    menuItems: PropTypes.node,
+    /** Enables Lighbox for image messages */
+    enableLightbox: PropTypes.bool
   }
 
   static defaultProps = {
@@ -72,7 +75,8 @@ class Message extends Component {
     emoji: false,
     enableLinks: false,
     compact: false,
-    menuItems: null
+    menuItems: null,
+    enableLightbox: false
   }
 
   static contextTypes = {
@@ -85,12 +89,14 @@ class Message extends Component {
     this.state = {
       open: false,
       positioned: false,
-      position: {}
+      position: {},
+      lightbox: false
     };
 
     this.handlePress = this.handlePress.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
     this.renderMenuItems = this.renderMenuItems.bind(this);
+    this.toggleLightbox = this.toggleLightbox.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -163,11 +169,28 @@ class Message extends Component {
     });
   }
 
+  toggleLightbox() {
+    const { enableLightbox } = this.props;
+
+    if (!enableLightbox) {
+      return false;
+    }
+
+    return this.setState({
+      lightbox: !this.state.lightbox
+    });
+  }
+
   renderMessageBody() {
-    const { emoji, message } = this.props;
+    const { emoji, message, enableLightbox } = this.props;
+    let onClick = null;
+
+    if (enableLightbox) {
+      onClick = this.toggleLightbox;
+    }
 
     if (message.type === 'image') {
-      return <img style={styles.messageImage} src={message.body} alt="user-upload" />;
+      return <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />;
     }
 
     if (emoji) {
@@ -204,6 +227,23 @@ class Message extends Component {
     );
   }
 
+  renderLightbox(message) {
+    const { lightbox } = this.state;
+    const { enableLightbox } = this.props;
+
+    if (message.type !== 'image' && !enableLightbox) {
+      return null;
+    }
+
+    return (
+      <Lightbox
+        open={lightbox}
+        image={message.body}
+        hideLightbox={this.toggleLightbox}
+      />
+    );
+  }
+
   render() {
     const {
       avatar,
@@ -219,6 +259,7 @@ class Message extends Component {
       emoji, // eslint-disable-line no-unused-vars
       enableLinks, // eslint-disable-line no-unused-vars
       menuItems, // eslint-disable-line no-unused-vars
+      enableLightbox,
       ...custom
     } = this.props;
     const { color } = this.context;
@@ -264,6 +305,7 @@ class Message extends Component {
             </span>
           </p>
           {this.renderMenuItems()}
+          {enableLightbox ? this.renderLightbox(message) : null}
         </Tappable>
       </section>
     );

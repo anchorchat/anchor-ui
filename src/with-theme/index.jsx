@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 class WithTheme extends Component {
@@ -31,4 +32,4 @@ class WithTheme extends Component {
   }
 }
 
-export default WithTheme;
+export default pure(WithTheme);

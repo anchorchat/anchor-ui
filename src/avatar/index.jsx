@@ -5,9 +5,11 @@ import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** An user's profile image */
-function Avatar({ image, style, ...custom }) {
+function Avatar({ image, style, status, statusStyle, ...custom }) {
   return (
-    <section style={getStyles.root(image, style)} {...custom} />
+    <section style={getStyles.root(image, style)} {...custom}>
+      {status ? <div style={getStyles.status(status, statusStyle)} /> : null}
+    </section>
   );
 }
 
@@ -17,11 +19,17 @@ Avatar.propTypes = {
   /** Path to user's profile image */
   image: PropTypes.string.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object)
+  style: PropTypes.instanceOf(Object),
+  /** An user's status. One of the following: ["online", "away", "offline"] */
+  status: PropTypes.oneOf(['online', 'away', 'offline', '']),
+  /** Override the styles of the status indicator */
+  statusStyle: PropTypes.instanceOf(Object)
 };
 
 Avatar.defaultProps = {
-  style: {}
+  style: {},
+  status: '',
+  statusStyle: {}
 };
 
 export default pure(Radium(Avatar));

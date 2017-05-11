@@ -71,5 +71,12 @@ export default {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     minHeight: '20px'
+  },
+  status: {
+    width: '15px',
+    height: '15px',
+    border: `2px solid ${colors.white}`,
+    top: '10px',
+    right: '10px'
   }
 };

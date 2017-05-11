@@ -26,7 +26,9 @@ class IconMenu extends Component {
     /** Override the styles of the header element */
     headerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object)
+    style: PropTypes.instanceOf(Object),
+    /** Callback function fired when the IconMenu closes */
+    onMenuClose: PropTypes.func
   }
 
   static defaultProps = {
@@ -34,7 +36,8 @@ class IconMenu extends Component {
     style: {},
     headerStyle: {},
     secondaryMenuItems: null,
-    dividerText: null
+    dividerText: null,
+    onMenuClose: () => {}
   }
 
   constructor() {
@@ -75,10 +78,14 @@ class IconMenu extends Component {
   }
 
   closeMenu() {
+    const { onMenuClose } = this.props;
+
     this.setState({
       open: false,
       positioned: false
     });
+
+    onMenuClose();
   }
 
   applyCloseMenuToChildren(children) {
@@ -89,7 +96,15 @@ class IconMenu extends Component {
 
   render() {
     const {
-      children, secondaryMenuItems, header, icon, headerStyle, style, dividerText, ...custom
+      children,
+      secondaryMenuItems,
+      header,
+      icon,
+      headerStyle,
+      style,
+      dividerText,
+      onMenuClose, // eslint-disable-line no-unused-vars
+      ...custom
     } = this.props;
     const { open, position } = this.state;
 

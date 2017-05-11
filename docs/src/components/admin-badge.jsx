@@ -35,8 +35,9 @@ function AdminBadgeDoc() {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <AdminBadge style={style.adminBadge} inverted />
           <AdminBadge style={style.adminBadge} />
+          <AdminBadge text="Custom Text" style={style.adminBadge} />
+          <AdminBadge text="Inverted" style={style.adminBadge} inverted />
         </Paper>
       </section>
       <Props props={componentData.props} />

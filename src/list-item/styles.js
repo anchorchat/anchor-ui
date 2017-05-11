@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 
 export default {
-  listItem: {
+  root: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
     borderTop: `1px solid ${colors.white}`,
@@ -44,7 +44,8 @@ export default {
     padding: '8px',
     boxSizing: 'border-box',
     backgroundColor: 'rgba(21, 21, 21, .75)',
-    borderRadius: '50%'
+    borderRadius: '50%',
+    zIndex: 1
   },
   rightButton: {
     paddingRight: '52px'
@@ -88,6 +89,10 @@ export default {
   badge: {
     position: 'absolute',
     right: '-3px',
-    top: '-3px'
+    top: '-3px',
+    zIndex: 1
+  },
+  container: {
+    width: '100%'
   }
 };
