@@ -74,7 +74,11 @@ export default {
     margin: 0,
     lineHeight: '14px',
     userSelect: 'none',
-    paddingTop: '2px'
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    paddingTop: '3px',
+    minHeight: '18px'
   },
   leftAvatar: {
     paddingLeft: '56px'
