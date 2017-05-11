@@ -35,12 +35,6 @@ class MessageInputDoc extends React.Component {
     });
   }
 
-  handleChangeMultiLine(nameMultiline) {
-    this.setState({
-      nameMultiline: nameMultiline.target.value
-    });
-  }
-
   render() {
     const componentData = _.find(components, component => component.displayName === 'MessageInput');
     const style = {
@@ -88,9 +82,9 @@ class MessageInputDoc extends React.Component {
               style={{ paddingTop: 0, paddingBottom: 0 }}
             />
             <MessageInput
-              onChange={this.handleChangeMultiLine}
+              onChange={this.handleMultiLineChange}
               placeholder="Type multiline..."
-              value={this.state.nameMultiline}
+              value={this.state.multiline}
               sendMessage={() => {}}
               leftButton={
                 <Button iconButton onClick={() => {}}>

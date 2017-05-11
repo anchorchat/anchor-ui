@@ -136,7 +136,6 @@ class MessageInput extends Component {
           style={getInputStyle(leftButton, multiline, inputStyle)}
           value={value}
           onChange={onChange}
-          format="multiline"
           placeholder={placeholder}
           maxLength={maxLength}
           onKeyDown={this.handleKeyDown}
