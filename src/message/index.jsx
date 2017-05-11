@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import format from 'date-fns/format';
 import Radium from 'radium';
 import emojione from 'emojione';
 import escape from 'escape-html';
@@ -12,6 +11,7 @@ import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
 import Lightbox from '../lightbox';
 import MessageHeader from './message-header';
+import MessageTime from './message-time';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -266,9 +266,13 @@ class Message extends Component {
           />
           <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
             {this.renderMessageBody()}
-            <span style={getStyles.time(myMessage, message.type, messageTimeStyle)}>
-              {format(message.createdAt, timeFormat)}
-            </span>
+            <MessageTime
+              myMessage={myMessage}
+              type={message.type}
+              style={messageTimeStyle}
+              createdAt={message.createdAt}
+              timeFormat={timeFormat}
+            />
           </p>
           {this.renderMenuItems()}
           {enableLightbox ? this.renderLightbox(message) : null}
