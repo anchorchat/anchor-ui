@@ -55,20 +55,22 @@ export default {
     marginTop: '16px',
     marginBottom: '8px',
     color: colors.primaryText,
+    width: '100%',
+    textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    width: '100%',
-    textAlign: 'center'
+    minHeight: '22px'
   },
   secondaryText: {
     fontSize: '16px',
     marginTop: 0,
     marginBottom: '16px',
     color: colors.grey,
+    width: '100%',
+    textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    width: '100%',
-    textAlign: 'center'
+    minHeight: '20px'
   },
   status: {
     width: '15px',
