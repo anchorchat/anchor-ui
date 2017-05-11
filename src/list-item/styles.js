@@ -17,7 +17,6 @@ export default {
     paddingLeft: '10px',
     paddingBottom: '10px',
     position: 'relative',
-    overflow: 'hidden',
     transition: 'background-color .3s ease-in-out',
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
