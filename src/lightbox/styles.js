@@ -3,7 +3,6 @@ import styles from '../settings/styles';
 
 export default {
   lightbox: {
-    height: '80%',
     maxWidth: '100%',
     margin: '0 auto',
     background: colors.white,
