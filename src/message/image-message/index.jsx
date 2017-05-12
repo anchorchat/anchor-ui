@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import getStyles from '../get-styles';
+import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import styles from '../styles';
+import styles from './styles';
 import Lightbox from '../../lightbox';
 
 class ImageMessage extends Component {
@@ -60,8 +60,8 @@ class ImageMessage extends Component {
           headerStyle={messageHeaderStyle}
           username={message.username}
         />
-        <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
-          <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />
+        <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+          <img onClick={onClick} style={styles.image} src={message.body} alt="user-upload" />
           <MessageTime
             myMessage={myMessage}
             type={message.type}
