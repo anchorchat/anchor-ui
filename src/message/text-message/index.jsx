@@ -2,16 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import escape from 'escape-html';
-import getStyles from '../get-styles';
+import colors from '../../settings/colors';
+import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import urlRegex from '../../url-regex';
 
-function createMarkup(text, enableLinks, enableEmoji) {
-  if (!enableLinks && !enableEmoji) {
-    return text;
-  }
-
+function createMarkup(text, enableLinks) {
   const escapedText = escape(text);
 
   let parsedText = escapedText;
@@ -58,8 +55,12 @@ function TextMessage({
         headerStyle={messageHeaderStyle}
         username={message.username}
       />
-      <p style={getStyles.text(myMessage, fontSize, message.type, messageBodyStyle)}>
-        <span dangerouslySetInnerHTML={createMarkup(message.body, enableLinks, emoji)} />
+      <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+        {
+          enableLinks || emoji
+          ? <span dangerouslySetInnerHTML={createMarkup(message.body, enableLinks, emoji)} />
+          : message.body
+        }
         <MessageTime
           myMessage={myMessage}
           type={message.type}
@@ -109,7 +110,7 @@ TextMessage.defaultProps = {
   enableLinks: false,
   compact: false,
   enableLightbox: false,
-  color: ''
+  color: colors.theme
 };
 
 export default TextMessage;
