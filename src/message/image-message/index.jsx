@@ -5,6 +5,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
+import combineStyles from '../../internal/combine-styles';
 
 class ImageMessage extends Component {
   constructor() {
@@ -50,6 +51,14 @@ class ImageMessage extends Component {
       onClick = this.toggleLightbox;
     }
 
+    let headerStyle = messageHeaderStyle;
+    let imageStyle = styles.image;
+
+    if (compact) {
+      headerStyle = combineStyles(headerStyle, { position: 'absolute', bottom: '12px' });
+      imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
+    }
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -57,11 +66,11 @@ class ImageMessage extends Component {
           compact={compact}
           myMessage={myMessage}
           fontSize={fontSize}
-          headerStyle={messageHeaderStyle}
+          headerStyle={headerStyle}
           username={message.username}
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
-          <img onClick={onClick} style={styles.image} src={message.body} alt="user-upload" />
+          <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
           <MessageTime
             myMessage={myMessage}
             type={message.type}
