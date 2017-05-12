@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import getStyles from './get-styles';
-import MessageHeader from './message-header';
-import MessageTime from './message-time';
-import styles from './styles';
-import Lightbox from '../lightbox';
+import getStyles from '../get-styles';
+import MessageHeader from '../message-header';
+import MessageTime from '../message-time';
+import styles from '../styles';
+import Lightbox from '../../lightbox';
 
 class ImageMessage extends Component {
   constructor() {

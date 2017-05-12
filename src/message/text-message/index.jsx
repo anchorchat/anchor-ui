@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import escape from 'escape-html';
-import getStyles from './get-styles';
-import MessageHeader from './message-header';
-import MessageTime from './message-time';
-import urlRegex from '../url-regex';
+import getStyles from '../get-styles';
+import MessageHeader from '../message-header';
+import MessageTime from '../message-time';
+import urlRegex from '../../url-regex';
 
 function createMarkup(text, enableLinks, enableEmoji) {
   if (!enableLinks && !enableEmoji) {
