@@ -69,26 +69,5 @@ export default {
   messageSticker: {
     width: 'auto',
     height: '120px'
-  },
-  messageTime: {
-    width: '32px',
-    color: 'currentColor',
-    fontSize: '12px',
-    lineHeight: '12px',
-    textAlign: 'right',
-    paddingLeft: '10px',
-    opacity: '.75',
-    flexShrink: '0',
-    alignSelf: 'flex-end'
-  },
-  clickAway: {
-    pointerEvents: 'all',
-    position: 'fixed',
-    width: '100vw',
-    height: '100vh',
-    top: 0,
-    left: 0,
-    zIndex: 1,
-    opacity: 0
   }
 };
