@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getStyles from '../get-styles';
+import colors from '../../settings/colors';
+import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import styles from '../styles';
+import styles from './styles';
 
 function StickerMessage({
   color,
@@ -21,7 +22,7 @@ function StickerMessage({
   return (
     <div>
       <img style={styles.messageSticker} src={message.body} alt="sticker" />
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -77,7 +78,7 @@ StickerMessage.defaultProps = {
   enableLinks: false,
   compact: false,
   enableLightbox: false,
-  color: ''
+  color: colors.theme
 };
 
 export default StickerMessage;

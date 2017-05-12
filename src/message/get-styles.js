@@ -75,31 +75,8 @@ function text(myMessage, fontSize, type = 'text', overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function header(myMessage, compact, fontSize, overrideStyle) {
-  let style = styles.messageHeader;
-
-  if (myMessage) {
-    style = combineStyles(style, { color: colors.white });
-  }
-
-  if (compact) {
-    style = combineStyles(style, { flexShrink: '0', marginRight: '10px', marginBottom: '0' });
-  }
-
-  if (fontSize === 'medium') {
-    style = combineStyles(style, { fontSize: '16px', lineHeight: '20px' });
-  }
-
-  if (fontSize === 'large') {
-    style = combineStyles(style, { fontSize: '18px', lineHeight: '24px' });
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
 export default {
   container,
   root,
-  text,
-  header
+  text
 };
