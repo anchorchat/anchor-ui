@@ -4,8 +4,8 @@ import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
 import styles from './styles';
 import getStyles from './get-styles';
-import Lightbox from '../lightbox';
 import TextMessage from './text-message';
+import ImageMessage from './image-message';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -75,76 +75,11 @@ class Message extends Component {
     color: PropTypes.string
   }
 
-  constructor() {
-    super();
-
-    this.state = {
-      open: false,
-      positioned: false,
-      position: {},
-      lightbox: false
-    };
-
-    this.toggleLightbox = this.toggleLightbox.bind(this);
-  }
-
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.state, nextState) ||
       !shallowEqual(this.context, nextContext)
-    );
-  }
-
-  toggleLightbox() {
-    const { enableLightbox } = this.props;
-
-    if (!enableLightbox) {
-      return false;
-    }
-
-    return this.setState({
-      lightbox: !this.state.lightbox
-    });
-  }
-
-  renderMessageBody() {
-    const { emoji, message, enableLightbox } = this.props;
-    let onClick = null;
-
-    if (enableLightbox) {
-      onClick = this.toggleLightbox;
-    }
-
-    if (message.type === 'image') {
-      return <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />;
-    }
-
-    if (message.type === 'sticker') {
-      return <img style={styles.messageSticker} src={message.body} alt="user-upload" />;
-    }
-
-    if (emoji) {
-      return <span dangerouslySetInnerHTML={this.createMarkup(message.body)} />;
-    }
-
-    return message.body;
-  }
-
-  renderLightbox(message) {
-    const { lightbox } = this.state;
-    const { enableLightbox } = this.props;
-
-    if (message.type !== 'image' && !enableLightbox) {
-      return null;
-    }
-
-    return (
-      <Lightbox
-        open={lightbox}
-        image={message.body}
-        hideLightbox={this.toggleLightbox}
-      />
     );
   }
 
@@ -168,16 +103,10 @@ class Message extends Component {
     } = this.props;
     const { color } = this.context;
 
-    let onClick = null;
-
-    if (enableLightbox) {
-      onClick = this.toggleLightbox;
-    }
-
     let messageElement = <TextMessage color={color} {...this.props} />;
 
     if (message.type === 'image') {
-      messageElement = <img onClick={onClick} style={styles.messageImage} src={message.body} alt="user-upload" />;
+      messageElement = <ImageMessage color={color} {...this.props} />;
     }
 
     if (message.type === 'sticker') {

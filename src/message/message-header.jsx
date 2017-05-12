@@ -17,8 +17,15 @@ function MessageHeader({ compact, myMessage, avatar, fontSize, headerStyle, user
     avatarStyle.right = '-66px';
   }
 
+  const style = {
+    container: {
+      borderLeftColor: 'inherit',
+      borderRightColor: 'inherit'
+    }
+  };
+
   return (
-    <div>
+    <div style={style.container}>
       {
         compact
         ? null
