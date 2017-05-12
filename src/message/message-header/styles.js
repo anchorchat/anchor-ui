@@ -3,7 +3,8 @@ import colors from '../../settings/colors';
 export default {
   container: {
     borderLeftColor: 'inherit',
-    borderRightColor: 'inherit'
+    borderRightColor: 'inherit',
+    flexShrink: 0
   },
   arrow: {
     borderBottom: '5px solid transparent',
@@ -26,7 +27,7 @@ export default {
     fontSize: '14px',
     fontWeight: 'bold',
     lineHeight: '18px',
-    marginBottom: '5px',
+    marginBottom: '5px'
   },
   avatar: {
     position: 'absolute',
