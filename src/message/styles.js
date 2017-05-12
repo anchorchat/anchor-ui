@@ -20,22 +20,6 @@ export default {
     position: 'relative',
     wordBreak: 'break-word'
   },
-  arrow: {
-    borderBottom: '5px solid transparent',
-    borderRight: `10px solid ${colors.white}`,
-    borderTop: '5px solid transparent',
-    height: '0',
-    left: '-10px',
-    position: 'absolute',
-    top: '15px'
-  },
-  myArrow: {
-    borderRight: '10px solid',
-    borderRightColor: 'inherit',
-    left: 'initial',
-    right: '-10px',
-    transform: 'rotate(180deg)'
-  },
   avatar: {
     marginLeft: '66px'
   },
@@ -44,13 +28,6 @@ export default {
     color: colors.white,
     marginLeft: '0',
     marginRight: '16px',
-  },
-  messageHeader: {
-    color: colors.secondaryText,
-    fontSize: '14px',
-    fontWeight: 'bold',
-    lineHeight: '18px',
-    marginBottom: '5px',
   },
   messageBody: {
     display: 'flex',

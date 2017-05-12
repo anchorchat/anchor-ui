@@ -1,37 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../../avatar';
-import combineStyles from '../../internal/combine-styles';
-import getStyles from '../get-styles';
-import styles from '../styles';
+import getStyles from './get-styles';
+import styles from './styles';
 
 function MessageHeader({ compact, myMessage, avatar, fontSize, headerStyle, username }) {
-  const avatarStyle = {
-    position: 'absolute',
-    left: '-66px',
-    top: '0'
-  };
-
-  if (myMessage) {
-    avatarStyle.left = 'initial';
-    avatarStyle.right = '-66px';
-  }
-
-  const style = {
-    container: {
-      borderLeftColor: 'inherit',
-      borderRightColor: 'inherit'
-    }
-  };
-
   return (
-    <div style={style.container}>
+    <div style={styles.container}>
       {
         compact
         ? null
-        : <div style={combineStyles(styles.arrow, myMessage ? styles.myArrow : {})} />
+        : <div style={getStyles.arrow(myMessage)} />
       }
-      {avatar && !compact ? <Avatar image={avatar} style={avatarStyle} /> : null}
+      {avatar && !compact ? <Avatar image={avatar} style={getStyles.avatar(myMessage)} /> : null}
       <header
         style={
           getStyles.header(myMessage, compact, fontSize, headerStyle)
