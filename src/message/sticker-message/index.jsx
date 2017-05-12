@@ -4,7 +4,7 @@ import colors from '../../settings/colors';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import styles from './styles';
+import combineStyles from '../../internal/combine-styles';
 
 function StickerMessage({
   color,
@@ -19,17 +19,20 @@ function StickerMessage({
   messageTimeStyle,
   timeFormat
 }) {
+  const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
+
   return (
     <div>
-      <img style={styles.messageSticker} src={message.body} alt="sticker" />
+      <img style={getStyles.body(myMessage, avatar, messageBodyStyle)} src={message.body} alt="sticker" />
       <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
           myMessage={myMessage}
           fontSize={fontSize}
-          headerStyle={messageHeaderStyle}
+          headerStyle={headerStyle}
           username={message.username}
+          stickerMessage
         />
         <MessageTime
           myMessage={myMessage}

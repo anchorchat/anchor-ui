@@ -8,7 +8,9 @@ export default {
     marginLeft: '16px',
     maxWidth: '75%',
     padding: '12px',
-    position: 'relative'
+    position: 'relative',
+    clear: 'both',
+    display: 'flex'
   },
   avatar: {
     marginLeft: '66px'
@@ -22,16 +24,12 @@ export default {
     marginLeft: '0',
     marginRight: '16px',
   },
-  messageImage: {
-    borderRadius: '3px',
+  body: {
     width: 'auto',
-    height: 'auto',
-    maxWidth: '100%',
-    maxHeight: '200px',
-  },
-  messageSticker: {
-    width: 'auto',
-    height: '120px'
+    height: '120px',
+    marginLeft: '16px',
+    float: 'left',
+    marginBottom: '5px'
   },
   compact: {
     marginLeft: '0',

@@ -39,7 +39,26 @@ function header(color = colors.theme, myMessage, avatar, compact, overrideStyle)
   return combineStyles(style, overrideStyle);
 }
 
+function body(myMessage, avatar, overrideStyle) {
+  let style = styles.body;
+
+  if (myMessage) {
+    style = combineStyles(style, { marginLeft: '0', marginRight: '16px', float: 'right' });
+  }
+
+  if (avatar) {
+    style = combineStyles(style, styles.avatar);
+  }
+
+  if (myMessage && avatar) {
+    style = combineStyles(style, styles.myAvatar);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
+
 export default {
   container,
-  header
+  header,
+  body
 };
