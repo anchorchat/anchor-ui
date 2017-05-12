@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import AppHeader from '../../../dist/app-header';
 import Button from '../../../dist/button';
 import Nav from './nav';
