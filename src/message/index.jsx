@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from './styles';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
+import StickerMessage from './sticker-message';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -110,7 +110,7 @@ class Message extends Component {
     }
 
     if (message.type === 'sticker') {
-      messageElement = <img style={styles.messageSticker} src={message.body} alt="user-upload" />;
+      messageElement = <StickerMessage color={color} {...this.props} />;
     }
 
     return (
