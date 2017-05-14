@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
+import IconMenu from '../icon-menu';
+import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
@@ -75,11 +77,46 @@ class Message extends Component {
     color: PropTypes.string
   }
 
+  constructor() {
+    super();
+
+    this.state = {
+      open: false
+    };
+
+    this.closeMenu = this.closeMenu.bind(this);
+    this.renderMenuItems = this.renderMenuItems.bind(this);
+  }
+
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.state, nextState) ||
       !shallowEqual(this.context, nextContext)
+    );
+  }
+
+  closeMenu() {
+    this.setState({
+      open: false
+    });
+  }
+
+  renderMenuItems() {
+    const { menuItems } = this.props;
+
+    if (!menuItems) {
+      return null;
+    }
+
+    const menuItemsWithProps = React.Children.map(
+      menuItems, child => React.cloneElement(child, { onClick: this.closeMenu })
+    );
+
+    return (
+      <IconMenu icon={<IconChevronDown />}>
+        {menuItemsWithProps}
+      </IconMenu>
     );
   }
 
@@ -116,6 +153,7 @@ class Message extends Component {
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
         {messageElement}
+        {this.renderMenuItems()}
       </section>
     );
   }
