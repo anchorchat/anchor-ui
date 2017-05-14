@@ -63,21 +63,19 @@ export default {
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    paddingBottom: '1px'
+    textOverflow: 'ellipsis'
   },
   secondaryText: {
     color: colors.primaryText,
     fontSize: '14px',
     fontWeight: 'normal',
-    margin: 0,
+    marginBottom: 0,
+    marginTop: '2.4px',
     lineHeight: '14px',
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    paddingTop: '3px',
-    minHeight: '18px'
   },
   leftAvatar: {
     paddingLeft: '56px'
