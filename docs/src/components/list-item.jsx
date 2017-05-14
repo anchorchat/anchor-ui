@@ -23,7 +23,7 @@ function ListItemDoc() {
       margin: 0,
       padding: '20px'
     },
-    item: { margin: '10px', maxWidth: '250px' },
+    item: { margin: '10px' },
     itemNested: { margin: '0 10px 0 10px' },
     list: { margin: '10px 10px 0 10px' }
   };

@@ -71,7 +71,7 @@ export default {
     fontWeight: 'normal',
     marginBottom: 0,
     marginTop: '2.4px',
-    lineHeight: '14px',
+    lineHeight: '16px',
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
