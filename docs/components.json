@@ -3390,7 +3390,22 @@
   "components/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
-    "methods": [],
+    "methods": [
+      {
+        "name": "closeMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderMenuItems",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "avatar": {
         "type": {
