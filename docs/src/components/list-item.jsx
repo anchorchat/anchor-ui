@@ -6,6 +6,7 @@ import List from '../../../dist/list';
 import Button from '../../../dist/button';
 import { IconClose } from '../../../dist/icons';
 import Badge from '../../../dist/badge';
+import AdminBadge from '../../../dist/admin-badge';
 import components from '../../components.json';
 import Props from './props';
 import Paper from '../../../dist/paper';
@@ -22,7 +23,7 @@ function ListItemDoc() {
       margin: 0,
       padding: '20px'
     },
-    item: { margin: '10px' },
+    item: { margin: '10px', maxWidth: '250px' },
     itemNested: { margin: '0 10px 0 10px' },
     list: { margin: '10px 10px 0 10px' }
   };
@@ -130,6 +131,13 @@ function ListItemDoc() {
                 style={style.itemNested}
               />
             </ListItem>
+            <ListItem
+              primaryText="With secondaryBadge"
+              secondaryText="Male"
+              secondaryBadge={<span><AdminBadge /> <AdminBadge inverted text="Custum" /></span>}
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={style.item}
+            />
           </List>
         </Paper>
       </section>
