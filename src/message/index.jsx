@@ -110,7 +110,7 @@ class Message extends Component {
     }
 
     const menuItemsWithProps = React.Children.map(
-      menuItems, child => React.cloneElement(child, { onClick: this.closeMenu })
+      menuItems, child => React.cloneElement(child, { closeMenu: this.closeMenu })
     );
 
     return (
