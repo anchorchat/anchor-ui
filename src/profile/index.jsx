@@ -30,7 +30,9 @@ class Profile extends Component {
     /** Override the styles of the secondaryText element */
     secondaryTextStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the avatar element */
-    avatarStyle: PropTypes.instanceOf(Object)
+    avatarStyle: PropTypes.instanceOf(Object),
+    /** An user's status. One of the following: ["online", "away", "offline"] */
+    status: PropTypes.oneOf(['online', 'away', 'offline', '']),
   }
 
   static defaultProps = {
@@ -42,7 +44,8 @@ class Profile extends Component {
     style: {},
     headerStyle: {},
     secondaryTextStyle: {},
-    avatarStyle: {}
+    avatarStyle: {},
+    status: ''
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -64,6 +67,7 @@ class Profile extends Component {
       headerStyle,
       secondaryTextStyle,
       avatarStyle,
+      status,
       ...custom
     } = this.props;
 
@@ -76,7 +80,16 @@ class Profile extends Component {
         <section style={styles.cover}>
           <section style={getStyles.coverImage(coverBackground)} />
           <section style={styles.coverOverlay} />
-          {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
+          {
+            avatar
+            ? <Avatar
+              image={avatar}
+              style={getStyles.avatar(avatarStyle)}
+              statusStyle={styles.status}
+              status={status}
+            />
+            : null
+          }
         </section>
         <h1 style={getStyles.header(headerStyle)}>{header}</h1>
         {

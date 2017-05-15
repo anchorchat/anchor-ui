@@ -45,6 +45,7 @@ function ProfileDoc() {
             coverImage="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
             button={<Button>Edit Information</Button>}
             style={style.profile}
+            status="online"
           />
         </Paper>
       </section>
