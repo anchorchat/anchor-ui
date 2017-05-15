@@ -3392,7 +3392,7 @@
     "displayName": "Message",
     "methods": [
       {
-        "name": "renderMenuItems",
+        "name": "renderIconMenu",
         "docblock": null,
         "modifiers": [],
         "params": [],

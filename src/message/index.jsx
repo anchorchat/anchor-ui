@@ -84,7 +84,7 @@ class Message extends Component {
       open: false
     };
 
-    this.renderMenuItems = this.renderMenuItems.bind(this);
+    this.renderIconMenu = this.renderIconMenu.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -95,7 +95,7 @@ class Message extends Component {
     );
   }
 
-  renderMenuItems() {
+  renderIconMenu() {
     const { menuItems } = this.props;
 
     if (!menuItems) {
@@ -142,7 +142,7 @@ class Message extends Component {
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
         {messageElement}
-        {this.renderMenuItems()}
+        {this.renderIconMenu()}
       </section>
     );
   }
