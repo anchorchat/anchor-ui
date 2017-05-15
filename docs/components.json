@@ -2810,6 +2810,17 @@
           "computed": false
         }
       },
+      "secondaryBadge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The ListItem's secondary badges",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "instanceOf",
