@@ -2,29 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from '../style/loaders';
-import colors from '../settings/colors';
+import styles from './styles';
+import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
-
-function getStyle(themeColor, inverted, index, overrideStyle) {
-  const color = themeColor || colors.theme;
-
-  let style = combineStyles(styles.dot, { backgroundColor: color });
-
-  if (index === 1) {
-    style = combineStyles(style, { animationDelay: '.33s' });
-  }
-
-  if (index === 2) {
-    style = combineStyles(style, { animationDelay: '.66s' });
-  }
-
-  if (inverted) {
-    return combineStyles(combineStyles(style, styles.inverted), overrideStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
 
 /** Animated loader */
 class Loader extends Component {
@@ -62,9 +42,9 @@ class Loader extends Component {
 
     return (
       <div style={combineStyles(styles.loader, style)} {...custom}>
-        <span style={getStyle(color, inverted, 0, dotStyle)} />
-        <span style={getStyle(color, inverted, 1, dotStyle)} />
-        <span style={getStyle(color, inverted, 2, dotStyle)} />
+        <span style={getStyles.root(color, inverted, 0, dotStyle)} />
+        <span style={getStyles.root(color, inverted, 1, dotStyle)} />
+        <span style={getStyles.root(color, inverted, 2, dotStyle)} />
       </div>
     );
   }

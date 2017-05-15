@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   input: {
     paddingBottom: '16px',
     paddingLeft: '16px',
@@ -44,5 +44,3 @@ const styleSheet = {
     top: '4px'
   }
 };
-
-export default styleSheet;
