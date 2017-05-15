@@ -10,7 +10,8 @@ export default {
     flexDirection: 'column',
     height: '100%',
     justifyContent: 'center',
-    padding: '24px'
+    padding: '24px',
+    backgroundImage: 'url()'
   },
   heading: {
     fontSize: '16px',
