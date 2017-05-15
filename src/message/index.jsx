@@ -84,7 +84,6 @@ class Message extends Component {
       open: false
     };
 
-    this.closeMenu = this.closeMenu.bind(this);
     this.renderMenuItems = this.renderMenuItems.bind(this);
   }
 
@@ -96,12 +95,6 @@ class Message extends Component {
     );
   }
 
-  closeMenu() {
-    this.setState({
-      open: false
-    });
-  }
-
   renderMenuItems() {
     const { menuItems } = this.props;
 
@@ -109,13 +102,9 @@ class Message extends Component {
       return null;
     }
 
-    const menuItemsWithProps = React.Children.map(
-      menuItems, child => React.cloneElement(child, { closeMenu: this.closeMenu })
-    );
-
     return (
       <IconMenu icon={<IconChevronDown />}>
-        {menuItemsWithProps}
+        {menuItems}
       </IconMenu>
     );
   }

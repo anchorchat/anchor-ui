@@ -3392,13 +3392,6 @@
     "displayName": "Message",
     "methods": [
       {
-        "name": "closeMenu",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
         "name": "renderMenuItems",
         "docblock": null,
         "modifiers": [],
