@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
+import MenuItem from '../../../dist/menu-item';
 import Props from './props';
 import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
@@ -141,6 +142,24 @@ function MessageDoc() {
                 avatar={message.avatar}
                 emoji
                 compact
+              />
+            ))}
+          </MessageList>
+        </Paper>
+        <h1>Message with IconMenu</h1>
+        <Paper style={style.paper}>
+          <MessageList style={style.list}>
+            {messages.map(message => (
+              <Message
+                message={message}
+                key={`message-${message.id}`}
+                myMessage={message.username === currentUser}
+                avatar={message.avatar}
+                emoji
+                menuItems={[
+                  <MenuItem text="Menu Item" onClick={() => {}} />,
+                  <MenuItem text="Another Menu Item" onClick={() => {}} />
+                ]}
               />
             ))}
           </MessageList>
