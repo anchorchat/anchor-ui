@@ -10,11 +10,11 @@ describe('EmptyState.getStyles', () => {
 
       expect(style).to.deep.equal(styles.emptyState);
     });
-  });
 
-  it('should combine styles', () => {
-    const style = getStyles.root('', { color: 'red' });
+    it('should combine styles', () => {
+      const style = getStyles.root({}, { color: 'red' });
 
-    expect(style).to.have.property('color', 'red');
+      expect(style).to.have.property('color', 'red');
+    });
   });
 });
