@@ -132,9 +132,9 @@ function ListItemDoc() {
               />
             </ListItem>
             <ListItem
-              primaryText="With secondaryBadge"
+              primaryText="With textBadge"
               secondaryText="Male"
-              secondaryBadge={<span><AdminBadge /> <AdminBadge inverted text="Custum" /></span>}
+              textBadge={<span><AdminBadge /> <AdminBadge inverted text="Custom" /></span>}
               avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
               style={style.item}
             />
