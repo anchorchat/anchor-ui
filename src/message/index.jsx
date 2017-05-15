@@ -80,10 +80,6 @@ class Message extends Component {
   constructor() {
     super();
 
-    this.state = {
-      open: false
-    };
-
     this.renderIconMenu = this.renderIconMenu.bind(this);
   }
 

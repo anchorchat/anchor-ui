@@ -2810,12 +2810,12 @@
           "computed": false
         }
       },
-      "secondaryBadge": {
+      "textBadge": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "The ListItem's secondary badges",
+        "description": "A badge to display before the secondaryText.",
         "defaultValue": {
           "value": "null",
           "computed": false
