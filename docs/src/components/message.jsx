@@ -50,7 +50,7 @@ const messages = [
     type: 'sticker'
   },
   {
-    body: 'https://telegram.org/file/811140750/1/KwtOAxwo1SA/452620c767366798d3',
+    body: 'https://source.unsplash.com/random/375x667',
     createdAt: new Date(),
     username: 'Sjaak',
     avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
