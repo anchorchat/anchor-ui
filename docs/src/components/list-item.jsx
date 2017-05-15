@@ -6,6 +6,7 @@ import List from '../../../dist/list';
 import Button from '../../../dist/button';
 import { IconClose } from '../../../dist/icons';
 import Badge from '../../../dist/badge';
+import AdminBadge from '../../../dist/admin-badge';
 import components from '../../components.json';
 import Props from './props';
 import Paper from '../../../dist/paper';
@@ -130,6 +131,13 @@ function ListItemDoc() {
                 style={style.itemNested}
               />
             </ListItem>
+            <ListItem
+              primaryText="With textBadge"
+              secondaryText="Male"
+              textBadge={<span><AdminBadge /> <AdminBadge inverted text="Custom" /></span>}
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={style.item}
+            />
           </List>
         </Paper>
       </section>

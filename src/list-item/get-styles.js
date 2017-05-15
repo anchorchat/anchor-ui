@@ -32,11 +32,15 @@ function root(themeColor, active, rightButton, avatar, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-function text(textStyle, active, overrideStyle) {
+function text(textStyle, active, textBadge, overrideStyle) {
   let style = textStyle;
 
   if (active) {
     style = combineStyles(style, { color: colors.white });
+  }
+
+  if (textBadge) {
+    style = combineStyles(style, { lineHeight: '20px', marginTop: 0 });
   }
 
   return combineStyles(style, overrideStyle);

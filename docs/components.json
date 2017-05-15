@@ -2810,6 +2810,17 @@
           "computed": false
         }
       },
+      "textBadge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "A badge to display before the secondaryText.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -3390,7 +3401,15 @@
   "components/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderIconMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "avatar": {
         "type": {

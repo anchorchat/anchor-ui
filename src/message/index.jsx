@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
+import IconMenu from '../icon-menu';
+import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
@@ -75,11 +77,31 @@ class Message extends Component {
     color: PropTypes.string
   }
 
+  constructor() {
+    super();
+
+    this.renderIconMenu = this.renderIconMenu.bind(this);
+  }
+
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return (
       !shallowEqual(this.props, nextProps) ||
       !shallowEqual(this.state, nextState) ||
       !shallowEqual(this.context, nextContext)
+    );
+  }
+
+  renderIconMenu() {
+    const { menuItems } = this.props;
+
+    if (!menuItems) {
+      return null;
+    }
+
+    return (
+      <IconMenu icon={<IconChevronDown />}>
+        {menuItems}
+      </IconMenu>
     );
   }
 
@@ -116,6 +138,7 @@ class Message extends Component {
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
         {messageElement}
+        {this.renderIconMenu()}
       </section>
     );
   }
