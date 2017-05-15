@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from '../style/message-lists';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
 /** Render a list of items (Messages) with optional auto scroll */

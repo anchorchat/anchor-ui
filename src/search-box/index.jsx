@@ -4,7 +4,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
 import IconSearch from '../icons/icon-search';
-import styles from '../style/search-box';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
 /** General purpose Search box */
