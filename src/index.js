@@ -40,8 +40,10 @@ export AdminBadge from './admin-badge';
 export Overlay from './overlay';
 export Table from './table';
 export TableHeader from './table-header';
+export TableHeaderColumn from './table-header-column';
 export TableBody from './table-body';
 export TableRow from './table-row';
+export TableColumn from './table-column';
 
 export icons from './icons';
 
