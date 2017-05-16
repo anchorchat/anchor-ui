@@ -3,14 +3,13 @@ import styles from '../settings/styles';
 
 export default {
   lightbox: {
+    height: '80%',
     maxWidth: '100%',
     margin: '0 auto',
-    background: colors.white,
     borderRadius: '3px',
     padding: '40px 30px',
     boxSizing: 'border-box',
     position: 'relative',
-    boxShadow: styles.depthShadows[0]
   },
   closeButton: {
     position: 'absolute',
@@ -22,7 +21,8 @@ export default {
     width: 'auto',
     height: 'auto',
     maxWidth: '100%',
-    maxHeight: '100%'
+    maxHeight: '100%',
+    boxShadow: styles.depthShadows[0]
   },
   clickAway: {
     width: '100%',
