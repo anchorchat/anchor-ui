@@ -9,12 +9,12 @@ class Theme {
     this.subscriptions = [];
   }
 
-  setColor(color) {
+  setColor = (color) => {
     this.color = color;
     this.subscriptions.forEach(func => func(color));
   }
 
-  subscribe(listener) {
+  subscribe = (listener) => {
     this.subscriptions.push(listener);
 
     return () => { this.subscriptions = this.subscriptions.filter(item => item !== listener); };
