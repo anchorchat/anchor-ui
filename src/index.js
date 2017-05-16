@@ -38,6 +38,10 @@ export Profile from './profile';
 export Slider from './slider';
 export AdminBadge from './admin-badge';
 export Overlay from './overlay';
+export Table from './table';
+export TableHeader from './table-header';
+export TableBody from './table-body';
+export TableRow from './table-row';
 
 export icons from './icons';
 
