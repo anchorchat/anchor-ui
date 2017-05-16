@@ -1,4 +1,3 @@
-import colors from '../settings/colors';
 import styles from '../settings/styles';
 
 export default {
@@ -30,6 +29,6 @@ export default {
     position: 'absolute',
     top: '0',
     left: '0',
-    cursor: 'pointer'
+    cursor: 'pointer',
   }
 };
