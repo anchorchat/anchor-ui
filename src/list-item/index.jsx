@@ -170,7 +170,7 @@ class ListItem extends Component {
             {primaryText}
           </h1>
           {
-            secondaryText
+            secondaryText || textBadge
             ? <h2
               style={getStyles.text(
                 styles.secondaryText,
