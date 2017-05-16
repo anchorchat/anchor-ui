@@ -24,7 +24,6 @@ const themeable = (ChildComponent) => {
     }
 
     setColor = (color) => {
-      console.log('new color', color);
       this.setState({ color });
     };
 
