@@ -14,8 +14,10 @@ class Theme {
     this.subscriptions.forEach(func => func(color));
   }
 
-  subscribe(func) {
-    this.subscriptions.push(func);
+  subscribe(listener) {
+    this.subscriptions.push(listener);
+
+    return () => { this.subscriptions = this.subscriptions.filter(item => item !== listener); };
   }
 }
 

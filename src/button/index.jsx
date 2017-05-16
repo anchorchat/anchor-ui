@@ -15,7 +15,11 @@ class Button extends Component {
   }
 
   componentDidMount() {
-    this.context.theme.subscribe(this.setColor);
+    this.unsubscribe = this.context.theme.subscribe(this.setColor);
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   setColor = (color) => {

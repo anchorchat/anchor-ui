@@ -28,7 +28,7 @@ class WithTheme extends Component {
     return {
       theme: {
         color: this.props.color,
-        subscribe: () => {}
+        subscribe: () => () => {}
       }
     };
   }
