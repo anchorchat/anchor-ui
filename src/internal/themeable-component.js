@@ -5,6 +5,7 @@ class ThemeableComponent extends Component {
   static contextTypes = {
     theme: PropTypes.object
   }
+
   constructor(props, context) {
     super(props, context);
 
