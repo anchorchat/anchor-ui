@@ -8,7 +8,7 @@ import styles from './styles';
 
 /** A checkbox is used to verify which options you want selected from a group. */
 function Checkbox(
-  { onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, ...custom },
+  { onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, value, ...custom },
   { color }
 ) {
   return (
@@ -19,6 +19,7 @@ function Checkbox(
         onChange={onChange}
         checked={checked}
         style={getStyles.input(inputStyle)}
+        value={value}
       />
       <div style={getStyles.icon(iconStyle)}>
         {
@@ -52,7 +53,9 @@ Checkbox.propTypes = {
   /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object)
+  labelStyle: PropTypes.instanceOf(Object),
+  /** The checkbox' value */
+  value: PropTypes.string.isRequired
 };
 
 Checkbox.defaultProps = {
