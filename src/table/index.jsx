@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** Tables are used to display data. */
-function Table({ children, style, ...custom }) {
-  return (
-    <table style={getStyles.root(style)} {...custom}>
-      {children}
-    </table>
-  );
-}
+const Table = ({ children, style, ...custom }) => (
+  <table style={getStyles.root(style)} {...custom}>
+    {children}
+  </table>
+);
 
 Table.displayName = 'Table';
 
@@ -24,4 +23,4 @@ Table.defaultProps = {
   style: {}
 };
 
-export default Table;
+export default Radium(Table);

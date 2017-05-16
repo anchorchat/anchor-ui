@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** TableBodys are used to display data. */
-function TableBody({ children, style, ...custom }) {
-  return (
-    <tbody style={getStyles.root(style)} {...custom}>
-      {children}
-    </tbody>
-  );
-}
+const TableBody = ({ children, style, ...custom }) => (
+  <tbody style={getStyles.root(style)} {...custom}>
+    {children}
+  </tbody>
+);
 
 TableBody.displayName = 'TableBody';
 
@@ -24,4 +23,4 @@ TableBody.defaultProps = {
   style: {}
 };
 
-export default TableBody;
+export default Radium(TableBody);

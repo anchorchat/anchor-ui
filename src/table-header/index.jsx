@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** TableHeaders are used to display data. */
-function TableHeader({ children, style }, { color }) {
-  return (
-    <thead style={getStyles.root(color, style)}>
-      {children}
-    </thead>
-  );
-}
+const TableHeader = ({ children, style }, { color }) => (
+  <thead style={getStyles.root(color, style)}>
+    {children}
+  </thead>
+);
 
 TableHeader.displayName = 'TableHeader';
 
@@ -28,4 +27,4 @@ TableHeader.contextTypes = {
   color: PropTypes.string
 };
 
-export default TableHeader;
+export default Radium(TableHeader);

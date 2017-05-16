@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
 /** TableRows are used to display data. */
-function TableRow({ children, style, ...custom }) {
-  return (
-    <tr style={getStyles.root(style)} {...custom}>
-      {children}
-    </tr>
-  );
-}
+const TableRow = ({ children, style, ...custom }) => (
+  <tr style={getStyles.root(style)} {...custom}>
+    {children}
+  </tr>
+);
 
 TableRow.displayName = 'TableRow';
 
