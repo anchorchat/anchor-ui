@@ -5714,6 +5714,31 @@
       }
     }
   },
+  "components/theme-provider/index.jsx": {
+    "description": "",
+    "displayName": "ThemeProvider",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Your theme's color",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Children to apply theme color to"
+      }
+    }
+  },
   "components/with-theme/index.jsx": {
     "description": "",
     "displayName": "WithTheme",

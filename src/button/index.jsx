@@ -1,30 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** General purpose button with three types */
-function Button(
-  { children, onClick, iconButton, inverted, style, disabled, flatButton, ...custom }, { color }
-) {
-  return (
-    <button
-      key="button"
-      onClick={onClick}
-      style={getStyles.root(color, inverted, iconButton, disabled, flatButton, style)}
-      disabled={disabled}
-      {...custom}
-    >
-      {children}
-    </button>
-  );
+class Button extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      color: this.context.theme.color
+    };
+  }
+
+  componentDidMount() {
+    this.context.theme.subscribe(this.setColor);
+  }
+
+  setColor = (color) => {
+    this.setState({ color });
+  }
+
+  render() {
+    const {
+      children, onClick, iconButton, inverted, style, disabled, flatButton, ...custom
+    } = this.props;
+    const { theme } = this.context;
+
+    return (
+      <button
+        onClick={onClick}
+        style={getStyles.root(theme.color, inverted, iconButton, disabled, flatButton, style)}
+        disabled={disabled}
+        {...custom}
+      >
+        {children}
+      </button>
+    );
+  }
 }
 
 Button.displayName = 'Button';
 
 Button.contextTypes = {
-  color: PropTypes.string
+  theme: PropTypes.object
 };
 
 Button.propTypes = {
