@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
+import Table from '../../../dist/table';
+import TableHeader from '../../../dist/table-header';
+import TableHeaderColumn from '../../../dist/table-header-column';
+import TableBody from '../../../dist/table-body';
+import TableRow from '../../../dist/table-row';
+import TableColumn from '../../../dist/table-column';
 
 function getPropType(type) {
   if (type.name === 'instanceOf') {
@@ -22,28 +28,28 @@ function Props({ props }) {
   return (
     <section>
       <h1>Props</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Default value</th>
-            <th>Required</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHeaderColumn>Name</TableHeaderColumn>
+            <TableHeaderColumn>Type</TableHeaderColumn>
+            <TableHeaderColumn>Description</TableHeaderColumn>
+            <TableHeaderColumn>Default value</TableHeaderColumn>
+            <TableHeaderColumn>Required</TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {_.map(props, (prop, name) => (
-            <tr key={name}>
-              <td>{name}</td>
-              <td>{getPropType(prop.type)}</td>
-              <td>{prop.description}</td>
-              <td>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</td>
-              <td>{prop.required ? 'Yes' : 'No'}</td>
-            </tr>
+            <TableRow key={name}>
+              <TableColumn>{name}</TableColumn>
+              <TableColumn>{getPropType(prop.type)}</TableColumn>
+              <TableColumn>{prop.description}</TableColumn>
+              <TableColumn>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
+              <TableColumn>{prop.required ? 'Yes' : 'No'}</TableColumn>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </section>
   );
 }
