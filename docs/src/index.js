@@ -42,6 +42,7 @@ import Profile from './components/profile';
 import Menu from './components/menu';
 import Slider from './components/slider';
 import Lightbox from './components/lightbox';
+import Table from './components/table';
 import './index.css';
 
 ReactDOM.render(
@@ -85,6 +86,7 @@ ReactDOM.render(
       <Route path="/menu" component={Menu} />
       <Route path="/slider" component={Slider} />
       <Route path="/lightbox" component={Lightbox} />
+      <Route path="/table" component={Table} />
     </Route>
   </Router>,
   document.getElementById('root')
