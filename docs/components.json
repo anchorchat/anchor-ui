@@ -810,6 +810,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The checkbox' value"
       }
     }
   },
