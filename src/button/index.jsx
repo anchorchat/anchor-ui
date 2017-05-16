@@ -1,41 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import getStyles from './get-styles';
+import ThemeableComponent from '../internal/themeable-component';
 
 /** General purpose button with three types */
-class Button extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      color: this.context.theme.color
-    };
-  }
-
-  componentDidMount() {
-    this.unsubscribe = this.context.theme.subscribe(this.setColor);
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  setColor = (color) => {
-    this.setState({ color });
-  }
-
+class Button extends ThemeableComponent {
   render() {
     const {
       children, onClick, iconButton, inverted, style, disabled, flatButton, ...custom
     } = this.props;
-    const { theme } = this.context;
+    const { color } = this.state;
 
     return (
       <button
         onClick={onClick}
-        style={getStyles.root(theme.color, inverted, iconButton, disabled, flatButton, style)}
+        style={getStyles.root(color, inverted, iconButton, disabled, flatButton, style)}
         disabled={disabled}
         {...custom}
       >
@@ -46,10 +27,6 @@ class Button extends Component {
 }
 
 Button.displayName = 'Button';
-
-Button.contextTypes = {
-  theme: PropTypes.object
-};
 
 Button.propTypes = {
   /** Content of the button */
