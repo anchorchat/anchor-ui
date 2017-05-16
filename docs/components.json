@@ -242,6 +242,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -503,6 +510,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },

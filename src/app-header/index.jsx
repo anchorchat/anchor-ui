@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
+import compose from 'recompose/compose';
 import getStyles from './get-styles';
+import themeable from '../internal/themeable';
 
 /** Your app's header */
 function AppHeader(
@@ -16,9 +18,9 @@ function AppHeader(
     rightButtonStyle,
     leftButton,
     leftButtonStyle,
+    color,
     ...custom
-  },
-  { color }
+  }
 ) {
   return (
     <header style={getStyles.root(color, style, leftButton, rightButton)} {...custom}>
@@ -59,6 +61,7 @@ AppHeader.propTypes = {
   leftButton: PropTypes.node,
   /** Override the styles of the left button */
   leftButtonStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
 };
 
 AppHeader.defaultProps = {
@@ -73,8 +76,10 @@ AppHeader.defaultProps = {
   leftButtonStyle: {}
 };
 
-AppHeader.contextTypes = {
-  color: PropTypes.string
-};
+const enhance = compose(
+  themeable,
+  Radium,
+  pure
+);
 
-export default pure(Radium(AppHeader));
+export default enhance(AppHeader);

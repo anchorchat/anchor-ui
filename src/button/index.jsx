@@ -4,7 +4,7 @@ import pure from 'recompose/pure';
 import compose from 'recompose/compose';
 import Radium from 'radium';
 import getStyles from './get-styles';
-import themeable from '../internal/themeable-component';
+import themeable from '../internal/themeable';
 
 /** General purpose button with three types */
 const Button = ({
