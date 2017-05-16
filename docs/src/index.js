@@ -44,6 +44,7 @@ import Slider from './components/slider';
 import Lightbox from './components/lightbox';
 import ThemeProviderDoc from './components/theme-provider';
 import ThemeProvider from '../../dist/theme-provider';
+import Table from './components/table';
 import './index.css';
 
 ReactDOM.render(
@@ -88,6 +89,7 @@ ReactDOM.render(
         <Route path="/menu" component={Menu} />
         <Route path="/slider" component={Slider} />
         <Route path="/lightbox" component={Lightbox} />
+        <Route path="/table" component={Table} />
         <Route path="/theme-provider" component={ThemeProviderDoc} />
       </Route>
     </Router>
