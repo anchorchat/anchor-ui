@@ -18,8 +18,8 @@ class ThemeProviderDoc extends Component {
     };
   }
 
-  setColor = () => {
-    this.setState({ color: 'purple' });
+  setColor = (color) => {
+    this.setState({ color });
   }
 
   render() {
@@ -32,7 +32,19 @@ class ThemeProviderDoc extends Component {
         margin: 0,
         padding: '20px'
       },
-      button: { margin: '10px' }
+      button: { margin: '10px' },
+      buttonWithoutTheme: {
+        margin: '10px',
+        backgroundColor: 'green'
+      },
+      buttonOrange: {
+        margin: '10px',
+        backgroundColor: 'orange'
+      },
+      buttonBlue: {
+        margin: '10px',
+        backgroundColor: 'blue'
+      }
     };
     return (
       <article className="doc">
@@ -48,12 +60,16 @@ class ThemeProviderDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
+            <p>Current selected theme color: {this.state.color}</p>
+            <Button style={style.buttonOrange} onClick={() => this.setColor('orange')}>Orange Theme</Button>
+            <Button style={style.buttonBlue} onClick={() => this.setColor('blue')}>Blue Theme</Button>
             <ThemeProvider color={this.state.color}>
-              <Button style={style.button} onClick={() => {}}>Orange Button</Button>
+              <section>
+                <p>With theme colors</p>
+                <Button style={style.button} onClick={() => {}}>With Theme Button</Button>
+              </section>
             </ThemeProvider>
-            <ThemeProvider color="#22ac55">
-              <Button style={style.button} onClick={this.setColor}>Green Button</Button>
-            </ThemeProvider>
+            <Button style={style.buttonWithoutTheme} onClick={() => {}}>Green Button</Button>
           </Paper>
         </section>
         <Props props={componentData.props} />
