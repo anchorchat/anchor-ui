@@ -53,7 +53,7 @@ Loader.defaultProps = {
 };
 
 const enhance = compose(
-  themeable,
+  themeable(),
   Radium
 );
 

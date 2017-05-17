@@ -75,7 +75,7 @@ Dialog.defaultProps = {
 };
 
 const enhance = compose(
-  themeable,
+  themeable(),
   Radium,
   pure
 );

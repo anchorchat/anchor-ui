@@ -49,7 +49,7 @@ ProfileCard.defaultProps = {
 };
 
 const enhance = compose(
-  themeable,
+  themeable(),
   Radium,
   pure
 );

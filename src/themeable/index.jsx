@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
-const themeable = (ChildComponent) => {
+const themeable = options => ChildComponent => (
   class ThemeableComponent extends Component {
     static contextTypes = {
       theme: PropTypes.object
@@ -28,11 +28,13 @@ const themeable = (ChildComponent) => {
     };
 
     render() {
-      return <ChildComponent {...this.props} color={this.state.color} />;
+      const propName = (options && options.propName) || 'color';
+      const name = { [propName]: this.state.color };
+      const combinedProps = { ...this.props, ...name };
+
+      return <ChildComponent {...combinedProps} />;
     }
   }
-
-  return ThemeableComponent;
-};
+);
 
 export default themeable;

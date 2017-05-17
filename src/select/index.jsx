@@ -176,7 +176,7 @@ class Select extends Component {
 }
 
 const enhance = compose(
-  themeable,
+  themeable(),
   Radium
 );
 

@@ -49,7 +49,7 @@ Button.defaultProps = {
 };
 
 const enhance = compose(
-  themeable,
+  themeable(),
   Radium
 );
 
