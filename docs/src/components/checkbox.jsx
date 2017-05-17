@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import Checkbox from '../../../dist/checkbox';
+import Divider from '../../../dist/divider';
+import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
@@ -13,39 +15,47 @@ class CheckboxDoc extends Component {
     super();
 
     this.state = {
-      one: true,
-      two: false
+      values: ['One']
     };
 
-    this.toggleCheckboxOne = this.toggleCheckboxOne.bind(this);
-    this.toggleCheckboxTwo = this.toggleCheckboxTwo.bind(this);
+    this.changeCheckBox = this.changeCheckBox.bind(this);
   }
 
-  toggleCheckboxOne(event) {
-    this.setState({
-      one: event.currentTarget.checked
-    });
-  }
+  changeCheckBox = (event) => {
+    const { values } = this.state;
+    const checked = event.target.checked;
+    const value = event.target.value;
 
-  toggleCheckboxTwo(event) {
-    this.setState({
-      two: event.currentTarget.checked
-    });
+    if (checked && !_.contains(values, value)) {
+      values.push(value);
+    }
+
+    if (!checked && _.contains(values, value)) {
+      const index = _.indexOf(values, value);
+      values.splice(index, 1);
+    }
+
+    this.setState({ values });
   }
 
   render() {
-    const { one } = this.state;
-    const { two } = this.state;
+    const { values } = this.state;
+
     const componentData = _.find(components, component => component.displayName === 'Checkbox');
     const style = {
-      paper: {
+      checkboxWrapper: {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
         margin: 0,
         padding: '20px'
       },
-      checkbox: { margin: '10px' }
+      checkbox: { margin: '10px' },
+      label: {
+        paddingLeft: 0,
+        marginTop: '20px',
+        color: colors.primaryText
+      },
     };
 
     return (
@@ -61,21 +71,34 @@ class CheckboxDoc extends Component {
         </section>
         <section>
           <h1>Examples</h1>
-          <Paper style={style.paper}>
-            <Checkbox
-              onChange={this.toggleCheckboxOne}
-              label="Default checked"
-              name="one"
-              style={style.checkbox}
-              checked={one}
-            />
-            <Checkbox
-              onChange={this.toggleCheckboxTwo}
-              label="Unchecked"
-              name="two"
-              style={style.checkbox}
-              checked={two}
-            />
+          <Paper>
+            <section style={style.checkboxWrapper}>
+              <Checkbox
+                onChange={this.changeCheckBox}
+                label="One"
+                name="One"
+                style={style.checkbox}
+                checked={_.contains(values, 'One')}
+                value="One"
+              />
+              <Checkbox
+                onChange={this.changeCheckBox}
+                label="Two"
+                name="Two"
+                style={style.checkbox}
+                checked={_.contains(values, 'Two')}
+                value="Two"
+              />
+            </section>
+            <Divider />
+            <section>
+              <p style={style.label}>Checked Items: </p>
+              {
+                _.map(values, (value, key) => (
+                  <p key={key} style={style.label}>- {value}</p>
+                ))
+              }
+            </section>
           </Paper>
         </section>
         <Props props={componentData.props} />

@@ -6,7 +6,7 @@ const styleSheet = {
     color: colors.white,
     fontSize: '10px',
     lineHeight: '10px',
-    padding: '3px',
+    padding: '2px',
     textAlign: 'center',
     borderRadius: '3px',
     fontFamily: 'inherit',

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import List from '../../../dist/list';
 import ListItem from '../../../dist/list-item';
@@ -46,6 +47,7 @@ function Nav(props, context) {
         <Link to="/select"><ListItem active={router.isActive('/select')} primaryText="Select" /></Link>
         <Link to="/slider"><ListItem active={router.isActive('/slider')} primaryText="Slider" /></Link>
         <Link to="/switch"><ListItem active={router.isActive('/switch')} primaryText="Switch" /></Link>
+        <Link to="/table"><ListItem active={router.isActive('/table')} primaryText="Table" /></Link>
         <Link to="/tabs"><ListItem active={router.isActive('/tabs')} primaryText="Tabs" /></Link>
         <Link to="/with-theme"><ListItem active={router.isActive('/with-theme')} primaryText="WithTheme" /></Link>
       </List>

@@ -21,6 +21,8 @@ class ListItem extends Component {
     primaryText: PropTypes.node.isRequired,
     /** The ListItem's secondary text */
     secondaryText: PropTypes.node,
+    /** A badge to display before the secondaryText. */
+    textBadge: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the primaryText element */
@@ -53,6 +55,7 @@ class ListItem extends Component {
   static defaultProps = {
     style: {},
     secondaryText: '',
+    textBadge: null,
     primaryTextStyle: {},
     secondaryTextStyle: {},
     onClick: null,
@@ -118,6 +121,7 @@ class ListItem extends Component {
     const {
       primaryText,
       secondaryText,
+      textBadge,
       onClick,
       active,
       rightButton,
@@ -162,13 +166,19 @@ class ListItem extends Component {
             </div>
             : null
           }
-          <h1 style={getStyles.text(styles.primaryText, active, primaryTextStyle)}>
+          <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
             {primaryText}
           </h1>
           {
-            secondaryText
-            ? <h2 style={getStyles.text(styles.secondaryText, active, secondaryTextStyle)}>
-              {secondaryText}
+            secondaryText || textBadge
+            ? <h2
+              style={getStyles.text(
+                styles.secondaryText,
+                active, textBadge,
+                secondaryTextStyle
+              )}
+            >
+              {textBadge} {secondaryText}
             </h2>
             : null
           }

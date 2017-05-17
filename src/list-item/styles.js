@@ -44,7 +44,8 @@ export default {
     padding: '8px',
     boxSizing: 'border-box',
     backgroundColor: 'rgba(21, 21, 21, .75)',
-    borderRadius: '50%'
+    borderRadius: '50%',
+    zIndex: 1
   },
   rightButton: {
     paddingRight: '52px'
@@ -71,11 +72,11 @@ export default {
     fontWeight: 'normal',
     marginBottom: 0,
     marginTop: '2.4px',
-    lineHeight: '22px',
+    lineHeight: '16px',
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
   },
   leftAvatar: {
     paddingLeft: '56px'
@@ -88,7 +89,8 @@ export default {
   badge: {
     position: 'absolute',
     right: '-3px',
-    top: '-3px'
+    top: '-3px',
+    zIndex: 1
   },
   container: {
     width: '100%'

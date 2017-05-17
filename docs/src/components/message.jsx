@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
+import MenuItem from '../../../dist/menu-item';
 import Props from './props';
 import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
@@ -31,6 +32,30 @@ const messages = [
     username: 'Lars',
     avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
     id: 3
+  },
+  {
+    body: 'https://telegram.org/file/811140066/1/7fM-CwKk4F0/53f9f1fc731c63547d',
+    createdAt: new Date(),
+    username: 'Lars',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 4,
+    type: 'sticker'
+  },
+  {
+    body: 'https://telegram.org/file/811140750/1/KwtOAxwo1SA/452620c767366798d3',
+    createdAt: new Date(),
+    username: 'Sjaak',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 5,
+    type: 'sticker'
+  },
+  {
+    body: 'https://source.unsplash.com/random/375x667',
+    createdAt: new Date(),
+    username: 'Sjaak',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 6,
+    type: 'image'
   },
 ];
 
@@ -117,6 +142,24 @@ function MessageDoc() {
                 avatar={message.avatar}
                 emoji
                 compact
+              />
+            ))}
+          </MessageList>
+        </Paper>
+        <h1>Message with IconMenu</h1>
+        <Paper style={style.paper}>
+          <MessageList style={style.list}>
+            {messages.map(message => (
+              <Message
+                message={message}
+                key={`message-${message.id}`}
+                myMessage={message.username === currentUser}
+                avatar={message.avatar}
+                emoji
+                menuItems={[
+                  <MenuItem text="Menu Item" onClick={() => {}} />,
+                  <MenuItem text="Another Menu Item" onClick={() => {}} />
+                ]}
               />
             ))}
           </MessageList>

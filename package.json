@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "3.0.7",
+  "version": "3.1.0",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -77,7 +77,6 @@
     "lodash": "^4.17.4",
     "radium": "^0.18.1",
     "react-measure": "^1.4.5",
-    "react-tappable": "^0.8.4",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }
