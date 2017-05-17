@@ -72,7 +72,7 @@ export default {
     fontWeight: 'normal',
     marginBottom: 0,
     marginTop: '2.4px',
-    lineHeight: '16px',
+    lineHeight: '22px',
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
