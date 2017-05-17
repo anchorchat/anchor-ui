@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import colors from '../settings/colors';
 
 const themeable = options => ChildComponent => (
   class ThemeableComponent extends Component {
@@ -11,21 +12,27 @@ const themeable = options => ChildComponent => (
       super(props, context);
 
       this.state = {
-        color: this.context.theme.color
+        color: (context && context.theme && context.theme.color) || colors.theme
       };
     }
 
     componentDidMount() {
-      this.unsubscribe = this.context.theme.subscribe(this.setColor);
+      const { theme } = this.context;
+
+      if (theme) {
+        this.unsubscribe = theme.subscribe(this.setColor);
+      }
     }
 
     componentWillUnmount() {
-      this.unsubscribe();
+      const { theme } = this.context;
+
+      if (theme) {
+        this.unsubscribe();
+      }
     }
 
-    setColor = (color) => {
-      this.setState({ color });
-    };
+    setColor = color => this.setState({ color });
 
     render() {
       const propName = (options && options.propName) || 'color';
