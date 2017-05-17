@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import compose from 'recompose/compose';
 import Radium from 'radium';
 import getStyles from './get-styles';
@@ -51,8 +50,7 @@ Button.defaultProps = {
 
 const enhance = compose(
   themeable,
-  Radium,
-  pure
+  Radium
 );
 
 export default enhance(Button);
