@@ -28,7 +28,7 @@ const ProfileCard = ({ username, avatar, style, usernameStyle, color, ...custom 
   );
 };
 
-ProfileCard.isplayName = 'ProfileCard';
+ProfileCard.displayName = 'ProfileCard';
 
 ProfileCard.propTypes = {
   /** Path to the user's profile image */

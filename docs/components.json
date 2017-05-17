@@ -37,6 +37,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -360,6 +367,13 @@
         },
         "required": true,
         "description": "Maximum value that will be shown.\nThis will result in `${maxValue}+` if value exceeds maxValue"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -831,6 +845,13 @@
         },
         "required": true,
         "description": "The checkbox' value"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -925,6 +946,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -2987,6 +3015,13 @@
           "value": "() => {}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3058,6 +3093,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3223,6 +3265,13 @@
           "value": "null",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3644,6 +3693,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -4316,6 +4372,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -4872,11 +4935,18 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
   "components/radio-button/index.jsx": {
-    "description": "",
+    "description": "Radio buttons are switches used for selection from multiple options",
     "displayName": "RadioButton",
     "methods": [],
     "props": {
@@ -4963,6 +5033,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5289,6 +5366,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5422,6 +5506,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5506,6 +5597,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5632,6 +5730,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5736,6 +5841,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
