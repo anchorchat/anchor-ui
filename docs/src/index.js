@@ -42,7 +42,8 @@ import Profile from './components/profile';
 import Menu from './components/menu';
 import Slider from './components/slider';
 import Lightbox from './components/lightbox';
-import ThemeProviderDoc from './components/theme-provider';
+import ThemeProvider from './components/theme-provider';
+import themeable from './components/themeable';
 import Table from './components/table';
 import './index.css';
 
@@ -88,7 +89,8 @@ ReactDOM.render(
       <Route path="/slider" component={Slider} />
       <Route path="/lightbox" component={Lightbox} />
       <Route path="/table" component={Table} />
-      <Route path="/theme-provider" component={ThemeProviderDoc} />
+      <Route path="/theme-provider" component={ThemeProvider} />
+      <Route path="/themeable" component={themeable} />
     </Route>
   </Router>,
   document.getElementById('root')

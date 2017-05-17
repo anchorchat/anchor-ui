@@ -50,6 +50,7 @@ function Nav(props, context) {
         <Link to="/table"><ListItem active={router.isActive('/table')} primaryText="Table" /></Link>
         <Link to="/tabs"><ListItem active={router.isActive('/tabs')} primaryText="Tabs" /></Link>
         <Link to="/theme-provider"><ListItem active={router.isActive('/theme-provider')} primaryText="ThemeProvider" /></Link>
+        <Link to="/themeable"><ListItem active={router.isActive('/themeable')} primaryText="themeable" /></Link>
         <Link to="/with-theme"><ListItem active={router.isActive('/with-theme')} primaryText="WithTheme" /></Link>
       </List>
     </nav>
