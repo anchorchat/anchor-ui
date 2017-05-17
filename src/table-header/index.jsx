@@ -27,10 +27,6 @@ TableHeader.defaultProps = {
   style: {}
 };
 
-TableHeader.contextTypes = {
-  color: PropTypes.string
-};
-
 const enhance = compose(
   themeable(),
   Radium,
