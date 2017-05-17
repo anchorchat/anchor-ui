@@ -35,6 +35,7 @@ function ThemeProviderDoc({ setColor }) {
       </section>
       <section>
         <h1>Examples</h1>
+        <h2>Click one of the buttons to change the app&apos;s theme</h2>
         <Paper style={style.paper}>
           <ThemeProvider color="#f2912c">
             <Button style={style.button} onClick={() => setColor('#f2912c')}>Orange Button</Button>
