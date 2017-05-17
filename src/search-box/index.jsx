@@ -73,7 +73,7 @@ class SearchBox extends Component {
         <input
           style={combineStyles(styles.input, inputStyle)}
           value={value}
-          onChange={onChange}
+          onChange={this.handleChange}
           placeholder={placeholder}
         />
       </section>
