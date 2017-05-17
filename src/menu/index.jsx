@@ -1,4 +1,5 @@
-import React, { PropTypes, cloneElement } from 'react';
+import React, { cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';

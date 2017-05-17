@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import pure from 'recompose/pure';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
+import compose from 'recompose/compose';
 import IconMenu from '../icon-menu';
 import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
+import themeable from '../themeable';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -54,7 +56,8 @@ class Message extends Component {
     /** Enables PopOver with MenuItems */
     menuItems: PropTypes.node,
     /** Enables Lighbox for image messages */
-    enableLightbox: PropTypes.bool
+    enableLightbox: PropTypes.bool,
+    color: PropTypes.string.isRequired
   }
 
   static defaultProps = {
@@ -73,22 +76,10 @@ class Message extends Component {
     enableLightbox: false
   }
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
-
   constructor() {
     super();
 
     this.renderIconMenu = this.renderIconMenu.bind(this);
-  }
-
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.state, nextState) ||
-      !shallowEqual(this.context, nextContext)
-    );
   }
 
   renderIconMenu() {
@@ -121,9 +112,9 @@ class Message extends Component {
       enableLinks, // eslint-disable-line no-unused-vars
       menuItems, // eslint-disable-line no-unused-vars
       enableLightbox,
+      color,
       ...custom
     } = this.props;
-    const { color } = this.context;
 
     let messageElement = <TextMessage color={color} {...this.props} />;
 
@@ -144,4 +135,10 @@ class Message extends Component {
   }
 }
 
-export default Radium(Message);
+const enhance = compose(
+  themeable(),
+  Radium,
+  pure
+);
+
+export default enhance(Message);

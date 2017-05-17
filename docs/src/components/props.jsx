@@ -25,6 +25,8 @@ function getPropType(type) {
 }
 
 function Props({ props }) {
+  const propsWithoutColor = _.omit(props, 'color');
+
   return (
     <section>
       <h1>Props</h1>
@@ -39,7 +41,7 @@ function Props({ props }) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {_.map(props, (prop, name) => (
+          {_.map(propsWithoutColor, (prop, name) => (
             <TableRow key={name}>
               <TableColumn>{name}</TableColumn>
               <TableColumn>{getPropType(prop.type)}</TableColumn>

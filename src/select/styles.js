@@ -21,6 +21,7 @@ export default {
     backgroundColor: colors.theme,
     borderRadius: '3px',
     lineHeight: '24px',
+    transition: 'background .3s ease-in-out',
     boxShadow: styles.depthShadows[0],
     ':hover': {
       backgroundColor: darken(colors.theme, 0.05)

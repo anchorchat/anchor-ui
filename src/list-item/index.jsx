@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
+import compose from 'recompose/compose';
 import styles from './styles';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
@@ -11,6 +11,7 @@ import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import Button from '../button';
 import List from '../list';
+import themeable from '../themeable';
 
 /** A list's item */
 class ListItem extends Component {
@@ -49,7 +50,8 @@ class ListItem extends Component {
     /** Control toggle state of nested list. */
     open: PropTypes.bool,
     /** Callback function fired when the ListItem toggles its nested list */
-    onNestedListToggle: PropTypes.func
+    onNestedListToggle: PropTypes.func,
+    color: PropTypes.string.isRequired
   }
 
   static defaultProps = {
@@ -100,16 +102,6 @@ class ListItem extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'listItem', ':hover') !== Radium.getState(nextState, 'listItem', ':hover') ||
-      Radium.getState(this.state, 'listItem', ':active') !== Radium.getState(nextState, 'listItem', ':active') ||
-      !shallowEqual(this.state, nextState)
-    );
-  }
-
   toggleNestedList() {
     const { onNestedListToggle } = this.props;
 
@@ -135,9 +127,9 @@ class ListItem extends Component {
       children,
       open, // eslint-disable-line no-unused-vars
       onNestedListToggle, // eslint-disable-line no-unused-vars
+      color,
       ...custom
     } = this.props;
-    const { color } = this.context;
 
     let nestedList = null;
 
@@ -199,4 +191,9 @@ class ListItem extends Component {
   }
 }
 
-export default Radium(ListItem);
+const enhance = compose(
+  themeable(),
+  Radium
+);
+
+export default enhance(ListItem);

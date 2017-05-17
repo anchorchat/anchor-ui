@@ -18,12 +18,18 @@ class WithTheme extends Component {
   }
 
   static childContextTypes = {
-    color: PropTypes.string.isRequired
+    theme: PropTypes.shape({
+      color: PropTypes.string
+    })
   }
 
+  // Allow backwards compatibility (sort of)
   getChildContext() {
     return {
-      color: this.props.color
+      theme: {
+        color: this.props.color,
+        subscribe: () => () => {}
+      }
     };
   }
 
