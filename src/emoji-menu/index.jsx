@@ -53,10 +53,6 @@ class EmojiMenu extends Component {
     iconStyle: {}
   }
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
-
   constructor(props) {
     super(props);
 

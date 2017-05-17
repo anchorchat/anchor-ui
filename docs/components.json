@@ -3804,6 +3804,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
