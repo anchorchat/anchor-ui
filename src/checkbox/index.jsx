@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import pure from 'recompose/pure';
 import Radium from 'radium';
+import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
 import IconCheckbox from '../icons/icon-checkbox';
 import styles from './styles';
+import themeable from '../internal/themeable';
 
 /** A checkbox is used to verify which options you want selected from a group. */
-function Checkbox(
-  { onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, value, ...custom },
-  { color }
-) {
+function Checkbox({
+  onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, value, color, ...custom
+}) {
   return (
     <label htmlFor={name} style={getStyles.root(color, style)} {...custom}>
       <input
@@ -55,7 +57,8 @@ Checkbox.propTypes = {
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
   /** The checkbox' value */
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 };
 
 Checkbox.defaultProps = {
@@ -66,8 +69,10 @@ Checkbox.defaultProps = {
   checked: false
 };
 
-Checkbox.contextTypes = {
-  color: PropTypes.string
-};
+const enhance = compose(
+  themeable,
+  Radium,
+  pure
+);
 
-export default Radium(Checkbox);
+export default enhance(Checkbox);
