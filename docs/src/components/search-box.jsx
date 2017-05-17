@@ -18,8 +18,8 @@ class SearchBoxDoc extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  handleChange(value) {
+    this.setState({ value });
   }
 
   render() {
@@ -48,7 +48,7 @@ class SearchBoxDoc extends React.Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <SearchBox onChange={this.handleChange} changeSearchQuery={() => {}} handleSearch={() => {}} placeholder="Search" value={this.state.value} />
+            <SearchBox onChange={this.handleChange} changeSearchQuery={() => {}} placeholder="Search" value={this.state.value} />
           </Paper>
         </section>
         <Props props={componentData.props} />

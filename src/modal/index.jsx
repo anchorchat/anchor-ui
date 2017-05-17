@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import pure from 'recompose/pure';
+import Radium from 'radium';
+import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
+import themeable from '../themeable';
 
 /** A dialog that can only be closed by selecting one of the actions. */
 function Modal({
-  children, actions, style, contentStyle, footerStyle, open, overlayStyle, ...custom }, { color }
-) {
+  children, actions, style, contentStyle, footerStyle, open, overlayStyle, color, ...custom
+}) {
   if (!open) {
     return null;
   }
@@ -41,7 +43,8 @@ Modal.propTypes = {
   /** Toggle the Dialogs visibility */
   open: PropTypes.bool,
   /** Override the styles of the overlay element */
-  overlayStyle: PropTypes.instanceOf(Object)
+  overlayStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
 };
 
 Modal.displayName = 'Modal';
@@ -54,8 +57,10 @@ Modal.defaultProps = {
   overlayStyle: {}
 };
 
-Modal.contextTypes = {
-  color: PropTypes.string
-};
+const enhance = compose(
+  themeable(),
+  Radium,
+  pure
+);
 
-export default pure(Radium(Modal));
+export default enhance(Modal);

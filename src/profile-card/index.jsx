@@ -1,64 +1,57 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import pure from 'recompose/pure';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
+import compose from 'recompose/compose';
 import Avatar from '../avatar';
 import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import getStyles from './get-styles';
+import themeable from '../themeable';
 
 /** Card containing the user's profile data */
-class ProfileCard extends Component {
-  static displayName = 'ProfileCard'
+const ProfileCard = ({ username, avatar, style, usernameStyle, color, ...custom }) => {
+  const avatarStyle = {
+    float: 'left',
+    width: '80px',
+    height: '80px',
+    border: `3px solid ${colors.white}`,
+    marginRight: '15px'
+  };
 
-  static propTypes = {
-    /** Path to the user's profile image */
-    avatar: PropTypes.string,
-    /** The user's username */
-    username: PropTypes.node.isRequired,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the username element */
-    usernameStyle: PropTypes.instanceOf(Object)
-  }
+  return (
+    <section style={getStyles.root(color, avatar, style)} {...custom}>
+      {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
+      <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
+    </section>
+  );
+};
 
-  static defaultProps = {
-    avatar: '',
-    style: {},
-    usernameStyle: {},
-  }
+ProfileCard.displayName = 'ProfileCard';
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
+ProfileCard.propTypes = {
+  /** Path to the user's profile image */
+  avatar: PropTypes.string,
+  /** The user's username */
+  username: PropTypes.node.isRequired,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the username element */
+  usernameStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
+};
 
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext)
-    );
-  }
+ProfileCard.defaultProps = {
+  avatar: '',
+  style: {},
+  usernameStyle: {},
+};
 
-  render() {
-    const { username, avatar, style, usernameStyle, ...custom } = this.props;
-    const { color } = this.context;
+const enhance = compose(
+  themeable(),
+  Radium,
+  pure
+);
 
-    const avatarStyle = {
-      float: 'left',
-      width: '80px',
-      height: '80px',
-      border: `3px solid ${colors.white}`,
-      marginRight: '15px'
-    };
-
-    return (
-      <section style={getStyles.root(color, avatar, style)} {...custom}>
-        {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
-        <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
-      </section>
-    );
-  }
-}
-
-export default Radium(ProfileCard);
+export default enhance(ProfileCard);

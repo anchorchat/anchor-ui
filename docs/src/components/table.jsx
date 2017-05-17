@@ -11,7 +11,7 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import Table from \'anchor-ui/tabs\';';
+const usage = '```js\n import Table from \'anchor-ui/table\';';
 
 function TableDoc() {
   const componentData = _.find(components, component => component.displayName === 'Table');
