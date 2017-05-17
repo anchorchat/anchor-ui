@@ -7,6 +7,7 @@ import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import colors from '../../../dist/settings/colors';
 
 const usage = '```js\n import ThemeProvider from \'anchor-ui/icons\';';
 
@@ -42,6 +43,11 @@ function ThemeProviderDoc({ setColor }) {
           </ThemeProvider>
           <ThemeProvider color="#22ac55">
             <Button style={style.button} onClick={() => setColor('#22ac55')}>Green Button</Button>
+          </ThemeProvider>
+          <ThemeProvider color={colors.theme}>
+            <Button style={style.button} onClick={() => setColor(colors.theme)}>
+              Default Color Button
+            </Button>
           </ThemeProvider>
         </Paper>
       </section>
