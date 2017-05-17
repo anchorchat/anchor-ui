@@ -60,4 +60,8 @@ ThemeProviderDoc.propTypes = {
   setColor: PropTypes.func
 };
 
+ThemeProviderDoc.defaultProps = {
+  setColor: () => {}
+};
+
 export default ThemeProviderDoc;
