@@ -7,7 +7,7 @@ const install = '```bash\n $ npm i -S anchor-ui';
 const font = '```css\n * {\n  font-family: \'Lato\', sans-serif;\n }';
 const named = '```js\n import { AppHeader, Button } from \'anchor-ui\';';
 const defaultImport = '```js\n import AppHeader from \'anchor-ui/app-header\'; \n import Button from \'anchor-ui/button\';';
-const theme = '```js\n import WithTheme from \'anchor-ui/with-theme\'; \n <WithTheme color="#1ba6c4"><YourComponent /></WithTheme>;';
+const theme = '```js\n import ThemeProvider from \'anchor-ui/theme-provider\'; \n <ThemeProvider color="#1ba6c4"><YourComponent /></ThemeProvider>;';
 
 function Home() {
   return (
@@ -35,8 +35,8 @@ function Home() {
         <ReactMarkdown source={defaultImport} className="markdown" />
         <h2>Theme</h2>
         <p>
-          Add your own color to the components, color is applied with context. <br />
-          Wrap WithTheme around components you want your theme color in.
+          Add your own color to the components, color is applied with props. <br />
+          Wrap ThemeProvider around components you want your theme color in.
         </p>
         <ReactMarkdown source={theme} className="markdown" />
         <h2>Dependencies</h2>
