@@ -45,6 +45,7 @@ export TableBody from './table-body';
 export TableRow from './table-row';
 export TableColumn from './table-column';
 export themeable from './themeable';
+export ThemeProvider from './theme-provider';
 
 export icons from './icons';
 
