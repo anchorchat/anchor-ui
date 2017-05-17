@@ -17,7 +17,7 @@ const styleSheet = {
     cursor: 'pointer'
   },
   knob: {
-    background: colors.white,
+    backgroundColor: colors.white,
     width: '20px',
     height: '20px',
     boxShadow: styles.depthShadows[0],
@@ -28,7 +28,7 @@ const styleSheet = {
     transition: 'all .3s ease-in-out'
   },
   track: {
-    background: colors.grey,
+    backgroundColor: colors.grey,
     width: '34px',
     height: '14px',
     position: 'relative',

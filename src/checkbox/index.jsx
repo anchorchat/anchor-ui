@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import colors from '../settings/colors';
 import getStyles from './get-styles';
 import IconCheckbox from '../icons/icon-checkbox';
 import styles from './styles';
@@ -26,7 +25,7 @@ function Checkbox({
       <div style={getStyles.icon(iconStyle)}>
         {
           checked
-          ? <IconCheckbox color={color || colors.theme} />
+          ? <IconCheckbox color={color} />
           : <div style={styles.unchecked} />
         }
       </div>

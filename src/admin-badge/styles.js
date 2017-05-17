@@ -10,7 +10,8 @@ const styleSheet = {
     textAlign: 'center',
     borderRadius: '3px',
     fontFamily: 'inherit',
-    border: `1px solid ${colors.theme}`
+    border: `1px solid ${colors.theme}`,
+    transition: 'background .3s ease-in-out'
   },
   inverted: {
     color: colors.theme,

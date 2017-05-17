@@ -13,7 +13,7 @@ function getKnobStyle(themeColor, active, overrideStyle) {
   let activeStyle = styles.knobActive;
 
   if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { background: themeColor });
+    activeStyle = combineStyles(activeStyle, { backgroundColor: themeColor });
   }
 
   if (active) {
@@ -28,7 +28,7 @@ function getTrackStyle(themeColor, active, overrideStyle) {
   let activeStyle = styles.trackActive;
 
   if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { background: fade(themeColor, 0.5) });
+    activeStyle = combineStyles(activeStyle, { backgroundColor: fade(themeColor, 0.5) });
   }
 
   if (active) {

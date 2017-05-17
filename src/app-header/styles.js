@@ -3,7 +3,7 @@ import styles from '../settings/styles';
 
 const styleSheet = {
   root: {
-    background: colors.theme,
+    backgroundColor: colors.theme,
     boxShadow: styles.depthShadows[0],
     boxSizing: 'border-box',
     height: '56px',
@@ -15,7 +15,8 @@ const styleSheet = {
     width: '100%',
     zIndex: '1',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    transition: 'background .3s ease-in-out'
   },
   text: {
     color: colors.white,
