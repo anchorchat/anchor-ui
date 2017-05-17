@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   searchBox: {
     height: '48px',
     width: '100%',
@@ -30,5 +30,3 @@ const styleSheet = {
     left: '8px'
   }
 };
-
-export default styleSheet;

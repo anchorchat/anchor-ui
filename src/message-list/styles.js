@@ -1,4 +1,4 @@
-const style = {
+export default {
   list: {
     overflow: 'auto',
     width: '100%',
@@ -18,5 +18,3 @@ const style = {
     position: 'relative'
   }
 };
-
-export default style;

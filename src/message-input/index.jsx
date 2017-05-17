@@ -3,27 +3,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import styles from '../style/message-inputs';
+import styles from './styles';
+import getStyles from './get-styles';
 import Button from '../button';
 import IconSend from '../icons/icon-send';
 import combineStyles from '../internal/combine-styles';
 import themeable from '../themeable';
-
-function getButtonStyle(style, disabled) {
-  if (disabled) {
-    return combineStyles(style, styles.disabled);
-  }
-
-  return style;
-}
-
-function getInputStyle(rightButton, overrideStyle) {
-  if (rightButton) {
-    return combineStyles(combineStyles(styles.messageInput, styles.leftButton), overrideStyle);
-  }
-
-  return combineStyles(styles.messageInput, overrideStyle);
-}
 
 /** Message input with send button */
 class MessageInput extends Component {
@@ -95,13 +80,13 @@ class MessageInput extends Component {
       <section style={combineStyles(styles.input, style)}>
         {
           leftButton
-          ? <div style={getButtonStyle(styles.button, disabled)}>
+          ? <div style={getStyles.button(styles.button, disabled)}>
             {leftButton}
           </div>
           : null
         }
         <input
-          style={getInputStyle(leftButton, inputStyle)}
+          style={getStyles.input(leftButton, inputStyle)}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -114,7 +99,7 @@ class MessageInput extends Component {
           {...custom}
         />
         <Button
-          style={getButtonStyle(styles.rightButton, disabled)}
+          style={getStyles.button(styles.rightButton, disabled)}
           iconButton
           onClick={sendMessage}
         >

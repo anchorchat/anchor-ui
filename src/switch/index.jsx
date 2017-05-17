@@ -3,41 +3,10 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import styles from '../style/switch';
+import styles from './styles';
+import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
-import fade from '../internal/fade';
 import themeable from '../themeable';
-
-function getKnobStyle(themeColor, active, overrideStyle) {
-  let style = styles.knob;
-  let activeStyle = styles.knobActive;
-
-  if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { background: themeColor });
-  }
-
-  if (active) {
-    style = combineStyles(style, activeStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
-function getTrackStyle(themeColor, active, overrideStyle) {
-  let style = styles.track;
-  let activeStyle = styles.trackActive;
-
-  if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { background: fade(themeColor, 0.5) });
-  }
-
-  if (active) {
-    style = combineStyles(style, activeStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-}
-
 
 function Switch(
   { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom }
@@ -46,8 +15,8 @@ function Switch(
     <section style={style} {...custom}>
       <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
       <section style={styles.wrapper} onClick={toggleSwitch}>
-        <div style={getTrackStyle(color, active, trackStyle)} />
-        <div style={getKnobStyle(color, active, knobStyle)} />
+        <div style={getStyles.track(color, active, trackStyle)} />
+        <div style={getStyles.knob(color, active, knobStyle)} />
       </section>
     </section>
   );

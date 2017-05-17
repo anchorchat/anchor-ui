@@ -8,7 +8,8 @@ export default {
     height: '40px',
     width: '40px',
     backgroundColor: colors.white,
-    position: 'relative'
+    position: 'relative',
+    backgroundImage: 'url()'
   },
   status: {
     width: '10px',
