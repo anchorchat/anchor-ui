@@ -42,6 +42,13 @@ const styleSheet = {
     position: 'absolute',
     right: '20px',
     top: '4px'
+  },
+  multiline: {
+    resize: 'none',
+    paddingTop: '14px',
+    color: colors.primaryText,
+    height: '48px',
+    boxSizing: 'border-box'
   }
 };
 
