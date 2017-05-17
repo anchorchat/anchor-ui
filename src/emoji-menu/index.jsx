@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import _ from 'lodash';
+import pure from 'recompose/pure';
 import Radium from 'radium';
+import compose from 'recompose/compose';
 import emojis from './emoji';
 import EmojiCategory from './emoji-category';
 import EmojiModifiers from './emoji-modifiers';
 import EmojiCategories from './emoji-categories';
 import Storage from './storage';
-import colors from '../settings/colors';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
+import themeable from '../themeable';
 
 const storage = new Storage();
 
@@ -36,7 +38,8 @@ class EmojiMenu extends Component {
     /** Override the styles of the footer element */
     footerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the footer icons */
-    iconStyle: PropTypes.instanceOf(Object)
+    iconStyle: PropTypes.instanceOf(Object),
+    color: PropTypes.string.isRequired
   }
 
   static defaultProps = {
@@ -103,7 +106,6 @@ class EmojiMenu extends Component {
 
   render() {
     const { tone, storedEmojis, category } = this.state;
-    const { color } = this.context;
     const {
       style,
       headerStyle,
@@ -114,10 +116,9 @@ class EmojiMenu extends Component {
       iconStyle,
       sendEmoji, // eslint-disable-line no-unused-vars
       svgSprites, // eslint-disable-line no-unused-vars
+      color,
       ...custom
     } = this.props;
-
-    const activeColor = color || colors.theme;
 
     const modifiers = _.filter(emojis, { category: 'modifier' });
 
@@ -163,7 +164,7 @@ class EmojiMenu extends Component {
         <EmojiCategories
           changeCategory={this.changeCategory}
           category={category}
-          activeColor={activeColor}
+          activeColor={color}
           recent={storedEmojis.length > 0}
           style={footerStyle}
           iconStyle={iconStyle}
@@ -173,4 +174,10 @@ class EmojiMenu extends Component {
   }
 }
 
-export default Radium(EmojiMenu);
+const enhance = compose(
+  themeable(),
+  Radium,
+  pure
+);
+
+export default enhance(EmojiMenu);
