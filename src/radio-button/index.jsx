@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
+import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import IconRadio from '../icons/icon-radio';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
+import themeable from '../internal/themeable';
 
 function getStyle(color = colors.theme, overrideStyle) {
   let style = styles.container;
@@ -15,76 +16,63 @@ function getStyle(color = colors.theme, overrideStyle) {
   return combineStyles(style, overrideStyle);
 }
 
-class RadioButton extends Component {
-  static displayName = 'RadioButton'
+/** Radio buttons are switches used for selection from multiple options */
+const RadioButton = ({
+  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, ...custom
+}) => (
+  <label key="radio" htmlFor={value} style={getStyle(color, style)}>
+    <input
+      type="radio"
+      value={value}
+      id={value}
+      onChange={onChange}
+      checked={checked}
+      style={combineStyles(styles.input, inputStyle)}
+      {...custom}
+    />
+    <div style={combineStyles(styles.icon, iconStyle)}>
+      <IconRadio color={checked ? color || colors.theme : colors.icons} />
+    </div>
+    <span style={combineStyles(styles.label, labelStyle)}>
+      {label}
+    </span>
+  </label>
+);
 
-  static propTypes = {
-    /** The input's value */
-    value: PropTypes.string.isRequired,
-    /** The input's label text */
-    label: PropTypes.node.isRequired,
-    /** The input's onChange function */
-    onChange: PropTypes.func,
-    /** Input active */
-    checked: PropTypes.bool,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the input element */
-    inputStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the icon element */
-    iconStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the label element */
-    labelStyle: PropTypes.instanceOf(Object)
-  }
+RadioButton.displayName = 'RadioButton';
 
-  static defaultProps = {
-    style: {},
-    inputStyle: {},
-    iconStyle: {},
-    labelStyle: {},
-    checked: false,
-    onChange: null
-  }
+RadioButton.propTypes = {
+  /** The input's value */
+  value: PropTypes.string.isRequired,
+  /** The input's label text */
+  label: PropTypes.node.isRequired,
+  /** The input's onChange function */
+  onChange: PropTypes.func,
+  /** Input active */
+  checked: PropTypes.bool,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the input element */
+  inputStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the icon element */
+  iconStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the label element */
+  labelStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
+};
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
+RadioButton.defaultProps = {
+  style: {},
+  inputStyle: {},
+  iconStyle: {},
+  labelStyle: {},
+  checked: false,
+  onChange: null
+};
 
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'radio', ':hover') !== Radium.getState(nextState, 'radio', ':hover') ||
-      Radium.getState(this.state, 'radio', ':focus') !== Radium.getState(nextState, 'radio', ':focus')
-    );
-  }
+const enhance = compose(
+  themeable,
+  Radium
+);
 
-  render() {
-    const {
-      value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, ...custom
-    } = this.props;
-    const { color } = this.context;
-
-    return (
-      <label key="radio" htmlFor={value} style={getStyle(color, style)}>
-        <input
-          type="radio"
-          value={value}
-          id={value}
-          onChange={onChange}
-          checked={checked}
-          style={combineStyles(styles.input, inputStyle)}
-          {...custom}
-        />
-        <div style={combineStyles(styles.icon, iconStyle)}>
-          <IconRadio color={checked ? color || colors.theme : colors.icons} />
-        </div>
-        <span style={combineStyles(styles.label, labelStyle)}>
-          {label}
-        </span>
-      </label>
-    );
-  }
-}
-
-export default Radium(RadioButton);
+export default enhance(RadioButton);
