@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import pure from 'recompose/pure';
+import Radium from 'radium';
+import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
+import themeable from '../themeable';
 
 function Switch(
-  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, ...custom }, { color }
+  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom }
 ) {
   return (
     <section style={style} {...custom}>
@@ -36,7 +38,8 @@ Switch.propTypes = {
   /** Override the styles of the knob element */
   knobStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object)
+  labelStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
 };
 
 Switch.defaultProps = {
@@ -48,8 +51,10 @@ Switch.defaultProps = {
   labelStyle: {}
 };
 
-Switch.contextTypes = {
-  color: PropTypes.string
-};
+const enhance = compose(
+  themeable(),
+  Radium,
+  pure
+);
 
-export default pure(Radium(Switch));
+export default enhance(Switch);

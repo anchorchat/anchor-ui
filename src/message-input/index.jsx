@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
+import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
 import Button from '../button';
 import IconSend from '../icons/icon-send';
-import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
+import themeable from '../themeable';
 
 /** Message input with send button */
 class MessageInput extends Component {
@@ -34,7 +34,8 @@ class MessageInput extends Component {
     /** Ref function to the element */
     inputRef: PropTypes.func,
     /** Disables the input for the messageInput area */
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    color: PropTypes.string.isRequired
   }
 
   static defaultProps = {
@@ -45,23 +46,10 @@ class MessageInput extends Component {
     disabled: false
   }
 
-  static contextTypes = {
-    color: PropTypes.string
-  }
-
   constructor() {
     super();
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
-
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext) ||
-      Radium.getState(this.state, 'input', ':focus') !== Radium.getState(nextState, 'input', ':focus') ||
-      Radium.getState(this.state, 'input', ':disabled') !== Radium.getState(nextState, 'input', ':disabled')
-    );
   }
 
   handleKeyDown(event) {
@@ -84,10 +72,9 @@ class MessageInput extends Component {
       disabled,
       style,
       inputStyle,
+      color,
       ...custom
     } = this.props;
-    const { color } = this.context;
-    const iconColor = color || colors.theme;
 
     return (
       <section style={combineStyles(styles.input, style)}>
@@ -116,11 +103,16 @@ class MessageInput extends Component {
           iconButton
           onClick={sendMessage}
         >
-          <IconSend color={iconColor} />
+          <IconSend color={color} />
         </Button>
       </section>
     );
   }
 }
 
-export default Radium(MessageInput);
+const enhance = compose(
+  themeable(),
+  Radium
+);
+
+export default enhance(MessageInput);

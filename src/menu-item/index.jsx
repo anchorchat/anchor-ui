@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
+import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import IconSuccess from '../icons/icon-success';
 import getStyles from './get-styles';
+import themeable from '../themeable';
 
 /** General purpose menu item */
 class MenuItem extends Component {
@@ -26,7 +27,8 @@ class MenuItem extends Component {
     /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object),
     /** Closes IconMenu if MenuItem is child */
-    closeMenu: PropTypes.func
+    closeMenu: PropTypes.func,
+    color: PropTypes.string.isRequired
   };
 
   static defaultProps = {
@@ -68,9 +70,9 @@ class MenuItem extends Component {
       active,
       closeMenu, // eslint-disable-line no-unused-vars
       onClick, // eslint-disable-line no-unused-vars
+      color,
       ...custom
     } = this.props;
-    const { color } = this.context;
 
     return (
       <section
@@ -94,4 +96,9 @@ class MenuItem extends Component {
   }
 }
 
-export default pure(Radium(MenuItem));
+const enhance = compose(
+  themeable(),
+  Radium
+);
+
+export default enhance(MenuItem);

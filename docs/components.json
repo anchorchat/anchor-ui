@@ -37,6 +37,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -242,6 +249,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -353,6 +367,13 @@
         },
         "required": true,
         "description": "Maximum value that will be shown.\nThis will result in `${maxValue}+` if value exceeds maxValue"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -503,6 +524,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -810,6 +838,20 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The checkbox' value"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -904,6 +946,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -1262,6 +1311,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -2966,6 +3022,13 @@
           "value": "() => {}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3037,6 +3100,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3202,199 +3272,13 @@
           "value": "null",
           "computed": false
         }
-      }
-    }
-  },
-  "components/message/image-message/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "avatar": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "message": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "body": {
-              "name": "node",
-              "required": true
-            },
-            "createdAt": {
-              "name": "union",
-              "value": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "instanceOf",
-                  "value": "Date"
-                }
-              ],
-              "required": true
-            },
-            "username": {
-              "name": "string",
-              "required": true
-            },
-            "type": {
-              "name": "enum",
-              "value": [
-                {
-                  "value": "'text'",
-                  "computed": false
-                },
-                {
-                  "value": "'image'",
-                  "computed": false
-                },
-                {
-                  "value": "'sticker'",
-                  "computed": false
-                }
-              ],
-              "required": false
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeFormat": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'HH:mm'",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageHeaderStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageBodyStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageTimeStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "fontSize": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'small'",
-              "computed": false
-            },
-            {
-              "value": "'medium'",
-              "computed": false
-            },
-            {
-              "value": "'large'",
-              "computed": false
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'small'",
-          "computed": false
-        }
-      },
-      "myMessage": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "enableLightbox": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "compact": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
       },
       "color": {
         "type": {
           "name": "string"
         },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3623,566 +3507,13 @@
           "value": "false",
           "computed": false
         }
-      }
-    }
-  },
-  "components/message/message-header/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "avatar": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "compact": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "myMessage": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "fontSize": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'small'",
-              "computed": false
-            },
-            {
-              "value": "'medium'",
-              "computed": false
-            },
-            {
-              "value": "'large'",
-              "computed": false
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'small'",
-          "computed": false
-        }
-      },
-      "headerStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "username": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
-  "components/message/message-time/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "myMessage": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "type": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'text'",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "timeFormat": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'HH:mm'",
-          "computed": false
-        }
-      },
-      "createdAt": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "instanceOf",
-              "value": "Date"
-            }
-          ]
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
-  "components/message/sticker-message/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "avatar": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "message": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "body": {
-              "name": "node",
-              "required": true
-            },
-            "createdAt": {
-              "name": "union",
-              "value": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "instanceOf",
-                  "value": "Date"
-                }
-              ],
-              "required": true
-            },
-            "username": {
-              "name": "string",
-              "required": true
-            },
-            "type": {
-              "name": "enum",
-              "value": [
-                {
-                  "value": "'text'",
-                  "computed": false
-                },
-                {
-                  "value": "'image'",
-                  "computed": false
-                },
-                {
-                  "value": "'sticker'",
-                  "computed": false
-                }
-              ],
-              "required": false
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeFormat": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'HH:mm'",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageHeaderStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageBodyStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageTimeStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "fontSize": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'small'",
-              "computed": false
-            },
-            {
-              "value": "'medium'",
-              "computed": false
-            },
-            {
-              "value": "'large'",
-              "computed": false
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'small'",
-          "computed": false
-        }
-      },
-      "myMessage": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "compact": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
       },
       "color": {
         "type": {
           "name": "string"
         },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "colors.theme",
-          "computed": true
-        }
-      },
-      "emoji": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "enableLinks": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "enableLightbox": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/message/text-message/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "avatar": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "message": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "body": {
-              "name": "node",
-              "required": true
-            },
-            "createdAt": {
-              "name": "union",
-              "value": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "instanceOf",
-                  "value": "Date"
-                }
-              ],
-              "required": true
-            },
-            "username": {
-              "name": "string",
-              "required": true
-            },
-            "type": {
-              "name": "enum",
-              "value": [
-                {
-                  "value": "'text'",
-                  "computed": false
-                },
-                {
-                  "value": "'image'",
-                  "computed": false
-                },
-                {
-                  "value": "'sticker'",
-                  "computed": false
-                }
-              ],
-              "required": false
-            }
-          }
-        },
         "required": true,
         "description": ""
-      },
-      "timeFormat": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'HH:mm'",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageHeaderStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageBodyStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "messageTimeStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "fontSize": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'small'",
-              "computed": false
-            },
-            {
-              "value": "'medium'",
-              "computed": false
-            },
-            {
-              "value": "'large'",
-              "computed": false
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "'small'",
-          "computed": false
-        }
-      },
-      "myMessage": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "emoji": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "enableLinks": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "compact": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "colors.theme",
-          "computed": true
-        }
-      },
-      "enableLightbox": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
       }
     }
   },
@@ -4295,6 +3626,13 @@
           "value": "false",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -4466,6 +3804,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -4851,11 +4196,18 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
   "components/radio-button/index.jsx": {
-    "description": "",
+    "description": "Radio buttons are switches used for selection from multiple options",
     "displayName": "RadioButton",
     "methods": [],
     "props": {
@@ -4942,6 +4294,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5268,6 +4627,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5401,6 +4767,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5485,6 +4858,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -5611,6 +4991,176 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "components/table/index.jsx": {
+    "description": "Tables are used to display data.",
+    "displayName": "Table",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The Table's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/table-body/index.jsx": {
+    "description": "TableBodys are used to display data.",
+    "displayName": "TableBody",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The TableBody's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/table-column/index.jsx": {
+    "description": "TableColumns are used to display data.",
+    "displayName": "TableColumn",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The TableColumn's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/table-header/index.jsx": {
+    "description": "TableHeaders are used to display data.",
+    "displayName": "TableHeader",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The TableHeader's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "components/table-header-column/index.jsx": {
+    "description": "TableHeaderColumns are used to display data.",
+    "displayName": "TableHeaderColumn",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The TableHeaderColumn's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/table-row/index.jsx": {
+    "description": "TableRows are used to display data.",
+    "displayName": "TableRow",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The TableRow's content"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -5711,6 +5261,31 @@
           "value": "0",
           "computed": false
         }
+      }
+    }
+  },
+  "components/theme-provider/index.jsx": {
+    "description": "",
+    "displayName": "ThemeProvider",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Your theme's color",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Children to apply theme color to"
       }
     }
   },

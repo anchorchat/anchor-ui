@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import pure from 'recompose/pure';
+import Radium from 'radium';
+import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
 import getPercentage from '../internal/get-percentage';
 import propTypes from '../internal/prop-types';
+import themeable from '../themeable';
 
 /** General purpose form slider */
 function Slider({
@@ -21,8 +23,9 @@ function Slider({
   error,
   style,
   labelStyle,
+  color,
   ...custom
-}, { color }
+},
 ) {
   const percentage = getPercentage(value, min, max);
 
@@ -79,7 +82,8 @@ Slider.propTypes = {
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object)
+  labelStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
 };
 
 Slider.defaultProps = {
@@ -94,8 +98,10 @@ Slider.defaultProps = {
   labelStyle: {}
 };
 
-Slider.contextTypes = {
-  color: PropTypes.string
-};
+const enhance = compose(
+  themeable(),
+  Radium,
+  pure
+);
 
-export default pure(Radium(Slider));
+export default enhance(Slider);

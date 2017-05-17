@@ -2,9 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(themeColor, inverted, index, overrideStyle) {
-  const color = themeColor || colors.theme;
-
+function root(color = colors.theme, inverted, index, overrideStyle) {
   let style = combineStyles(styles.dot, { backgroundColor: color });
 
   if (index === 1) {

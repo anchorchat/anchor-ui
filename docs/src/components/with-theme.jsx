@@ -6,8 +6,9 @@ import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Alert from '../../../dist/alert';
 
-const usage = '```js\n import WithTheme from \'anchor-ui/icons\';';
+const usage = '```js\n import WithTheme from \'anchor-ui/with-theme\';';
 
 function WithThemeDoc() {
   const componentData = _.find(components, component => component.displayName === 'WithTheme');
@@ -19,11 +20,17 @@ function WithThemeDoc() {
       margin: 0,
       padding: '20px'
     },
-    button: { margin: '10px' }
+    button: {
+      margin: '10px'
+    },
+    alert: {
+      maxWidth: '100%'
+    }
   };
   return (
     <article className="doc">
-      <h1>With Theme</h1>
+      <Alert style={style.alert} text="Warning! This component is deprecated and will be removed in the next major version!" type="warning" hideAlert={() => {}} />
+      <h1>WithTheme</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
