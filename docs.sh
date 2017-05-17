@@ -3,5 +3,11 @@
 rm -rf components
 cp -r src components
 rm -rf components/*/*.js components/*.js
+rm -rf components/themeable
+rm -rf components/message/message-time
+rm -rf components/message/message-header
+rm -rf components/message/image-message
+rm -rf components/message/sticker-message
+rm -rf components/message/text-message
 npm run docs
 rm -rf components
