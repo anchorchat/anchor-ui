@@ -9,7 +9,7 @@ import components from '../../components.json';
 import Paper from '../../../dist/paper';
 import colors from '../../../dist/settings/colors';
 
-const usage = '```js\n import ThemeProvider from \'anchor-ui/icons\';';
+const usage = '```js\n import ThemeProvider from \'anchor-ui/theme-provider\';';
 
 function ThemeProviderDoc({ setColor }) {
   const componentData = _.find(components, component => component.displayName === 'ThemeProvider');

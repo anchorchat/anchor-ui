@@ -7,7 +7,7 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import WithTheme from \'anchor-ui/icons\';';
+const usage = '```js\n import WithTheme from \'anchor-ui/with-theme\';';
 
 function WithThemeDoc() {
   const componentData = _.find(components, component => component.displayName === 'WithTheme');
