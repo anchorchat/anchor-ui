@@ -8,7 +8,7 @@ import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import getStyles from './get-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** Card containing the user's profile data */
 const ProfileCard = ({ username, avatar, style, usernameStyle, color, ...custom }) => {

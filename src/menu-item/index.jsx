@@ -5,7 +5,7 @@ import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import IconSuccess from '../icons/icon-success';
 import getStyles from './get-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** General purpose menu item */
 class MenuItem extends Component {

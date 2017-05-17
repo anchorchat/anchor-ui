@@ -7,7 +7,7 @@ import styles from './styles';
 import getStyles from './get-styles';
 import getPercentage from '../internal/get-percentage';
 import propTypes from '../internal/prop-types';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** General purpose form slider */
 function Slider({

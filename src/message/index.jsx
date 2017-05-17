@@ -9,7 +9,7 @@ import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */

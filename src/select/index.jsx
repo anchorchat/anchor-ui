@@ -10,7 +10,7 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 class Select extends Component {
   static displayName = 'Select'

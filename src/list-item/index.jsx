@@ -11,7 +11,7 @@ import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import Button from '../button';
 import List from '../list';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** A list's item */
 class ListItem extends Component {

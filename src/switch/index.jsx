@@ -6,7 +6,7 @@ import compose from 'recompose/compose';
 import styles from '../style/switch';
 import combineStyles from '../internal/combine-styles';
 import fade from '../internal/fade';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 function getKnobStyle(themeColor, active, overrideStyle) {
   let style = styles.knob;

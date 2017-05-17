@@ -7,7 +7,7 @@ import styles from '../style/message-inputs';
 import Button from '../button';
 import IconSend from '../icons/icon-send';
 import combineStyles from '../internal/combine-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 function getButtonStyle(style, disabled) {
   if (disabled) {

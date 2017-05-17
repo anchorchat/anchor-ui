@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import Radium from 'radium';
 import getStyles from './get-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** General purpose button with three types */
 const Button = ({

@@ -6,7 +6,7 @@ import compose from 'recompose/compose';
 import styles from '../style/badges';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 function getStyle(themeColor, inverted, overrideStyle) {
   const color = themeColor || colors.theme;

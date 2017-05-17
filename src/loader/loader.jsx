@@ -5,7 +5,7 @@ import compose from 'recompose/compose';
 import styles from '../style/loaders';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 function getStyle(color = colors.theme, inverted, index, overrideStyle) {
   let style = combineStyles(styles.dot, { backgroundColor: color });

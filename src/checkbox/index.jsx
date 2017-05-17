@@ -7,7 +7,7 @@ import colors from '../settings/colors';
 import getStyles from './get-styles';
 import IconCheckbox from '../icons/icon-checkbox';
 import styles from './styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** A checkbox is used to verify which options you want selected from a group. */
 function Checkbox({

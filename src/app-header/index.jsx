@@ -4,7 +4,7 @@ import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import getStyles from './get-styles';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** Your app's header */
 function AppHeader(

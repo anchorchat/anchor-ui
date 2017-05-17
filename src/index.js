@@ -44,6 +44,7 @@ export TableHeaderColumn from './table-header-column';
 export TableBody from './table-body';
 export TableRow from './table-row';
 export TableColumn from './table-column';
+export themeable from './themeable';
 
 export icons from './icons';
 

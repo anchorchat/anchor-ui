@@ -9,7 +9,7 @@ import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
-import themeable from '../internal/themeable';
+import themeable from '../themeable';
 
 /** General purpose dialog */
 const Dialog = ({
