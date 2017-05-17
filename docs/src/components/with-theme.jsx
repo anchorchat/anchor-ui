@@ -29,7 +29,7 @@ function WithThemeDoc() {
   };
   return (
     <article className="doc">
-      <Alert style={style.alert} text="Warning! This component is deprecated and will be removed in the next major version!" type="warning" hideAlert={() => {}} onClick={() => {}} />
+      <Alert style={style.alert} text="Warning! This component is deprecated and will be removed in the next major version!" type="warning" hideAlert={() => {}} />
       <h1>WithTheme</h1>
       <section>
         <h1>Description</h1>
