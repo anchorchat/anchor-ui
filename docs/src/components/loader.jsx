@@ -6,6 +6,7 @@ import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Alert from '../../../dist/alert';
 
 const usage = '```js\n import Loader from \'anchor-ui/loader\';';
 
@@ -27,12 +28,32 @@ function LoaderDoc() {
       borderRadius: '3px',
       margin: '10px'
     },
-    loader: { margin: '10px' }
+    loader: {
+      margin: '10px'
+    },
+    alert: {
+      maxWidth: '100%'
+    },
+    link: {
+      color: 'inherit',
+      textDecoration: 'underline',
+      fontWeight: 'normal'
+    }
   };
 
   return (
     <article className="doc">
       <h1>Loader</h1>
+      <Alert
+        style={style.alert}
+        text={
+          <span>
+            Warning! This component uses CSS animations and requires your app to be wrapped in&nbsp;
+            <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component!
+          </span>
+        }
+        type="warning"
+      />
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
