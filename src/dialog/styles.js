@@ -7,6 +7,7 @@ export default {
     maxWidth: '350px',
     margin: '0 auto',
     backgroundColor: colors.theme,
+    background: colors.theme,
     color: colors.white,
     borderRadius: '3px',
     padding: '40px 30px',
