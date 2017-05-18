@@ -24,9 +24,9 @@ describe('AdminBadge.getStyles', () => {
     });
 
     it('should add inverted styles', () => {
-      const style = getStyles.root('red', true);
+      const style = getStyles.root({}, true);
 
-      expect(style).to.have.property('color', 'red');
+      expect(style).to.have.property('backgroundColor', '#FEFEFE');
     });
   });
 });
