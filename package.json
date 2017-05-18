@@ -11,7 +11,7 @@
     "test:watch": "NODE_ENV=test mocha --watch --compilers js:babel-core/register test/*",
     "watch": "babel -d dist/ -w src/",
     "compile": "rm -rf dist && babel -d dist/ src/",
-    "lint": "eslint {src,docs/src,test}/**/**/*.{js,jsx}",
+    "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
     "copy": "cp -rf package.json README.md dist",
     "build": "npm run compile && npm run copy",
     "dist": "cd dist && npm publish",
