@@ -136,8 +136,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Function to hide the alert"
+        "required": false,
+        "description": "Function to hide the alert",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
