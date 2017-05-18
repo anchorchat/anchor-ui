@@ -12,7 +12,7 @@ export default {
     cursor: 'pointer',
     boxSizing: 'border-box',
     padding: '10px',
-    transition: 'opacity .3s ease-in-out',
+    transition: 'opacity .3s ease-in-out, border .3s ease-in-out',
     opacity: '0.5',
     display: 'flex',
     flexDirection: 'column',

@@ -23,6 +23,7 @@ const styleSheet = {
     width: '15px',
     height: '15px',
     margin: '0 5px',
+    transition: 'background .3s ease-in-out',
     animation: 'x 1s ease-in-out infinite',
     animationName: loaderAnimation,
     '&:nth-of-type(2)': {

@@ -6,7 +6,7 @@ export default {
     width: '80%',
     maxWidth: '350px',
     margin: '0 auto',
-    background: colors.theme,
+    backgroundColor: colors.theme,
     color: colors.white,
     borderRadius: '3px',
     padding: '40px 30px',
@@ -15,7 +15,8 @@ export default {
     flexDirection: 'column',
     position: 'relative',
     boxShadow: styles.depthShadows[0],
-    overflow: 'auto'
+    overflow: 'auto',
+    transition: 'background .3s ease-in-out'
   },
   header: {
     color: 'inherit',

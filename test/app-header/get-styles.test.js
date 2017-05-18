@@ -14,7 +14,7 @@ describe('AppHeader.getStyles', () => {
     it('should change theme color', () => {
       const style = getStyles.root('red');
 
-      expect(style).to.have.property('background', 'red');
+      expect(style).to.have.property('backgroundColor', 'red');
     });
 
     it('should add left button styles', () => {

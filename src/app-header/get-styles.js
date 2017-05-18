@@ -3,7 +3,7 @@ import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
 function root(color = colors.theme, overrideStyle, left, right) {
-  let style = combineStyles(styles.root, { background: color });
+  let style = combineStyles(styles.root, { backgroundColor: color });
 
   if (left) {
     style = combineStyles(style, { paddingLeft: '56px' });
