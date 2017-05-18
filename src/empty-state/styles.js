@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   emptyState: {
     alignItems: 'center',
     backgroundPosition: 'center bottom',
@@ -10,7 +10,8 @@ const styleSheet = {
     flexDirection: 'column',
     height: '100%',
     justifyContent: 'center',
-    padding: '24px'
+    padding: '24px',
+    backgroundImage: 'url()'
   },
   heading: {
     fontSize: '16px',
@@ -28,5 +29,3 @@ const styleSheet = {
     maxWidth: '100%'
   }
 };
-
-export default styleSheet;
