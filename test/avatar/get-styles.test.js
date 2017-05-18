@@ -31,10 +31,22 @@ describe('Avatar.getStyles', () => {
       expect(style).to.have.property('color', 'red');
     });
 
-    it('should add type styles', () => {
+    it('should add online styles', () => {
+      const style = getStyles.status('online');
+
+      expect(style).to.have.property('backgroundColor', '#54D38A');
+    });
+
+    it('should add away styles', () => {
       const style = getStyles.status('away');
 
       expect(style).to.have.property('backgroundColor', '#F6A623');
+    });
+
+    it('should add offline styles', () => {
+      const style = getStyles.status('offline');
+
+      expect(style).to.have.property('backgroundColor', '#D0011B');
     });
   });
 });
