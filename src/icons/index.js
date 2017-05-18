@@ -54,3 +54,4 @@ export IconDelete from './icon-delete';
 export IconAdmin from './icon-admin';
 export IconNotification from './icon-notification';
 export IconColor from './icon-color';
+export IconRefresh from './icon-refresh';
