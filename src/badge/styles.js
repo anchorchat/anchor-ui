@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 import styles from '../settings/styles';
 
-const styleSheet = {
+export default {
   badge: {
     backgroundColor: colors.theme,
     borderRadius: '50%',
@@ -14,13 +14,10 @@ const styleSheet = {
     lineHeight: '16px',
     padding: '3px',
     textAlign: 'center',
-    width: '20px',
-    transition: 'background .3s ease-in-out'
+    width: '20px'
   },
   inverted: {
     color: colors.theme,
     backgroundColor: colors.white
   }
 };
-
-export default styleSheet;
