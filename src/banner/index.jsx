@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import Measure from 'react-measure';
-import styles from '../style/banner';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
