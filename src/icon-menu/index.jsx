@@ -37,6 +37,7 @@ class IconMenu extends Component {
     header: null,
     style: {},
     headerStyle: {},
+    contentStyle: {},
     secondaryMenuItems: null,
     dividerText: null,
     onMenuClose: () => {}
