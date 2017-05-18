@@ -1510,6 +1510,14 @@
           "computed": false
         }
       },
+      "contentStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the content container"
+      },
       "onMenuClose": {
         "type": {
           "name": "func"
