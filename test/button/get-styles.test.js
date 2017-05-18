@@ -12,7 +12,7 @@ describe('Button.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', { color: 'red' });
+      const style = getStyles.root('red', {}, {}, {}, {}, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
