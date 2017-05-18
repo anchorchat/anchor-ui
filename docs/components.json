@@ -1516,7 +1516,11 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the content container"
+        "description": "Override the styles of the content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "onMenuClose": {
         "type": {
