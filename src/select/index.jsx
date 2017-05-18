@@ -162,7 +162,7 @@ class Select extends Component {
           </div>
         </header>
         <PopOver
-          style={combineStyles({ minWidth: popOverWidth }, contentStyle)}
+          style={combineStyles({ minWidth: popOverWidth, right: 'initial' }, contentStyle)}
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}
