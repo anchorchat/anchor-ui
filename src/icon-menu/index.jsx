@@ -27,6 +27,8 @@ class IconMenu extends Component {
     headerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
+    /** Override the styles of the content container */
+    contentStyle: PropTypes.instanceOf(Object),
     /** Callback function fired when the IconMenu closes */
     onMenuClose: PropTypes.func
   }
@@ -102,6 +104,7 @@ class IconMenu extends Component {
       icon,
       headerStyle,
       style,
+      contentStyle,
       dividerText,
       onMenuClose, // eslint-disable-line no-unused-vars
       ...custom
@@ -122,6 +125,7 @@ class IconMenu extends Component {
           <Button iconButton onClick={this.openMenu}>{icon}</Button>
         </div>
         <PopOver
+          style={contentStyle}
           header={header}
           headerStyle={headerStyle}
           open={open}
