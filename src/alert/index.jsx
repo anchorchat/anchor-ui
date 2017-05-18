@@ -26,9 +26,13 @@ function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle
     <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
       <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
       <p style={combineStyles(styles.text, textStyle)}>{text}</p>
-      <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
-        <IconClose color={darken(colors.alert[type], 0.65)} />
-      </Button>
+      {
+        hideAlert
+        ? <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
+          <IconClose color={darken(colors.alert[type], 0.65)} />
+        </Button>
+        : null
+      }
     </section>
   );
 }
@@ -49,14 +53,15 @@ Alert.propTypes = {
   /** Override the styles of the button element */
   buttonStyle: PropTypes.instanceOf(Object),
   /** Function to hide the alert */
-  hideAlert: PropTypes.func.isRequired
+  hideAlert: PropTypes.func
 };
 
 Alert.defaultProps = {
   style: {},
   iconStyle: {},
   textStyle: {},
-  buttonStyle: {}
+  buttonStyle: {},
+  hideAlert: null
 };
 
 export default pure(Radium(Alert));

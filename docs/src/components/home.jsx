@@ -46,7 +46,7 @@ function Home() {
           Add your own color to the components, color is applied with props. <br />
           Wrap ThemeProvider around components you want your theme color in.
         </p>
-        <Alert style={style.alert} text="Warning! Wrapping your components in ThemeProvider is currently optional but will be mandatory in the next major version!" type="warning" hideAlert={() => {}} />
+        <Alert style={style.alert} text="Warning! Wrapping your components in ThemeProvider is currently optional but will be mandatory in the next major version!" type="warning" />
         <ReactMarkdown source={theme} className="markdown" />
         <h2>Dependencies</h2>
         <table>

@@ -14,7 +14,8 @@ const styleSheet = {
     lineHeight: '16px',
     padding: '3px',
     textAlign: 'center',
-    width: '20px'
+    width: '20px',
+    transition: 'background .3s ease-in-out'
   },
   inverted: {
     color: colors.theme,

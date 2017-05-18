@@ -143,6 +143,8 @@ class Select extends Component {
       (activeChild && activeChild.props && activeChild.props.text) || value || placeholder
     );
 
+    const popOverStyle = combineStyles({ minWidth: popOverWidth, right: 'initial' }, contentStyle);
+
     return (
       <section
         ref={container => (this.container = container)}
@@ -162,7 +164,7 @@ class Select extends Component {
           </div>
         </header>
         <PopOver
-          style={combineStyles({ minWidth: popOverWidth }, contentStyle)}
+          style={popOverStyle}
           open={open}
           popOverRef={popOver => (this.popOver = popOver)}
           position={position}

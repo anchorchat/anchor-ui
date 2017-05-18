@@ -40,7 +40,7 @@ function text(textStyle, active, textBadge, overrideStyle) {
   }
 
   if (textBadge) {
-    style = combineStyles(style, { lineHeight: '20px', marginTop: 0 });
+    style = combineStyles(style, { lineHeight: '22px', marginTop: 0 });
   }
 
   return combineStyles(style, overrideStyle);

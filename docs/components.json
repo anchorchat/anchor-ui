@@ -136,8 +136,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Function to hide the alert"
+        "required": false,
+        "description": "Function to hide the alert",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
@@ -1505,6 +1509,18 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the content container",
         "defaultValue": {
           "value": "{}",
           "computed": false
