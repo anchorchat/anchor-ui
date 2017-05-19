@@ -10,7 +10,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Divider from \'anchor-ui/divider\';';
 
-function DividerDoc() {
+const DividerDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Divider');
   const style = {
     paper: {
@@ -47,6 +47,6 @@ function DividerDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default DividerDoc;
