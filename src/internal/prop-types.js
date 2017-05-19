@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function minMax(props, propName, componentName, ...rest) {
+const minMax = (props, propName, componentName, ...rest) => {
   const error = PropTypes.number(props, propName, componentName, ...rest);
 
   if (error !== null) {
@@ -13,9 +13,9 @@ function minMax(props, propName, componentName, ...rest) {
   }
 
   return null;
-}
+};
 
-function valueInRange(props, propName, componentName, ...rest) {
+const valueInRange = (props, propName, componentName, ...rest) => {
   const error = PropTypes.number(props, propName, componentName, ...rest);
 
   if (error !== null) {
@@ -29,7 +29,7 @@ function valueInRange(props, propName, componentName, ...rest) {
   }
 
   return null;
-}
+};
 
 export default {
   minMax,
