@@ -10,7 +10,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Button from \'anchor-ui/button\';';
 
-function ButtonDoc() {
+const ButtonDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Button');
   const style = {
     paper: {
@@ -80,6 +80,6 @@ function ButtonDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default ButtonDoc;

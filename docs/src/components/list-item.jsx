@@ -13,7 +13,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import ListItem from \'anchor-ui/list-item\';';
 
-function ListItemDoc() {
+const ListItemDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ListItem');
   const style = {
     paper: {
@@ -144,6 +144,6 @@ function ListItemDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default ListItemDoc;

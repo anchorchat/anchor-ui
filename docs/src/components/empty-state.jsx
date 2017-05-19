@@ -10,7 +10,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import EmptyState from \'anchor-ui/empty-state\';';
 
-function EmptyStateDoc() {
+const EmptyStateDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'EmptyState');
 
   const emptyState = {
@@ -60,6 +60,6 @@ function EmptyStateDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default EmptyStateDoc;

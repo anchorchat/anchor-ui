@@ -10,7 +10,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Card from \'anchor-ui/card\';';
 
-function CardDoc() {
+const CardDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Card');
   const headerData = _.find(components, component => component.displayName === 'CardHeader');
   const contentData = _.find(components, component => component.displayName === 'CardContent');
@@ -55,6 +55,6 @@ function CardDoc() {
       <Props props={contentData.props} />
     </article>
   );
-}
+};
 
 export default CardDoc;
