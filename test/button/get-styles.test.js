@@ -12,7 +12,7 @@ describe('Button.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', {}, {}, {}, {}, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -30,19 +30,19 @@ describe('Button.getStyles', () => {
     });
 
     it('should add iconButton styles', () => {
-      const style = getStyles.root('red', {}, true);
+      const style = getStyles.root('red', false, true);
 
       expect(style).to.have.property('borderRadius', '50%');
     });
 
     it('should add disabled styles', () => {
-      const style = getStyles.root('red', {}, {}, true);
+      const style = getStyles.root('red', false, false, true);
 
       expect(style).to.have.property('opacity', '0.38');
     });
 
     it('should add flatButton styles', () => {
-      const style = getStyles.root('red', false, {}, {}, true);
+      const style = getStyles.root('red', false, false, false, true);
 
       expect(style).to.have.property('backgroundColor', 'transparent');
     });
