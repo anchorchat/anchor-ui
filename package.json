@@ -70,7 +70,7 @@
     "react": "^15.4.1"
   },
   "dependencies": {
-    "color": "^1.0.3",
+    "color": "1.0.3",
     "date-fns": "^1.27.2",
     "emojione": "^2.2.7",
     "escape-html": "^1.0.3",
