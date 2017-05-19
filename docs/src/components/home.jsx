@@ -10,7 +10,7 @@ const named = '```js\n import { AppHeader, Button } from \'anchor-ui\';';
 const defaultImport = '```js\n import AppHeader from \'anchor-ui/app-header\'; \n import Button from \'anchor-ui/button\';';
 const theme = '```js\n import ThemeProvider from \'anchor-ui/theme-provider\'; \n <ThemeProvider color="#1ba6c4"><YourComponent /></ThemeProvider>;';
 
-function Home() {
+const Home = () => {
   const style = {
     alert: {
       maxWidth: '100%',
@@ -85,6 +85,6 @@ function Home() {
       </section>
     </article>
   );
-}
+};
 
 export default Home;

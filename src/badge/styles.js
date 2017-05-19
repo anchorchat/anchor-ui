@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 import styles from '../settings/styles';
 
-const styleSheet = {
+export default {
   badge: {
     backgroundColor: colors.theme,
     borderRadius: '50%',
@@ -22,5 +22,3 @@ const styleSheet = {
     backgroundColor: colors.white
   }
 };
-
-export default styleSheet;

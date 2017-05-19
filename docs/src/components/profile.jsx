@@ -9,7 +9,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Profile from \'anchor-ui/profile\';';
 
-function ProfileDoc() {
+const ProfileDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Profile');
   const style = {
     paper: {
@@ -52,6 +52,6 @@ function ProfileDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default ProfileDoc;

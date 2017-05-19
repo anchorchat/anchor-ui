@@ -7,7 +7,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Paper from \'anchor-ui/paper\';';
 
-function PaperDoc() {
+const PaperDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Paper');
   const style = {
     paper: {
@@ -53,6 +53,6 @@ function PaperDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default PaperDoc;

@@ -11,7 +11,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import ChannelHeader from \'anchor-ui/channel-header\';';
 
-function ChannelHeaderDoc() {
+const ChannelHeaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ChannelHeader');
   const style = {
     paper: {
@@ -60,6 +60,6 @@ function ChannelHeaderDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default ChannelHeaderDoc;
