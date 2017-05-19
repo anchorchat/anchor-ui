@@ -1928,6 +1928,24 @@
       }
     }
   },
+  "components/icons/icon-first.jsx": {
+    "description": "",
+    "displayName": "IconFirst",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-font.jsx": {
     "description": "",
     "displayName": "IconFont",
@@ -2057,6 +2075,24 @@
   "components/icons/icon-language.jsx": {
     "description": "",
     "displayName": "IconLanguage",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-last.jsx": {
+    "description": "",
+    "displayName": "IconLast",
     "methods": [],
     "props": {
       "color": {
@@ -3891,6 +3927,129 @@
         "description": "Override the style of the root element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/pagination/index.jsx": {
+    "description": "Navigate through large sets of data",
+    "displayName": "Pagination",
+    "methods": [],
+    "props": {
+      "list": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "Object"
+          }
+        },
+        "required": true,
+        "description": "The list to navigate through"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when the navigation changes\n\n@param {list} array The part of the list navigated to."
+      },
+      "initialPage": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Initial active page",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "pageSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The page's size",
+        "defaultValue": {
+          "value": "10",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The paginated list"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "navStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the nav element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "navButtonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the nav button elements",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconButtonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon button elements",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "position": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'bottom'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The nav's position relative to the children. One of the following: [\"top\", \"bottom\"]",
+        "defaultValue": {
+          "value": "'top'",
           "computed": false
         }
       }
