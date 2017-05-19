@@ -12,7 +12,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import AppHeader from \'anchor-ui/app-header\';';
 
-function AppHeaderDoc() {
+const AppHeaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'AppHeader');
   const style = {
     paper: {
@@ -54,6 +54,6 @@ function AppHeaderDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default AppHeaderDoc;
