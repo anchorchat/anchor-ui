@@ -9,7 +9,6 @@ import IconChevronLeft from '../icons/icon-chevron-left';
 import IconChevronRight from '../icons/icon-chevron-right';
 import IconFirst from '../icons/icon-first';
 import IconLast from '../icons/icon-last';
-import styles from './styles';
 import colors from '../settings/colors';
 
 /** Navigate through large sets of data */
@@ -51,31 +50,14 @@ class Pagination extends Component {
       pageSize,
       children,
       style,
-      headerStyle,
       navStyle,
       navButtonStyle,
-      iconButtonStyle,
-      currentPageText,
-      totalPagesText,
-      totalItemsText
+      iconButtonStyle
     } = this.props;
-    const { currentPage, pages, totalPages, totalItems } = this.state.pager;
+    const { currentPage, pages, totalPages } = this.state.pager;
 
     return (
       <section style={getStyles.root(style)}>
-        <header style={getStyles.header(headerStyle)}>
-          <section style={styles.headerInfo}>
-            <h1 style={styles.heading}>
-              {currentPageText}: <strong style={styles.strong}>{currentPage}</strong>
-            </h1>
-            <h1 style={styles.heading}>
-              {totalPagesText}: <strong style={styles.strong}>{totalPages}</strong>
-            </h1>
-            <h1 style={styles.heading}>
-              {totalItemsText}: <strong style={styles.strong}>{totalItems}</strong>
-            </h1>
-          </section>
-        </header>
         {children}
         <nav style={getStyles.nav(navStyle)}>
           <Button
@@ -139,20 +121,12 @@ Pagination.propTypes = {
   children: PropTypes.node.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the nav element */
   navStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the nav button elements */
   navButtonStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the icon button elements */
   iconButtonStyle: PropTypes.instanceOf(Object),
-  /** Text to display the current page */
-  currentPageText: PropTypes.node,
-  /** Text to display the total pages */
-  totalPagesText: PropTypes.node,
-  /** Text to display the total items */
-  totalItemsText: PropTypes.node,
 };
 
 Pagination.defaultProps = {
@@ -162,10 +136,7 @@ Pagination.defaultProps = {
   headerStyle: {},
   navStyle: {},
   navButtonStyle: {},
-  iconButtonStyle: {},
-  currentPageText: 'Current Page',
-  totalPagesText: 'Total Pages',
-  totalItemsText: 'Total Items'
+  iconButtonStyle: {}
 };
 
 Pagination.displayName = 'Pagination';
