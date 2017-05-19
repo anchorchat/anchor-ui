@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
+import EventListener from 'react-event-listener';
 import PopOver from '../pop-over';
 import Button from '../button';
 import styles from '../style/icon-menu';
@@ -122,6 +123,14 @@ class IconMenu extends Component {
     return (
       <div style={combineStyles(styles.iconMenu, style)} {...custom}>
         {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
+        {
+            open
+            ? <EventListener
+              target="window"
+              onResize={this.closeMenu}
+            />
+            : null
+        }
         <div ref={button => (this.button = button)}>
           <Button iconButton onClick={this.openMenu}>{icon}</Button>
         </div>

@@ -76,6 +76,7 @@
     "escape-html": "^1.0.3",
     "lodash": "^4.17.4",
     "radium": "^0.19.0",
+    "react-event-listener": "^0.4.5",
     "react-measure": "^1.4.5",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"

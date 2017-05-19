@@ -1802,6 +1802,24 @@
       }
     }
   },
+  "components/icons/icon-color.jsx": {
+    "description": "",
+    "displayName": "IconColor",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-conversation.jsx": {
     "description": "",
     "displayName": "IconConversation",
@@ -2291,6 +2309,24 @@
   "components/icons/icon-radio.jsx": {
     "description": "",
     "displayName": "IconRadio",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-refresh.jsx": {
+    "description": "",
+    "displayName": "IconActivity",
     "methods": [],
     "props": {
       "color": {
