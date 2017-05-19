@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import getStyles from '../../src/admin-badge/get-styles';
 import styles from '../../src/admin-badge/styles';
 
-describe('AdminBadge.getStyles', () => {
+describe('Badge.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
       const style = getStyles.root();
