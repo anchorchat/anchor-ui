@@ -3996,18 +3996,6 @@
           "computed": false
         }
       },
-      "headerStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the header element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
       "navStyle": {
         "type": {
           "name": "instanceOf",
@@ -4044,36 +4032,30 @@
           "computed": false
         }
       },
-      "currentPageText": {
+      "position": {
         "type": {
-          "name": "node"
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'bottom'",
+              "computed": false
+            }
+          ]
         },
         "required": false,
-        "description": "Text to display the current page",
+        "description": "The nav's position relative to the children. One of the following: [\"top\", \"bottom\"]",
         "defaultValue": {
-          "value": "'Current Page'",
+          "value": "'top'",
           "computed": false
         }
       },
-      "totalPagesText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Text to display the total pages",
+      "headerStyle": {
         "defaultValue": {
-          "value": "'Total Pages'",
-          "computed": false
-        }
-      },
-      "totalItemsText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Text to display the total items",
-        "defaultValue": {
-          "value": "'Total Items'",
+          "value": "{}",
           "computed": false
         }
       }
