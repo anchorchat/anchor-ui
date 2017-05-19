@@ -46,6 +46,7 @@ import Lightbox from './components/lightbox';
 import ThemeProvider from './components/theme-provider';
 import themeable from './components/themeable';
 import Table from './components/table';
+import Pagination from './components/pagination';
 import './index.css';
 
 ReactDOM.render(
@@ -93,6 +94,7 @@ ReactDOM.render(
         <Route path="/table" component={Table} />
         <Route path="/theme-provider" component={ThemeProvider} />
         <Route path="/themeable" component={themeable} />
+        <Route path="/pagination" component={Pagination} />
       </Route>
     </Router>
   </StyleRoot>,

@@ -61,7 +61,7 @@ const messages = [
 
 const currentUser = 'Sjaak';
 
-function MessageDoc() {
+const MessageDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Message');
   const style = {
     paper: {
@@ -168,6 +168,6 @@ function MessageDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default MessageDoc;

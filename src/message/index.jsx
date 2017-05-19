@@ -98,20 +98,20 @@ class Message extends Component {
 
   render() {
     const {
-      avatar,
+      avatar, // eslint-disable-line no-unused-vars
       message,
-      timeFormat,
+      timeFormat, // eslint-disable-line no-unused-vars
       myMessage,
-      style,
-      messageHeaderStyle,
-      messageBodyStyle,
-      messageTimeStyle,
+      style, // eslint-disable-line no-unused-vars
+      messageHeaderStyle, // eslint-disable-line no-unused-vars
+      messageBodyStyle, // eslint-disable-line no-unused-vars
+      messageTimeStyle, // eslint-disable-line no-unused-vars
       compact,
-      fontSize,
+      fontSize, // eslint-disable-line no-unused-vars
       emoji, // eslint-disable-line no-unused-vars
       enableLinks, // eslint-disable-line no-unused-vars
       menuItems, // eslint-disable-line no-unused-vars
-      enableLightbox,
+      enableLightbox, // eslint-disable-line no-unused-vars
       color,
       ...custom
     } = this.props;

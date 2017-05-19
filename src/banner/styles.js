@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 import styles from '../settings/styles';
 
-const styleSheet = {
+export default {
   wrapper: {
     width: '100%',
     height: '1px',
@@ -42,5 +42,3 @@ const styleSheet = {
     }
   }
 };
-
-export default styleSheet;

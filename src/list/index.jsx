@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from '../style/lists';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
 /** A wrapper for ListItems */
