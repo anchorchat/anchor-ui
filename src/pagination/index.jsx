@@ -125,7 +125,11 @@ class Pagination extends Component {
 Pagination.propTypes = {
   /** The list to navigate through */
   list: PropTypes.arrayOf(Object).isRequired,
-  /** Callback fired when the navigation changes */
+  /**
+   * Callback fired when the navigation changes
+   *
+   * @param {list} array The part of the list navigated to.
+   */
   onChange: PropTypes.func.isRequired,
   /** Initial active page */
   initialPage: PropTypes.number,
