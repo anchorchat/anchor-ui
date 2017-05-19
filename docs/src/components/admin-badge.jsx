@@ -8,7 +8,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import AdminBadge from \'anchor-ui/admin-badge\';';
 
-function AdminBadgeDoc() {
+const AdminBadgeDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'AdminBadge');
   const style = {
     paper: {
@@ -43,6 +43,6 @@ function AdminBadgeDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default AdminBadgeDoc;
