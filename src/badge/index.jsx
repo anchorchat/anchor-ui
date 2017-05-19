@@ -8,7 +8,7 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import themeable from '../themeable';
 
-function getStyle(themeColor, inverted, overrideStyle) {
+const getStyle = (themeColor, inverted, overrideStyle) => {
   const color = themeColor || colors.theme;
 
   const style = combineStyles(styles.badge, { backgroundColor: color });
@@ -19,7 +19,7 @@ function getStyle(themeColor, inverted, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 /** Used for displaying a (notification) counter */
 const Badge = ({ value, maxValue, inverted, style, color, ...custom }) => {
