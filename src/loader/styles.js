@@ -11,7 +11,7 @@ const loaderAnimation = Radium.keyframes({
 }, 'loader');
 
 export default {
-  loader: {
+  root: {
     display: 'flex',
     flexDirection: 'row',
     paddingTop: '10px'
