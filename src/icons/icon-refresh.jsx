@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
-const IconActivity = ({ color, ...custom }) => (
+const IconRefresh = ({ color, ...custom }) => (
   <svg fill="none" height="24" viewBox="0 0 24 24" width="24" {...custom}>
     <g fill={color}>
       <path d="M12.0007504,20 C7.58915674,20 4,16.6369606 4,12.5 C4,12.1130394 4.3354282,11.7964353 4.75039865,11.7964353 C5.1653691,11.7964353 5.5007973,12.1130394 5.5007973,12.5 C5.5007973,15.8630394 8.41609605,18.5928705 12.0007504,18.5928705 C15.5846543,18.5928705 18.4992027,15.8630394 18.4992027,12.5 C18.4992027,9.1369606 15.5846543,6.40712946 12.0007504,6.40712946 C11.5857799,6.40712946 11.2503517,6.09052533 11.2503517,5.70356473 C11.2503517,5.31660413 11.5857799,5 12.0007504,5 C16.4108433,5 20,8.3630394 20,12.5 C20,16.6369606 16.4108433,20 12.0007504,20" />
@@ -12,14 +12,14 @@ const IconActivity = ({ color, ...custom }) => (
   </svg>
 );
 
-IconActivity.propTypes = {
+IconRefresh.propTypes = {
   color: PropTypes.string
 };
 
-IconActivity.defaultProps = {
+IconRefresh.defaultProps = {
   color: colors.icons
 };
 
-IconActivity.displayName = 'IconActivity';
+IconRefresh.displayName = 'IconRefresh';
 
-export default pure(IconActivity);
+export default pure(IconRefresh);
