@@ -52,53 +52,59 @@ class Pagination extends Component {
       style,
       navStyle,
       navButtonStyle,
-      iconButtonStyle
+      iconButtonStyle,
+      position
     } = this.props;
     const { currentPage, pages, totalPages } = this.state.pager;
 
+    const nav = (
+      <nav style={getStyles.nav(position, navStyle)}>
+        <Button
+          disabled={currentPage === 1}
+          onClick={() => this.setPage(1, list, pageSize)}
+          style={getStyles.iconButton(iconButtonStyle)}
+        >
+          <IconFirst color={colors.white} />
+        </Button>
+        <Button
+          onClick={() => this.setPage(currentPage - 1, list, pageSize)}
+          disabled={currentPage === 1}
+          style={getStyles.iconButton(iconButtonStyle)}
+        >
+          <IconChevronLeft color={colors.white} />
+        </Button>
+        {map(pages, (page, index) =>
+          <Button
+            key={index} onClick={() => this.setPage(page, list, pageSize)}
+            style={getStyles.navButton(navButtonStyle)}
+            disabled={currentPage === page}
+            inverted
+          >
+            {page}
+          </Button>
+        )}
+        <Button
+          disabled={currentPage === totalPages}
+          onClick={() => this.setPage(currentPage + 1, list, pageSize)}
+          style={getStyles.iconButton(iconButtonStyle)}
+        >
+          <IconChevronRight color={colors.white} />
+        </Button>
+        <Button
+          disabled={currentPage === totalPages}
+          onClick={() => this.setPage(totalPages, list, pageSize)}
+          style={getStyles.iconButton(iconButtonStyle)}
+        >
+          <IconLast color={colors.white} />
+        </Button>
+      </nav>
+    );
+
     return (
       <section style={getStyles.root(style)}>
+        {position === 'top' ? nav : null}
         {children}
-        <nav style={getStyles.nav(navStyle)}>
-          <Button
-            disabled={currentPage === 1}
-            onClick={() => this.setPage(1, list, pageSize)}
-            style={getStyles.iconButton(iconButtonStyle)}
-          >
-            <IconFirst color={colors.white} />
-          </Button>
-          <Button
-            onClick={() => this.setPage(currentPage - 1, list, pageSize)}
-            disabled={currentPage === 1}
-            style={getStyles.iconButton(iconButtonStyle)}
-          >
-            <IconChevronLeft color={colors.white} />
-          </Button>
-          {map(pages, (page, index) =>
-            <Button
-              key={index} onClick={() => this.setPage(page, list, pageSize)}
-              style={getStyles.navButton(navButtonStyle)}
-              disabled={currentPage === page}
-              inverted
-            >
-              {page}
-            </Button>
-          )}
-          <Button
-            disabled={currentPage === totalPages}
-            onClick={() => this.setPage(currentPage + 1, list, pageSize)}
-            style={getStyles.iconButton(iconButtonStyle)}
-          >
-            <IconChevronRight color={colors.white} />
-          </Button>
-          <Button
-            disabled={currentPage === totalPages}
-            onClick={() => this.setPage(totalPages, list, pageSize)}
-            style={getStyles.iconButton(iconButtonStyle)}
-          >
-            <IconLast color={colors.white} />
-          </Button>
-        </nav>
+        {position === 'bottom' ? nav : null}
       </section>
     );
   }
@@ -127,6 +133,8 @@ Pagination.propTypes = {
   navButtonStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the icon button elements */
   iconButtonStyle: PropTypes.instanceOf(Object),
+  /** The nav's position relative to the children. One of the following: ["top", "bottom"] */
+  position: PropTypes.oneOf(['top', 'bottom'])
 };
 
 Pagination.defaultProps = {
@@ -136,7 +144,8 @@ Pagination.defaultProps = {
   headerStyle: {},
   navStyle: {},
   navButtonStyle: {},
-  iconButtonStyle: {}
+  iconButtonStyle: {},
+  position: 'top'
 };
 
 Pagination.displayName = 'Pagination';
