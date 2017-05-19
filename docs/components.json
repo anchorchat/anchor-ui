@@ -3953,7 +3953,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when the navigation changes\n\n@param {list} array The part of the list navigated to."
+        "description": "Callback fired when the navigation changes\n\n@param {pager} object Object containing { items, totalItems, totalPages, currentPage  }."
       },
       "initialPage": {
         "type": {
