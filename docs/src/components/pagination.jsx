@@ -26,7 +26,7 @@ class PaginationDoc extends Component {
     };
   }
 
-  onPageChange = items => this.setState({ items });
+  onPageChange = pager => this.setState({ items: pager.items });
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Pagination');

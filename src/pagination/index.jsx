@@ -41,7 +41,12 @@ class Pagination extends Component {
 
     this.setState({ pager: newPager });
 
-    return this.props.onChange(items);
+    this.props.onChange({
+      items,
+      totalItems: newPager.totalItems,
+      totalPages: newPager.totalPages,
+      currentPage: newPager.currentPage
+    });
   }
 
   render() {
@@ -116,7 +121,7 @@ Pagination.propTypes = {
   /**
    * Callback fired when the navigation changes
    *
-   * @param {list} array The part of the list navigated to.
+   * @param {pager} object Object containing { items, totalItems, totalPages, currentPage  }.
    */
   onChange: PropTypes.func.isRequired,
   /** Initial active page */
