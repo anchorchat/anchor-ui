@@ -4,39 +4,39 @@ import getStyles from '../../src/loader/get-styles';
 import styles from '../../src/loader/styles';
 
 describe('Loader.getStyles', () => {
-  describe('root', () => {
+  describe('dot', () => {
     it('should get styles', () => {
-      const style = getStyles.root();
+      const style = getStyles.dot();
 
       expect(style).to.deep.equal(styles.dot);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, 1, { color: 'red' });
+      const style = getStyles.dot('red', false, 1, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
 
     it('should change theme color', () => {
-      const style = getStyles.root('red');
+      const style = getStyles.dot('red');
 
       expect(style).to.have.property('backgroundColor', 'red');
     });
 
     it('should add inverted styles', () => {
-      const style = getStyles.root('red', true);
+      const style = getStyles.dot('red', true);
 
       expect(style).to.have.property('backgroundColor', '#FEFEFE');
     });
 
     it('should add index 1 styles', () => {
-      const style = getStyles.root('red', false, 1);
+      const style = getStyles.dot('red', false, 1);
 
       expect(style).to.have.property('animationDelay', '.33s');
     });
 
     it('should add index 2 styles', () => {
-      const style = getStyles.root('red', false, 2);
+      const style = getStyles.dot('red', false, 2);
 
       expect(style).to.have.property('animationDelay', '.66s');
     });

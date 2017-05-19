@@ -10,9 +10,9 @@ import themeable from '../themeable';
 /** Animated loader */
 const Loader = ({ inverted, style, dotStyle, color, ...custom }) => (
   <div style={combineStyles(styles.loader, style)} {...custom}>
-    <span style={getStyles.root(color, inverted, 0, dotStyle)} />
-    <span style={getStyles.root(color, inverted, 1, dotStyle)} />
-    <span style={getStyles.root(color, inverted, 2, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 0, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 1, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 2, dotStyle)} />
   </div>
 );
 
