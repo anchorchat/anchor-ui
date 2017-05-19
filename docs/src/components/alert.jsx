@@ -8,7 +8,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Alert from \'anchor-ui/alert\';';
 
-function AlertDoc() {
+const AlertDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Alert');
   const style = {
     paper: {
@@ -44,6 +44,6 @@ function AlertDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default AlertDoc;
