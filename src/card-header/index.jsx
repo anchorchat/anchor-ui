@@ -6,19 +6,17 @@ import getStyles from './get-styles';
 import Avatar from '../avatar';
 
 /** A Card is a piece of paper with unique related data */
-function CardHeader({
+const CardHeader = ({
   style, title, titleStyle, subtitle, subtitleStyle, avatar, avatarStyle, ...custom
-}) {
-  return (
-    <header style={getStyles.root(style)} {...custom}>
-      {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
-      <div>
-        <h1 style={getStyles.title(titleStyle)}>{title}</h1>
-        {subtitle ? <h2 style={getStyles.subtitle(subtitleStyle)}>{subtitle}</h2> : null}
-      </div>
-    </header>
-  );
-}
+}) => (
+  <header style={getStyles.root(style)} {...custom}>
+    {avatar ? <Avatar image={avatar} style={getStyles.avatar(avatarStyle)} /> : null}
+    <div>
+      <h1 style={getStyles.title(titleStyle)}>{title}</h1>
+      {subtitle ? <h2 style={getStyles.subtitle(subtitleStyle)}>{subtitle}</h2> : null}
+    </div>
+  </header>
+);
 
 CardHeader.displayName = 'CardHeader';
 
