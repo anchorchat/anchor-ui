@@ -8,7 +8,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import EmojiMenu from \'anchor-ui/emoji-menu\';';
 
-function EmojiMenuDoc() {
+const EmojiMenuDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'EmojiMenu');
   const style = {
     paper: {
@@ -44,6 +44,6 @@ function EmojiMenuDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default EmojiMenuDoc;

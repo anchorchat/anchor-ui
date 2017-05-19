@@ -36,7 +36,7 @@ const messages = [
 
 const currentUser = 'Ian';
 
-function MessageListDoc() {
+const MessageListDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'MessageList');
 
   const style = {
@@ -81,6 +81,6 @@ function MessageListDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default MessageListDoc;

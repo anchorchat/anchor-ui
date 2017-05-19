@@ -10,7 +10,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import PopOver from \'anchor-ui/pop-over\';';
 
-function PopOverDoc() {
+const PopOverDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'PopOver');
   const style = {
     paper: {
@@ -57,6 +57,6 @@ function PopOverDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default PopOverDoc;

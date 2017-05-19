@@ -8,9 +8,9 @@ import TableRow from '../../../dist/table-row';
 import TableColumn from '../../../dist/table-column';
 
 const usage = '```js\n import themeable from \'anchor-ui/themeable\'; \n export default themeable()(YourComponent);';
-const customPropName = '```js\n import themeable from \'anchor-ui/themeable\'; \n export default themeable({ propName: \'themeColor\' })(YourComponent);';
 
-function ThemeableDoc() {
+const ThemeableDoc = () => {
+  const customPropName = '```js\n import themeable from \'anchor-ui/themeable\'; \n export default themeable({ propName: \'themeColor\' })(YourComponent);';
   return (
     <article className="doc">
       <h1>ThemeProvider</h1>
@@ -50,6 +50,6 @@ function ThemeableDoc() {
       </section>
     </article>
   );
-}
+};
 
 export default ThemeableDoc;

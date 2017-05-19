@@ -8,7 +8,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import ProfileCard from \'anchor-ui/profile-card\';';
 
-function ProfileCardDoc() {
+const ProfileCardDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ProfileCard');
   const style = {
     paper: {
@@ -37,6 +37,6 @@ function ProfileCardDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default ProfileCardDoc;

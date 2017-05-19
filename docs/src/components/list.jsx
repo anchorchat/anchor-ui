@@ -12,7 +12,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import List from \'anchor-ui/list\';';
 
-function ListDoc() {
+const ListDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'List');
 
   const currentChannel = 'Channel3';
@@ -85,6 +85,6 @@ function ListDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default ListDoc;

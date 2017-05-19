@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   list: {
     background: colors.white,
     boxSizing: 'border-box',
@@ -18,5 +18,3 @@ const styleSheet = {
     color: colors.primaryText
   }
 };
-
-export default styleSheet;

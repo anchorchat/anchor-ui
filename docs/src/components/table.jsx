@@ -13,7 +13,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Table from \'anchor-ui/table\';';
 
-function TableDoc() {
+const TableDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Table');
   const headerData = _.find(components, component => component.displayName === 'TableHeader');
   const headerColumnData = _.find(components, component => component.displayName === 'TableHeaderColumn');
@@ -98,6 +98,6 @@ function TableDoc() {
       <Props props={columnData.props} />
     </article>
   );
-}
+};
 
 export default TableDoc;

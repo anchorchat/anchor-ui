@@ -8,7 +8,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Badge from \'anchor-ui/badge\';';
 
-function BadgeDoc() {
+const BadgeDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Badge');
   const style = {
     paper: {
@@ -43,6 +43,6 @@ function BadgeDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default BadgeDoc;

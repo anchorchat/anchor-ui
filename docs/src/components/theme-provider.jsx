@@ -11,7 +11,7 @@ import colors from '../../../dist/settings/colors';
 
 const usage = '```js\n import ThemeProvider from \'anchor-ui/theme-provider\';';
 
-function ThemeProviderDoc({ setColor }) {
+const ThemeProviderDoc = ({ setColor }) => {
   const componentData = _.find(components, component => component.displayName === 'ThemeProvider');
   const style = {
     paper: {
@@ -54,7 +54,7 @@ function ThemeProviderDoc({ setColor }) {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 ThemeProviderDoc.propTypes = {
   setColor: PropTypes.func

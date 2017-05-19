@@ -9,7 +9,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
 
-function MenuItemDoc() {
+const MenuItemDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'MenuItem');
   const style = {
     paper: {
@@ -43,6 +43,6 @@ function MenuItemDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default MenuItemDoc;
