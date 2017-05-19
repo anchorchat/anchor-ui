@@ -2,10 +2,8 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-function root(themeColor, myMessage, avatar, compact, overrideStyle) {
+function root(color = colors.theme, myMessage, avatar, compact, overrideStyle) {
   let style = styles.message;
-
-  const color = themeColor || colors.theme;
 
   if (myMessage) {
     style = combineStyles(
