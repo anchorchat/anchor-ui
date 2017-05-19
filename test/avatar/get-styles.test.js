@@ -12,7 +12,7 @@ describe('Avatar.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root({}, { color: 'red' });
+      const style = getStyles.root('', { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -26,7 +26,7 @@ describe('Avatar.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.status({}, { color: 'red' });
+      const style = getStyles.status('online', { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
