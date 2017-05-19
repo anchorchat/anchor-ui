@@ -6,7 +6,7 @@ import styles from '../style/lists';
 import combineStyles from '../internal/combine-styles';
 
 /** A wrapper for ListItems */
-function List({ children, header, listRef, style, headerStyle, open, ...custom }) {
+const List = ({ children, header, listRef, style, headerStyle, open, ...custom }) => {
   if (!open) {
     return null;
   }
@@ -17,7 +17,7 @@ function List({ children, header, listRef, style, headerStyle, open, ...custom }
       {children}
     </ul>
   );
-}
+};
 
 List.displayName = 'List';
 
