@@ -5,7 +5,7 @@ import List from '../../../dist/list';
 import ListItem from '../../../dist/list-item';
 import npmPackage from '../../../package.json';
 
-function Nav(props, context) {
+const Nav = (props, context) => {
   const { router } = context;
 
   return (
@@ -55,7 +55,7 @@ function Nav(props, context) {
       </List>
     </nav>
   );
-}
+};
 
 Nav.contextTypes = {
   router: PropTypes.object
