@@ -7,7 +7,7 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import themeable from '../themeable';
 
-function getStyle(color = colors.theme, inverted, index, overrideStyle) {
+const getStyle = (color = colors.theme, inverted, index, overrideStyle) => {
   let style = combineStyles(styles.dot, { backgroundColor: color });
 
   if (index === 1) {
@@ -23,7 +23,7 @@ function getStyle(color = colors.theme, inverted, index, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 /** Animated loader */
 const Loader = ({ inverted, style, dotStyle, color, ...custom }) => (
