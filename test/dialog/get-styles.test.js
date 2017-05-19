@@ -20,7 +20,7 @@ describe('Dialog.getStyles', () => {
     it('should change theme color', () => {
       const style = getStyles.root('red');
 
-      expect(style).to.have.property('background', 'red');
+      expect(style).to.have.property('backgroundColor', 'red');
     });
   });
 

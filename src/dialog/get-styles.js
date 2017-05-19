@@ -5,7 +5,7 @@ import styles from './styles';
 function root(themeColor, overrideStyle) {
   const color = themeColor || colors.theme;
 
-  const style = combineStyles(styles.dialog, { background: color });
+  const style = combineStyles(styles.dialog, { backgroundColor: color });
 
   return combineStyles(style, overrideStyle);
 }
