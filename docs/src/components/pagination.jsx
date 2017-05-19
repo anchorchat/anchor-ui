@@ -15,9 +15,7 @@ import TableColumn from '../../../dist/table-column';
 const usage = '```js\n import Pagination from \'anchor-ui/pagination\';';
 
 const range = _.range(1, 351);
-const list = _.chain(range)
-  .map(number => ({ id: number, name: `Item ${number}` }))
-  .value();
+const list = _.map(range, number => ({ id: number, name: `Item ${number}` }));
 
 class PaginationDoc extends Component {
   constructor() {
