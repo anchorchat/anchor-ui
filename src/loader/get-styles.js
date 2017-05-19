@@ -2,7 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(color = colors.theme, inverted, index, overrideStyle) {
+function root(overrideStyle) {
   return combineStyles(styles.root, overrideStyle);
 }
 
