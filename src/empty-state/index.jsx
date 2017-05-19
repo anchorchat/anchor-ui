@@ -6,37 +6,16 @@ import styles from './styles';
 import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
 
-<<<<<<< HEAD
-const getStyle = (image, overrideStyle) => {
-  const style = combineStyles(styles.emptyState, { backgroundImage: `url(${image})` });
-
-  return combineStyles(style, overrideStyle);
-};
-
-=======
->>>>>>> origin/develop
 /** Pretty placeholder for empty content */
 const EmptyState = ({
   headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
-<<<<<<< HEAD
 }) => (
-  <section style={getStyle(background, style)} {...custom}>
+  <section style={getStyles.root(background, style)} {...custom}>
     <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
     <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
     {button}
   </section>
 );
-=======
-}) {
-  return (
-    <section style={getStyles.root(background, style)} {...custom}>
-      <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
-      <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
-      {button}
-    </section>
-  );
-}
->>>>>>> origin/develop
 
 EmptyState.displayName = 'EmptyState';
 
