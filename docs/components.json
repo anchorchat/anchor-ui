@@ -4052,12 +4052,6 @@
           "value": "'top'",
           "computed": false
         }
-      },
-      "headerStyle": {
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
       }
     }
   },

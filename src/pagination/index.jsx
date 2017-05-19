@@ -141,7 +141,6 @@ Pagination.defaultProps = {
   initialPage: 1,
   pageSize: 10,
   style: {},
-  headerStyle: {},
   navStyle: {},
   navButtonStyle: {},
   iconButtonStyle: {},
