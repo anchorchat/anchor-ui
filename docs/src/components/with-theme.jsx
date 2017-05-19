@@ -10,7 +10,7 @@ import Alert from '../../../dist/alert';
 
 const usage = '```js\n import WithTheme from \'anchor-ui/with-theme\';';
 
-function WithThemeDoc() {
+const WithThemeDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'WithTheme');
   const style = {
     paper: {
@@ -53,6 +53,6 @@ function WithThemeDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default WithThemeDoc;
