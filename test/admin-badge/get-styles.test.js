@@ -12,7 +12,7 @@ describe('AdminBadge.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root({}, {}, { color: 'red' });
+      const style = getStyles.root('red', false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -24,7 +24,7 @@ describe('AdminBadge.getStyles', () => {
     });
 
     it('should add inverted styles', () => {
-      const style = getStyles.root({}, true);
+      const style = getStyles.root('red', true);
 
       expect(style).to.have.property('backgroundColor', '#FEFEFE');
     });
