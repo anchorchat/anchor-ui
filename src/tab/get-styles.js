@@ -2,7 +2,7 @@ import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
-function root(color = colors.theme, selected, overrideStyle, activeStyle) {
+const root = (color = colors.theme, selected, overrideStyle, activeStyle) => {
   const style = styles.root;
 
   if (selected) {
@@ -10,9 +10,9 @@ function root(color = colors.theme, selected, overrideStyle, activeStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function label(selected, overrideStyle, activeStyle) {
+const label = (selected, overrideStyle, activeStyle) => {
   const style = styles.label;
 
   if (selected) {
@@ -20,15 +20,11 @@ function label(selected, overrideStyle, activeStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function icon(selected, overrideStyle) {
-  return combineStyles(styles.icon, overrideStyle);
-}
+const icon = (selected, overrideStyle) => combineStyles(styles.icon, overrideStyle);
 
-function badge(overrideStyle) {
-  return combineStyles(styles.badge, overrideStyle);
-}
+const badge = overrideStyle => combineStyles(styles.badge, overrideStyle);
 
 export default {
   root,
