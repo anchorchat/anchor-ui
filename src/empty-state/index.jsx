@@ -6,7 +6,6 @@ import styles from './styles';
 import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
 
-
 /** Pretty placeholder for empty content */
 const EmptyState = ({
   headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
