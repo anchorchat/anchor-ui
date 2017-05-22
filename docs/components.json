@@ -4052,6 +4052,17 @@
           "value": "'top'",
           "computed": false
         }
+      },
+      "jumpToPage": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Jump to a certain page in the list",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
       }
     }
   },

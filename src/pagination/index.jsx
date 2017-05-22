@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
+import size from 'lodash/size';
 import map from 'lodash/map';
 import getPager from '../internal/get-pager';
 import getStyles from './get-styles';
@@ -27,10 +28,14 @@ class Pagination extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { initialPage, list, pageSize } = nextProps;
+    const { initialPage, list, pageSize, jumpToPage } = nextProps;
 
-    if (!isEqual(list, this.props.list)) {
+    if (!isEqual(list, this.props.list) || !isEqual(pageSize, this.props.pageSize)) {
       this.setPage(initialPage, list, pageSize);
+    }
+
+    if (!isEqual(jumpToPage, this.props.jumpToPage)) {
+      this.setPage(jumpToPage, list, pageSize);
     }
   }
 
@@ -107,9 +112,9 @@ class Pagination extends Component {
 
     return (
       <section style={getStyles.root(style)}>
-        {position === 'top' ? nav : null}
+        {position === 'top' && size(list) > pageSize ? nav : null}
         {children}
-        {position === 'bottom' ? nav : null}
+        {position === 'bottom' && size(list) > pageSize ? nav : null}
       </section>
     );
   }
@@ -139,7 +144,9 @@ Pagination.propTypes = {
   /** Override the styles of the icon button elements */
   iconButtonStyle: PropTypes.instanceOf(Object),
   /** The nav's position relative to the children. One of the following: ["top", "bottom"] */
-  position: PropTypes.oneOf(['top', 'bottom'])
+  position: PropTypes.oneOf(['top', 'bottom']),
+  /** Jump to a certain page in the list */
+  jumpToPage: PropTypes.number
 };
 
 Pagination.defaultProps = {
@@ -149,7 +156,8 @@ Pagination.defaultProps = {
   navStyle: {},
   navButtonStyle: {},
   iconButtonStyle: {},
-  position: 'top'
+  position: 'top',
+  jumpToPage: 1
 };
 
 Pagination.displayName = 'Pagination';
