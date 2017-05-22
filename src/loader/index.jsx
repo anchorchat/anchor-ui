@@ -7,7 +7,7 @@ import Loader from './loader';
 // by exporting it like this a consumer doesn't need to wrap StyleRoot around their application
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#keyframes
 // https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
-function LoaderWithStyleRoot(props) {
+const LoaderWithStyleRoot = (props) => {
   const {
     dotStyle, // eslint-disable-line no-unused-vars
     inverted, // eslint-disable-line no-unused-vars
@@ -19,7 +19,7 @@ function LoaderWithStyleRoot(props) {
       <Loader {...props} />
     </StyleRoot>
   );
-}
+};
 
 LoaderWithStyleRoot.propTypes = {
   /** Override the styles of the dot element */

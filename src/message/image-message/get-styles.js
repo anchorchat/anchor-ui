@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-function root(color = colors.theme, myMessage, avatar, compact, overrideStyle) {
+const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -33,9 +33,9 @@ function root(color = colors.theme, myMessage, avatar, compact, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function body(myMessage, fontSize, overrideStyle) {
+const body = (myMessage, fontSize, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
@@ -51,7 +51,7 @@ function body(myMessage, fontSize, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   root,

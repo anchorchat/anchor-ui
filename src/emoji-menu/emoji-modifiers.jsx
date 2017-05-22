@@ -6,7 +6,7 @@ import createMarkup from './create-markup';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function getStyle(active, overrideStyle) {
+const getStyle = (active, overrideStyle) => {
   let style = styles.modifier;
 
   if (active) {
@@ -14,7 +14,7 @@ function getStyle(active, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   return (

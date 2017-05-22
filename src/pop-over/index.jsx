@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 import Divider from '../divider';
 
 /** Pop over useful for showing tooltips or menu options */
-function PopOver({
+const PopOver = ({
   children,
   header,
   style,
@@ -18,7 +17,7 @@ function PopOver({
   secondaryMenuItems,
   dividerText,
   ...custom
-}) {
+}) => {
   if (!open) {
     return null;
   }
@@ -35,17 +34,17 @@ function PopOver({
 
   return (
     <section
-      style={combineStyles(combineStyles(styles.popOver, position), style)}
+      style={getStyles.root(position, style)}
       ref={popOverRef}
       {...custom}
     >
-      {header ? <h1 style={combineStyles(styles.header, headerStyle)}>{header}</h1> : null}
+      {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
       {children}
       {divider}
       {secondaryMenuItems}
     </section>
   );
-}
+};
 
 PopOver.displayName = 'PopOver';
 

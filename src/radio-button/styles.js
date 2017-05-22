@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 
 export default {
-  container: {
+  root: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

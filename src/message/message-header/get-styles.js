@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-function header(myMessage, compact, fontSize, overrideStyle) {
+const header = (myMessage, compact, fontSize, overrideStyle) => {
   let style = styles.header;
 
   if (myMessage) {
@@ -22,9 +22,9 @@ function header(myMessage, compact, fontSize, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function avatar(myMessage) {
+const avatar = (myMessage) => {
   let style = styles.avatar;
 
   if (myMessage) {
@@ -32,9 +32,9 @@ function avatar(myMessage) {
   }
 
   return style;
-}
+};
 
-function arrow(myMessage) {
+const arrow = (myMessage) => {
   let style = styles.arrow;
 
   if (myMessage) {
@@ -42,7 +42,7 @@ function arrow(myMessage) {
   }
 
   return style;
-}
+};
 
 export default {
   header,

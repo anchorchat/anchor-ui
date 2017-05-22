@@ -5,13 +5,11 @@ import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** An user's profile image */
-function Avatar({ image, style, status, statusStyle, ...custom }) {
-  return (
-    <section style={getStyles.root(image, style)} {...custom}>
-      {status ? <div style={getStyles.status(status, statusStyle)} /> : null}
-    </section>
-  );
-}
+const Avatar = ({ image, style, status, statusStyle, ...custom }) => (
+  <section style={getStyles.root(image, style)} {...custom}>
+    {status ? <div style={getStyles.status(status, statusStyle)} /> : null}
+  </section>
+);
 
 Avatar.displayName = 'Avatar';
 

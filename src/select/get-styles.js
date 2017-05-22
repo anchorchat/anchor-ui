@@ -3,7 +3,7 @@ import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 import darken from '../internal/darken';
 
-function icon(open, overrideStyle) {
+const icon = (open, overrideStyle) => {
   let style = styles.icon;
 
   if (open) {
@@ -11,11 +11,9 @@ function icon(open, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function header(errorMessage = null, themeColor, overrideStyle) {
-  const color = themeColor || colors.theme;
-
+const header = (errorMessage = null, color = colors.theme, overrideStyle) => {
   let style = combineStyles(
     styles.header,
     {
@@ -34,10 +32,9 @@ function header(errorMessage = null, themeColor, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function error(overrideStyle) {
-  return combineStyles(styles.error, overrideStyle);
-}
+const error = overrideStyle => combineStyles(styles.error, overrideStyle);
+
 
 export default { icon, header, error };

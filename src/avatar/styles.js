@@ -15,7 +15,7 @@ export default {
     width: '10px',
     height: '10px',
     border: `1px solid ${colors.white}`,
-    backgroundColor: colors.online,
+    backgroundColor: colors.offline,
     borderRadius: '50%',
     position: 'absolute',
     right: 0,

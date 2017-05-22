@@ -2,6 +2,7 @@
 import { expect } from 'chai';
 import getStyles from '../../src/avatar/get-styles';
 import styles from '../../src/avatar/styles';
+import colors from '../../src/settings/colors';
 
 describe('Avatar.getStyles', () => {
   describe('root', () => {
@@ -23,6 +24,12 @@ describe('Avatar.getStyles', () => {
       const style = getStyles.status();
 
       expect(style).to.deep.equal(styles.status);
+    });
+
+    it('should get default status style', () => {
+      const style = getStyles.status();
+
+      expect(style).to.have.property('backgroundColor', colors.offline);
     });
 
     it('should combine styles', () => {
