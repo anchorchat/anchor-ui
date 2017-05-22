@@ -2,7 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(color = colors.theme, overrideStyle, left, right) {
+const root = (color = colors.theme, overrideStyle, left, right) => {
   let style = combineStyles(styles.root, { backgroundColor: color });
 
   if (left) {
@@ -14,7 +14,7 @@ function root(color = colors.theme, overrideStyle, left, right) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 function text(overrideStyle) {
   return combineStyles(styles.text, overrideStyle);
