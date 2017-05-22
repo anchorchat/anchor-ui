@@ -13,9 +13,7 @@ const icon = (open, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const header = (errorMessage = null, themeColor, overrideStyle) => {
-  const color = themeColor || colors.theme;
-
+const header = (errorMessage = null, color = colors.theme, overrideStyle) => {
   let style = combineStyles(
     styles.header,
     {
