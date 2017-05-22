@@ -16,6 +16,12 @@ describe('PopOver.getStyles', () => {
 
       expect(style).to.have.property('color', 'red');
     });
+
+    it('should add position styles', () => {
+      const style = getStyles.root({ top: '50%' });
+
+      expect(style).to.have.property('top', '50%');
+    });
   });
 
   describe('header', () => {
