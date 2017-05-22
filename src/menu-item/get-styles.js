@@ -2,7 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(color = colors.theme, iconElement, active, overrideStyle) {
+const root = (color = colors.theme, iconElement, active, overrideStyle) => {
   let style = styles.root;
 
   if (iconElement) {
@@ -14,19 +14,14 @@ function root(color = colors.theme, iconElement, active, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function text(overrideStyle) {
-  return combineStyles(styles.text, overrideStyle);
-}
+const text = overrideStyle => combineStyles(styles.text, overrideStyle);
 
-function icon(overrideStyle) {
-  return combineStyles(styles.icon, overrideStyle);
-}
+const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
-function activeIcon(overrideStyle) {
-  return combineStyles(styles.activeIcon, overrideStyle);
-}
+const activeIcon = overrideStyle => combineStyles(styles.activeIcon, overrideStyle);
+
 
 export default {
   root,
