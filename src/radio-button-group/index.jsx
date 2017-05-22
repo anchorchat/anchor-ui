@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
-import combineStyles from '../internal/combine-styles';
-import styles from './styles';
+import getStyles from './get-styles';
 
 function RadioButtonGroup({ value, onChange, children, label, labelStyle, style, ...custom }) {
   const childrenWithProps = React.Children.map(
@@ -17,8 +16,8 @@ function RadioButtonGroup({ value, onChange, children, label, labelStyle, style,
 
   return (
     <section {...custom}>
-      {label ? <span style={combineStyles(styles.label, labelStyle)}>{label}</span> : null}
-      <section style={combineStyles(styles.root, style)}>
+      {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
+      <section style={getStyles.root(style)}>
         {childrenWithProps}
       </section>
     </section>
