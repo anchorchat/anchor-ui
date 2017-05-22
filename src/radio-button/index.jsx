@@ -8,13 +8,13 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import themeable from '../themeable';
 
-function getStyle(color = colors.theme, overrideStyle) {
+const getStyle = (color = colors.theme, overrideStyle) => {
   let style = styles.container;
 
   style = combineStyles(style, { ':hover': { color } });
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 /** Radio buttons are switches used for selection from multiple options */
 const RadioButton = ({
