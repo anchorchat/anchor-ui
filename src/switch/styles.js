@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import fade from '../internal/fade';
 import styles from '../settings/styles';
 
-const styleSheet = {
+export default {
   label: {
     fontSize: '16px',
     color: colors.primaryText,
@@ -45,5 +45,3 @@ const styleSheet = {
     background: fade(colors.theme, 0.5),
   }
 };
-
-export default styleSheet;
