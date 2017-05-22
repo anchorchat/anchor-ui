@@ -7,7 +7,7 @@ import combineStyles from '../internal/combine-styles';
 import Divider from '../divider';
 
 /** Pop over useful for showing tooltips or menu options */
-function PopOver({
+const PopOver = ({
   children,
   header,
   style,
@@ -18,7 +18,7 @@ function PopOver({
   secondaryMenuItems,
   dividerText,
   ...custom
-}) {
+}) => {
   if (!open) {
     return null;
   }
@@ -45,7 +45,7 @@ function PopOver({
       {secondaryMenuItems}
     </section>
   );
-}
+};
 
 PopOver.displayName = 'PopOver';
 
