@@ -1,4 +1,8 @@
 const style = {
+  root: {
+    height: 'calc(100% - 112px)',
+    position: 'relative'
+  },
   list: {
     overflow: 'auto',
     width: '100%',
@@ -12,10 +16,6 @@ const style = {
     bottom: '0',
     boxSizing: 'border-box',
     margin: '0'
-  },
-  container: {
-    height: 'calc(100% - 112px)',
-    position: 'relative'
   }
 };
 
