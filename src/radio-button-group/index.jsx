@@ -4,7 +4,7 @@ import pure from 'recompose/pure';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function RadioButtonGroup({ value, onChange, children, label, labelStyle, style, ...custom }) {
+const RadioButtonGroup = ({ value, onChange, children, label, labelStyle, style, ...custom }) => {
   const childrenWithProps = React.Children.map(
     children, child => React.cloneElement(
       child,
@@ -23,7 +23,7 @@ function RadioButtonGroup({ value, onChange, children, label, labelStyle, style,
       </section>
     </section>
   );
-}
+};
 
 RadioButtonGroup.propTypes = {
   /** The RadioButtonGroup's value */
