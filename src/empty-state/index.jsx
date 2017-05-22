@@ -18,7 +18,6 @@ const EmptyState = ({
   </section>
 );
 
-
 EmptyState.displayName = 'EmptyState';
 
 EmptyState.propTypes = {

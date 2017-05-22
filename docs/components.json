@@ -2362,7 +2362,7 @@
   },
   "components/icons/icon-refresh.jsx": {
     "description": "",
-    "displayName": "IconActivity",
+    "displayName": "IconRefresh",
     "methods": [],
     "props": {
       "color": {
