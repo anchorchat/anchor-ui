@@ -16,21 +16,13 @@ const root = (color = colors.theme, overrideStyle, left, right) => {
   return combineStyles(style, overrideStyle);
 };
 
-function text(overrideStyle) {
-  return combineStyles(styles.text, overrideStyle);
-}
+const text = overrideStyle => combineStyles(styles.text, overrideStyle);
 
-function leftButton(overrideStyle) {
-  return combineStyles(styles.leftButton, overrideStyle);
-}
+const leftButton = overrideStyle => combineStyles(styles.leftButton, overrideStyle);
 
-function rightButton(overrideStyle) {
-  return combineStyles(styles.rightButton, overrideStyle);
-}
+const rightButton = overrideStyle => combineStyles(styles.rightButton, overrideStyle);
 
-function icon(overrideStyle) {
-  return combineStyles(styles.icon, overrideStyle);
-}
+const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
 export default {
   root,
