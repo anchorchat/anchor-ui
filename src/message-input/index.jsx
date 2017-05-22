@@ -9,21 +9,21 @@ import IconSend from '../icons/icon-send';
 import combineStyles from '../internal/combine-styles';
 import themeable from '../themeable';
 
-function getButtonStyle(style, disabled) {
+const getButtonStyle = (style, disabled) => {
   if (disabled) {
     return combineStyles(style, styles.disabled);
   }
 
   return style;
-}
+};
 
-function getInputStyle(rightButton, overrideStyle) {
+const getInputStyle = (rightButton, overrideStyle) => {
   if (rightButton) {
     return combineStyles(combineStyles(styles.messageInput, styles.leftButton), overrideStyle);
   }
 
   return combineStyles(styles.messageInput, overrideStyle);
-}
+};
 
 /** Message input with send button */
 class MessageInput extends Component {
