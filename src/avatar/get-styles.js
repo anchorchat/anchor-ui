@@ -2,13 +2,13 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(image, overrideStyle) {
+const root = (image, overrideStyle) => {
   const style = combineStyles(styles.root, { backgroundImage: `url(${image})` });
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function status(type, overrideStyle) {
+const status = (type, overrideStyle) => {
   let style = styles.status;
   let backgroundColor;
 
@@ -26,7 +26,7 @@ function status(type, overrideStyle) {
   style = combineStyles(style, { backgroundColor });
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   root,
