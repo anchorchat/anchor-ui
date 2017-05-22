@@ -1,25 +1,15 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function root(overrideStyles) {
-  return combineStyles(styles.root, overrideStyles);
-}
+const root = overrideStyles => combineStyles(styles.root, overrideStyles);
 
-function coverImage(overrideStyles) {
-  return combineStyles(styles.coverImage, overrideStyles);
-}
+const coverImage = overrideStyles => combineStyles(styles.coverImage, overrideStyles);
 
-function avatar(overrideStyles) {
-  return combineStyles(styles.avatar, overrideStyles);
-}
+const avatar = overrideStyles => combineStyles(styles.avatar, overrideStyles);
 
-function header(overrideStyles) {
-  return combineStyles(styles.header, overrideStyles);
-}
+const header = overrideStyles => combineStyles(styles.header, overrideStyles);
 
-function secondaryText(overrideStyles) {
-  return combineStyles(styles.secondaryText, overrideStyles);
-}
+const secondaryText = overrideStyles => combineStyles(styles.secondaryText, overrideStyles);
 
 export default {
   root,
