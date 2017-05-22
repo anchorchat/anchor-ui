@@ -13,29 +13,27 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 import combineStyles from '../internal/combine-styles';
 
-/** Four types of (system) messages for alerting your user */
-const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => {
-  const icons = {
-    success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,
-    error: <IconError color={darken(colors.alert.error, 0.65)} />,
-    warning: <IconWarning color={darken(colors.alert.warning, 0.65)} />,
-    info: <IconInfo color={darken(colors.alert.info, 0.65)} />
-  };
-
-  return (
-    <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
-      <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
-      <p style={combineStyles(styles.text, textStyle)}>{text}</p>
-      {
-        hideAlert
-        ? <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
-          <IconClose color={darken(colors.alert[type], 0.65)} />
-        </Button>
-        : null
-      }
-    </section>
-  );
+const icons = {
+  success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,
+  error: <IconError color={darken(colors.alert.error, 0.65)} />,
+  warning: <IconWarning color={darken(colors.alert.warning, 0.65)} />,
+  info: <IconInfo color={darken(colors.alert.info, 0.65)} />
 };
+
+/** Four types of (system) messages for alerting your user */
+const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => (
+  <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
+    <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
+    <p style={combineStyles(styles.text, textStyle)}>{text}</p>
+    {
+      hideAlert
+      ? <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
+        <IconClose color={darken(colors.alert[type], 0.65)} />
+      </Button>
+      : null
+    }
+  </section>
+);
 
 Alert.displayName = 'Alert';
 
