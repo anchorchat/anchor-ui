@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-function container(myMessage, compact) {
+const container = (myMessage, compact) => {
   if (compact) {
     return styles.messageContainer;
   }
@@ -12,9 +12,9 @@ function container(myMessage, compact) {
   }
 
   return styles.messageContainer;
-}
+};
 
-function header(color = colors.theme, myMessage, avatar, compact, overrideStyle) {
+const header = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -37,9 +37,9 @@ function header(color = colors.theme, myMessage, avatar, compact, overrideStyle)
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function body(myMessage, avatar, compact, overrideStyle) {
+const body = (myMessage, avatar, compact, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
@@ -59,7 +59,7 @@ function body(myMessage, avatar, compact, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   container,

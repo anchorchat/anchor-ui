@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function root(color = colors.theme, inverted, overrideStyle) {
+const root = (color = colors.theme, inverted, overrideStyle) => {
   const style = combineStyles(styles.badge, { backgroundColor: color });
   const invertedStyle = combineStyles(styles.inverted, { color });
 
@@ -11,7 +11,7 @@ function root(color = colors.theme, inverted, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   root

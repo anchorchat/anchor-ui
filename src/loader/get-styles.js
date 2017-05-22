@@ -2,11 +2,9 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(overrideStyle) {
-  return combineStyles(styles.root, overrideStyle);
-}
+const root = overrideStyle => combineStyles(styles.root, overrideStyle);
 
-function dot(color = colors.theme, inverted, index, overrideStyle) {
+const dot = (color = colors.theme, inverted, index, overrideStyle) => {
   let style = combineStyles(styles.dot, { backgroundColor: color });
 
   if (index === 1) {
@@ -22,7 +20,7 @@ function dot(color = colors.theme, inverted, index, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   root,

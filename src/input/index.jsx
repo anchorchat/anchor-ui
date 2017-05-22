@@ -8,7 +8,7 @@ import fade from '../internal/fade';
 import combineStyles from '../internal/combine-styles';
 
 /** General purpose form input */
-function Input({
+const Input = ({
   onChange,
   value,
   maxLength,
@@ -25,31 +25,29 @@ function Input({
   placeholder,
   placeholderStyle,
   ...custom
-}) {
-  return (
-    <section style={getStyles.root(disabled, style)}>
-      <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
-      <input
-        className="input"
-        style={getStyles.input(error, inputStyle)}
-        onChange={onChange}
-        value={value}
-        type={type}
-        maxLength={maxLength}
-        id={name}
-        ref={inputRef}
-        placeholder={placeholder}
-        {...custom}
-      />
-      <Style
-        rules={{
-          '.input::placeholder': combineStyles({ color: fade(colors.white, 0.38) }, placeholderStyle)
-        }}
-      />
-      {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
-    </section>
-  );
-}
+}) => (
+  <section style={getStyles.root(disabled, style)}>
+    <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
+    <input
+      className="input"
+      style={getStyles.input(error, inputStyle)}
+      onChange={onChange}
+      value={value}
+      type={type}
+      maxLength={maxLength}
+      id={name}
+      ref={inputRef}
+      placeholder={placeholder}
+      {...custom}
+    />
+    <Style
+      rules={{
+        '.input::placeholder': combineStyles({ color: fade(colors.white, 0.38) }, placeholderStyle)
+      }}
+    />
+    {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
+  </section>
+);
 
 Input.displayName = 'Input';
 
