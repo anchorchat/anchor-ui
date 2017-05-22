@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import format from 'date-fns/format';
 import getStyles from './get-styles';
 
-function MessageTime({ myMessage, type, style, createdAt, timeFormat }) {
-  return (
-    <span style={getStyles.root(myMessage, type, style)}>
-      {format(createdAt, timeFormat)}
-    </span>
-  );
-}
+const MessageTime = ({ myMessage, type, style, createdAt, timeFormat }) => (
+  <span style={getStyles.root(myMessage, type, style)}>
+    {format(createdAt, timeFormat)}
+  </span>
+);
 
 MessageTime.propTypes = {
   myMessage: PropTypes.bool,
