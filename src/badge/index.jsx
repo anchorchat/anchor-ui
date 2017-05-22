@@ -6,7 +6,6 @@ import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-
 /** Used for displaying a (notification) counter */
 const Badge = ({ value, maxValue, inverted, style, color, ...custom }) => {
   let content = value;
