@@ -5,13 +5,11 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A Paper element is a basic container that can give depth to the page. */
-function Paper({ children, depth, style, ...custom }) {
-  return (
-    <section style={getStyles.root(depth, style)} {...custom}>
-      {children}
-    </section>
-  );
-}
+const Paper = ({ children, depth, style, ...custom }) => (
+  <section style={getStyles.root(depth, style)} {...custom}>
+    {children}
+  </section>
+);
 
 Paper.displayName = 'Paper';
 
