@@ -13,6 +13,9 @@ const status = (type, overrideStyle) => {
   let backgroundColor;
 
   switch (type) {
+    case 'online':
+      backgroundColor = colors.online;
+      break;
     case 'away':
       backgroundColor = colors.away;
       break;
@@ -20,7 +23,7 @@ const status = (type, overrideStyle) => {
       backgroundColor = colors.offline;
       break;
     default:
-      backgroundColor = colors.online;
+      backgroundColor = colors.offline;
   }
 
   style = combineStyles(style, { backgroundColor });
