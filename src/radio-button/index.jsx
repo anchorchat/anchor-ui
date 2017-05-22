@@ -4,36 +4,27 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import IconRadio from '../icons/icon-radio';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 import themeable from '../themeable';
-
-const getStyle = (color = colors.theme, overrideStyle) => {
-  let style = styles.container;
-
-  style = combineStyles(style, { ':hover': { color } });
-
-  return combineStyles(style, overrideStyle);
-};
 
 /** Radio buttons are switches used for selection from multiple options */
 const RadioButton = ({
   value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, ...custom
 }) => (
-  <label key="radio" htmlFor={value} style={getStyle(color, style)}>
+  <label key="radio" htmlFor={value} style={getStyles.root(color, style)}>
     <input
       type="radio"
       value={value}
       id={value}
       onChange={onChange}
       checked={checked}
-      style={combineStyles(styles.input, inputStyle)}
+      style={getStyles.input(inputStyle)}
       {...custom}
     />
-    <div style={combineStyles(styles.icon, iconStyle)}>
+    <div style={getStyles.icon(iconStyle)}>
       <IconRadio color={checked ? color || colors.theme : colors.icons} />
     </div>
-    <span style={combineStyles(styles.label, labelStyle)}>
+    <span style={getStyles.label(labelStyle)}>
       {label}
     </span>
   </label>

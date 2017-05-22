@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import shallowEqual from 'recompose/shallowEqual';
-import styles from '../style/message-lists';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 
 /** Render a list of items (Messages) with optional auto scroll */
 class MessageList extends Component {
@@ -100,9 +99,9 @@ class MessageList extends Component {
     } = this.props;
 
     return (
-      <article style={combineStyles(styles.container, style)} {...custom}>
+      <article style={getStyles.root(style)} {...custom}>
         <ul
-          style={combineStyles(styles.list, listStyle)}
+          style={getStyles.list(listStyle)}
           ref={messageList => (this.messageList = messageList)}
         >
           {children}
