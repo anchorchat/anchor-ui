@@ -3,10 +3,8 @@ import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 import styles from './styles';
 
-function root(themeColor, active, rightButton, avatar, overrideStyle) {
+function root(color = colors.theme, active, rightButton, avatar, overrideStyle) {
   let style = styles.root;
-
-  const color = themeColor || colors.theme;
 
   const activeStyle = combineStyles(
     styles.root,

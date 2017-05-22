@@ -9,20 +9,20 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import IconHammer from \'anchor-ui/icons/icon-hammer\'';
 
-const icons = _.filter(components, (component, key) => key.match(/icons/));
-const iconNames = _.pluck(icons, 'displayName');
-const style = {
-  paper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    margin: 0,
-    padding: '20px'
-  },
-  icon: { margin: '10px' }
-};
+const Icons = () => {
+  const icons = _.filter(components, (component, key) => key.match(/icons/));
+  const iconNames = _.pluck(icons, 'displayName');
+  const style = {
+    paper: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      margin: 0,
+      padding: '20px'
+    },
+    icon: { margin: '10px' }
+  };
 
-function Icons() {
   return (
     <article className="doc">
       <h1>Icons</h1>
@@ -71,6 +71,6 @@ function Icons() {
       </section>
     </article>
   );
-}
+};
 
 export default Icons;

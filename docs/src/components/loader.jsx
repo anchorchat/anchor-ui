@@ -9,7 +9,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Loader from \'anchor-ui/loader\';';
 
-function LoaderDoc() {
+const LoaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Loader');
 
   const style = {
@@ -53,6 +53,6 @@ function LoaderDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default LoaderDoc;

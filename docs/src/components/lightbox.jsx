@@ -20,7 +20,7 @@ const message = {
 
 const currentUser = 'Sjaak';
 
-function LightboxDoc() {
+const LightboxDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Lightbox');
   const style = {
     paper: {
@@ -61,6 +61,6 @@ function LightboxDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default LightboxDoc;

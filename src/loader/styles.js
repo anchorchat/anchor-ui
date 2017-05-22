@@ -10,8 +10,8 @@ const loaderAnimation = Radium.keyframes({
   '100%': { opacity: 1 }
 }, 'loader');
 
-const styleSheet = {
-  loader: {
+export default {
+  root: {
     display: 'flex',
     flexDirection: 'row',
     paddingTop: '10px'
@@ -37,5 +37,3 @@ const styleSheet = {
     backgroundColor: colors.white
   }
 };
-
-export default styleSheet;

@@ -3,6 +3,7 @@ export default {
     borderRadius: '3px',
     overflow: 'hidden',
     borderSpacing: 0,
-    borderCollapse: 'collapse'
+    borderCollapse: 'collapse',
+    width: '100%'
   }
 };

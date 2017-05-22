@@ -5,7 +5,7 @@ import pure from 'recompose/pure';
 import EventListener from 'react-event-listener';
 import PopOver from '../pop-over';
 import Button from '../button';
-import styles from '../style/icon-menu';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import getPopOverPosition from '../internal/get-pop-over-position';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from '../style/empty-states';
+import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
 const getStyle = (image, overrideStyle) => {
@@ -21,6 +21,7 @@ const EmptyState = ({
     {button}
   </section>
 );
+
 
 EmptyState.displayName = 'EmptyState';
 

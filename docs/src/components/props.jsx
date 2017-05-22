@@ -8,7 +8,7 @@ import TableBody from '../../../dist/table-body';
 import TableRow from '../../../dist/table-row';
 import TableColumn from '../../../dist/table-column';
 
-function getPropType(type) {
+const getPropType = (type) => {
   if (type.name === 'instanceOf') {
     return type.value;
   }
@@ -22,9 +22,9 @@ function getPropType(type) {
   }
 
   return type.name;
-}
+};
 
-function Props({ props }) {
+const Props = ({ props }) => {
   const propsWithoutColor = _.omit(props, 'color');
 
   return (
@@ -54,7 +54,7 @@ function Props({ props }) {
       </Table>
     </section>
   );
-}
+};
 
 Props.propTypes = {
   props: PropTypes.shape({}).isRequired

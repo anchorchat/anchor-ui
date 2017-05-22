@@ -46,9 +46,15 @@ class App extends Component {
               </a>
             }
             rightButton={
-              <Button onClick={this.setColor} iconButton>
-                <img className="github" src={github} alt="Github" />
-              </Button>
+              <a
+                href="https://github.com/anchorchat/anchor-ui"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button onClick={() => {}} iconButton>
+                  <img className="github" src={github} alt="Github" />
+                </Button>
+              </a>
             }
           />
           <article className="doc">

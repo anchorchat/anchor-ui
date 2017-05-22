@@ -8,7 +8,7 @@ import Paper from '../../../dist/paper';
 
 const usage = '```js\n import Avatar from \'anchor-ui/avatar\';';
 
-function AvatarDoc() {
+const AvatarDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Avatar');
   const style = {
     paper: {
@@ -45,6 +45,6 @@ function AvatarDoc() {
       <Props props={componentData.props} />
     </article>
   );
-}
+};
 
 export default AvatarDoc;
