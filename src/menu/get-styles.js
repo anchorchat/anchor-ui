@@ -1,11 +1,9 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function container() {
-  return styles.container;
-}
+const container = () => styles.container;
 
-function overlay(open) {
+const overlay = (open) => {
   let style = styles.overlay;
 
   if (open) {
@@ -13,9 +11,9 @@ function overlay(open) {
   }
 
   return style;
-}
+};
 
-function root(open, overrideStyle) {
+const root = (open, overrideStyle) => {
   let style = styles.root;
 
   if (open) {
@@ -23,11 +21,10 @@ function root(open, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function header(overrideStyle) {
-  return combineStyles(styles.header, overrideStyle);
-}
+const header = overrideStyle => combineStyles(styles.header, overrideStyle);
+
 
 export default {
   container,

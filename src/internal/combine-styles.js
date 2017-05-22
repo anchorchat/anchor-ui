@@ -1,4 +1,4 @@
-function combineStyles(style, overrideStyle) {
+const combineStyles = (style, overrideStyle) => {
   if (overrideStyle && Object.keys(overrideStyle).length !== 0) {
     return {
       ...style,
@@ -7,6 +7,6 @@ function combineStyles(style, overrideStyle) {
   }
 
   return style;
-}
+};
 
 export default combineStyles;

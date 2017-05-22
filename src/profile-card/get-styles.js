@@ -2,7 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(themeColor, avatar, overrideStyle) {
+const root = (themeColor, avatar, overrideStyle) => {
   const color = themeColor || colors.theme;
 
   const style = { ...styles.profileCard, backgroundColor: color };
@@ -12,6 +12,6 @@ function root(themeColor, avatar, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default { root };

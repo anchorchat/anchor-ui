@@ -1,7 +1,5 @@
 import Color from 'color';
 
-function darken(color, amount) {
-  return Color(color).darken(amount).string();
-}
+const darken = (color, amount) => Color(color).darken(amount).string();
 
 export default darken;

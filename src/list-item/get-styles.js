@@ -3,7 +3,7 @@ import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 import styles from './styles';
 
-function root(color = colors.theme, active, rightButton, avatar, overrideStyle) {
+const root = (color = colors.theme, active, rightButton, avatar, overrideStyle) => {
   let style = styles.root;
 
   const activeStyle = combineStyles(
@@ -28,9 +28,9 @@ function root(color = colors.theme, active, rightButton, avatar, overrideStyle) 
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function text(textStyle, active, textBadge, overrideStyle) {
+const text = (textStyle, active, textBadge, overrideStyle) => {
   let style = textStyle;
 
   if (active) {
@@ -42,9 +42,9 @@ function text(textStyle, active, textBadge, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function nestedListButton(open) {
+const nestedListButton = (open) => {
   let style = styles.button;
 
   if (open) {
@@ -52,6 +52,6 @@ function nestedListButton(open) {
   }
 
   return style;
-}
+};
 
 export default { root, text, nestedListButton };

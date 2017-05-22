@@ -21,21 +21,19 @@ const icons = {
 };
 
 /** Four types of (system) messages for alerting your user */
-function Alert({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) {
-  return (
-    <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
-      <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
-      <p style={combineStyles(styles.text, textStyle)}>{text}</p>
-      {
-        hideAlert
-        ? <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
-          <IconClose color={darken(colors.alert[type], 0.65)} />
-        </Button>
-        : null
-      }
-    </section>
-  );
-}
+const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => (
+  <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
+    <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
+    <p style={combineStyles(styles.text, textStyle)}>{text}</p>
+    {
+      hideAlert
+      ? <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
+        <IconClose color={darken(colors.alert[type], 0.65)} />
+      </Button>
+      : null
+    }
+  </section>
+);
 
 Alert.displayName = 'Alert';
 

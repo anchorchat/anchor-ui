@@ -2,7 +2,7 @@ import combineStyles from '../../internal/combine-styles';
 import colors from '../../settings/colors';
 import styles from './styles';
 
-function root(myMessage, type, overrideStyle) {
+const root = (myMessage, type, overrideStyle) => {
   let style = styles.root;
 
   if (myMessage) {
@@ -14,7 +14,7 @@ function root(myMessage, type, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   root

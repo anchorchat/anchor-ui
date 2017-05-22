@@ -3,7 +3,7 @@ import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
 
-function root(color = colors.theme, inverted, iconButton, disabled, flatButton, overrideStyle) {
+const root = (color = colors.theme, inverted, iconButton, disabled, flatButton, overrideStyle) => {
   let style = combineStyles(
     styles.button,
     {
@@ -30,7 +30,7 @@ function root(color = colors.theme, inverted, iconButton, disabled, flatButton, 
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 export default {
   root

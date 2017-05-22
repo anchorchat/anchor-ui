@@ -8,7 +8,7 @@ import combineStyles from '../internal/combine-styles';
 import fade from '../internal/fade';
 import themeable from '../themeable';
 
-function getKnobStyle(themeColor, active, overrideStyle) {
+const getKnobStyle = (themeColor, active, overrideStyle) => {
   let style = styles.knob;
   let activeStyle = styles.knobActive;
 
@@ -21,9 +21,9 @@ function getKnobStyle(themeColor, active, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function getTrackStyle(themeColor, active, overrideStyle) {
+const getTrackStyle = (themeColor, active, overrideStyle) => {
   let style = styles.track;
   let activeStyle = styles.trackActive;
 
@@ -36,22 +36,20 @@ function getTrackStyle(themeColor, active, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
 
-function Switch(
+const Switch = (
   { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom }
-) {
-  return (
-    <section style={style} {...custom}>
-      <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
-      <section style={styles.wrapper} onClick={toggleSwitch}>
-        <div style={getTrackStyle(color, active, trackStyle)} />
-        <div style={getKnobStyle(color, active, knobStyle)} />
-      </section>
+) => (
+  <section style={style} {...custom}>
+    <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
+    <section style={styles.wrapper} onClick={toggleSwitch}>
+      <div style={getTrackStyle(color, active, trackStyle)} />
+      <div style={getKnobStyle(color, active, knobStyle)} />
     </section>
-  );
-}
+  </section>
+);
 
 Switch.displayName = 'Switch';
 
