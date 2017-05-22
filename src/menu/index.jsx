@@ -6,7 +6,7 @@ import getStyles from './get-styles';
 import Overlay from '../overlay';
 
 /** Menu that slides in from the left */
-function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custom }) {
+const Menu = ({ children, open, header, toggleMenu, style, headerStyle, ...custom }) => {
   const menuItems = children.map((menuItem, index) => (
     cloneElement(
       menuItem,
@@ -26,7 +26,7 @@ function Menu({ children, open, header, toggleMenu, style, headerStyle, ...custo
       </nav>
     </section>
   );
-}
+};
 
 Menu.displayName = 'Menu';
 
