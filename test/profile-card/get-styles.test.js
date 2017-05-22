@@ -24,7 +24,7 @@ describe('ProfileCard.getStyles', () => {
     });
 
     it('should add avatar styles', () => {
-      const style = getStyles.root('red', true);
+      const style = getStyles.root('red', 'imageurl');
 
       expect(style).to.have.property('lineHeight', '40px');
     });
