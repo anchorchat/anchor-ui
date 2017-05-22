@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import getStyles from '../../src/message/text-message/get-styles';
 import styles from '../../src/message/text-message/styles';
 
-describe('StickerMessage.getStyles', () => {
+describe('TextMessage.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
       const style = getStyles.root();
