@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
-import styles from './styles';
+import getStyles from './get-styles';
 import IconSuccess from '../icons/icon-success';
 import IconError from '../icons/icon-error';
 import IconWarning from '../icons/icon-warning';
@@ -11,7 +11,6 @@ import IconClose from '../icons/icon-close';
 import Button from '../button';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
-import combineStyles from '../internal/combine-styles';
 
 const icons = {
   success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,
@@ -22,12 +21,12 @@ const icons = {
 
 /** Four types of (system) messages for alerting your user */
 const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => (
-  <section style={combineStyles(combineStyles(styles.alert, styles[type]), style)} {...custom}>
-    <div style={combineStyles(styles.icon, iconStyle)}>{icons[type]}</div>
-    <p style={combineStyles(styles.text, textStyle)}>{text}</p>
+  <section style={getStyles.root(type, style)} {...custom}>
+    <div style={getStyles.icon(iconStyle)}>{icons[type]}</div>
+    <p style={getStyles.text(textStyle)}>{text}</p>
     {
       hideAlert
-      ? <Button iconButton onClick={hideAlert} style={combineStyles(styles.button, buttonStyle)}>
+      ? <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
         <IconClose color={darken(colors.alert[type], 0.65)} />
       </Button>
       : null
