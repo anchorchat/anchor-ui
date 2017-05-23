@@ -1,6 +1,6 @@
 import colors from '../settings/colors';
 
-const styleSheet = {
+export default {
   hr: {
     marginRight: 0,
     marginLeft: 0,
@@ -21,5 +21,3 @@ const styleSheet = {
     fontWeight: 'normal'
   }
 };
-
-export default styleSheet;
