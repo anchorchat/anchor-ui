@@ -1,14 +1,13 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import fade from '../internal/fade';
+import colors from '../settings/colors';
 
-const knob = (themeColor, active, overrideStyle) => {
+const knob = (color = colors.theme, active, overrideStyle) => {
   let style = styles.knob;
   let activeStyle = styles.knobActive;
 
-  if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { backgroundColor: themeColor });
-  }
+  activeStyle = combineStyles(activeStyle, { backgroundColor: color });
 
   if (active) {
     style = combineStyles(style, activeStyle);
@@ -17,13 +16,11 @@ const knob = (themeColor, active, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const track = (themeColor, active, overrideStyle) => {
+const track = (color = colors.theme, active, overrideStyle) => {
   let style = styles.track;
   let activeStyle = styles.trackActive;
 
-  if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { backgroundColor: fade(themeColor, 0.5) });
-  }
+  activeStyle = combineStyles(activeStyle, { backgroundColor: fade(color, 0.5) });
 
   if (active) {
     style = combineStyles(style, activeStyle);
