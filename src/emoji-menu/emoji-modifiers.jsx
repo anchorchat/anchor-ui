@@ -3,27 +3,16 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium, { Style } from 'radium';
 import createMarkup from './create-markup';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
-
-const getStyle = (active, overrideStyle) => {
-  let style = styles.modifier;
-
-  if (active) {
-    style = combineStyles(style, styles.modifier.active);
-  }
-
-  return combineStyles(style, overrideStyle);
-};
+import getStyles from './get-styles';
 
 function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   return (
-    <header style={combineStyles(styles.modifiers, style)}>
+    <header style={getStyles.modifierHeader(style)}>
       <div
         onClick={() => changeTone('tone0')}
         className="modifier"
         style={
-          getStyle(tone === 'tone0', modifierStyle)
+          getStyles.modifier(tone === 'tone0', modifierStyle)
         }
       >
         <svg width="50px" height="50px" viewBox="0 0 50 50" className="emojione">
@@ -33,7 +22,7 @@ function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
       {modifiers.map(modifier => (
         <div
           style={
-            getStyle(modifier.title === tone, modifierStyle)
+            getStyles.modifier(modifier.title === tone, modifierStyle)
           }
           dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
           key={`emoji-${modifier.shortname}`}
