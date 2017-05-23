@@ -3,6 +3,13 @@ import darken from '../internal/darken';
 import styles from '../settings/styles';
 
 export default {
+  root: {
+    position: 'relative',
+    backgroundColor: colors.white,
+    borderRadius: '3px',
+    boxShadow: styles.depthShadows[0],
+    overflow: 'hidden'
+  },
   wrapper: {
     width: '100%',
     height: '1px',
@@ -12,13 +19,6 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center'
-  },
-  banner: {
-    position: 'relative',
-    backgroundColor: colors.white,
-    borderRadius: '3px',
-    boxShadow: styles.depthShadows[0],
-    overflow: 'hidden'
   },
   desktop: {
     width: '728px',
