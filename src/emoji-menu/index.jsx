@@ -10,8 +10,7 @@ import EmojiCategory from './emoji-category';
 import EmojiModifiers from './emoji-modifiers';
 import EmojiCategories from './emoji-categories';
 import Storage from './storage';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 import themeable from '../themeable';
 
 const storage = new Storage();
@@ -127,7 +126,7 @@ class EmojiMenu extends Component {
     }).value();
 
     return (
-      <section style={combineStyles(styles.container, style)} {...custom}>
+      <section style={getStyles.root(style)} {...custom}>
         <EmojiModifiers
           modifiers={modifiers}
           changeTone={this.changeTone}
