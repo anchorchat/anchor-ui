@@ -9,12 +9,12 @@ function categories(overrideStyle) {
   return combineStyles(styles.categories, overrideStyle);
 }
 
-function category(overrideStyle) {
+function categoriesCategory(overrideStyle) {
   return combineStyles(styles.categories.category, overrideStyle);
 }
 
 export default {
   root,
   categories,
-  category
+  categoriesCategory
 };

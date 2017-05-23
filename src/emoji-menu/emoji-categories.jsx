@@ -17,30 +17,30 @@ const EmojiCategories = ({ changeCategory, category, activeColor, recent, style,
   <footer style={getStyles.categories(style)}>
     {
       recent
-      ? <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('recent')}>
+      ? <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('recent')}>
         <IconClock color={category === 'recent' ? activeColor : colors.icons} />
       </div>
       : null
     }
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('people')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('people')}>
       <IconEmoji color={category === 'people' ? activeColor : colors.icons} />
     </div>
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('nature')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('nature')}>
       <IconNature color={category === 'nature' ? activeColor : colors.icons} />
     </div>
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('food')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('food')}>
       <IconFood color={category === 'food' ? activeColor : colors.icons} />
     </div>
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('activity')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('activity')}>
       <IconActivity color={category === 'activity' ? activeColor : colors.icons} />
     </div>
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('travel')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('travel')}>
       <IconTravel color={category === 'travel' ? activeColor : colors.icons} />
     </div>
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('objects')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('objects')}>
       <IconObjects color={category === 'objects' ? activeColor : colors.icons} />
     </div>
-    <div style={getStyles.category(iconStyle)} onClick={() => changeCategory('symbols')}>
+    <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('symbols')}>
       <IconSymbols color={category === 'symbols' ? activeColor : colors.icons} />
     </div>
   </footer>
