@@ -7,9 +7,9 @@ import styles from './styles';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-const Switch = (
-  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom }
-) => (
+const Switch = ({
+  active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom
+}) => (
   <section style={style} {...custom}>
     <span style={getStyles.label(labelStyle)}>{label}</span>
     <section style={styles.wrapper} onClick={toggleSwitch}>
