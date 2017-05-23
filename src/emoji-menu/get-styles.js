@@ -13,8 +13,18 @@ function categoriesCategory(overrideStyle) {
   return combineStyles(styles.categories.category, overrideStyle);
 }
 
+function category(overrideStyle) {
+  return combineStyles(styles.category, overrideStyle);
+}
+
+function categoryEmoji(overrideStyle) {
+  return combineStyles(styles.category.emoji, overrideStyle);
+}
+
 export default {
   root,
   categories,
-  categoriesCategory
+  categoriesCategory,
+  category,
+  categoryEmoji
 };
