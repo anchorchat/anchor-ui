@@ -18,9 +18,9 @@ describe('TableHeader.getStyles', () => {
     });
 
     it('should add theme colors', () => {
-      const style = getStyles.root('red', { color: 'red' });
+      const style = getStyles.root('red');
 
-      expect(style).to.have.property('color', 'red');
+      expect(style).to.have.property('backgroundColor', 'red');
     });
   });
 });
