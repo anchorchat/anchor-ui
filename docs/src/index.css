@@ -42,7 +42,8 @@ main {
 }
 
 .emojione {
-  width: 32px;
+  width: auto;
+  height: 1em;
 }
 
 a {
