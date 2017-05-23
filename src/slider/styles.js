@@ -20,6 +20,7 @@ export default {
   filled: {
     backgroundColor: colors.theme,
     height: '100%',
+    width: '100%',
     position: 'absolute',
     left: 0,
     top: 0
@@ -27,6 +28,7 @@ export default {
   remaining: {
     backgroundColor: colors.grey,
     height: '100%',
+    width: '100%',
     position: 'absolute',
     right: 0,
     top: 0
@@ -38,6 +40,7 @@ export default {
     borderRadius: '50%',
     border: `2px solid ${colors.grey}`,
     top: '1px',
+    left: '0%',
     backgroundColor: colors.white,
     transform: 'translate(-50%, -50%)',
     transition: 'border .1s ease-in-out, background-color .1s ease-in-out',
