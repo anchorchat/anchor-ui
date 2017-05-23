@@ -6,7 +6,7 @@ import EventListener from 'react-event-listener';
 import PopOver from '../pop-over';
 import Button from '../button';
 import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 import getPopOverPosition from '../internal/get-pop-over-position';
 
 /** Open a menu from an Icon, give options related to the icon */
@@ -121,7 +121,7 @@ class IconMenu extends Component {
     }
 
     return (
-      <div style={combineStyles(styles.iconMenu, style)} {...custom}>
+      <div style={getStyles.root(style)} {...custom}>
         {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
         {
             open
