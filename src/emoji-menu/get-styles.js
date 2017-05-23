@@ -21,10 +21,26 @@ function categoryEmoji(overrideStyle) {
   return combineStyles(styles.category.emoji, overrideStyle);
 }
 
+function modifierHeader(overrideStyle) {
+  return combineStyles(styles.modifiers, overrideStyle);
+}
+
+function modifier(active, overrideStyle) {
+  let style = styles.modifier;
+
+  if (active) {
+    style = combineStyles(style, styles.modifier.active);
+  }
+
+  return combineStyles(style, overrideStyle);
+}
+
 export default {
   root,
   categories,
   categoriesCategory,
   category,
-  categoryEmoji
+  categoryEmoji,
+  modifierHeader,
+  modifier
 };
