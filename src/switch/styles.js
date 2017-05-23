@@ -38,10 +38,10 @@ export default {
     transition: 'all .3s ease-in-out'
   },
   knobActive: {
-    background: colors.theme,
+    backgroundColor: colors.theme,
     left: '20px'
   },
   trackActive: {
-    background: fade(colors.theme, 0.5),
+    backgroundColor: fade(colors.theme, 0.5),
   }
 };
