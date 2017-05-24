@@ -3,50 +3,18 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import styles from '../style/switch';
-import combineStyles from '../internal/combine-styles';
-import fade from '../internal/fade';
+import styles from './styles';
+import getStyles from './get-styles';
 import themeable from '../themeable';
 
-const getKnobStyle = (themeColor, active, overrideStyle) => {
-  let style = styles.knob;
-  let activeStyle = styles.knobActive;
-
-  if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { backgroundColor: themeColor });
-  }
-
-  if (active) {
-    style = combineStyles(style, activeStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-};
-
-const getTrackStyle = (themeColor, active, overrideStyle) => {
-  let style = styles.track;
-  let activeStyle = styles.trackActive;
-
-  if (themeColor) {
-    activeStyle = combineStyles(activeStyle, { backgroundColor: fade(themeColor, 0.5) });
-  }
-
-  if (active) {
-    style = combineStyles(style, activeStyle);
-  }
-
-  return combineStyles(style, overrideStyle);
-};
-
-
-const Switch = (
-  { active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom }
-) => (
+const Switch = ({
+  active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom
+}) => (
   <section style={style} {...custom}>
-    <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
+    <span style={getStyles.label(labelStyle)}>{label}</span>
     <section style={styles.wrapper} onClick={toggleSwitch}>
-      <div style={getTrackStyle(color, active, trackStyle)} />
-      <div style={getKnobStyle(color, active, knobStyle)} />
+      <div style={getStyles.track(color, active, trackStyle)} />
+      <div style={getStyles.knob(color, active, knobStyle)} />
     </section>
   </section>
 );

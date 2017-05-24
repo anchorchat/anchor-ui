@@ -4,7 +4,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import Measure from 'react-measure';
 import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
@@ -70,7 +70,7 @@ class Banner extends Component {
     return (
       <Measure onMeasure={this.handleMeasure}>
         <section style={styles.wrapper}>
-          <section style={combineStyles(combineStyles(styles.banner, styles[type]), style)}>
+          <section style={getStyles.root(style)}>
             {content[type]}
             <Button iconButton onClick={hideBanner} style={styles.button}>
               <IconClose color={colors.white} />

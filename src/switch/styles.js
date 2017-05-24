@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import fade from '../internal/fade';
 import styles from '../settings/styles';
 
-const styleSheet = {
+export default {
   label: {
     fontSize: '16px',
     color: colors.primaryText,
@@ -38,12 +38,10 @@ const styleSheet = {
     transition: 'all .3s ease-in-out'
   },
   knobActive: {
-    background: colors.theme,
+    backgroundColor: colors.theme,
     left: '20px'
   },
   trackActive: {
-    background: fade(colors.theme, 0.5),
+    backgroundColor: fade(colors.theme, 0.5),
   }
 };
-
-export default styleSheet;

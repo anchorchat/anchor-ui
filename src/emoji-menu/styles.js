@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import styles from '../settings/styles';
 
 export default {
-  container: {
+  root: {
     width: '100%',
     height: '250px',
     background: colors.background,

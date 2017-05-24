@@ -13,7 +13,7 @@ export default {
     margin: 0,
     paddingLeft: 0,
     overflow: 'auto',
-    zIndex: '1',
+    zIndex: '2',
     maxWidth: '85%'
   },
   header: {
