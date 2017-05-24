@@ -25,7 +25,7 @@ describe('getPager', () => {
     );
   });
 
-  it('should correct return the amount of items', () => {
+  it('should return the correct amount of items', () => {
     const pager = getPager(list);
 
     expect(pager.totalItems).to.equal(list.length);
