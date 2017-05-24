@@ -25,7 +25,7 @@ describe('getPager', () => {
     );
   });
 
-  it('should return the amount of items', () => {
+  it('should correct return the amount of items', () => {
     const pager = getPager(list);
 
     expect(pager.totalItems).to.equal(list.length);
@@ -46,7 +46,7 @@ describe('getPager', () => {
   it('should return the amount of pages', () => {
     const pager = getPager(list);
 
-    expect(pager.totalPages).to.equal(Math.ceil(list.length / 10));
+    expect(pager.totalPages).to.equal(Math.ceil(list.length / pager.pageSize));
   });
 
   it('should return the start page', () => {
@@ -95,7 +95,7 @@ describe('getPager', () => {
   it('should end at the end of the list', () => {
     const pager = getPager(largeList, 31);
 
-    expect(pager.startPage).to.equal(Math.ceil(largeList.length / 10) - 9);
-    expect(pager.endPage).to.equal(Math.ceil(largeList.length / 10));
+    expect(pager.startPage).to.equal(Math.ceil(largeList.length / pager.pageSize) - 9);
+    expect(pager.endPage).to.equal(Math.ceil(largeList.length / pager.pageSize));
   });
 });
