@@ -143,7 +143,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={onClick || this.toggleNestedList} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
+        <li key="listItem" onClick={onClick || (children && this.toggleNestedList) || null} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
           {
             avatar
             ? <div style={styles.avatar}>
