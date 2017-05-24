@@ -18,20 +18,20 @@ Our `eslint` is configured with [eslint-config-airbnb](https://github.com/airbnb
 All styles describing a Component should live in a `styles.js` file in the Component's directory. This means no defining of styles in the Component or `getStyles` functions.
 
 ### Exports
-All styles should be exported directly, don't save them in constants first.
+All styles should be saved in a constant and then exported. Don't export them directly.
 
 ```js
 // bad
+export default {
+  ...
+};
+
+// good
 const style = {
   ...
 };
 
 export default style;
-
-// good
-export default {
-  ...
-};
 ```
 
 ### Styles key naming
@@ -39,7 +39,7 @@ Styles describing the Component's root element should always have `root` as obje
 
 ```js
 // bad
-export default {
+const style = {
   myComponent: {
     backgroundColor: 'purple'
   },
@@ -49,12 +49,12 @@ export default {
 };
 
 // very bad
-export default {
+const style = {
   backgroundColor: 'purple'
 };
 
 // good
-export default {
+const style = {
   root: {
     backgroundColor: 'purple'
   },
@@ -70,7 +70,7 @@ Just. Don't. Do. It. [Radium](https://github.com/FormidableLabs/radium) will sho
 
 ```js
 // bad
-export default {
+const style = {
   root: {
     margin: '10x',
     marginBottom: '0'
@@ -78,7 +78,7 @@ export default {
 };
 
 // good
-export default {
+const style = {
   root: {
     marginTop: '10px',
     marginRight: '10px',
@@ -94,14 +94,14 @@ They read a little better.
 
 ```js
 // bad
-export default {
+const style = {
   root: {
     padding: '10px 0 10px 10px'
   }
 };
 
 // good
-export default {
+const style = {
   root: {
     paddingTop: '10px',
     paddingRight: '0',
@@ -117,7 +117,7 @@ Leave an empty line above the nested object. This reads better.
 
 ```js
 // bad
-export default {
+const style = {
   root: {
     color: 'red',
     ':hover': {
@@ -127,7 +127,7 @@ export default {
 };
 
 // good
-export default {
+const style = {
   root: {
     color: 'red',
 
