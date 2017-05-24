@@ -98,4 +98,10 @@ describe('getPager', () => {
     expect(pager.startPage).to.equal(Math.ceil(largeList.length / pager.pageSize) - 9);
     expect(pager.endPage).to.equal(Math.ceil(largeList.length / pager.pageSize));
   });
+
+  it('should set pageSize', () => {
+    const pager = getPager(list, 1, 5);
+
+    expect(pager.totalPages).to.equal(Math.ceil(list.length / pager.pageSize));
+  });
 });
