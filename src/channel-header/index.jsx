@@ -5,25 +5,23 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A channel's header */
-function ChannelHeader({
+const ChannelHeader = ({
   name, rightButton, leftButton, style, leftButtonStyle, textStyle, rightButtonStyle, ...custom
-}) {
-  return (
-    <header style={getStyles.root(style)} {...custom}>
-      {
-        leftButton
-        ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
-        : null
-      }
-      <h1 style={getStyles.text(textStyle)}>{name}</h1>
-      {
-        rightButton
-        ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
-        : null
-      }
-    </header>
-  );
-}
+}) => (
+  <header style={getStyles.root(style)} {...custom}>
+    {
+      leftButton
+      ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
+      : null
+    }
+    <h1 style={getStyles.text(textStyle)}>{name}</h1>
+    {
+      rightButton
+      ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
+      : null
+    }
+  </header>
+);
 
 ChannelHeader.displayName = 'ChannelHeader';
 

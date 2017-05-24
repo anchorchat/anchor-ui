@@ -9,32 +9,30 @@ import styles from './styles';
 import themeable from '../themeable';
 
 /** A checkbox is used to verify which options you want selected from a group. */
-function Checkbox({
+const Checkbox = ({
   onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, value, color, ...custom
-}) {
-  return (
-    <label htmlFor={name} style={getStyles.root(color, style)} {...custom}>
-      <input
-        type="checkbox"
-        id={name}
-        onChange={onChange}
-        checked={checked}
-        style={getStyles.input(inputStyle)}
-        value={value}
-      />
-      <div style={getStyles.icon(iconStyle)}>
-        {
-          checked
-          ? <IconCheckbox color={color} />
-          : <div style={styles.unchecked} />
-        }
-      </div>
-      <span style={getStyles.label(labelStyle)}>
-        {label}
-      </span>
-    </label>
-  );
-}
+}) => (
+  <label htmlFor={name} style={getStyles.root(color, style)} {...custom}>
+    <input
+      type="checkbox"
+      id={name}
+      onChange={onChange}
+      checked={checked}
+      style={getStyles.input(inputStyle)}
+      value={value}
+    />
+    <div style={getStyles.icon(iconStyle)}>
+      {
+        checked
+        ? <IconCheckbox color={color} />
+        : <div style={styles.unchecked} />
+      }
+    </div>
+    <span style={getStyles.label(labelStyle)}>
+      {label}
+    </span>
+  </label>
+);
 
 Checkbox.displayName = 'Checkbox';
 

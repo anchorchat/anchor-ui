@@ -5,13 +5,11 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A Card is a piece of paper with unique related data */
-function CardContent({ children, style, ...custom }) {
-  return (
-    <section style={getStyles.root(style)} {...custom}>
-      {children}
-    </section>
-  );
-}
+const CardContent = ({ children, style, ...custom }) => (
+  <section style={getStyles.root(style)} {...custom}>
+    {children}
+  </section>
+);
 
 CardContent.displayName = 'CardContent';
 

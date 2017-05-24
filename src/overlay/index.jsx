@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
 /** Overlay with dark transparent background, useful for rendering Dialogs in */
-function Overlay({ children, style, ...custom }) {
-  return <section style={getStyles.root(style)} {...custom}>{children}</section>;
-}
+const Overlay = ({ children, style, ...custom }) => (
+  <section style={getStyles.root(style)} {...custom}>{children}</section>
+);
 
 Overlay.propTypes = {
   /** The Overlays children */

@@ -8,9 +8,9 @@ import Overlay from '../overlay';
 import themeable from '../themeable';
 
 /** A dialog that can only be closed by selecting one of the actions. */
-function Modal({
+const Modal = ({
   children, actions, style, contentStyle, footerStyle, open, overlayStyle, color, ...custom
-}) {
+}) => {
   if (!open) {
     return null;
   }
@@ -27,7 +27,7 @@ function Modal({
       </section>
     </Overlay>
   );
-}
+};
 
 Modal.propTypes = {
   /** The Modal's children */

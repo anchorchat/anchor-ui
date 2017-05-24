@@ -2,9 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-function root(themeColor, avatar, overrideStyle) {
-  const color = themeColor || colors.theme;
-
+function root(color = colors.theme, avatar, overrideStyle) {
   const style = { ...styles.profileCard, backgroundColor: color };
 
   if (avatar) {

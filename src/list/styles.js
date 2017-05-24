@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 
 export default {
-  list: {
+  root: {
     background: colors.white,
     boxSizing: 'border-box',
     margin: '0',

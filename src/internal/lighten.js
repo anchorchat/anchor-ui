@@ -1,7 +1,5 @@
 import Color from 'color';
 
-function lighten(color, amount) {
-  return Color(color).lighten(amount).string();
-}
+const lighten = (color, amount) => Color(color).lighten(amount).string();
 
 export default lighten;

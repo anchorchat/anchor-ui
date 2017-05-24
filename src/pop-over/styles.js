@@ -1,8 +1,8 @@
 import colors from '../settings/colors';
 import styles from '../settings/styles';
 
-const styleSheet = {
-  popOver: {
+export default {
+  root: {
     position: 'absolute',
     top: '100%',
     right: '50%',
@@ -13,7 +13,7 @@ const styleSheet = {
     margin: 0,
     paddingLeft: 0,
     overflow: 'auto',
-    zIndex: '1',
+    zIndex: '2',
     maxWidth: '85%'
   },
   header: {
@@ -29,5 +29,3 @@ const styleSheet = {
     textOverflow: 'ellipsis'
   }
 };
-
-export default styleSheet;

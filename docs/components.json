@@ -2362,7 +2362,7 @@
   },
   "components/icons/icon-refresh.jsx": {
     "description": "",
-    "displayName": "IconActivity",
+    "displayName": "IconRefresh",
     "methods": [],
     "props": {
       "color": {
@@ -4050,6 +4050,17 @@
         "description": "The nav's position relative to the children. One of the following: [\"top\", \"bottom\"]",
         "defaultValue": {
           "value": "'top'",
+          "computed": false
+        }
+      },
+      "jumpToPage": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Jump to a certain page in the list",
+        "defaultValue": {
+          "value": "1",
           "computed": false
         }
       }

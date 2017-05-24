@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import darken from '../internal/darken';
 
 export default {
-  alert: {
+  root: {
     borderRadius: '3px',
     boxSizing: 'border-box',
     fontSize: '16px',

@@ -6,7 +6,7 @@ import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-function Tab(
+const Tab = (
   {
     onClick,
     icon,
@@ -22,19 +22,17 @@ function Tab(
     color,
     ...custom
   }
-) {
-  return (
-    <section
-      style={getStyles.root(color, selected, style, activeStyle)}
-      onClick={onClick}
-      {...custom}
-    >
-      {icon ? <div style={getStyles.icon(selected, iconStyle)}>{icon}</div> : null}
-      <span style={getStyles.label(selected, labelStyle, activeLabelStyle)}>{label}</span>
-      {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
-    </section>
-  );
-}
+) => (
+  <section
+    style={getStyles.root(color, selected, style, activeStyle)}
+    onClick={onClick}
+    {...custom}
+  >
+    {icon ? <div style={getStyles.icon(selected, iconStyle)}>{icon}</div> : null}
+    <span style={getStyles.label(selected, labelStyle, activeLabelStyle)}>{label}</span>
+    {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
+  </section>
+);
 
 Tab.displayName = 'Tab';
 

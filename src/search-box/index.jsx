@@ -4,8 +4,7 @@ import Radium from 'radium';
 import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
 import IconSearch from '../icons/icon-search';
-import styles from '../style/search-box';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 
 /** General purpose Search box */
 class SearchBox extends Component {
@@ -68,10 +67,10 @@ class SearchBox extends Component {
     } = this.props;
 
     return (
-      <section style={combineStyles(styles.searchBox, style)} {...custom}>
-        <div style={combineStyles(styles.icon, iconStyle)}><IconSearch /></div>
+      <section style={getStyles.root(style)} {...custom}>
+        <div style={getStyles.icon(iconStyle)}><IconSearch /></div>
         <input
-          style={combineStyles(styles.input, inputStyle)}
+          style={getStyles.input(inputStyle)}
           value={value}
           onChange={this.handleChange}
           placeholder={placeholder}

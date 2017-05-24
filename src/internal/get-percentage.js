@@ -1,4 +1,4 @@
-function getPercentage(value, min, max) {
+const getPercentage = (value, min, max) => {
   let percentage = (value - min) / (max - min);
 
   if (isNaN(percentage)) {
@@ -6,6 +6,6 @@ function getPercentage(value, min, max) {
   }
 
   return percentage;
-}
+};
 
 export default getPercentage;
