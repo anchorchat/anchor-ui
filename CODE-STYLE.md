@@ -10,6 +10,45 @@ Our `eslint` is configured with [eslint-config-airbnb](https://github.com/airbnb
 
 # React
 
+## General
+
+### File structure
+All Components should live in their own directory, this directory has the Component's name with a dashed format. The file containing the component should always be called `index.jsx`. All files containing components should have the `.jsx` extension.
+
+```js
+// bad
+'src/AppHeader/index.jsx'
+
+// good
+'src/app-header/index.jsx'
+
+// bad
+'src/app-header/app-header.jsx'
+
+// good
+'src/app-header/index.jsx'
+
+// bad
+'src/app-header/index.js'
+
+// good
+'src/app-header/index.jsx'
+```
+
+### Stateless versus Class
+Always prefer stateless Components over Class components.
+
+### Defining stateless Components
+Always define theme as arrow functions.
+
+```js
+// bad
+function MyComponent(props) { ... };
+
+// good
+const MyComponent = (props) => (...);
+```
+
 # CSS in JS
 
 ## General
