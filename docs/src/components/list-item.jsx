@@ -10,6 +10,9 @@ import AdminBadge from '../../../dist/admin-badge';
 import components from '../../components.json';
 import Props from './props';
 import Paper from '../../../dist/paper';
+import IconMenu from '../../../dist/icon-menu';
+import MenuItem from '../../../dist/menu-item';
+import IconRocket from '../../../dist/icons/icon-rocket';
 
 const usage = '```js\n import ListItem from \'anchor-ui/list-item\';';
 
@@ -69,6 +72,25 @@ const ListItemDoc = () => {
                 <Button iconButton onClick={() => {}}>
                   <IconClose />
                 </Button>
+              }
+            />
+            <ListItem
+              primaryText="With IconMenu"
+              secondaryText="10/50"
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+              style={style.item}
+              rightButton={
+                <IconMenu
+                  style={style.iconMenu}
+                  icon={<IconRocket />}
+                  header="Items"
+                  headerStyle={style.headerStyle}
+                  secondaryMenuItems={[<MenuItem icon={<IconRocket />} text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+                  dividerText="More items"
+                >
+                  <MenuItem text="Active item" onClick={() => {}} active />
+                  <MenuItem text="Inactive item" onClick={() => {}} />
+                </IconMenu>
               }
             />
             <ListItem

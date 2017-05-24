@@ -1,5 +1,5 @@
 export default {
-  iconMenu: {
+  root: {
     position: 'relative'
   },
   clickAway: {

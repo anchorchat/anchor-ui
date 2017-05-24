@@ -1,7 +1,7 @@
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function container(myMessage, compact) {
+const container = (myMessage, compact) => {
   if (compact) {
     return styles.messageContainer;
   }
@@ -11,7 +11,7 @@ function container(myMessage, compact) {
   }
 
   return styles.messageContainer;
-}
+};
 
 export default {
   container

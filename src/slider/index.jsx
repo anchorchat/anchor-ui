@@ -10,7 +10,7 @@ import propTypes from '../internal/prop-types';
 import themeable from '../themeable';
 
 /** General purpose form slider */
-function Slider({
+const Slider = ({
   name,
   label,
   onChange,
@@ -26,7 +26,7 @@ function Slider({
   color,
   ...custom
 },
-) {
+) => {
   const percentage = getPercentage(value, min, max);
 
   return (
@@ -54,7 +54,7 @@ function Slider({
       {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
     </section>
   );
-}
+};
 
 Slider.displayName = 'Slider';
 

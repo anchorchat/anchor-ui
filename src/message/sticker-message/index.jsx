@@ -6,7 +6,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
 
-function StickerMessage({
+const StickerMessage = ({
   color,
   myMessage,
   avatar,
@@ -18,7 +18,7 @@ function StickerMessage({
   messageBodyStyle,
   messageTimeStyle,
   timeFormat
-}) {
+}) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
   return (
@@ -44,7 +44,7 @@ function StickerMessage({
       </div>
     </div>
   );
-}
+};
 
 StickerMessage.propTypes = {
   avatar: PropTypes.string,

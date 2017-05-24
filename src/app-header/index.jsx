@@ -7,7 +7,7 @@ import getStyles from './get-styles';
 import themeable from '../themeable';
 
 /** Your app's header */
-function AppHeader(
+const AppHeader = (
   {
     text,
     icon,
@@ -21,24 +21,22 @@ function AppHeader(
     color,
     ...custom
   }
-) {
-  return (
-    <header style={getStyles.root(color, style, leftButton, rightButton)} {...custom}>
-      {
-        leftButton
-        ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
-        : null
-      }
-      {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
-      {text ? <h1 style={getStyles.text(textStyle)}>{text}</h1> : null}
-      {
-        rightButton
-        ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
-        : null
-      }
-    </header>
-  );
-}
+) => (
+  <header style={getStyles.root(color, style, leftButton, rightButton)} {...custom}>
+    {
+      leftButton
+      ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
+      : null
+    }
+    {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
+    {text ? <h1 style={getStyles.text(textStyle)}>{text}</h1> : null}
+    {
+      rightButton
+      ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
+      : null
+    }
+  </header>
+);
 
 AppHeader.displayName = 'AppHeader';
 

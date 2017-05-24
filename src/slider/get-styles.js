@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 
-function root(overrideStyle, disabled) {
+const root = (overrideStyle, disabled) => {
   let style = styles.root;
 
   if (disabled) {
@@ -10,25 +10,23 @@ function root(overrideStyle, disabled) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function label(overrideStyle) {
-  return combineStyles(styles.label, overrideStyle);
-}
+const label = overrideStyle => combineStyles(styles.label, overrideStyle);
 
-function filled(color = colors.theme, percentage, overrideStyle) {
+const filled = (color = colors.theme, percentage, overrideStyle) => {
   const style = combineStyles(styles.filled, { width: `${percentage * 100}%`, backgroundColor: color });
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function remaining(percentage, overrideStyle) {
+const remaining = (percentage, overrideStyle) => {
   const style = combineStyles(styles.remaining, { width: `${(1 - percentage) * 100}%` });
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function button(color = colors.theme, percentage, overrideStyle) {
+const button = (color = colors.theme, percentage, overrideStyle) => {
   let style = combineStyles(styles.button, { left: `${percentage * 100}%` });
 
   if (percentage !== 0) {
@@ -36,11 +34,10 @@ function button(color = colors.theme, percentage, overrideStyle) {
   }
 
   return combineStyles(style, overrideStyle);
-}
+};
 
-function error(overrideStyle) {
-  return combineStyles(styles.error, overrideStyle);
-}
+const error = overrideStyle => combineStyles(styles.error, overrideStyle);
+
 
 export default {
   root,

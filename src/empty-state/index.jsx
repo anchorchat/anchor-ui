@@ -7,17 +7,16 @@ import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
 
 /** Pretty placeholder for empty content */
-function EmptyState({
+const EmptyState = ({
   headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
-}) {
-  return (
-    <section style={getStyles.root(background, style)} {...custom}>
-      <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
-      <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
-      {button}
-    </section>
-  );
-}
+}) => (
+
+  <section style={getStyles.root(background, style)} {...custom}>
+    <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
+    <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
+    {button}
+  </section>
+);
 
 EmptyState.displayName = 'EmptyState';
 

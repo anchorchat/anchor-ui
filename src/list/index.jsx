@@ -2,22 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
+import getStyles from './get-styles';
 
 /** A wrapper for ListItems */
-function List({ children, header, listRef, style, headerStyle, open, ...custom }) {
+const List = ({ children, header, listRef, style, headerStyle, open, ...custom }) => {
   if (!open) {
     return null;
   }
 
   return (
-    <ul ref={listRef} style={combineStyles(styles.list, style)} {...custom}>
-      {header ? <h1 style={combineStyles(styles.listHeader, headerStyle)}>{header}</h1> : null}
+    <ul ref={listRef} style={getStyles.root(style)} {...custom}>
+      {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
       {children}
     </ul>
   );
-}
+};
 
 List.displayName = 'List';
 
