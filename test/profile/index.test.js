@@ -18,7 +18,8 @@ describe('<Profile />', () => {
     headerStyle: {},
     secondaryTextStyle: {},
     avatarStyle: {},
-    status: ''
+    status: '',
+    header: 'header'
   };
   const children = <p>children</p>;
   const button = <Button />;
