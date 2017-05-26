@@ -84,7 +84,7 @@ class ImageMessage extends Component {
           ? <Lightbox
             open={lightbox}
             image={message.body}
-            username={message.username}
+            title={message.username}
             hideLightbox={this.toggleLightbox}
           />
           : null
