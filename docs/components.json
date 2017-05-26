@@ -2828,6 +2828,13 @@
         "required": true,
         "description": "Link to the image"
       },
+      "username": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Name of the sender"
+      },
       "iconColor": {
         "type": {
           "name": "string"
@@ -2835,7 +2842,7 @@
         "required": false,
         "description": "The close button's icon color",
         "defaultValue": {
-          "value": "colors.grey",
+          "value": "colors.white",
           "computed": true
         }
       },
