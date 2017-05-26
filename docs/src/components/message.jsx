@@ -74,6 +74,19 @@ const MessageDoc = () => {
       height: '475px'
     }
   };
+  const scalingEmoji = `
+    .small .emojione {
+      width: 18px;
+    }
+
+    .medium .emojione {
+      width: 20px;
+    }
+
+    .large .emojione {
+      width: 24px;
+    }
+  `;
 
   return (
     <article className="doc">
@@ -85,6 +98,11 @@ const MessageDoc = () => {
       <section>
         <h1>Usage</h1>
         <ReactMarkdown source={usage} className="markdown" />
+      </section>
+      <section>
+        <h1>Scaling emoji&apos;s</h1>
+        <p>If you would like the emoji&apos;s to scale with the font size add the following to your style sheet:</p>
+        <ReactMarkdown source={scalingEmoji} className="markdown" />
       </section>
       <section>
         <h1>Default example</h1>
