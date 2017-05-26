@@ -81,7 +81,12 @@ class ImageMessage extends Component {
         </p>
         {
           enableLightbox
-          ? <Lightbox open={lightbox} image={message.body} hideLightbox={this.toggleLightbox} />
+          ? <Lightbox
+            open={lightbox}
+            image={message.body}
+            title={message.username}
+            hideLightbox={this.toggleLightbox}
+          />
           : null
         }
       </div>
