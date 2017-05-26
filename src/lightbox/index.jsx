@@ -33,7 +33,7 @@ class Lightbox extends Component {
   static defaultProps = {
     style: {},
     overlayStyle: {},
-    iconColor: colors.grey,
+    iconColor: colors.white,
     open: false
   }
 

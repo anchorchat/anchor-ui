@@ -1,5 +1,6 @@
 import colors from '../settings/colors';
 import fade from '../internal/fade';
+import styles from '../settings/styles';
 
 export default {
   lightbox: {
@@ -9,11 +10,10 @@ export default {
     justifyContent: 'center',
     height: '100%',
     width: '100%',
-    margin: '0 auto',
-    borderRadius: '3px',
     boxSizing: 'border-box',
     position: 'relative',
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    paddingTop: '56px'
   },
   closeButton: {
     position: 'absolute',
@@ -22,9 +22,11 @@ export default {
     zIndex: 1
   },
   image: {
-    maxWidth: '80%',
-    maxHeight: '80%',
-    pointerEvents: 'all'
+    maxWidth: '90%',
+    maxHeight: '90%',
+    pointerEvents: 'all',
+    borderRadius: '3px',
+    boxShadow: styles.depthShadows[0]
   },
   clickAway: {
     width: '100%',
@@ -45,7 +47,7 @@ export default {
     lineHeight: '20px',
     width: '100%',
     boxSizing: 'border-box',
-    backgroundColor: fade(colors.black, 0.5),
+    backgroundColor: fade(colors.black, 0.4),
     textAlign: 'center',
     pointerEvents: 'all'
   },
