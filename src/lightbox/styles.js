@@ -1,17 +1,17 @@
-import colors from '../settings/colors';
-import styles from '../settings/styles';
-
 export default {
   lightbox: {
-    height: '80%',
-    maxWidth: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
+    width: '100%',
     margin: '0 auto',
-    background: colors.white,
     borderRadius: '3px',
     padding: '40px 30px',
     boxSizing: 'border-box',
     position: 'relative',
-    boxShadow: styles.depthShadows[0]
+    pointerEvents: 'none'
   },
   closeButton: {
     position: 'absolute',
@@ -20,10 +20,9 @@ export default {
     zIndex: 1
   },
   image: {
-    width: 'auto',
-    height: 'auto',
     maxWidth: '100%',
-    maxHeight: '100%'
+    maxHeight: '100%',
+    pointerEvents: 'all'
   },
   clickAway: {
     width: '100%',
