@@ -22,6 +22,8 @@ class Lightbox extends Component {
     hideLightbox: PropTypes.func.isRequired,
     /** Link to the image */
     image: PropTypes.string.isRequired,
+    /** Name of the sender */
+    username: PropTypes.string.isRequired,
     /** The close button's icon color */
     iconColor: PropTypes.string,
     /** Toggle the Lightboxs visibility */
@@ -48,6 +50,7 @@ class Lightbox extends Component {
       style,
       overlayStyle,
       image,
+      username,
       iconColor,
       open,
       ...custom
@@ -61,9 +64,12 @@ class Lightbox extends Component {
       <Overlay style={overlayStyle}>
         <section style={styles.clickAway} onClick={hideLightbox} />
         <section style={getStyles.root(style)} {...custom}>
-          <Button style={styles.closeButton} onClick={hideLightbox} iconButton>
-            <IconClose color={iconColor} />
-          </Button>
+          <header style={styles.header}>
+            {username}
+            <Button style={styles.closeButton} onClick={hideLightbox} iconButton>
+              <IconClose color={iconColor} />
+            </Button>
+          </header>
           <img style={styles.image} src={image} alt="lightbox" />
         </section>
       </Overlay>
