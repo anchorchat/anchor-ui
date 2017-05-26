@@ -11,7 +11,7 @@ import Paper from '../../../dist/paper';
 const usage = '```js\n import Lightbox from \'anchor-ui/message\';';
 
 const message = {
-  body: 'https://source.unsplash.com/random/375x667',
+  body: 'https://source.unsplash.com/random/1280x1080',
   createdAt: new Date(),
   username: 'Sjaak',
   avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
