@@ -1,36 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleRoot } from 'radium';
-import Loader from './loader';
+import Radium from 'radium';
+import compose from 'recompose/compose';
+import getStyles from './get-styles';
+import themeable from '../themeable';
 
-// StyleRoot is needed for keyframes to work,
-// by exporting it like this a consumer doesn't need to wrap StyleRoot around their application
-// https://github.com/FormidableLabs/radium/tree/master/docs/api#keyframes
-// https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
-const LoaderWithStyleRoot = (props) => {
-  const {
-    dotStyle, // eslint-disable-line no-unused-vars
-    inverted, // eslint-disable-line no-unused-vars
-    ...custom
-  } = props;
+/** Animated loader */
+const Loader = ({ inverted, style, dotStyle, color, ...custom }) => (
+  <div style={getStyles.root(style)} {...custom}>
+    <span style={getStyles.dot(color, inverted, 0, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 1, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 2, dotStyle)} />
+  </div>
+);
 
-  return (
-    <StyleRoot {...custom}>
-      <Loader {...props} />
-    </StyleRoot>
-  );
-};
+Loader.displayName = 'Loader';
 
-LoaderWithStyleRoot.propTypes = {
+Loader.propTypes = {
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
   /** Override the styles of the dot element */
   dotStyle: PropTypes.instanceOf(Object),
   /** Inverts the color */
-  inverted: PropTypes.bool
+  inverted: PropTypes.bool,
+  color: PropTypes.string.isRequired
 };
 
-LoaderWithStyleRoot.defaultProps = {
+Loader.defaultProps = {
+  style: {},
   dotStyle: {},
   inverted: false
 };
 
-export default LoaderWithStyleRoot;
+const enhance = compose(
+  themeable(),
+  Radium
+);
+
+export default enhance(Loader);

@@ -15,6 +15,11 @@ const Home = () => {
     alert: {
       maxWidth: '100%',
       marginTop: '16px'
+    },
+    link: {
+      color: 'inherit',
+      textDecoration: 'underline',
+      fontWeight: 'normal'
     }
   };
 
@@ -48,6 +53,8 @@ const Home = () => {
         </p>
         <Alert style={style.alert} text="Warning! Wrapping your components in ThemeProvider is currently optional but will be mandatory in the next major version!" type="warning" />
         <ReactMarkdown source={theme} className="markdown" />
+        <h2>StyleRoot</h2>
+        <p>If you want to use inline Media Queries or inline CSS animations you need to wrap your app in <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component</p>
         <h2>Dependencies</h2>
         <table>
           <thead>

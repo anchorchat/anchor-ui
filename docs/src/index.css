@@ -37,6 +37,7 @@ body {
 }
 
 #root,
+#root > div,
 main {
   height: inherit;
 }
