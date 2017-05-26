@@ -23,7 +23,7 @@ class Lightbox extends Component {
     /** Link to the image */
     image: PropTypes.string.isRequired,
     /** Name of the sender */
-    username: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     /** The close button's icon color */
     iconColor: PropTypes.string,
     /** Toggle the Lightboxs visibility */
@@ -50,7 +50,7 @@ class Lightbox extends Component {
       style,
       overlayStyle,
       image,
-      username,
+      title,
       iconColor,
       open,
       ...custom
@@ -65,7 +65,7 @@ class Lightbox extends Component {
         <section style={styles.clickAway} onClick={hideLightbox} />
         <section style={getStyles.root(style)} {...custom}>
           <header style={styles.header}>
-            {username}
+            {title}
             <Button style={styles.closeButton} onClick={hideLightbox} iconButton>
               <IconClose color={iconColor} />
             </Button>
