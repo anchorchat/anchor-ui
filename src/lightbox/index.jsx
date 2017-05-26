@@ -22,7 +22,7 @@ class Lightbox extends Component {
     hideLightbox: PropTypes.func.isRequired,
     /** Link to the image */
     image: PropTypes.string.isRequired,
-    /** Name of the sender */
+    /** The image's title */
     title: PropTypes.string.isRequired,
     /** The close button's icon color */
     iconColor: PropTypes.string,

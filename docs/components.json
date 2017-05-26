@@ -2828,12 +2828,12 @@
         "required": true,
         "description": "Link to the image"
       },
-      "username": {
+      "title": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": "Name of the sender"
+        "description": "The image's title"
       },
       "iconColor": {
         "type": {
