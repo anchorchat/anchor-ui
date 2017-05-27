@@ -55,7 +55,7 @@ function TextMessage({
         headerStyle={messageHeaderStyle}
         username={message.username}
       />
-      <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+      <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
         {
           enableLinks || emoji
           ? <span dangerouslySetInnerHTML={createMarkup(message.body, enableLinks, emoji)} />
