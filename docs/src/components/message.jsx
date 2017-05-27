@@ -101,7 +101,10 @@ const MessageDoc = () => {
       </section>
       <section>
         <h1>Scaling emoji&apos;s</h1>
-        <p>If you would like the emoji&apos;s to scale with the font size add the following to your style sheet:</p>
+        <p>
+          If you would like the emoji&apos;s to scale with the font size add the
+          following to your style sheet:
+        </p>
         <ReactMarkdown source={scalingEmoji} className="markdown" />
       </section>
       <section>
