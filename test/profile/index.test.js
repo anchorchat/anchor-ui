@@ -7,9 +7,9 @@ import Profile from '../../src/profile';
 import Avatar from '../../src/avatar';
 import Button from '../../src/button';
 
-describe('<Profile />', () => {
+describe('Profile.index', () => {
   const props = {
-    avatar: 'imageurl',
+    avatar: '',
     coverImage: '',
     children: null,
     button: null,
@@ -24,38 +24,77 @@ describe('<Profile />', () => {
   const children = <p>children</p>;
   const button = <Button />;
 
-  describe('rendered elements', () => {
-    it('should always render a section element', () => {
-      const profile = shallow(<Profile {...props} />);
-      const section = profile.find('section').first();
-      expect(section.length).to.equal(1);
+  it('should always render four section elements', () => {
+    const profile = shallow(<Profile {...props} />);
+    expect(profile.find('section')).to.have.length(4);
+  });
+
+  it('should always render a h1 element', () => {
+    const profile = shallow(<Profile {...props} />);
+    expect(profile.find('h1')).to.have.length(1);
+  });
+
+  it('should always render the value of the button prop', () => {
+    const profile = shallow(<Profile {...props} >{button}</Profile>);
+    expect(profile.contains(button)).to.equal(true);
+  });
+
+  it('should always render the value of the children prop', () => {
+    const profile = shallow(<Profile {...props} >{children}</Profile>);
+    expect(profile.contains(children)).to.equal(true);
+  });
+
+  it('should not render a p element if the secondaryText prop is not passed', () => {
+    const profile = shallow(<Profile {...props} />);
+    expect(profile.find('p')).to.have.length(0);
+  });
+
+  it('should not render an Avatar component if the avatar prop is not passed', () => {
+    const profile = shallow(<Profile {...props} />);
+    expect(profile.find(Avatar)).to.have.length(0);
+  });
+
+  it('should pass the value of the header prop to the h1 element', () => {
+    const profile = shallow(<Profile {...props} />);
+    expect(profile.containsMatchingElement(<h1>header</h1>)).to.equal(true);
+  });
+
+  describe('the p element', () => {
+    before(() => {
+      props.secondaryText = 'text';
     });
 
-    it('should render everything else', () => {
-      const profile = shallow(<Profile {...props} >{button}{children}</Profile>);
-      const section = profile.find('section').first();
-      expect(section.find('section')).to.have.length(4);
-      expect(section.find('h1')).to.have.length(1);
-      expect(section.contains(button)).to.equal(true);
-      expect(section.contains(children)).to.equal(true);
+    it('should render if the secondaryText prop is passed', () => {
+      const profile = shallow(<Profile {...props} />);
+      expect(profile.find('p')).to.have.length(1);
+    });
+
+    it('should get passed the value of the secondaryText prop', () => {
+      const profile = shallow(<Profile {...props} />);
+      expect(profile.containsMatchingElement(<p>text</p>)).to.equal(true);
     });
   });
 
-  describe('when avatar prop is passed', () => {
-    it('should render Avatar component', () => {
+  describe('the Avatar component', () => {
+    before(() => {
+      props.avatar = 'imageurl';
+      props.avatarStyle = { color: 'red' };
+      props.status = 'away';
+    });
+
+    it('should render if the avatar prop is passed', () => {
       const profile = shallow(<Profile {...props} />);
       expect(profile.find(Avatar)).to.have.length(1);
     });
-  });
 
-  describe('when avatar prop is not passed', () => {
-    before(() => {
-      props.avatar = '';
+    it('should get passed the value of the avatar prop to the image property', () => {
+      const profile = shallow(<Profile {...props} />);
+      expect(profile.find({ image: 'imageurl' })).to.have.length(1);
     });
 
-    it('should not render Avatar component', () => {
+    it('should get passed the value of the status prop to the status property', () => {
       const profile = shallow(<Profile {...props} />);
-      expect(profile.find(Avatar)).to.have.length(0);
+      expect(profile.find({ status: 'away' })).to.have.length(1);
     });
   });
 });
