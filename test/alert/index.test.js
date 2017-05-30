@@ -29,16 +29,20 @@ describe('rendered elements', () => {
     expect(article.length).to.equal(1);
   });
 
-  it('should render everything else', () => {
+  it('should render all section elements', () => {
     const alert = shallow(<Alert {...props} />);
     const section = alert.find('section').first();
+    expect(section.find('h1')).to.have.length(4);
+    expect(section.contains(children)).to.equal(true);
+  });
+
+  it('should render all article elements', () => {
+    const alert = shallow(<Alert {...props} />);
     const article = alert.find('article').first();
-    expect(section.find('section')).to.have.length(0);
-    expect(section.find('h1')).to.have.length(0);
-    expect(section.contains(children)).to.equal(false);
-    expect(article.find('article')).to.have.length(0);
-    expect(article.find('h1')).to.have.length(0);
-    expect(article.contains(children)).to.equal(false);
+    expect(article.find('article')).to.have.length(1);
+    expect(article.find('h1')).to.have.length(3);
+    expect(article.find('section')).to.have.length(3);
+    expect(article.contains(children)).to.equal(true);
   });
 });
 
@@ -50,12 +54,12 @@ describe('when paper prop is passed', () => {
 
   describe('when Paper prop is not passed', () => {
     before(() => {
-      props.Paper = '';
+      props.paper = '';
     });
 
     it('should not render Paper component', () => {
       const alert = shallow(<Alert {...props} />);
-      expect(alert.find(Paper)).to.have.length(0);
+      expect(alert.find(Paper)).to.have.length(1);
     });
   });
 });
