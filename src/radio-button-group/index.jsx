@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
-const RadioButtonGroup = ({ value, onChange, children, label, labelStyle, style, ...custom }) => {
+const RadioButtonGroup = ({
+  value, onChange, children, label, labelStyle, style, error, errorStyle, ...custom
+}) => {
   const childrenWithProps = React.Children.map(
     children, child => React.cloneElement(
       child,
@@ -20,6 +22,7 @@ const RadioButtonGroup = ({ value, onChange, children, label, labelStyle, style,
       <section style={getStyles.root(style)}>
         {childrenWithProps}
       </section>
+      {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
     </section>
   );
 };
@@ -36,13 +39,19 @@ RadioButtonGroup.propTypes = {
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object)
+  style: PropTypes.instanceOf(Object),
+  /** Display an error message */
+  error: PropTypes.node,
+  /** Override the styles of the error element */
+  errorStyle: PropTypes.instanceOf(Object)
 };
 
 RadioButtonGroup.defaultProps = {
   label: null,
   labelStyle: {},
-  style: {}
+  style: {},
+  error: null,
+  errorStyle: {}
 };
 
 RadioButtonGroup.displayName = 'RadioButtonGroup';

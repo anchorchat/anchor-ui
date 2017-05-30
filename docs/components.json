@@ -3128,35 +3128,6 @@
     }
   },
   "components/loader/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "dotStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the dot element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "inverted": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Inverts the color",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/loader/loader.jsx": {
     "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],
@@ -4597,6 +4568,29 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
         "defaultValue": {
           "value": "{}",
           "computed": false
