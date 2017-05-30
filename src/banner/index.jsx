@@ -70,7 +70,7 @@ class Banner extends Component {
     return (
       <Measure onMeasure={this.handleMeasure}>
         <section style={styles.wrapper}>
-          <section style={getStyles.root(style)}>
+          <section style={getStyles.root(type, style)}>
             {content[type]}
             <Button iconButton onClick={hideBanner} style={styles.button}>
               <IconClose color={colors.white} />
