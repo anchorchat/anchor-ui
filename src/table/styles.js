@@ -4,6 +4,7 @@ export default {
     overflow: 'hidden',
     borderSpacing: 0,
     borderCollapse: 'collapse',
-    width: '100%'
+    width: '100%',
+    tableLayout: 'fixed'
   }
 };
