@@ -36,5 +36,4 @@ const header = (errorMessage = null, color = colors.theme, overrideStyle) => {
 
 const error = overrideStyle => combineStyles(styles.error, overrideStyle);
 
-
 export default { icon, header, error };

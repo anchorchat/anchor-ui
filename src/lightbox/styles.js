@@ -1,29 +1,32 @@
 import colors from '../settings/colors';
+import fade from '../internal/fade';
 import styles from '../settings/styles';
 
 export default {
   lightbox: {
-    height: '80%',
-    maxWidth: '100%',
-    margin: '0 auto',
-    background: colors.white,
-    borderRadius: '3px',
-    padding: '40px 30px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
+    width: '100%',
     boxSizing: 'border-box',
     position: 'relative',
-    boxShadow: styles.depthShadows[0]
+    pointerEvents: 'none',
+    paddingTop: '56px'
   },
   closeButton: {
     position: 'absolute',
-    top: '5px',
-    right: '5px',
+    top: '8px',
+    right: '8px',
     zIndex: 1
   },
   image: {
-    width: 'auto',
-    height: 'auto',
-    maxWidth: '100%',
-    maxHeight: '100%'
+    maxWidth: '90%',
+    maxHeight: '90%',
+    pointerEvents: 'all',
+    borderRadius: '3px',
+    boxShadow: styles.depthShadows[0]
   },
   clickAway: {
     width: '100%',
@@ -32,5 +35,20 @@ export default {
     top: '0',
     left: '0',
     cursor: 'pointer'
-  }
+  },
+  header: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    padding: '18px 56px',
+    color: colors.white,
+    fontSize: '18px',
+    fontWeight: 'bold',
+    lineHeight: '20px',
+    width: '100%',
+    boxSizing: 'border-box',
+    backgroundColor: fade(colors.black, 0.4),
+    textAlign: 'center',
+    pointerEvents: 'all'
+  },
 };
