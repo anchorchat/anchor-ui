@@ -64,6 +64,20 @@ describe('Profile.index', () => {
     expect(profile.containsMatchingElement(<h1>header</h1>)).to.equal(true);
   });
 
+  it('should get root styles', () => {
+    const spy = sinon.spy(getStyles, 'root');
+
+    shallow(<Profile {...props} />);
+    expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should render if the avatar prop is passed', () => {
+    props.avatar = 'imageurl';
+    const profile = shallow(<Profile {...props} />);
+    expect(profile.find(Avatar)).to.have.length(1);
+    props.avatar = '';
+  });
+
   describe('the p element', () => {
     before(() => {
       props.secondaryText = 'text';
