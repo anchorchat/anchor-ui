@@ -6,6 +6,9 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import Button from '../../button';
+import IconChevronRight from '../../icons/icon-chevron-right';
+import colors from '../../settings/colors';
 
 class ImageMessage extends Component {
   constructor() {
@@ -41,7 +44,10 @@ class ImageMessage extends Component {
       messageBodyStyle,
       messageTimeStyle,
       timeFormat,
-      enableLightbox
+      enableLightbox,
+      collapsed,
+      expand,
+      collapsedText
     } = this.props;
     const { lightbox } = this.state;
 
@@ -59,6 +65,15 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
     }
 
+    if (enableLightbox) {
+      imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
+    }
+
+    const collapsedStyle = {
+      display: 'flex',
+      alignItems: 'center'
+    };
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -70,7 +85,16 @@ class ImageMessage extends Component {
           username={message.username}
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
-          <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+          {
+            !collapsed
+            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            : <span style={collapsedStyle}>
+              <span>{collapsedText}</span>
+              <Button iconButton onClick={expand}>
+                <IconChevronRight color={myMessage ? colors.white : colors.icons} />
+              </Button>
+            </span>
+          }
           <MessageTime
             myMessage={myMessage}
             type={message.type}
@@ -81,7 +105,12 @@ class ImageMessage extends Component {
         </p>
         {
           enableLightbox
-          ? <Lightbox open={lightbox} image={message.body} hideLightbox={this.toggleLightbox} />
+          ? <Lightbox
+            open={lightbox}
+            image={message.body}
+            title={message.username}
+            hideLightbox={this.toggleLightbox}
+          />
           : null
         }
       </div>
@@ -109,7 +138,10 @@ ImageMessage.propTypes = {
   myMessage: PropTypes.bool,
   enableLightbox: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  collapsed: PropTypes.bool,
+  expand: PropTypes.func,
+  collapsedText: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
@@ -123,7 +155,10 @@ ImageMessage.defaultProps = {
   myMessage: false,
   compact: false,
   enableLightbox: false,
-  color: ''
+  color: '',
+  collapsed: false,
+  expand: null,
+  collapsedText: 'This image has been collapsed, click the button to expand it.'
 };
 
 export default ImageMessage;

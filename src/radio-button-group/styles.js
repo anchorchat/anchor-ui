@@ -11,5 +11,11 @@ export default {
     fontWeight: 'bold',
     marginBottom: '10px',
     display: 'inline-block'
+  },
+  error: {
+    display: 'block',
+    paddingLeft: '10px',
+    color: colors.error,
+    fontSize: '14px'
   }
 };

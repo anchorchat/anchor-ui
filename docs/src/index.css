@@ -37,12 +37,21 @@ body {
 }
 
 #root,
+#root > div,
 main {
   height: inherit;
 }
 
-.emojione {
-  width: 32px;
+.small .emojione {
+  width: 18px;
+}
+
+.medium .emojione {
+  width: 20px;
+}
+
+.large .emojione {
+  width: 24px;
 }
 
 a {

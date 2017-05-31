@@ -132,6 +132,7 @@ class ListItem extends Component {
     } = this.props;
 
     let nestedList = null;
+    const rootClick = onClick || (children && this.toggleNestedList);
 
     if (children) {
       nestedList = (
@@ -143,7 +144,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
           {
             avatar
             ? <div style={styles.avatar}>

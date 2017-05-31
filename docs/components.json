@@ -859,6 +859,113 @@
       }
     }
   },
+  "components/commands/index.jsx": {
+    "description": "Used for displaying a list of /slash commands",
+    "displayName": "Commands",
+    "methods": [],
+    "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display in the header",
+        "defaultValue": {
+          "value": "'Commands'",
+          "computed": false
+        }
+      },
+      "commands": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "title": {
+                "name": "node",
+                "required": true
+              },
+              "description": {
+                "name": "node",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "The list of commands. Must be an array of objects containing the following:\n{ title: String, description: String }"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the title element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "descriptionStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the description element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onSelect": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {command} string The command's title"
+      },
+      "onHover": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is hovered\n\n@param {command} string The command's title"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "components/dialog/index.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
@@ -2828,6 +2935,13 @@
         "required": true,
         "description": "Link to the image"
       },
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The image's title"
+      },
       "iconColor": {
         "type": {
           "name": "string"
@@ -2835,7 +2949,7 @@
         "required": false,
         "description": "The close button's icon color",
         "defaultValue": {
-          "value": "colors.grey",
+          "value": "colors.white",
           "computed": true
         }
       },
@@ -3121,35 +3235,6 @@
     }
   },
   "components/loader/index.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "dotStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the dot element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "inverted": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Inverts the color",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/loader/loader.jsx": {
     "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],
@@ -3593,6 +3678,39 @@
         "description": "Enables Lighbox for image messages",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Collapse an image message",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "collapsedText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display for collapsed image messages",
+        "defaultValue": {
+          "value": "'This image has been collapsed, click the button to expand it.'",
+          "computed": false
+        }
+      },
+      "expand": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Expand a collapsed image message",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -4590,6 +4708,29 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
         "defaultValue": {
           "value": "{}",
           "computed": false
