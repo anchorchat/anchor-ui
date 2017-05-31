@@ -178,8 +178,8 @@ const MessageDoc = () => {
                 avatar={message.avatar}
                 emoji
                 menuItems={[
-                  <MenuItem text="Menu Item" onClick={() => {}} />,
-                  <MenuItem text="Another Menu Item" onClick={() => {}} />
+                  <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
+                  <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
                 ]}
               />
             ))}
