@@ -57,6 +57,12 @@ class Message extends Component {
     menuItems: PropTypes.node,
     /** Enables Lighbox for image messages */
     enableLightbox: PropTypes.bool,
+    /** Collapse an image message */
+    collapsed: PropTypes.bool,
+    /** Text to display for collapsed image messages */
+    collapsedText: PropTypes.node,
+    /** Expand a collapsed image message */
+    expand: PropTypes.func,
     color: PropTypes.string.isRequired
   }
 
@@ -73,7 +79,10 @@ class Message extends Component {
     enableLinks: false,
     compact: false,
     menuItems: null,
-    enableLightbox: false
+    enableLightbox: false,
+    collapsed: false,
+    expand: null,
+    collapsedText: 'This image has been collapsed, click the button to expand it.'
   }
 
   constructor() {
@@ -112,6 +121,9 @@ class Message extends Component {
       enableLinks, // eslint-disable-line no-unused-vars
       menuItems, // eslint-disable-line no-unused-vars
       enableLightbox, // eslint-disable-line no-unused-vars
+      collapsed, // eslint-disable-line no-unused-vars
+      expand, // eslint-disable-line no-unused-vars
+      collapsedText, // eslint-disable-line no-unused-vars
       color,
       ...custom
     } = this.props;

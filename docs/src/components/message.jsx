@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import Message from '../../../dist/message';
@@ -8,6 +8,7 @@ import Props from './props';
 import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
+import Button from '../../../dist/button';
 
 const usage = '```js\n import Message from \'anchor-ui/message\';';
 
@@ -61,134 +62,168 @@ const messages = [
 
 const currentUser = 'Sjaak';
 
-const MessageDoc = () => {
-  const componentData = _.find(components, component => component.displayName === 'Message');
-  const style = {
-    paper: {
-      margin: '0 0 20px 0',
-      padding: '20px'
-    },
-    list: {
-      backgroundImage: `url(${background})`,
-      backgroundSize: '500px',
-      height: '475px'
-    }
-  };
-  const scalingEmoji = `
-    .small .emojione {
-      width: 18px;
-    }
+class MessageDoc extends Component {
+  constructor() {
+    super();
 
-    .medium .emojione {
-      width: 20px;
-    }
+    this.state = {
+      collapsed: true
+    };
+  }
 
-    .large .emojione {
-      width: 24px;
-    }
-  `;
+  toggleCollapse = () => this.setState({ collapsed: !this.state.collapsed })
 
-  return (
-    <article className="doc">
-      <h1>Message</h1>
-      <section>
-        <h1>Description</h1>
-        <p>{componentData.description}</p>
-      </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
-      <section>
-        <h1>Scaling emoji&apos;s</h1>
-        <p>
-          If you would like the emoji&apos;s to scale with the font size add the
-          following to your style sheet:
-        </p>
-        <ReactMarkdown source={scalingEmoji} className="markdown" />
-      </section>
-      <section>
-        <h1>Default example</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.list}>
-            {messages.map(message => (
-              <Message
-                message={message}
-                key={`message-${message.id}`}
-                myMessage={message.username === currentUser}
-                avatar={message.avatar}
-                emoji
-              />
-            ))}
-          </MessageList>
-        </Paper>
-        <h1>Medium font size</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.list}>
-            {messages.map(message => (
-              <Message
-                message={message}
-                key={`message-${message.id}`}
-                myMessage={message.username === currentUser}
-                avatar={message.avatar}
-                fontSize="medium"
-                emoji
-              />
-            ))}
-          </MessageList>
-        </Paper>
-        <h1>Large font size</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.list}>
-            {messages.map(message => (
-              <Message
-                message={message}
-                key={`message-${message.id}`}
-                myMessage={message.username === currentUser}
-                avatar={message.avatar}
-                fontSize="large"
-                emoji
-              />
-            ))}
-          </MessageList>
-        </Paper>
-        <h1>Compact message</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.list}>
-            {messages.map(message => (
-              <Message
-                message={message}
-                key={`message-${message.id}`}
-                myMessage={message.username === currentUser}
-                avatar={message.avatar}
-                emoji
-                compact
-              />
-            ))}
-          </MessageList>
-        </Paper>
-        <h1>Message with IconMenu</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.list}>
-            {messages.map(message => (
-              <Message
-                message={message}
-                key={`message-${message.id}`}
-                myMessage={message.username === currentUser}
-                avatar={message.avatar}
-                emoji
-                menuItems={[
-                  <MenuItem text="Menu Item" onClick={() => {}} />,
-                  <MenuItem text="Another Menu Item" onClick={() => {}} />
-                ]}
-              />
-            ))}
-          </MessageList>
-        </Paper>
-      </section>
-      <Props props={componentData.props} />
-    </article>
-  );
-};
+  render() {
+    const componentData = _.find(components, component => component.displayName === 'Message');
+    const style = {
+      paper: {
+        margin: '0 0 20px 0',
+        padding: '20px'
+      },
+      list: {
+        backgroundImage: `url(${background})`,
+        backgroundSize: '500px',
+        height: '475px'
+      },
+      button: {
+        marginBottom: '10px'
+      }
+    };
+    const scalingEmoji = `
+      .small .emojione {
+        width: 18px;
+      }
+
+      .medium .emojione {
+        width: 20px;
+      }
+
+      .large .emojione {
+        width: 24px;
+      }
+    `;
+
+    return (
+      <article className="doc">
+        <h1>Message</h1>
+        <section>
+          <h1>Description</h1>
+          <p>{componentData.description}</p>
+        </section>
+        <section>
+          <h1>Usage</h1>
+          <ReactMarkdown source={usage} className="markdown" />
+        </section>
+        <section>
+          <h1>Scaling emoji&apos;s</h1>
+          <p>
+            If you would like the emoji&apos;s to scale with the font size add the
+            following to your style sheet:
+          </p>
+          <ReactMarkdown source={scalingEmoji} className="markdown" />
+        </section>
+        <section>
+          <h1>Default example</h1>
+          <Paper style={style.paper}>
+            <MessageList style={style.list}>
+              {messages.map(message => (
+                <Message
+                  message={message}
+                  key={`message-${message.id}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.avatar}
+                  emoji
+                />
+              ))}
+            </MessageList>
+          </Paper>
+          <h1>Medium font size</h1>
+          <Paper style={style.paper}>
+            <MessageList style={style.list}>
+              {messages.map(message => (
+                <Message
+                  message={message}
+                  key={`message-${message.id}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.avatar}
+                  fontSize="medium"
+                  emoji
+                />
+              ))}
+            </MessageList>
+          </Paper>
+          <h1>Large font size</h1>
+          <Paper style={style.paper}>
+            <MessageList style={style.list}>
+              {messages.map(message => (
+                <Message
+                  message={message}
+                  key={`message-${message.id}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.avatar}
+                  fontSize="large"
+                  emoji
+                />
+              ))}
+            </MessageList>
+          </Paper>
+          <h1>Compact message</h1>
+          <Paper style={style.paper}>
+            <MessageList style={style.list}>
+              {messages.map(message => (
+                <Message
+                  message={message}
+                  key={`message-${message.id}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.avatar}
+                  emoji
+                  compact
+                />
+              ))}
+            </MessageList>
+          </Paper>
+          <h1>Message with IconMenu</h1>
+          <Paper style={style.paper}>
+            <MessageList style={style.list}>
+              {messages.map(message => (
+                <Message
+                  message={message}
+                  key={`message-${message.id}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.avatar}
+                  emoji
+                  menuItems={[
+                    <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
+                    <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
+                  ]}
+                />
+              ))}
+            </MessageList>
+          </Paper>
+          <h1>Message with collapsed images</h1>
+          <Paper style={style.paper}>
+            <Button style={style.button} onClick={this.toggleCollapse}>
+              Toggle image collapse
+            </Button>
+            <MessageList style={style.list}>
+              {messages.map(message => (
+                <Message
+                  message={message}
+                  key={`message-${message.id}`}
+                  myMessage={message.username === currentUser}
+                  avatar={message.avatar}
+                  emoji
+                  collapsed={this.state.collapsed}
+                  expand={this.toggleCollapse}
+                />
+              ))}
+            </MessageList>
+          </Paper>
+        </section>
+        <Props props={componentData.props} />
+      </article>
+    );
+  }
+}
 
 export default MessageDoc;
