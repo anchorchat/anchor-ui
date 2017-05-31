@@ -1,11 +1,16 @@
 /* eslint-env mocha */
 /* eslint react/jsx-filename-extension: [0] */
 import React from 'react';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
 import Profile from '../../src/profile';
 import Avatar from '../../src/avatar';
 import Button from '../../src/button';
+import getStyles from '../../src/profile/get-styles';
+
+chai.use(sinonChai);
 
 describe('Profile.index', () => {
   const props = {
@@ -95,6 +100,12 @@ describe('Profile.index', () => {
     it('should get passed the value of the status prop to the status property', () => {
       const profile = shallow(<Profile {...props} />);
       expect(profile.find({ status: 'away' })).to.have.length(1);
+    });
+
+    it('should do function stuff', () => {
+      const spy = sinon.spy(getStyles, 'root');
+      shallow(<Profile style={spy} />);
+      expect(spy).to.have.callCount(1);
     });
   });
 });
