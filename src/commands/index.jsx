@@ -8,7 +8,7 @@ import getStyles from './get-styles';
 const propTypes = {
   /** Text to display in the header */
   header: PropTypes.node,
-  /** The list of commands. must be an array of objects containing the following:
+  /** The list of commands. Must be an array of objects containing the following:
   * { title: String, description: String }
   */
   commands: PropTypes.arrayOf(PropTypes.shape({
@@ -26,15 +26,15 @@ const propTypes = {
   /**
    * Callback fired when a command is selected, currently only click events are supported
    *
-   * @param {pager} string The command's title
+   * @param {command} string The command's title
    */
-  onHover: PropTypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired,
   /**
    * Callback fired when a command is hovered
    *
-   * @param {pager} string The command's title
+   * @param {command} string The command's title
    */
-  onSelect: PropTypes.func.isRequired,
+  onHover: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
 };
 

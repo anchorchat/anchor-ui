@@ -893,7 +893,7 @@
           }
         },
         "required": true,
-        "description": "The list of commands. must be an array of objects containing the following:\n{ title: String, description: String }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n{ title: String, description: String }"
       },
       "style": {
         "type": {
@@ -943,19 +943,19 @@
           "computed": false
         }
       },
-      "onHover": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {pager} string The command's title"
-      },
       "onSelect": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is hovered\n\n@param {pager} string The command's title"
+        "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {command} string The command's title"
+      },
+      "onHover": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is hovered\n\n@param {command} string The command's title"
       },
       "color": {
         "type": {
