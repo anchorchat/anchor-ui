@@ -57,7 +57,7 @@ class Message extends Component {
     menuItems: PropTypes.node,
     /** Enables Lighbox for image messages */
     enableLightbox: PropTypes.bool,
-    /** Collapse an image mesage */
+    /** Collapse an image message */
     collapsed: PropTypes.bool,
     /** Expand a collapsed image message */
     expand: PropTypes.func,

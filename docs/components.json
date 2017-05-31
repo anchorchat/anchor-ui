@@ -3579,7 +3579,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Collapse an image mesage",
+        "description": "Collapse an image message",
         "defaultValue": {
           "value": "false",
           "computed": false
