@@ -118,6 +118,8 @@ const MessageDoc = () => {
                 myMessage={message.username === currentUser}
                 avatar={message.avatar}
                 emoji
+                collapsed
+                expand={() => console.log('jemoeder')}
               />
             ))}
           </MessageList>

@@ -3585,6 +3585,17 @@
           "computed": false
         }
       },
+      "collapsedText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display for collapsed image messages",
+        "defaultValue": {
+          "value": "'This image has been collapsed, click the button to expand it.'",
+          "computed": false
+        }
+      },
       "expand": {
         "type": {
           "name": "func"

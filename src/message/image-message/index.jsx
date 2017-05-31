@@ -7,7 +7,7 @@ import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
 import Button from '../../button';
-import IconChevronDown from '../../icons/icon-chevron-down';
+import IconChevronRight from '../../icons/icon-chevron-right';
 import colors from '../../settings/colors';
 
 class ImageMessage extends Component {
@@ -46,7 +46,8 @@ class ImageMessage extends Component {
       timeFormat,
       enableLightbox,
       collapsed,
-      expand
+      expand,
+      collapsedText
     } = this.props;
     const { lightbox } = this.state;
 
@@ -64,6 +65,11 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
     }
 
+    const collapsedStyle = {
+      display: 'flex',
+      alignItems: 'center'
+    };
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -78,9 +84,12 @@ class ImageMessage extends Component {
           {
             !collapsed
             ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
-            : <Button iconButton onClick={expand}>
-              <IconChevronDown color={myMessage ? colors.white : colors.icons} />
-            </Button>
+            : <span style={collapsedStyle}>
+              <span>{collapsedText}</span>
+              <Button iconButton onClick={expand}>
+                <IconChevronRight color={myMessage ? colors.white : colors.icons} />
+              </Button>
+            </span>
           }
           <MessageTime
             myMessage={myMessage}
@@ -127,7 +136,8 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  expand: PropTypes.func
+  expand: PropTypes.func,
+  collapsedText: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
@@ -143,7 +153,8 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  expand: null
+  expand: null,
+  collapsedText: 'This image has been collapsed, click the button to expand it.'
 };
 
 export default ImageMessage;
