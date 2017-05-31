@@ -860,7 +860,7 @@
     }
   },
   "components/commands/index.jsx": {
-    "description": "Used for displaying a list of /slash commands",
+    "description": "Display a list of commands",
     "displayName": "Commands",
     "methods": [],
     "props": {
@@ -883,17 +883,24 @@
             "value": {
               "title": {
                 "name": "node",
+                "description": "The command to execute",
                 "required": true
               },
               "description": {
                 "name": "node",
+                "description": "The command's description",
                 "required": true
+              },
+              "param": {
+                "name": "node",
+                "description": "Optional command param",
+                "required": false
               }
             }
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n{ title: String, description: String }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n{ title: Node, description: Node, param: Node (optional) }"
       },
       "style": {
         "type": {
@@ -938,6 +945,18 @@
         },
         "required": false,
         "description": "Override the styles of the description element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "paramStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the param element",
         "defaultValue": {
           "value": "{}",
           "computed": false

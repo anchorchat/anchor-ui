@@ -27,8 +27,6 @@ export default {
     fontSize: '14px',
     cursor: 'pointer',
     color: colors.primaryText,
-    display: 'flex',
-    justifyContent: 'space-between',
     transition: 'all .3s ease-in-out',
 
     ':hover': {
@@ -40,12 +38,12 @@ export default {
   },
   title: {
     fontWeight: 'bold',
-    marginRight: '10px',
+    marginRight: '5px',
     fontSize: '14px'
   },
   description: {
     fontStyle: 'italic',
     fontSize: '14px',
-    textAlign: 'right'
+    float: 'right'
   }
 };

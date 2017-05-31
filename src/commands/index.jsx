@@ -10,11 +10,15 @@ const propTypes = {
   /** Text to display in the header */
   header: PropTypes.node,
   /** The list of commands. Must be an array of objects containing the following:
-  * { title: String, description: String }
+  * { title: Node, description: Node, param: Node (optional) }
   */
   commands: PropTypes.arrayOf(PropTypes.shape({
+    /** The command to execute */
     title: PropTypes.node.isRequired,
-    description: PropTypes.node.isRequired
+    /** The command's description */
+    description: PropTypes.node.isRequired,
+    /** Optional command param */
+    param: PropTypes.node
   })).isRequired,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
@@ -24,6 +28,8 @@ const propTypes = {
   titleStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the description element */
   descriptionStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the param element */
+  paramStyle: PropTypes.instanceOf(Object),
   /**
    * Callback fired when a command is selected, currently only click events are supported
    *
@@ -44,10 +50,11 @@ const defaultProps = {
   style: {},
   headerStyle: {},
   titleStyle: {},
-  descriptionStyle: {}
+  descriptionStyle: {},
+  paramStyle: {}
 };
 
-/** Used for displaying a list of /slash commands */
+/** Used for displaying a list of commands */
 const Commands = ({
   header,
   commands,
@@ -58,6 +65,7 @@ const Commands = ({
   headerStyle,
   titleStyle,
   descriptionStyle,
+  paramStyle,
   ...custom
 }) => (
   <section style={getStyles.root(style)} {...custom}>
@@ -71,6 +79,7 @@ const Commands = ({
           onClick={() => onSelect(command.title)}
         >
           <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
+          {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
           <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
         </p>
       ))}
