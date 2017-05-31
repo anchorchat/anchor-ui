@@ -859,6 +859,113 @@
       }
     }
   },
+  "components/commands/index.jsx": {
+    "description": "Used for displaying a list of /slash commands",
+    "displayName": "Commands",
+    "methods": [],
+    "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display in the header",
+        "defaultValue": {
+          "value": "'Commands'",
+          "computed": false
+        }
+      },
+      "commands": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "title": {
+                "name": "node",
+                "required": true
+              },
+              "description": {
+                "name": "node",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "The list of commands. must be an array of objects containing the following:\n{ title: String, description: String }"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the title element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "descriptionStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the description element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onHover": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {pager} string The command's title"
+      },
+      "onSelect": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is hovered\n\n@param {pager} string The command's title"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "components/dialog/index.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
