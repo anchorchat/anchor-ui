@@ -3574,6 +3574,28 @@
           "computed": false
         }
       },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Collapse an image mesage",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "expand": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Expand a collapsed image message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"

@@ -6,6 +6,9 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import Button from '../../button';
+import IconChevronDown from '../../icons/icon-chevron-down';
+import colors from '../../settings/colors';
 
 class ImageMessage extends Component {
   constructor() {
@@ -41,7 +44,9 @@ class ImageMessage extends Component {
       messageBodyStyle,
       messageTimeStyle,
       timeFormat,
-      enableLightbox
+      enableLightbox,
+      collapsed,
+      expand
     } = this.props;
     const { lightbox } = this.state;
 
@@ -70,7 +75,13 @@ class ImageMessage extends Component {
           username={message.username}
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
-          <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+          {
+            !collapsed
+            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            : <Button iconButton onClick={expand}>
+              <IconChevronDown color={myMessage ? colors.white : colors.icons} />
+            </Button>
+          }
           <MessageTime
             myMessage={myMessage}
             type={message.type}
@@ -114,7 +125,9 @@ ImageMessage.propTypes = {
   myMessage: PropTypes.bool,
   enableLightbox: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  collapsed: PropTypes.bool,
+  expand: PropTypes.func
 };
 
 ImageMessage.defaultProps = {
@@ -128,7 +141,9 @@ ImageMessage.defaultProps = {
   myMessage: false,
   compact: false,
   enableLightbox: false,
-  color: ''
+  color: '',
+  collapsed: false,
+  expand: null
 };
 
 export default ImageMessage;
