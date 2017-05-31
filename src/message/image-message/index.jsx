@@ -65,6 +65,10 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
     }
 
+    if (enableLightbox) {
+      imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
+    }
+
     const collapsedStyle = {
       display: 'flex',
       alignItems: 'center'
