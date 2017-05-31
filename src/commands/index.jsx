@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import map from 'lodash/map';
 import themeable from '../themeable';
 import getStyles from './get-styles';
 
@@ -62,7 +63,7 @@ const Commands = ({
   <section style={getStyles.root(style)} {...custom}>
     <header style={getStyles.header(color, headerStyle)}>{header}</header>
     <section style={getStyles.commands()}>
-      {commands.map(command => (
+      {map(commands, command => (
         <p
           onMouseOver={() => onHover(command.title)}
           style={getStyles.command()}
