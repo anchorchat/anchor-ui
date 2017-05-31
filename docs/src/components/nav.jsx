@@ -21,6 +21,7 @@ const Nav = (props, context) => {
         <Link to="/card"><ListItem active={router.isActive('/card')} primaryText="Card" /></Link>
         <Link to="/channel-header"><ListItem active={router.isActive('/channel-header')} primaryText="ChannelHeader" /></Link>
         <Link to="/checkbox"><ListItem active={router.isActive('/checkbox')} primaryText="Checkbox" /></Link>
+        <Link to="/commands"><ListItem active={router.isActive('/commands')} primaryText="Commands" /></Link>
         <Link to="/dialog"><ListItem active={router.isActive('/dialog')} primaryText="Dialog" /></Link>
         <Link to="/divider"><ListItem active={router.isActive('/divider')} primaryText="Divider" /></Link>
         <Link to="/emoji-menu"><ListItem active={router.isActive('/emoji-menu')} primaryText="EmojiMenu" /></Link>

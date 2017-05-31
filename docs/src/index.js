@@ -47,6 +47,7 @@ import ThemeProvider from './components/theme-provider';
 import themeable from './components/themeable';
 import Table from './components/table';
 import Pagination from './components/pagination';
+import Commands from './components/commands';
 import './index.css';
 
 ReactDOM.render(
@@ -95,6 +96,7 @@ ReactDOM.render(
         <Route path="/theme-provider" component={ThemeProvider} />
         <Route path="/themeable" component={themeable} />
         <Route path="/pagination" component={Pagination} />
+        <Route path="/commands" component={Commands} />
       </Route>
     </Router>
   </StyleRoot>,
