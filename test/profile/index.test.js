@@ -93,33 +93,4 @@ describe('Profile.index', () => {
       expect(profile.containsMatchingElement(<p>text</p>)).to.equal(true);
     });
   });
-
-  describe('the Avatar component', () => {
-    before(() => {
-      props.avatar = 'imageurl';
-      props.avatarStyle = { color: 'red' };
-      props.status = 'away';
-    });
-
-    it('should render if the avatar prop is passed', () => {
-      const profile = shallow(<Profile {...props} />);
-      expect(profile.find(Avatar)).to.have.length(1);
-    });
-
-    it('should get passed the value of the avatar prop to the image property', () => {
-      const profile = shallow(<Profile {...props} />);
-      expect(profile.find({ image: 'imageurl' })).to.have.length(1);
-    });
-
-    it('should get passed the value of the status prop to the status property', () => {
-      const profile = shallow(<Profile {...props} />);
-      expect(profile.find({ status: 'away' })).to.have.length(1);
-    });
-
-    it('should do function stuff', () => {
-      const spy = sinon.spy(getStyles, 'root');
-      shallow(<Profile style={spy} />);
-      expect(spy).to.have.callCount(1);
-    });
-  });
 });
