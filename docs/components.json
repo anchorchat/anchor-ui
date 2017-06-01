@@ -902,6 +902,13 @@
         "required": true,
         "description": "The list of commands. Must be an array of objects containing the following:\n{ title: Node, description: Node, param: Node (optional) }"
       },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Filter commands based on input value"
+      },
       "style": {
         "type": {
           "name": "instanceOf",
