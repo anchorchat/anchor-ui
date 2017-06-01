@@ -17,11 +17,33 @@ class CommandsDoc extends Component {
     super();
 
     this.state = {
-      value: ''
+      value: '',
+      command: ''
     };
   }
 
-  changeValue = event => this.setState({ value: event.currentTarget.value })
+  changeValue = (event) => {
+    const { command } = this.state;
+
+    if (command) {
+      return this.setState({
+        command: '',
+        value: command
+      });
+    }
+
+    return this.setState({ value: event.currentTarget.value });
+  }
+
+  handleHover = command => this.setState({ command })
+
+  handleSelect = (command) => {
+    this.setState({
+      value: command
+    });
+
+    alert(`selected ${command}`);
+  }
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Commands');
@@ -80,6 +102,8 @@ class CommandsDoc extends Component {
       }
     ];
 
+    console.log(this.state);
+
     return (
       <article className="doc">
         <h1>Commands</h1>
@@ -94,11 +118,17 @@ class CommandsDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <Commands style={style.commands} value={this.state.value} commands={commands} onHover={command => console.log('hover', command)} onSelect={command => alert(`selected ${command}`)} />
+            <Commands
+              style={style.commands}
+              value={this.state.value}
+              commands={commands}
+              onHover={this.handleHover}
+              onSelect={this.handleSelect}
+            />
             <MessageInput
               onChange={this.changeValue}
               placeholder="Type / to view and filter the commands"
-              value={this.state.value}
+              value={this.state.command || this.state.value}
               sendMessage={() => {}}
               style={style.messageInput}
             />
