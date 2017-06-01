@@ -860,7 +860,7 @@
     }
   },
   "components/commands/index.jsx": {
-    "description": "Display a list of commands",
+    "description": "Used for displaying a list of commands",
     "displayName": "Commands",
     "methods": [],
     "props": {
@@ -893,7 +893,7 @@
               },
               "param": {
                 "name": "node",
-                "description": "Optional command param",
+                "description": "Optional command parameter",
                 "required": false
               }
             }

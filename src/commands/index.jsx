@@ -17,7 +17,7 @@ const propTypes = {
     title: PropTypes.node.isRequired,
     /** The command's description */
     description: PropTypes.node.isRequired,
-    /** Optional command param */
+    /** Optional command parameter */
     param: PropTypes.node
   })).isRequired,
   /** Override the styles of the root element */
