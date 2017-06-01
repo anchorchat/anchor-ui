@@ -101,7 +101,9 @@ class Commands extends Component {
       });
     }
 
-    return false;
+    return this.setState({
+      commands: filteredCommands
+    });
   }
 
   handleClickOutside = () => {
