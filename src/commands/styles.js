@@ -24,6 +24,7 @@ export default {
   },
   command: {
     padding: '10px 20px 10px 10px',
+    margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
     color: colors.primaryText,

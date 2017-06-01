@@ -101,7 +101,9 @@ class Commands extends Component {
       });
     }
 
-    return false;
+    return this.setState({
+      commands: filteredCommands
+    });
   }
 
   handleClickOutside = () => {
@@ -111,6 +113,17 @@ class Commands extends Component {
       open: false,
       commands
     });
+  }
+
+  handleSelect = (command) => {
+    const { onSelect, commands } = this.props;
+
+    this.setState({
+      open: false,
+      commands
+    });
+
+    onSelect(command);
   }
 
   render() {
@@ -149,7 +162,7 @@ class Commands extends Component {
               onMouseOver={() => onHover(command.title)}
               style={getStyles.command()}
               key={command.title}
-              onClick={() => onSelect(command.title)}
+              onClick={() => this.handleSelect(command.title)}
             >
               <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
               {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
