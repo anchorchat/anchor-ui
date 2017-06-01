@@ -5,6 +5,7 @@ import compose from 'recompose/compose';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
+import onClickOutside from 'react-onclickoutside';
 import themeable from '../themeable';
 import getStyles from './get-styles';
 
@@ -103,6 +104,15 @@ class Commands extends Component {
     return false;
   }
 
+  handleClickOutside = () => {
+    const { commands } = this.props;
+
+    this.setState({
+      open: false,
+      commands
+    });
+  }
+
   render() {
     const {
       header,
@@ -116,6 +126,12 @@ class Commands extends Component {
       titleStyle,
       descriptionStyle,
       paramStyle,
+      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
+      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
+      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
+      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       ...custom
     } = this.props;
     const { open } = this.state;
@@ -152,6 +168,7 @@ Commands.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),
+  onClickOutside,
   Radium
 );
 
