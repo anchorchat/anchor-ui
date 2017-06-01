@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import map from 'lodash/map';
+import filter from 'lodash/filter';
 import themeable from '../themeable';
 import getStyles from './get-styles';
 
@@ -20,6 +21,8 @@ const propTypes = {
     /** Optional command parameter */
     param: PropTypes.node
   })).isRequired,
+  /** Filter commands based on input value */
+  value: PropTypes.string.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
@@ -58,6 +61,7 @@ const defaultProps = {
 const Commands = ({
   header,
   commands,
+  value,
   color,
   onHover,
   onSelect,
@@ -67,25 +71,31 @@ const Commands = ({
   descriptionStyle,
   paramStyle,
   ...custom
-}) => (
-  <section style={getStyles.root(style)} {...custom}>
-    <header style={getStyles.header(color, headerStyle)}>{header}</header>
-    <section style={getStyles.commands()}>
-      {map(commands, command => (
-        <p
-          onMouseOver={() => onHover(command.title)}
-          style={getStyles.command()}
-          key={command.title}
-          onClick={() => onSelect(command.title)}
-        >
-          <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
-          {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
-          <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
-        </p>
-      ))}
+}) => {
+  const filteredCommands = filter(
+    commands, command => command.title.toLowerCase().indexOf(value.toLowerCase()) === 0
+  );
+
+  return (
+    <section style={getStyles.root(style)} {...custom}>
+      <header style={getStyles.header(color, headerStyle)}>{header}</header>
+      <section style={getStyles.commands()}>
+        {map(filteredCommands, command => (
+          <p
+            onMouseOver={() => onHover(command.title)}
+            style={getStyles.command()}
+            key={command.title}
+            onClick={() => onSelect(command.title)}
+          >
+            <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
+            {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
+            <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
+          </p>
+        ))}
+      </section>
     </section>
-  </section>
-);
+  );
+};
 
 Commands.displayName = 'Commands';
 Commands.propTypes = propTypes;
