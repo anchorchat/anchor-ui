@@ -8,7 +8,7 @@ import Props from './props';
 import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
-import Button from '../../../dist/button';
+import Select from '../../../dist/select';
 
 const usage = '```js\n import Message from \'anchor-ui/message\';';
 
@@ -67,11 +67,20 @@ class MessageDoc extends Component {
     super();
 
     this.state = {
-      collapsed: true
+      collapsed: false,
+      fontSize: 'small',
+      compact: false,
+      iconMenu: false
     };
   }
 
-  toggleCollapse = () => this.setState({ collapsed: !this.state.collapsed })
+  selectCollapse = collapsed => this.setState({ collapsed })
+
+  selectCompact = () => this.setState({ compact: !this.state.compact })
+
+  selectFontSize = fontSize => this.setState({ fontSize })
+
+  selectIconMenu = iconMenu => this.setState({ iconMenu })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Message');
@@ -85,8 +94,13 @@ class MessageDoc extends Component {
         backgroundSize: '500px',
         height: '475px'
       },
-      button: {
-        marginBottom: '10px'
+      options: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        padding: '10px 0'
+      },
+      select: {
+        margin: '5px'
       }
     };
     const scalingEmoji = `
@@ -102,6 +116,11 @@ class MessageDoc extends Component {
         width: 24px;
       }
     `;
+
+    const menuItems = [
+      <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
+      <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
+    ];
 
     return (
       <article className="doc">
@@ -123,88 +142,27 @@ class MessageDoc extends Component {
           <ReactMarkdown source={scalingEmoji} className="markdown" />
         </section>
         <section>
-          <h1>Default example</h1>
+          <h1>Examples</h1>
+          <div style={style.options}>
+            <Select style={style.select} label="Collapsed images" value={this.state.collapsed} onChange={this.selectCollapse}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
+            <Select style={style.select} label="Font size" value={this.state.fontSize} onChange={this.selectFontSize}>
+              <MenuItem text="Small" value="small" />
+              <MenuItem text="Medium" value="medium" />
+              <MenuItem text="Large" value="large" />
+            </Select>
+            <Select style={style.select} label="Compact messages" value={this.state.compact} onChange={this.selectCompact}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
+            <Select style={style.select} label="Icon menu" value={this.state.iconMenu} onChange={this.selectIconMenu}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
+          </div>
           <Paper style={style.paper}>
-            <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.avatar}
-                  emoji
-                />
-              ))}
-            </MessageList>
-          </Paper>
-          <h1>Medium font size</h1>
-          <Paper style={style.paper}>
-            <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.avatar}
-                  fontSize="medium"
-                  emoji
-                />
-              ))}
-            </MessageList>
-          </Paper>
-          <h1>Large font size</h1>
-          <Paper style={style.paper}>
-            <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.avatar}
-                  fontSize="large"
-                  emoji
-                />
-              ))}
-            </MessageList>
-          </Paper>
-          <h1>Compact message</h1>
-          <Paper style={style.paper}>
-            <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.avatar}
-                  emoji
-                  compact
-                />
-              ))}
-            </MessageList>
-          </Paper>
-          <h1>Message with IconMenu</h1>
-          <Paper style={style.paper}>
-            <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.avatar}
-                  emoji
-                  menuItems={[
-                    <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
-                    <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
-                  ]}
-                />
-              ))}
-            </MessageList>
-          </Paper>
-          <h1>Message with collapsed images</h1>
-          <Paper style={style.paper}>
-            <Button style={style.button} onClick={this.toggleCollapse}>
-              Toggle image collapse
-            </Button>
             <MessageList style={style.list}>
               {messages.map(message => (
                 <Message
@@ -214,7 +172,10 @@ class MessageDoc extends Component {
                   avatar={message.avatar}
                   emoji
                   collapsed={this.state.collapsed}
-                  expand={this.toggleCollapse}
+                  expand={() => this.selectCollapse(false)}
+                  fontSize={this.state.fontSize}
+                  compact={this.state.compact}
+                  menuItems={this.state.iconMenu ? menuItems : null}
                 />
               ))}
             </MessageList>
