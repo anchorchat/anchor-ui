@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
+import isEmpty from 'lodash/isEmpty';
 import themeable from '../themeable';
 import getStyles from './get-styles';
 
@@ -58,44 +59,92 @@ const defaultProps = {
 };
 
 /** Used for displaying a list of commands */
-const Commands = ({
-  header,
-  commands,
-  value,
-  color,
-  onHover,
-  onSelect,
-  style,
-  headerStyle,
-  titleStyle,
-  descriptionStyle,
-  paramStyle,
-  ...custom
-}) => {
-  const filteredCommands = filter(
-    commands, command => command.title.toLowerCase().indexOf(value.toLowerCase()) === 0
-  );
+class Commands extends Component {
+  static filterCommands = (commands, value) => (
+    filter(commands, command => command.title.toLowerCase().indexOf(value.toLowerCase()) === 0)
+  )
 
-  return (
-    <section style={getStyles.root(style)} {...custom}>
-      <header style={getStyles.header(color, headerStyle)}>{header}</header>
-      <section style={getStyles.commands()}>
-        {map(filteredCommands, command => (
-          <p
-            onMouseOver={() => onHover(command.title)}
-            style={getStyles.command()}
-            key={command.title}
-            onClick={() => onSelect(command.title)}
-          >
-            <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
-            {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
-            <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
-          </p>
-        ))}
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false,
+      commands: Commands.filterCommands(props.commands, props.value)
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { value } = nextProps;
+    const { open } = this.state;
+
+    if (!value) {
+      return this.setState({
+        open: false,
+        commands: nextProps.commands
+      });
+    }
+
+    const filteredCommands = Commands.filterCommands(nextProps.commands, nextProps.value);
+
+    if (!isEmpty(filteredCommands) && !open) {
+      return this.setState({
+        open: true,
+        commands: filteredCommands
+      });
+    }
+
+    if (isEmpty(filteredCommands) && open) {
+      return this.setState({
+        open: false,
+        commands: nextProps.commands
+      });
+    }
+
+    return false;
+  }
+
+  render() {
+    const {
+      header,
+      commands, // eslint-disable-line no-unused-vars
+      value,
+      color,
+      onHover,
+      onSelect,
+      style,
+      headerStyle,
+      titleStyle,
+      descriptionStyle,
+      paramStyle,
+      ...custom
+    } = this.props;
+    const { open } = this.state;
+
+    if (!open) {
+      return null;
+    }
+
+    return (
+      <section style={getStyles.root(style)} {...custom}>
+        <header style={getStyles.header(color, headerStyle)}>{header}</header>
+        <section style={getStyles.commands()}>
+          {map(this.state.commands, command => (
+            <p
+              onMouseOver={() => onHover(command.title)}
+              style={getStyles.command()}
+              key={command.title}
+              onClick={() => onSelect(command.title)}
+            >
+              <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
+              {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
+              <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
+            </p>
+          ))}
+        </section>
       </section>
-    </section>
-  );
-};
+    );
+  }
+}
 
 Commands.displayName = 'Commands';
 Commands.propTypes = propTypes;
