@@ -97,7 +97,7 @@ class CommandsDoc extends Component {
             <Commands style={style.commands} value={this.state.value} commands={commands} onHover={command => console.log('hover', command)} onSelect={command => alert(`selected ${command}`)} />
             <MessageInput
               onChange={this.changeValue}
-              placeholder="Type to filter the commands"
+              placeholder="Type / to view and filter the commands"
               value={this.state.value}
               sendMessage={() => {}}
               style={style.messageInput}
