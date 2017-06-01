@@ -102,8 +102,6 @@ class CommandsDoc extends Component {
       }
     ];
 
-    console.log(this.state);
-
     return (
       <article className="doc">
         <h1>Commands</h1>
