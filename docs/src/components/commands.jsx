@@ -29,6 +29,11 @@ const CommandsDoc = () => {
       description: 'collapse all images'
     },
     {
+      title: '/giphy',
+      description: 'send a random gif',
+      param: 'text'
+    },
+    {
       title: '/expand',
       description: 'expand all images'
     },
