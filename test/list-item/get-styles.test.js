@@ -34,6 +34,12 @@ describe('ListItem.getStyles', () => {
 
       expect(style).to.have.property('paddingLeft', '56px');
     });
+
+    it('should add single-line styles', () => {
+      const style = getStyles.root();
+
+      expect(style).to.have.property('height', '48px');
+    });
   });
 
   describe('text', () => {
