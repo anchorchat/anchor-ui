@@ -47,7 +47,8 @@ class ImageMessage extends Component {
       enableLightbox,
       collapsed,
       expand,
-      collapsedText
+      collapsedText,
+      iconMenu
     } = this.props;
     const { lightbox } = this.state;
 
@@ -113,6 +114,7 @@ class ImageMessage extends Component {
           />
           : null
         }
+        {iconMenu}
       </div>
     );
   }
@@ -141,7 +143,8 @@ ImageMessage.propTypes = {
   color: PropTypes.string,
   collapsed: PropTypes.bool,
   expand: PropTypes.func,
-  collapsedText: PropTypes.node
+  collapsedText: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
@@ -158,7 +161,8 @@ ImageMessage.defaultProps = {
   color: '',
   collapsed: false,
   expand: null,
-  collapsedText: 'This image has been collapsed, click the button to expand it.'
+  collapsedText: 'This image has been collapsed, click the button to expand it.',
+  iconMenu: null
 };
 
 export default ImageMessage;

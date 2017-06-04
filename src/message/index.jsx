@@ -138,7 +138,11 @@ class Message extends Component {
     />);
 
     if (message.type === 'image') {
-      messageElement = <ImageMessage color={color} {...this.props} />;
+      messageElement = (<ImageMessage
+        color={color}
+        iconMenu={this.renderIconMenu()}
+        {...this.props}
+      />);
     }
 
     if (message.type === 'sticker') {
