@@ -9,6 +9,7 @@ import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
+import MenuItem from '../menu-item';
 import themeable from '../themeable';
 
 /** Messages with optional styling for the current user's message,
@@ -63,6 +64,10 @@ class Message extends Component {
     collapsedText: PropTypes.node,
     /** Expand a collapsed image message */
     expand: PropTypes.func,
+    /** Text to show in expand menu item */
+    expandText: PropTypes.node,
+    /** Icon to show in expand menu item */
+    expandIcon: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -82,6 +87,8 @@ class Message extends Component {
     enableLightbox: false,
     collapsed: false,
     expand: null,
+    expandText: 'Expand image',
+    expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.'
   }
 
@@ -89,6 +96,7 @@ class Message extends Component {
     super();
 
     this.renderIconMenu = this.renderIconMenu.bind(this);
+    this.renderImageIconMenu = this.renderImageIconMenu.bind(this);
   }
 
   renderIconMenu() {
@@ -104,6 +112,55 @@ class Message extends Component {
         style={getStyles.iconMenu(compact, message.type, myMessage)}
       >
         {menuItems}
+      </IconMenu>
+    );
+  }
+
+  renderImageIconMenu() {
+    const {
+      collapsed,
+      expand,
+      expandIcon,
+      expandText,
+      menuItems,
+      compact,
+      message,
+      myMessage
+    } = this.props;
+
+    if (!expand || (!menuItems && !collapsed)) {
+      return null;
+    }
+
+    if (!menuItems && collapsed) {
+      return (
+        <IconMenu
+          icon={<IconChevronDown />}
+          style={getStyles.iconMenu(compact, message.type, myMessage)}
+        >
+          <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
+        </IconMenu>
+      );
+    }
+
+    if (menuItems && !collapsed) {
+      return (
+        <IconMenu
+          icon={<IconChevronDown />}
+          style={getStyles.iconMenu(compact, message.type, myMessage)}
+        >
+          {menuItems}
+        </IconMenu>
+      );
+    }
+
+    return (
+      <IconMenu
+        icon={<IconChevronDown />}
+        style={getStyles.iconMenu(compact, message.type, myMessage)}
+      >
+        {menuItems}
+        <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
       </IconMenu>
     );
   }
@@ -126,6 +183,8 @@ class Message extends Component {
       enableLightbox, // eslint-disable-line no-unused-vars
       collapsed, // eslint-disable-line no-unused-vars
       expand, // eslint-disable-line no-unused-vars
+      expandText, // eslint-disable-line no-unused-vars
+      expandIcon, // eslint-disable-line no-unused-vars
       collapsedText, // eslint-disable-line no-unused-vars
       color,
       ...custom
@@ -140,7 +199,7 @@ class Message extends Component {
     if (message.type === 'image') {
       messageElement = (<ImageMessage
         color={color}
-        iconMenu={this.renderIconMenu()}
+        iconMenu={this.renderImageIconMenu()}
         {...this.props}
       />);
     }
