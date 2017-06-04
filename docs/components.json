@@ -3491,6 +3491,13 @@
         "modifiers": [],
         "params": [],
         "returns": null
+      },
+      {
+        "name": "renderImageIconMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
@@ -3735,6 +3742,28 @@
         },
         "required": false,
         "description": "Expand a collapsed image message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "expandText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to show in expand menu item",
+        "defaultValue": {
+          "value": "'Expand image'",
+          "computed": false
+        }
+      },
+      "expandIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon to show in expand menu item",
         "defaultValue": {
           "value": "null",
           "computed": false
