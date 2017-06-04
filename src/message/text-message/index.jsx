@@ -69,8 +69,8 @@ function TextMessage({
           createdAt={message.createdAt}
           timeFormat={timeFormat}
         />
-        {iconMenu}
       </p>
+      {iconMenu}
     </div>
   );
 }
