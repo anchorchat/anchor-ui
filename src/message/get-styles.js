@@ -13,8 +13,16 @@ const container = (myMessage, compact) => {
   return styles.messageContainer;
 };
 
-const iconMenu = (compact) => {
+const iconMenu = (compact, messageType = 'text', myMessage) => {
   if (compact) {
+    return combineStyles(styles.iconMenu, { right: '-48px' });
+  }
+
+  if (messageType === 'sticker' && myMessage) {
+    return combineStyles(styles.iconMenu, { right: 'initial', left: '-48px' });
+  }
+
+  if (messageType === 'sticker') {
     return combineStyles(styles.iconMenu, { right: '-48px' });
   }
 

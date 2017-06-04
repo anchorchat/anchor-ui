@@ -17,12 +17,13 @@ const StickerMessage = ({
   message,
   messageBodyStyle,
   messageTimeStyle,
-  timeFormat
+  timeFormat,
+  iconMenu
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
   return (
-    <div>
+    <div style={getStyles.root()}>
       <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
       <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -42,6 +43,7 @@ const StickerMessage = ({
           timeFormat={timeFormat}
         />
       </div>
+      {iconMenu}
     </div>
   );
 };
@@ -65,7 +67,8 @@ StickerMessage.propTypes = {
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   myMessage: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  iconMenu: PropTypes.node
 };
 
 StickerMessage.defaultProps = {
@@ -81,7 +84,8 @@ StickerMessage.defaultProps = {
   enableLinks: false,
   compact: false,
   enableLightbox: false,
-  color: colors.theme
+  color: colors.theme,
+  iconMenu: null
 };
 
 export default StickerMessage;

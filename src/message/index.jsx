@@ -92,14 +92,17 @@ class Message extends Component {
   }
 
   renderIconMenu() {
-    const { menuItems, compact } = this.props;
+    const { menuItems, compact, message, myMessage } = this.props;
 
     if (!menuItems) {
       return null;
     }
 
     return (
-      <IconMenu icon={<IconChevronDown />} style={getStyles.iconMenu(compact)}>
+      <IconMenu
+        icon={<IconChevronDown />}
+        style={getStyles.iconMenu(compact, message.type, myMessage)}
+      >
         {menuItems}
       </IconMenu>
     );
@@ -139,7 +142,11 @@ class Message extends Component {
     }
 
     if (message.type === 'sticker') {
-      messageElement = <StickerMessage color={color} {...this.props} />;
+      messageElement = (<StickerMessage
+        color={color}
+        iconMenu={this.renderIconMenu()}
+        {...this.props}
+      />);
     }
 
     return (

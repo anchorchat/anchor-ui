@@ -1,6 +1,9 @@
 import colors from '../../settings/colors';
 
 export default {
+  root: {
+    position: 'relative'
+  },
   message: {
     backgroundColor: colors.white,
     borderRadius: '3px',
