@@ -13,6 +13,15 @@ const container = (myMessage, compact) => {
   return styles.messageContainer;
 };
 
+const iconMenu = (compact) => {
+  if (compact) {
+    return combineStyles(styles.iconMenu, { right: '-48px' });
+  }
+
+  return styles.iconMenu;
+};
+
 export default {
-  container
+  container,
+  iconMenu
 };

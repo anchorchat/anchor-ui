@@ -6,5 +6,10 @@ export default {
   },
   myContainer: {
     flexDirection: 'row-reverse'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '0',
+    right: '0'
   }
 };

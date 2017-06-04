@@ -43,7 +43,8 @@ function TextMessage({
   messageTimeStyle,
   timeFormat,
   emoji,
-  enableLinks
+  enableLinks,
+  iconMenu
 }) {
   return (
     <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
@@ -68,6 +69,7 @@ function TextMessage({
           createdAt={message.createdAt}
           timeFormat={timeFormat}
         />
+        {iconMenu}
       </p>
     </div>
   );
@@ -94,7 +96,8 @@ TextMessage.propTypes = {
   emoji: PropTypes.bool,
   enableLinks: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  iconMenu: PropTypes.node
 };
 
 TextMessage.defaultProps = {
@@ -110,7 +113,8 @@ TextMessage.defaultProps = {
   enableLinks: false,
   compact: false,
   enableLightbox: false,
-  color: colors.theme
+  color: colors.theme,
+  iconMenu: null
 };
 
 export default TextMessage;

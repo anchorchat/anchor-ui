@@ -92,14 +92,14 @@ class Message extends Component {
   }
 
   renderIconMenu() {
-    const { menuItems } = this.props;
+    const { menuItems, compact } = this.props;
 
     if (!menuItems) {
       return null;
     }
 
     return (
-      <IconMenu icon={<IconChevronDown />}>
+      <IconMenu icon={<IconChevronDown />} style={getStyles.iconMenu(compact)}>
         {menuItems}
       </IconMenu>
     );
@@ -128,7 +128,11 @@ class Message extends Component {
       ...custom
     } = this.props;
 
-    let messageElement = <TextMessage color={color} {...this.props} />;
+    let messageElement = (<TextMessage
+      color={color}
+      iconMenu={this.renderIconMenu()}
+      {...this.props}
+    />);
 
     if (message.type === 'image') {
       messageElement = <ImageMessage color={color} {...this.props} />;
@@ -141,7 +145,6 @@ class Message extends Component {
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
         {messageElement}
-        {this.renderIconMenu()}
       </section>
     );
   }
