@@ -107,7 +107,7 @@ class Commands extends Component {
     });
   }
 
-  handleClickOutside = () => {
+  handleClose = () => {
     const { commands } = this.props;
 
     this.setState({
@@ -156,7 +156,7 @@ class Commands extends Component {
 
     return (
       <section style={combineStyles(styles.container, style)} {...custom}>
-        <div style={styles.clickAway} onClick={this.handleClickOutside} />
+        <div style={styles.clickAway} onClick={this.handleClose} />
         <section style={getStyles.root()}>
           <header style={getStyles.header(color, headerStyle)}>{header}</header>
           <section style={getStyles.commands()}>
