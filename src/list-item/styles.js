@@ -87,7 +87,7 @@ export default {
     position: 'absolute',
     left: '8px',
     top: '50%',
-    transform: 'translateY(-50%)',
+    transform: 'translateY(-50%)'
   },
   badge: {
     position: 'absolute',
