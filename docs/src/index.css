@@ -33,7 +33,7 @@ body {
   margin: 0;
   padding: 0;
   height: inherit;
-  color: #757F85;
+  color: #212121;
 }
 
 #root,
@@ -77,6 +77,7 @@ h2 {
   font-weight: bold;
   margin-bottom: 16px;
   font-size: 18px;
+  color: #757575;
 }
 
 .home > h1,
@@ -88,7 +89,7 @@ h2 {
 .home a,
 .doc a {
   font-weight: bold;
-  color: #757F85;
+  color: #212121;
 }
 
 h2 {

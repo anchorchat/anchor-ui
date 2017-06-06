@@ -7,7 +7,7 @@ export default {
     alignItems: 'center',
   },
   title: {
-    color: colors.primaryText,
+    color: colors.secondaryText,
     margin: 0,
     fontWeight: 'bold',
     fontSize: '16px'

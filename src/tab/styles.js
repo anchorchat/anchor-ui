@@ -24,7 +24,7 @@ export default {
     position: 'relative'
   },
   label: {
-    color: colors.primaryText,
+    color: colors.secondaryText,
     textTransform: 'capitalize',
     fontSize: '12px',
     fontWeight: 'bold'

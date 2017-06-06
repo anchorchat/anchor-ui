@@ -63,10 +63,11 @@ export default {
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    fontWeight: 'normal'
   },
   secondaryText: {
-    color: colors.primaryText,
+    color: colors.secondaryText,
     fontSize: '14px',
     fontWeight: 'normal',
     marginBottom: 0,

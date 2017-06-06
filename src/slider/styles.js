@@ -56,7 +56,7 @@ export default {
   },
   label: {
     fontSize: '16px',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     fontWeight: 'bold',
     marginBottom: '10px',
     display: 'inline-block'
