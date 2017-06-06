@@ -53,6 +53,8 @@ export default {
   button: {
     position: 'absolute',
     right: '8px',
+    top: '50%',
+    transform: 'translateY(-50%)',
     transition: 'transform .3s ease-in-out'
   },
   primaryText: {
@@ -83,7 +85,9 @@ export default {
   },
   avatar: {
     position: 'absolute',
-    left: '8px'
+    left: '8px',
+    top: '50%',
+    transform: 'translateY(-50%)'
   },
   badge: {
     position: 'absolute',
