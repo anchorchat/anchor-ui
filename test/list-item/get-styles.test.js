@@ -6,7 +6,7 @@ import styles from '../../src/list-item/styles';
 describe('ListItem.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
-      const style = getStyles.root(null, false, false, false, true, {});
+      const style = getStyles.root(null, false, false, false, false, {});
 
       expect(style).to.deep.equal(styles.root);
     });
@@ -35,10 +35,10 @@ describe('ListItem.getStyles', () => {
       expect(style).to.have.property('paddingLeft', '56px');
     });
 
-    it('should add single-line styles', () => {
-      const style = getStyles.root();
+    it('should add multi line styles', () => {
+      const style = getStyles.root(null, false, false, false, true, {});
 
-      expect(style).to.have.property('height', '48px');
+      expect(style).to.have.property('height', '52px');
     });
   });
 
