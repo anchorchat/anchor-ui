@@ -38,8 +38,6 @@ class MessageInputDoc extends React.Component {
         padding: '20px'
       },
       messageInput: {
-        paddingTop: 0,
-        paddingBottom: 0,
         margin: '10px'
       }
     };
@@ -64,6 +62,11 @@ class MessageInputDoc extends React.Component {
               value={this.state.name}
               sendMessage={() => {}}
               leftButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconEmoji />
+                </Button>
+              }
+              rightButton={
                 <Button iconButton onClick={() => {}}>
                   <IconEmoji />
                 </Button>
