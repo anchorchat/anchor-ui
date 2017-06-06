@@ -7,7 +7,6 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import Profile from '../../src/profile';
 import Avatar from '../../src/avatar';
-import Button from '../../src/button';
 import getStyles from '../../src/profile/get-styles';
 
 chai.use(sinonChai);
@@ -28,7 +27,6 @@ describe('Profile.index', () => {
     header: 'header'
   };
   const children = <p>children</p>;
-  const button = <Button />;
   const coverBackground = {
     backgroundImage: 'url()'
   };
@@ -52,9 +50,12 @@ describe('Profile.index', () => {
   });
 
   it('should always render the value of the button prop', () => {
-    const profile = shallow(<Profile {...props} >{button}</Profile>);
+    props.button = <button>text</button>;
+    const profile = shallow(<Profile {...props} />);
 
-    expect(profile.contains(button)).to.equal(true);
+    expect(profile.find('button')).to.have.length(0);
+    expect(profile.containsMatchingElement(<button>text</button>)).to.equal(true);
+    props.button = null;
   });
 
   it('should always render the value of the children prop', () => {
