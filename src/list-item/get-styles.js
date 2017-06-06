@@ -59,7 +59,7 @@ const nestedListButton = (open) => {
   let style = styles.button;
 
   if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg)' });
+    style = combineStyles(style, { transform: 'rotate(180deg) translateY(50%)' });
   }
 
   return style;
