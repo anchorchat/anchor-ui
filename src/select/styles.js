@@ -12,7 +12,7 @@ export default {
     minWidth: '100%',
     position: 'relative',
     paddingTop: '10px',
-    paddingRight: '34px',
+    paddingRight: '44px',
     paddingLeft: '10px',
     paddingBottom: '10px',
     boxSizing: 'border-box',
