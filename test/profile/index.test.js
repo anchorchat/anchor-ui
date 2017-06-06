@@ -11,6 +11,7 @@ import Button from '../../src/button';
 import getStyles from '../../src/profile/get-styles';
 
 chai.use(sinonChai);
+global.navigator = { userAgent: 'all' };
 
 describe('Profile.index', () => {
   const props = {
@@ -28,40 +29,74 @@ describe('Profile.index', () => {
   };
   const children = <p>children</p>;
   const button = <Button />;
+  const coverBackground = {
+    backgroundImage: 'url()'
+  };
 
   it('should always render four section elements', () => {
     const profile = shallow(<Profile {...props} />);
+
     expect(profile.find('section')).to.have.length(4);
   });
 
   it('should always render a h1 element', () => {
     const profile = shallow(<Profile {...props} />);
+
     expect(profile.find('h1')).to.have.length(1);
+  });
+
+  it('should pass the value of the header prop to the h1 element', () => {
+    const profile = shallow(<Profile {...props} />);
+
+    expect(profile.containsMatchingElement(<h1>header</h1>)).to.equal(true);
   });
 
   it('should always render the value of the button prop', () => {
     const profile = shallow(<Profile {...props} >{button}</Profile>);
+
     expect(profile.contains(button)).to.equal(true);
   });
 
   it('should always render the value of the children prop', () => {
     const profile = shallow(<Profile {...props} >{children}</Profile>);
+
     expect(profile.contains(children)).to.equal(true);
   });
 
   it('should not render a p element if the secondaryText prop is not passed', () => {
     const profile = shallow(<Profile {...props} />);
+
     expect(profile.find('p')).to.have.length(0);
+  });
+
+  it('should render a p element if the secondaryText prop is passed', () => {
+    props.secondaryText = 'text';
+    const profile = shallow(<Profile {...props} />);
+
+    expect(profile.find('p')).to.have.length(1);
+    props.secondaryText = '';
+  });
+
+  it('should pass the value of the secondaryText prop to the p element', () => {
+    props.secondaryText = 'text';
+    const profile = shallow(<Profile {...props} />);
+
+    expect(profile.containsMatchingElement(<p>text</p>)).to.equal(true);
+    props.secondaryText = '';
   });
 
   it('should not render an Avatar component if the avatar prop is not passed', () => {
     const profile = shallow(<Profile {...props} />);
+
     expect(profile.find(Avatar)).to.have.length(0);
   });
 
-  it('should pass the value of the header prop to the h1 element', () => {
+  it('should render an Avatar component if the avatar prop is passed', () => {
+    props.avatar = 'imageurl';
     const profile = shallow(<Profile {...props} />);
-    expect(profile.containsMatchingElement(<h1>header</h1>)).to.equal(true);
+
+    expect(profile.find(Avatar)).to.have.length(1);
+    props.avatar = '';
   });
 
   it('should get root styles', () => {
@@ -71,26 +106,26 @@ describe('Profile.index', () => {
     expect(spy).to.have.been.calledWith(props.style);
   });
 
-  it('should render if the avatar prop is passed', () => {
-    props.avatar = 'imageurl';
-    const profile = shallow(<Profile {...props} />);
-    expect(profile.find(Avatar)).to.have.length(1);
-    props.avatar = '';
+  it('should get coverImage styles', () => {
+    const spy = sinon.spy(getStyles, 'coverImage');
+
+    shallow(<Profile {...props} />);
+    expect(spy).to.have.been.calledWith(coverBackground);
   });
 
-  describe('the p element', () => {
-    before(() => {
-      props.secondaryText = 'text';
-    });
+  it('should get header styles', () => {
+    const spy = sinon.spy(getStyles, 'header');
 
-    it('should render if the secondaryText prop is passed', () => {
-      const profile = shallow(<Profile {...props} />);
-      expect(profile.find('p')).to.have.length(1);
-    });
+    shallow(<Profile {...props} />);
+    expect(spy).to.have.been.calledWith(props.headerStyle);
+  });
 
-    it('should get passed the value of the secondaryText prop', () => {
-      const profile = shallow(<Profile {...props} />);
-      expect(profile.containsMatchingElement(<p>text</p>)).to.equal(true);
-    });
+  it('should get secondaryText styles', () => {
+    props.secondaryText = 'text';
+    const spy = sinon.spy(getStyles, 'secondaryText');
+
+    shallow(<Profile {...props} />);
+    expect(spy).to.have.been.calledWith(props.secondaryTextStyle);
+    props.secondaryText = '';
   });
 });
