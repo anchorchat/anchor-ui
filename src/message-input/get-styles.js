@@ -11,9 +11,7 @@ const root = (disabled, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const input = (leftButton, rightButton, overrideStyle) => (
-  combineStyles(styles.input, overrideStyle)
-);
+const input = overrideStyle => combineStyles(styles.input, overrideStyle);
 
 export default {
   root,
