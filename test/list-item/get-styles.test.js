@@ -78,7 +78,7 @@ describe('ListItem.getStyles', () => {
     it('should add open styles', () => {
       const style = getStyles.nestedListButton(true);
 
-      expect(style).to.have.property('transform', 'rotate(180deg)');
+      expect(style).to.have.property('transform', 'rotate(180deg) translateY(50%)');
     });
   });
 });
