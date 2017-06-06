@@ -10,7 +10,7 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: '64px',
+    height: '48px',
     listStyle: 'none',
     paddingTop: '10px',
     paddingRight: '10px',

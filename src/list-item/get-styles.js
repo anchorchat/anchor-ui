@@ -34,8 +34,8 @@ const root = (
     style = combineStyles(style, styles.leftAvatar);
   }
 
-  if (!secondaryLine) {
-    style = combineStyles(style, { height: '48px' });
+  if (secondaryLine) {
+    style = combineStyles(style, { height: '64px' });
   }
 
   return combineStyles(style, overrideStyle);
