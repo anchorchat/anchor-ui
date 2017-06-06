@@ -36,9 +36,6 @@ class MessageInputDoc extends React.Component {
         alignItems: 'center',
         margin: 0,
         padding: '20px'
-      },
-      messageInput: {
-        margin: '10px'
       }
     };
 
@@ -71,7 +68,6 @@ class MessageInputDoc extends React.Component {
                   <IconEmoji />
                 </Button>
               }
-              style={style.messageInput}
             />
           </Paper>
         </section>
