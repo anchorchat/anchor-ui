@@ -45,6 +45,9 @@ const ListItemDoc = () => {
           <List>
             <ListItem
               primaryText="Default item"
+            />
+            <ListItem
+              primaryText="Default item"
               secondaryText="Secondary text"
             />
             <ListItem
