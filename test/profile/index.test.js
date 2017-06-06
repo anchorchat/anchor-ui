@@ -53,7 +53,7 @@ describe('Profile.index', () => {
     props.button = <button>text</button>;
     const profile = shallow(<Profile {...props} />);
 
-    expect(profile.find('button')).to.have.length(0);
+    expect(profile.find('button')).to.have.length(1);
     expect(profile.containsMatchingElement(<button>text</button>)).to.equal(true);
     props.button = null;
   });
