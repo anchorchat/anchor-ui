@@ -144,7 +144,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton, avatar, secondaryText || textBadge, style)} {...custom}>
           {
             avatar
             ? <div style={styles.avatar}>

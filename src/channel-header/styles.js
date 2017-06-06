@@ -9,7 +9,7 @@ const styleSheet = {
     boxSizing: 'border-box'
   },
   text: {
-    color: colors.primaryText,
+    color: colors.secondaryText,
     fontSize: '18px',
     fontWeight: 'bold',
     margin: 0,

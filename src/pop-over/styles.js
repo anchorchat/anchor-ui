@@ -24,7 +24,7 @@ export default {
     margin: '0',
     fontSize: '16px',
     fontWeight: 'bold',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     overflow: 'hidden',
     textOverflow: 'ellipsis'
   }

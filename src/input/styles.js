@@ -23,7 +23,7 @@ export default {
   },
   label: {
     boxSizing: 'border-box',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     display: 'block',
     paddingBottom: '8px',
     paddingLeft: '8px',

@@ -18,7 +18,9 @@ export default {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    display: 'inline-block'
+    display: 'inline-block',
+    color: colors.white,
+    fontWeight: 'normal'
   },
   text: {
     fontSize: '16px',

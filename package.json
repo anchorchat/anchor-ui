@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "3.5.2",
+  "version": "3.5.3",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -78,7 +78,6 @@
     "radium": "^0.19.0",
     "react-event-listener": "^0.4.5",
     "react-measure": "^1.4.5",
-    "react-onclickoutside": "^6.0.1",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }

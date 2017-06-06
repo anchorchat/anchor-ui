@@ -58,6 +58,7 @@ class RadioButtonDoc extends Component {
               onChange={this.toggleRadio}
               value={this.state.value}
               style={style.radioButtonGroup}
+              label="RadioButton"
             >
               <RadioButton
                 label="Default checked"

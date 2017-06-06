@@ -6,13 +6,13 @@ import styles from '../../src/list-item/styles';
 describe('ListItem.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
-      const style = getStyles.root();
+      const style = getStyles.root(null, false, false, false, false, {});
 
       expect(style).to.deep.equal(styles.root);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -33,6 +33,12 @@ describe('ListItem.getStyles', () => {
       const style = getStyles.root('red', false, false, true);
 
       expect(style).to.have.property('paddingLeft', '56px');
+    });
+
+    it('should add multi line styles', () => {
+      const style = getStyles.root(null, false, false, false, true, {});
+
+      expect(style).to.have.property('height', '52px');
     });
   });
 
