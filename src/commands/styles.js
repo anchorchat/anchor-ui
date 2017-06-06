@@ -29,7 +29,7 @@ export default {
     margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     transition: 'all .3s ease-in-out',
 
     ':hover': {
