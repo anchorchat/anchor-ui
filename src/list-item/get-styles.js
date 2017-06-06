@@ -35,7 +35,7 @@ const root = (
   }
 
   if (secondaryLine) {
-    style = combineStyles(style, { height: '64px' });
+    style = combineStyles(style, { height: '52px' });
   }
 
   return combineStyles(style, overrideStyle);
