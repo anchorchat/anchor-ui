@@ -25,6 +25,9 @@ const ListItemDoc = () => {
       alignItems: 'center',
       margin: 0,
       padding: '20px'
+    },
+    list: {
+      width: '250px'
     }
   };
 
@@ -42,13 +45,23 @@ const ListItemDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <List>
+          <List style={style.list}>
             <ListItem
               primaryText="Default item"
             />
             <ListItem
               primaryText="Default item"
               secondaryText="Secondary text"
+            />
+            <ListItem
+              primaryText="Default item with some very very long text"
+              secondaryText="Very very very long Secondary text"
+              rightButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconClose />
+                </Button>
+              }
+              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
             />
             <ListItem
               primaryText="Active item"

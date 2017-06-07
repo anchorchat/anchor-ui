@@ -57,4 +57,14 @@ const nestedListButton = (open) => {
   return style;
 };
 
-export default { root, text, nestedListButton };
+const textContainer = (rightButton) => {
+  let style = styles.text;
+
+  if (rightButton) {
+    style = combineStyles(style, { width: 'calc(100% - 48px)' });
+  }
+
+  return style;
+};
+
+export default { root, text, nestedListButton, textContainer };
