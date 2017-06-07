@@ -144,37 +144,39 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton, avatar, secondaryText || textBadge, style)} {...custom}>
-          {
-            avatar
-            ? <div style={styles.avatar}>
-              {
-                muted && !blocked
-                ? <div style={styles.icon}><IconMute color={colors.white} /></div>
-                : null
-              }
-              {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-              {badge ? <div style={styles.badge}>{badge}</div> : null}
-              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
-            </div>
-            : null
-          }
-          <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
-            {primaryText}
-          </h1>
-          {
-            secondaryText || textBadge
-            ? <h2
-              style={getStyles.text(
-                styles.secondaryText,
-                active, textBadge,
-                secondaryTextStyle
-              )}
-            >
-              {textBadge} {secondaryText}
-            </h2>
-            : null
-          }
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, style)} {...custom}>
+          <div style={styles.text}>
+            {
+              avatar
+              ? <div style={styles.avatar}>
+                {
+                  muted && !blocked
+                  ? <div style={styles.icon}><IconMute color={colors.white} /></div>
+                  : null
+                }
+                {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+                {badge ? <div style={styles.badge}>{badge}</div> : null}
+                {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
+              </div>
+              : null
+            }
+            <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
+              {primaryText}
+            </h1>
+            {
+              secondaryText || textBadge
+              ? <h2
+                style={getStyles.text(
+                  styles.secondaryText,
+                  active, textBadge,
+                  secondaryTextStyle
+                )}
+              >
+                {textBadge} {secondaryText}
+              </h2>
+              : null
+            }
+          </div>
           {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
           {
             nestedList
