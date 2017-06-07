@@ -9,7 +9,9 @@ export default {
     overflow: 'hidden',
     width: '100%',
     height: '200px',
-    boxShadow: styles.depthShadows[0]
+    boxShadow: styles.depthShadows[0],
+    position: 'relative',
+    zIndex: 1
   },
   header: {
     backgroundColor: colors.theme,
@@ -24,11 +26,10 @@ export default {
   },
   command: {
     padding: '10px 20px 10px 10px',
+    margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
-    color: colors.primaryText,
-    display: 'flex',
-    justifyContent: 'space-between',
+    color: colors.secondaryText,
     transition: 'all .3s ease-in-out',
 
     ':hover': {
@@ -40,12 +41,25 @@ export default {
   },
   title: {
     fontWeight: 'bold',
-    marginRight: '10px',
+    marginRight: '5px',
     fontSize: '14px'
   },
   description: {
     fontStyle: 'italic',
     fontSize: '14px',
-    textAlign: 'right'
+    float: 'right'
+  },
+  clickAway: {
+    pointerEvents: 'all',
+    position: 'fixed',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    zIndex: 1,
+    opacity: 0
+  },
+  container: {
+    width: '100%'
   }
 };

@@ -3,7 +3,14 @@ import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 import styles from './styles';
 
-const root = (color = colors.theme, active, rightButton, avatar, overrideStyle) => {
+const root = (
+  color = colors.theme,
+  active,
+  rightButton,
+  avatar,
+  secondaryLine = null,
+  overrideStyle
+) => {
   let style = styles.root;
 
   const activeStyle = combineStyles(
@@ -27,6 +34,10 @@ const root = (color = colors.theme, active, rightButton, avatar, overrideStyle) 
     style = combineStyles(style, styles.leftAvatar);
   }
 
+  if (secondaryLine) {
+    style = combineStyles(style, { height: '52px' });
+  }
+
   return combineStyles(style, overrideStyle);
 };
 
@@ -48,7 +59,7 @@ const nestedListButton = (open) => {
   let style = styles.button;
 
   if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg)' });
+    style = combineStyles(style, { transform: 'rotate(180deg) translateY(50%)' });
   }
 
   return style;

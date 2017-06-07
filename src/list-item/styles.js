@@ -10,12 +10,12 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    height: '64px',
+    height: '48px',
     listStyle: 'none',
-    paddingTop: '10px',
-    paddingRight: '10px',
-    paddingLeft: '10px',
-    paddingBottom: '10px',
+    paddingTop: '0',
+    paddingRight: '8px',
+    paddingLeft: '8px',
+    paddingBottom: '0',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
     ':hover': {
@@ -52,8 +52,9 @@ export default {
   },
   button: {
     position: 'absolute',
-    right: '6px',
-    top: '12px',
+    right: '8px',
+    top: '50%',
+    transform: 'translateY(-50%)',
     transition: 'transform .3s ease-in-out'
   },
   primaryText: {
@@ -64,10 +65,11 @@ export default {
     userSelect: 'none',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    fontWeight: 'normal'
   },
   secondaryText: {
-    color: colors.primaryText,
+    color: colors.secondaryText,
     fontSize: '14px',
     fontWeight: 'normal',
     marginBottom: 0,
@@ -84,7 +86,8 @@ export default {
   avatar: {
     position: 'absolute',
     left: '8px',
-    top: '12px'
+    top: '50%',
+    transform: 'translateY(-50%)'
   },
   badge: {
     position: 'absolute',
