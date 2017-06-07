@@ -65,23 +65,16 @@ describe('Profile.index', () => {
   });
 
   it('should render a p element if the secondaryText prop is passed', () => {
-    props.secondaryText = 'text';
-    const profile = shallow(<Profile {...props} />);
-
-    expect(profile.find('p')).to.have.length(1);
-    props.secondaryText = '';
-  });
-
-  it('should pass the value of the secondaryText prop to the p element', () => {
-    props.secondaryText = 'text';
     let profile = shallow(<Profile {...props} />);
 
-    expect(profile.containsMatchingElement(<p>text</p>)).to.equal(true);
+    expect(profile.find('p')).to.have.length(0);
 
-    props.secondaryText = '';
+    props.secondaryText = 'text';
     profile = shallow(<Profile {...props} />);
 
-    expect(profile.containsMatchingElement(<p />)).to.equal(false);
+    expect(profile.find('p')).to.have.length(1);
+    expect(profile.containsMatchingElement(<p>text</p>)).to.equal(true);
+    props.secondaryText = '';
   });
 
   it('should not render an Avatar component if the avatar prop is not passed', () => {
