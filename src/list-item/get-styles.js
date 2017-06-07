@@ -26,14 +26,6 @@ const root = (
     style = combineStyles(style, activeStyle);
   }
 
-  if (rightButton) {
-    style = combineStyles(style, styles.rightButton);
-  }
-
-  if (avatar) {
-    style = combineStyles(style, styles.leftAvatar);
-  }
-
   if (secondaryLine) {
     style = combineStyles(style, { height: '52px' });
   }
@@ -59,7 +51,7 @@ const nestedListButton = (open) => {
   let style = styles.button;
 
   if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg) translateY(50%)' });
+    style = combineStyles(style, { transform: 'rotate(180deg)' });
   }
 
   return style;

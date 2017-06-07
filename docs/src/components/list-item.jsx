@@ -63,7 +63,6 @@ const ListItemDoc = () => {
             <ListItem
               primaryText="With rightButton"
               secondaryText="10/50"
-              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
               rightButton={
                 <Button iconButton onClick={() => {}}>
                   <IconClose />
