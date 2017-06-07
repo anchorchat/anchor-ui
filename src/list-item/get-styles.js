@@ -26,14 +26,6 @@ const root = (
     style = combineStyles(style, activeStyle);
   }
 
-  if (rightButton) {
-    style = combineStyles(style, styles.rightButton);
-  }
-
-  if (avatar) {
-    style = combineStyles(style, styles.leftAvatar);
-  }
-
   if (secondaryLine) {
     style = combineStyles(style, { height: '52px' });
   }

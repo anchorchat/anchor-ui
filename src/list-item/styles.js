@@ -8,8 +8,7 @@ export default {
     borderTop: `1px solid ${colors.white}`,
     cursor: 'pointer',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    alignItems: 'center',
     height: '48px',
     listStyle: 'none',
     paddingTop: '0',
@@ -51,10 +50,6 @@ export default {
     paddingRight: '52px'
   },
   button: {
-    position: 'absolute',
-    right: '8px',
-    top: '50%',
-    transform: 'translateY(-50%)',
     transition: 'transform .3s ease-in-out'
   },
   primaryText: {
@@ -84,10 +79,9 @@ export default {
     paddingLeft: '56px'
   },
   avatar: {
-    position: 'absolute',
-    left: '8px',
-    top: '50%',
-    transform: 'translateY(-50%)'
+    position: 'relative',
+    float: 'left',
+    marginRight: '8px'
   },
   badge: {
     position: 'absolute',
@@ -97,5 +91,9 @@ export default {
   },
   container: {
     width: '100%'
+  },
+  text: {
+    width: '100%',
+    paddingRight: '8px'
   }
 };

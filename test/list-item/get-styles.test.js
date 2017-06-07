@@ -23,18 +23,6 @@ describe('ListItem.getStyles', () => {
       expect(style[':hover']).to.have.property('backgroundColor', 'hsl(0, 100%, 47.5%)');
     });
 
-    it('should add rightButton styles', () => {
-      const style = getStyles.root('red', false, true);
-
-      expect(style).to.have.property('paddingRight', '52px');
-    });
-
-    it('should add avatar styles', () => {
-      const style = getStyles.root('red', false, false, true);
-
-      expect(style).to.have.property('paddingLeft', '56px');
-    });
-
     it('should add multi line styles', () => {
       const style = getStyles.root(null, false, false, false, true, {});
 
