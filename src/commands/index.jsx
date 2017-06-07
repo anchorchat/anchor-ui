@@ -164,8 +164,10 @@ class Commands extends Component {
               key={command.title}
               onClick={() => this.handleSelect(command.title)}
             >
-              <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
-              {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
+              <span>
+                <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
+                {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
+              </span>
               <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
             </p>
           ))}

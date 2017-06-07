@@ -27,8 +27,11 @@ export default {
     margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     transition: 'all .3s ease-in-out',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
 
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
