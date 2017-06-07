@@ -5,10 +5,9 @@ import compose from 'recompose/compose';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
+import onClickOutside from 'react-onclickoutside';
 import themeable from '../themeable';
 import getStyles from './get-styles';
-import styles from './styles';
-import combineStyles from '../internal/combine-styles';
 
 const propTypes = {
   /** Text to display in the header */
@@ -107,7 +106,7 @@ class Commands extends Component {
     });
   }
 
-  handleClose = () => {
+  handleClickOutside = () => {
     const { commands } = this.props;
 
     this.setState({
@@ -155,24 +154,21 @@ class Commands extends Component {
     }
 
     return (
-      <section style={combineStyles(styles.container, style)} {...custom}>
-        <div style={styles.clickAway} onClick={this.handleClose} />
-        <section style={getStyles.root()}>
-          <header style={getStyles.header(color, headerStyle)}>{header}</header>
-          <section style={getStyles.commands()}>
-            {map(this.state.commands, command => (
-              <p
-                onMouseOver={() => onHover(command.title)}
-                style={getStyles.command()}
-                key={command.title}
-                onClick={() => this.handleSelect(command.title)}
-              >
-                <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
-                {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
-                <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
-              </p>
-            ))}
-          </section>
+      <section style={getStyles.root(style)} {...custom}>
+        <header style={getStyles.header(color, headerStyle)}>{header}</header>
+        <section style={getStyles.commands()}>
+          {map(this.state.commands, command => (
+            <p
+              onMouseOver={() => onHover(command.title)}
+              style={getStyles.command()}
+              key={command.title}
+              onClick={() => this.handleSelect(command.title)}
+            >
+              <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
+              {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
+              <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
+            </p>
+          ))}
         </section>
       </section>
     );
@@ -185,6 +181,7 @@ Commands.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),
+  onClickOutside,
   Radium
 );
 
