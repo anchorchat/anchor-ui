@@ -976,7 +976,7 @@
         "required": true,
         "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {command} string The command's title"
       },
-      "onHover": {
+      "onMouseOver": {
         "type": {
           "name": "func"
         },

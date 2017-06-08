@@ -46,7 +46,7 @@ const propTypes = {
    *
    * @param {command} string The command's title
    */
-  onHover: PropTypes.func.isRequired,
+  onMouseOver: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
 };
 
@@ -132,7 +132,7 @@ class Commands extends Component {
       commands, // eslint-disable-line no-unused-vars
       value,
       color,
-      onHover,
+      onMouseOver,
       onSelect,
       style,
       headerStyle,
@@ -159,7 +159,7 @@ class Commands extends Component {
         <section style={getStyles.commands()}>
           {map(this.state.commands, command => (
             <p
-              onMouseOver={event => onHover(event, command.title)}
+              onMouseOver={event => onMouseOver(event, command.title)}
               style={getStyles.command()}
               key={command.title}
               onClick={event => this.handleSelect(event, command.title)}

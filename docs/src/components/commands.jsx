@@ -35,7 +35,7 @@ class CommandsDoc extends Component {
     return this.setState({ value: event.currentTarget.value });
   }
 
-  handleHover = (event, command) => this.setState({ command })
+  handleMouseOver = (event, command) => this.setState({ command })
 
   handleSelect = (event, command) => {
     this.setState({
@@ -120,7 +120,7 @@ class CommandsDoc extends Component {
               style={style.commands}
               value={this.state.value}
               commands={commands}
-              onHover={this.handleHover}
+              onMouseOver={this.handleMouseOver}
               onSelect={this.handleSelect}
             />
             <MessageInput
