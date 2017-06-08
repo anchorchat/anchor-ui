@@ -36,15 +36,15 @@ const propTypes = {
   /** Override the styles of the param element */
   paramStyle: PropTypes.instanceOf(Object),
   /**
-   * Callback fired when a command is selected, currently only click events are supported
+   * Callback fired when a command is clicked
    *
-   * @param {command} string The command's title
+   * function(event: object, command: string) => void
    */
   onSelect: PropTypes.func.isRequired,
   /**
-   * Callback fired when a command is hovered
+   * Callback fired when a command is moused over
    *
-   * @param {command} string The command's title
+   * function(event: object, command: string) => void
    */
   onMouseOver: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
