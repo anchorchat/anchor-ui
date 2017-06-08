@@ -17,7 +17,7 @@ describe('Select.getStyles', () => {
 
     it('should add open styles', () => {
       const style = getStyles.icon(true);
-      expect(style).to.have.property('transform', 'rotate(180deg)');
+      expect(style).to.have.property('transform', 'rotate(180deg) translateY(50%)');
     });
   });
 
