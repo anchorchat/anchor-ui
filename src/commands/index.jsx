@@ -115,7 +115,7 @@ class Commands extends Component {
     });
   }
 
-  handleSelect = (command) => {
+  handleSelect = (event, command) => {
     const { onSelect, commands } = this.props;
 
     this.setState({
@@ -123,7 +123,7 @@ class Commands extends Component {
       commands
     });
 
-    onSelect(command);
+    onSelect(event, command);
   }
 
   render() {
@@ -159,10 +159,10 @@ class Commands extends Component {
         <section style={getStyles.commands()}>
           {map(this.state.commands, command => (
             <p
-              onMouseOver={() => onHover(command.title)}
+              onMouseOver={event => onHover(event, command.title)}
               style={getStyles.command()}
               key={command.title}
-              onClick={() => this.handleSelect(command.title)}
+              onClick={event => this.handleSelect(event, command.title)}
             >
               <span>
                 <strong style={getStyles.title(titleStyle)}>{command.title}</strong>

@@ -35,9 +35,9 @@ class CommandsDoc extends Component {
     return this.setState({ value: event.currentTarget.value });
   }
 
-  handleHover = command => this.setState({ command })
+  handleHover = (event, command) => this.setState({ command })
 
-  handleSelect = (command) => {
+  handleSelect = (event, command) => {
     this.setState({
       value: command
     });
