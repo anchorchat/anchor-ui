@@ -7,7 +7,7 @@ const icon = (open, overrideStyle) => {
   let style = styles.icon;
 
   if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg)' });
+    style = combineStyles(style, { transform: 'rotate(180deg) translateY(50%)' });
   }
 
   return combineStyles(style, overrideStyle);

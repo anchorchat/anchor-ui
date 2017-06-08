@@ -9,9 +9,7 @@ export default {
     overflow: 'hidden',
     width: '100%',
     height: '200px',
-    boxShadow: styles.depthShadows[0],
-    position: 'relative',
-    zIndex: 1
+    boxShadow: styles.depthShadows[0]
   },
   header: {
     backgroundColor: colors.theme,
@@ -31,6 +29,9 @@ export default {
     cursor: 'pointer',
     color: colors.secondaryText,
     transition: 'all .3s ease-in-out',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
 
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
@@ -48,18 +49,5 @@ export default {
     fontStyle: 'italic',
     fontSize: '14px',
     float: 'right'
-  },
-  clickAway: {
-    pointerEvents: 'all',
-    position: 'fixed',
-    width: '100%',
-    height: '100%',
-    top: 0,
-    left: 0,
-    zIndex: 1,
-    opacity: 0
-  },
-  container: {
-    width: '100%'
   }
 };
