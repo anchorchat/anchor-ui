@@ -43,8 +43,7 @@ function TextMessage({
   messageTimeStyle,
   timeFormat,
   emoji,
-  enableLinks,
-  iconMenu
+  enableLinks
 }) {
   return (
     <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
@@ -70,7 +69,6 @@ function TextMessage({
           timeFormat={timeFormat}
         />
       </p>
-      {iconMenu}
     </div>
   );
 }
@@ -96,8 +94,7 @@ TextMessage.propTypes = {
   emoji: PropTypes.bool,
   enableLinks: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string,
-  iconMenu: PropTypes.node
+  color: PropTypes.string
 };
 
 TextMessage.defaultProps = {

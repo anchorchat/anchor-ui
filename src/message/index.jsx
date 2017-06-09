@@ -100,7 +100,7 @@ class Message extends Component {
   }
 
   renderIconMenu() {
-    const { menuItems, compact, message, myMessage } = this.props;
+    const { menuItems } = this.props;
 
     if (!menuItems) {
       return null;
@@ -109,7 +109,6 @@ class Message extends Component {
     return (
       <IconMenu
         icon={<IconChevronDown />}
-        style={getStyles.iconMenu(compact, message.type, myMessage)}
       >
         {menuItems}
       </IconMenu>
@@ -123,9 +122,6 @@ class Message extends Component {
       expandIcon,
       expandText,
       menuItems,
-      compact,
-      message,
-      myMessage
     } = this.props;
 
     if (!expand || (!menuItems && !collapsed)) {
@@ -136,7 +132,6 @@ class Message extends Component {
       return (
         <IconMenu
           icon={<IconChevronDown />}
-          style={getStyles.iconMenu(compact, message.type, myMessage)}
         >
           <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
         </IconMenu>
@@ -147,7 +142,6 @@ class Message extends Component {
       return (
         <IconMenu
           icon={<IconChevronDown />}
-          style={getStyles.iconMenu(compact, message.type, myMessage)}
         >
           {menuItems}
         </IconMenu>
@@ -157,7 +151,6 @@ class Message extends Component {
     return (
       <IconMenu
         icon={<IconChevronDown />}
-        style={getStyles.iconMenu(compact, message.type, myMessage)}
       >
         {menuItems}
         <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
@@ -192,14 +185,12 @@ class Message extends Component {
 
     let messageElement = (<TextMessage
       color={color}
-      iconMenu={this.renderIconMenu()}
       {...this.props}
     />);
 
     if (message.type === 'image') {
       messageElement = (<ImageMessage
         color={color}
-        iconMenu={this.renderImageIconMenu()}
         {...this.props}
       />);
     }
@@ -207,7 +198,6 @@ class Message extends Component {
     if (message.type === 'sticker') {
       messageElement = (<StickerMessage
         color={color}
-        iconMenu={this.renderIconMenu()}
         {...this.props}
       />);
     }
@@ -215,6 +205,7 @@ class Message extends Component {
     return (
       <section style={getStyles.container(myMessage, compact)} {...custom}>
         {messageElement}
+        {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
       </section>
     );
   }

@@ -35,7 +35,7 @@ export default {
   compact: {
     marginLeft: '0',
     marginRight: '0',
-    maxWidth: 'calc(100% - 56px)',
+    maxWidth: 'calc(100% - 40px)',
     display: 'flex'
   }
 };

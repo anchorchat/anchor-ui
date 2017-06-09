@@ -43,8 +43,7 @@ class ImageMessage extends Component {
       timeFormat,
       enableLightbox,
       collapsed,
-      collapsedText,
-      iconMenu
+      collapsedText
     } = this.props;
     const { lightbox } = this.state;
 
@@ -100,7 +99,6 @@ class ImageMessage extends Component {
           />
           : null
         }
-        {iconMenu}
       </div>
     );
   }
@@ -128,8 +126,7 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
-  iconMenu: PropTypes.node
+  collapsedText: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
