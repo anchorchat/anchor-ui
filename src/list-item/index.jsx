@@ -145,21 +145,21 @@ class ListItem extends Component {
     return (
       <div style={styles.container}>
         <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, style)} {...custom}>
-          <div style={getStyles.textContainer(rightButton || nestedList)}>
-            {
-              avatar
-              ? <div style={styles.avatar}>
-                {
-                  muted && !blocked
-                  ? <div style={styles.icon}><IconMute color={colors.white} /></div>
-                  : null
-                }
-                {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-                {badge ? <div style={styles.badge}>{badge}</div> : null}
-                {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
-              </div>
-              : null
-            }
+          {
+            avatar
+            ? <div style={styles.avatar}>
+              {
+                muted && !blocked
+                ? <div style={styles.icon}><IconMute color={colors.white} /></div>
+                : null
+              }
+              {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+              {badge ? <div style={styles.badge}>{badge}</div> : null}
+              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
+            </div>
+            : null
+          }
+          <div style={getStyles.textContainer(avatar, rightButton || nestedList)}>
             <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
               {primaryText}
             </h1>
