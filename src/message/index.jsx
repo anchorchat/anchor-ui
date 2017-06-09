@@ -107,9 +107,7 @@ class Message extends Component {
     }
 
     return (
-      <IconMenu
-        icon={<IconChevronDown />}
-      >
+      <IconMenu icon={<IconChevronDown />}>
         {menuItems}
       </IconMenu>
     );
@@ -130,9 +128,7 @@ class Message extends Component {
 
     if (!menuItems && collapsed) {
       return (
-        <IconMenu
-          icon={<IconChevronDown />}
-        >
+        <IconMenu icon={<IconChevronDown />}>
           <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
         </IconMenu>
       );
@@ -140,18 +136,14 @@ class Message extends Component {
 
     if (menuItems && !collapsed) {
       return (
-        <IconMenu
-          icon={<IconChevronDown />}
-        >
+        <IconMenu icon={<IconChevronDown />}>
           {menuItems}
         </IconMenu>
       );
     }
 
     return (
-      <IconMenu
-        icon={<IconChevronDown />}
-      >
+      <IconMenu icon={<IconChevronDown />}>
         {menuItems}
         <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
       </IconMenu>
