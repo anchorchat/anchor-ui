@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
 import List from '../../../dist/list';
 import ListItem from '../../../dist/list-item';
 import npmPackage from '../../../package.json';
