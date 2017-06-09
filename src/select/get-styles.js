@@ -3,14 +3,14 @@ import combineStyles from '../internal/combine-styles';
 import styles from './styles';
 import darken from '../internal/darken';
 
-const icon = (open, overrideStyle) => {
+const icon = (open) => {
   let style = styles.icon;
 
   if (open) {
     style = combineStyles(style, { transform: 'rotate(180deg) translateY(50%)' });
   }
 
-  return combineStyles(style, overrideStyle);
+  return style;
 };
 
 const header = (errorMessage = null, color = colors.theme, overrideStyle) => {

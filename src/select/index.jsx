@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import find from 'lodash/find';
+import onClickOutside from 'react-onclickoutside';
 import styles from './styles';
 import getStyles from './get-styles';
 import IconChevronDown from '../icons/icon-chevron-down';
@@ -108,6 +109,8 @@ class Select extends Component {
     });
   }
 
+  handleClickOutside = () => this.closeSelect()
+
   render() {
     const { open, position, popOverWidth } = this.state;
     const {
@@ -123,6 +126,12 @@ class Select extends Component {
       error,
       errorStyle,
       color,
+      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
+      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
+      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
+      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       ...custom
     } = this.props;
 
@@ -148,20 +157,17 @@ class Select extends Component {
     return (
       <section
         ref={container => (this.container = container)}
-        style={combineStyles(styles.container, style)}
+        style={combineStyles(styles.root, style)}
         {...custom}
       >
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
-        {open ? <div style={styles.clickAway} onClick={this.toggleSelect} /> : null}
         <header
           ref={button => (this.button = button)}
           style={getStyles.header(error, color, headerStyle)}
           onClick={this.toggleSelect}
         >
           {headerText}
-          <div style={getStyles.icon(open, {})}>
-            <IconChevronDown color={colors.white} />
-          </div>
+          <IconChevronDown color={colors.white} style={getStyles.icon(open)} />
         </header>
         <PopOver
           style={popOverStyle}
@@ -179,6 +185,7 @@ class Select extends Component {
 
 const enhance = compose(
   themeable(),
+  onClickOutside,
   Radium
 );
 
