@@ -7,6 +7,7 @@ import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import IconRocket from '../../../dist/icons/icon-rocket';
 
 const usage = '```js\n import Menu from \'anchor-ui/menu\';';
 
@@ -15,10 +16,12 @@ class MenuDoc extends Component {
     super();
 
     this.state = {
-      open: false
+      open: false,
+      openIconHeader: false
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleMenuIconHeader = this.toggleMenuIconHeader.bind(this);
   }
 
   toggleMenu() {
@@ -27,8 +30,14 @@ class MenuDoc extends Component {
     });
   }
 
+  toggleMenuIconHeader() {
+    this.setState({
+      openIconHeader: !this.state.openIconHeader
+    });
+  }
+
   render() {
-    const { open } = this.state;
+    const { open, openIconHeader } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Menu');
     const style = {
       paper: {
@@ -55,16 +64,37 @@ class MenuDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
+            <Menu style={{ height: 'auto', display: 'inline-block' }} toggleMenu={() => {}} header="Sidebar menu" sidebar>
+              <MenuItem text="Active Menu item" onClick={() => {}} active />
+              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Menu item" onClick={() => {}} />
+            </Menu>
             <Button
               style={style.button}
               onClick={this.toggleMenu}
             >
-              Open Menu
+              Default Menu
+            </Button>
+            <Button
+              style={style.button}
+              onClick={this.toggleMenuIconHeader}
+            >
+              Menu with iconHeader
             </Button>
             <Menu
               toggleMenu={this.toggleMenu}
-              header="Menu"
+              header="Default Menu"
               open={open}
+            >
+              <MenuItem text="Active Menu item" onClick={() => {}} active />
+              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Menu item" onClick={() => {}} />
+            </Menu>
+            <Menu
+              toggleMenu={this.toggleMenuIconHeader}
+              header="IconHeader Menu"
+              open={openIconHeader}
+              headerIcon={<IconRocket />}
             >
               <MenuItem text="Active Menu item" onClick={() => {}} active />
               <MenuItem text="Menu item" onClick={() => {}} />

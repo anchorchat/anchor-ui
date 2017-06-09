@@ -3350,6 +3350,29 @@
           "computed": false
         }
       },
+      "headerIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The header's icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "instanceOf",
@@ -3373,6 +3396,24 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "sidebar": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Use Menu as sidebar menu",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
