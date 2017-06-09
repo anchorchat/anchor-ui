@@ -22,7 +22,11 @@ class EmojiMenu extends Component {
   static propTypes = {
     /** Path to svg sprites */
     svgSprites: PropTypes.string,
-    /** Send an emoji */
+    /**
+     * Callback fired when an emoji is clicked
+     *
+     * function(event: object, emoji: object) => void
+     */
     sendEmoji: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -86,11 +90,11 @@ class EmojiMenu extends Component {
     });
   }
 
-  sendEmoji(emoji) {
+  sendEmoji(event, emoji) {
     const { sendEmoji } = this.props;
 
     storage.storeEmoji(emoji);
-    sendEmoji(emoji);
+    sendEmoji(event, emoji);
 
     const storedEmojis = storage.getEmojis();
 
