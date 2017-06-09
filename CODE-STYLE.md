@@ -177,6 +177,55 @@ const style = {
 };
 ```
 
-### CSS rules
+## CSS rules
 
-@IanCStewart please add this :)
+### Transitions
+
+Try to use transitions that are lightweight.
+
+```css
+/* bad */
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all ease-in-out;
+}
+
+.root:hover {
+  left: 250px;
+}
+
+/* good */
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all ease-in-out;
+}
+
+.root:hover {
+  transform: translate(250px);
+}
+```
+
+### Multiple items
+
+Use a line-break when you have multiple items with the same style.
+
+```css
+/* bad */
+.root, .container {
+  background: blue;
+}
+
+/* good */
+.root,
+.container {
+  background: blue;
+}
+```
+
+### Fancy css
+
+If possible use `display: flex` and/or `display: grid` instead of `float`. If you're not sure if this css feature is compatible, check [caniuse.com](http://caniuse.com/). To see which browser you should support check the compatibility of React.
