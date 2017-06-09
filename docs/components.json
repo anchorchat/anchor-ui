@@ -3336,8 +3336,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Toggle the Menu's visibility"
+        "required": false,
+        "description": "Toggle the Menu's visibility",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "header": {
         "type": {

@@ -64,7 +64,7 @@ class MenuDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <Menu style={{ height: 'auto', display: 'inline-block' }} toggleMenu={() => {}} header="Sidebar menu" sidebar>
+            <Menu style={{ height: 'auto', display: 'inline-block' }} header="Sidebar menu" sidebar>
               <MenuItem text="Active Menu item" onClick={() => {}} active />
               <MenuItem text="Menu item" onClick={() => {}} />
               <MenuItem text="Menu item" onClick={() => {}} />

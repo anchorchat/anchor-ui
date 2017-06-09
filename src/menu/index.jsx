@@ -30,7 +30,7 @@ const Menu = ({
     )
   ));
 
-  if (sidebar) {
+  if (sidebar || !toggleMenu) {
     return (
       <nav style={getStyles.sidebar(style)} {...custom}>
         {
@@ -68,7 +68,7 @@ Menu.propTypes = {
   /** Menu open */
   open: PropTypes.bool,
   /** Toggle the Menu's visibility */
-  toggleMenu: PropTypes.func.isRequired,
+  toggleMenu: PropTypes.func,
   /** The Menu's header */
   header: PropTypes.node,
   /** The header's icon */
@@ -86,6 +86,7 @@ Menu.propTypes = {
 
 Menu.defaultProps = {
   open: false,
+  toggleMenu: null,
   header: null,
   style: {},
   headerStyle: {},
