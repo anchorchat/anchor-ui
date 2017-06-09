@@ -28,7 +28,7 @@ describe('Alert', () => {
   });
 
   afterEach(() => {
-    global.navigator = { userAgent: null };
+    global.navigator = undefined;
   });
 
   it('should always render a section element', () => {

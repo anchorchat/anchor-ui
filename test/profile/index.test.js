@@ -35,7 +35,7 @@ describe('Profile', () => {
   });
 
   afterEach(() => {
-    global.navigator = { userAgent: null };
+    global.navigator = undefined;
   });
 
   it('should always render four section elements', () => {
