@@ -126,14 +126,20 @@ const ListItemDoc = () => {
             >
               <ListItem
                 primaryText="Item"
-                secondaryText="10/50"
+                secondaryText="Nest level 1"
                 avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
               />
               <ListItem
                 primaryText="Item"
-                secondaryText="10/50"
+                secondaryText="Nest level 1"
                 avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              />
+              >
+                <ListItem
+                  primaryText="Item"
+                  secondaryText="Nest level 2"
+                  avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
+                />
+              </ListItem>
             </ListItem>
             <ListItem
               primaryText="Nested list"
