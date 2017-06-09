@@ -24,34 +24,37 @@ class Pagination extends Component {
 
   componentDidMount() {
     const { initialPage, list, pageSize } = this.props;
-    this.setPage(initialPage, list, pageSize);
+    this.setPage({}, initialPage, list, pageSize);
   }
 
   componentWillReceiveProps(nextProps) {
     const { initialPage, list, pageSize, jumpToPage } = nextProps;
 
     if (!isEqual(list, this.props.list) || !isEqual(pageSize, this.props.pageSize)) {
-      this.setPage(initialPage, list, pageSize);
+      this.setPage({}, initialPage, list, pageSize);
     }
 
     if (!isEqual(jumpToPage, this.props.jumpToPage)) {
-      this.setPage(jumpToPage, list, pageSize);
+      this.setPage({}, jumpToPage, list, pageSize);
     }
   }
 
-  setPage = (page, list, pageSize) => {
+  setPage = (event, page, list, pageSize) => {
     const newPager = getPager(list, page, pageSize);
 
     const items = list.slice(newPager.startIndex, newPager.endIndex + 1);
 
     this.setState({ pager: newPager });
 
-    this.props.onChange({
-      items,
-      totalItems: newPager.totalItems,
-      totalPages: newPager.totalPages,
-      currentPage: newPager.currentPage
-    });
+    this.props.onChange(
+      event,
+      {
+        items,
+        totalItems: newPager.totalItems,
+        totalPages: newPager.totalPages,
+        currentPage: newPager.currentPage
+      }
+    );
   }
 
   render() {
@@ -71,13 +74,13 @@ class Pagination extends Component {
       <nav style={getStyles.nav(position, navStyle)}>
         <Button
           disabled={currentPage === 1}
-          onClick={() => this.setPage(1, list, pageSize)}
+          onClick={event => this.setPage(event, 1, list, pageSize)}
           style={getStyles.iconButton(iconButtonStyle)}
         >
           <IconFirst color={colors.white} />
         </Button>
         <Button
-          onClick={() => this.setPage(currentPage - 1, list, pageSize)}
+          onClick={event => this.setPage(event, currentPage - 1, list, pageSize)}
           disabled={currentPage === 1}
           style={getStyles.iconButton(iconButtonStyle)}
         >
@@ -85,7 +88,7 @@ class Pagination extends Component {
         </Button>
         {map(pages, (page, index) =>
           <Button
-            key={index} onClick={() => this.setPage(page, list, pageSize)}
+            key={index} onClick={event => this.setPage(event, page, list, pageSize)}
             style={getStyles.navButton(navButtonStyle)}
             disabled={currentPage === page}
             inverted
@@ -95,14 +98,14 @@ class Pagination extends Component {
         )}
         <Button
           disabled={currentPage === totalPages}
-          onClick={() => this.setPage(currentPage + 1, list, pageSize)}
+          onClick={event => this.setPage(event, currentPage + 1, list, pageSize)}
           style={getStyles.iconButton(iconButtonStyle)}
         >
           <IconChevronRight color={colors.white} />
         </Button>
         <Button
           disabled={currentPage === totalPages}
-          onClick={() => this.setPage(totalPages, list, pageSize)}
+          onClick={event => this.setPage(event, totalPages, list, pageSize)}
           style={getStyles.iconButton(iconButtonStyle)}
         >
           <IconLast color={colors.white} />
