@@ -183,23 +183,14 @@ class Message extends Component {
       ...custom
     } = this.props;
 
-    let messageElement = (<TextMessage
-      color={color}
-      {...this.props}
-    />);
+    let messageElement = (<TextMessage color={color} {...this.props} />);
 
     if (message.type === 'image') {
-      messageElement = (<ImageMessage
-        color={color}
-        {...this.props}
-      />);
+      messageElement = (<ImageMessage color={color} {...this.props} />);
     }
 
     if (message.type === 'sticker') {
-      messageElement = (<StickerMessage
-        color={color}
-        {...this.props}
-      />);
+      messageElement = (<StickerMessage color={color} {...this.props} />);
     }
 
     return (
