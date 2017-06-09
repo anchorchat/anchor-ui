@@ -51,7 +51,7 @@ class ListItem extends Component {
     open: PropTypes.bool,
     /** Callback function fired when the ListItem toggles its nested list */
     onNestedListToggle: PropTypes.func,
-    /** Nested depth of ListItem */
+    /** Nested depth of ListItem. This property is automatically managed, modify at own risk. */
     nestedLevel: PropTypes.number,
     color: PropTypes.string.isRequired
   }

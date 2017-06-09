@@ -42,7 +42,7 @@ List.propTypes = {
   headerStyle: PropTypes.instanceOf(Object),
   /** Toggle the List's visibility */
   open: PropTypes.bool,
-  /** Nested depth of List */
+  /** Nested depth of List. This property is automatically managed, modify at own risk. */
   nestedLevel: PropTypes.number,
 };
 
