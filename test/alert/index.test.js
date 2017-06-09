@@ -13,7 +13,7 @@ import getStyles from '../../src/alert/get-styles';
 chai.use(sinonChai);
 global.navigator = { userAgent: 'all' };
 
-describe('Alert.index', () => {
+describe('Alert', () => {
   const props = {
     style: {},
     iconStyle: {},

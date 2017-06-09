@@ -12,7 +12,7 @@ import getStyles from '../../src/profile/get-styles';
 chai.use(sinonChai);
 global.navigator = { userAgent: 'all' };
 
-describe('Profile.index', () => {
+describe('Profile', () => {
   const props = {
     avatar: '',
     coverImage: '',

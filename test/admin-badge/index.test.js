@@ -11,7 +11,7 @@ import getStyles from '../../src/admin-badge/get-styles';
 chai.use(sinonChai);
 global.navigator = { userAgent: 'all' };
 
-describe('AdminBadge.index', () => {
+describe('AdminBadge', () => {
   const props = {
     style: {},
     inverted: false,
