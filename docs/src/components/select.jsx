@@ -46,7 +46,7 @@ class SelectDoc extends Component {
 
     return (
       <article className="doc">
-        <h1>Menu Item</h1>
+        <h1>{componentData.displayName}</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>

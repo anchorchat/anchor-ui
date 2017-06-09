@@ -80,7 +80,6 @@ export default {
   },
   avatar: {
     position: 'relative',
-    float: 'left',
     marginRight: '8px'
   },
   badge: {

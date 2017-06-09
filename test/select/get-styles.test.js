@@ -10,11 +10,6 @@ describe('Select.getStyles', () => {
       expect(style).to.deep.equal(styles.icon);
     });
 
-    it('should combine styles', () => {
-      const style = getStyles.icon(false, { color: 'red' });
-      expect(style).to.have.property('color', 'red');
-    });
-
     it('should add open styles', () => {
       const style = getStyles.icon(true);
       expect(style).to.have.property('transform', 'rotate(180deg) translateY(50%)');
