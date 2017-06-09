@@ -2,8 +2,6 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const root = () => styles.root;
-
 const header = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
   let style = styles.message;
 
