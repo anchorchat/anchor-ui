@@ -3,7 +3,14 @@ import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 import styles from './styles';
 
-const root = (color = colors.theme, active, rightButton, avatar, overrideStyle) => {
+const root = (
+  color = colors.theme,
+  active,
+  rightButton,
+  avatar,
+  secondaryLine = null,
+  overrideStyle
+) => {
   let style = styles.root;
 
   const activeStyle = combineStyles(
@@ -19,12 +26,8 @@ const root = (color = colors.theme, active, rightButton, avatar, overrideStyle) 
     style = combineStyles(style, activeStyle);
   }
 
-  if (rightButton) {
-    style = combineStyles(style, styles.rightButton);
-  }
-
-  if (avatar) {
-    style = combineStyles(style, styles.leftAvatar);
+  if (secondaryLine) {
+    style = combineStyles(style, { height: '52px' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -54,4 +57,22 @@ const nestedListButton = (open) => {
   return style;
 };
 
-export default { root, text, nestedListButton };
+const textContainer = (avatar, rightButton) => {
+  let style = styles.text;
+
+  if (avatar) {
+    style = combineStyles(style, { width: 'calc(100% - 48px)' });
+  }
+
+  if (rightButton) {
+    style = combineStyles(style, { width: 'calc(100% - 48px)' });
+  }
+
+  if (avatar && rightButton) {
+    style = combineStyles(style, { width: 'calc(100% - 96px)' });
+  }
+
+  return style;
+};
+
+export default { root, text, nestedListButton, textContainer };

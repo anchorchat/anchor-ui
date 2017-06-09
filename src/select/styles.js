@@ -12,7 +12,7 @@ export default {
     minWidth: '100%',
     position: 'relative',
     paddingTop: '10px',
-    paddingRight: '10px',
+    paddingRight: '44px',
     paddingLeft: '10px',
     paddingBottom: '10px',
     boxSizing: 'border-box',
@@ -32,7 +32,8 @@ export default {
   },
   icon: {
     position: 'absolute',
-    top: '10px',
+    top: '50%',
+    transform: 'translateY(-50%)',
     right: '10px',
     width: '24px',
     height: '24px',
@@ -50,7 +51,7 @@ export default {
   },
   label: {
     fontSize: '16px',
-    color: colors.primaryText,
+    color: colors.secondaryText,
     fontWeight: 'bold',
     marginBottom: '10px',
     display: 'inline-block'

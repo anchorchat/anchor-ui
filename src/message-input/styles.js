@@ -1,28 +1,37 @@
 import colors from '../settings/colors';
+import styles from '../settings/styles';
 
 export default {
   root: {
-    paddingBottom: '16px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
-    paddingTop: '0',
-    position: 'relative'
-  },
-  messageInput: {
-    appearance: 'none',
-    border: '0',
-    borderRadius: '3px',
+    marginBottom: '16px',
+    marginLeft: '16px',
+    marginTop: '0',
+    marginRight: '16px',
+    position: 'relative',
+    height: '48px',
+    width: '100%',
     boxSizing: 'border-box',
+    display: 'flex',
+    alignItems: 'center',
+    borderRadius: '3px',
+    overflow: 'hidden',
+    backgroundColor: colors.white,
+    boxShadow: styles.depthShadows[0]
+  },
+  input: {
+    flex: '1',
+    height: '100%',
+    appearance: 'none',
     color: colors.primaryText,
     fontSize: '16px',
-    height: '48px',
-    paddingLeft: '10px',
-    paddingRight: '48px',
-    width: '100%',
     outline: 'none',
+    padding: '0 8px',
+    border: 0,
+
     ':focus': {
       outline: 'none'
     },
+
     ':disabled': {
       opacity: '0.38'
     }
@@ -30,17 +39,7 @@ export default {
   disabled: {
     opacity: '0.38'
   },
-  leftButton: {
-    paddingLeft: '48px'
-  },
-  button: {
-    left: '20px',
-    position: 'absolute',
-    top: '4px'
-  },
-  rightButton: {
-    position: 'absolute',
-    right: '20px',
-    top: '4px'
+  buttons: {
+    display: 'flex'
   }
 };

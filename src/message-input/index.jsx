@@ -30,6 +30,8 @@ class MessageInput extends Component {
     maxLength: PropTypes.number,
     /** Left-hand side placed button */
     leftButton: PropTypes.node,
+    /** Right-hand side placed button */
+    rightButton: PropTypes.node,
     /** Ref function to the element */
     inputRef: PropTypes.func,
     /** Disables the input for the messageInput area */
@@ -42,7 +44,8 @@ class MessageInput extends Component {
     inputStyle: {},
     maxLength: 500,
     leftButton: null,
-    disabled: false
+    disabled: false,
+    rightButton: null
   }
 
   constructor() {
@@ -72,20 +75,21 @@ class MessageInput extends Component {
       style,
       inputStyle,
       color,
+      rightButton,
       ...custom
     } = this.props;
 
     return (
-      <section style={getStyles.root(style)}>
+      <section style={getStyles.root(disabled, style)}>
         {
           leftButton
-          ? <div style={getStyles.button(styles.button, disabled)}>
+          ? <div style={styles.buttons}>
             {leftButton}
           </div>
           : null
         }
         <input
-          style={getStyles.input(leftButton, inputStyle)}
+          style={getStyles.input(inputStyle)}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -97,13 +101,15 @@ class MessageInput extends Component {
           key="input"
           {...custom}
         />
-        <Button
-          style={getStyles.button(styles.rightButton, disabled)}
-          iconButton
-          onClick={sendMessage}
-        >
-          <IconSend color={color} />
-        </Button>
+        <div style={styles.buttons}>
+          {rightButton}
+          <Button
+            iconButton
+            onClick={sendMessage}
+          >
+            <IconSend color={color} />
+          </Button>
+        </div>
       </section>
     );
   }

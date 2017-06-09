@@ -144,7 +144,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton, avatar, style)} {...custom}>
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, style)} {...custom}>
           {
             avatar
             ? <div style={styles.avatar}>
@@ -159,22 +159,24 @@ class ListItem extends Component {
             </div>
             : null
           }
-          <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
-            {primaryText}
-          </h1>
-          {
-            secondaryText || textBadge
-            ? <h2
-              style={getStyles.text(
-                styles.secondaryText,
-                active, textBadge,
-                secondaryTextStyle
-              )}
-            >
-              {textBadge} {secondaryText}
-            </h2>
-            : null
-          }
+          <div style={getStyles.textContainer(avatar, rightButton || nestedList)}>
+            <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
+              {primaryText}
+            </h1>
+            {
+              secondaryText || textBadge
+              ? <h2
+                style={getStyles.text(
+                  styles.secondaryText,
+                  active, textBadge,
+                  secondaryTextStyle
+                )}
+              >
+                {textBadge} {secondaryText}
+              </h2>
+              : null
+            }
+          </div>
           {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
           {
             nestedList
