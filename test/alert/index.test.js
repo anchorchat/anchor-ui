@@ -11,7 +11,6 @@ import IconSuccess from '../../src/icons/icon-success';
 import getStyles from '../../src/alert/get-styles';
 
 chai.use(sinonChai);
-global.navigator = { userAgent: 'all' };
 
 describe('Alert', () => {
   const props = {
@@ -23,6 +22,14 @@ describe('Alert', () => {
     type: 'success',
     text: 'text',
   };
+
+  beforeEach(() => {
+    global.navigator = { userAgent: 'all' };
+  });
+
+  afterEach(() => {
+    global.navigator = { userAgent: null };
+  });
 
   it('should always render a section element', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
