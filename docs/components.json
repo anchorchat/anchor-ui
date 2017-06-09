@@ -974,14 +974,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {command} string The command's title"
+        "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
       },
-      "onHover": {
+      "onMouseOver": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is hovered\n\n@param {command} string The command's title"
+        "description": "Callback fired when a command is moused over\n\nfunction(event: object, command: string) => void"
       },
       "color": {
         "type": {
