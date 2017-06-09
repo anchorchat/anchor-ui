@@ -24,16 +24,23 @@ const root = (open, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const header = (color = colors.theme, overrideStyle) => {
-  const style = combineStyles(styles.header, { color });
+const header = (color = colors.theme, icon = false, overrideStyle) => {
+  let style = combineStyles(styles.header, { color });
+
+  if (icon) {
+    style = combineStyles(style, { padding: '16px 16px 16px 40px' });
+  }
 
   return combineStyles(style, overrideStyle);
 };
+
+const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
 
 export default {
   container,
   overlay,
   root,
-  header
+  header,
+  icon
 };

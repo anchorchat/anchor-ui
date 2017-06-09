@@ -28,5 +28,11 @@ export default {
     margin: 0,
     padding: '16px',
     borderBottom: `1px solid ${colors.grey}`
-  }
+  },
+  icon: {
+    position: 'absolute',
+    top: '15px',
+    left: '8px',
+    height: '24px'
+  },
 };

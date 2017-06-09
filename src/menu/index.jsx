@@ -7,7 +7,18 @@ import Overlay from '../overlay';
 import themeable from '../themeable';
 
 /** Menu that slides in from the left */
-const Menu = ({ children, open, header, toggleMenu, style, headerStyle, color, ...custom }) => {
+const Menu = ({
+  children,
+  open,
+  header,
+  headerIcon,
+  toggleMenu,
+  style,
+  iconStyle,
+  headerStyle,
+  color,
+  ...custom
+}) => {
   const menuItems = children.map((menuItem, index) => (
     cloneElement(
       menuItem,
@@ -22,7 +33,12 @@ const Menu = ({ children, open, header, toggleMenu, style, headerStyle, color, .
     <section style={getStyles.container()}>
       <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
       <nav style={getStyles.root(open, style)} {...custom}>
-        {header ? <h1 style={getStyles.header(color, headerStyle)}>{header}</h1> : null}
+        {
+          headerIcon
+          ? <div style={getStyles.icon(iconStyle)}>{React.cloneElement(headerIcon, { color })}</div>
+          : null
+        }
+        {header ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1> : null}
         {menuItems}
       </nav>
     </section>
@@ -40,6 +56,10 @@ Menu.propTypes = {
   toggleMenu: PropTypes.func.isRequired,
   /** The Menu's header */
   header: PropTypes.node,
+  /** The header's icon */
+  headerIcon: PropTypes.node,
+  /** Override the styles of the icon element */
+  iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
@@ -51,7 +71,9 @@ Menu.defaultProps = {
   open: false,
   header: null,
   style: {},
-  headerStyle: {}
+  headerStyle: {},
+  headerIcon: null,
+  iconStyle: {}
 };
 
 const enhance = compose(
