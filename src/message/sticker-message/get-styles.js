@@ -2,18 +2,6 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const container = (myMessage, compact) => {
-  if (compact) {
-    return styles.messageContainer;
-  }
-
-  if (myMessage) {
-    return combineStyles(styles.messageContainer, styles.myContainer);
-  }
-
-  return styles.messageContainer;
-};
-
 const header = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
   let style = styles.message;
 
@@ -62,7 +50,7 @@ const body = (myMessage, avatar, compact, overrideStyle) => {
 };
 
 export default {
-  container,
+  root,
   header,
   body
 };
