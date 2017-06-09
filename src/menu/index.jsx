@@ -1,12 +1,13 @@
 import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
+import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
+import themeable from '../themeable';
 
 /** Menu that slides in from the left */
-const Menu = ({ children, open, header, toggleMenu, style, headerStyle, ...custom }) => {
+const Menu = ({ children, open, header, toggleMenu, style, headerStyle, color, ...custom }) => {
   const menuItems = children.map((menuItem, index) => (
     cloneElement(
       menuItem,
@@ -21,7 +22,7 @@ const Menu = ({ children, open, header, toggleMenu, style, headerStyle, ...custo
     <section style={getStyles.container()}>
       <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
       <nav style={getStyles.root(open, style)} {...custom}>
-        {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
+        {header ? <h1 style={getStyles.header(color, headerStyle)}>{header}</h1> : null}
         {menuItems}
       </nav>
     </section>
@@ -42,7 +43,8 @@ Menu.propTypes = {
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
-  headerStyle: PropTypes.instanceOf(Object)
+  headerStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
 };
 
 Menu.defaultProps = {
@@ -52,4 +54,9 @@ Menu.defaultProps = {
   headerStyle: {}
 };
 
-export default pure(Radium(Menu));
+const enhance = compose(
+  themeable(),
+  Radium
+);
+
+export default enhance(Menu);

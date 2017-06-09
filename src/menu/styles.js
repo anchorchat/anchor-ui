@@ -24,7 +24,7 @@ export default {
   },
   header: {
     fontWeight: 'bold',
-    color: colors.secondaryText,
+    color: colors.theme,
     margin: 0,
     padding: '16px',
     borderBottom: `1px solid ${colors.grey}`

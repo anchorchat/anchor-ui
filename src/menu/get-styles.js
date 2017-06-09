@@ -1,5 +1,6 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
+import colors from '../settings/colors';
 
 const container = () => styles.container;
 
@@ -23,7 +24,11 @@ const root = (open, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const header = overrideStyle => combineStyles(styles.header, overrideStyle);
+const header = (color = colors.theme, overrideStyle) => {
+  const style = combineStyles(styles.header, { color });
+
+  return combineStyles(style, overrideStyle);
+};
 
 
 export default {
