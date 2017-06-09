@@ -1,0 +1,50 @@
+/* eslint-env mocha */
+/* eslint react/jsx-filename-extension: [0] */
+import React from 'react';
+import chai, { expect } from 'chai';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+import Avatar from '../../src/avatar';
+import getStyles from '../../src/alert/get-styles';
+
+chai.use(sinonChai);
+global.navigator = { userAgent: 'all' };
+
+describe('Avatar.index', () => {
+  const props = {
+    style: {},
+    status: '',
+    statusStyle: {},
+    image: ''
+  };
+
+  it('should always render a section element', () => {
+    const wrapper = shallow(<Avatar {...props} />).dive();
+
+    expect(wrapper.find('section')).to.have.length(1);
+  });
+
+  it('should render a div element when the status prop is passed', () => {
+    props.status = 'online';
+    const wrapper = shallow(<Avatar {...props} />).dive();
+
+    expect(wrapper.find('div')).to.have.length(1);
+    props.status = '';
+  });
+
+  it('should get root styles', () => {
+    getStyles.root.restore();
+    const spy = sinon.spy(getStyles, 'root');
+
+    shallow(<Avatar {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.image, props.style);
+  });
+
+  it('should get status styles', () => {
+    const spy = sinon.spy(getStyles, 'status');
+
+    shallow(<Avatar {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.status, props.statusStyle);
+  });
+});
