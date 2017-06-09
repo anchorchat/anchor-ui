@@ -6,9 +6,6 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
-import Button from '../../button';
-import IconChevronRight from '../../icons/icon-chevron-right';
-import colors from '../../settings/colors';
 
 class ImageMessage extends Component {
   constructor() {
@@ -46,7 +43,6 @@ class ImageMessage extends Component {
       timeFormat,
       enableLightbox,
       collapsed,
-      expand,
       collapsedText
     } = this.props;
     const { lightbox } = this.state;
@@ -69,11 +65,6 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
     }
 
-    const collapsedStyle = {
-      display: 'flex',
-      alignItems: 'center'
-    };
-
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -88,12 +79,7 @@ class ImageMessage extends Component {
           {
             !collapsed
             ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
-            : <span style={collapsedStyle}>
-              <span>{collapsedText}</span>
-              <Button iconButton onClick={expand}>
-                <IconChevronRight color={myMessage ? colors.white : colors.icons} />
-              </Button>
-            </span>
+            : <span>{collapsedText}</span>
           }
           <MessageTime
             myMessage={myMessage}
@@ -140,7 +126,6 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  expand: PropTypes.func,
   collapsedText: PropTypes.node
 };
 
@@ -157,8 +142,8 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  expand: null,
-  collapsedText: 'This image has been collapsed, click the button to expand it.'
+  collapsedText: 'This image has been collapsed, click the button to expand it.',
+  iconMenu: null
 };
 
 export default ImageMessage;
