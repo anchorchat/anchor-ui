@@ -5,15 +5,24 @@ import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A wrapper for ListItems */
-const List = ({ children, header, listRef, style, headerStyle, open, ...custom }) => {
+const List = ({ children, header, listRef, style, headerStyle, open, nestedLevel, ...custom }) => {
   if (!open) {
     return null;
   }
 
+  const childrenWithProps = React.Children.map(
+    children, child => React.cloneElement(
+      child,
+      {
+        nestedLevel
+      }
+    )
+  );
+
   return (
     <ul ref={listRef} style={getStyles.root(style)} {...custom}>
       {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
-      {children}
+      {childrenWithProps}
     </ul>
   );
 };
@@ -32,7 +41,9 @@ List.propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
   /** Toggle the List's visibility */
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  /** Nested depth of List */
+  nestedLevel: PropTypes.number,
 };
 
 List.defaultProps = {
@@ -40,7 +51,8 @@ List.defaultProps = {
   style: {},
   headerStyle: {},
   listRef: () => {},
-  open: true
+  open: true,
+  nestedLevel: 0
 };
 
 export default pure(Radium(List));
