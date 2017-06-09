@@ -10,7 +10,6 @@ import Avatar from '../../src/avatar';
 import getStyles from '../../src/profile/get-styles';
 
 chai.use(sinonChai);
-global.navigator = { userAgent: 'all' };
 
 describe('Profile', () => {
   const props = {
@@ -30,6 +29,14 @@ describe('Profile', () => {
   const coverBackground = {
     backgroundImage: 'url()'
   };
+
+  beforeEach(() => {
+    global.navigator = { userAgent: 'all' };
+  });
+
+  afterEach(() => {
+    global.navigator = undefined;
+  });
 
   it('should always render four section elements', () => {
     const wrapper = shallow(<Profile {...props} />);
