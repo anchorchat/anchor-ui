@@ -9,7 +9,6 @@ import AppHeader from '../../src/app-header';
 import getStyles from '../../src/app-header/get-styles';
 
 chai.use(sinonChai);
-global.navigator = { userAgent: 'all' };
 
 describe('AppHeader', () => {
   const props = {
@@ -24,6 +23,14 @@ describe('AppHeader', () => {
     leftButtonStyle: {},
     color: '#1BA6C4'
   };
+
+  beforeEach(() => {
+    global.navigator = { userAgent: 'all' };
+  });
+
+  afterEach(() => {
+    global.navigator = undefined;
+  });
 
   it('should always render a header element', () => {
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
