@@ -36,11 +36,13 @@ const header = (color = colors.theme, icon = false, overrideStyle) => {
 
 const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
+const sidebar = overrideStyle => combineStyles(styles.sidebar, overrideStyle);
 
 export default {
   container,
   overlay,
   root,
   header,
-  icon
+  icon,
+  sidebar
 };

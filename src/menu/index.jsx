@@ -16,6 +16,7 @@ const Menu = ({
   style,
   iconStyle,
   headerStyle,
+  sidebar,
   color,
   ...custom
 }) => {
@@ -28,6 +29,20 @@ const Menu = ({
       }
     )
   ));
+
+  if (sidebar) {
+    return (
+      <nav style={getStyles.sidebar(style)} {...custom}>
+        {
+          headerIcon
+          ? <div style={getStyles.icon(iconStyle)}>{React.cloneElement(headerIcon, { color })}</div>
+          : null
+        }
+        {header ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1> : null}
+        {menuItems}
+      </nav>
+    );
+  }
 
   return (
     <section style={getStyles.container()}>
@@ -64,6 +79,8 @@ Menu.propTypes = {
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
   headerStyle: PropTypes.instanceOf(Object),
+  /** Use Menu as sidebar menu */
+  sidebar: PropTypes.bool,
   color: PropTypes.string.isRequired
 };
 
@@ -73,7 +90,8 @@ Menu.defaultProps = {
   style: {},
   headerStyle: {},
   headerIcon: null,
-  iconStyle: {}
+  iconStyle: {},
+  sidebar: false
 };
 
 const enhance = compose(

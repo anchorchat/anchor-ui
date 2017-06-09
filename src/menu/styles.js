@@ -35,4 +35,11 @@ export default {
     left: '8px',
     height: '24px'
   },
+  sidebar: {
+    width: '256px',
+    height: '100%',
+    background: colors.white,
+    overflowY: 'scroll',
+    borderRight: `1px solid ${colors.grey}`
+  }
 };
