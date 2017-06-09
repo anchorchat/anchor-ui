@@ -51,17 +51,25 @@ const nestedListButton = (open) => {
   let style = styles.button;
 
   if (open) {
-    style = combineStyles(style, { transform: 'rotate(180deg) translateY(50%)' });
+    style = combineStyles(style, { transform: 'rotate(180deg)' });
   }
 
   return style;
 };
 
-const textContainer = (rightButton) => {
+const textContainer = (avatar, rightButton) => {
   let style = styles.text;
+
+  if (avatar) {
+    style = combineStyles(style, { width: 'calc(100% - 48px)' });
+  }
 
   if (rightButton) {
     style = combineStyles(style, { width: 'calc(100% - 48px)' });
+  }
+
+  if (avatar && rightButton) {
+    style = combineStyles(style, { width: 'calc(100% - 96px)' });
   }
 
   return style;

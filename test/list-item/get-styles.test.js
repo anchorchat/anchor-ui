@@ -66,7 +66,33 @@ describe('ListItem.getStyles', () => {
     it('should add open styles', () => {
       const style = getStyles.nestedListButton(true);
 
-      expect(style).to.have.property('transform', 'rotate(180deg) translateY(50%)');
+      expect(style).to.have.property('transform', 'rotate(180deg)');
+    });
+  });
+
+  describe('textContainer', () => {
+    it('should get styles', () => {
+      const style = getStyles.textContainer();
+
+      expect(style).to.deep.equal(styles.text);
+    });
+
+    it('should add avatar styles', () => {
+      const style = getStyles.textContainer(true, false);
+
+      expect(style).to.have.property('width', 'calc(100% - 48px)');
+    });
+
+    it('should add rightButton styles', () => {
+      const style = getStyles.textContainer(false, true);
+
+      expect(style).to.have.property('width', 'calc(100% - 48px)');
+    });
+
+    it('should add avatar and rightButton styles', () => {
+      const style = getStyles.textContainer(true, true);
+
+      expect(style).to.have.property('width', 'calc(100% - 96px)');
     });
   });
 });
