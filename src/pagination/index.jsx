@@ -129,7 +129,7 @@ Pagination.propTypes = {
   /**
    * Callback fired when the navigation changes
    *
-   * @param {pager} object Object containing { items, totalItems, totalPages, currentPage  }.
+   * function(event: object, pager: object) => void
    */
   onChange: PropTypes.func.isRequired,
   /** Initial active page */
