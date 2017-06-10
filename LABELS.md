@@ -4,7 +4,7 @@ We group labels by color. This will help to clarify what kind of issue it is. We
 
 ## Groups
 
-### <td bgcolor="#eb414b">Problems</td>
+<h3><td bgcolor="#eb414b">Problems</td></h3>
 Issues that make the product feel broken. High priority, especially if its present in production.
 
 ### <td bgcolor="#FDF1C2">Mindless</td>
