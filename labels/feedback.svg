@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="232px" height="75px" viewBox="0 0 232 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>feedback</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="feedback">
+            <rect id="Rectangle" fill="#CA357C" x="0" y="0" width="232" height="75" rx="10"></rect>
+            <text id="Feedback" font-family="Lato-Regular, Lato" font-size="50" font-weight="normal" fill="#FEFEFE">
+                <tspan x="10.4" y="54.2">Feedback</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

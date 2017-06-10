@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="194px" height="75px" viewBox="0 0 194 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>inactive</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="inactive">
+            <rect id="Rectangle" fill="#D2DAE1" x="0" y="0" width="194" height="75" rx="10"></rect>
+            <text id="Inactive" font-family="Lato-Regular, Lato" font-size="50" font-weight="normal" fill="#424242">
+                <tspan x="10.1875" y="55">Inactive</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
