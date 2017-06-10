@@ -1,15 +1,108 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'underscore';
 import Menu from '../../../dist/menu';
 import MenuItem from '../../../dist/menu-item';
 import npmPackage from '../../../package.json';
+import IconAddImage from '../../../dist/icons/icon-add-image';
+import IconChannels from '../../../dist/icons/icon-channels';
+import IconChannel from '../../../dist/icons/icon-channel';
+import IconClock from '../../../dist/icons/icon-clock';
+import IconConversation from '../../../dist/icons/icon-conversation';
+import IconEdit from '../../../dist/icons/icon-edit';
+import IconError from '../../../dist/icons/icon-error';
+import IconExit from '../../../dist/icons/icon-exit';
+import IconFont from '../../../dist/icons/icon-font';
+import IconEmoji from '../../../dist/icons/icon-emoji';
+import IconHammer from '../../../dist/icons/icon-hammer';
+import IconHand from '../../../dist/icons/icon-hand';
+import IconInfo from '../../../dist/icons/icon-info';
+import IconsLanguage from '../../../dist/icons/icon-language';
+import IconLock from '../../../dist/icons/icon-lock';
+import IconMute from '../../../dist/icons/icon-mute';
+import IconPeople from '../../../dist/icons/icon-people';
+import IconPerson from '../../../dist/icons/icon-person';
+import IconPower from '../../../dist/icons/icon-power';
 import IconRocket from '../../../dist/icons/icon-rocket';
+import IconSend from '../../../dist/icons/icon-send';
+import IconSettings from '../../../dist/icons/icon-settings';
+import IconSuccess from '../../../dist/icons/icon-success';
+import IconWarning from '../../../dist/icons/icon-warning';
+import IconSearch from '../../../dist/icons/icon-search';
+import IconMicrophone from '../../../dist/icons/icon-microphone';
+import IconActivity from '../../../dist/icons/icon-activity';
+import IconFood from '../../../dist/icons/icon-food';
+import IconNature from '../../../dist/icons/icon-nature';
+import IconObjects from '../../../dist/icons/icon-objects';
+import IconSymbols from '../../../dist/icons/icon-symbols';
+import IconTravel from '../../../dist/icons/icon-travel';
+import IconAddFriend from '../../../dist/icons/icon-add-friend';
+import IconBlock from '../../../dist/icons/icon-block';
+import IconPicture from '../../../dist/icons/icon-picture';
+import IconReport from '../../../dist/icons/icon-report';
+import IconRemoveFriend from '../../../dist/icons/icon-remove-friend';
+import IconThumbsUp from '../../../dist/icons/icon-thumbs-up';
+import IconThumbsDown from '../../../dist/icons/icon-thumbs-down';
+import IconRules from '../../../dist/icons/icon-rules';
+import IconQuestion from '../../../dist/icons/icon-question';
+import IconDelete from '../../../dist/icons/icon-delete';
+import IconAdmin from '../../../dist/icons/icon-admin';
+import IconNotification from '../../../dist/icons/icon-notification';
+import IconRefresh from '../../../dist/icons/icon-refresh';
+
+const icons = [
+  IconAddImage,
+  IconChannels,
+  IconChannel,
+  IconClock,
+  IconConversation,
+  IconEdit,
+  IconError,
+  IconExit,
+  IconFont,
+  IconEmoji,
+  IconHammer,
+  IconHand,
+  IconInfo,
+  IconsLanguage,
+  IconLock,
+  IconMute,
+  IconPeople,
+  IconPerson,
+  IconPower,
+  IconRocket,
+  IconSend,
+  IconSettings,
+  IconSuccess,
+  IconWarning,
+  IconSearch,
+  IconMicrophone,
+  IconActivity,
+  IconFood,
+  IconNature,
+  IconObjects,
+  IconSymbols,
+  IconTravel,
+  IconAddFriend,
+  IconBlock,
+  IconPicture,
+  IconReport,
+  IconRemoveFriend,
+  IconThumbsUp,
+  IconThumbsDown,
+  IconRules,
+  IconQuestion,
+  IconDelete,
+  IconAdmin,
+  IconNotification,
+  IconRefresh
+];
 
 const Nav = (props, context) => {
   const { router } = context;
 
   return (
-    <Menu header={`Version: ${npmPackage.version}`} headerIcon={<IconRocket />}>
+    <Menu header={`Version: ${npmPackage.version}`} headerIcon={React.createElement(_.sample(icons))}>
       <MenuItem onClick={() => router.push('/')} active={router.location.pathname === '/'} text="Getting started" />
       <MenuItem onClick={() => router.push('/admin-badge')} active={router.isActive('/admin-badge')} text="AdminBadge" />
       <MenuItem onClick={() => router.push('/alert')} active={router.isActive('/alert')} text="Alert" />
