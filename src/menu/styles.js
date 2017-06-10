@@ -36,6 +36,7 @@ export default {
     height: '24px'
   },
   sidebar: {
+    position: 'relative',
     width: '256px',
     height: '100%',
     background: colors.white,
