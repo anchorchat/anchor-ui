@@ -16,7 +16,6 @@ const Menu = ({
   style,
   iconStyle,
   headerStyle,
-  sidebar,
   color,
   ...custom
 }) => {
@@ -30,7 +29,7 @@ const Menu = ({
     )
   ));
 
-  if (sidebar || !toggleMenu) {
+  if (!toggleMenu) {
     return (
       <nav style={getStyles.sidebar(style)} {...custom}>
         {
@@ -67,7 +66,7 @@ Menu.propTypes = {
   children: PropTypes.node.isRequired,
   /** Menu open */
   open: PropTypes.bool,
-  /** Toggle the Menu's visibility */
+  /** Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied. */
   toggleMenu: PropTypes.func,
   /** The Menu's header */
   header: PropTypes.node,
@@ -79,8 +78,6 @@ Menu.propTypes = {
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
   headerStyle: PropTypes.instanceOf(Object),
-  /** Use Menu as sidebar menu */
-  sidebar: PropTypes.bool,
   color: PropTypes.string.isRequired
 };
 
@@ -91,8 +88,7 @@ Menu.defaultProps = {
   style: {},
   headerStyle: {},
   headerIcon: null,
-  iconStyle: {},
-  sidebar: false
+  iconStyle: {}
 };
 
 const enhance = compose(

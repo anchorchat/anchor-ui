@@ -3337,7 +3337,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Toggle the Menu's visibility",
+        "description": "Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3398,17 +3398,6 @@
         "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "sidebar": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Use Menu as sidebar menu",
-        "defaultValue": {
-          "value": "false",
           "computed": false
         }
       },
