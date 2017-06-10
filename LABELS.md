@@ -5,6 +5,7 @@ We group labels by color. This will help to clarify what kind of issue it is. We
 ## Groups
 
 <span class="markdown-body h3" style="background: #eb414b; padding: 5px; border-radius: 3px;">Problems</span>
+
 Issues that make the product feel broken. High priority, especially if its present in production.
 
 ### <span style="background: #FDF1C2; color: #424242; padding: 5px; border-radius: 3px;">Mindless</span>
