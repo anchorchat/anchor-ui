@@ -4,7 +4,7 @@ We group labels by color. This will help to clarify what kind of issue it is. We
 
 ## Groups
 
-### <span style="background: #eb414b; padding: 5px; border-radius: 3px;">Problems</span>
+<span class="markdown-body h3" style="background: #eb414b; padding: 5px; border-radius: 3px;">Problems</span>
 Issues that make the product feel broken. High priority, especially if its present in production.
 
 ### <span style="background: #FDF1C2; color: #424242; padding: 5px; border-radius: 3px;">Mindless</span>
@@ -22,8 +22,7 @@ Requires further conversation to figure out the action steps. Most feature ideas
 ### <span style="background: #63BFFC; color: #424242; padding: 5px; border-radius: 3px;">Improvements</span>
 Iterations on existing features or infrastructure. Generally these update speed, or improve the quality of results. Adding a new “Prop” field to an existing Component in the API, for example.
 
-### 
-<span style="background: #92C85C; color: #424242; padding: 5px; border-radius: 3px;">Additions</span>
+### <span style="background: #92C85C; color: #424242; padding: 5px; border-radius: 3px;">Additions</span>
 Brand new functionality. New Component, workflows, etc.
 
 ### <span style="background: #FAC92F; color: #424242; padding: 5px; border-radius: 3px;">Pending</span>
