@@ -55,7 +55,7 @@ describe('Menu.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.header({ color: 'red' });
+      const style = getStyles.header(null, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });

@@ -1,5 +1,6 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
+import colors from '../settings/colors';
 
 const container = () => styles.container;
 
@@ -23,12 +24,25 @@ const root = (open, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const header = overrideStyle => combineStyles(styles.header, overrideStyle);
+const header = (color = colors.theme, icon = false, overrideStyle) => {
+  let style = combineStyles(styles.header, { color });
 
+  if (icon) {
+    style = combineStyles(style, { padding: '16px 16px 16px 40px' });
+  }
+
+  return combineStyles(style, overrideStyle);
+};
+
+const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
+
+const sidebar = overrideStyle => combineStyles(styles.sidebar, overrideStyle);
 
 export default {
   container,
   overlay,
   root,
-  header
+  header,
+  icon,
+  sidebar
 };
