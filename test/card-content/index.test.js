@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import CardContent from '../../src/card-content';
-import getStyles from '../../src/alert/get-styles';
+import getStyles from '../../src/card-content/get-styles';
 
 chai.use(sinonChai);
 
@@ -33,7 +33,7 @@ describe('card-content', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<CardContent {...props} />, { context: { color: 'red' } }).dive().dive();
+    shallow(<CardContent {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.style);
   });
 });
