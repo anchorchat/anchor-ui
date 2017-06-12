@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import IconEmoji from '../../../dist/icons/icon-emoji';
-import IconHammer from '../../../dist/icons/icon-hammer';
-import IconRocket from '../../../dist/icons/icon-rocket';
+import * as Icon from '../../../dist/icons';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
@@ -37,9 +35,17 @@ const Icons = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <IconEmoji style={style.icon} />
-          <IconHammer color="#1ba6c4" style={style.icon} />
-          <IconRocket color="red" style={style.icon} />
+          <Icon.IconActivity style={style.icon} />
+          <Icon.IconAddFriend style={style.icon} />
+          <Icon.IconAddImage style={style.icon} />
+          <Icon.IconAdminPanel style={style.icon} />
+          <Icon.IconAdmin style={style.icon} />
+          <Icon.IconAnalytics style={style.icon} />
+          <Icon.IconBlock style={style.icon} />
+          <Icon.IconChannel style={style.icon} />
+          <Icon.IconChannels style={style.icon} />
+          <Icon.IconCheckbox style={style.icon} />
+          <Icon.IconChevron style={style.icon} />
         </Paper>
         <h2>Available icons</h2>
         <ul>
