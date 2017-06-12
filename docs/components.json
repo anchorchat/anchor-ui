@@ -974,14 +974,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is selected, currently only click events are supported\n\n@param {command} string The command's title"
+        "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
       },
-      "onHover": {
+      "onMouseOver": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is hovered\n\n@param {command} string The command's title"
+        "description": "Callback fired when a command is moused over\n\nfunction(event: object, command: string) => void"
       },
       "color": {
         "type": {
@@ -3336,8 +3336,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Toggle the Menu's visibility"
+        "required": false,
+        "description": "Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "header": {
         "type": {
@@ -3347,6 +3351,29 @@
         "description": "The Menu's header",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "headerIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The header's icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -3373,6 +3400,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3487,6 +3521,13 @@
     "methods": [
       {
         "name": "renderIconMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderImageIconMenu",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -3735,6 +3776,28 @@
         },
         "required": false,
         "description": "Expand a collapsed image message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "expandText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to show in expand menu item",
+        "defaultValue": {
+          "value": "'Expand image'",
+          "computed": false
+        }
+      },
+      "expandIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon to show in expand menu item",
         "defaultValue": {
           "value": "null",
           "computed": false

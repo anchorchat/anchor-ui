@@ -36,17 +36,17 @@ const propTypes = {
   /** Override the styles of the param element */
   paramStyle: PropTypes.instanceOf(Object),
   /**
-   * Callback fired when a command is selected, currently only click events are supported
+   * Callback fired when a command is clicked
    *
-   * @param {command} string The command's title
+   * function(event: object, command: string) => void
    */
   onSelect: PropTypes.func.isRequired,
   /**
-   * Callback fired when a command is hovered
+   * Callback fired when a command is moused over
    *
-   * @param {command} string The command's title
+   * function(event: object, command: string) => void
    */
-  onHover: PropTypes.func.isRequired,
+  onMouseOver: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
 };
 
@@ -115,7 +115,7 @@ class Commands extends Component {
     });
   }
 
-  handleSelect = (command) => {
+  handleSelect = (event, command) => {
     const { onSelect, commands } = this.props;
 
     this.setState({
@@ -123,7 +123,7 @@ class Commands extends Component {
       commands
     });
 
-    onSelect(command);
+    onSelect(event, command);
   }
 
   render() {
@@ -132,7 +132,7 @@ class Commands extends Component {
       commands, // eslint-disable-line no-unused-vars
       value,
       color,
-      onHover,
+      onMouseOver,
       onSelect,
       style,
       headerStyle,
@@ -159,10 +159,10 @@ class Commands extends Component {
         <section style={getStyles.commands()}>
           {map(this.state.commands, command => (
             <p
-              onMouseOver={() => onHover(command.title)}
+              onMouseOver={event => onMouseOver(event, command.title)}
               style={getStyles.command()}
               key={command.title}
-              onClick={() => this.handleSelect(command.title)}
+              onClick={event => this.handleSelect(event, command.title)}
             >
               <span>
                 <strong style={getStyles.title(titleStyle)}>{command.title}</strong>

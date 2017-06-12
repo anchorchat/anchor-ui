@@ -110,7 +110,8 @@ TextMessage.defaultProps = {
   enableLinks: false,
   compact: false,
   enableLightbox: false,
-  color: colors.theme
+  color: colors.theme,
+  iconMenu: null
 };
 
 export default TextMessage;
