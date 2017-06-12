@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import Avatar from '../../src/avatar';
-import getStyles from '../../src/alert/get-styles';
+import getStyles from '../../src/avatar/get-styles';
 
 chai.use(sinonChai);
 global.navigator = { userAgent: 'all' };
@@ -16,7 +16,7 @@ describe('Avatar.index', () => {
     style: {},
     status: '',
     statusStyle: {},
-    image: ''
+    image: 'imageurl'
   };
 
   it('should always render a section element', () => {
@@ -25,7 +25,13 @@ describe('Avatar.index', () => {
     expect(wrapper.find('section')).to.have.length(1);
   });
 
-  it('should render a div element when the status prop is passed', () => {
+  it('should not render a div element if the status prop is not passed', () => {
+    const wrapper = shallow(<Avatar {...props} />).dive();
+
+    expect(wrapper.find('div')).to.have.length(0);
+  });
+
+  it('should render a div element if the status prop is passed', () => {
     props.status = 'online';
     const wrapper = shallow(<Avatar {...props} />).dive();
 
@@ -34,7 +40,6 @@ describe('Avatar.index', () => {
   });
 
   it('should get root styles', () => {
-    getStyles.root.restore();
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Avatar {...props} />).dive();
@@ -42,9 +47,11 @@ describe('Avatar.index', () => {
   });
 
   it('should get status styles', () => {
+    props.status = 'online';
     const spy = sinon.spy(getStyles, 'status');
 
     shallow(<Avatar {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.status, props.statusStyle);
+    props.status = '';
   });
 });
