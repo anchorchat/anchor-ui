@@ -2007,24 +2007,6 @@
       }
     }
   },
-  "components/icons/icon-delete-admin.jsx": {
-    "description": "",
-    "displayName": "IconDeleteAdmin",
-    "methods": [],
-    "props": {
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "colors.icons",
-          "computed": true
-        }
-      }
-    }
-  },
   "components/icons/icon-delete.jsx": {
     "description": "",
     "displayName": "IconDelete",
