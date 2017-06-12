@@ -30,16 +30,16 @@ describe('Button', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a section element', () => {
-    const wrapper = shallow(<Button {...props}>{children}</Button>);
+  it('should always render a button element', () => {
+    const wrapper = shallow(<Button {...props}>{children}</Button>).dive();
 
     expect(wrapper.find('button')).to.have.length(1);
   });
 
   it('should get root styles', () => {
-    const spy = sinon.spy(getStyles, 'root').dive();
+    const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Button {...props} />).dive();
+    shallow(<Button {...props} />);
     expect(spy).to.have.been.calledWith(
       props.style, props.color, props.inverted, props.disabled, props.iconButton, props.flatbutton
     );
