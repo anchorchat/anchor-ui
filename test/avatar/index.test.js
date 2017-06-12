@@ -9,7 +9,6 @@ import Avatar from '../../src/avatar';
 import getStyles from '../../src/avatar/get-styles';
 
 chai.use(sinonChai);
-global.navigator = { userAgent: 'all' };
 
 describe('Avatar.index', () => {
   const props = {
@@ -18,6 +17,14 @@ describe('Avatar.index', () => {
     statusStyle: {},
     image: 'imageurl'
   };
+
+  beforeEach(() => {
+    global.navigator = { userAgent: 'all' };
+  });
+
+  afterEach(() => {
+    global.navigator = undefined;
+  });
 
   it('should always render a section element', () => {
     const wrapper = shallow(<Avatar {...props} />).dive();
