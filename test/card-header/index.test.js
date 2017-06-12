@@ -46,6 +46,12 @@ describe('CardHeader', () => {
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
+  it('should always render a h2 element', () => {
+    const wrapper = shallow(<CardHeader {...props} />).dive();
+
+    expect(wrapper.find('h2')).to.have.length(1);
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
