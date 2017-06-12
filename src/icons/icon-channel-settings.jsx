@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
-const IconRoomSettings = ({ color, ...custom }) => (
+const IconChannelSettings = ({ color, ...custom }) => (
   <svg fill="none" height="24" viewBox="0 0 24 24" width="24" {...custom}>
     <g fill={color} >
       <g transform="translate(14.857143, 11.428571)">
@@ -14,14 +14,14 @@ const IconRoomSettings = ({ color, ...custom }) => (
   </svg>
 );
 
-IconRoomSettings.propTypes = {
+IconChannelSettings.propTypes = {
   color: PropTypes.string
 };
 
-IconRoomSettings.defaultProps = {
+IconChannelSettings.defaultProps = {
   color: colors.icons
 };
 
-IconRoomSettings.displayName = 'IconRoomSettings';
+IconChannelSettings.displayName = 'IconChannelSettings';
 
-export default pure(IconRoomSettings);
+export default pure(IconChannelSettings);
