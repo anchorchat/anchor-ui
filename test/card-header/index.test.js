@@ -15,7 +15,7 @@ describe('CardHeader', () => {
     style: {},
     titleStyle: {},
     subtitleStyle: {},
-    subtitle: 'text',
+    subtitle: null,
     avatar: '',
     avatarStyle: {}
   };
@@ -28,7 +28,7 @@ describe('CardHeader', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a span element', () => {
+  it('should always render a header element', () => {
     const wrapper = shallow(<CardHeader {...props} />).dive();
 
     expect(wrapper.find('header')).to.have.length(1);
@@ -46,10 +46,19 @@ describe('CardHeader', () => {
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
-  it('should pass the value of the header prop to the h2 element', () => {
-    const wrapper = shallow(<CardHeader {...props} />);
+  it('should not render a h2 element if the subtitle prop is not passed', () => {
+    const wrapper = shallow(<CardHeader {...props} />).dive();
 
+    expect(wrapper.find('h2')).to.have.length(0);
+  });
+
+  it('should render a h2 element if the subtitle prop is passed', () => {
+    props.subtitle = 'text';
+    const wrapper = shallow(<CardHeader {...props} />).dive();
+
+    expect(wrapper.find('h2')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h2>text</h2>)).to.equal(true);
+    props.subtitle = '';
   });
 
   it('should get root styles', () => {
@@ -68,8 +77,10 @@ describe('CardHeader', () => {
 
   it('should get subtitle styles', () => {
     const spy = sinon.spy(getStyles, 'subtitle');
+    props.subtitle = 'text';
 
     shallow(<CardHeader {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.subtitleStyle);
+    props.subtitle = '';
   });
 });
