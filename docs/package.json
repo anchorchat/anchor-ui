@@ -51,7 +51,8 @@
     "react-jss": "^5.3.0",
     "react-markdown": "^2.4.4",
     "react-router": "^3.0.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "uuid": "^3.0.1"
   },
   "scripts": {
     "start": "node scripts/start.js",

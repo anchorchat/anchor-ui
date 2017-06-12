@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import IconEmoji from '../../../dist/icons/icon-emoji';
-import IconHammer from '../../../dist/icons/icon-hammer';
-import IconRocket from '../../../dist/icons/icon-rocket';
+import uuid from 'uuid';
+import * as icons from '../../../dist/icons';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
 const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import IconHammer from \'anchor-ui/icons/icon-hammer\'';
 
-const Icons = () => {
-  const icons = _.filter(components, (component, key) => key.match(/icons/));
-  const iconNames = _.pluck(icons, 'displayName');
+const IconsDoc = () => {
+  const iconData = _.filter(components, (component, key) => key.match(/icons/));
+  const iconNames = _.pluck(iconData, 'displayName');
   const style = {
     paper: {
       display: 'flex',
@@ -37,9 +36,7 @@ const Icons = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <IconEmoji style={style.icon} />
-          <IconHammer color="#1ba6c4" style={style.icon} />
-          <IconRocket color="red" style={style.icon} />
+          {_.map(icons, icon => React.createElement(icon, { style: style.icon, key: uuid.v4() }))}
         </Paper>
         <h2>Available icons</h2>
         <ul>
@@ -73,4 +70,4 @@ const Icons = () => {
   );
 };
 
-export default Icons;
+export default IconsDoc;
