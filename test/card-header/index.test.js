@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import CardHeader from '../../src/card-header';
-import getStyles from '../../src/admin-badge/get-styles';
+import getStyles from '../../src/card-header/get-styles';
 
 chai.use(sinonChai);
 
@@ -49,7 +49,7 @@ describe('CardHeader', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<CardHeader {...props} />);
-    expect(spy).to.have.been.calledWith(props.style).dive();
+    shallow(<CardHeader {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.style);
   });
 });
