@@ -26,12 +26,14 @@ export default {
     fontWeight: 'bold',
     color: colors.theme,
     margin: 0,
-    padding: '16px',
-    borderBottom: `1px solid ${colors.grey}`
+    padding: '15.5px 16px 15.5px 16px',
+    borderBottom: `1px solid ${colors.grey}`,
+    fontSize: '16px',
+    lineHeight: '16px'
   },
   icon: {
     position: 'absolute',
-    top: '15px',
+    top: '12px',
     left: '8px',
     height: '24px'
   },
