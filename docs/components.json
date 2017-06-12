@@ -1755,24 +1755,6 @@
       }
     }
   },
-  "components/icons/icon-admin-panel.jsx": {
-    "description": "",
-    "displayName": "IconAdminPanel",
-    "methods": [],
-    "props": {
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "colors.icons",
-          "computed": true
-        }
-      }
-    }
-  },
   "components/icons/icon-admin.jsx": {
     "description": "",
     "displayName": "IconAdmin",
@@ -1791,9 +1773,9 @@
       }
     }
   },
-  "components/icons/icon-analytics.jsx": {
+  "components/icons/icon-block.jsx": {
     "description": "",
-    "displayName": "IconAnalytics",
+    "displayName": "IconBlock",
     "methods": [],
     "props": {
       "color": {
@@ -1809,9 +1791,9 @@
       }
     }
   },
-  "components/icons/icon-block.jsx": {
+  "components/icons/icon-channel-settings.jsx": {
     "description": "",
-    "displayName": "IconBlock",
+    "displayName": "IconRoomSettings",
     "methods": [],
     "props": {
       "color": {
@@ -1848,6 +1830,24 @@
   "components/icons/icon-channels.jsx": {
     "description": "",
     "displayName": "IconChannels",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-chart.jsx": {
+    "description": "",
+    "displayName": "IconChart",
     "methods": [],
     "props": {
       "color": {
@@ -2673,24 +2673,6 @@
       }
     }
   },
-  "components/icons/icon-room-settings.jsx": {
-    "description": "",
-    "displayName": "IconRoomSettings",
-    "methods": [],
-    "props": {
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "colors.icons",
-          "computed": true
-        }
-      }
-    }
-  },
   "components/icons/icon-rules.jsx": {
     "description": "",
     "displayName": "IconRules",
@@ -2820,6 +2802,24 @@
   "components/icons/icon-thumbs-up.jsx": {
     "description": "",
     "displayName": "IconThumbsUp",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-tools.jsx": {
+    "description": "",
+    "displayName": "IconTools",
     "methods": [],
     "props": {
       "color": {
