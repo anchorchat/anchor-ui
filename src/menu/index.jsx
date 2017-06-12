@@ -19,14 +19,8 @@ const Menu = ({
   color,
   ...custom
 }) => {
-  const menuItems = children.map((menuItem, index) => (
-    cloneElement(
-      menuItem,
-      {
-        key: index,
-        closeMenu: toggleMenu
-      }
-    )
+  const menuItems = React.Children.map(children, child => (
+    cloneElement(child, { closeMenu: toggleMenu })
   ));
 
   if (!toggleMenu) {

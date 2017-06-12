@@ -1791,6 +1791,24 @@
       }
     }
   },
+  "components/icons/icon-channel-settings.jsx": {
+    "description": "",
+    "displayName": "IconChannelSettings",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-channel.jsx": {
     "description": "",
     "displayName": "IconChannel",
@@ -1812,6 +1830,24 @@
   "components/icons/icon-channels.jsx": {
     "description": "",
     "displayName": "IconChannels",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-chart.jsx": {
+    "description": "",
+    "displayName": "IconChart",
     "methods": [],
     "props": {
       "color": {
@@ -2187,6 +2223,24 @@
       }
     }
   },
+  "components/icons/icon-home.jsx": {
+    "description": "",
+    "displayName": "IconHome",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-info.jsx": {
     "description": "",
     "displayName": "IconInfo",
@@ -2244,6 +2298,24 @@
   "components/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-mail.jsx": {
+    "description": "",
+    "displayName": "IconMail",
     "methods": [],
     "props": {
       "color": {
@@ -2424,6 +2496,24 @@
   "components/icons/icon-picture.jsx": {
     "description": "",
     "displayName": "IconPicture",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-plus.jsx": {
+    "description": "",
+    "displayName": "IconPlus",
     "methods": [],
     "props": {
       "color": {
@@ -2694,6 +2784,24 @@
   "components/icons/icon-thumbs-up.jsx": {
     "description": "",
     "displayName": "IconThumbsUp",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-tools.jsx": {
+    "description": "",
+    "displayName": "IconTools",
     "methods": [],
     "props": {
       "color": {
