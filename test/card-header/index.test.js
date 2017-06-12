@@ -15,7 +15,7 @@ describe('CardHeader', () => {
     style: {},
     titleStyle: {},
     subtitleStyle: {},
-    subtitle: null,
+    subtitle: 'text',
     avatar: '',
     avatarStyle: {}
   };
@@ -46,10 +46,30 @@ describe('CardHeader', () => {
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
+  it('should pass the value of the header prop to the h2 element', () => {
+    const wrapper = shallow(<CardHeader {...props} />);
+
+    expect(wrapper.containsMatchingElement(<h2>text</h2>)).to.equal(true);
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<CardHeader {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should get title styles', () => {
+    const spy = sinon.spy(getStyles, 'title');
+
+    shallow(<CardHeader {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should get subtitle styles', () => {
+    const spy = sinon.spy(getStyles, 'subtitle');
+
+    shallow(<CardHeader {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.subtitleStyle);
   });
 });
