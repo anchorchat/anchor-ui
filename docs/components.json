@@ -1793,7 +1793,7 @@
   },
   "components/icons/icon-channel-settings.jsx": {
     "description": "",
-    "displayName": "IconRoomSettings",
+    "displayName": "IconChannelSettings",
     "methods": [],
     "props": {
       "color": {
