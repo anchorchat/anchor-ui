@@ -33,7 +33,7 @@ describe('Card', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Card {...props} />).dive();
+    shallow(<Card {...props} >{children}</Card>).dive();
     expect(spy).to.have.been.calledWith(props.style);
   });
 });
