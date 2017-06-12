@@ -39,9 +39,9 @@ describe('Button', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Button {...props} />);
+    shallow(<Button {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.style, props.color, props.inverted, props.disabled, props.iconButton, props.flatbutton
+      props.color, props.inverted, props.iconButton, props.disabled, props.flatButton, props.style
     );
   });
 });
