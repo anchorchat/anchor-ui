@@ -1755,9 +1755,45 @@
       }
     }
   },
+  "components/icons/icon-admin-panel.jsx": {
+    "description": "",
+    "displayName": "IconAdminPanel",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-admin.jsx": {
     "description": "",
     "displayName": "IconAdmin",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-analytics.jsx": {
+    "description": "",
+    "displayName": "IconAnalytics",
     "methods": [],
     "props": {
       "color": {
@@ -1956,6 +1992,24 @@
   "components/icons/icon-conversation.jsx": {
     "description": "",
     "displayName": "IconConversation",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-delete-admin.jsx": {
+    "description": "",
+    "displayName": "IconDeleteAdmin",
     "methods": [],
     "props": {
       "color": {
@@ -2187,6 +2241,24 @@
       }
     }
   },
+  "components/icons/icon-home.jsx": {
+    "description": "",
+    "displayName": "IconHome",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-info.jsx": {
     "description": "",
     "displayName": "IconInfo",
@@ -2244,6 +2316,24 @@
   "components/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-mail.jsx": {
+    "description": "",
+    "displayName": "IconMail",
     "methods": [],
     "props": {
       "color": {
@@ -2439,6 +2529,24 @@
       }
     }
   },
+  "components/icons/icon-plus.jsx": {
+    "description": "",
+    "displayName": "IconPlus",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-power.jsx": {
     "description": "",
     "displayName": "IconPower",
@@ -2550,6 +2658,24 @@
   "components/icons/icon-rocket.jsx": {
     "description": "",
     "displayName": "IconRocket",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-room-settings.jsx": {
+    "description": "",
+    "displayName": "IconRoomSettings",
     "methods": [],
     "props": {
       "color": {
