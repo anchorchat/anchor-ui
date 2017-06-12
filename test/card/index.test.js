@@ -34,6 +34,6 @@ describe('Card', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Card {...props} />);
-    expect(spy).to.have.been.calledFor(props.style);
+    expect(spy).to.have.been.calledWith(props.style);
   });
 });
