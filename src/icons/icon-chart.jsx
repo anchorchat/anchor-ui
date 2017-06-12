@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
-const IconAnalytics = ({ color, ...custom }) => (
+const IconChart = ({ color, ...custom }) => (
   <svg width="24px" height="24px" viewBox="0 0 24 24" {...custom}>
     <g fill={color}>
       <path d="M20.1255,20.8725 L3.75,20.8725 C3.33525,20.8725 3,20.5425 3,20.1225 L3,3.75 C3,3.3375 3.33525,3 3.75,3 C4.164,3 4.5,3.3375 4.5,3.75 L4.5,19.3725 L20.1255,19.3725 C20.5395,19.3725 20.8755,19.71 20.8755,20.1225 C20.8755,20.5425 20.5395,20.8725 20.1255,20.8725" />
@@ -14,14 +14,14 @@ const IconAnalytics = ({ color, ...custom }) => (
   </svg>
 );
 
-IconAnalytics.propTypes = {
+IconChart.propTypes = {
   color: PropTypes.string
 };
 
-IconAnalytics.defaultProps = {
+IconChart.defaultProps = {
   color: colors.icons
 };
 
-IconAnalytics.displayName = 'IconAnalytics';
+IconChart.displayName = 'IconChart';
 
-export default pure(IconAnalytics);
+export default pure(IconChart);

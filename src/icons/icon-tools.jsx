@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
-const IconAdminPanel = ({ color, ...custom }) => (
+const IconTools = ({ color, ...custom }) => (
   <svg width="24px" height="24px" viewBox="0 0 24 24" {...custom}>
     <g fill={color}>
       <path d="M9.21410927,14.1075 L6.06410927,17.26125 C5.48660927,17.8395 5.40410927,18.5625 5.68910927,18.84975 C5.82410927,18.98175 6.01160927,19.0095 6.13910927,19.0095 C6.51410927,19.0095 6.94160927,18.80925 7.27160927,18.47475 L10.4291093,15.32025 L9.21410927,14.1075 Z M6.13910927,20.5095 C5.55410927,20.5095 5.01410927,20.2965 4.62410927,19.9095 C3.69410927,18.97575 3.85910927,17.346 4.99910927,16.20075 L8.68910927,12.51675 C8.98160927,12.2235 9.45410927,12.2235 9.74660927,12.51675 L12.0191093,14.78925 C12.1616093,14.93025 12.2366093,15.12075 12.2366093,15.32025 C12.2366093,15.519 12.1616093,15.7095 12.0191093,15.8505 L8.33660927,19.5345 C7.71410927,20.154 6.91910927,20.5095 6.13910927,20.5095 L6.13910927,20.5095 Z" />
@@ -15,14 +15,14 @@ const IconAdminPanel = ({ color, ...custom }) => (
   </svg>
 );
 
-IconAdminPanel.propTypes = {
+IconTools.propTypes = {
   color: PropTypes.string
 };
 
-IconAdminPanel.defaultProps = {
+IconTools.defaultProps = {
   color: colors.icons
 };
 
-IconAdminPanel.displayName = 'IconAdminPanel';
+IconTools.displayName = 'IconTools';
 
-export default pure(IconAdminPanel);
+export default pure(IconTools);
