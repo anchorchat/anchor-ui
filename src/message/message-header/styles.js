@@ -25,7 +25,7 @@ export default {
   header: {
     color: colors.secondaryText,
     fontSize: '14px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     lineHeight: '18px',
     marginBottom: '5px'
   },

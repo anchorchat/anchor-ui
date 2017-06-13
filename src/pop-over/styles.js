@@ -23,7 +23,7 @@ export default {
     paddingLeft: '16px',
     margin: '0',
     fontSize: '16px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     color: colors.secondaryText,
     overflow: 'hidden',
     textOverflow: 'ellipsis'

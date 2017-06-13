@@ -41,7 +41,7 @@ export default {
     }
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginRight: '5px',
     fontSize: '14px'
   },

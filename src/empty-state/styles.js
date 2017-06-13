@@ -15,7 +15,7 @@ export default {
   },
   heading: {
     fontSize: '16px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     color: colors.secondaryText,
     margin: '0',
     textAlign: 'center'

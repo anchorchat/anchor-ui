@@ -27,7 +27,7 @@ export default {
     color: colors.secondaryText,
     textTransform: 'capitalize',
     fontSize: '12px',
-    fontWeight: 'bold'
+    fontWeight: 'bolder'
   },
   icon: {
     width: '24px',

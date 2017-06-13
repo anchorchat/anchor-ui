@@ -20,7 +20,7 @@ export default {
     overflow: 'hidden',
     display: 'inline-block',
     color: colors.white,
-    fontWeight: 'normal'
+    fontWeight: 'inherit'
   },
   text: {
     fontSize: '16px',
