@@ -13,6 +13,7 @@ export default {
     boxSizing: 'border-box',
     color: colors.white,
     fontSize: '16px',
+    fontWeight: 'inherit',
     lineHeight: '16px',
     padding: '6.5px',
     width: '100%',
@@ -22,8 +23,10 @@ export default {
     }
   },
   label: {
-    boxSizing: 'border-box',
+    fontSize: '16px',
     color: colors.secondaryText,
+    fontWeight: 'bolder',
+    boxSizing: 'border-box',
     display: 'block',
     paddingBottom: '8px',
     paddingLeft: '8px',

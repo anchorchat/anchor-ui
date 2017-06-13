@@ -10,6 +10,7 @@ export default {
     color: colors.white,
     display: 'block',
     fontSize: '12px',
+    fontWeight: 'inherit',
     height: '20px',
     lineHeight: '16px',
     padding: '3px',
