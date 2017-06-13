@@ -21,7 +21,7 @@ const styleSheet = {
   text: {
     color: colors.white,
     fontSize: '24px',
-    fontWeight: 'normal',
+    fontWeight: 'inherit',
     lineHeight: '36px',
     margin: 0,
     textDecoration: 'none',
