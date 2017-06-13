@@ -3,13 +3,13 @@ import darken from '../internal/darken';
 
 const styleSheet = {
   root: {
-    minHeight: '44px',
+    minHeight: '40px',
     width: '100%',
     position: 'relative',
-    paddingTop: '10px',
-    paddingRight: '10px',
-    paddingLeft: '10px',
-    paddingBottom: '10px',
+    paddingTop: '8px',
+    paddingRight: '8px',
+    paddingLeft: '8px',
+    paddingBottom: '8px',
     boxSizing: 'border-box',
     cursor: 'pointer',
     color: colors.primaryText,
@@ -25,9 +25,12 @@ const styleSheet = {
   text: {
     margin: 0,
     color: 'inherit',
+    fontSize: '16px',
     lineHeight: '24px',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    fontWeight: 'inherit',
+    fontSize: '16px'
   },
   icon: {
     position: 'absolute',
@@ -37,7 +40,7 @@ const styleSheet = {
   },
   activeIcon: {
     position: 'absolute',
-    top: '10px',
+    top: '8px',
     right: '8px',
     height: '24px',
     width: '24px'

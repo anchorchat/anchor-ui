@@ -23,7 +23,6 @@ export default {
     flexDirection: 'row',
     justifyContent: 'space-between',
     color: colors.white,
-    textTransform: 'uppercase',
-    fontWeight: 'bolder'
+    textTransform: 'uppercase'
   }
 };

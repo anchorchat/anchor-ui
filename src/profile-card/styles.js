@@ -5,6 +5,7 @@ export default {
     backgroundColor: colors.theme,
     color: colors.white,
     fontSize: '18px',
+    fontWeight: 'bolder',
     lineHeight: '20px',
     padding: '15px'
   },

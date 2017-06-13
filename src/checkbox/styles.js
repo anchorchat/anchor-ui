@@ -18,9 +18,11 @@ export default {
     position: 'absolute'
   },
   label: {
-    color: 'inherit',
+    color: colors.secondaryText,
     transition: 'all .3s ease-in-out',
     lineHeight: '24px',
+    fontSize: '16px',
+    fontWeight: 'bolder',
     borderBottom: '2px solid transparent'
   },
   icon: {

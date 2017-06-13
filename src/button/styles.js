@@ -30,6 +30,8 @@ export default {
     color: colors.white,
     cursor: 'pointer',
     fontSize: '16px',
+    fontWeight: 'inherit',
+    fontFamily: 'inherit',
     lineHeight: '20px',
     outline: 0,
     padding: '6px 12px',

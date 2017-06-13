@@ -123,7 +123,7 @@ const Nav = (props, context) => {
       <MenuItem onClick={() => router.push('/input')} active={router.isActive('/input')} text="Input" />
       <MenuItem onClick={() => router.push('/lightbox')} active={router.isActive('/lightbox')} text="Lightbox" />
       <MenuItem onClick={() => router.push('/list')} active={router.isActive('/list')} text="List" />
-      <MenuItem onClick={() => router.push('/list-item')} active={router.isActive('/list-item')} text="MenuItem" />
+      <MenuItem onClick={() => router.push('/list-item')} active={router.isActive('/list-item')} text="ListItem" />
       <MenuItem onClick={() => router.push('/loader')} active={router.isActive('/loader')} text="Loader" />
       <MenuItem onClick={() => router.push('/menu')} active={router.isActive('/menu')} text="Menu" />
       <MenuItem onClick={() => router.push('/menu-item')} active={router.isActive('/menu-item')} text="MenuItem" />

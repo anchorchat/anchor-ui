@@ -9,7 +9,7 @@ const styleSheet = {
     padding: '2px',
     textAlign: 'center',
     borderRadius: '3px',
-    fontFamily: 'inherit',
+    fontWeight: 'inherit',
     border: `1px solid ${colors.theme}`,
     transition: 'background .3s ease-in-out'
   },
