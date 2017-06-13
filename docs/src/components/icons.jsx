@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
-import uuid from 'uuid';
 import * as icons from '../../../dist/icons';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
@@ -19,7 +18,12 @@ const IconsDoc = () => {
       margin: 0,
       padding: '20px'
     },
-    icon: { margin: '10px' }
+    icon: {
+      margin: '10px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   };
 
   return (
@@ -36,7 +40,9 @@ const IconsDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          {_.map(icons, icon => React.createElement(icon, { style: style.icon, key: uuid.v4() }))}
+          {_.map(icons, (icon, name) => (
+            <div key={name} style={style.icon}>{React.createElement(icon)} {name}</div>
+          ))}
         </Paper>
         <h2>Available icons</h2>
         <ul>
