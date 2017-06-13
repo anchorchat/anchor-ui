@@ -27,7 +27,9 @@ const styleSheet = {
     color: 'inherit',
     lineHeight: '24px',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    fontWeight: 'inherit',
+    fontSize: '16px'
   },
   icon: {
     position: 'absolute',

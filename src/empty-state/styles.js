@@ -22,6 +22,7 @@ export default {
   },
   body: {
     fontSize: '16px',
+    fontWeight: 'inherit',
     color: colors.primaryText,
     marginBottom: '30px',
     marginTop: '16px',
