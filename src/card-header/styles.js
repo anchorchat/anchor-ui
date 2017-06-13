@@ -9,14 +9,14 @@ export default {
   title: {
     color: colors.secondaryText,
     margin: 0,
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     fontSize: '16px'
   },
   subtitle: {
     color: colors.grey,
     marginTop: '8px',
     marginBottom: '0',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     fontSize: '14px'
   },
   avatar: {

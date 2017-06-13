@@ -10,7 +10,8 @@ export default {
     maxWidth: '75%',
     padding: '12px',
     position: 'relative',
-    wordBreak: 'break-word'
+    wordBreak: 'break-word',
+    fontWeight: 'inherit'
   },
   avatar: {
     marginLeft: '66px'

@@ -23,7 +23,7 @@ export default {
     transition: 'opacity .3s ease-in-out'
   },
   header: {
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     color: colors.theme,
     margin: 0,
     padding: '15.5px 16px 15.5px 16px',

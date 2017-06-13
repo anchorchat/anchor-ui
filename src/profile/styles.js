@@ -51,7 +51,7 @@ export default {
   },
   header: {
     fontSize: '18px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginTop: '16px',
     marginBottom: '8px',
     color: colors.secondaryText,

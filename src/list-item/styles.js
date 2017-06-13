@@ -61,12 +61,12 @@ export default {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    fontWeight: 'normal'
+    fontWeight: 'inherit'
   },
   secondaryText: {
     color: colors.secondaryText,
     fontSize: '14px',
-    fontWeight: 'normal',
+    fontWeight: 'inherit',
     marginBottom: 0,
     marginTop: '2.4px',
     lineHeight: '16px',
