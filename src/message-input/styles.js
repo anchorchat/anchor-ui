@@ -24,6 +24,7 @@ export default {
     appearance: 'none',
     color: colors.primaryText,
     fontSize: '16px',
+    fontWeight: 'inherit',
     outline: 'none',
     padding: '0 8px',
     border: 0,

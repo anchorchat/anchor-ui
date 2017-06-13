@@ -70,7 +70,8 @@ export default {
     textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    minHeight: '20px'
+    minHeight: '20px',
+    fontWeight: 'inherit'
   },
   status: {
     width: '15px',
