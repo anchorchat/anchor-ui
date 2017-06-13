@@ -39,7 +39,7 @@ All Components should live in their own directory, this directory has the Compon
 Always prefer stateless Components over Class components.
 
 ### Defining stateless Components
-Always define theme as arrow functions.
+Always define them as arrow functions.
 
 ```js
 // bad
