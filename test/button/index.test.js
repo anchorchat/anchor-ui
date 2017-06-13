@@ -36,7 +36,7 @@ describe('Button', () => {
     expect(wrapper.find('button')).to.have.length(1);
   });
 
-  it('should pass the value of the children prop to the section element', () => {
+  it('should render children', () => {
     const wrapper = shallow(<Button {...props}>{children}</Button>).dive();
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
