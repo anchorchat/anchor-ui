@@ -24,6 +24,6 @@ export default {
     justifyContent: 'space-between',
     color: colors.white,
     textTransform: 'uppercase',
-    fontWeight: 'bold'
+    fontWeight: 'bolder'
   }
 };
