@@ -63,3 +63,4 @@ export IconPlus from './icon-plus';
 export IconChannelSettings from './icon-channel-settings';
 export IconFirst from './icon-first';
 export IconLast from './icon-last';
+export IconBomb from './icon-bomb';
