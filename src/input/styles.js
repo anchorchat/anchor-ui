@@ -14,6 +14,7 @@ export default {
     color: colors.white,
     fontSize: '16px',
     fontWeight: 'inherit',
+    fontFamily: 'inherit',
     lineHeight: '16px',
     padding: '6.5px',
     width: '100%',
