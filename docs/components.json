@@ -3632,6 +3632,17 @@
           "computed": false
         }
       },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Right-hand side placed button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
