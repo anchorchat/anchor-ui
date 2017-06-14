@@ -27,6 +27,7 @@ describe('MenuItem.getStyles', () => {
       const style = getStyles.root('red', false, true);
 
       expect(style).to.have.property('color', 'red');
+      expect(style).to.have.property('fontWeight', 'bolder');
     });
 
     it('should add rightButton styles', () => {

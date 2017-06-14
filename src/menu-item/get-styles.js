@@ -10,7 +10,7 @@ const root = (color = colors.theme, iconElement, active, rightButton, overrideSt
   }
 
   if (active) {
-    style = combineStyles(style, { color });
+    style = combineStyles(style, { color, fontWeight: 'bolder' });
   }
 
   if (rightButton) {
