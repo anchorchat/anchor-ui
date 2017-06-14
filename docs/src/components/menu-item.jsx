@@ -2,10 +2,11 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import MenuItem from '../../../dist/menu-item';
+import IconMenu from '../../../dist/icon-menu';
 import Props from './props';
 import components from '../../components.json';
 import IconReport from '../../../dist/icons/icon-report';
-import Button from '../../../dist/button';
+import IconMore from '../../../dist/icons/icon-more';
 import Paper from '../../../dist/paper';
 
 const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
@@ -45,9 +46,14 @@ const MenuItemDoc = () => {
             <MenuItem icon={<IconReport />} text="Menu item with icon" onClick={() => {}} />
             <MenuItem
               rightButton={
-                <Button iconButton onClick={() => {}}>
-                  <IconReport />
-                </Button>
+                <IconMenu
+                  icon={<IconMore />}
+                  header="Items"
+                  dividerText="More items"
+                >
+                  <MenuItem text="Active item" onClick={() => {}} active />
+                  <MenuItem text="Inactive item" onClick={() => {}} />
+                </IconMenu>
               }
               text="Menu item with rightButton"
               onClick={() => {}}
