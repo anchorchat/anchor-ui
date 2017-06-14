@@ -9,5 +9,8 @@ export default {
     opacity: '.75',
     flexShrink: '0',
     alignSelf: 'flex-end'
+  },
+  edited: {
+    marginRight: '4px'
   }
 };
