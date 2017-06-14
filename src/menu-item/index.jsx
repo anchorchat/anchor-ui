@@ -26,6 +26,8 @@ class MenuItem extends Component {
     iconStyle: PropTypes.instanceOf(Object),
     /** Closes IconMenu if MenuItem is child */
     closeMenu: PropTypes.func,
+    /** Right-hand side placed button */
+    rightButton: PropTypes.node,
     color: PropTypes.string.isRequired
   };
 
@@ -35,7 +37,8 @@ class MenuItem extends Component {
     style: {},
     textStyle: {},
     iconStyle: {},
-    closeMenu: null
+    closeMenu: null,
+    rightButton: null
   };
 
   static contextTypes = {
@@ -68,13 +71,14 @@ class MenuItem extends Component {
       active,
       closeMenu, // eslint-disable-line no-unused-vars
       onClick, // eslint-disable-line no-unused-vars
+      rightButton,
       color,
       ...custom
     } = this.props;
 
     return (
       <section
-        style={getStyles.root(color, icon, active, style)}
+        style={getStyles.root(color, icon, active, rightButton, style)}
         onClick={this.handleClick}
         {...custom}
       >
@@ -82,6 +86,7 @@ class MenuItem extends Component {
         <p style={getStyles.text(textStyle)}>
           {text}
         </p>
+        {rightButton ? <div style={getStyles.rightButton(iconStyle)}>{rightButton}</div> : null}
       </section>
     );
   }
