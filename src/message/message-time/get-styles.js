@@ -2,7 +2,7 @@ import combineStyles from '../../internal/combine-styles';
 import colors from '../../settings/colors';
 import styles from './styles';
 
-const root = (myMessage, type, overrideStyle) => {
+const root = (myMessage, type, edited, overrideStyle) => {
   let style = styles.root;
 
   if (myMessage) {
@@ -11,6 +11,10 @@ const root = (myMessage, type, overrideStyle) => {
 
   if (type === 'image') {
     style = combineStyles(style, { marginTop: '10px' });
+  }
+
+  if (edited) {
+    style = combineStyles(style, { width: 'auto' });
   }
 
   return combineStyles(style, overrideStyle);

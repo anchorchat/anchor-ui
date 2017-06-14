@@ -68,6 +68,8 @@ class Message extends Component {
     expandText: PropTypes.node,
     /** Icon to show in expand menu item */
     expandIcon: PropTypes.node,
+    /** Text to display for edited banner */
+    edited: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -89,7 +91,8 @@ class Message extends Component {
     expand: null,
     expandText: 'Expand image',
     expandIcon: null,
-    collapsedText: 'This image has been collapsed, click the button to expand it.'
+    collapsedText: 'This image has been collapsed, click the button to expand it.',
+    edited: null
   }
 
   constructor() {
@@ -171,6 +174,7 @@ class Message extends Component {
       expandText, // eslint-disable-line no-unused-vars
       expandIcon, // eslint-disable-line no-unused-vars
       collapsedText, // eslint-disable-line no-unused-vars
+      edited, // eslint-disable-line no-unused-vars
       color,
       ...custom
     } = this.props;
