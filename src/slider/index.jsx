@@ -59,7 +59,11 @@ const Slider = ({
 Slider.displayName = 'Slider';
 
 Slider.propTypes = {
-  /** Change the slider's value */
+  /**
+   * Callback fired when Slider's value changes
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func.isRequired,
   /** The slider's value. Must between min and max */
   value: propTypes.valueInRange,

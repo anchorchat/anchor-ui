@@ -18,7 +18,11 @@ class MenuItem extends Component {
     text: PropTypes.node.isRequired,
     /** MenuItem active */
     active: PropTypes.bool,
-    /** MenuItem onClick function */
+    /**
+     * Callback fired when MenuItem is clicked
+     *
+     * function(event: object) => void
+     */
     onClick: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -26,7 +30,11 @@ class MenuItem extends Component {
     textStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object),
-    /** Closes IconMenu if MenuItem is child */
+    /**
+     * Callback fired when the MenuItem closes a Menu/IconMenu
+     *
+     * function(event: object) => void
+     */
     closeMenu: PropTypes.func,
     color: PropTypes.string.isRequired
   };
@@ -50,14 +58,14 @@ class MenuItem extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(event) {
     const { closeMenu, onClick } = this.props;
 
     if (closeMenu) {
-      closeMenu();
+      closeMenu(event);
     }
 
-    onClick();
+    onClick(event);
   }
 
   render() {

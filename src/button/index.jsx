@@ -24,7 +24,11 @@ Button.displayName = 'Button';
 Button.propTypes = {
   /** Content of the button */
   children: PropTypes.node.isRequired,
-  /** Button onClick function */
+  /**
+   * Callback fired when the Button is clicked
+   *
+   * function(event: object) => void
+   */
   onClick: PropTypes.func,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),

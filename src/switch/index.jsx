@@ -22,11 +22,15 @@ const Switch = ({
 Switch.displayName = 'Switch';
 
 Switch.propTypes = {
-  /** The switch's active state */
+  /** The Switch's active state */
   active: PropTypes.bool,
-  /** Toggle the switch's active state */
+  /**
+   * Callback fired when Switch's value changes
+   *
+   * function(event: object, value: string || number) => void
+   */
   toggleSwitch: PropTypes.func.isRequired,
-  /** The switch's label */
+  /** The Switch's label */
   label: PropTypes.node,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
