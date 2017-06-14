@@ -1791,6 +1791,24 @@
       }
     }
   },
+  "components/icons/icon-bomb.jsx": {
+    "description": "",
+    "displayName": "IconBomb",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-channel-settings.jsx": {
     "description": "",
     "displayName": "IconChannelSettings",
@@ -3906,6 +3924,17 @@
         },
         "required": false,
         "description": "Icon to show in expand menu item",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "edited": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display for edited banner",
         "defaultValue": {
           "value": "null",
           "computed": false
