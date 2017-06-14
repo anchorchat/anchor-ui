@@ -18,10 +18,12 @@ export default {
     position: 'absolute'
   },
   label: {
-    color: 'inherit',
     transition: 'all .3s ease-in-out',
     lineHeight: '24px',
-    borderBottom: '2px solid transparent'
+    borderBottom: '2px solid transparent',
+    fontSize: '16px',
+    color: colors.secondaryText,
+    fontWeight: 'bolder',
   },
   icon: {
     width: '24px',

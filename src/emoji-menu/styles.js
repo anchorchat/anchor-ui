@@ -33,7 +33,7 @@ export default {
     boxSizing: 'border-box',
     header: {
       marginTop: '0',
-      fontWeight: 'bold',
+      fontWeight: 'bolder',
       textTransform: 'capitalize',
       marginBottom: '10px'
     },

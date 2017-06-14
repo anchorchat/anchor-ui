@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import CardHeader from '../../src/card-header';
-import getStyles from '../../src/admin-badge/get-styles';
+import getStyles from '../../src/card-header/get-styles';
 
 chai.use(sinonChai);
 
@@ -28,7 +28,7 @@ describe('CardHeader', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a span element', () => {
+  it('should always render a header element', () => {
     const wrapper = shallow(<CardHeader {...props} />).dive();
 
     expect(wrapper.find('header')).to.have.length(1);
@@ -46,10 +46,41 @@ describe('CardHeader', () => {
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
+  it('should not render a h2 element if the subtitle prop is not passed', () => {
+    const wrapper = shallow(<CardHeader {...props} />).dive();
+
+    expect(wrapper.find('h2')).to.have.length(0);
+  });
+
+  it('should render a h2 element if the subtitle prop is passed', () => {
+    props.subtitle = 'text';
+    const wrapper = shallow(<CardHeader {...props} />).dive();
+
+    expect(wrapper.find('h2')).to.have.length(1);
+    expect(wrapper.containsMatchingElement(<h2>text</h2>)).to.equal(true);
+    props.subtitle = '';
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<CardHeader {...props} />);
-    expect(spy).to.have.been.calledWith(props.style).dive();
+    shallow(<CardHeader {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should get title styles', () => {
+    const spy = sinon.spy(getStyles, 'title');
+
+    shallow(<CardHeader {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should get subtitle styles', () => {
+    const spy = sinon.spy(getStyles, 'subtitle');
+    props.subtitle = 'text';
+
+    shallow(<CardHeader {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.subtitleStyle);
+    props.subtitle = '';
   });
 });

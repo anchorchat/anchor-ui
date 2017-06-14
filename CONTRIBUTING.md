@@ -59,7 +59,7 @@ Please create a new branch from an up to date develop on your fork.
 4. Make your changes, lint, then push to github with `git push --set-upstream origin feature/[my-feature]`.
 5. Visit github and make your pull request.
 
-If you have an existing local repository, please update it before you start, to minimise the chance of merge conflicts.
+If you have an existing local repository, please update it before you start, to minimize the chance of merge conflicts.
 ```js
 git remote add upstream git@github.com:anchorchat/anchor-ui.git
 git checkout develop

@@ -21,7 +21,7 @@ export default {
   header: {
     color: 'inherit',
     fontSize: '22px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginTop: '0',
     marginLeft: '0',
     marginRight: '0',

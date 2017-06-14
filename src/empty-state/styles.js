@@ -15,13 +15,14 @@ export default {
   },
   heading: {
     fontSize: '16px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     color: colors.secondaryText,
     margin: '0',
     textAlign: 'center'
   },
   body: {
     fontSize: '16px',
+    fontWeight: 'inherit',
     color: colors.primaryText,
     marginBottom: '30px',
     marginTop: '16px',
