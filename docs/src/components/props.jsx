@@ -45,7 +45,7 @@ const Props = ({ props }) => {
             <TableRow key={name}>
               <TableColumn>{name}</TableColumn>
               <TableColumn>{getPropType(prop.type)}</TableColumn>
-              <TableColumn>{prop.description}</TableColumn>
+              <TableColumn dangerouslySetInnerHTML={{ __html: prop.description.replace(/\n/g, '<br />') }} />
               <TableColumn>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
               <TableColumn>{prop.required ? 'Yes' : 'No'}</TableColumn>
             </TableRow>
