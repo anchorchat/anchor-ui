@@ -137,7 +137,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Function to hide the alert",
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -423,7 +423,7 @@
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void"
       },
       "style": {
         "type": {
@@ -467,7 +467,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Button onClick function",
+        "description": "Callback fired when the Button is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -782,7 +782,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "The input's onChange function"
+        "description": "Callback fired when the input's value is changed\n\nfunction(event: object) => void"
       },
       "checked": {
         "type": {
@@ -1049,7 +1049,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Function to hide dialog element"
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void"
       },
       "children": {
         "type": {
@@ -1339,6 +1339,10 @@
         "modifiers": [],
         "params": [
           {
+            "name": "event",
+            "type": null
+          },
+          {
             "name": "emoji",
             "type": null
           }
@@ -1363,7 +1367,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Send an emoji"
+        "description": "Callback fired when an emoji is clicked\n\nfunction(event: object, emoji: object) => void"
       },
       "style": {
         "type": {
@@ -1559,7 +1563,12 @@
         "name": "closeMenu",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       },
       {
@@ -1664,7 +1673,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback function fired when the IconMenu closes",
+        "description": "Callback fired when the IconMenu closes\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -2881,7 +2890,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value"
+        "description": "Callback fired when the Input's value is changed\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -3078,7 +3087,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Function to hide dialog element"
+        "description": "Callback fired when the Lightbox is closed\n\nfunction(event: object) => void"
       },
       "image": {
         "type": {
@@ -3197,7 +3206,12 @@
         "name": "toggleNestedList",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],
@@ -3272,7 +3286,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Click function for the root element",
+        "description": "Callback fired when the ListItem is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3371,7 +3385,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback function fired when the ListItem toggles its nested list",
+        "description": "Callback fired when the nested list is toggled\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -3458,12 +3472,12 @@
           "computed": false
         }
       },
-      "toggleMenu": {
+      "closeMenu": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied.",
+        "description": "Callback fired when Menu's overlay or MenuItems are clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3544,7 +3558,12 @@
         "name": "handleClick",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],
@@ -3583,7 +3602,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "MenuItem onClick function"
+        "description": "Callback fired when MenuItem is clicked\n\nfunction(event: object) => void"
       },
       "style": {
         "type": {
@@ -3626,7 +3645,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Closes IconMenu if MenuItem is child",
+        "description": "Callback fired when the MenuItem closes a Menu/IconMenu\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3901,7 +3920,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Expand a collapsed image message",
+        "description": "Callback fired when 'expand' MenuItem is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3972,14 +3991,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value"
+        "description": "Callback fired when MessageInput's value changes\n\nfunction(event: object) => void"
       },
       "sendMessage": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Send a message"
+        "description": "Callback fired when a message is sent\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -4308,7 +4327,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when the navigation changes\n\n@param {pager} object Object containing { items, totalItems, totalPages, currentPage  }."
+        "description": "Callback fired when the navigation changes\n\nfunction(event: object, pager: object) => void"
       },
       "initialPage": {
         "type": {
@@ -4807,7 +4826,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "The input's onChange function",
+        "description": "Callback fired when RadioButton's value changes\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -4906,7 +4925,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the RadioButtonGroup's value"
+        "description": "Callback fired when RadioButtonGroup's value changes\n\nfunction(event: object) => void"
       },
       "children": {
         "type": {
@@ -4985,7 +5004,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "value",
+            "name": "event",
             "type": null
           }
         ],
@@ -5010,14 +5029,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value"
+        "description": "Callback fired when SearchBox's value changes\n\nfunction(event: object) => void"
       },
       "changeSearchQuery": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Change the search query with debounce"
+        "description": "Callback fired when SearchBox's query changes, with debounce\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -5107,7 +5126,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "The Selects content (MenuItem), each child must have a value prop"
+        "description": "The Select's content (MenuItem), each child must have a value prop"
       },
       "value": {
         "type": {
@@ -5133,7 +5152,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the Selects value"
+        "description": "Callback fired when Select's value changes\n\nfunction(event: object, value: string || number) => void"
       },
       "style": {
         "type": {
@@ -5199,7 +5218,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The Selects placeholder",
+        "description": "The Select's placeholder",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -5247,7 +5266,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the slider's value"
+        "description": "Callback fired when Slider's value changes\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -5387,7 +5406,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "The switch's active state",
+        "description": "The Switch's active state",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -5398,14 +5417,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Toggle the switch's active state"
+        "description": "Callback fired when Switch's value changes\n\nfunction(event: object, value: string || number) => void"
       },
       "label": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "The switch's label",
+        "description": "The Switch's label",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5507,7 +5526,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Tab onClick function"
+        "description": "Callback fired when Tab is clicked\n\nfunction(event: object, value: string || number) => void"
       },
       "style": {
         "type": {
