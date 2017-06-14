@@ -12,7 +12,7 @@ const Menu = ({
   open,
   header,
   headerIcon,
-  toggleMenu,
+  closeMenu,
   style,
   iconStyle,
   headerStyle,
@@ -20,10 +20,10 @@ const Menu = ({
   ...custom
 }) => {
   const menuItems = React.Children.map(children, child => (
-    cloneElement(child, { closeMenu: toggleMenu })
+    cloneElement(child, { closeMenu })
   ));
 
-  if (!toggleMenu) {
+  if (!closeMenu) {
     return (
       <nav style={getStyles.sidebar(style)} {...custom}>
         {
@@ -39,7 +39,7 @@ const Menu = ({
 
   return (
     <section style={getStyles.container()}>
-      <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
+      <Overlay style={getStyles.overlay(open)} onClick={closeMenu} />
       <nav style={getStyles.root(open, style)} {...custom}>
         {
           headerIcon
@@ -60,8 +60,12 @@ Menu.propTypes = {
   children: PropTypes.node.isRequired,
   /** Menu open */
   open: PropTypes.bool,
-  /** Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied. */
-  toggleMenu: PropTypes.func,
+  /**
+   * Callback fired when Menu's overlay or MenuItems are clicked
+   *
+   * function(event: object) => void
+   */
+  closeMenu: PropTypes.func,
   /** The Menu's header */
   header: PropTypes.node,
   /** The header's icon */
@@ -77,7 +81,7 @@ Menu.propTypes = {
 
 Menu.defaultProps = {
   open: false,
-  toggleMenu: null,
+  closeMenu: null,
   header: null,
   style: {},
   headerStyle: {},
