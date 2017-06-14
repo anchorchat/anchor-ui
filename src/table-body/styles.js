@@ -3,7 +3,7 @@ import colors from '../settings/colors';
 export default {
   root: {
     color: colors.primaryText,
-    fontWeight: 'normal',
+    fontWeight: 'inherit',
     fontSize: '16px'
   }
 };

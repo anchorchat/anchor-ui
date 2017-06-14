@@ -6,7 +6,7 @@ export default {
   label: {
     fontSize: '16px',
     color: colors.secondaryText,
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginBottom: '10px',
     display: 'inline-block'
   },

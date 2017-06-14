@@ -4,7 +4,7 @@ export default {
   root: {
     backgroundColor: colors.theme,
     color: colors.white,
-    fontWeight: 'normal',
+    fontWeight: 'inherit',
     fontSize: '16px',
     transition: 'background .3s ease-in-out'
   }

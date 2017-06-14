@@ -43,7 +43,7 @@ export default {
     padding: '18px 56px',
     color: colors.white,
     fontSize: '18px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     lineHeight: '20px',
     width: '100%',
     boxSizing: 'border-box',

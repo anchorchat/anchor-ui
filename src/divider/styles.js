@@ -18,6 +18,6 @@ export default {
     margin: 0,
     cursor: 'default',
     textTransform: 'capitalize',
-    fontWeight: 'normal'
+    fontWeight: 'inherit'
   }
 };

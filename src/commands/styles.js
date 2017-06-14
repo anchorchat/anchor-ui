@@ -16,7 +16,8 @@ export default {
     color: colors.white,
     transition: 'background .3s ease-in-out',
     padding: '10px',
-    fontSize: '16px'
+    fontSize: '16px',
+    fontWeight: 'inherit'
   },
   commands: {
     height: 'calc(100% - 40px)',
@@ -41,12 +42,13 @@ export default {
     }
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginRight: '5px',
     fontSize: '14px'
   },
   description: {
     fontStyle: 'italic',
+    fontWeight: 'inherit',
     fontSize: '14px',
     float: 'right'
   }

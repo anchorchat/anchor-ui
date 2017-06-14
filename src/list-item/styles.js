@@ -50,7 +50,9 @@ export default {
     paddingRight: '52px'
   },
   button: {
-    transition: 'transform .3s ease-in-out'
+    transition: 'transform .3s ease-in-out',
+    width: '40px',
+    height: '40px'
   },
   primaryText: {
     color: colors.primaryText,
@@ -61,12 +63,12 @@ export default {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    fontWeight: 'normal'
+    fontWeight: 'inherit'
   },
   secondaryText: {
     color: colors.secondaryText,
     fontSize: '14px',
-    fontWeight: 'normal',
+    fontWeight: 'inherit',
     marginBottom: 0,
     marginTop: '2.4px',
     lineHeight: '16px',
@@ -80,7 +82,9 @@ export default {
   },
   avatar: {
     position: 'relative',
-    marginRight: '8px'
+    marginRight: '8px',
+    width: '40px',
+    height: '40px'
   },
   badge: {
     position: 'absolute',

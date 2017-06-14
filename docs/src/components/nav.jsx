@@ -1,61 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
-import List from '../../../dist/list';
-import ListItem from '../../../dist/list-item';
+import _ from 'underscore';
+import Menu from '../../../dist/menu';
+import MenuItem from '../../../dist/menu-item';
 import npmPackage from '../../../package.json';
+import * as icons from '../../../dist/icons';
 
 const Nav = (props, context) => {
   const { router } = context;
 
+  const style = {
+    icon: {
+      width: '24px',
+      height: '24px'
+    }
+  };
+
   return (
-    <nav>
-      <List>
-        <Link to="/"><ListItem active={router.location.pathname === '/'} primaryText="Getting started" secondaryText={`Version: ${npmPackage.version}`} /></Link>
-        <Link to="/admin-badge"><ListItem active={router.isActive('/admin-badge')} primaryText="AdminBadge" /></Link>
-        <Link to="/alert"><ListItem active={router.isActive('/alert')} primaryText="Alert" /></Link>
-        <Link to="/app-header"><ListItem active={router.isActive('/app-header')} primaryText="AppHeader" /></Link>
-        <Link to="/avatar"><ListItem active={router.isActive('/avatar')} primaryText="Avatar" /></Link>
-        <Link to="/badge"><ListItem active={router.isActive('/badge')} primaryText="Badge" /></Link>
-        <Link to="/button"><ListItem active={router.isActive('/button')} primaryText="Button" /></Link>
-        <Link to="/card"><ListItem active={router.isActive('/card')} primaryText="Card" /></Link>
-        <Link to="/channel-header"><ListItem active={router.isActive('/channel-header')} primaryText="ChannelHeader" /></Link>
-        <Link to="/checkbox"><ListItem active={router.isActive('/checkbox')} primaryText="Checkbox" /></Link>
-        <Link to="/commands"><ListItem active={router.isActive('/commands')} primaryText="Commands" /></Link>
-        <Link to="/dialog"><ListItem active={router.isActive('/dialog')} primaryText="Dialog" /></Link>
-        <Link to="/divider"><ListItem active={router.isActive('/divider')} primaryText="Divider" /></Link>
-        <Link to="/emoji-menu"><ListItem active={router.isActive('/emoji-menu')} primaryText="EmojiMenu" /></Link>
-        <Link to="/empty-state"><ListItem active={router.isActive('/empty-state')} primaryText="EmptyState" /></Link>
-        <Link to="/icons"><ListItem active={router.isActive('/icons')} primaryText="Icons" /></Link>
-        <Link to="/icon-menu"><ListItem active={router.isActive('/icon-menu')} primaryText="IconMenu" /></Link>
-        <Link to="/input"><ListItem active={router.isActive('/input')} primaryText="Input" /></Link>
-        <Link to="/lightbox"><ListItem active={router.isActive('/lightbox')} primaryText="Lightbox" /></Link>
-        <Link to="/list"><ListItem active={router.isActive('/list')} primaryText="List" /></Link>
-        <Link to="/list-item"><ListItem active={router.isActive('/list-item')} primaryText="ListItem" /></Link>
-        <Link to="/loader"><ListItem active={router.isActive('/loader')} primaryText="Loader" /></Link>
-        <Link to="/menu"><ListItem active={router.isActive('/menu')} primaryText="Menu" /></Link>
-        <Link to="/menu-item"><ListItem active={router.isActive('/menu-item')} primaryText="MenuItem" /></Link>
-        <Link to="/message"><ListItem active={router.isActive('/message')} primaryText="Message" /></Link>
-        <Link to="/message-list"><ListItem active={router.isActive('/message-list')} primaryText="MessageList" /></Link>
-        <Link to="/message-input"><ListItem active={router.isActive('/message-input')} primaryText="MessageInput" /></Link>
-        <Link to="/modal"><ListItem active={router.isActive('/modal')} primaryText="Modal" /></Link>
-        <Link to="/pagination"><ListItem active={router.isActive('/paper')} primaryText="Pagination" /></Link>
-        <Link to="/paper"><ListItem active={router.isActive('/paper')} primaryText="Paper" /></Link>
-        <Link to="/pop-over"><ListItem active={router.isActive('/pop-over')} primaryText="PopOver" /></Link>
-        <Link to="/profile"><ListItem active={router.isActive('/profile')} primaryText="Profile" /></Link>
-        <Link to="/profile-card"><ListItem active={router.isActive('/profile-card')} primaryText="ProfileCard" /></Link>
-        <Link to="/radio-button"><ListItem active={router.isActive('/radio-button')} primaryText="RadioButton" /></Link>
-        <Link to="/search-box"><ListItem active={router.isActive('/search-box')} primaryText="SearchBox" /></Link>
-        <Link to="/select"><ListItem active={router.isActive('/select')} primaryText="Select" /></Link>
-        <Link to="/slider"><ListItem active={router.isActive('/slider')} primaryText="Slider" /></Link>
-        <Link to="/switch"><ListItem active={router.isActive('/switch')} primaryText="Switch" /></Link>
-        <Link to="/table"><ListItem active={router.isActive('/table')} primaryText="Table" /></Link>
-        <Link to="/tabs"><ListItem active={router.isActive('/tabs')} primaryText="Tabs" /></Link>
-        <Link to="/theme-provider"><ListItem active={router.isActive('/theme-provider')} primaryText="ThemeProvider" /></Link>
-        <Link to="/themeable"><ListItem active={router.isActive('/themeable')} primaryText="themeable" /></Link>
-        <Link to="/with-theme"><ListItem active={router.isActive('/with-theme')} primaryText="WithTheme" /></Link>
-      </List>
-    </nav>
+    <Menu header={`Version: ${npmPackage.version}`} headerIcon={React.createElement(_.sample(icons), { style: style.icon })}>
+      <MenuItem onClick={() => router.push('/')} active={router.location.pathname === '/'} text="Getting started" />
+      <MenuItem onClick={() => router.push('/admin-badge')} active={router.isActive('/admin-badge')} text="AdminBadge" />
+      <MenuItem onClick={() => router.push('/alert')} active={router.isActive('/alert')} text="Alert" />
+      <MenuItem onClick={() => router.push('/app-header')} active={router.isActive('/app-header')} text="AppHeader" />
+      <MenuItem onClick={() => router.push('/avatar')} active={router.isActive('/avatar')} text="Avatar" />
+      <MenuItem onClick={() => router.push('/badge')} active={router.isActive('/badge')} text="Badge" />
+      <MenuItem onClick={() => router.push('/button')} active={router.isActive('/button')} text="Button" />
+      <MenuItem onClick={() => router.push('/card')} active={router.isActive('/card')} text="Card" />
+      <MenuItem onClick={() => router.push('/channel-header')} active={router.isActive('/channel-header')} text="ChannelHeader" />
+      <MenuItem onClick={() => router.push('/checkbox')} active={router.isActive('/checkbox')} text="Checkbox" />
+      <MenuItem onClick={() => router.push('/commands')} active={router.isActive('/commands')} text="Commands" />
+      <MenuItem onClick={() => router.push('/dialog')} active={router.isActive('/dialog')} text="Dialog" />
+      <MenuItem onClick={() => router.push('/divider')} active={router.isActive('/divider')} text="Divider" />
+      <MenuItem onClick={() => router.push('/emoji-menu')} active={router.isActive('/emoji-menu')} text="EmojiMenu" />
+      <MenuItem onClick={() => router.push('/empty-state')} active={router.isActive('/empty-state')} text="EmptyState" />
+      <MenuItem onClick={() => router.push('/icons')} active={router.isActive('/icons')} text="Icons" />
+      <MenuItem onClick={() => router.push('/icon-menu')} active={router.isActive('/icon-menu')} text="IconMenu" />
+      <MenuItem onClick={() => router.push('/input')} active={router.isActive('/input')} text="Input" />
+      <MenuItem onClick={() => router.push('/lightbox')} active={router.isActive('/lightbox')} text="Lightbox" />
+      <MenuItem onClick={() => router.push('/list')} active={router.isActive('/list')} text="List" />
+      <MenuItem onClick={() => router.push('/list-item')} active={router.isActive('/list-item')} text="ListItem" />
+      <MenuItem onClick={() => router.push('/loader')} active={router.isActive('/loader')} text="Loader" />
+      <MenuItem onClick={() => router.push('/menu')} active={router.isActive('/menu')} text="Menu" />
+      <MenuItem onClick={() => router.push('/menu-item')} active={router.isActive('/menu-item')} text="MenuItem" />
+      <MenuItem onClick={() => router.push('/message')} active={router.isActive('/message')} text="Message" />
+      <MenuItem onClick={() => router.push('/message-list')} active={router.isActive('/message-list')} text="MessageList" />
+      <MenuItem onClick={() => router.push('/message-input')} active={router.isActive('/message-input')} text="MessageInput" />
+      <MenuItem onClick={() => router.push('/modal')} active={router.isActive('/modal')} text="Modal" />
+      <MenuItem onClick={() => router.push('/pagination')} active={router.isActive('/pagination')} text="Pagination" />
+      <MenuItem onClick={() => router.push('/paper')} active={router.isActive('/paper')} text="Paper" />
+      <MenuItem onClick={() => router.push('/pop-over')} active={router.isActive('/pop-over')} text="PopOver" />
+      <MenuItem onClick={() => router.push('/profile')} active={router.isActive('/profile')} text="Profile" />
+      <MenuItem onClick={() => router.push('/profile-card')} active={router.isActive('/profile-card')} text="ProfileCard" />
+      <MenuItem onClick={() => router.push('/radio-button')} active={router.isActive('/radio-button')} text="RadioButton" />
+      <MenuItem onClick={() => router.push('/search-box')} active={router.isActive('/search-box')} text="SearchBox" />
+      <MenuItem onClick={() => router.push('/select')} active={router.isActive('/select')} text="Select" />
+      <MenuItem onClick={() => router.push('/slider')} active={router.isActive('/slider')} text="Slider" />
+      <MenuItem onClick={() => router.push('/switch')} active={router.isActive('/switch')} text="Switch" />
+      <MenuItem onClick={() => router.push('/table')} active={router.isActive('/table')} text="Table" />
+      <MenuItem onClick={() => router.push('/tabs')} active={router.isActive('/tabs')} text="Tabs" />
+      <MenuItem onClick={() => router.push('/theme-provider')} active={router.isActive('/theme-provider')} text="ThemeProvider" />
+      <MenuItem onClick={() => router.push('/themeable')} active={router.isActive('/themeable')} text="themeable" />
+      <MenuItem onClick={() => router.push('/with-theme')} active={router.isActive('/with-theme')} text="WithTheme" />
+    </Menu>
   );
 };
 

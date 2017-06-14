@@ -11,7 +11,7 @@ const styleSheet = {
   text: {
     color: colors.secondaryText,
     fontSize: '18px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     margin: 0,
     textAlign: 'center',
     lineHeight: '48px',

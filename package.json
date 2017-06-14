@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "3.5.8",
+  "version": "3.6.0",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -24,7 +24,8 @@
   "keywords": [
     "react"
   ],
-  "author": "Sjaak Luthart",
+  "author": "Sjaak Luthart <sjaak.luthart@anchor.chat>",
+  "contributors": ["Ian Stewart <ian.stewart@anchor.chat>", "Lars Tadema <lars.tadema@anchor.chat>"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anchorchat/anchor-ui/issues"

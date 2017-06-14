@@ -5,6 +5,7 @@ export default {
     backgroundColor: colors.theme,
     color: colors.white,
     fontSize: '18px',
+    fontWeight: 'bolder',
     lineHeight: '20px',
     padding: '15px'
   },
@@ -20,7 +21,7 @@ export default {
     overflow: 'hidden',
     display: 'inline-block',
     color: colors.white,
-    fontWeight: 'normal'
+    fontWeight: 'inherit'
   },
   text: {
     fontSize: '16px',

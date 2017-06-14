@@ -12,7 +12,7 @@ describe('MessageTime.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root(false, 'text', { color: 'red' });
+      const style = getStyles.root(false, 'text', null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -27,6 +27,12 @@ describe('MessageTime.getStyles', () => {
       const style = getStyles.root(true, 'image');
 
       expect(style).to.have.property('marginTop', '10px');
+    });
+
+    it('should add edited styles', () => {
+      const style = getStyles.root(false, 'text', true, {});
+
+      expect(style).to.have.property('width', 'auto');
     });
   });
 });

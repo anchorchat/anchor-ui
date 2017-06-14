@@ -51,7 +51,7 @@ export default {
   },
   header: {
     fontSize: '18px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginTop: '16px',
     marginBottom: '8px',
     color: colors.secondaryText,
@@ -70,7 +70,8 @@ export default {
     textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    minHeight: '20px'
+    minHeight: '20px',
+    fontWeight: 'inherit'
   },
   status: {
     width: '15px',

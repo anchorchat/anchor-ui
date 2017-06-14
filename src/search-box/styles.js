@@ -20,6 +20,9 @@ export default {
     paddingRight: '8px',
     width: '100%',
     height: '100%',
+    fontWeight: 'inherit',
+    fontFamily: 'inherit',
+
     ':focus': {
       outline: 'none'
     }
