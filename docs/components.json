@@ -4170,7 +4170,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the <ul /> element",
+        "description": "Override the styles of the ul element",
         "defaultValue": {
           "value": "{}",
           "computed": false
