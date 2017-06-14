@@ -7,6 +7,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EmptyState from '../../src/empty-state';
 import getStyles from '../../src/empty-state/get-styles';
+import button from '../../src/button';
 
 chai.use(sinonChai);
 
@@ -46,6 +47,15 @@ describe('empty-state', () => {
     const wrapper = shallow(<EmptyState {...props} />).dive();
 
     expect(wrapper.find('p')).to.have.length(1);
+  });
+
+  it('should always render the value of the button prop', () => {
+    props.button = <button>text</button>;
+    const wrapper = shallow(<EmptyState {...props} />).dive();
+
+    expect(wrapper.find('button')).to.have.length(1);
+    expect(wrapper.containsMatchingElement(<button>text</button>)).to.equal(true);
+    props.button = null;
   });
 
   it('should get root styles', () => {
