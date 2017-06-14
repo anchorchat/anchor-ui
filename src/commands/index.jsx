@@ -130,10 +130,10 @@ class Commands extends Component {
     const {
       header,
       commands, // eslint-disable-line no-unused-vars
-      value,
+      value, // eslint-disable-line no-unused-vars
       color,
       onMouseOver,
-      onSelect,
+      onSelect, // eslint-disable-line no-unused-vars
       style,
       headerStyle,
       titleStyle,
