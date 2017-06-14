@@ -29,12 +29,11 @@ const styleSheet = {
     lineHeight: '24px',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    fontWeight: 'inherit',
-    fontSize: '16px'
+    fontWeight: 'inherit'
   },
   icon: {
     position: 'absolute',
-    top: '10px',
+    top: '8px',
     left: '8px',
     height: '24px'
   },
