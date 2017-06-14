@@ -38,12 +38,12 @@ const styleSheet = {
     width: '24px',
     height: '24px'
   },
-  activeIcon: {
+  rightButton: {
     position: 'absolute',
-    top: '8px',
+    top: '0',
     right: '8px',
-    height: '24px',
-    width: '24px'
+    height: '40px',
+    width: '40px'
   }
 };
 
