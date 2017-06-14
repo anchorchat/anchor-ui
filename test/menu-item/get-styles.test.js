@@ -2,7 +2,6 @@
 import { expect } from 'chai';
 import getStyles from '../../src/menu-item/get-styles';
 import styles from '../../src/menu-item/styles';
-import colors from '../../src/settings/colors';
 
 describe('MenuItem.getStyles', () => {
   describe('root', () => {
