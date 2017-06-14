@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import colors from '../settings/colors';
-import IconSuccess from '../icons/icon-success';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
@@ -84,13 +82,6 @@ class MenuItem extends Component {
         <p style={getStyles.text(textStyle)}>
           {text}
         </p>
-        {
-          active
-          ? <div style={getStyles.activeIcon(iconStyle)}>
-            <IconSuccess color={color || colors.theme} />
-          </div>
-          : null
-        }
       </section>
     );
   }
