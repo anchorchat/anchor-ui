@@ -42,7 +42,7 @@ const Input = ({
     />
     <Style
       rules={{
-        '.input::placeholder': combineStyles({ color: fade(colors.white, 0.38) }, placeholderStyle)
+        '.input::placeholder': combineStyles({ color: fade(colors.placeholderText, 0.48) }, placeholderStyle)
       }}
     />
     {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}

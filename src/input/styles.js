@@ -7,11 +7,11 @@ export default {
   },
   input: {
     appearance: 'none',
-    backgroundColor: 'rgba(45, 55, 104, 0.75)',
+    backgroundColor: colors.inputs,
     border: '0',
     borderRadius: '3px',
     boxSizing: 'border-box',
-    color: colors.white,
+    color: colors.placeholderText,
     fontSize: '16px',
     fontWeight: 'inherit',
     fontFamily: 'inherit',
