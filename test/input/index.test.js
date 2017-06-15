@@ -91,4 +91,13 @@ describe('Input', () => {
     shallow(<Input {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.error, props.inputStyle);
   });
+
+  it('should get error styles', () => {
+    const spy = sinon.spy(getStyles, 'error');
+    props.error = 'error';
+
+    shallow(<Input {...props} />).dive();
+    expect(spy).to.have.been.calledWith(props.errorStyle);
+    props.error = null;
+  });
 });
