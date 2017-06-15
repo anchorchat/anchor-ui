@@ -17,8 +17,8 @@ describe('List', () => {
     headerStyle: {},
     listRef: () => {},
     open: true,
-    children: ''
   };
+  const children = <p>children</p>;
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -29,7 +29,7 @@ describe('List', () => {
   });
 
   it('should always render an ul element', () => {
-    const wrapper = shallow(<List {...props} />).dive();
+    const wrapper = shallow(<List {...props}>{children}</List>).dive();
 
     expect(wrapper.find('ul')).to.have.length(1);
   });
