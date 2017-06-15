@@ -34,6 +34,12 @@ describe('List', () => {
     expect(wrapper.find('ul')).to.have.length(1);
   });
 
+  it('should always render the value of the children prop', () => {
+    const wrapper = shallow(<List {...props} >{children}</List>);
+
+    expect(wrapper.contains(children)).to.equal(true);
+  });
+
   it('should render a h1 element if the header prop is passed', () => {
     let wrapper = shallow(<List {...props} />).dive();
 
