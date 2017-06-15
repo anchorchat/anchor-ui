@@ -2,7 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-const root = (color = colors.theme, iconElement, active, overrideStyle) => {
+const root = (color = colors.theme, iconElement, active, rightButton, overrideStyle) => {
   let style = styles.root;
 
   if (iconElement) {
@@ -10,7 +10,11 @@ const root = (color = colors.theme, iconElement, active, overrideStyle) => {
   }
 
   if (active) {
-    style = combineStyles(style, { color, paddingRight: '40px' });
+    style = combineStyles(style, { color, fontWeight: 'bolder' });
+  }
+
+  if (rightButton) {
+    style = combineStyles(style, { paddingRight: '56px' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -20,12 +24,12 @@ const text = overrideStyle => combineStyles(styles.text, overrideStyle);
 
 const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
-const activeIcon = overrideStyle => combineStyles(styles.activeIcon, overrideStyle);
+const rightButton = overrideStyle => combineStyles(styles.rightButton, overrideStyle);
 
 
 export default {
   root,
   text,
   icon,
-  activeIcon
+  rightButton
 };
