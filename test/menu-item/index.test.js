@@ -14,9 +14,10 @@ describe('MenuItem', () => {
   const props = {
     icon: null,
     active: false,
-    style: {},
-    textStyle: {},
-    iconStyle: {},
+    style: { root: true },
+    textStyle: { text: true },
+    iconStyle: { icon: true },
+    buttonStyle: { button: true },
     closeMenu: null,
     rightButton: null,
     color: '#1BA6C4',
@@ -108,7 +109,7 @@ describe('MenuItem', () => {
     props.rightButton = 'text';
 
     shallow(<MenuItem {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.iconStyle);
+    expect(spy).to.have.been.calledWith(props.buttonStyle);
     props.rightButton = null;
   });
 });
