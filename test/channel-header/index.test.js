@@ -12,13 +12,13 @@ chai.use(sinonChai);
 
 describe('ChannelHeader', () => {
   const props = {
-    style: {},
-    textStyle: {},
-    rightButtonStyle: {},
-    leftButtonStyle: {},
+    name: 'name',
     rightButton: null,
     leftButton: null,
-    name: 'name'
+    style: { root: true },
+    textStyle: { text: true },
+    rightButtonStyle: { rightButton: true },
+    leftButtonStyle: { leftButton: true },
   };
 
   beforeEach(() => {
