@@ -68,7 +68,7 @@ describe('Lightbox', () => {
     expect(wrapper.find('img')).to.have.length(1);
   });
 
-  it('should should pass the value of the title prop to the header element', () => {
+  it('should pass the value of the title prop to the header element', () => {
     const wrapper = shallow(<Lightbox {...props} />);
 
     expect(wrapper.containsMatchingElement(
