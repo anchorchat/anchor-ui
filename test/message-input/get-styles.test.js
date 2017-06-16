@@ -11,7 +11,7 @@ describe('MessageInput.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root(false, { color: 'red' });
+      const style = getStyles.root(false, 32, false, { color: 'red' });
       expect(style).to.have.property('color', 'red');
     });
   });
