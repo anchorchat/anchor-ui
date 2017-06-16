@@ -992,6 +992,76 @@
       }
     }
   },
+  "components/date-separator/index.jsx": {
+    "description": "A separator to show above a Message",
+    "displayName": "DateSeparator",
+    "methods": [],
+    "props": {
+      "date": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "instanceOf",
+              "value": "Date"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The date to display"
+      },
+      "format": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The format of displaying date",
+        "defaultValue": {
+          "value": "'DD MMM'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "hrStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the hr element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/dialog/index.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
@@ -3935,6 +4005,17 @@
         },
         "required": false,
         "description": "Text to display for edited banner",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "separator": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Show a separator above the message",
         "defaultValue": {
           "value": "null",
           "computed": false
