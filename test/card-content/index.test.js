@@ -30,7 +30,7 @@ describe('CardContent', () => {
     expect(wrapper.find('section')).to.have.length(1);
   });
 
-  it('should pass the value of the children prop to the section element', () => {
+  it('should render children', () => {
     const wrapper = shallow(<CardContent {...props}>{children}</CardContent>).dive();
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
