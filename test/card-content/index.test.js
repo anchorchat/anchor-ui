@@ -10,7 +10,7 @@ import getStyles from '../../src/card-content/get-styles';
 
 chai.use(sinonChai);
 
-describe('card-content', () => {
+describe('CardContent', () => {
   const props = {
     style: { root: true }
   };
