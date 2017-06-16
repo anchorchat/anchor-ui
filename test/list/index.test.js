@@ -12,11 +12,11 @@ chai.use(sinonChai);
 
 describe('List', () => {
   const props = {
-    header: null,
-    style: {},
-    headerStyle: {},
+    header: '',
     listRef: () => {},
-    open: true,
+    style: { root: true },
+    headerStyle: { header: true },
+    open: true
   };
   const children = <p>children</p>;
 
