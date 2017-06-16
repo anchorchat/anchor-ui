@@ -12,10 +12,10 @@ chai.use(sinonChai);
 
 describe('Button', () => {
   const props = {
-    style: {},
+    onClick: null,
+    style: { root: true },
     iconButton: false,
     inverted: false,
-    onClick: null,
     disabled: false,
     flatButton: false,
     color: '#1BA6C4'
