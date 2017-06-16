@@ -7,7 +7,6 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EmptyState from '../../src/empty-state';
 import getStyles from '../../src/empty-state/get-styles';
-import button from '../../src/button';
 
 chai.use(sinonChai);
 
