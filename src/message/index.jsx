@@ -11,6 +11,7 @@ import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
 import MenuItem from '../menu-item';
 import themeable from '../themeable';
+import styles from './styles';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -70,6 +71,8 @@ class Message extends Component {
     expandIcon: PropTypes.node,
     /** Text to display for edited banner */
     edited: PropTypes.node,
+    /** Show a separator above the message */
+    separator: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -92,7 +95,8 @@ class Message extends Component {
     expandText: 'Expand image',
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
-    edited: null
+    edited: null,
+    separator: null
   }
 
   constructor() {
@@ -176,6 +180,7 @@ class Message extends Component {
       collapsedText, // eslint-disable-line no-unused-vars
       edited, // eslint-disable-line no-unused-vars
       color,
+      separator,
       ...custom
     } = this.props;
 
@@ -190,10 +195,13 @@ class Message extends Component {
     }
 
     return (
-      <section style={getStyles.container(myMessage, compact)} {...custom}>
-        {messageElement}
-        {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
-      </section>
+      <div style={styles.root}>
+        {separator}
+        <section style={getStyles.container(myMessage, compact)} {...custom}>
+          {messageElement}
+          {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
+        </section>
+      </div>
     );
   }
 }
