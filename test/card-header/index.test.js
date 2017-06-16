@@ -73,7 +73,7 @@ describe('CardHeader', () => {
     const spy = sinon.spy(getStyles, 'title');
 
     shallow(<CardHeader {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.style);
+    expect(spy).to.have.been.calledWith(props.titleStyle);
   });
 
   it('should get subtitle styles', () => {
