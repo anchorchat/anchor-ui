@@ -12,23 +12,22 @@ chai.use(sinonChai);
 
 describe('Input', () => {
   const props = {
-    style: {},
-    inputStyle: {},
-    labelStyle: {},
+    onChange: () => {},
+    value: 1,
+    type: 'text',
+    placeholder: '',
+    label: '',
+    name: '',
+    style: { root: true },
+    inputStyle: { input: true },
+    labelStyle: { label: true },
     maxLength: 500,
     inputRef: null,
     disabled: false,
-    error: null,
-    type: 'text',
-    errorStyle: {},
-    placeholder: '',
-    label: null,
-    placeholderStyle: {},
-    value: 1,
-    name: '',
-    onChange: () => {}
+    error: '',
+    errorStyle: { error: true },
+    placeholderStyle: { placeholder: true }
   };
-
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -50,7 +49,7 @@ describe('Input', () => {
     expect(wrapper.find('label')).to.have.length(1);
   });
 
-  it('should always render a input element', () => {
+  it('should always render an input element', () => {
     const wrapper = shallow(<Input {...props} />).dive();
 
     expect(wrapper.find('input')).to.have.length(1);
@@ -68,7 +67,7 @@ describe('Input', () => {
 
     expect(wrapper.find('span')).to.have.length(2);
     expect(wrapper.containsMatchingElement(<span>text</span>)).to.equal(true);
-    props.error = null;
+    props.error = '';
   });
 
   it('should get root styles', () => {

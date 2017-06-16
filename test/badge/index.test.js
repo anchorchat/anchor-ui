@@ -12,10 +12,10 @@ chai.use(sinonChai);
 
 describe('Badge', () => {
   const props = {
-    style: {},
-    inverted: false,
     value: 1,
     maxValue: 2,
+    style: { root: true },
+    inverted: false,
     color: '#1BA6C4'
   };
 

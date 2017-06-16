@@ -13,14 +13,14 @@ chai.use(sinonChai);
 
 describe('Checkbox', () => {
   const props = {
-    style: {},
-    inputStyle: {},
-    iconStyle: {},
-    labelStyle: {},
-    checked: false,
     label: 'label',
     name: 'name',
     onChange: () => {},
+    checked: false,
+    style: { root: true },
+    inputStyle: { input: true },
+    iconStyle: { icon: true },
+    labelStyle: { label: true },
     value: 'value',
     color: '#1BA6C4'
   };

@@ -10,9 +10,9 @@ import getStyles from '../../src/card-content/get-styles';
 
 chai.use(sinonChai);
 
-describe('card-content', () => {
+describe('CardContent', () => {
   const props = {
-    style: {}
+    style: { root: true }
   };
   const children = <p>children</p>;
 
@@ -30,7 +30,7 @@ describe('card-content', () => {
     expect(wrapper.find('section')).to.have.length(1);
   });
 
-  it('should pass the value of the children prop to the section element', () => {
+  it('should render children', () => {
     const wrapper = shallow(<CardContent {...props}>{children}</CardContent>).dive();
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
