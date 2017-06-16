@@ -36,6 +36,8 @@ class MessageInput extends Component {
     inputRef: PropTypes.func,
     /** Disables the input for the messageInput area */
     disabled: PropTypes.bool,
+    /** Multi line input. If true, a textarea element will be rendered. */
+    multiLine: PropTypes.bool,
     color: PropTypes.string.isRequired
   }
 
@@ -45,21 +47,61 @@ class MessageInput extends Component {
     maxLength: 500,
     leftButton: null,
     disabled: false,
-    rightButton: null
+    rightButton: null,
+    inputRef: null,
+    multiLine: false
   }
 
   constructor() {
     super();
 
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.state = {
+      height: 48,
+      multiLine: false
+    };
   }
 
-  handleKeyDown(event) {
-    const { sendMessage } = this.props;
+  handleChange = (event) => {
+    const { onChange } = this.props;
+    const { height } = this.state;
 
-    if (event.which === 13) {
-      sendMessage();
+    if (this.textarea.scrollHeight > 48) {
+      this.setState({
+        multiLine: true
+      });
     }
+
+    if (this.textarea.scrollHeight !== height) {
+      this.setState({
+        height: this.textarea.scrollHeight
+      });
+    }
+
+    onChange(event);
+  }
+
+  handleKeyDown = (event) => {
+    if (event.which === 13 && !event.shiftKey) {
+      this.handleMessageSend(event);
+    }
+  }
+
+  handleMessageSend = (event) => {
+    const { multiLine, sendMessage } = this.props;
+    const { height } = this.state;
+
+    if (multiLine && height > 48) {
+      this.setState({
+        height: 48,
+        multiLine: false
+      });
+    }
+
+    if (multiLine) {
+      event.preventDefault();
+    }
+
+    sendMessage(event);
   }
 
   render() {
@@ -76,11 +118,53 @@ class MessageInput extends Component {
       inputStyle,
       color,
       rightButton,
+      multiLine,
       ...custom
     } = this.props;
+    const { height } = this.state;
+
+    let input = (
+      <input
+        style={getStyles.input(inputStyle)}
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+        type="text"
+        onKeyDown={this.handleKeyDown}
+        maxLength={maxLength}
+        ref={inputRef}
+        disabled={disabled}
+        key="input"
+        {...custom}
+      />
+    );
+
+    if (multiLine) {
+      input = (
+        <textarea
+          style={getStyles.textarea(inputStyle)}
+          placeholder={placeholder}
+          onChange={this.handleChange}
+          value={value}
+          type="text"
+          onKeyDown={this.handleKeyDown}
+          maxLength={maxLength}
+          ref={(node) => {
+            this.textarea = node;
+
+            if (inputRef) {
+              inputRef(node);
+            }
+          }}
+          disabled={disabled}
+          key="input"
+          {...custom}
+        />
+      );
+    }
 
     return (
-      <section style={getStyles.root(disabled, style)}>
+      <section style={getStyles.root(disabled, height, this.state.multiLine, style)}>
         {
           leftButton
           ? <div style={styles.buttons}>
@@ -88,24 +172,12 @@ class MessageInput extends Component {
           </div>
           : null
         }
-        <input
-          style={getStyles.input(inputStyle)}
-          placeholder={placeholder}
-          onChange={onChange}
-          value={value}
-          type="text"
-          onKeyDown={this.handleKeyDown}
-          maxLength={maxLength}
-          ref={inputRef}
-          disabled={disabled}
-          key="input"
-          {...custom}
-        />
+        {input}
         <div style={styles.buttons}>
           {rightButton}
           <Button
             iconButton
-            onClick={sendMessage}
+            onClick={this.handleMessageSend}
           >
             <IconSend color={color} />
           </Button>
