@@ -14,13 +14,13 @@ chai.use(sinonChai);
 
 describe('Alert', () => {
   const props = {
-    style: {},
-    iconStyle: {},
-    textStyle: {},
-    buttonStyle: {},
-    hideAlert: null,
-    type: 'success',
     text: 'text',
+    type: 'success',
+    style: { root: true },
+    iconStyle: { icon: true },
+    textStyle: { text: true },
+    buttonStyle: { button: true },
+    hideAlert: null,
   };
 
   beforeEach(() => {
