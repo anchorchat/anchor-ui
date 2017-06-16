@@ -15,7 +15,7 @@ describe('Avatar', () => {
     image: 'image',
     style: { root: true },
     status: '',
-    statusStyle: { status: true },
+    statusStyle: { status: true }
   };
 
   beforeEach(() => {

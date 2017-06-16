@@ -18,7 +18,7 @@ describe('EmptyState', () => {
     background: '',
     style: { root: true },
     headingStyle: { heading: true },
-    bodyStyle: { body: true },
+    bodyStyle: { body: true }
   };
 
   beforeEach(() => {

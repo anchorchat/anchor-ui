@@ -18,7 +18,7 @@ describe('ChannelHeader', () => {
     style: { root: true },
     textStyle: { text: true },
     rightButtonStyle: { rightButton: true },
-    leftButtonStyle: { leftButton: true },
+    leftButtonStyle: { leftButton: true }
   };
 
   beforeEach(() => {

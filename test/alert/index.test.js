@@ -20,7 +20,7 @@ describe('Alert', () => {
     iconStyle: { icon: true },
     textStyle: { text: true },
     buttonStyle: { button: true },
-    hideAlert: null,
+    hideAlert: null
   };
 
   beforeEach(() => {
