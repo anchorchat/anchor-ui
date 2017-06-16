@@ -12,7 +12,7 @@ chai.use(sinonChai);
 
 describe('card-content', () => {
   const props = {
-    style: {}
+    style: { root: true }
   };
   const children = <p>children</p>;
 
