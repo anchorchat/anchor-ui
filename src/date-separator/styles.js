@@ -2,7 +2,6 @@ import colors from '../settings/colors';
 
 const styles = {
   root: {
-    position: 'relative',
     margin: '16px 0',
     width: '100%',
     display: 'flex',
