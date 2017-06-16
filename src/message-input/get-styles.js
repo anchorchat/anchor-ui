@@ -1,7 +1,7 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-const root = (disabled, height, multiLine, overrideStyle) => {
+const root = (disabled, height = 48, multiLine, overrideStyle) => {
   let style = combineStyles(styles.root, { height });
 
   if (multiLine) {
