@@ -15,13 +15,13 @@ chai.use(sinonChai);
 
 describe('Dialog', () => {
   const props = {
-    style: {},
-    overlayStyle: {},
-    headerStyle: {},
-    iconColor: 'red',
     header: null,
-    open: true,
+    style: { root: true },
+    overlayStyle: { overlay: true },
+    headerStyle: { header: true },
     hideDialog: () => {},
+    iconColor: 'red',
+    open: true,
     color: '#1BA6C4'
   };
   const children = <p>children</p>;
