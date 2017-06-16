@@ -24,11 +24,24 @@ const input = (errorMessage = null, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
+const textarea = (height = 32, errorMessage = null, overrideStyle) => {
+  let style = combineStyles(styles.input, styles.textarea);
+  style = combineStyles(style, { height });
+
+  if (errorMessage) {
+    style = combineStyles(style, { border: `1px solid ${colors.error}`, color: colors.error });
+  }
+
+  return combineStyles(style, overrideStyle);
+};
+
+
 const error = overrideStyle => combineStyles(styles.error, overrideStyle);
 
 export default {
   root,
   label,
   input,
-  error
+  error,
+  textarea
 };

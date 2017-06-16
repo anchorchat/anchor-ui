@@ -10,6 +10,7 @@ export default {
     backgroundColor: 'rgba(45, 55, 104, 0.75)',
     border: '0',
     borderRadius: '3px',
+    height: '32px',
     boxSizing: 'border-box',
     color: colors.white,
     fontSize: '16px',
@@ -22,6 +23,10 @@ export default {
     ':focus': {
       outline: 'none'
     }
+  },
+  textarea: {
+    resize: 'none',
+    overflow: 'auto'
   },
   label: {
     fontSize: '16px',
