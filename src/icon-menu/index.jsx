@@ -143,7 +143,7 @@ class IconMenu extends Component {
           : null
         }
         <div ref={button => (this.button = button)}>
-          <Button iconButton onClick={this.openMenu}>{icon}</Button>
+          <Button iconButton onClick={!open ? this.openMenu : this.closeMenu}>{icon}</Button>
         </div>
         <PopOver
           style={contentStyle}

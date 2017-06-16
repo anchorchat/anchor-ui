@@ -12,7 +12,7 @@ describe('MenuItem.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, { color: 'red' });
+      const style = getStyles.root('blue', false, false, null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -26,7 +26,14 @@ describe('MenuItem.getStyles', () => {
     it('should add active styles', () => {
       const style = getStyles.root('red', false, true);
 
-      expect(style).to.have.property('paddingRight', '40px');
+      expect(style).to.have.property('color', 'red');
+      expect(style).to.have.property('fontWeight', 'bolder');
+    });
+
+    it('should add rightButton styles', () => {
+      const style = getStyles.root('red', false, false, true, {});
+
+      expect(style).to.have.property('paddingRight', '56px');
     });
   });
 
@@ -58,15 +65,15 @@ describe('MenuItem.getStyles', () => {
     });
   });
 
-  describe('activeIcon', () => {
+  describe('rightButton', () => {
     it('should get styles', () => {
-      const style = getStyles.activeIcon();
+      const style = getStyles.rightButton();
 
-      expect(style).to.deep.equal(styles.activeIcon);
+      expect(style).to.deep.equal(styles.rightButton);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.activeIcon({ color: 'red' });
+      const style = getStyles.rightButton({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });

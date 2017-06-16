@@ -3640,12 +3640,35 @@
           "computed": false
         }
       },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the right button element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "closeMenu": {
         "type": {
           "name": "func"
         },
         "required": false,
         "description": "Callback fired when the MenuItem closes a Menu/IconMenu\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Right-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
