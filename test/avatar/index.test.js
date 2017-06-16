@@ -10,7 +10,7 @@ import getStyles from '../../src/avatar/get-styles';
 
 chai.use(sinonChai);
 
-describe('Avatar.index', () => {
+describe('Avatar', () => {
   const props = {
     image: 'image',
     style: { root: true },
