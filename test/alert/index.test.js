@@ -49,12 +49,6 @@ describe('Alert', () => {
     expect(wrapper.find('p')).to.have.length(1);
   });
 
-  it('should pass the value of the text prop to the p element', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
-
-    expect(wrapper.containsMatchingElement(<p>text</p>)).to.equal(true);
-  });
-
   it('should not render a Button component if the hideAlert prop is not passed', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
@@ -67,6 +61,12 @@ describe('Alert', () => {
 
     expect(wrapper.find(Button)).to.have.length(1);
     props.hideAlert = null;
+  });
+
+  it('should pass the value of the text prop to the p element', () => {
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    expect(wrapper.containsMatchingElement(<p>text</p>)).to.equal(true);
   });
 
   it('should pass the value of the type prop to the icons object', () => {
