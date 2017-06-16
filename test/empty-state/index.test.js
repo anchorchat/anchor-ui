@@ -11,7 +11,7 @@ import button from '../../src/button';
 
 chai.use(sinonChai);
 
-describe('empty-state', () => {
+describe('EmptyState', () => {
   const props = {
     headerText: '',
     bodyText: '',
