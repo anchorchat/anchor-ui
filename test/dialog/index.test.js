@@ -60,7 +60,7 @@ describe('Dialog', () => {
     expect(wrapper.find(Button)).to.have.length(1);
   });
 
-  it('should always render a IconClose icon', () => {
+  it('should always render an IconClose icon', () => {
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
     expect(wrapper.find(IconClose)).to.have.length(1);
