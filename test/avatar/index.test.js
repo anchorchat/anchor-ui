@@ -12,10 +12,10 @@ chai.use(sinonChai);
 
 describe('Avatar.index', () => {
   const props = {
-    style: {},
+    image: 'image',
+    style: { root: true },
     status: '',
-    statusStyle: {},
-    image: 'imageurl'
+    statusStyle: { status: true },
   };
 
   beforeEach(() => {
