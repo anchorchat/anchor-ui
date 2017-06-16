@@ -8,7 +8,6 @@ const styles = {
     alignItems: 'center'
   },
   text: {
-    textAlign: 'center',
     fontWeight: 'bolder',
     color: colors.secondaryText,
     fontSize: '16px',
