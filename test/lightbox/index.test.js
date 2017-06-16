@@ -62,7 +62,7 @@ describe('Lightbox', () => {
     expect(wrapper.find(IconClose)).to.have.length(1);
   });
 
-  it('should always render a img element', () => {
+  it('should always render an img element', () => {
     const wrapper = shallow(<Lightbox {...props} />);
 
     expect(wrapper.find('img')).to.have.length(1);
