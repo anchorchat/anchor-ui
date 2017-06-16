@@ -24,6 +24,8 @@ class MenuItem extends Component {
     textStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the right button element */
+    buttonStyle: PropTypes.instanceOf(Object),
     /** Closes IconMenu if MenuItem is child */
     closeMenu: PropTypes.func,
     /** Right-hand side placed button */
@@ -37,6 +39,7 @@ class MenuItem extends Component {
     style: {},
     textStyle: {},
     iconStyle: {},
+    buttonStyle: {},
     closeMenu: null,
     rightButton: null
   };
@@ -72,6 +75,7 @@ class MenuItem extends Component {
       closeMenu, // eslint-disable-line no-unused-vars
       onClick, // eslint-disable-line no-unused-vars
       rightButton,
+      buttonStyle,
       color,
       ...custom
     } = this.props;
@@ -86,7 +90,7 @@ class MenuItem extends Component {
         <p style={getStyles.text(textStyle)}>
           {text}
         </p>
-        {rightButton ? <div style={getStyles.rightButton(iconStyle)}>{rightButton}</div> : null}
+        {rightButton ? <div style={getStyles.rightButton(buttonStyle)}>{rightButton}</div> : null}
       </section>
     );
   }

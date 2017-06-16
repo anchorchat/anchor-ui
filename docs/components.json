@@ -3621,6 +3621,18 @@
           "computed": false
         }
       },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the right button element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "closeMenu": {
         "type": {
           "name": "func"
