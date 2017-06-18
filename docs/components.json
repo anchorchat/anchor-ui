@@ -1018,7 +1018,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The format of displaying date",
+        "description": "The format of displaying date\n\nhttps://date-fns.org/docs/format",
         "defaultValue": {
           "value": "'DD MMM'",
           "computed": false
@@ -1058,6 +1058,18 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
+        }
+      },
+      "locale": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
+        "defaultValue": {
+          "value": "en",
+          "computed": true
         }
       }
     }
