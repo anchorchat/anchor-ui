@@ -3811,7 +3811,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The format of displaying message.createdAt",
+        "description": "The format of displaying message.createdAt\n\nhttps://date-fns.org/docs/format",
         "defaultValue": {
           "value": "'HH:mm'",
           "computed": false
