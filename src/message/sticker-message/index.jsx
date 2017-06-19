@@ -17,7 +17,8 @@ const StickerMessage = ({
   message,
   messageBodyStyle,
   messageTimeStyle,
-  timeFormat
+  timeFormat,
+  locale
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
@@ -40,6 +41,7 @@ const StickerMessage = ({
           style={messageTimeStyle}
           createdAt={message.createdAt}
           timeFormat={timeFormat}
+          locale={locale}
         />
       </div>
     </div>
@@ -65,7 +67,8 @@ StickerMessage.propTypes = {
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   myMessage: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  locale: PropTypes.instanceOf(Object).isRequired
 };
 
 StickerMessage.defaultProps = {

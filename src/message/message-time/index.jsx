@@ -4,10 +4,10 @@ import format from 'date-fns/format';
 import getStyles from './get-styles';
 import styles from './styles';
 
-const MessageTime = ({ myMessage, type, style, createdAt, timeFormat, edited }) => (
+const MessageTime = ({ myMessage, type, style, createdAt, timeFormat, edited, locale }) => (
   <span style={getStyles.root(myMessage, type, edited, style)}>
     {edited ? <span style={styles.edited}>{edited}</span> : null}
-    <span>{format(createdAt, timeFormat)}</span>
+    <span>{format(createdAt, timeFormat, { locale })}</span>
   </span>
 );
 
@@ -20,7 +20,8 @@ MessageTime.propTypes = {
     PropTypes.string,
     PropTypes.instanceOf(Date)
   ]).isRequired,
-  edited: PropTypes.node
+  edited: PropTypes.node,
+  locale: PropTypes.instanceOf(Object).isRequired
 };
 
 MessageTime.defaultProps = {

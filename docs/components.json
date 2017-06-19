@@ -3963,6 +3963,18 @@
           "computed": false
         }
       },
+      "locale": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
+        "defaultValue": {
+          "value": "en",
+          "computed": true
+        }
+      },
       "color": {
         "type": {
           "name": "string"

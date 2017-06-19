@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import en from 'date-fns/locale/en';
 import IconMenu from '../icon-menu';
 import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
@@ -70,6 +71,12 @@ class Message extends Component {
     expandIcon: PropTypes.node,
     /** Text to display for edited banner */
     edited: PropTypes.node,
+    /**
+     * Internationalization, defaults to English
+     *
+     * https://date-fns.org/docs/I18n
+     */
+    locale: PropTypes.instanceOf(Object),
     color: PropTypes.string.isRequired
   }
 
@@ -92,7 +99,8 @@ class Message extends Component {
     expandText: 'Expand image',
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
-    edited: null
+    edited: null,
+    locale: en
   }
 
   constructor() {
@@ -175,6 +183,7 @@ class Message extends Component {
       expandIcon, // eslint-disable-line no-unused-vars
       collapsedText, // eslint-disable-line no-unused-vars
       edited, // eslint-disable-line no-unused-vars
+      locale, // eslint-disable-line no-unused-vars
       color,
       ...custom
     } = this.props;
