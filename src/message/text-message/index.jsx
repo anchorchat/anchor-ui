@@ -16,12 +16,14 @@ function createMarkup(text, enableLinks) {
   if (enableLinks) {
     const urlSchemeRegex = /^(?:https?:\/\/)/;
 
+    const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+
     parsedText = escapedText.replace(urlRegex, (url) => {
       if (!urlSchemeRegex.test(url)) {
         // Add default http:// scheme for urls like example.com
-        return (`<a href="http://${url}" target="_blank">${url}</a>`);
+        return (`<a style="${style}" href="http://${url}" target="_blank">${url}</a>`);
       }
-      return (`<a href="${url}" target="_blank">${url}</a>`);
+      return (`<a style="${style}" href="${url}" target="_blank">${url}</a>`);
     });
   }
 
