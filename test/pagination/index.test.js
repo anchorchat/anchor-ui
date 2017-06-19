@@ -36,7 +36,7 @@ describe('Pagination', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a div element', () => {
+  it('should always render a section element', () => {
     const wrapper = shallow(<Pagination {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
@@ -48,7 +48,7 @@ describe('Pagination', () => {
     expect(wrapper.contains(children)).to.equal(true);
   });
 
-  it('should not render an position if the position prop is not passed', () => {
+  it('should not render a position if the position prop is not passed', () => {
     props.position = null;
     const wrapper = shallow(<Pagination {...props}>{position}</Pagination>);
 
