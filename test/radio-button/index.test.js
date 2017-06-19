@@ -68,7 +68,7 @@ describe('RadioButton', () => {
     props.label = null;
   });
 
-  it('should always render the value of the divider prop', () => {
+  it('should always render the value of the label prop', () => {
     const wrapper = shallow(<RadioButton {...props} >{label}</RadioButton>);
 
     expect(wrapper.contains(label)).to.equal(true);
