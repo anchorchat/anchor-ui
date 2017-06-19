@@ -45,6 +45,7 @@
     "color": "^1.0.3",
     "date-fns": "^1.28.5",
     "emojione": "^2.2.7",
+    "escape-html": "^1.0.3",
     "prop-types": "^15.5.6",
     "radium": "^0.19.1",
     "react": "^15.5.3",
