@@ -52,7 +52,7 @@ describe('PopOver', () => {
     expect(wrapper.contains(divider)).to.equal(true);
   });
 
-  it('should always render the value of the divider prop', () => {
+  it('should always render the value of the secondaryMenuItems prop', () => {
     const wrapper = shallow(<PopOver {...props} >{secondaryMenuItems}</PopOver>);
 
     expect(wrapper.contains(secondaryMenuItems)).to.equal(true);
