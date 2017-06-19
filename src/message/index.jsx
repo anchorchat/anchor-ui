@@ -35,7 +35,11 @@ class Message extends Component {
       /** The message's type */
       type: PropTypes.oneOf(['text', 'image', 'sticker'])
     }).isRequired,
-    /** The format of displaying message.createdAt */
+    /**
+     * The format of displaying message.createdAt
+     *
+     * https://date-fns.org/docs/format
+     */
     timeFormat: PropTypes.string,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
