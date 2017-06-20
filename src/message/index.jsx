@@ -9,6 +9,7 @@ import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
+import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
 import themeable from '../themeable';
 import styles from './styles';
@@ -33,7 +34,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
     }).isRequired,
     /**
      * The format of displaying message.createdAt
@@ -196,6 +197,10 @@ class Message extends Component {
 
     if (message.type === 'sticker') {
       messageElement = <StickerMessage color={color} {...this.props} />;
+    }
+
+    if (message.type === 'typing') {
+      messageElement = <TypingMessage color={color} {...this.props} />;
     }
 
     return (
