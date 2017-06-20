@@ -9,5 +9,6 @@ rm -rf components/message/message-header
 rm -rf components/message/image-message
 rm -rf components/message/sticker-message
 rm -rf components/message/text-message
+rm -rf components/message/typing-message
 npm run docs
 rm -rf components

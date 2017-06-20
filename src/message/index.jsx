@@ -10,8 +10,10 @@ import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
+import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
 import themeable from '../themeable';
+import styles from './styles';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -33,9 +35,13 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
     }).isRequired,
-    /** The format of displaying message.createdAt */
+    /**
+     * The format of displaying message.createdAt
+     *
+     * https://date-fns.org/docs/format
+     */
     timeFormat: PropTypes.string,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -77,6 +83,8 @@ class Message extends Component {
      * https://date-fns.org/docs/I18n
      */
     locale: PropTypes.instanceOf(Object),
+    /** Show a separator above the message */
+    separator: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -100,7 +108,8 @@ class Message extends Component {
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
     edited: null,
-    locale: en
+    locale: en,
+    separator: null
   }
 
   constructor() {
@@ -185,6 +194,7 @@ class Message extends Component {
       edited, // eslint-disable-line no-unused-vars
       locale, // eslint-disable-line no-unused-vars
       color,
+      separator,
       ...custom
     } = this.props;
 
@@ -198,11 +208,18 @@ class Message extends Component {
       messageElement = <StickerMessage color={color} {...this.props} />;
     }
 
+    if (message.type === 'typing') {
+      messageElement = <TypingMessage color={color} {...this.props} />;
+    }
+
     return (
-      <section style={getStyles.container(myMessage, compact)} {...custom}>
-        {messageElement}
-        {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
-      </section>
+      <div style={styles.root}>
+        {separator}
+        <section style={getStyles.container(myMessage, compact)} {...custom}>
+          {messageElement}
+          {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
+        </section>
+      </div>
     );
   }
 }
