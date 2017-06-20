@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import en from 'date-fns/locale/en';
 import IconMenu from '../icon-menu';
 import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
+import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
 import themeable from '../themeable';
 import styles from './styles';
@@ -33,7 +35,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
     }).isRequired,
     /**
      * The format of displaying message.createdAt
@@ -75,6 +77,12 @@ class Message extends Component {
     expandIcon: PropTypes.node,
     /** Text to display for edited banner */
     edited: PropTypes.node,
+    /**
+     * Internationalization, defaults to English
+     *
+     * https://date-fns.org/docs/I18n
+     */
+    locale: PropTypes.instanceOf(Object),
     /** Show a separator above the message */
     separator: PropTypes.node,
     color: PropTypes.string.isRequired
@@ -100,6 +108,7 @@ class Message extends Component {
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
     edited: null,
+    locale: en,
     separator: null
   }
 
@@ -183,6 +192,7 @@ class Message extends Component {
       expandIcon, // eslint-disable-line no-unused-vars
       collapsedText, // eslint-disable-line no-unused-vars
       edited, // eslint-disable-line no-unused-vars
+      locale, // eslint-disable-line no-unused-vars
       color,
       separator,
       ...custom
@@ -196,6 +206,10 @@ class Message extends Component {
 
     if (message.type === 'sticker') {
       messageElement = <StickerMessage color={color} {...this.props} />;
+    }
+
+    if (message.type === 'typing') {
+      messageElement = <TypingMessage color={color} {...this.props} />;
     }
 
     return (

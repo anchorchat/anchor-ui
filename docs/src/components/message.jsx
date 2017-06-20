@@ -58,6 +58,14 @@ const messages = [
     id: 6,
     type: 'image'
   },
+  {
+    body: 'is typing',
+    createdAt: new Date(),
+    username: 'Lars',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 7,
+    type: 'typing'
+  },
 ];
 
 const currentUser = 'Sjaak';
