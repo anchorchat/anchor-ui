@@ -91,6 +91,16 @@ describe('Lightbox', () => {
     props.hideLightbox = () => {};
   });
 
+  it('should execute Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideLightbox = spy;
+    const wrapper = shallow(<Lightbox {...props} />);
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideLightbox = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
