@@ -55,14 +55,6 @@ describe('Alert', () => {
     expect(wrapper.find(Button)).to.have.length(0);
   });
 
-  it('should render a Button component if the hideAlert prop is passed', () => {
-    props.hideAlert = () => {};
-    const wrapper = shallow(<Alert {...props} />).dive();
-
-    expect(wrapper.find(Button)).to.have.length(1);
-    props.hideAlert = null;
-  });
-
   it('should pass the value of the text prop to the p element', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
