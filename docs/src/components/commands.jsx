@@ -69,8 +69,7 @@ class CommandsDoc extends Component {
     const commands = [
       {
         title: '/collapse',
-        description: 'collapse all images',
-        avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
+        description: 'collapse all images'
       },
       {
         title: '/giphy',
