@@ -16,12 +16,14 @@ function createMarkup(text, enableLinks) {
   if (enableLinks) {
     const urlSchemeRegex = /^(?:https?:\/\/)/;
 
+    const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+
     parsedText = escapedText.replace(urlRegex, (url) => {
       if (!urlSchemeRegex.test(url)) {
         // Add default http:// scheme for urls like example.com
-        return (`<a href="http://${url}" target="_blank">${url}</a>`);
+        return (`<a style="${style}" href="http://${url}" target="_blank">${url}</a>`);
       }
-      return (`<a href="${url}" target="_blank">${url}</a>`);
+      return (`<a style="${style}" href="${url}" target="_blank">${url}</a>`);
     });
   }
 
@@ -44,7 +46,8 @@ function TextMessage({
   timeFormat,
   emoji,
   enableLinks,
-  edited
+  edited,
+  locale
 }) {
   return (
     <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
@@ -69,6 +72,7 @@ function TextMessage({
           createdAt={message.createdAt}
           timeFormat={timeFormat}
           edited={edited}
+          locale={locale}
         />
       </p>
     </div>
@@ -97,7 +101,8 @@ TextMessage.propTypes = {
   enableLinks: PropTypes.bool,
   compact: PropTypes.bool,
   edited: PropTypes.node,
-  color: PropTypes.string
+  color: PropTypes.string,
+  locale: PropTypes.instanceOf(Object).isRequired
 };
 
 TextMessage.defaultProps = {
