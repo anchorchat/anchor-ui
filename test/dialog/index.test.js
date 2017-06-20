@@ -97,6 +97,16 @@ describe('Dialog', () => {
     props.hideDialog = () => {};
   });
 
+  it('should execute Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
