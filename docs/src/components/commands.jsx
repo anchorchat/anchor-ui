@@ -69,7 +69,8 @@ class CommandsDoc extends Component {
     const commands = [
       {
         title: '/collapse',
-        description: 'collapse all images'
+        description: 'collapse all images',
+        avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
       },
       {
         title: '/giphy',
@@ -101,6 +102,20 @@ class CommandsDoc extends Component {
         description: 'mute the channel'
       }
     ];
+    const mentions = [
+      {
+        title: '@IanCStewart',
+        avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
+      },
+      {
+        title: '@sjaakluthart',
+        avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
+      },
+      {
+        title: '@larstadema',
+        avatar: 'https://avatars2.githubusercontent.com/u/16486197?v=3&s=400'
+      },
+    ];
 
     return (
       <article className="doc">
@@ -123,9 +138,17 @@ class CommandsDoc extends Component {
               onMouseOver={this.handleMouseOver}
               onSelect={this.handleSelect}
             />
+            <Commands
+              header="Mentions"
+              style={style.commands}
+              value={this.state.value}
+              commands={mentions}
+              onMouseOver={this.handleMouseOver}
+              onSelect={this.handleSelect}
+            />
             <MessageInput
               onChange={this.changeValue}
-              placeholder="Type / to view and filter the commands"
+              placeholder="Type / to view and filter the commands, type @ to filter mentions"
               value={this.state.command || this.state.value}
               sendMessage={() => {}}
               style={style.messageInput}
