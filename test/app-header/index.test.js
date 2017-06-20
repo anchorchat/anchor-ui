@@ -13,14 +13,14 @@ chai.use(sinonChai);
 describe('AppHeader', () => {
   const props = {
     text: null,
-    style: {},
-    textStyle: {},
-    iconStyle: {},
-    rightButtonStyle: {},
     icon: null,
     rightButton: null,
     leftButton: null,
-    leftButtonStyle: {},
+    style: { root: true },
+    textStyle: { text: true },
+    iconStyle: { icon: true },
+    rightButtonStyle: { rightButton: true },
+    leftButtonStyle: { leftButton: true },
     color: '#1BA6C4'
   };
 

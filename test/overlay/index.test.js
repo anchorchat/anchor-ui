@@ -5,13 +5,14 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import CardContent from '../../src/card-content';
-import getStyles from '../../src/card-content/get-styles';
+import Overlay from '../../src/overlay';
+import getStyles from '../../src/overlay/get-styles';
 
 chai.use(sinonChai);
 
-describe('CardContent', () => {
+describe('Overlay', () => {
   const props = {
+    children: null,
     style: { root: true }
   };
   const children = <p>children</p>;
@@ -25,13 +26,13 @@ describe('CardContent', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<CardContent {...props}>{children}</CardContent>).dive();
+    const wrapper = shallow(<Overlay {...props}>{children}</Overlay>);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
-  it('should render children', () => {
-    const wrapper = shallow(<CardContent {...props}>{children}</CardContent>).dive();
+  it('should pass the value of the children prop to the section element', () => {
+    const wrapper = shallow(<Overlay {...props}>{children}</Overlay>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +40,7 @@ describe('CardContent', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<CardContent {...props} >{children}</CardContent>).dive();
+    shallow(<Overlay {...props} />);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });

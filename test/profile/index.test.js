@@ -13,17 +13,16 @@ chai.use(sinonChai);
 
 describe('Profile', () => {
   const props = {
+    header: 'header',
+    secondaryText: '',
     avatar: '',
     coverImage: '',
-    children: null,
-    button: null,
-    secondaryText: '',
-    style: {},
-    headerStyle: {},
-    secondaryTextStyle: {},
-    avatarStyle: {},
-    status: '',
-    header: 'header'
+    button: <button>text</button>,
+    style: { root: true },
+    headerStyle: { header: true },
+    secondaryTextStyle: { secondaryText: true },
+    avatarStyle: { avatar: true },
+    status: ''
   };
   const children = <p>children</p>;
   const coverBackground = {
@@ -57,12 +56,10 @@ describe('Profile', () => {
   });
 
   it('should always render the value of the button prop', () => {
-    props.button = <button>text</button>;
     const wrapper = shallow(<Profile {...props} />);
 
     expect(wrapper.find('button')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<button>text</button>)).to.equal(true);
-    props.button = null;
   });
 
   it('should always render the value of the children prop', () => {

@@ -10,12 +10,12 @@ import getStyles from '../../src/avatar/get-styles';
 
 chai.use(sinonChai);
 
-describe('Avatar.index', () => {
+describe('Avatar', () => {
   const props = {
-    style: {},
+    image: 'image',
+    style: { root: true },
     status: '',
-    statusStyle: {},
-    image: 'imageurl'
+    statusStyle: { status: true }
   };
 
   beforeEach(() => {

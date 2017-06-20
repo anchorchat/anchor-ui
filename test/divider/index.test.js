@@ -13,7 +13,7 @@ chai.use(sinonChai);
 describe('Divider', () => {
   const props = {
     text: 'text',
-    style: {}
+    style: { root: true }
   };
 
   beforeEach(() => {
