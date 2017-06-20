@@ -43,7 +43,8 @@ class ImageMessage extends Component {
       timeFormat,
       enableLightbox,
       collapsed,
-      collapsedText
+      collapsedText,
+      locale
     } = this.props;
     const { lightbox } = this.state;
 
@@ -87,6 +88,7 @@ class ImageMessage extends Component {
             style={messageTimeStyle}
             createdAt={message.createdAt}
             timeFormat={timeFormat}
+            locale={locale}
           />
         </p>
         {
@@ -113,7 +115,7 @@ ImageMessage.propTypes = {
       PropTypes.instanceOf(Date)
     ]).isRequired,
     username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker'])
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
   }).isRequired,
   timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
@@ -126,7 +128,8 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node
+  collapsedText: PropTypes.node,
+  locale: PropTypes.instanceOf(Object).isRequired
 };
 
 ImageMessage.defaultProps = {
