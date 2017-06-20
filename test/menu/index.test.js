@@ -154,6 +154,16 @@ describe('Menu', () => {
     props.toggleMenu = null;
   });
 
+  it('should execute Overlay onClick function', () => {
+    const spy = sinon.spy();
+    props.toggleMenu = spy;
+    const wrapper = shallow(<Menu {...props} >{children}</Menu>).dive();
+
+    wrapper.find(Overlay).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.toggleMenu = null;
+  });
+
   it('should get sidebar styles', () => {
     const spy = sinon.spy(getStyles, 'sidebar');
 
