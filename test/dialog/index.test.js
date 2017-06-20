@@ -87,6 +87,26 @@ describe('Dialog', () => {
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
+  it('should execute section onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find('section').at(0).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
+  });
+
+  it('should execute Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
