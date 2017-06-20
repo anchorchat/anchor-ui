@@ -55,6 +55,14 @@ describe('Alert', () => {
     expect(wrapper.find(Button)).to.have.length(0);
   });
 
+  it('should render a Button component if the hideAlert prop is passed', () => {
+    props.hideAlert = () => {};
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    expect(wrapper.find(Button)).to.have.length(1);
+    props.hideAlert = null;
+  });
+
   it('should pass the value of the text prop to the p element', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
@@ -76,17 +84,6 @@ describe('Alert', () => {
     expect(spy).to.have.callCount(1);
     props.hideAlert = null;
   });
-
-  it('should execute Button onClick function', () => {
-    const spy = sinon.spy();
-    props.hideAlert = spy;
-    const wrapper = shallow(<Alert {...props} />).dive();
-
-    wrapper.find(Button).simulate('click');
-    expect(spy).to.have.callCount(1);
-    props.hideAlert = null;
-  });
-
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
