@@ -75,6 +75,16 @@ describe('Alert', () => {
     expect(wrapper.find(IconSuccess)).to.have.length(1);
   });
 
+  it('should execute Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideAlert = spy;
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideAlert = null;
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
