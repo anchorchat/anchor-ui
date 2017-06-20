@@ -3819,6 +3819,10 @@
                 {
                   "value": "'sticker'",
                   "computed": false
+                },
+                {
+                  "value": "'typing'",
+                  "computed": false
                 }
               ],
               "description": "The message's type",
