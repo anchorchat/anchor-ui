@@ -54,7 +54,7 @@ describe('Switch', () => {
     expect(wrapper.containsMatchingElement(<span>label</span>)).to.equal(true);
   });
 
-  it('should execute onClick function', () => {
+  it('should execute section onClick function', () => {
     const spy = sinon.spy();
     props.toggleSwitch = spy;
     const wrapper = shallow(<Switch {...props} />).dive().dive();
