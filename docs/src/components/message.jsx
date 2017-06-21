@@ -1,3 +1,4 @@
+/* global alert */
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
@@ -21,7 +22,7 @@ const messages = [
     id: 1
   },
   {
-    body: 'Daleks have no concept of elegance.',
+    body: 'Daleks have no concept of elegance. https://anchor.chat',
     createdAt: new Date(),
     username: 'Ian',
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
@@ -196,6 +197,8 @@ class MessageDoc extends Component {
                     'Lars',
                     'Ian'
                   ]}
+                  onMentionClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
+                  enableLinks
                 />
               ))}
             </MessageList>
