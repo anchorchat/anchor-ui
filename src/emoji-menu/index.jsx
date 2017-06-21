@@ -17,40 +17,40 @@ const storage = new Storage();
 
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/3.0/png/64/';
 
+const propTypes = {
+  /** Send an emoji */
+  sendEmoji: PropTypes.func.isRequired,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the header element */
+  headerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the color modifiers */
+  modifierStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the emoji category */
+  categoryStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the emojis */
+  emojiStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the footer element */
+  footerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the footer icons */
+  iconStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  style: {},
+  headerStyle: {},
+  modifierStyle: {},
+  categoryStyle: {},
+  emojiStyle: {},
+  footerStyle: {},
+  iconStyle: {}
+};
+
+const displayName = 'EmojiMenu';
+
 /** Menu for sending messages with emoji */
 class EmojiMenu extends Component {
-  static displayName = 'EmojiMenu'
-
-  static propTypes = {
-    /** Send an emoji */
-    sendEmoji: PropTypes.func.isRequired,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the header element */
-    headerStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the color modifiers */
-    modifierStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the emoji category */
-    categoryStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the emojis */
-    emojiStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the footer element */
-    footerStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the footer icons */
-    iconStyle: PropTypes.instanceOf(Object),
-    color: PropTypes.string.isRequired
-  }
-
-  static defaultProps = {
-    style: {},
-    headerStyle: {},
-    modifierStyle: {},
-    categoryStyle: {},
-    emojiStyle: {},
-    footerStyle: {},
-    iconStyle: {}
-  }
-
   constructor(props) {
     super(props);
 
@@ -166,5 +166,9 @@ const enhance = compose(
   Radium,
   pure
 );
+
+EmojiMenu.propTypes = propTypes;
+EmojiMenu.defaultProps = defaultProps;
+EmojiMenu.displayName = displayName;
 
 export default enhance(EmojiMenu);
