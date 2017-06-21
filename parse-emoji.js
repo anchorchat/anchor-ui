@@ -6,7 +6,7 @@ console.log('export default ['); // eslint-disable-line no-console
 map(emojione, (e) => {
   console.log(
     `{
-      title: '${e.shortname}',
+      title: '${e.shortname}${e.diversities.length > 0 && !e.diversity ? ' tone0' : ''}',
       name: '${e.name}',
       shortname: '${e.shortname}',
       category: '${e.category}',

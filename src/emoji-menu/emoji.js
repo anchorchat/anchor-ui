@@ -1162,7 +1162,7 @@ export default [
     diversity: false
   },
   {
-    title: ':open_hands:',
+    title: ':open_hands: tone0',
     name: 'open hands',
     shortname: ':open_hands:',
     category: 'people',
@@ -1204,7 +1204,7 @@ export default [
     diversity: true
   },
   {
-    title: ':raised_hands:',
+    title: ':raised_hands: tone0',
     name: 'raising hands',
     shortname: ':raised_hands:',
     category: 'people',
@@ -1246,7 +1246,7 @@ export default [
     diversity: true
   },
   {
-    title: ':clap:',
+    title: ':clap: tone0',
     name: 'clapping hands',
     shortname: ':clap:',
     category: 'people',
@@ -1288,7 +1288,7 @@ export default [
     diversity: true
   },
   {
-    title: ':pray:',
+    title: ':pray: tone0',
     name: 'folded hands',
     shortname: ':pray:',
     category: 'people',
@@ -1337,7 +1337,7 @@ export default [
     diversity: false
   },
   {
-    title: ':thumbsup:',
+    title: ':thumbsup: tone0',
     name: 'thumbs up',
     shortname: ':thumbsup:',
     category: 'people',
@@ -1379,7 +1379,7 @@ export default [
     diversity: true
   },
   {
-    title: ':thumbsdown:',
+    title: ':thumbsdown: tone0',
     name: 'thumbs down',
     shortname: ':thumbsdown:',
     category: 'people',
@@ -1421,7 +1421,7 @@ export default [
     diversity: true
   },
   {
-    title: ':punch:',
+    title: ':punch: tone0',
     name: 'oncoming fist',
     shortname: ':punch:',
     category: 'people',
@@ -1463,7 +1463,7 @@ export default [
     diversity: true
   },
   {
-    title: ':fist:',
+    title: ':fist: tone0',
     name: 'raised fist',
     shortname: ':fist:',
     category: 'people',
@@ -1505,7 +1505,7 @@ export default [
     diversity: true
   },
   {
-    title: ':left_facing_fist:',
+    title: ':left_facing_fist: tone0',
     name: 'left-facing fist',
     shortname: ':left_facing_fist:',
     category: 'people',
@@ -1547,7 +1547,7 @@ export default [
     diversity: true
   },
   {
-    title: ':right_facing_fist:',
+    title: ':right_facing_fist: tone0',
     name: 'right-facing fist',
     shortname: ':right_facing_fist:',
     category: 'people',
@@ -1589,7 +1589,7 @@ export default [
     diversity: true
   },
   {
-    title: ':fingers_crossed:',
+    title: ':fingers_crossed: tone0',
     name: 'crossed fingers',
     shortname: ':fingers_crossed:',
     category: 'people',
@@ -1631,7 +1631,7 @@ export default [
     diversity: true
   },
   {
-    title: ':v:',
+    title: ':v: tone0',
     name: 'victory hand',
     shortname: ':v:',
     category: 'people',
@@ -1673,7 +1673,7 @@ export default [
     diversity: true
   },
   {
-    title: ':metal:',
+    title: ':metal: tone0',
     name: 'sign of the horns',
     shortname: ':metal:',
     category: 'people',
@@ -1715,7 +1715,7 @@ export default [
     diversity: true
   },
   {
-    title: ':ok_hand:',
+    title: ':ok_hand: tone0',
     name: 'OK hand',
     shortname: ':ok_hand:',
     category: 'people',
@@ -1757,7 +1757,7 @@ export default [
     diversity: true
   },
   {
-    title: ':point_left:',
+    title: ':point_left: tone0',
     name: 'backhand index pointing left',
     shortname: ':point_left:',
     category: 'people',
@@ -1799,7 +1799,7 @@ export default [
     diversity: true
   },
   {
-    title: ':point_right:',
+    title: ':point_right: tone0',
     name: 'backhand index pointing right',
     shortname: ':point_right:',
     category: 'people',
@@ -1841,7 +1841,7 @@ export default [
     diversity: true
   },
   {
-    title: ':point_up_2:',
+    title: ':point_up_2: tone0',
     name: 'backhand index pointing up',
     shortname: ':point_up_2:',
     category: 'people',
@@ -1883,7 +1883,7 @@ export default [
     diversity: true
   },
   {
-    title: ':point_down:',
+    title: ':point_down: tone0',
     name: 'backhand index pointing down',
     shortname: ':point_down:',
     category: 'people',
@@ -1925,7 +1925,7 @@ export default [
     diversity: true
   },
   {
-    title: ':point_up:',
+    title: ':point_up: tone0',
     name: 'index pointing up',
     shortname: ':point_up:',
     category: 'people',
@@ -1967,7 +1967,7 @@ export default [
     diversity: true
   },
   {
-    title: ':raised_hand:',
+    title: ':raised_hand: tone0',
     name: 'raised hand',
     shortname: ':raised_hand:',
     category: 'people',
@@ -2009,7 +2009,7 @@ export default [
     diversity: true
   },
   {
-    title: ':raised_back_of_hand:',
+    title: ':raised_back_of_hand: tone0',
     name: 'raised back of hand',
     shortname: ':raised_back_of_hand:',
     category: 'people',
@@ -2051,7 +2051,7 @@ export default [
     diversity: true
   },
   {
-    title: ':hand_splayed:',
+    title: ':hand_splayed: tone0',
     name: 'raised hand with fingers splayed',
     shortname: ':hand_splayed:',
     category: 'people',
@@ -2093,7 +2093,7 @@ export default [
     diversity: true
   },
   {
-    title: ':vulcan:',
+    title: ':vulcan: tone0',
     name: 'vulcan salute',
     shortname: ':vulcan:',
     category: 'people',
@@ -2135,7 +2135,7 @@ export default [
     diversity: true
   },
   {
-    title: ':wave:',
+    title: ':wave: tone0',
     name: 'waving hand',
     shortname: ':wave:',
     category: 'people',
@@ -2177,7 +2177,7 @@ export default [
     diversity: true
   },
   {
-    title: ':call_me:',
+    title: ':call_me: tone0',
     name: 'call me hand',
     shortname: ':call_me:',
     category: 'people',
@@ -2219,7 +2219,7 @@ export default [
     diversity: true
   },
   {
-    title: ':muscle:',
+    title: ':muscle: tone0',
     name: 'flexed biceps',
     shortname: ':muscle:',
     category: 'people',
@@ -2261,7 +2261,7 @@ export default [
     diversity: true
   },
   {
-    title: ':middle_finger:',
+    title: ':middle_finger: tone0',
     name: 'middle finger',
     shortname: ':middle_finger:',
     category: 'people',
@@ -2303,7 +2303,7 @@ export default [
     diversity: true
   },
   {
-    title: ':writing_hand:',
+    title: ':writing_hand: tone0',
     name: 'writing hand',
     shortname: ':writing_hand:',
     category: 'people',
@@ -2345,7 +2345,7 @@ export default [
     diversity: true
   },
   {
-    title: ':selfie:',
+    title: ':selfie: tone0',
     name: 'selfie',
     shortname: ':selfie:',
     category: 'people',
@@ -2387,7 +2387,7 @@ export default [
     diversity: true
   },
   {
-    title: ':nail_care:',
+    title: ':nail_care: tone0',
     name: 'nail polish',
     shortname: ':nail_care:',
     category: 'people',
@@ -2464,7 +2464,7 @@ export default [
     diversity: false
   },
   {
-    title: ':ear:',
+    title: ':ear: tone0',
     name: 'ear',
     shortname: ':ear:',
     category: 'people',
@@ -2506,7 +2506,7 @@ export default [
     diversity: true
   },
   {
-    title: ':nose:',
+    title: ':nose: tone0',
     name: 'nose',
     shortname: ':nose:',
     category: 'people',
@@ -2590,7 +2590,7 @@ export default [
     diversity: false
   },
   {
-    title: ':baby:',
+    title: ':baby: tone0',
     name: 'baby',
     shortname: ':baby:',
     category: 'people',
@@ -2632,7 +2632,7 @@ export default [
     diversity: true
   },
   {
-    title: ':boy:',
+    title: ':boy: tone0',
     name: 'boy',
     shortname: ':boy:',
     category: 'people',
@@ -2674,7 +2674,7 @@ export default [
     diversity: true
   },
   {
-    title: ':girl:',
+    title: ':girl: tone0',
     name: 'girl',
     shortname: ':girl:',
     category: 'people',
@@ -2716,7 +2716,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man:',
+    title: ':man: tone0',
     name: 'man',
     shortname: ':man:',
     category: 'people',
@@ -2758,7 +2758,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman:',
+    title: ':woman: tone0',
     name: 'woman',
     shortname: ':woman:',
     category: 'people',
@@ -2800,7 +2800,7 @@ export default [
     diversity: true
   },
   {
-    title: ':blond-haired_woman:',
+    title: ':blond-haired_woman: tone0',
     name: 'blond-haired woman',
     shortname: ':blond-haired_woman:',
     category: 'people',
@@ -2842,7 +2842,7 @@ export default [
     diversity: true
   },
   {
-    title: ':blond_haired_person:',
+    title: ':blond_haired_person: tone0',
     name: 'blond-haired person',
     shortname: ':blond_haired_person:',
     category: 'people',
@@ -2884,7 +2884,7 @@ export default [
     diversity: true
   },
   {
-    title: ':blond-haired_man:',
+    title: ':blond-haired_man: tone0',
     name: 'blond-haired man',
     shortname: ':blond-haired_man:',
     category: 'people',
@@ -2926,7 +2926,7 @@ export default [
     diversity: true
   },
   {
-    title: ':older_man:',
+    title: ':older_man: tone0',
     name: 'old man',
     shortname: ':older_man:',
     category: 'people',
@@ -2968,7 +2968,7 @@ export default [
     diversity: true
   },
   {
-    title: ':older_woman:',
+    title: ':older_woman: tone0',
     name: 'old woman',
     shortname: ':older_woman:',
     category: 'people',
@@ -3010,7 +3010,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_with_chinese_cap:',
+    title: ':man_with_chinese_cap: tone0',
     name: 'man with Chinese cap',
     shortname: ':man_with_chinese_cap:',
     category: 'people',
@@ -3052,7 +3052,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_wearing_turban:',
+    title: ':woman_wearing_turban: tone0',
     name: 'woman wearing turban',
     shortname: ':woman_wearing_turban:',
     category: 'people',
@@ -3094,7 +3094,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_wearing_turban:',
+    title: ':person_wearing_turban: tone0',
     name: 'person wearing turban',
     shortname: ':person_wearing_turban:',
     category: 'people',
@@ -3136,7 +3136,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_wearing_turban:',
+    title: ':man_wearing_turban: tone0',
     name: 'man wearing turban',
     shortname: ':man_wearing_turban:',
     category: 'people',
@@ -3178,7 +3178,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_police_officer:',
+    title: ':woman_police_officer: tone0',
     name: 'woman police officer',
     shortname: ':woman_police_officer:',
     category: 'people',
@@ -3220,7 +3220,7 @@ export default [
     diversity: true
   },
   {
-    title: ':police_officer:',
+    title: ':police_officer: tone0',
     name: 'police officer',
     shortname: ':police_officer:',
     category: 'people',
@@ -3262,7 +3262,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_police_officer:',
+    title: ':man_police_officer: tone0',
     name: 'man police officer',
     shortname: ':man_police_officer:',
     category: 'people',
@@ -3304,7 +3304,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_construction_worker:',
+    title: ':woman_construction_worker: tone0',
     name: 'woman construction worker',
     shortname: ':woman_construction_worker:',
     category: 'people',
@@ -3346,7 +3346,7 @@ export default [
     diversity: true
   },
   {
-    title: ':construction_worker:',
+    title: ':construction_worker: tone0',
     name: 'construction worker',
     shortname: ':construction_worker:',
     category: 'people',
@@ -3388,7 +3388,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_construction_worker:',
+    title: ':man_construction_worker: tone0',
     name: 'man construction worker',
     shortname: ':man_construction_worker:',
     category: 'people',
@@ -3430,7 +3430,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_guard:',
+    title: ':woman_guard: tone0',
     name: 'woman guard',
     shortname: ':woman_guard:',
     category: 'people',
@@ -3472,7 +3472,7 @@ export default [
     diversity: true
   },
   {
-    title: ':guard:',
+    title: ':guard: tone0',
     name: 'guard',
     shortname: ':guard:',
     category: 'people',
@@ -3514,7 +3514,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_guard:',
+    title: ':man_guard: tone0',
     name: 'man guard',
     shortname: ':man_guard:',
     category: 'people',
@@ -3556,7 +3556,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_detective:',
+    title: ':woman_detective: tone0',
     name: 'woman detective',
     shortname: ':woman_detective:',
     category: 'people',
@@ -3598,7 +3598,7 @@ export default [
     diversity: true
   },
   {
-    title: ':detective:',
+    title: ':detective: tone0',
     name: 'detective',
     shortname: ':detective:',
     category: 'people',
@@ -3640,7 +3640,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_detective:',
+    title: ':man_detective: tone0',
     name: 'man detective',
     shortname: ':man_detective:',
     category: 'people',
@@ -3682,7 +3682,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_health_worker:',
+    title: ':woman_health_worker: tone0',
     name: 'woman health worker',
     shortname: ':woman_health_worker:',
     category: 'people',
@@ -3724,7 +3724,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_health_worker:',
+    title: ':man_health_worker: tone0',
     name: 'man health worker',
     shortname: ':man_health_worker:',
     category: 'people',
@@ -3766,7 +3766,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_farmer:',
+    title: ':woman_farmer: tone0',
     name: 'woman farmer',
     shortname: ':woman_farmer:',
     category: 'people',
@@ -3808,7 +3808,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_farmer:',
+    title: ':man_farmer: tone0',
     name: 'man farmer',
     shortname: ':man_farmer:',
     category: 'people',
@@ -3850,7 +3850,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_cook:',
+    title: ':woman_cook: tone0',
     name: 'woman cook',
     shortname: ':woman_cook:',
     category: 'people',
@@ -3892,7 +3892,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_cook:',
+    title: ':man_cook: tone0',
     name: 'man cook',
     shortname: ':man_cook:',
     category: 'people',
@@ -3934,7 +3934,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_student:',
+    title: ':woman_student: tone0',
     name: 'woman student',
     shortname: ':woman_student:',
     category: 'people',
@@ -3976,7 +3976,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_student:',
+    title: ':man_student: tone0',
     name: 'man student',
     shortname: ':man_student:',
     category: 'people',
@@ -4018,7 +4018,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_singer:',
+    title: ':woman_singer: tone0',
     name: 'woman singer',
     shortname: ':woman_singer:',
     category: 'people',
@@ -4060,7 +4060,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_singer:',
+    title: ':man_singer: tone0',
     name: 'man singer',
     shortname: ':man_singer:',
     category: 'people',
@@ -4102,7 +4102,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_teacher:',
+    title: ':woman_teacher: tone0',
     name: 'woman teacher',
     shortname: ':woman_teacher:',
     category: 'people',
@@ -4144,7 +4144,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_teacher:',
+    title: ':man_teacher: tone0',
     name: 'man teacher',
     shortname: ':man_teacher:',
     category: 'people',
@@ -4186,7 +4186,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_factory_worker:',
+    title: ':woman_factory_worker: tone0',
     name: 'woman factory worker',
     shortname: ':woman_factory_worker:',
     category: 'people',
@@ -4228,7 +4228,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_factory_worker:',
+    title: ':man_factory_worker: tone0',
     name: 'man factory worker',
     shortname: ':man_factory_worker:',
     category: 'people',
@@ -4270,7 +4270,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_technologist:',
+    title: ':woman_technologist: tone0',
     name: 'woman technologist',
     shortname: ':woman_technologist:',
     category: 'people',
@@ -4312,7 +4312,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_technologist:',
+    title: ':man_technologist: tone0',
     name: 'man technologist',
     shortname: ':man_technologist:',
     category: 'people',
@@ -4354,7 +4354,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_office_worker:',
+    title: ':woman_office_worker: tone0',
     name: 'woman office worker',
     shortname: ':woman_office_worker:',
     category: 'people',
@@ -4396,7 +4396,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_office_worker:',
+    title: ':man_office_worker: tone0',
     name: 'man office worker',
     shortname: ':man_office_worker:',
     category: 'people',
@@ -4438,7 +4438,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_mechanic:',
+    title: ':woman_mechanic: tone0',
     name: 'woman mechanic',
     shortname: ':woman_mechanic:',
     category: 'people',
@@ -4480,7 +4480,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_mechanic:',
+    title: ':man_mechanic: tone0',
     name: 'man mechanic',
     shortname: ':man_mechanic:',
     category: 'people',
@@ -4522,7 +4522,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_scientist:',
+    title: ':woman_scientist: tone0',
     name: 'woman scientist',
     shortname: ':woman_scientist:',
     category: 'people',
@@ -4564,7 +4564,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_scientist:',
+    title: ':man_scientist: tone0',
     name: 'man scientist',
     shortname: ':man_scientist:',
     category: 'people',
@@ -4606,7 +4606,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_artist:',
+    title: ':woman_artist: tone0',
     name: 'woman artist',
     shortname: ':woman_artist:',
     category: 'people',
@@ -4648,7 +4648,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_artist:',
+    title: ':man_artist: tone0',
     name: 'man artist',
     shortname: ':man_artist:',
     category: 'people',
@@ -4690,7 +4690,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_firefighter:',
+    title: ':woman_firefighter: tone0',
     name: 'woman firefighter',
     shortname: ':woman_firefighter:',
     category: 'people',
@@ -4732,7 +4732,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_firefighter:',
+    title: ':man_firefighter: tone0',
     name: 'man firefighter',
     shortname: ':man_firefighter:',
     category: 'people',
@@ -4774,7 +4774,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_pilot:',
+    title: ':woman_pilot: tone0',
     name: 'woman pilot',
     shortname: ':woman_pilot:',
     category: 'people',
@@ -4816,7 +4816,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_pilot:',
+    title: ':man_pilot: tone0',
     name: 'man pilot',
     shortname: ':man_pilot:',
     category: 'people',
@@ -4858,7 +4858,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_astronaut:',
+    title: ':woman_astronaut: tone0',
     name: 'woman astronaut',
     shortname: ':woman_astronaut:',
     category: 'people',
@@ -4900,7 +4900,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_astronaut:',
+    title: ':man_astronaut: tone0',
     name: 'man astronaut',
     shortname: ':man_astronaut:',
     category: 'people',
@@ -4942,7 +4942,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_judge:',
+    title: ':woman_judge: tone0',
     name: 'woman judge',
     shortname: ':woman_judge:',
     category: 'people',
@@ -4984,7 +4984,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_judge:',
+    title: ':man_judge: tone0',
     name: 'man judge',
     shortname: ':man_judge:',
     category: 'people',
@@ -5026,7 +5026,7 @@ export default [
     diversity: true
   },
   {
-    title: ':mrs_claus:',
+    title: ':mrs_claus: tone0',
     name: 'Mrs. Claus',
     shortname: ':mrs_claus:',
     category: 'people',
@@ -5068,7 +5068,7 @@ export default [
     diversity: true
   },
   {
-    title: ':santa:',
+    title: ':santa: tone0',
     name: 'Santa Claus',
     shortname: ':santa:',
     category: 'people',
@@ -5110,7 +5110,7 @@ export default [
     diversity: true
   },
   {
-    title: ':princess:',
+    title: ':princess: tone0',
     name: 'princess',
     shortname: ':princess:',
     category: 'people',
@@ -5152,7 +5152,7 @@ export default [
     diversity: true
   },
   {
-    title: ':prince:',
+    title: ':prince: tone0',
     name: 'prince',
     shortname: ':prince:',
     category: 'people',
@@ -5194,7 +5194,7 @@ export default [
     diversity: true
   },
   {
-    title: ':bride_with_veil:',
+    title: ':bride_with_veil: tone0',
     name: 'bride with veil',
     shortname: ':bride_with_veil:',
     category: 'people',
@@ -5236,7 +5236,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_in_tuxedo:',
+    title: ':man_in_tuxedo: tone0',
     name: 'man in tuxedo',
     shortname: ':man_in_tuxedo:',
     category: 'people',
@@ -5278,7 +5278,7 @@ export default [
     diversity: true
   },
   {
-    title: ':angel:',
+    title: ':angel: tone0',
     name: 'baby angel',
     shortname: ':angel:',
     category: 'people',
@@ -5320,7 +5320,7 @@ export default [
     diversity: true
   },
   {
-    title: ':pregnant_woman:',
+    title: ':pregnant_woman: tone0',
     name: 'pregnant woman',
     shortname: ':pregnant_woman:',
     category: 'people',
@@ -5362,7 +5362,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_bowing:',
+    title: ':woman_bowing: tone0',
     name: 'woman bowing',
     shortname: ':woman_bowing:',
     category: 'people',
@@ -5404,7 +5404,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_bowing:',
+    title: ':person_bowing: tone0',
     name: 'person bowing',
     shortname: ':person_bowing:',
     category: 'people',
@@ -5446,7 +5446,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_bowing:',
+    title: ':man_bowing: tone0',
     name: 'man bowing',
     shortname: ':man_bowing:',
     category: 'people',
@@ -5488,7 +5488,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_tipping_hand:',
+    title: ':person_tipping_hand: tone0',
     name: 'person tipping hand',
     shortname: ':person_tipping_hand:',
     category: 'people',
@@ -5530,7 +5530,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_tipping_hand:',
+    title: ':man_tipping_hand: tone0',
     name: 'man tipping hand',
     shortname: ':man_tipping_hand:',
     category: 'people',
@@ -5572,7 +5572,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_tipping_hand:',
+    title: ':woman_tipping_hand: tone0',
     name: 'woman tipping hand',
     shortname: ':woman_tipping_hand:',
     category: 'people',
@@ -5614,7 +5614,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_gesturing_no:',
+    title: ':person_gesturing_no: tone0',
     name: 'person gesturing NO',
     shortname: ':person_gesturing_no:',
     category: 'people',
@@ -5656,7 +5656,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_gesturing_no:',
+    title: ':man_gesturing_no: tone0',
     name: 'man gesturing NO',
     shortname: ':man_gesturing_no:',
     category: 'people',
@@ -5698,7 +5698,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_gesturing_no:',
+    title: ':woman_gesturing_no: tone0',
     name: 'woman gesturing NO',
     shortname: ':woman_gesturing_no:',
     category: 'people',
@@ -5740,7 +5740,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_gesturing_ok:',
+    title: ':person_gesturing_ok: tone0',
     name: 'person gesturing OK',
     shortname: ':person_gesturing_ok:',
     category: 'people',
@@ -5782,7 +5782,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_gesturing_ok:',
+    title: ':man_gesturing_ok: tone0',
     name: 'man gesturing OK',
     shortname: ':man_gesturing_ok:',
     category: 'people',
@@ -5824,7 +5824,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_gesturing_ok:',
+    title: ':woman_gesturing_ok: tone0',
     name: 'woman gesturing OK',
     shortname: ':woman_gesturing_ok:',
     category: 'people',
@@ -5866,7 +5866,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_raising_hand:',
+    title: ':person_raising_hand: tone0',
     name: 'person raising hand',
     shortname: ':person_raising_hand:',
     category: 'people',
@@ -5908,7 +5908,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_raising_hand:',
+    title: ':man_raising_hand: tone0',
     name: 'man raising hand',
     shortname: ':man_raising_hand:',
     category: 'people',
@@ -5950,7 +5950,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_raising_hand:',
+    title: ':woman_raising_hand: tone0',
     name: 'woman raising hand',
     shortname: ':woman_raising_hand:',
     category: 'people',
@@ -5992,7 +5992,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_facepalming:',
+    title: ':woman_facepalming: tone0',
     name: 'woman facepalming',
     shortname: ':woman_facepalming:',
     category: 'people',
@@ -6034,7 +6034,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_facepalming:',
+    title: ':man_facepalming: tone0',
     name: 'man facepalming',
     shortname: ':man_facepalming:',
     category: 'people',
@@ -6076,7 +6076,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_facepalming:',
+    title: ':person_facepalming: tone0',
     name: 'person facepalming',
     shortname: ':person_facepalming:',
     category: 'people',
@@ -6118,7 +6118,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_shrugging:',
+    title: ':woman_shrugging: tone0',
     name: 'woman shrugging',
     shortname: ':woman_shrugging:',
     category: 'people',
@@ -6160,7 +6160,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_shrugging:',
+    title: ':man_shrugging: tone0',
     name: 'man shrugging',
     shortname: ':man_shrugging:',
     category: 'people',
@@ -6202,7 +6202,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_shrugging:',
+    title: ':person_shrugging: tone0',
     name: 'person shrugging',
     shortname: ':person_shrugging:',
     category: 'people',
@@ -6244,7 +6244,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_pouting:',
+    title: ':person_pouting: tone0',
     name: 'person pouting',
     shortname: ':person_pouting:',
     category: 'people',
@@ -6286,7 +6286,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_pouting:',
+    title: ':man_pouting: tone0',
     name: 'man pouting',
     shortname: ':man_pouting:',
     category: 'people',
@@ -6328,7 +6328,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_pouting:',
+    title: ':woman_pouting: tone0',
     name: 'woman pouting',
     shortname: ':woman_pouting:',
     category: 'people',
@@ -6370,7 +6370,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_frowning:',
+    title: ':person_frowning: tone0',
     name: 'person frowning',
     shortname: ':person_frowning:',
     category: 'people',
@@ -6412,7 +6412,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_frowning:',
+    title: ':man_frowning: tone0',
     name: 'man frowning',
     shortname: ':man_frowning:',
     category: 'people',
@@ -6454,7 +6454,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_frowning:',
+    title: ':woman_frowning: tone0',
     name: 'woman frowning',
     shortname: ':woman_frowning:',
     category: 'people',
@@ -6496,7 +6496,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_getting_haircut:',
+    title: ':person_getting_haircut: tone0',
     name: 'person getting haircut',
     shortname: ':person_getting_haircut:',
     category: 'people',
@@ -6538,7 +6538,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_getting_haircut:',
+    title: ':man_getting_haircut: tone0',
     name: 'man getting haircut',
     shortname: ':man_getting_haircut:',
     category: 'people',
@@ -6580,7 +6580,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_getting_haircut:',
+    title: ':woman_getting_haircut: tone0',
     name: 'woman getting haircut',
     shortname: ':woman_getting_haircut:',
     category: 'people',
@@ -6622,7 +6622,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_getting_massage:',
+    title: ':person_getting_massage: tone0',
     name: 'person getting massage',
     shortname: ':person_getting_massage:',
     category: 'people',
@@ -6664,7 +6664,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_getting_face_massage:',
+    title: ':man_getting_face_massage: tone0',
     name: 'man getting massage',
     shortname: ':man_getting_face_massage:',
     category: 'people',
@@ -6706,7 +6706,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_getting_face_massage:',
+    title: ':woman_getting_face_massage: tone0',
     name: 'woman getting massage',
     shortname: ':woman_getting_face_massage:',
     category: 'people',
@@ -6748,7 +6748,7 @@ export default [
     diversity: true
   },
   {
-    title: ':levitate:',
+    title: ':levitate: tone0',
     name: 'man in business suit levitating',
     shortname: ':levitate:',
     category: 'people',
@@ -6790,7 +6790,7 @@ export default [
     diversity: true
   },
   {
-    title: ':dancer:',
+    title: ':dancer: tone0',
     name: 'woman dancing',
     shortname: ':dancer:',
     category: 'people',
@@ -6832,7 +6832,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_dancing:',
+    title: ':man_dancing: tone0',
     name: 'man dancing',
     shortname: ':man_dancing:',
     category: 'people',
@@ -6895,7 +6895,7 @@ export default [
     diversity: false
   },
   {
-    title: ':woman_walking:',
+    title: ':woman_walking: tone0',
     name: 'woman walking',
     shortname: ':woman_walking:',
     category: 'people',
@@ -6937,7 +6937,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_walking:',
+    title: ':person_walking: tone0',
     name: 'person walking',
     shortname: ':person_walking:',
     category: 'people',
@@ -6979,7 +6979,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_walking:',
+    title: ':man_walking: tone0',
     name: 'man walking',
     shortname: ':man_walking:',
     category: 'people',
@@ -7021,7 +7021,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_running:',
+    title: ':woman_running: tone0',
     name: 'woman running',
     shortname: ':woman_running:',
     category: 'people',
@@ -7063,7 +7063,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_running:',
+    title: ':person_running: tone0',
     name: 'person running',
     shortname: ':person_running:',
     category: 'people',
@@ -7105,7 +7105,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_running:',
+    title: ':man_running: tone0',
     name: 'man running',
     shortname: ':man_running:',
     category: 'people',
@@ -9366,7 +9366,7 @@ export default [
     diversity: false
   },
   {
-    title: ':snowboarder:',
+    title: ':snowboarder: tone0',
     name: 'snowboarder',
     shortname: ':snowboarder:',
     category: 'activity',
@@ -9408,7 +9408,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_lifting_weights:',
+    title: ':woman_lifting_weights: tone0',
     name: 'woman lifting weights',
     shortname: ':woman_lifting_weights:',
     category: 'activity',
@@ -9450,7 +9450,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_lifting_weights:',
+    title: ':person_lifting_weights: tone0',
     name: 'person lifting weights',
     shortname: ':person_lifting_weights:',
     category: 'activity',
@@ -9492,7 +9492,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_lifting_weights:',
+    title: ':man_lifting_weights: tone0',
     name: 'man lifting weights',
     shortname: ':man_lifting_weights:',
     category: 'activity',
@@ -9562,7 +9562,7 @@ export default [
     diversity: false
   },
   {
-    title: ':woman_cartwheeling:',
+    title: ':woman_cartwheeling: tone0',
     name: 'woman cartwheeling',
     shortname: ':woman_cartwheeling:',
     category: 'activity',
@@ -9604,7 +9604,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_cartwheeling:',
+    title: ':man_cartwheeling: tone0',
     name: 'man cartwheeling',
     shortname: ':man_cartwheeling:',
     category: 'activity',
@@ -9646,7 +9646,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_doing_cartwheel:',
+    title: ':person_doing_cartwheel: tone0',
     name: 'person cartwheeling',
     shortname: ':person_doing_cartwheel:',
     category: 'activity',
@@ -9688,7 +9688,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_bouncing_ball:',
+    title: ':woman_bouncing_ball: tone0',
     name: 'woman bouncing ball',
     shortname: ':woman_bouncing_ball:',
     category: 'activity',
@@ -9730,7 +9730,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_bouncing_ball:',
+    title: ':person_bouncing_ball: tone0',
     name: 'person bouncing ball',
     shortname: ':person_bouncing_ball:',
     category: 'activity',
@@ -9772,7 +9772,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_bouncing_ball:',
+    title: ':man_bouncing_ball: tone0',
     name: 'man bouncing ball',
     shortname: ':man_bouncing_ball:',
     category: 'activity',
@@ -9814,7 +9814,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_playing_handball:',
+    title: ':woman_playing_handball: tone0',
     name: 'woman playing handball',
     shortname: ':woman_playing_handball:',
     category: 'activity',
@@ -9856,7 +9856,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_playing_handball:',
+    title: ':man_playing_handball: tone0',
     name: 'man playing handball',
     shortname: ':man_playing_handball:',
     category: 'activity',
@@ -9898,7 +9898,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_playing_handball:',
+    title: ':person_playing_handball: tone0',
     name: 'person playing handball',
     shortname: ':person_playing_handball:',
     category: 'activity',
@@ -9940,7 +9940,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_golfing:',
+    title: ':woman_golfing: tone0',
     name: 'woman golfing',
     shortname: ':woman_golfing:',
     category: 'activity',
@@ -9982,7 +9982,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_golfing:',
+    title: ':person_golfing: tone0',
     name: 'person golfing',
     shortname: ':person_golfing:',
     category: 'activity',
@@ -10024,7 +10024,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_golfing:',
+    title: ':man_golfing: tone0',
     name: 'man golfing',
     shortname: ':man_golfing:',
     category: 'activity',
@@ -10066,7 +10066,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_surfing:',
+    title: ':woman_surfing: tone0',
     name: 'woman surfing',
     shortname: ':woman_surfing:',
     category: 'activity',
@@ -10108,7 +10108,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_surfing:',
+    title: ':person_surfing: tone0',
     name: 'person surfing',
     shortname: ':person_surfing:',
     category: 'activity',
@@ -10150,7 +10150,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_surfing:',
+    title: ':man_surfing: tone0',
     name: 'man surfing',
     shortname: ':man_surfing:',
     category: 'activity',
@@ -10192,7 +10192,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_swimming:',
+    title: ':woman_swimming: tone0',
     name: 'woman swimming',
     shortname: ':woman_swimming:',
     category: 'activity',
@@ -10234,7 +10234,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_swimming:',
+    title: ':person_swimming: tone0',
     name: 'person swimming',
     shortname: ':person_swimming:',
     category: 'activity',
@@ -10276,7 +10276,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_swimming:',
+    title: ':man_swimming: tone0',
     name: 'man swimming',
     shortname: ':man_swimming:',
     category: 'activity',
@@ -10318,7 +10318,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_playing_water_polo:',
+    title: ':woman_playing_water_polo: tone0',
     name: 'woman playing water polo',
     shortname: ':woman_playing_water_polo:',
     category: 'activity',
@@ -10360,7 +10360,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_playing_water_polo:',
+    title: ':man_playing_water_polo: tone0',
     name: 'man playing water polo',
     shortname: ':man_playing_water_polo:',
     category: 'activity',
@@ -10402,7 +10402,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_playing_water_polo:',
+    title: ':person_playing_water_polo: tone0',
     name: 'person playing water polo',
     shortname: ':person_playing_water_polo:',
     category: 'activity',
@@ -10444,7 +10444,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_rowing_boat:',
+    title: ':woman_rowing_boat: tone0',
     name: 'woman rowing boat',
     shortname: ':woman_rowing_boat:',
     category: 'activity',
@@ -10486,7 +10486,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_rowing_boat:',
+    title: ':person_rowing_boat: tone0',
     name: 'person rowing boat',
     shortname: ':person_rowing_boat:',
     category: 'activity',
@@ -10528,7 +10528,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_rowing_boat:',
+    title: ':man_rowing_boat: tone0',
     name: 'man rowing boat',
     shortname: ':man_rowing_boat:',
     category: 'activity',
@@ -10570,7 +10570,7 @@ export default [
     diversity: true
   },
   {
-    title: ':horse_racing:',
+    title: ':horse_racing: tone0',
     name: 'horse racing',
     shortname: ':horse_racing:',
     category: 'activity',
@@ -10612,7 +10612,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_biking:',
+    title: ':woman_biking: tone0',
     name: 'woman biking',
     shortname: ':woman_biking:',
     category: 'activity',
@@ -10654,7 +10654,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_biking:',
+    title: ':person_biking: tone0',
     name: 'person biking',
     shortname: ':person_biking:',
     category: 'activity',
@@ -10696,7 +10696,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_biking:',
+    title: ':man_biking: tone0',
     name: 'man biking',
     shortname: ':man_biking:',
     category: 'activity',
@@ -10738,7 +10738,7 @@ export default [
     diversity: true
   },
   {
-    title: ':woman_mountain_biking:',
+    title: ':woman_mountain_biking: tone0',
     name: 'woman mountain biking',
     shortname: ':woman_mountain_biking:',
     category: 'activity',
@@ -10780,7 +10780,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_mountain_biking:',
+    title: ':person_mountain_biking: tone0',
     name: 'person mountain biking',
     shortname: ':person_mountain_biking:',
     category: 'activity',
@@ -10822,7 +10822,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_mountain_biking:',
+    title: ':man_mountain_biking: tone0',
     name: 'man mountain biking',
     shortname: ':man_mountain_biking:',
     category: 'activity',
@@ -10948,7 +10948,7 @@ export default [
     diversity: false
   },
   {
-    title: ':woman_juggling:',
+    title: ':woman_juggling: tone0',
     name: 'woman juggling',
     shortname: ':woman_juggling:',
     category: 'activity',
@@ -10990,7 +10990,7 @@ export default [
     diversity: true
   },
   {
-    title: ':man_juggling:',
+    title: ':man_juggling: tone0',
     name: 'man juggling',
     shortname: ':man_juggling:',
     category: 'activity',
@@ -11032,7 +11032,7 @@ export default [
     diversity: true
   },
   {
-    title: ':person_juggling:',
+    title: ':person_juggling: tone0',
     name: 'person juggling',
     shortname: ':person_juggling:',
     category: 'activity',
@@ -12572,7 +12572,7 @@ export default [
     diversity: false
   },
   {
-    title: ':bath:',
+    title: ':bath: tone0',
     name: 'person taking bath',
     shortname: ':bath:',
     category: 'objects',
@@ -12656,7 +12656,7 @@ export default [
     diversity: false
   },
   {
-    title: ':sleeping_accommodation:',
+    title: ':sleeping_accommodation: tone0',
     name: 'person in bed',
     shortname: ':sleeping_accommodation:',
     category: 'objects',
