@@ -1,31 +1,48 @@
-import React, { cloneElement } from 'react';
+import React, { Component, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import EventListener from 'react-event-listener';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
 import themeable from '../themeable';
 
 /** Menu that slides in from the left */
-const Menu = ({
-  children,
-  open,
-  header,
-  headerIcon,
-  toggleMenu,
-  style,
-  iconStyle,
-  headerStyle,
-  color,
-  ...custom
-}) => {
-  const menuItems = React.Children.map(children, child => (
-    cloneElement(child, { closeMenu: toggleMenu })
-  ));
+class Menu extends Component {
+  handleKeyUp = (event) => {
+    const { toggleMenu } = this.props;
 
-  if (!toggleMenu) {
+    if (event.which === 27) {
+      toggleMenu(event);
+    }
+  }
+
+  renderNav = () => {
+    const {
+      children,
+      open,
+      header,
+      headerIcon,
+      toggleMenu,
+      style,
+      iconStyle,
+      headerStyle,
+      color,
+      ...custom
+    } = this.props;
+
+    const menuItems = React.Children.map(children, child => (
+      cloneElement(child, { closeMenu: toggleMenu })
+    ));
+
+    let rootStyle = getStyles.root(open, style);
+
+    if (!toggleMenu) {
+      rootStyle = getStyles.sidebar(style);
+    }
+
     return (
-      <nav style={getStyles.sidebar(style)} {...custom}>
+      <nav style={rootStyle} {...custom}>
         {
           headerIcon
           ? <div style={getStyles.icon(iconStyle)}>{React.cloneElement(headerIcon, { color })}</div>
@@ -37,21 +54,29 @@ const Menu = ({
     );
   }
 
-  return (
-    <section style={getStyles.container()}>
-      <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
-      <nav style={getStyles.root(open, style)} {...custom}>
+  render() {
+    const {
+      open,
+      toggleMenu
+    } = this.props;
+
+    if (!toggleMenu) {
+      return this.renderNav();
+    }
+
+    return (
+      <section style={getStyles.container()}>
+        <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
+        {this.renderNav()}
         {
-          headerIcon
-          ? <div style={getStyles.icon(iconStyle)}>{React.cloneElement(headerIcon, { color })}</div>
+          open
+          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
           : null
         }
-        {header ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1> : null}
-        {menuItems}
-      </nav>
-    </section>
-  );
-};
+      </section>
+    );
+  }
+}
 
 Menu.displayName = 'Menu';
 
