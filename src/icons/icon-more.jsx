@@ -4,8 +4,8 @@ import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconMore = ({ color, ...custom }) => (
-  <svg fill={color} height="24" viewBox="0 0 24 24" width="24" {...custom}>
-    <g fill="#C4C4C4">
+  <svg height="24" viewBox="0 0 24 24" width="24" {...custom}>
+    <g fill={color}>
       <circle cx="12.5" cy="19.5" r="1.875" />
       <circle cx="12.5" cy="12" r="1.875" />
       <circle cx="12.5" cy="4.5" r="1.875" />

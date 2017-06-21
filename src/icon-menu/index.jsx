@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import EventListener from 'react-event-listener';
+import compose from 'recompose/compose';
+import onClickOutside from 'react-onclickoutside';
 import PopOver from '../pop-over';
 import Button from '../button';
-import styles from './styles';
 import getStyles from './get-styles';
 import getPopOverPosition from '../internal/get-pop-over-position';
 
@@ -92,6 +92,8 @@ class IconMenu extends Component {
     onMenuClose();
   }
 
+  handleClickOutside = () => this.closeMenu()
+
   applyCloseMenuToChildren(children) {
     return React.Children.map(
       children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
@@ -109,6 +111,12 @@ class IconMenu extends Component {
       contentStyle,
       dividerText,
       onMenuClose, // eslint-disable-line no-unused-vars
+      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
+      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
+      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
+      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -122,17 +130,16 @@ class IconMenu extends Component {
 
     return (
       <div style={getStyles.root(style)} {...custom}>
-        {open ? <div style={styles.clickAway} onClick={this.closeMenu} /> : null}
         {
-            open
-            ? <EventListener
-              target="window"
-              onResize={this.closeMenu}
-            />
-            : null
+          open
+          ? <EventListener
+            target="window"
+            onResize={this.closeMenu}
+          />
+          : null
         }
         <div ref={button => (this.button = button)}>
-          <Button iconButton onClick={this.openMenu}>{icon}</Button>
+          <Button iconButton onClick={!open ? this.openMenu : this.closeMenu}>{icon}</Button>
         </div>
         <PopOver
           style={contentStyle}
@@ -151,4 +158,9 @@ class IconMenu extends Component {
   }
 }
 
-export default pure(Radium(IconMenu));
+const enhance = compose(
+  onClickOutside,
+  Radium
+);
+
+export default enhance(IconMenu);

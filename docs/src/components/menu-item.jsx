@@ -2,9 +2,11 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import MenuItem from '../../../dist/menu-item';
+import IconMenu from '../../../dist/icon-menu';
 import Props from './props';
 import components from '../../components.json';
 import IconReport from '../../../dist/icons/icon-report';
+import IconMore from '../../../dist/icons/icon-more';
 import Paper from '../../../dist/paper';
 
 const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
@@ -18,6 +20,9 @@ const MenuItemDoc = () => {
       alignItems: 'center',
       margin: 0,
       padding: '20px'
+    },
+    wrapper: {
+      maxWidth: '256px'
     }
   };
 
@@ -35,9 +40,25 @@ const MenuItemDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <MenuItem text="Active Menu item" onClick={() => {}} active />
-          <MenuItem text="Menu item" onClick={() => {}} />
-          <MenuItem icon={<IconReport />} text="Menu item with icon" onClick={() => {}} />
+          <section style={style.wrapper}>
+            <MenuItem text="Active Menu item" onClick={() => {}} active />
+            <MenuItem text="Menu item" onClick={() => {}} />
+            <MenuItem icon={<IconReport />} text="Menu item with icon" onClick={() => {}} />
+            <MenuItem
+              rightButton={
+                <IconMenu
+                  icon={<IconMore />}
+                  header="Items"
+                  dividerText="More items"
+                >
+                  <MenuItem text="Active item" onClick={() => {}} active />
+                  <MenuItem text="Inactive item" onClick={() => {}} />
+                </IconMenu>
+              }
+              text="Menu item with rightButton"
+              onClick={() => {}}
+            />
+          </section>
         </Paper>
       </section>
       <Props props={componentData.props} />

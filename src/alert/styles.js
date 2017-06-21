@@ -6,6 +6,7 @@ export default {
     borderRadius: '3px',
     boxSizing: 'border-box',
     fontSize: '16px',
+    fontWeight: 'inherit',
     lineHeight: '20px',
     padding: '14px 10px',
     position: 'relative',

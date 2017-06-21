@@ -10,7 +10,8 @@ export default {
     maxWidth: '75%',
     padding: '12px',
     position: 'relative',
-    wordBreak: 'break-word'
+    wordBreak: 'break-word',
+    fontWeight: 'inherit'
   },
   avatar: {
     marginLeft: '66px'
@@ -35,7 +36,7 @@ export default {
   compact: {
     marginLeft: '0',
     marginRight: '0',
-    maxWidth: '100%',
+    maxWidth: 'calc(100% - 40px)',
     display: 'flex'
   }
 };

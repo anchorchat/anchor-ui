@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import colors from '../settings/colors';
-import IconSuccess from '../icons/icon-success';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
@@ -26,8 +24,12 @@ class MenuItem extends Component {
     textStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the icon element */
     iconStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the right button element */
+    buttonStyle: PropTypes.instanceOf(Object),
     /** Closes IconMenu if MenuItem is child */
     closeMenu: PropTypes.func,
+    /** Right-hand side placed button */
+    rightButton: PropTypes.node,
     color: PropTypes.string.isRequired
   };
 
@@ -37,7 +39,9 @@ class MenuItem extends Component {
     style: {},
     textStyle: {},
     iconStyle: {},
-    closeMenu: null
+    buttonStyle: {},
+    closeMenu: null,
+    rightButton: null
   };
 
   static contextTypes = {
@@ -70,13 +74,15 @@ class MenuItem extends Component {
       active,
       closeMenu, // eslint-disable-line no-unused-vars
       onClick, // eslint-disable-line no-unused-vars
+      rightButton,
+      buttonStyle,
       color,
       ...custom
     } = this.props;
 
     return (
       <section
-        style={getStyles.root(color, icon, active, style)}
+        style={getStyles.root(color, icon, active, rightButton, style)}
         onClick={this.handleClick}
         {...custom}
       >
@@ -84,13 +90,7 @@ class MenuItem extends Component {
         <p style={getStyles.text(textStyle)}>
           {text}
         </p>
-        {
-          active
-          ? <div style={getStyles.activeIcon(iconStyle)}>
-            <IconSuccess color={color || colors.theme} />
-          </div>
-          : null
-        }
+        {rightButton ? <div style={getStyles.rightButton(buttonStyle)}>{rightButton}</div> : null}
       </section>
     );
   }

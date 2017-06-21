@@ -13,7 +13,7 @@ export default {
     margin: 0,
     paddingLeft: 0,
     overflow: 'auto',
-    zIndex: '2',
+    zIndex: 9001,
     maxWidth: '85%'
   },
   header: {
@@ -23,7 +23,7 @@ export default {
     paddingLeft: '16px',
     margin: '0',
     fontSize: '16px',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     color: colors.secondaryText,
     overflow: 'hidden',
     textOverflow: 'ellipsis'

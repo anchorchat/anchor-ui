@@ -9,15 +9,22 @@ import AdminBadge from '../../src/admin-badge';
 import getStyles from '../../src/admin-badge/get-styles';
 
 chai.use(sinonChai);
-global.navigator = { userAgent: 'all' };
 
 describe('AdminBadge', () => {
   const props = {
-    style: {},
-    inverted: false,
     text: 'Admin',
+    style: { root: true },
+    inverted: false,
     color: '#1BA6C4'
   };
+
+  beforeEach(() => {
+    global.navigator = { userAgent: 'all' };
+  });
+
+  afterEach(() => {
+    global.navigator = undefined;
+  });
 
   it('should always render a span element', () => {
     const wrapper = shallow(<AdminBadge {...props} />).dive().dive();

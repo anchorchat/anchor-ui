@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import en from 'date-fns/locale/en';
 import IconMenu from '../icon-menu';
 import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import StickerMessage from './sticker-message';
+import TypingMessage from './typing-message';
+import MenuItem from '../menu-item';
 import themeable from '../themeable';
+import styles from './styles';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -31,9 +35,13 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
     }).isRequired,
-    /** The format of displaying message.createdAt */
+    /**
+     * The format of displaying message.createdAt
+     *
+     * https://date-fns.org/docs/format
+     */
     timeFormat: PropTypes.string,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -63,6 +71,20 @@ class Message extends Component {
     collapsedText: PropTypes.node,
     /** Expand a collapsed image message */
     expand: PropTypes.func,
+    /** Text to show in expand menu item */
+    expandText: PropTypes.node,
+    /** Icon to show in expand menu item */
+    expandIcon: PropTypes.node,
+    /** Text to display for edited banner */
+    edited: PropTypes.node,
+    /**
+     * Internationalization, defaults to English
+     *
+     * https://date-fns.org/docs/I18n
+     */
+    locale: PropTypes.instanceOf(Object),
+    /** Show a separator above the message */
+    separator: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -82,13 +104,19 @@ class Message extends Component {
     enableLightbox: false,
     collapsed: false,
     expand: null,
-    collapsedText: 'This image has been collapsed, click the button to expand it.'
+    expandText: 'Expand image',
+    expandIcon: null,
+    collapsedText: 'This image has been collapsed, click the button to expand it.',
+    edited: null,
+    locale: en,
+    separator: null
   }
 
   constructor() {
     super();
 
     this.renderIconMenu = this.renderIconMenu.bind(this);
+    this.renderImageIconMenu = this.renderImageIconMenu.bind(this);
   }
 
   renderIconMenu() {
@@ -101,6 +129,43 @@ class Message extends Component {
     return (
       <IconMenu icon={<IconChevronDown />}>
         {menuItems}
+      </IconMenu>
+    );
+  }
+
+  renderImageIconMenu() {
+    const {
+      collapsed,
+      expand,
+      expandIcon,
+      expandText,
+      menuItems,
+    } = this.props;
+
+    if (!expand || (!menuItems && !collapsed)) {
+      return null;
+    }
+
+    if (!menuItems && collapsed) {
+      return (
+        <IconMenu icon={<IconChevronDown />}>
+          <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
+        </IconMenu>
+      );
+    }
+
+    if (menuItems && !collapsed) {
+      return (
+        <IconMenu icon={<IconChevronDown />}>
+          {menuItems}
+        </IconMenu>
+      );
+    }
+
+    return (
+      <IconMenu icon={<IconChevronDown />}>
+        {menuItems}
+        <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
       </IconMenu>
     );
   }
@@ -123,8 +188,13 @@ class Message extends Component {
       enableLightbox, // eslint-disable-line no-unused-vars
       collapsed, // eslint-disable-line no-unused-vars
       expand, // eslint-disable-line no-unused-vars
+      expandText, // eslint-disable-line no-unused-vars
+      expandIcon, // eslint-disable-line no-unused-vars
       collapsedText, // eslint-disable-line no-unused-vars
+      edited, // eslint-disable-line no-unused-vars
+      locale, // eslint-disable-line no-unused-vars
       color,
+      separator,
       ...custom
     } = this.props;
 
@@ -138,11 +208,18 @@ class Message extends Component {
       messageElement = <StickerMessage color={color} {...this.props} />;
     }
 
+    if (message.type === 'typing') {
+      messageElement = <TypingMessage color={color} {...this.props} />;
+    }
+
     return (
-      <section style={getStyles.container(myMessage, compact)} {...custom}>
-        {messageElement}
-        {this.renderIconMenu()}
-      </section>
+      <div style={styles.root}>
+        {separator}
+        <section style={getStyles.container(myMessage, compact)} {...custom}>
+          {messageElement}
+          {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
+        </section>
+      </div>
     );
   }
 }

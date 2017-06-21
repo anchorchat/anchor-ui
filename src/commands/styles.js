@@ -15,15 +15,19 @@ export default {
     backgroundColor: colors.theme,
     color: colors.white,
     transition: 'background .3s ease-in-out',
-    padding: '10px',
-    fontSize: '16px'
+    padding: '8px',
+    height: '40px',
+    fontSize: '16px',
+    lineHeight: '24px',
+    boxSizing: 'border-box',
+    fontWeight: 'inherit'
   },
   commands: {
     height: 'calc(100% - 40px)',
     overflowY: 'scroll'
   },
   command: {
-    padding: '10px 20px 10px 10px',
+    padding: '8px 16px 8px 8px',
     margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
@@ -41,13 +45,29 @@ export default {
     }
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
     marginRight: '5px',
-    fontSize: '14px'
+    fontSize: '14px',
+    lineHeight: '14px'
   },
   description: {
     fontStyle: 'italic',
+    fontWeight: 'inherit',
     fontSize: '14px',
+    lineHeight: '14px',
     float: 'right'
+  },
+  titleContainer: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  avatarContainer: {
+    width: '30px',
+    height: '30px',
+    marginRight: '8px'
+  },
+  avatar: {
+    width: '100%',
+    height: '100%'
   }
 };

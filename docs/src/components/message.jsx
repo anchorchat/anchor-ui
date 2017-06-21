@@ -58,6 +58,14 @@ const messages = [
     id: 6,
     type: 'image'
   },
+  {
+    body: 'is typing',
+    createdAt: new Date(),
+    username: 'Lars',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 7,
+    type: 'typing'
+  },
 ];
 
 const currentUser = 'Sjaak';
@@ -70,7 +78,8 @@ class MessageDoc extends Component {
       collapsed: false,
       fontSize: 'small',
       compact: false,
-      iconMenu: false
+      iconMenu: false,
+      edited: false
     };
   }
 
@@ -81,6 +90,8 @@ class MessageDoc extends Component {
   selectFontSize = fontSize => this.setState({ fontSize })
 
   selectIconMenu = iconMenu => this.setState({ iconMenu })
+
+  selectEdited = edited => this.setState({ edited })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Message');
@@ -161,6 +172,10 @@ class MessageDoc extends Component {
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
+            <Select style={style.select} label="Edited messages" value={this.state.edited} onChange={this.selectEdited}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
@@ -176,6 +191,7 @@ class MessageDoc extends Component {
                   fontSize={this.state.fontSize}
                   compact={this.state.compact}
                   menuItems={this.state.iconMenu ? menuItems : null}
+                  edited={this.state.edited ? 'edited' : null}
                 />
               ))}
             </MessageList>

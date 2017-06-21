@@ -6,9 +6,6 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
-import Button from '../../button';
-import IconChevronRight from '../../icons/icon-chevron-right';
-import colors from '../../settings/colors';
 
 class ImageMessage extends Component {
   constructor() {
@@ -46,8 +43,8 @@ class ImageMessage extends Component {
       timeFormat,
       enableLightbox,
       collapsed,
-      expand,
-      collapsedText
+      collapsedText,
+      locale
     } = this.props;
     const { lightbox } = this.state;
 
@@ -69,11 +66,6 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
     }
 
-    const collapsedStyle = {
-      display: 'flex',
-      alignItems: 'center'
-    };
-
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -88,12 +80,7 @@ class ImageMessage extends Component {
           {
             !collapsed
             ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
-            : <span style={collapsedStyle}>
-              <span>{collapsedText}</span>
-              <Button iconButton onClick={expand}>
-                <IconChevronRight color={myMessage ? colors.white : colors.icons} />
-              </Button>
-            </span>
+            : <span>{collapsedText}</span>
           }
           <MessageTime
             myMessage={myMessage}
@@ -101,6 +88,7 @@ class ImageMessage extends Component {
             style={messageTimeStyle}
             createdAt={message.createdAt}
             timeFormat={timeFormat}
+            locale={locale}
           />
         </p>
         {
@@ -127,7 +115,7 @@ ImageMessage.propTypes = {
       PropTypes.instanceOf(Date)
     ]).isRequired,
     username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker'])
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
   }).isRequired,
   timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
@@ -140,8 +128,8 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  expand: PropTypes.func,
-  collapsedText: PropTypes.node
+  collapsedText: PropTypes.node,
+  locale: PropTypes.instanceOf(Object).isRequired
 };
 
 ImageMessage.defaultProps = {
@@ -157,8 +145,8 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  expand: null,
-  collapsedText: 'This image has been collapsed, click the button to expand it.'
+  collapsedText: 'This image has been collapsed, click the button to expand it.',
+  iconMenu: null
 };
 
 export default ImageMessage;

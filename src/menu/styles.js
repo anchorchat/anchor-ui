@@ -23,10 +23,26 @@ export default {
     transition: 'opacity .3s ease-in-out'
   },
   header: {
-    fontWeight: 'bold',
-    color: colors.secondaryText,
+    fontWeight: 'bolder',
+    color: colors.theme,
     margin: 0,
-    padding: '16px',
-    borderBottom: `1px solid ${colors.grey}`
+    padding: '15.5px 16px 15.5px 16px',
+    borderBottom: `1px solid ${colors.grey}`,
+    fontSize: '16px',
+    lineHeight: '16px'
+  },
+  icon: {
+    position: 'absolute',
+    top: '12px',
+    left: '8px',
+    height: '24px'
+  },
+  sidebar: {
+    position: 'relative',
+    width: '256px',
+    height: '100%',
+    background: colors.white,
+    overflowY: 'scroll',
+    borderRight: `1px solid ${colors.grey}`
   }
 };

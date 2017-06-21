@@ -43,7 +43,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "color": "^1.0.3",
+    "date-fns": "^1.28.5",
     "emojione": "^2.2.7",
+    "escape-html": "^1.0.3",
     "prop-types": "^15.5.6",
     "radium": "^0.19.1",
     "react": "^15.5.3",
@@ -51,7 +53,8 @@
     "react-jss": "^5.3.0",
     "react-markdown": "^2.4.4",
     "react-router": "^3.0.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "uuid": "^3.0.1"
   },
   "scripts": {
     "start": "node scripts/start.js",

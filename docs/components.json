@@ -888,8 +888,8 @@
               },
               "description": {
                 "name": "node",
-                "description": "The command's description",
-                "required": true
+                "description": "Optional command description",
+                "required": false
               },
               "param": {
                 "name": "node",
@@ -900,7 +900,7 @@
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n{ title: Node, description: Node, param: Node (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: String (optional) }"
       },
       "value": {
         "type": {
@@ -989,6 +989,88 @@
         },
         "required": true,
         "description": ""
+      }
+    }
+  },
+  "components/date-separator/index.jsx": {
+    "description": "A separator to show above a Message",
+    "displayName": "DateSeparator",
+    "methods": [],
+    "props": {
+      "date": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "instanceOf",
+              "value": "Date"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The date to display"
+      },
+      "format": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The format of displaying date\n\nhttps://date-fns.org/docs/format",
+        "defaultValue": {
+          "value": "'DD MMM'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "hrStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the hr element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "locale": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
+        "defaultValue": {
+          "value": "en",
+          "computed": true
+        }
       }
     }
   },
@@ -1791,6 +1873,42 @@
       }
     }
   },
+  "components/icons/icon-bomb.jsx": {
+    "description": "",
+    "displayName": "IconBomb",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-channel-settings.jsx": {
+    "description": "",
+    "displayName": "IconChannelSettings",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-channel.jsx": {
     "description": "",
     "displayName": "IconChannel",
@@ -1812,6 +1930,24 @@
   "components/icons/icon-channels.jsx": {
     "description": "",
     "displayName": "IconChannels",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-chart.jsx": {
+    "description": "",
+    "displayName": "IconChart",
     "methods": [],
     "props": {
       "color": {
@@ -2187,6 +2323,24 @@
       }
     }
   },
+  "components/icons/icon-home.jsx": {
+    "description": "",
+    "displayName": "IconHome",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-info.jsx": {
     "description": "",
     "displayName": "IconInfo",
@@ -2244,6 +2398,24 @@
   "components/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-mail.jsx": {
+    "description": "",
+    "displayName": "IconMail",
     "methods": [],
     "props": {
       "color": {
@@ -2424,6 +2596,24 @@
   "components/icons/icon-picture.jsx": {
     "description": "",
     "displayName": "IconPicture",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-plus.jsx": {
+    "description": "",
+    "displayName": "IconPlus",
     "methods": [],
     "props": {
       "color": {
@@ -2694,6 +2884,24 @@
   "components/icons/icon-thumbs-up.jsx": {
     "description": "",
     "displayName": "IconThumbsUp",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-tools.jsx": {
+    "description": "",
+    "displayName": "IconTools",
     "methods": [],
     "props": {
       "color": {
@@ -3358,8 +3566,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Toggle the Menu's visibility"
+        "required": false,
+        "description": "Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "header": {
         "type": {
@@ -3369,6 +3581,29 @@
         "description": "The Menu's header",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "headerIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The header's icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -3395,6 +3630,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3483,12 +3725,35 @@
           "computed": false
         }
       },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the right button element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "closeMenu": {
         "type": {
           "name": "func"
         },
         "required": false,
         "description": "Closes IconMenu if MenuItem is child",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Right-hand side placed button",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3509,6 +3774,13 @@
     "methods": [
       {
         "name": "renderIconMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderImageIconMenu",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -3569,6 +3841,10 @@
                 {
                   "value": "'sticker'",
                   "computed": false
+                },
+                {
+                  "value": "'typing'",
+                  "computed": false
                 }
               ],
               "description": "The message's type",
@@ -3584,7 +3860,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The format of displaying message.createdAt",
+        "description": "The format of displaying message.createdAt\n\nhttps://date-fns.org/docs/format",
         "defaultValue": {
           "value": "'HH:mm'",
           "computed": false
@@ -3757,6 +4033,62 @@
         },
         "required": false,
         "description": "Expand a collapsed image message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "expandText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to show in expand menu item",
+        "defaultValue": {
+          "value": "'Expand image'",
+          "computed": false
+        }
+      },
+      "expandIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon to show in expand menu item",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "edited": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display for edited banner",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "locale": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
+        "defaultValue": {
+          "value": "en",
+          "computed": true
+        }
+      },
+      "separator": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Show a separator above the message",
         "defaultValue": {
           "value": "null",
           "computed": false
