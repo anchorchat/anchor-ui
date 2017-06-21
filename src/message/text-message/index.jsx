@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import escape from 'escape-html';
+import isEmpty from 'lodash/isEmpty';
+import forEach from 'lodash/forEach';
 import colors from '../../settings/colors';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import urlRegex from '../../url-regex';
 
-function createMarkup(text, username, enableLinks, emoji, mentions) {
+function createMarkup(text, enableLinks, emoji, mentions, myMessage, color) {
   const escapedText = escape(text);
 
   let parsedText = escapedText;
@@ -27,8 +29,16 @@ function createMarkup(text, username, enableLinks, emoji, mentions) {
     });
   }
 
-  if (mentions) {
-    parsedText = parsedText.replace(/@\w/, `<strong>@${username}</strong>`);
+  if (!isEmpty(mentions)) {
+    let style = 'font-weight: bolder;';
+
+    if (!myMessage) {
+      style = `color: ${color}; ${style}`;
+    }
+
+    forEach(mentions, (mention) => {
+      parsedText = parsedText.replace(`@${mention}`, `<strong style="${style}">@${mention}</strong>`);
+    });
   }
 
   let html = {
@@ -74,10 +84,10 @@ function TextMessage({
       />
       <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
         {
-          enableLinks || emoji || mentions
+          enableLinks || emoji || !isEmpty(mentions)
           ? <span
             dangerouslySetInnerHTML={
-              createMarkup(message.body, message.username, enableLinks, emoji, mentions)
+              createMarkup(message.body, enableLinks, emoji, mentions, myMessage, color)
             }
           />
           : message.body
@@ -120,7 +130,7 @@ TextMessage.propTypes = {
   edited: PropTypes.node,
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
-  mentions: PropTypes.bool.isRequired
+  mentions: PropTypes.arrayOf(String).isRequired
 };
 
 TextMessage.defaultProps = {
