@@ -19,17 +19,21 @@ function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
           <circle id="circle" fill="#FFDD67" cx="25" cy="25" r="25" />
         </svg>
       </div>
-      {modifiers.map(modifier => (
-        <div
-          style={
-            getStyles.modifier(modifier.title === tone, modifierStyle)
-          }
-          dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
-          key={`emoji-${modifier.shortname}`}
-          onClick={() => changeTone(modifier.title)}
-          className="modifier"
-        />
-      ))}
+      {modifiers.map((modifier) => {
+        const title = modifier.title.replace(/:/g, '');
+
+        return (
+          <div
+            style={
+              getStyles.modifier(title === tone, modifierStyle)
+            }
+            dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
+            key={`emoji-${modifier.shortname}`}
+            onClick={() => changeTone(title)}
+            className="modifier"
+          />
+        );
+      })}
       <Style
         scopeSelector=".modifier"
         rules={{
