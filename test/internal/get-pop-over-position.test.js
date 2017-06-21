@@ -151,7 +151,7 @@ describe('getPopOverPosition', () => {
   describe('getPopOverPosition middle', () => {
     before(() => {
       global.window = {
-        innerWidth: 200,
+        innerWidth: 250,
         innerHeight: 680
       };
     });
@@ -212,6 +212,60 @@ describe('getPopOverPosition', () => {
       expect(position.right).to.equal(75);
       expect(position.bottom).to.equal(48);
       expect(position.left).to.equal('initial');
+    });
+
+    it('should position popOver left from and middle button', () => {
+      const button = {
+        bottom: 172,
+        height: 40,
+        left: 205,
+        right: 245,
+        top: 132,
+        width: 40
+      };
+      const popOver = {
+        bottom: 132,
+        height: 555,
+        left: 25,
+        right: 225,
+        top: 277,
+        width: 200
+      };
+      const position = getPopOverPosition(button, popOver);
+
+      expect(position.position).to.equal('fixed');
+      expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
+      expect(position.top).to.equal('initial');
+      expect(position.right).to.equal(25);
+      expect(position.bottom).to.equal(250.5);
+      expect(position.left).to.equal('initial');
+    });
+
+    it('should position popOver right from and middle button', () => {
+      const button = {
+        bottom: 172,
+        height: 40,
+        left: 5,
+        right: 45,
+        top: 132,
+        width: 40
+      };
+      const popOver = {
+        bottom: 132,
+        height: 555,
+        left: 225,
+        right: 25,
+        top: 277,
+        width: 200
+      };
+      const position = getPopOverPosition(button, popOver);
+
+      expect(position.position).to.equal('fixed');
+      expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
+      expect(position.top).to.equal('initial');
+      expect(position.right).to.equal('initial');
+      expect(position.bottom).to.equal(250.5);
+      expect(position.left).to.equal(25);
     });
   });
 });
