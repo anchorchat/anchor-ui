@@ -35,7 +35,9 @@ export default {
       marginTop: '0',
       fontWeight: 'bolder',
       textTransform: 'capitalize',
-      marginBottom: '10px'
+      marginBottom: '10px',
+      fontSize: '16px',
+      lineHeight: '16px'
     },
     emojiContainer: {
       display: 'flex',
