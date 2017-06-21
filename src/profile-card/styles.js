@@ -21,7 +21,8 @@ export default {
     overflow: 'hidden',
     display: 'inline-block',
     color: colors.white,
-    fontWeight: 'inherit'
+    fontWeight: 'inherit',
+    whiteSpace: 'nowrap'
   },
   text: {
     fontSize: '16px',
