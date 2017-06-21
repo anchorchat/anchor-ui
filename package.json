@@ -15,7 +15,8 @@
     "copy": "cp -rf package.json README.md dist",
     "build": "npm run compile && npm run copy",
     "dist": "cd dist && npm publish",
-    "docs": "react-docgen components --out docs/components.json --pretty"
+    "docs": "react-docgen components --out docs/components.json --pretty",
+    "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js"
   },
   "repository": {
     "type": "git",

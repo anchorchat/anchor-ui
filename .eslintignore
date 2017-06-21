@@ -3,3 +3,4 @@ dist
 emoji.js
 node_modules
 docs/config
+parse-emoji.js
