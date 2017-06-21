@@ -85,6 +85,12 @@ class Message extends Component {
     locale: PropTypes.instanceOf(Object),
     /** Show a separator above the message */
     separator: PropTypes.node,
+    /**
+     * Enable user mentions.
+     *
+     * Text matching '@[message.username]' will be highlighted
+     */
+    mentions: PropTypes.bool,
     color: PropTypes.string.isRequired
   }
 
@@ -109,7 +115,8 @@ class Message extends Component {
     collapsedText: 'This image has been collapsed, click the button to expand it.',
     edited: null,
     locale: en,
-    separator: null
+    separator: null,
+    mentions: false
   }
 
   constructor() {
@@ -193,6 +200,7 @@ class Message extends Component {
       collapsedText, // eslint-disable-line no-unused-vars
       edited, // eslint-disable-line no-unused-vars
       locale, // eslint-disable-line no-unused-vars
+      mentions, // eslint-disable-line no-unused-vars
       color,
       separator,
       ...custom

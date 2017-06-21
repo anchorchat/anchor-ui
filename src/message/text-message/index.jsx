@@ -8,7 +8,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import urlRegex from '../../url-regex';
 
-function createMarkup(text, enableLinks) {
+function createMarkup(text, username, enableLinks, emoji, mentions) {
   const escapedText = escape(text);
 
   let parsedText = escapedText;
@@ -27,9 +27,21 @@ function createMarkup(text, enableLinks) {
     });
   }
 
-  return {
-    __html: emojione.toImage(parsedText)
+  if (mentions) {
+    parsedText = parsedText.replace(/@\w/, `<strong>@${username}</strong>`);
+  }
+
+  let html = {
+    __html: parsedText
   };
+
+  if (emoji) {
+    html = {
+      __html: emojione.toImage(parsedText)
+    };
+  }
+
+  return html;
 }
 
 function TextMessage({
@@ -47,7 +59,8 @@ function TextMessage({
   emoji,
   enableLinks,
   edited,
-  locale
+  locale,
+  mentions
 }) {
   return (
     <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
@@ -61,8 +74,12 @@ function TextMessage({
       />
       <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
         {
-          enableLinks || emoji
-          ? <span dangerouslySetInnerHTML={createMarkup(message.body, enableLinks, emoji)} />
+          enableLinks || emoji || mentions
+          ? <span
+            dangerouslySetInnerHTML={
+              createMarkup(message.body, message.username, enableLinks, emoji, mentions)
+            }
+          />
           : message.body
         }
         <MessageTime
@@ -102,7 +119,8 @@ TextMessage.propTypes = {
   compact: PropTypes.bool,
   edited: PropTypes.node,
   color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired
+  locale: PropTypes.instanceOf(Object).isRequired,
+  mentions: PropTypes.bool.isRequired
 };
 
 TextMessage.defaultProps = {

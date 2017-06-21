@@ -14,7 +14,7 @@ const usage = '```js\n import Message from \'anchor-ui/message\';';
 
 const messages = [
   {
-    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
+    body: 'Stop talking, brain thinking.  @Sjaak Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
     username: 'Sjaak',
     avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
@@ -192,6 +192,7 @@ class MessageDoc extends Component {
                   compact={this.state.compact}
                   menuItems={this.state.iconMenu ? menuItems : null}
                   edited={this.state.edited ? 'edited' : null}
+                  mentions
                 />
               ))}
             </MessageList>

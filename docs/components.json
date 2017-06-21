@@ -4072,6 +4072,17 @@
           "computed": false
         }
       },
+      "mentions": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable user mentions.\n\nText matching '@[message.username]' will be highlighted",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
