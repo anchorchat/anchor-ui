@@ -15,13 +15,13 @@ import themeable from '../themeable';
 
 const storage = new Storage();
 
+emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/3.0/png/64/';
+
 /** Menu for sending messages with emoji */
 class EmojiMenu extends Component {
   static displayName = 'EmojiMenu'
 
   static propTypes = {
-    /** Path to svg sprites */
-    svgSprites: PropTypes.string,
     /** Send an emoji */
     sendEmoji: PropTypes.func.isRequired,
     /** Override the styles of the root element */
@@ -42,7 +42,6 @@ class EmojiMenu extends Component {
   }
 
   static defaultProps = {
-    svgSprites: '',
     style: {},
     headerStyle: {},
     modifierStyle: {},
@@ -54,12 +53,6 @@ class EmojiMenu extends Component {
 
   constructor(props) {
     super(props);
-
-    if (props.svgSprites) {
-      emojione.imageType = 'svg';
-      emojione.sprites = true;
-      emojione.imagePathSVGSprites = props.svgSprites;
-    }
 
     const storedEmojis = storage.getEmojis();
 
@@ -110,7 +103,6 @@ class EmojiMenu extends Component {
       footerStyle,
       iconStyle,
       sendEmoji, // eslint-disable-line no-unused-vars
-      svgSprites, // eslint-disable-line no-unused-vars
       color,
       ...custom
     } = this.props;
