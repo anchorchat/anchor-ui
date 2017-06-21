@@ -12,9 +12,7 @@ export default {
   },
   modifiers: {
     display: 'flex',
-    flexDirection: 'row',
-    padding: '10px 10px 10px 7.5px',
-    background: colors.white
+    flexDirection: 'row'
   },
   modifier: {
     width: '20px',
@@ -25,6 +23,20 @@ export default {
     active: {
       transform: 'scale(1.2)'
     }
+  },
+  modifierHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: colors.white,
+    padding: '0 8px',
+    height: '40px',
+    boxSizing: 'border-box'
+  },
+  attributionLink: {
+    color: colors.secondaryText,
+    fontWeight: 'inherit',
+    fontSize: '14px'
   },
   category: {
     height: 'calc(100% - 80px)',
