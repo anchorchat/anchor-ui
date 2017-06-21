@@ -6748,9 +6748,9 @@ export default [
     diversity: true
   },
   {
-    title: ':levitate: tone0',
+    title: ':man_in_business_suit_levitating: tone0',
     name: 'man in business suit levitating',
-    shortname: ':levitate:',
+    shortname: ':man_in_business_suit_levitating:',
     category: 'people',
     diversity: true
   },
