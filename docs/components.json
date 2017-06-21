@@ -895,12 +895,17 @@
                 "name": "node",
                 "description": "Optional command parameter",
                 "required": false
+              },
+              "avatar": {
+                "name": "node",
+                "description": "Optional command avatar",
+                "required": false
               }
             }
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: String (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }"
       },
       "value": {
         "type": {
@@ -1429,17 +1434,6 @@
       }
     ],
     "props": {
-      "svgSprites": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Path to svg sprites",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
       "sendEmoji": {
         "type": {
           "name": "func"
