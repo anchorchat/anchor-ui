@@ -8,20 +8,25 @@ import isEmpty from 'lodash/isEmpty';
 import onClickOutside from 'react-onclickoutside';
 import themeable from '../themeable';
 import getStyles from './get-styles';
+import Avatar from '../avatar';
+import styles from './styles';
 
 const propTypes = {
   /** Text to display in the header */
   header: PropTypes.node,
   /** The list of commands. Must be an array of objects containing the following:
-  * { title: Node, description: Node, param: Node (optional) }
+  *
+  * { title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }
   */
   commands: PropTypes.arrayOf(PropTypes.shape({
     /** The command to execute */
     title: PropTypes.node.isRequired,
-    /** The command's description */
-    description: PropTypes.node.isRequired,
+    /** Optional command description */
+    description: PropTypes.node,
     /** Optional command parameter */
-    param: PropTypes.node
+    param: PropTypes.node,
+    /** Optional command avatar */
+    avatar: PropTypes.node,
   })).isRequired,
   /** Filter commands based on input value */
   value: PropTypes.string.isRequired,
@@ -158,18 +163,33 @@ class Commands extends Component {
         <header style={getStyles.header(color, headerStyle)}>{header}</header>
         <section style={getStyles.commands()}>
           {map(this.state.commands, command => (
-            <p
+            <div
               onMouseOver={event => onMouseOver(event, command.title)}
               style={getStyles.command()}
               key={command.title}
               onClick={event => this.handleSelect(event, command.title)}
             >
-              <span>
+              <span style={styles.titleContainer}>
+                {
+                  command.avatar
+                  ? <div style={styles.avatarContainer}>
+                    {
+                      typeof command.avatar === 'string'
+                      ? <Avatar image={command.avatar} style={styles.avatar} />
+                      : command.avatar
+                    }
+                  </div>
+                  : null
+                }
                 <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
                 {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
               </span>
-              <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
-            </p>
+              {
+                command.description
+                ? <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
+                : null
+              }
+            </div>
           ))}
         </section>
       </section>

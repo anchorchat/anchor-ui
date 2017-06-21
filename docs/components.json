@@ -888,8 +888,8 @@
               },
               "description": {
                 "name": "node",
-                "description": "The command's description",
-                "required": true
+                "description": "Optional command description",
+                "required": false
               },
               "param": {
                 "name": "node",
@@ -900,7 +900,7 @@
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n{ title: Node, description: Node, param: Node (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: String (optional) }"
       },
       "value": {
         "type": {
