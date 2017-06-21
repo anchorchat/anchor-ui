@@ -12,9 +12,9 @@ chai.use(sinonChai);
 
 describe('AdminBadge', () => {
   const props = {
-    style: {},
-    inverted: false,
     text: 'Admin',
+    style: { root: true },
+    inverted: false,
     color: '#1BA6C4'
   };
 

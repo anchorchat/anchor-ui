@@ -5,12 +5,12 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import CardContent from '../../src/card-content';
-import getStyles from '../../src/card-content/get-styles';
+import Table from '../../src/table';
+import getStyles from '../../src/table/get-styles';
 
 chai.use(sinonChai);
 
-describe('CardContent', () => {
+describe('Table', () => {
   const props = {
     style: { root: true }
   };
@@ -24,14 +24,14 @@ describe('CardContent', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a section element', () => {
-    const wrapper = shallow(<CardContent {...props}>{children}</CardContent>).dive();
+  it('should always render a table element', () => {
+    const wrapper = shallow(<Table {...props} >{children}</Table>);
 
-    expect(wrapper.find('section')).to.have.length(1);
+    expect(wrapper.find('table')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<CardContent {...props}>{children}</CardContent>).dive();
+    const wrapper = shallow(<Table {...props} >{children}</Table>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +39,7 @@ describe('CardContent', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<CardContent {...props} >{children}</CardContent>).dive();
+    shallow(<Table {...props} >{children}</Table>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });

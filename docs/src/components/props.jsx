@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
+import escape from 'escape-html';
 import Table from '../../../dist/table';
 import TableHeader from '../../../dist/table-header';
 import TableHeaderColumn from '../../../dist/table-header-column';
 import TableBody from '../../../dist/table-body';
 import TableRow from '../../../dist/table-row';
 import TableColumn from '../../../dist/table-column';
+import urlRegex from '../../../dist/url-regex';
 
 const getPropType = (type) => {
   if (type.name === 'instanceOf') {
@@ -22,6 +24,28 @@ const getPropType = (type) => {
   }
 
   return type.name;
+};
+
+const createMarkup = (text) => {
+  const escapedText = escape(text);
+
+  const urlSchemeRegex = /^(?:https?:\/\/)/;
+
+  let parsedText = escapedText.replace(/\n/g, '<br />');
+
+  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+
+  parsedText = parsedText.replace(urlRegex, (url) => {
+    if (!urlSchemeRegex.test(url)) {
+      // Add default http:// scheme for urls like example.com
+      return (`<a style="${style}" href="http://${url}" target="_blank">${url}</a>`);
+    }
+    return (`<a style="${style}" href="${url}" target="_blank">${url}</a>`);
+  });
+
+  return {
+    __html: parsedText
+  };
 };
 
 const Props = ({ props }) => {
@@ -45,7 +69,7 @@ const Props = ({ props }) => {
             <TableRow key={name}>
               <TableColumn>{name}</TableColumn>
               <TableColumn>{getPropType(prop.type)}</TableColumn>
-              <TableColumn dangerouslySetInnerHTML={{ __html: prop.description.replace(/\n/g, '<br />') }} />
+              <TableColumn dangerouslySetInnerHTML={createMarkup(prop.description)} />
               <TableColumn>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
               <TableColumn>{prop.required ? 'Yes' : 'No'}</TableColumn>
             </TableRow>

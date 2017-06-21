@@ -14,13 +14,13 @@ chai.use(sinonChai);
 
 describe('Alert', () => {
   const props = {
-    style: {},
-    iconStyle: {},
-    textStyle: {},
-    buttonStyle: {},
-    hideAlert: null,
-    type: 'success',
     text: 'text',
+    type: 'success',
+    style: { root: true },
+    iconStyle: { icon: true },
+    textStyle: { text: true },
+    buttonStyle: { button: true },
+    hideAlert: null
   };
 
   beforeEach(() => {
@@ -49,12 +49,6 @@ describe('Alert', () => {
     expect(wrapper.find('p')).to.have.length(1);
   });
 
-  it('should pass the value of the text prop to the p element', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
-
-    expect(wrapper.containsMatchingElement(<p>text</p>)).to.equal(true);
-  });
-
   it('should not render a Button component if the hideAlert prop is not passed', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
@@ -69,10 +63,26 @@ describe('Alert', () => {
     props.hideAlert = null;
   });
 
+  it('should pass the value of the text prop to the p element', () => {
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    expect(wrapper.containsMatchingElement(<p>text</p>)).to.equal(true);
+  });
+
   it('should pass the value of the type prop to the icons object', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
     expect(wrapper.find(IconSuccess)).to.have.length(1);
+  });
+
+  it('should execute Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideAlert = spy;
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideAlert = null;
   });
 
   it('should get root styles', () => {

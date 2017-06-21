@@ -15,13 +15,13 @@ chai.use(sinonChai);
 
 describe('Dialog', () => {
   const props = {
-    style: {},
-    overlayStyle: {},
-    headerStyle: {},
-    iconColor: 'red',
     header: null,
-    open: true,
+    style: { root: true },
+    overlayStyle: { overlay: true },
+    headerStyle: { header: true },
     hideDialog: () => {},
+    iconColor: 'red',
+    open: true,
     color: '#1BA6C4'
   };
   const children = <p>children</p>;
@@ -60,7 +60,7 @@ describe('Dialog', () => {
     expect(wrapper.find(Button)).to.have.length(1);
   });
 
-  it('should always render a IconClose icon', () => {
+  it('should always render an IconClose icon', () => {
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
     expect(wrapper.find(IconClose)).to.have.length(1);
@@ -85,6 +85,26 @@ describe('Dialog', () => {
     const wrapper = shallow(<Dialog {...props} >{children}</Dialog>).dive().dive();
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
+  });
+
+  it('should execute section onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find('section').at(0).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
+  });
+
+  it('should execute Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
   });
 
   it('should get root styles', () => {
