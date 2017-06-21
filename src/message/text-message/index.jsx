@@ -1,109 +1,138 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import escape from 'escape-html';
 import isEmpty from 'lodash/isEmpty';
 import forEach from 'lodash/forEach';
+import htmlParser from 'html-react-parser';
+import domToReact from 'html-react-parser/lib/dom-to-react';
 import colors from '../../settings/colors';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import urlRegex from '../../url-regex';
+import styles from './styles';
 
-function createMarkup(text, enableLinks, emoji, mentions, myMessage, color) {
-  const escapedText = escape(text);
+class TextMessage extends Component {
+  createMarkup = () => {
+    const { message, enableLinks, emoji, mentions } = this.props;
+    const text = message.body;
 
-  let parsedText = escapedText;
+    const escapedText = escape(text);
 
-  if (enableLinks) {
-    const urlSchemeRegex = /^(?:https?:\/\/)/;
+    let parsedText = escapedText;
 
-    const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+    if (enableLinks) {
+      const urlSchemeRegex = /^(?:https?:\/\/)/;
 
-    parsedText = escapedText.replace(urlRegex, (url) => {
-      if (!urlSchemeRegex.test(url)) {
-        // Add default http:// scheme for urls like example.com
-        return (`<a style="${style}" href="http://${url}" target="_blank">${url}</a>`);
-      }
-      return (`<a style="${style}" href="${url}" target="_blank">${url}</a>`);
-    });
-  }
-
-  if (!isEmpty(mentions)) {
-    let style = 'font-weight: bolder;';
-
-    if (!myMessage) {
-      style = `color: ${color}; ${style}`;
+      parsedText = escapedText.replace(urlRegex, (url) => {
+        if (!urlSchemeRegex.test(url)) {
+          // Add default http:// scheme for urls like example.com
+          return (`<a class="link" value="http://${url}" href="http://${url}">${url}</a>`);
+        }
+        return (`<a class="link" value="${url}" href="${url}">${url}</a>`);
+      });
     }
 
-    forEach(mentions, (mention) => {
-      parsedText = parsedText.replace(`@${mention}`, `<strong style="${style}">@${mention}</strong>`);
-    });
+    if (!isEmpty(mentions)) {
+      forEach(mentions, (mention) => {
+        parsedText = parsedText.replace(`@${mention}`, `<span class="mention" value="${mention}">@${mention}</span>`);
+      });
+    }
+
+    let html = parsedText;
+
+    if (emoji) {
+      html = emojione.toImage(parsedText);
+    }
+
+    return html;
   }
 
-  let html = {
-    __html: parsedText
-  };
+  parseHtml = () => {
+    const { onMentionClick, color, myMessage } = this.props;
 
-  if (emoji) {
-    html = {
-      __html: emojione.toImage(parsedText)
-    };
-  }
+    const options = {
+      replace: (domNode) => {
+        if (domNode.attribs && domNode.attribs.class === 'mention') {
+          const value = domNode.attribs.value;
 
-  return html;
-}
-
-function TextMessage({
-  color,
-  myMessage,
-  avatar,
-  compact,
-  style,
-  fontSize,
-  messageHeaderStyle,
-  message,
-  messageBodyStyle,
-  messageTimeStyle,
-  timeFormat,
-  emoji,
-  enableLinks,
-  edited,
-  locale,
-  mentions
-}) {
-  return (
-    <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
-      <MessageHeader
-        avatar={avatar}
-        compact={compact}
-        myMessage={myMessage}
-        fontSize={fontSize}
-        headerStyle={messageHeaderStyle}
-        username={message.username}
-      />
-      <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
-        {
-          enableLinks || emoji || !isEmpty(mentions)
-          ? <span
-            dangerouslySetInnerHTML={
-              createMarkup(message.body, enableLinks, emoji, mentions, myMessage, color)
-            }
-          />
-          : message.body
+          return (
+            <strong
+              style={getStyles.mention(color, myMessage, onMentionClick)}
+              onClick={onMentionClick ? e => onMentionClick(e, value) : null}
+            >
+              {domToReact(domNode.children)}
+            </strong>
+          );
         }
-        <MessageTime
+
+        if (domNode.attribs && domNode.attribs.class === 'link') {
+          const value = domNode.attribs.value;
+
+          return (
+            <a style={styles.link} href={value} target="_blank" rel="noopener noreferrer">
+              {domToReact(domNode.children)}
+            </a>
+          );
+        }
+
+        return domNode;
+      }
+    };
+
+    return htmlParser(this.createMarkup(), options);
+  }
+
+  render() {
+    const {
+      color,
+      myMessage,
+      avatar,
+      compact,
+      style,
+      fontSize,
+      messageHeaderStyle,
+      message,
+      messageBodyStyle,
+      messageTimeStyle,
+      timeFormat,
+      emoji,
+      enableLinks,
+      edited,
+      locale,
+      mentions
+    } = this.props;
+
+    return (
+      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+        <MessageHeader
+          avatar={avatar}
+          compact={compact}
           myMessage={myMessage}
-          type={message.type}
-          style={messageTimeStyle}
-          createdAt={message.createdAt}
-          timeFormat={timeFormat}
-          edited={edited}
-          locale={locale}
+          fontSize={fontSize}
+          headerStyle={messageHeaderStyle}
+          username={message.username}
         />
-      </p>
-    </div>
-  );
+        <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+          {
+            enableLinks || emoji || !isEmpty(mentions)
+            ? <span>{this.parseHtml()}</span>
+            : message.body
+          }
+          <MessageTime
+            myMessage={myMessage}
+            type={message.type}
+            style={messageTimeStyle}
+            createdAt={message.createdAt}
+            timeFormat={timeFormat}
+            edited={edited}
+            locale={locale}
+          />
+        </p>
+      </div>
+    );
+  }
 }
 
 TextMessage.propTypes = {
@@ -130,7 +159,8 @@ TextMessage.propTypes = {
   edited: PropTypes.node,
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
-  mentions: PropTypes.arrayOf(String).isRequired
+  mentions: PropTypes.arrayOf(String).isRequired,
+  onMentionClick: PropTypes.func.isRequired
 };
 
 TextMessage.defaultProps = {
