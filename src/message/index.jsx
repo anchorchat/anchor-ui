@@ -91,6 +91,12 @@ class Message extends Component {
      * Text matching '@username' will be highlighted
      */
     mentions: PropTypes.arrayOf(String),
+    /**
+     * Callback fired when a command is clicked
+     *
+     * function(event: object, username: string) => void
+     */
+    onMentionClick: PropTypes.func,
     color: PropTypes.string.isRequired
   }
 
@@ -116,7 +122,8 @@ class Message extends Component {
     edited: null,
     locale: en,
     separator: null,
-    mentions: []
+    mentions: [],
+    onMentionClick: null
   }
 
   constructor() {
@@ -201,6 +208,7 @@ class Message extends Component {
       edited, // eslint-disable-line no-unused-vars
       locale, // eslint-disable-line no-unused-vars
       mentions, // eslint-disable-line no-unused-vars
+      onMentionClick, // eslint-disable-line no-unused-vars
       color,
       separator,
       ...custom
