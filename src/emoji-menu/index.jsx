@@ -5,6 +5,7 @@ import _ from 'lodash';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import emojis from './emoji';
 import EmojiCategory from './emoji-category';
 import EmojiModifiers from './emoji-modifiers';
@@ -79,10 +80,18 @@ class EmojiMenu extends Component {
     this.sendEmoji = this.sendEmoji.bind(this);
   }
 
-  handleClickOutside = () => {
+  handleClickOutside = (event) => {
     const { hideMenu } = this.props;
 
-    hideMenu();
+    hideMenu(event);
+  }
+
+  handleKeyUp = (event) => {
+    const { hideMenu } = this.props;
+
+    if (event.which === 27) {
+      hideMenu(event);
+    }
   }
 
   changeTone(tone) {
@@ -187,6 +196,7 @@ class EmojiMenu extends Component {
           style={footerStyle}
           iconStyle={iconStyle}
         />
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>
     );
   }
