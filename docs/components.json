@@ -895,12 +895,17 @@
                 "name": "node",
                 "description": "Optional command parameter",
                 "required": false
+              },
+              "avatar": {
+                "name": "node",
+                "description": "Optional command avatar",
+                "required": false
               }
             }
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: String (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }"
       },
       "value": {
         "type": {
@@ -4074,12 +4079,16 @@
       },
       "mentions": {
         "type": {
-          "name": "bool"
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "String"
+          }
         },
         "required": false,
-        "description": "Enable user mentions.\n\nText matching '@[message.username]' will be highlighted",
+        "description": "Mention users, should be an array of usernames\n\nText matching '@username' will be highlighted",
         "defaultValue": {
-          "value": "false",
+          "value": "[]",
           "computed": false
         }
       },

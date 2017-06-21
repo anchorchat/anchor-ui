@@ -86,11 +86,11 @@ class Message extends Component {
     /** Show a separator above the message */
     separator: PropTypes.node,
     /**
-     * Enable user mentions.
+     * Mention users, should be an array of usernames
      *
-     * Text matching '@[message.username]' will be highlighted
+     * Text matching '@username' will be highlighted
      */
-    mentions: PropTypes.bool,
+    mentions: PropTypes.arrayOf(String),
     color: PropTypes.string.isRequired
   }
 
@@ -116,7 +116,7 @@ class Message extends Component {
     edited: null,
     locale: en,
     separator: null,
-    mentions: false
+    mentions: []
   }
 
   constructor() {
