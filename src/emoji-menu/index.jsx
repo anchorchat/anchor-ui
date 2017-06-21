@@ -118,7 +118,6 @@ class EmojiMenu extends Component {
     const modifiers = _.filter(emojis, { category: 'modifier' });
 
     const filteredEmoji = _.chain(emojis).filter({ category }).filter((emoji) => {
-      console.log(tone);
       if (emoji.diversity) {
         return _.includes(emoji.title, tone);
       }
