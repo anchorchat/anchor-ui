@@ -100,6 +100,12 @@ class IconMenu extends Component {
     );
   }
 
+  handleKeyUp = (event) => {
+    if (event.which === 27) {
+      this.closeMenu();
+    }
+  }
+
   render() {
     const {
       children,
@@ -135,6 +141,7 @@ class IconMenu extends Component {
           ? <EventListener
             target="window"
             onResize={this.closeMenu}
+            onKeyUp={this.handleKeyUp}
           />
           : null
         }
