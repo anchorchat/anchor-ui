@@ -16,7 +16,13 @@ const propTypes = {
   header: PropTypes.node,
   /** The list of commands. Must be an array of objects containing the following:
   *
-  * { title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }
+  * {
+  *   value: String,
+  *   prefix: String,
+  *   description: Node (optional),
+  *   param: Node (optional),
+  *   avatar: Node (optional)
+  * }
   */
   commands: PropTypes.arrayOf(PropTypes.shape({
     /** The command's value */
