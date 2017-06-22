@@ -4086,7 +4086,7 @@
           }
         },
         "required": false,
-        "description": "Mention users, should be an array of usernames\n\nText matching '@username' will be highlighted",
+        "description": "Mention users, should be an array of usernames.\n'mentions' is an array of usernames that are mentioned in a certain message.\n\nText matching '@username' will be highlighted",
         "defaultValue": {
           "value": "[]",
           "computed": false

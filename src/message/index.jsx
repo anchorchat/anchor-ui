@@ -86,7 +86,8 @@ class Message extends Component {
     /** Show a separator above the message */
     separator: PropTypes.node,
     /**
-     * Mention users, should be an array of usernames
+     * Mention users, should be an array of usernames.
+     * 'mentions' is an array of usernames that are mentioned in a certain message.
      *
      * Text matching '@username' will be highlighted
      */
