@@ -42,6 +42,16 @@ describe('Button', () => {
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
+  it('should execute button onClick function', () => {
+    const spy = sinon.spy();
+    props.onClick = spy;
+    const wrapper = shallow(<Button {...props}>{children}</Button>).dive();
+
+    wrapper.find('button').simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideAlert = null;
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 

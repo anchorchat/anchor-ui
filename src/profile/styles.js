@@ -59,7 +59,8 @@ export default {
     textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    minHeight: '22px'
+    minHeight: '22px',
+    whiteSpace: 'nowrap'
   },
   secondaryText: {
     fontSize: '16px',
@@ -71,7 +72,8 @@ export default {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     minHeight: '20px',
-    fontWeight: 'inherit'
+    fontWeight: 'inherit',
+    whiteSpace: 'nowrap'
   },
   status: {
     width: '15px',

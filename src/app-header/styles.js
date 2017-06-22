@@ -26,7 +26,8 @@ const styleSheet = {
     margin: 0,
     textDecoration: 'none',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   },
   leftButton: {
     position: 'absolute',
