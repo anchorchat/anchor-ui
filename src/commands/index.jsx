@@ -61,7 +61,7 @@ const propTypes = {
    */
   onMouseOver: PropTypes.func.isRequired,
   /**
-   * Match first word or in entire input
+   * Match first word or entire input
    */
   leading: PropTypes.bool,
   color: PropTypes.string.isRequired
