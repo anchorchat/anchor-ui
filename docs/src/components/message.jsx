@@ -144,6 +144,13 @@ class MessageDoc extends Component {
           <h1>Usage</h1>
           <ReactMarkdown source={usage} className="markdown" />
         </section>
+        <a
+          href="https://www.emojione.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          This component uses free Emoji icons supplied by EmojiOne
+        </a>
         <section>
           <h1>Scaling emoji&apos;s</h1>
           <p>
