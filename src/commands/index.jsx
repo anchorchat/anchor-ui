@@ -192,10 +192,10 @@ class Commands extends Component {
         <section style={getStyles.commands()}>
           {map(this.state.commands, command => (
             <div
-              onMouseOver={event => onMouseOver(event, command.value)}
+              onMouseOver={event => onMouseOver(event, `${command.prefix}${command.value}`)}
               style={getStyles.command()}
               key={command.value}
-              onClick={event => this.handleSelect(event, command.value)}
+              onClick={event => this.handleSelect(event, `${command.prefix}${command.value}`)}
             >
               <span style={styles.titleContainer}>
                 {
