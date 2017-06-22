@@ -19,8 +19,10 @@ const propTypes = {
   * { title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }
   */
   commands: PropTypes.arrayOf(PropTypes.shape({
-    /** The command to execute */
-    title: PropTypes.node.isRequired,
+    /** The command's value */
+    value: PropTypes.string.isRequired,
+    /** The command's prefix */
+    prefix: PropTypes.string.isRequired,
     /** Optional command description */
     description: PropTypes.node,
     /** Optional command parameter */
@@ -52,6 +54,10 @@ const propTypes = {
    * function(event: object, command: string) => void
    */
   onMouseOver: PropTypes.func.isRequired,
+  /**
+   * Match first word or in entire input
+   */
+  leading: PropTypes.bool,
   color: PropTypes.string.isRequired
 };
 
@@ -61,21 +67,18 @@ const defaultProps = {
   headerStyle: {},
   titleStyle: {},
   descriptionStyle: {},
-  paramStyle: {}
+  paramStyle: {},
+  leading: true
 };
 
 /** Used for displaying a list of commands */
 class Commands extends Component {
-  static filterCommands = (commands, value) => (
-    filter(commands, command => command.title.toLowerCase().indexOf(value.toLowerCase()) === 0)
-  )
-
   constructor(props) {
     super(props);
 
     this.state = {
       open: false,
-      commands: Commands.filterCommands(props.commands, props.value)
+      commands: this.filterCommands(props.commands, props.value)
     };
   }
 
@@ -90,7 +93,7 @@ class Commands extends Component {
       });
     }
 
-    const filteredCommands = Commands.filterCommands(nextProps.commands, nextProps.value);
+    const filteredCommands = this.filterCommands(nextProps.commands, nextProps.value);
 
     if (!isEmpty(filteredCommands) && !open) {
       return this.setState({
@@ -108,6 +111,24 @@ class Commands extends Component {
 
     return this.setState({
       commands: filteredCommands
+    });
+  }
+
+  filterCommands = (commands, value) => {
+    const { leading } = this.props;
+
+    if (leading) {
+      return filter(commands, (command) => {
+        const argument = `${command.prefix}${command.value}`;
+
+        return argument.toLowerCase().indexOf(value.toLowerCase()) === 0;
+      });
+    }
+
+    return filter(commands, (command) => {
+      const argument = value.split(command.prefix)[1];
+
+      return command.value.indexOf(argument) === 0;
     });
   }
 
@@ -150,6 +171,7 @@ class Commands extends Component {
       stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
       disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      leading, // eslint-disable-line no-unused-vars, react/prop-types
       ...custom
     } = this.props;
     const { open } = this.state;
@@ -164,10 +186,10 @@ class Commands extends Component {
         <section style={getStyles.commands()}>
           {map(this.state.commands, command => (
             <div
-              onMouseOver={event => onMouseOver(event, command.title)}
+              onMouseOver={event => onMouseOver(event, command.value)}
               style={getStyles.command()}
-              key={command.title}
-              onClick={event => this.handleSelect(event, command.title)}
+              key={command.value}
+              onClick={event => this.handleSelect(event, command.value)}
             >
               <span style={styles.titleContainer}>
                 {
@@ -181,7 +203,7 @@ class Commands extends Component {
                   </div>
                   : null
                 }
-                <strong style={getStyles.title(titleStyle)}>{command.title}</strong>
+                <strong style={getStyles.title(titleStyle)}>{command.prefix}{command.value}</strong>
                 {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
               </span>
               {

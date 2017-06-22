@@ -881,9 +881,14 @@
           "value": {
             "name": "shape",
             "value": {
-              "title": {
-                "name": "node",
-                "description": "The command to execute",
+              "value": {
+                "name": "string",
+                "description": "The command's value",
+                "required": true
+              },
+              "prefix": {
+                "name": "string",
+                "description": "The command's prefix",
                 "required": true
               },
               "description": {
@@ -895,12 +900,17 @@
                 "name": "node",
                 "description": "Optional command parameter",
                 "required": false
+              },
+              "avatar": {
+                "name": "node",
+                "description": "Optional command avatar",
+                "required": false
               }
             }
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: String (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }"
       },
       "value": {
         "type": {
@@ -982,6 +992,13 @@
         },
         "required": true,
         "description": "Callback fired when a command is moused over\n\nfunction(event: object, command: string) => void"
+      },
+      "leading": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Match first word or in entire input"
       },
       "color": {
         "type": {
