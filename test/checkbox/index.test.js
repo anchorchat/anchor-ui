@@ -86,7 +86,7 @@ describe('Checkbox', () => {
     props.onChange = spy;
     const wrapper = shallow(<Checkbox {...props} />).dive().dive();
 
-    wrapper.find('input').simulate('change', { currentTarget: { value: 'value' } });
+    wrapper.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
     props.onChange = () => {};
   });

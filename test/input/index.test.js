@@ -75,7 +75,7 @@ describe('Input', () => {
     props.onChange = spy;
     const wrapper = shallow(<Input {...props} />).dive();
 
-    wrapper.find('input').simulate('change', { target: { value: 'value' } });
+    wrapper.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
     props.onChange = () => {};
   });

@@ -86,7 +86,7 @@ describe('Slider', () => {
     props.onChange = spy;
     const wrapper = shallow(<Slider {...props} />).dive().dive();
 
-    wrapper.find('input').simulate('change', { target: { value: 'value' } });
+    wrapper.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
     props.onChange = () => {};
   });
