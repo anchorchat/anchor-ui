@@ -45,7 +45,22 @@ const body = (myMessage, fontSize, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
+const mention = (color = colors.theme, myMessage, onClick) => {
+  let style = styles.mention;
+
+  if (!myMessage) {
+    style = combineStyles(style, { color });
+  }
+
+  if (onClick) {
+    style = combineStyles(style, { cursor: 'pointer' });
+  }
+
+  return style;
+};
+
 export default {
   root,
-  body
+  body,
+  mention
 };

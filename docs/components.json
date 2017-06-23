@@ -998,7 +998,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Match first word or in entire input",
+        "description": "Match first word or entire input",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -4093,6 +4093,32 @@
           "computed": false
         }
       },
+      "mentions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "String"
+          }
+        },
+        "required": false,
+        "description": "Mention users, should be an array of usernames.\n'mentions' is an array of usernames that are mentioned in a certain message.\n\nText matching '@username' will be highlighted",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onMentionClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when a command is clicked\n\nfunction(event: object, username: string) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
@@ -6020,31 +6046,6 @@
   "components/theme-provider/index.jsx": {
     "description": "",
     "displayName": "ThemeProvider",
-    "methods": [],
-    "props": {
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Your theme's color",
-        "defaultValue": {
-          "value": "colors.theme",
-          "computed": true
-        }
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Children to apply theme color to"
-      }
-    }
-  },
-  "components/with-theme/index.jsx": {
-    "description": "",
-    "displayName": "WithTheme",
     "methods": [],
     "props": {
       "color": {
