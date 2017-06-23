@@ -55,7 +55,7 @@ export default {
     }
   },
   disabled: {
-    opacity: '0.38'
+    opacity: '0.5'
   },
   flatButton: {
     backgroundColor: 'transparent',

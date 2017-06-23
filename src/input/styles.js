@@ -35,7 +35,7 @@ export default {
     width: '100%'
   },
   disabled: {
-    opacity: '0.38'
+    opacity: '0.5'
   },
   error: {
     display: 'block',

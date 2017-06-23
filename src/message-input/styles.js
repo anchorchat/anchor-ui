@@ -35,11 +35,11 @@ export default {
     },
 
     ':disabled': {
-      opacity: '0.38'
+      opacity: '0.5'
     }
   },
   disabled: {
-    opacity: '0.38'
+    opacity: '0.5'
   },
   buttons: {
     display: 'flex'
