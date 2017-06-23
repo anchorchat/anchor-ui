@@ -26,6 +26,7 @@ export default {
     fontWeight: 'bolder',
     color: colors.secondaryText,
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   }
 };

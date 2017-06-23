@@ -83,13 +83,18 @@ class IconMenu extends Component {
 
   closeMenu() {
     const { onMenuClose } = this.props;
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
 
     this.setState({
       open: false,
       positioned: false
     });
 
-    onMenuClose();
+    return onMenuClose();
   }
 
   handleClickOutside = () => this.closeMenu()
