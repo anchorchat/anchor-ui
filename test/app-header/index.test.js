@@ -66,13 +66,13 @@ describe('AppHeader', () => {
     props.icon = null;
   });
 
-  it('should not render a h1 element if the text prop is not passed', () => {
+  it('should not render an h1 element if the text prop is not passed', () => {
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
     expect(wrapper.find('h1')).to.have.length(0);
   });
 
-  it('should render a h1 element if the text prop is passed', () => {
+  it('should render an h1 element if the text prop is passed', () => {
     props.text = 'text';
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
