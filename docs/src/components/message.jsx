@@ -117,15 +117,18 @@ class MessageDoc extends Component {
     };
     const scalingEmoji = `
       .small .emojione {
-        width: 18px;
+        width: 24px;
+        height: 24px;
       }
 
       .medium .emojione {
-        width: 20px;
+        width: 28px;
+        height: 28px;
       }
 
       .large .emojione {
-        width: 24px;
+        width: 32px;
+        height: 32px;
       }
     `;
 
