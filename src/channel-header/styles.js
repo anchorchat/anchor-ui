@@ -16,7 +16,8 @@ const styleSheet = {
     textAlign: 'center',
     lineHeight: '48px',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   },
   rightButton: {
     position: 'absolute',

@@ -4,6 +4,7 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import find from 'lodash/find';
 import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
 import IconChevronDown from '../icons/icon-chevron-down';
@@ -103,13 +104,25 @@ class Select extends Component {
   }
 
   closeSelect() {
-    this.setState({
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
+
+    return this.setState({
       open: false,
       positioned: false
     });
   }
 
   handleClickOutside = () => this.closeSelect()
+
+  handleKeyUp = (event) => {
+    if (event.which === 27) {
+      this.closeSelect();
+    }
+  }
 
   render() {
     const { open, position, popOverWidth } = this.state;
@@ -178,6 +191,11 @@ class Select extends Component {
           {childrenWithProps}
         </PopOver>
         {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
+        {
+          open
+          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
+          : null
+        }
       </section>
     );
   }

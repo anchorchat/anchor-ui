@@ -83,13 +83,18 @@ class IconMenu extends Component {
 
   closeMenu() {
     const { onMenuClose } = this.props;
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
 
     this.setState({
       open: false,
       positioned: false
     });
 
-    onMenuClose();
+    return onMenuClose();
   }
 
   handleClickOutside = () => this.closeMenu()
@@ -98,6 +103,12 @@ class IconMenu extends Component {
     return React.Children.map(
       children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
     );
+  }
+
+  handleKeyUp = (event) => {
+    if (event.which === 27) {
+      this.closeMenu();
+    }
   }
 
   render() {
@@ -135,6 +146,7 @@ class IconMenu extends Component {
           ? <EventListener
             target="window"
             onResize={this.closeMenu}
+            onKeyUp={this.handleKeyUp}
           />
           : null
         }

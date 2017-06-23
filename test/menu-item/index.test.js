@@ -79,6 +79,16 @@ describe('MenuItem', () => {
     props.rightButton = null;
   });
 
+  it('should execute section onClick function', () => {
+    const spy = sinon.spy();
+    props.onClick = spy;
+    const wrapper = shallow(<MenuItem {...props} />).dive();
+
+    wrapper.find('section').simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.onClick = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
