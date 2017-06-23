@@ -42,7 +42,7 @@ describe('Button', () => {
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
-  it('should execute button onClick function', () => {
+  it('should call button onClick function', () => {
     const spy = sinon.spy();
     props.onClick = spy;
     const wrapper = shallow(<Button {...props}>{children}</Button>).dive();
