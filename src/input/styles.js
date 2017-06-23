@@ -11,7 +11,7 @@ export default {
     border: '0',
     borderRadius: '3px',
     boxSizing: 'border-box',
-    color: colors.placeholderText,
+    color: colors.primaryText,
     fontSize: '16px',
     fontWeight: 'inherit',
     fontFamily: 'inherit',
