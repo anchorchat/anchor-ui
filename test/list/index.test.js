@@ -28,43 +28,52 @@ describe('List', () => {
     global.navigator = undefined;
   });
 
+  it('should only render if the open prop equals true', () => {
+    props.open = false;
+    const wrapper = shallow(<List {...props}>{children}</List>).dive();
+
+    expect(wrapper.find('ul')).to.have.length(0);
+    props.open = true;
+  });
+
   it('should always render an ul element', () => {
     const wrapper = shallow(<List {...props}>{children}</List>).dive();
 
     expect(wrapper.find('ul')).to.have.length(1);
   });
 
-  it('should always render the value of the children prop', () => {
-    const wrapper = shallow(<List {...props} >{children}</List>);
-
-    expect(wrapper.contains(children)).to.equal(true);
-  });
-
-  it('should render a h1 element if the header prop is passed', () => {
-    let wrapper = shallow(<List {...props} />).dive();
+  it('should not render an h1 element if the header prop is not passed', () => {
+    const wrapper = shallow(<List {...props}>{children}</List>).dive();
 
     expect(wrapper.find('h1')).to.have.length(0);
+  });
 
-    props.header = 'text';
-    wrapper = shallow(<List {...props} />).dive();
+  it('should render an h1 element if the header prop is passed', () => {
+    props.header = 'header';
+    const wrapper = shallow(<List {...props}>{children}</List>).dive();
 
-    expect(wrapper.find('h1')).to.have.length(1);
-    expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
     props.header = null;
+  });
+
+  it('should render children', () => {
+    const wrapper = shallow(<List {...props}>{children}</List>).dive();
+
+    expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<List {...props} />).dive();
+    shallow(<List {...props}>{children}</List>).dive();
     expect(spy).to.have.been.calledWith(props.style);
   });
 
   it('should get listHeader styles', () => {
-    const spy = sinon.spy(getStyles, 'listHeader');
     props.header = 'text';
+    const spy = sinon.spy(getStyles, 'listHeader');
 
-    shallow(<List {...props} />).dive();
+    shallow(<List {...props}>{children}</List>).dive();
     expect(spy).to.have.been.calledWith(props.headerStyle);
     props.header = {};
   });
