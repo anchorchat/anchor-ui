@@ -38,5 +38,16 @@ export default {
     marginRight: '0',
     maxWidth: 'calc(100% - 40px)',
     display: 'flex'
+  },
+  link: {
+    color: 'inherit',
+    fontSize: 'inherit',
+    fontWeight: 'inherit',
+    textDecoration: 'underline'
+  },
+  mention: {
+    color: 'inherit',
+    fontSize: 'inherit',
+    fontWeight: 'bolder'
   }
 };

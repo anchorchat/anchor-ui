@@ -895,12 +895,17 @@
                 "name": "node",
                 "description": "Optional command parameter",
                 "required": false
+              },
+              "avatar": {
+                "name": "node",
+                "description": "Optional command avatar",
+                "required": false
               }
             }
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: String (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }"
       },
       "value": {
         "type": {
@@ -4067,6 +4072,32 @@
         },
         "required": false,
         "description": "Show a separator above the message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "mentions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "String"
+          }
+        },
+        "required": false,
+        "description": "Mention users, should be an array of usernames.\n'mentions' is an array of usernames that are mentioned in a certain message.\n\nText matching '@username' will be highlighted",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onMentionClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when a command is clicked\n\nfunction(event: object, username: string) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
