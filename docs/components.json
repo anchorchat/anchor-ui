@@ -3296,6 +3296,17 @@
           "value": "true",
           "computed": false
         }
+      },
+      "nestedLevel": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Nested depth of List. This property is automatically managed, modify at own risk.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
       }
     }
   },
@@ -3484,6 +3495,17 @@
         "description": "Callback function fired when the ListItem toggles its nested list",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "nestedLevel": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Nested depth of ListItem. This property is automatically managed, modify at own risk.",
+        "defaultValue": {
+          "value": "0",
           "computed": false
         }
       },

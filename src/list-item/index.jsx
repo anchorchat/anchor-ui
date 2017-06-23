@@ -51,6 +51,8 @@ class ListItem extends Component {
     open: PropTypes.bool,
     /** Callback function fired when the ListItem toggles its nested list */
     onNestedListToggle: PropTypes.func,
+    /** Nested depth of ListItem. This property is automatically managed, modify at own risk. */
+    nestedLevel: PropTypes.number,
     color: PropTypes.string.isRequired
   }
 
@@ -69,7 +71,8 @@ class ListItem extends Component {
     blocked: false,
     children: null,
     open: null,
-    onNestedListToggle: () => {}
+    onNestedListToggle: () => {},
+    nestedLevel: 0
   }
 
   static contextTypes = {
@@ -127,6 +130,7 @@ class ListItem extends Component {
       children,
       open, // eslint-disable-line no-unused-vars
       onNestedListToggle, // eslint-disable-line no-unused-vars
+      nestedLevel,
       color,
       ...custom
     } = this.props;
@@ -136,7 +140,7 @@ class ListItem extends Component {
 
     if (children) {
       nestedList = (
-        <List open={this.state.open}>
+        <List nestedLevel={nestedLevel + 1} open={this.state.open}>
           {children}
         </List>
       );
@@ -144,7 +148,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, style)} {...custom}>
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, nestedLevel, style)} {...custom}>
           {
             avatar
             ? <div style={styles.avatar}>
