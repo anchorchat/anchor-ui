@@ -158,6 +158,14 @@ class CommandsDoc extends Component {
               onSelect={this.handleSelect}
               leading={false}
             />
+            <Commands
+              header="Mentions"
+              style={style.commands}
+              value={this.state.value}
+              commands={mentions}
+              onMouseOver={this.handleMouseOver}
+              onSelect={this.handleSelect}
+            />
             <MessageInput
               onChange={this.changeValue}
               placeholder="Type / to view and filter the commands, type @ to filter mentions"
