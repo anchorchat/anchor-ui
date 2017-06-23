@@ -83,22 +83,21 @@ class IconMenu extends Component {
 
   closeMenu() {
     const { onMenuClose } = this.props;
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
 
     this.setState({
       open: false,
       positioned: false
     });
 
-    onMenuClose();
+    return onMenuClose();
   }
 
-  handleClickOutside = () => {
-    const { open } = this.state;
-
-    if (open) {
-      this.closeMenu();
-    }
-  }
+  handleClickOutside = () => this.closeMenu()
 
   applyCloseMenuToChildren(children) {
     return React.Children.map(

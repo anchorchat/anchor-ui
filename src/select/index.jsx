@@ -104,19 +104,19 @@ class Select extends Component {
   }
 
   closeSelect() {
-    this.setState({
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
+
+    return this.setState({
       open: false,
       positioned: false
     });
   }
 
-  handleClickOutside = () => {
-    const { open } = this.state;
-
-    if (open) {
-      this.closeSelect();
-    }
-  }
+  handleClickOutside = () => this.closeSelect()
 
   handleKeyUp = (event) => {
     if (event.which === 27) {
