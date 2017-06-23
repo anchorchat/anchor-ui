@@ -1210,6 +1210,76 @@
       }
     }
   },
+  "components/emoji-filter/index.jsx": {
+    "description": "Used for displaying a list of commands",
+    "displayName": "EmojiFilter",
+    "methods": [],
+    "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display in the header",
+        "defaultValue": {
+          "value": "'EmojiFilter'",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Filter emoji based on input value"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onSelect": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
+      },
+      "onMouseOver": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a command is moused over\n\nfunction(event: object, command: string) => void"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "components/emoji-menu/emoji-categories.jsx": {
     "description": "",
     "methods": [],

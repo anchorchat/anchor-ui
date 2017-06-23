@@ -49,6 +49,7 @@ import Table from './components/table';
 import Pagination from './components/pagination';
 import Commands from './components/commands';
 import DateSeparator from './components/date-separator';
+import EmojiFilter from './components/emoji-filter';
 import './index.css';
 
 ReactDOM.render(
@@ -99,6 +100,7 @@ ReactDOM.render(
         <Route path="/pagination" component={Pagination} />
         <Route path="/commands" component={Commands} />
         <Route path="/date-separator" component={DateSeparator} />
+        <Route path="/emoji-filter" component={EmojiFilter} />
       </Route>
     </Router>
   </StyleRoot>,

@@ -154,3 +154,7 @@ code {
 tbody tr td:nth-of-type(2) {
   text-transform: capitalize;
 }
+
+.emojione {
+  width: 24px;
+}
