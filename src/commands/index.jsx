@@ -115,12 +115,14 @@ class Commands extends Component {
     const { commands } = this.props;
     const { open } = this.state;
 
-    if (open) {
-      this.setState({
-        open: false,
-        commands
-      });
+    if (!open) {
+      return false;
     }
+
+    return this.setState({
+      open: false,
+      commands
+    });
   }
 
   handleSelect = (event, command) => {
