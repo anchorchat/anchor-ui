@@ -113,11 +113,14 @@ class Commands extends Component {
 
   handleClickOutside = () => {
     const { commands } = this.props;
+    const { open } = this.state;
 
-    this.setState({
-      open: false,
-      commands
-    });
+    if (open) {
+      this.setState({
+        open: false,
+        commands
+      });
+    }
   }
 
   handleSelect = (event, command) => {

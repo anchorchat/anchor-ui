@@ -110,7 +110,13 @@ class Select extends Component {
     });
   }
 
-  handleClickOutside = () => this.closeSelect()
+  handleClickOutside = () => {
+    const { open } = this.state;
+
+    if (open) {
+      this.closeSelect();
+    }
+  }
 
   handleKeyUp = (event) => {
     if (event.which === 27) {
