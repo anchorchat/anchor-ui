@@ -37,7 +37,11 @@ RadioButton.propTypes = {
   value: PropTypes.string.isRequired,
   /** The input's label text */
   label: PropTypes.node.isRequired,
-  /** The input's onChange function */
+  /**
+   * Callback fired when RadioButton's value changes
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func,
   /** Input active */
   checked: PropTypes.bool,

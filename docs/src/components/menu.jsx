@@ -82,7 +82,7 @@ class MenuDoc extends Component {
               Menu with iconHeader
             </Button>
             <Menu
-              toggleMenu={this.toggleMenu}
+              closeMenu={this.toggleMenu}
               header="Default Menu"
               open={open}
             >
@@ -91,7 +91,7 @@ class MenuDoc extends Component {
               <MenuItem text="Menu item" onClick={() => {}} />
             </Menu>
             <Menu
-              toggleMenu={this.toggleMenuIconHeader}
+              closeMenu={this.toggleMenuIconHeader}
               header="IconHeader Menu"
               open={openIconHeader}
               headerIcon={<IconRocket />}

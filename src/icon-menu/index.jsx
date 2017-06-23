@@ -30,7 +30,11 @@ class IconMenu extends Component {
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the content container */
     contentStyle: PropTypes.instanceOf(Object),
-    /** Callback function fired when the IconMenu closes */
+    /**
+     * Callback fired when the IconMenu closes
+     *
+     * function(event: object) => void
+     */
     onMenuClose: PropTypes.func
   }
 
@@ -81,7 +85,7 @@ class IconMenu extends Component {
     });
   }
 
-  closeMenu() {
+  closeMenu(event) {
     const { onMenuClose } = this.props;
     const { open } = this.state;
 
@@ -94,10 +98,10 @@ class IconMenu extends Component {
       positioned: false
     });
 
-    return onMenuClose();
+    return onMenuClose(event);
   }
 
-  handleClickOutside = () => this.closeMenu()
+  handleClickOutside = event => this.closeMenu(event)
 
   applyCloseMenuToChildren(children) {
     return React.Children.map(

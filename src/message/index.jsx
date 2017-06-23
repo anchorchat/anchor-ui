@@ -69,7 +69,11 @@ class Message extends Component {
     collapsed: PropTypes.bool,
     /** Text to display for collapsed image messages */
     collapsedText: PropTypes.node,
-    /** Expand a collapsed image message */
+    /**
+     * Callback fired when 'expand' MenuItem is clicked
+     *
+     * function(event: object) => void
+     */
     expand: PropTypes.func,
     /** Text to show in expand menu item */
     expandText: PropTypes.node,

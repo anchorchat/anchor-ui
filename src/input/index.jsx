@@ -4,7 +4,6 @@ import Radium, { Style } from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 import colors from '../settings/colors';
-import fade from '../internal/fade';
 import combineStyles from '../internal/combine-styles';
 
 /** General purpose form input */
@@ -38,11 +37,12 @@ const Input = ({
       id={name}
       ref={inputRef}
       placeholder={placeholder}
+      disabled={disabled}
       {...custom}
     />
     <Style
       rules={{
-        '.input::placeholder': combineStyles({ color: fade(colors.white, 0.38) }, placeholderStyle)
+        '.input::placeholder': combineStyles({ color: colors.placeholderText }, placeholderStyle)
       }}
     />
     {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
@@ -52,7 +52,11 @@ const Input = ({
 Input.displayName = 'Input';
 
 Input.propTypes = {
-  /** Change the input's value */
+  /**
+   * Callback fired when the Input's value is changed
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func.isRequired,
   /** The input's value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

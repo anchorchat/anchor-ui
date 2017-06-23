@@ -9,9 +9,12 @@ const root = (
   rightButton,
   avatar,
   secondaryLine = null,
+  nestedLevel,
   overrideStyle
 ) => {
   let style = styles.root;
+
+  style = combineStyles(style, { paddingLeft: `${(nestedLevel * 16) + 8}px` });
 
   const activeStyle = combineStyles(
     styles.root,

@@ -117,15 +117,18 @@ class MessageDoc extends Component {
     };
     const scalingEmoji = `
       .small .emojione {
-        width: 18px;
+        width: 24px;
+        height: 24px;
       }
 
       .medium .emojione {
-        width: 20px;
+        width: 28px;
+        height: 28px;
       }
 
       .large .emojione {
-        width: 24px;
+        width: 32px;
+        height: 32px;
       }
     `;
 
@@ -145,6 +148,13 @@ class MessageDoc extends Component {
           <h1>Usage</h1>
           <ReactMarkdown source={usage} className="markdown" />
         </section>
+        <a
+          href="https://www.emojione.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          This component uses free Emoji icons supplied by EmojiOne
+        </a>
         <section>
           <h1>Scaling emoji&apos;s</h1>
           <p>

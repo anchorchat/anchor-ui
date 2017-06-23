@@ -4,32 +4,47 @@ import pure from 'recompose/pure';
 import Radium, { Style } from 'radium';
 import createMarkup from './create-markup';
 import getStyles from './get-styles';
+import styles from './styles';
 
 function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   return (
-    <header style={getStyles.modifierHeader(style)}>
-      <div
-        onClick={() => changeTone('tone0')}
-        className="modifier"
-        style={
-          getStyles.modifier(tone === 'tone0', modifierStyle)
-        }
-      >
-        <svg width="50px" height="50px" viewBox="0 0 50 50" className="emojione">
-          <circle id="circle" fill="#FFDD67" cx="25" cy="25" r="25" />
-        </svg>
-      </div>
-      {modifiers.map(modifier => (
+    <header style={styles.modifierHeader}>
+      <div style={getStyles.modifierHeader(style)}>
         <div
-          style={
-            getStyles.modifier(modifier.title === tone, modifierStyle)
-          }
-          dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
-          key={`emoji-${modifier.shortname}`}
-          onClick={() => changeTone(modifier.title)}
+          onClick={() => changeTone('tone0')}
           className="modifier"
-        />
-      ))}
+          style={
+            getStyles.modifier(tone === 'tone0', modifierStyle)
+          }
+        >
+          <svg width="50px" height="50px" viewBox="0 0 50 50" className="emojione">
+            <circle id="circle" fill="#FFDD67" cx="25" cy="25" r="25" />
+          </svg>
+        </div>
+        {modifiers.map((modifier) => {
+          const title = modifier.title.replace(/:/g, '');
+
+          return (
+            <div
+              style={
+                getStyles.modifier(title === tone, modifierStyle)
+              }
+              dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
+              key={`emoji-${modifier.shortname}`}
+              onClick={() => changeTone(title)}
+              className="modifier"
+            />
+          );
+        })}
+      </div>
+      <a
+        style={styles.attributionLink}
+        href="https://www.emojione.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Emoji by EmojiOne
+      </a>
       <Style
         scopeSelector=".modifier"
         rules={{
