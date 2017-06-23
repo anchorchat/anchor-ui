@@ -1552,6 +1552,24 @@
           "computed": false
         }
       },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the EmojiMenu's visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hideMenu": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Function to hide the menu"
+      },
       "color": {
         "type": {
           "name": "string"

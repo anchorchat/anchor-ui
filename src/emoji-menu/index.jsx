@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import _ from 'lodash';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import emojis from './emoji';
 import EmojiCategory from './emoji-category';
 import EmojiModifiers from './emoji-modifiers';
@@ -38,6 +39,10 @@ class EmojiMenu extends Component {
     footerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the footer icons */
     iconStyle: PropTypes.instanceOf(Object),
+    /** Toggle the EmojiMenu's visibility */
+    open: PropTypes.bool,
+    /** Function to hide the menu */
+    hideMenu: PropTypes.func.isRequired,
     color: PropTypes.string.isRequired
   }
 
@@ -49,7 +54,8 @@ class EmojiMenu extends Component {
     categoryStyle: {},
     emojiStyle: {},
     footerStyle: {},
-    iconStyle: {}
+    iconStyle: {},
+    open: false
   }
 
   constructor(props) {
@@ -72,6 +78,20 @@ class EmojiMenu extends Component {
     this.changeTone = this.changeTone.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
     this.sendEmoji = this.sendEmoji.bind(this);
+  }
+
+  handleClickOutside = (event) => {
+    const { hideMenu } = this.props;
+
+    hideMenu(event);
+  }
+
+  handleKeyUp = (event) => {
+    const { hideMenu } = this.props;
+
+    if (event.which === 27) {
+      hideMenu(event);
+    }
   }
 
   changeTone(tone) {
@@ -112,8 +132,20 @@ class EmojiMenu extends Component {
       sendEmoji, // eslint-disable-line no-unused-vars
       svgSprites, // eslint-disable-line no-unused-vars
       color,
+      open,
+      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
+      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
+      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
+      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      hideMenu, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
+
+    if (!open) {
+      return null;
+    }
 
     const modifiers = _.filter(emojis, { category: 'modifier' });
 
@@ -164,6 +196,7 @@ class EmojiMenu extends Component {
           style={footerStyle}
           iconStyle={iconStyle}
         />
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>
     );
   }
@@ -171,8 +204,8 @@ class EmojiMenu extends Component {
 
 const enhance = compose(
   themeable(),
-  Radium,
-  pure
+  onClickOutside,
+  Radium
 );
 
 export default enhance(EmojiMenu);
