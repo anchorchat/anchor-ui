@@ -70,6 +70,16 @@ describe('Input', () => {
     props.error = '';
   });
 
+  it('should call input onChange function', () => {
+    const spy = sinon.spy();
+    props.onChange = spy;
+    const wrapper = shallow(<Input {...props} />).dive();
+
+    wrapper.find('input').simulate('change', { target: { value: 'value' } });
+    expect(spy).to.have.callCount(1);
+    props.onChange = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
