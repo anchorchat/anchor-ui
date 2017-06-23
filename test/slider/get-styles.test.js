@@ -17,7 +17,7 @@ describe('Slider.getStyles', () => {
 
     it('should add disabled styles', () => {
       const style = getStyles.root({}, true);
-      expect(style).to.have.property('opacity', '0.38');
+      expect(style).to.have.property('opacity', '0.5');
     });
   });
 
