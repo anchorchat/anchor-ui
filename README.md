@@ -60,6 +60,14 @@ $ cd docs && npm run start
 
 Webpack wil compile on changes in `./docs/src`.
 
+### Generating CHANGELOG.md
+
+[Request a token from github](https://github.com/skywinder/github-changelog-generator#github-token)
+
+```bash
+$ bundle install && make changelog
+```
+
 ## Contribute
 
 If you'd like to help with the development of this module please consider our [contributing guidelines](https://github.com/anchorchat/anchor-ui/blob/master/CONTRIBUTING.md).

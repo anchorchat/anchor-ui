@@ -2,7 +2,6 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
 import npmPackage from '../../../package.json';
-import Alert from '../../../dist/alert';
 
 const install = '```bash\n $ npm i -S anchor-ui';
 const font = '```css\n * {\n  font-family: \'Lato\', sans-serif;\n }';
@@ -51,7 +50,6 @@ const Home = () => {
           Add your own color to the components, color is applied with props. <br />
           Wrap ThemeProvider around components you want your theme color in.
         </p>
-        <Alert style={style.alert} text="Warning! Wrapping your components in ThemeProvider is currently optional but will be mandatory in the next major version!" type="warning" />
         <ReactMarkdown source={theme} className="markdown" />
         <h2>StyleRoot</h2>
         <p>If you want to use inline Media Queries or inline CSS animations you need to wrap your app in <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component</p>

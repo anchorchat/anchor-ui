@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
@@ -12,35 +13,48 @@ import Overlay from '../overlay';
 import themeable from '../themeable';
 
 /** General purpose dialog */
-const Dialog = ({
-  header,
-  hideDialog,
-  style,
-  overlayStyle,
-  headerStyle,
-  children,
-  iconColor,
-  open,
-  color,
-  ...custom
-}) => {
-  if (!open) {
-    return null;
+class Dialog extends Component {
+  handleKeyUp = (event) => {
+    const { hideDialog } = this.props;
+
+    if (event.which === 27) {
+      hideDialog(event);
+    }
   }
 
-  return (
-    <Overlay style={overlayStyle}>
-      <section style={styles.clickAway} onClick={hideDialog} />
-      <section style={getStyles.root(color, style)} {...custom}>
-        <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-          <IconClose color={iconColor} />
-        </Button>
-        {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
-        {children}
-      </section>
-    </Overlay>
-  );
-};
+  render() {
+    const {
+      header,
+      hideDialog,
+      style,
+      overlayStyle,
+      headerStyle,
+      children,
+      iconColor,
+      open,
+      color,
+      ...custom
+    } = this.props;
+
+    if (!open) {
+      return null;
+    }
+
+    return (
+      <Overlay style={overlayStyle}>
+        <section style={styles.clickAway} onClick={hideDialog} />
+        <section style={getStyles.root(color, style)} {...custom}>
+          <Button style={styles.closeButton} onClick={hideDialog} iconButton>
+            <IconClose color={iconColor} />
+          </Button>
+          {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
+          {children}
+        </section>
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
+      </Overlay>
+    );
+  }
+}
 
 Dialog.displayName = 'Dialog';
 

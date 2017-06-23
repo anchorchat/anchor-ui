@@ -5,6 +5,7 @@ export default {
     fontWeight: 'inherit',
     fontSize: 'inherit',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   }
 };

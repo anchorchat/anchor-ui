@@ -68,50 +68,61 @@ class CommandsDoc extends Component {
     };
     const commands = [
       {
-        title: '/collapse',
+        value: 'collapse',
+        prefix: '/',
         description: 'collapse all images'
       },
       {
-        title: '/giphy',
+        value: 'giphy',
+        prefix: '/',
         description: 'send a random gif',
         param: 'text'
       },
       {
-        title: '/expand',
+        value: 'expand',
+        prefix: '/',
         description: 'expand all images'
       },
       {
-        title: '/exit',
+        value: 'exit',
+        prefix: '/',
         description: 'exit the building'
       },
       {
-        title: '/epic',
+        value: 'epic',
+        prefix: '/',
         description: 'show some epic stuff'
       },
       {
-        title: '/away',
+        value: 'away',
+        prefix: '/',
         description: 'toggle your away status'
       },
       {
-        title: '/leave',
+        value: 'leave',
+        prefix: '/',
         description: 'leave the channel'
       },
       {
-        title: '/mute',
+        value: 'mute',
+        prefix: '/',
         description: 'mute the channel'
       }
     ];
     const mentions = [
       {
-        title: '@IanCStewart',
+        value: 'IanCStewart',
+        prefix: '@',
         avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
       },
       {
-        title: '@sjaakluthart',
+        value: 'sjaakluthart',
+        prefix: '@',
         avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
       },
       {
-        title: '@larstadema',
+        value: 'larstadema',
+        prefix: '@',
         avatar: 'https://avatars2.githubusercontent.com/u/16486197?v=3&s=400'
       },
     ];
@@ -136,6 +147,7 @@ class CommandsDoc extends Component {
               commands={commands}
               onMouseOver={this.handleMouseOver}
               onSelect={this.handleSelect}
+              leading
             />
             <Commands
               header="Mentions"
@@ -144,6 +156,7 @@ class CommandsDoc extends Component {
               commands={mentions}
               onMouseOver={this.handleMouseOver}
               onSelect={this.handleSelect}
+              leading={false}
             />
             <MessageInput
               onChange={this.changeValue}

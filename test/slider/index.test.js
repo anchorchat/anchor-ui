@@ -81,6 +81,16 @@ describe('Slider', () => {
     expect(wrapper.containsMatchingElement(<label htmlFor="name" >label</label>)).to.equal(true);
   });
 
+  it('should call input onChange function', () => {
+    const spy = sinon.spy();
+    props.onChange = spy;
+    const wrapper = shallow(<Slider {...props} />).dive().dive();
+
+    wrapper.find('input').simulate('change');
+    expect(spy).to.have.callCount(1);
+    props.onChange = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 

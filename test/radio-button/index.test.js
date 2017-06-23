@@ -74,6 +74,16 @@ describe('RadioButton', () => {
     expect(wrapper.contains(label)).to.equal(true);
   });
 
+  it('should call input onChange function', () => {
+    const spy = sinon.spy();
+    props.onChange = spy;
+    const wrapper = shallow(<RadioButton {...props} />).dive();
+
+    wrapper.find('input').simulate('change');
+    expect(spy).to.have.callCount(1);
+    props.onChange = null;
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
