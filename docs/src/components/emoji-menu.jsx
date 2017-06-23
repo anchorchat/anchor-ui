@@ -48,6 +48,13 @@ class EmojiMenuDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
+        <a
+          href="https://www.emojione.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          This component uses free Emoji icons supplied by EmojiOne
+        </a>
         <section>
           <h1>Usage</h1>
           <ReactMarkdown source={usage} className="markdown" />

@@ -5,3 +5,4 @@ dist
 debug
 /components
 .nyc_output
+emojione.json

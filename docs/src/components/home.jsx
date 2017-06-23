@@ -16,7 +16,6 @@ const Home = () => {
       marginTop: '16px'
     },
     link: {
-      color: 'inherit',
       textDecoration: 'underline',
       fontWeight: 'normal'
     }
