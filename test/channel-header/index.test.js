@@ -51,7 +51,6 @@ describe('ChannelHeader', () => {
     props.leftButton = <button />;
     const wrapper = shallow(<ChannelHeader {...props} />).dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.leftButton = null;
   });
@@ -66,12 +65,11 @@ describe('ChannelHeader', () => {
     props.rightButton = <button />;
     const wrapper = shallow(<ChannelHeader {...props} />).dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.rightButton = null;
   });
 
-  it('should pass the value of the name prop to the h1 element', () => {
+  it('should pass the name prop to the h1 element', () => {
     const wrapper = shallow(<ChannelHeader {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<h1>name</h1>)).to.equal(true);
