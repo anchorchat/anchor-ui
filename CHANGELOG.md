@@ -19,6 +19,8 @@
 
 **Merged pull requests:**
 
+- Added check for open state. [\#756](https://github.com/anchorchat/anchor-ui/pull/756) ([sjaakluthart](https://github.com/sjaakluthart))
+- Automated changelog [\#754](https://github.com/anchorchat/anchor-ui/pull/754) ([sjaakluthart](https://github.com/sjaakluthart))
 - Mentions/commands [\#742](https://github.com/anchorchat/anchor-ui/pull/742) ([sjaakluthart](https://github.com/sjaakluthart))
 - Slider component test [\#741](https://github.com/anchorchat/anchor-ui/pull/741) ([Ralphvandodewaard](https://github.com/Ralphvandodewaard))
 - Component tests: Added onClick tests [\#739](https://github.com/anchorchat/anchor-ui/pull/739) ([Ralphvandodewaard](https://github.com/Ralphvandodewaard))
