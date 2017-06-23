@@ -6,6 +6,7 @@ const colors = {
   theme: '#1BA6C4',
   primaryText: '#212121',
   secondaryText: '#757575',
+  placeholderText: '#C4C4C4',
   background: '#F7F7F7',
   icons: '#C4C4C4',
   boxShadow: 'rgba(117, 127, 133, 0.23)',
@@ -15,7 +16,7 @@ const colors = {
     warning: '#F8F4D5',
     info: '#CDE8F5'
   },
-  inputs: 'rgba(254,254,254, 0.1)',
+  inputs: 'rgba(196, 196, 196, 0.15)',
   error: '#FD2A43',
   online: '#54D38A',
   away: '#F6A623',
