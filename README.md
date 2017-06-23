@@ -14,6 +14,17 @@ Install from npm
 
 Check out our [docs](https://anchorchat.github.io/anchor-ui/#/) website!
 
+# Browser Support
+
+Anchor UI currently supports the following browsers.
+
+|![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/chrome/chrome_48x48.png)|![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/firefox/firefox_48x48.png)|![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/safari/safari_48x48.png)|![Opera](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/opera/opera_48x48.png)|![Edge](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/edge/edge_48x48.png)|![Internet Explorer](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png)|
+|--------------|--------------|--------------|--------------|--------------|----------|
+|macOS latest  |macOS latest  |macOS latest  |macOS latest  |              |          |
+|Windows latest|Windows latest|Windows latest|Windows latest|Windows latest|version 11|
+|iOS latest    |iOS latest    |iOS 9 and up  |              |              |          |
+|Android latest|Android latest|              |              |              |          |
+
 ## Installation
 
 ### src
