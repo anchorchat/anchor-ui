@@ -18,11 +18,15 @@ class Select extends Component {
   static displayName = 'Select'
 
   static propTypes = {
-    /** The Selects content (MenuItem), each child must have a value prop */
+    /** The Select's content (MenuItem), each child must have a value prop */
     children: PropTypes.node.isRequired,
     /** The Selects value */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    /** Change the Selects value */
+    /**
+     * Callback fired when Select's value changes
+     *
+     * function(event: object, value: string || number) => void
+     */
     onChange: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -34,7 +38,7 @@ class Select extends Component {
     labelStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the content container */
     contentStyle: PropTypes.instanceOf(Object),
-    /** The Selects placeholder */
+    /** The Select's placeholder */
     placeholder: PropTypes.string,
     /** Display an error message */
     error: PropTypes.node,
@@ -154,7 +158,7 @@ class Select extends Component {
         {
           closeMenu: this.closeSelect,
           active: child.props.value === value,
-          onClick: () => onChange(child.props.value)
+          onClick: event => onChange(event, child.props.value)
         }
       )
     );

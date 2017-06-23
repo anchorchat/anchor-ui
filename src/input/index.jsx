@@ -52,7 +52,11 @@ const Input = ({
 Input.displayName = 'Input';
 
 Input.propTypes = {
-  /** Change the input's value */
+  /**
+   * Callback fired when the Input's value is changed
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func.isRequired,
   /** The input's value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

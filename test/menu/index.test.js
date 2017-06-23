@@ -14,7 +14,7 @@ chai.use(sinonChai);
 describe('Menu', () => {
   const props = {
     open: false,
-    toggleMenu: null,
+    closeMenu: null,
     header: '',
     headerIcon: null,
     iconStyle: { icon: true },
@@ -24,7 +24,7 @@ describe('Menu', () => {
   };
   const children = <p>children</p>;
   const menuItems = React.Children.map(children, child => (
-    cloneElement(child, { closeMenu: props.toggleMenu })
+    cloneElement(child, { closeMenu: props.closeMenu })
   ));
 
   beforeEach(() => {
@@ -35,13 +35,13 @@ describe('Menu', () => {
     global.navigator = undefined;
   });
 
-  it('should not render a section element if the toggleMenu prop is not passed', () => {
+  it('should not render a section element if the closeMenu prop is not passed', () => {
     const wrapper = shallow(<Menu {...props} >{menuItems}</Menu>).dive();
 
     expect(wrapper.find('section')).to.have.length(0);
   });
 
-  it('should not render an overlay component if the toggleMenu prop is not passed', () => {
+  it('should not render an overlay component if the closeMenu prop is not passed', () => {
     const wrapper = shallow(<Menu {...props} >{menuItems}</Menu>).dive();
 
     expect(wrapper.find(Overlay)).to.have.length(0);
@@ -88,22 +88,22 @@ describe('Menu', () => {
   });
 
   it('should apply closeMenu prop to children', () => {
-    props.toggleMenu = () => {};
+    props.closeMenu = () => {};
     const wrapper = shallow(<Menu {...props} >{menuItems}</Menu>).dive();
     const closeMenu = wrapper.find('p').prop('closeMenu');
 
     expect(typeof closeMenu === 'function').to.equal(true);
-    props.toggleMenu = null;
+    props.closeMenu = null;
   });
 
   it('should execute Overlay onClick function', () => {
     const spy = sinon.spy();
-    props.toggleMenu = spy;
+    props.closeMenu = spy;
     const wrapper = shallow(<Menu {...props} >{menuItems}</Menu>).dive();
 
     wrapper.find(Overlay).simulate('click');
     expect(spy).to.have.callCount(1);
-    props.toggleMenu = null;
+    props.closeMenu = null;
   });
 
   it('should get sidebar styles', () => {
@@ -132,29 +132,29 @@ describe('Menu', () => {
   });
 
   it('should get container styles', () => {
-    props.toggleMenu = () => {};
+    props.closeMenu = () => {};
     const spy = sinon.spy(getStyles, 'container');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
     expect(spy).to.have.callCount(1);
-    props.toggleMenu = null;
+    props.closeMenu = null;
   });
 
   it('should get overlay styles', () => {
-    props.toggleMenu = () => {};
+    props.closeMenu = () => {};
     const spy = sinon.spy(getStyles, 'overlay');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
     expect(spy).to.have.been.calledWith(props.open);
-    props.toggleMenu = null;
+    props.closeMenu = null;
   });
 
   it('should get root styles', () => {
-    props.toggleMenu = () => {};
+    props.closeMenu = () => {};
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
     expect(spy).to.have.been.calledWith(props.open, props.style);
-    props.toggleMenu = null;
+    props.closeMenu = null;
   });
 });

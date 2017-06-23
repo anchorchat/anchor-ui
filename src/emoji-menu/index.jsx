@@ -19,7 +19,11 @@ const storage = new Storage();
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/3.0/png/64/';
 
 const propTypes = {
-  /** Send an emoji */
+  /**
+   * Callback fired when an emoji is clicked
+   *
+   * function(event: object, emoji: object) => void
+   */
   sendEmoji: PropTypes.func.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
@@ -99,11 +103,11 @@ class EmojiMenu extends Component {
     });
   }
 
-  sendEmoji(emoji) {
+  sendEmoji(event, emoji) {
     const { sendEmoji } = this.props;
 
     storage.storeEmoji(emoji);
-    sendEmoji(emoji);
+    sendEmoji(event, emoji);
 
     const storedEmojis = storage.getEmojis();
 

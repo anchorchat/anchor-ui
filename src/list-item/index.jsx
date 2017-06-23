@@ -30,7 +30,11 @@ class ListItem extends Component {
     primaryTextStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the secondaryText element */
     secondaryTextStyle: PropTypes.instanceOf(Object),
-    /** Click function for the root element */
+    /**
+     * Callback fired when the ListItem is clicked
+     *
+     * function(event: object) => void
+     */
     onClick: PropTypes.func,
     /** Add active styles to ListItem */
     active: PropTypes.bool,
@@ -49,7 +53,11 @@ class ListItem extends Component {
     children: PropTypes.node,
     /** Control toggle state of nested list. */
     open: PropTypes.bool,
-    /** Callback function fired when the ListItem toggles its nested list */
+    /**
+     * Callback fired when the nested list is toggled
+     *
+     * function(event: object) => void
+     */
     onNestedListToggle: PropTypes.func,
     /** Nested depth of ListItem. This property is automatically managed, modify at own risk. */
     nestedLevel: PropTypes.number,
@@ -105,11 +113,11 @@ class ListItem extends Component {
     }
   }
 
-  toggleNestedList() {
+  toggleNestedList(event) {
     const { onNestedListToggle } = this.props;
 
     this.setState({ open: !this.state.open });
-    onNestedListToggle(!this.state.open);
+    onNestedListToggle(event, !this.state.open);
   }
 
   render() {

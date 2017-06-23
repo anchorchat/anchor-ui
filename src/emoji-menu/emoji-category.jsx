@@ -14,7 +14,7 @@ const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
         <div
           dangerouslySetInnerHTML={createMarkup(emoji.shortname)}
           key={`emoji-${emoji.shortname}`}
-          onClick={() => sendEmoji(emoji)}
+          onClick={event => sendEmoji(event, emoji)}
           style={getStyles.categoryEmoji(emojiStyle)}
           className="emoji"
         />

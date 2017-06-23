@@ -49,7 +49,11 @@ Alert.propTypes = {
   textStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the button element */
   buttonStyle: PropTypes.instanceOf(Object),
-  /** Function to hide the alert */
+  /**
+   * Callback fired when the close button is clicked
+   *
+   * function(event: object) => void
+   */
   hideAlert: PropTypes.func
 };
 
