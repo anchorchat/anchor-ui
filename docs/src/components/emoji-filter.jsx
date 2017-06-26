@@ -17,32 +17,20 @@ class EmojiFilterDoc extends Component {
     super();
 
     this.state = {
-      value: '',
-      command: ''
+      value: ''
     };
   }
 
-  changeValue = (event) => {
-    const { command } = this.state;
+  changeValue = event => this.setState({ value: event.currentTarget.value })
 
-    if (command) {
-      return this.setState({
-        command: '',
-        value: command
-      });
-    }
+  handleMouseOver = (event, emoji) => console.log(emoji.shortname)
 
-    return this.setState({ value: event.currentTarget.value });
-  }
-
-  handleMouseOver = (event, command) => this.setState({ command })
-
-  handleSelect = (event, command) => {
+  handleSelect = (event, emoji) => {
     this.setState({
-      value: command
+      value: `${this.state.value} ${emoji.shortname}`
     });
 
-    alert(`selected ${command}`);
+    alert(`selected ${emoji.shortname}`);
   }
 
   render() {
@@ -90,7 +78,7 @@ class EmojiFilterDoc extends Component {
             <MessageInput
               onChange={this.changeValue}
               placeholder="Type : to view and filter emoji"
-              value={this.state.command || this.state.value}
+              value={this.state.value}
               sendMessage={() => {}}
               style={style.messageInput}
             />

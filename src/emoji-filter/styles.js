@@ -20,7 +20,7 @@ export default {
     display: 'flex',
     flexWrap: 'wrap'
   },
-  command: {
+  emoji: {
     height: '32px',
     boxSizing: 'border-box',
     padding: '4px',

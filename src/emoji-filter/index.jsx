@@ -23,15 +23,15 @@ const propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
   /**
-   * Callback fired when a command is clicked
+   * Callback fired when a emoji is clicked
    *
-   * function(event: object, command: string) => void
+   * function(event: object, emoji: object) => void
    */
   onSelect: PropTypes.func.isRequired,
   /**
-   * Callback fired when a command is moused over
+   * Callback fired when a emoji is moused over
    *
-   * function(event: object, command: string) => void
+   * function(event: object, emoji: object) => void
    */
   onMouseOver: PropTypes.func.isRequired
 };
@@ -159,7 +159,12 @@ class EmojiFilter extends Component {
         />
         <section style={getStyles.commands()}>
           {map(filteredEmoji, icon => (
-            <div key={icon.shortname} style={styles.command}>
+            <div
+              key={icon.shortname}
+              style={styles.emoji}
+              onMouseOver={event => onMouseOver(event, icon)}
+              onClick={event => onSelect(event, icon)}
+            >
               <div dangerouslySetInnerHTML={{ __html: emojione.toImage(icon.shortname) }} />
               {icon.shortname}
             </div>

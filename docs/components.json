@@ -1278,21 +1278,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
+        "description": "Callback fired when a emoji is clicked\n\nfunction(event: object, emoji: object) => void"
       },
       "onMouseOver": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when a command is moused over\n\nfunction(event: object, command: string) => void"
-      },
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
+        "description": "Callback fired when a emoji is moused over\n\nfunction(event: object, emoji: object) => void"
       }
     }
   },
@@ -1475,6 +1468,170 @@
           "value": "{}",
           "computed": false
         }
+      }
+    }
+  },
+  "components/emoji-menu/index.jsx": {
+    "description": "Menu for sending messages with emoji",
+    "displayName": "EmojiMenu",
+    "methods": [
+      {
+        "name": "changeTone",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "tone",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "changeCategory",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "category",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "sendEmoji",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "emoji",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "sendEmoji": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when an emoji is clicked\n\nfunction(event: object, emoji: object) => void"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modifierStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the color modifiers",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "categoryStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the emoji category",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "emojiStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the emojis",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "footerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer icons",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggle the EmojiMenu's visibility",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hideMenu": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Function to hide the menu"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
