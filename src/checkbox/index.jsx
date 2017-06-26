@@ -41,7 +41,11 @@ Checkbox.propTypes = {
   label: PropTypes.node.isRequired,
   /** The input's name */
   name: PropTypes.node.isRequired,
-  /** The input's onChange function */
+  /**
+   * Callback fired when the input's value is changed
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func.isRequired,
   /** Checkbox checked */
   checked: PropTypes.bool,

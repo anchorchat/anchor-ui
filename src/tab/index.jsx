@@ -43,7 +43,11 @@ Tab.propTypes = {
   label: PropTypes.node.isRequired,
   /** Tab selected */
   selected: PropTypes.bool,
-  /** Tab onClick function */
+  /**
+   * Callback fired when Tab is clicked
+   *
+   * function(event: object, value: string || number) => void
+   */
   onClick: PropTypes.func.isRequired,
   /** Override the styles of an inactive root element */
   style: PropTypes.instanceOf(Object),

@@ -4,6 +4,8 @@
 
 UI kit for chat engines with React
 
+Anchor UI uses free Emoji icons supplied by [EmojiOne](https://www.emojione.com/)
+
 ## Usage
 
 Install from npm

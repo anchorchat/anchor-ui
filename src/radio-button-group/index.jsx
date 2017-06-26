@@ -30,7 +30,11 @@ const RadioButtonGroup = ({
 RadioButtonGroup.propTypes = {
   /** The RadioButtonGroup's value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  /** Change the RadioButtonGroup's value */
+  /**
+   * Callback fired when RadioButtonGroup's value changes
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func.isRequired,
   /** The RadioButtonGroup's content (RadioButton), each child must have a value prop */
   children: PropTypes.node.isRequired,

@@ -74,6 +74,16 @@ describe('Tab', () => {
     props.badge = null;
   });
 
+  it('should call section onClick function', () => {
+    const spy = sinon.spy();
+    props.onClick = spy;
+    const wrapper = shallow(<Tab {...props} />).dive().dive();
+
+    wrapper.find('section').simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.onClick = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 

@@ -18,7 +18,7 @@ class MessageList extends Component {
     addRef: PropTypes.func,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /** Override the styles of the <ul /> element */
+    /** Override the styles of the ul element */
     listStyle: PropTypes.instanceOf(Object),
     /** Enable autoScroll */
     autoScroll: PropTypes.bool

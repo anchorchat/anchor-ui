@@ -6,13 +6,13 @@ import styles from '../../src/list-item/styles';
 describe('ListItem.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
-      const style = getStyles.root(null, false, false, false, false, {});
+      const style = getStyles.root(null, false, false, false, false, 0, {});
 
       expect(style).to.deep.equal(styles.root);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, false, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, 0, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -24,9 +24,15 @@ describe('ListItem.getStyles', () => {
     });
 
     it('should add multi line styles', () => {
-      const style = getStyles.root(null, false, false, false, true, {});
+      const style = getStyles.root(null, false, false, false, true, 0, {});
 
       expect(style).to.have.property('height', '52px');
+    });
+
+    it('should add indention padding', () => {
+      const style = getStyles.root(null, false, false, false, false, 1, {});
+
+      expect(style).to.have.property('paddingLeft', '24px');
     });
   });
 

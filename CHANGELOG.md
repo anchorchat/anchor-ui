@@ -4,11 +4,24 @@
 
 [Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v3.8.0...HEAD)
 
+**Implemented enhancements:**
+
+- Added option to match commands non leading, changed command.title to command.value, added command.prefix [\#753](https://github.com/anchorchat/anchor-ui/pull/753) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#725 [\#750](https://github.com/anchorchat/anchor-ui/pull/750) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#652 [\#711](https://github.com/anchorchat/anchor-ui/pull/711) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#705 [\#707](https://github.com/anchorchat/anchor-ui/pull/707) ([sjaakluthart](https://github.com/sjaakluthart))
+- :lipstick: Adjusted styles to conform with design. [\#701](https://github.com/anchorchat/anchor-ui/pull/701) ([IanCStewart](https://github.com/IanCStewart))
+
 **Merged pull requests:**
 
+- Component tests: Added onChange tests [\#760](https://github.com/anchorchat/anchor-ui/pull/760) ([Ralphvandodewaard](https://github.com/Ralphvandodewaard))
+- Browser support matrix [\#759](https://github.com/anchorchat/anchor-ui/pull/759) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[3.8.0\] Added command avatar prop to Commands and made command description not required. Added event listener for escape key press to Dialog, Lightbox, Menu, Select and IconMenu. Fixed various styling issues, added more component tests. [\#757](https://github.com/anchorchat/anchor-ui/pull/757) ([sjaakluthart](https://github.com/sjaakluthart))
 - Added check for open state. [\#756](https://github.com/anchorchat/anchor-ui/pull/756) ([sjaakluthart](https://github.com/sjaakluthart))
 - Automated changelog [\#754](https://github.com/anchorchat/anchor-ui/pull/754) ([sjaakluthart](https://github.com/sjaakluthart))
+- Mentions/message [\#746](https://github.com/anchorchat/anchor-ui/pull/746) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#666 [\#702](https://github.com/anchorchat/anchor-ui/pull/702) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#641 [\#659](https://github.com/anchorchat/anchor-ui/pull/659) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v3.8.0](https://github.com/anchorchat/anchor-ui/tree/v3.8.0) (2017-06-22)
 [Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v3.7.0...v3.8.0)

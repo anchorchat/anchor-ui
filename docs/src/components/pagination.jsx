@@ -30,17 +30,13 @@ class PaginationDoc extends Component {
       itemsIntialPage: [],
       jumpToPage: 1
     };
-
-    this.onPageChange = this.onPageChange.bind(this);
-    this.onInitialPageChange = this.onInitialPageChange.bind(this);
-    this.onJumpToPageChange = this.onJumpToPageChange.bind(this);
   }
 
-  onPageChange = pager => this.setState({ itemsDefault: pager.items });
+  onPageChange = (event, pager) => this.setState({ itemsDefault: pager.items });
 
-  onInitialPageChange = pager => this.setState({ itemsIntialPage: pager.items });
+  onInitialPageChange = (event, pager) => this.setState({ itemsIntialPage: pager.items });
 
-  onJumpToPageChange = (pager) => {
+  onJumpToPageChange = (event, pager) => {
     this.setState({
       itemsJumpToPage: pager.items,
       jumpToPage: pager.currentPage
