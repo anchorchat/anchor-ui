@@ -2,15 +2,25 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.1...HEAD)
+
+**Merged pull requests:**
+
+- \[4.0.1\] Added textDecoration none to EmojiMenu attribution link, made onMentionClick not required, fixed bug with SearchBox changeQuery by passing value instead of event [\#768](https://github.com/anchorchat/anchor-ui/pull/768) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.0.1](https://github.com/anchorchat/anchor-ui/tree/v4.0.1) (2017-06-26)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.0...v4.0.1)
 
 **Implemented enhancements:**
 
-- Added option to match commands non leading, changed command.title to command.value, added command.prefix [\#753](https://github.com/anchorchat/anchor-ui/pull/753) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#725 [\#750](https://github.com/anchorchat/anchor-ui/pull/750) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#652 [\#711](https://github.com/anchorchat/anchor-ui/pull/711) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#705 [\#707](https://github.com/anchorchat/anchor-ui/pull/707) ([sjaakluthart](https://github.com/sjaakluthart))
-- :lipstick: Adjusted styles to conform with design. [\#701](https://github.com/anchorchat/anchor-ui/pull/701) ([IanCStewart](https://github.com/IanCStewart))
+- Add the option to mention an user in a Message [\#664](https://github.com/anchorchat/anchor-ui/issues/664)
+
+**Fixed bugs:**
+
+- PopOver should middle positioning if it will not fit on screen [\#605](https://github.com/anchorchat/anchor-ui/issues/605)
+- Added textDecoration: none to attribution link [\#767](https://github.com/anchorchat/anchor-ui/pull/767) ([sjaakluthart](https://github.com/sjaakluthart))
+- Made prop onMentionClick not required. [\#766](https://github.com/anchorchat/anchor-ui/pull/766) ([sjaakluthart](https://github.com/sjaakluthart))
+- Fixed Searchbox changeSearchQuery [\#765](https://github.com/anchorchat/anchor-ui/pull/765) ([sjaakluthart](https://github.com/sjaakluthart))
 
 **Merged pull requests:**
 
