@@ -21,6 +21,10 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
     vertical = 'top';
   }
 
+  if (!fitsAboveButton && !fitsBelowButton) {
+    vertical = 'middle';
+  }
+
   let position = {
     position: 'fixed'
   };
@@ -31,6 +35,10 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
 
   if (vertical === 'top') {
     position = combineStyles(position, { top: 'initial', bottom: (window.innerHeight - button.bottom) + button.height });
+  }
+
+  if (vertical === 'middle') {
+    position = combineStyles(position, { top: 'initial', bottom: (window.innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2) });
   }
 
   if (horizontal === 'left') {

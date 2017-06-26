@@ -18,8 +18,8 @@ class SearchBoxDoc extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value) {
-    this.setState({ value });
+  handleChange(event) {
+    this.setState({ value: event.currentTarget.value });
   }
 
   render() {

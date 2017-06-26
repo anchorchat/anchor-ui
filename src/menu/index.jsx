@@ -10,10 +10,10 @@ import themeable from '../themeable';
 /** Menu that slides in from the left */
 class Menu extends Component {
   handleKeyUp = (event) => {
-    const { toggleMenu } = this.props;
+    const { closeMenu } = this.props;
 
     if (event.which === 27) {
-      toggleMenu(event);
+      closeMenu(event);
     }
   }
 
@@ -23,7 +23,7 @@ class Menu extends Component {
       open,
       header,
       headerIcon,
-      toggleMenu,
+      closeMenu,
       style,
       iconStyle,
       headerStyle,
@@ -32,12 +32,12 @@ class Menu extends Component {
     } = this.props;
 
     const menuItems = React.Children.map(children, child => (
-      cloneElement(child, { closeMenu: toggleMenu })
+      cloneElement(child, { closeMenu })
     ));
 
     let rootStyle = getStyles.root(open, style);
 
-    if (!toggleMenu) {
+    if (!closeMenu) {
       rootStyle = getStyles.sidebar(style);
     }
 
@@ -57,16 +57,16 @@ class Menu extends Component {
   render() {
     const {
       open,
-      toggleMenu
+      closeMenu
     } = this.props;
 
-    if (!toggleMenu) {
+    if (!closeMenu) {
       return this.renderNav();
     }
 
     return (
       <section style={getStyles.container()}>
-        <Overlay style={getStyles.overlay(open)} onClick={toggleMenu} />
+        <Overlay style={getStyles.overlay(open)} onClick={closeMenu} />
         {this.renderNav()}
         {
           open
@@ -85,8 +85,12 @@ Menu.propTypes = {
   children: PropTypes.node.isRequired,
   /** Menu open */
   open: PropTypes.bool,
-  /** Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied. */
-  toggleMenu: PropTypes.func,
+  /**
+   * Callback fired when Menu's overlay or MenuItems are clicked
+   *
+   * function(event: object) => void
+   */
+  closeMenu: PropTypes.func,
   /** The Menu's header */
   header: PropTypes.node,
   /** The header's icon */
@@ -102,7 +106,7 @@ Menu.propTypes = {
 
 Menu.defaultProps = {
   open: false,
-  toggleMenu: null,
+  closeMenu: null,
   header: null,
   style: {},
   headerStyle: {},

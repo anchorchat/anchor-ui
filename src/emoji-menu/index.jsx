@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import _ from 'lodash';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import emojis from './emoji';
 import EmojiCategory from './emoji-category';
 import EmojiModifiers from './emoji-modifiers';
@@ -18,7 +19,11 @@ const storage = new Storage();
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/3.0/png/64/';
 
 const propTypes = {
-  /** Send an emoji */
+  /**
+   * Callback fired when an emoji is clicked
+   *
+   * function(event: object, emoji: object) => void
+   */
   sendEmoji: PropTypes.func.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
@@ -34,6 +39,10 @@ const propTypes = {
   footerStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the footer icons */
   iconStyle: PropTypes.instanceOf(Object),
+  /** Toggle the EmojiMenu's visibility */
+  open: PropTypes.bool,
+  /** Function to hide the menu */
+  hideMenu: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
 };
 
@@ -44,7 +53,8 @@ const defaultProps = {
   categoryStyle: {},
   emojiStyle: {},
   footerStyle: {},
-  iconStyle: {}
+  iconStyle: {},
+  open: false
 };
 
 const displayName = 'EmojiMenu';
@@ -67,6 +77,20 @@ class EmojiMenu extends Component {
     this.sendEmoji = this.sendEmoji.bind(this);
   }
 
+  handleClickOutside = (event) => {
+    const { hideMenu } = this.props;
+
+    hideMenu(event);
+  }
+
+  handleKeyUp = (event) => {
+    const { hideMenu } = this.props;
+
+    if (event.which === 27) {
+      hideMenu(event);
+    }
+  }
+
   changeTone(tone) {
     this.setState({
       tone
@@ -79,11 +103,11 @@ class EmojiMenu extends Component {
     });
   }
 
-  sendEmoji(emoji) {
+  sendEmoji(event, emoji) {
     const { sendEmoji } = this.props;
 
     storage.storeEmoji(emoji);
-    sendEmoji(emoji);
+    sendEmoji(event, emoji);
 
     const storedEmojis = storage.getEmojis();
 
@@ -104,8 +128,20 @@ class EmojiMenu extends Component {
       iconStyle,
       sendEmoji, // eslint-disable-line no-unused-vars
       color,
+      open,
+      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
+      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
+      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
+      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      hideMenu, // eslint-disable-line no-unused-vars
       ...custom
     } = this.props;
+
+    if (!open) {
+      return null;
+    }
 
     const modifiers = _.filter(emojis, { category: 'modifier' });
 
@@ -156,6 +192,7 @@ class EmojiMenu extends Component {
           style={footerStyle}
           iconStyle={iconStyle}
         />
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>
     );
   }
@@ -163,8 +200,8 @@ class EmojiMenu extends Component {
 
 const enhance = compose(
   themeable(),
-  Radium,
-  pure
+  onClickOutside,
+  Radium
 );
 
 EmojiMenu.propTypes = propTypes;

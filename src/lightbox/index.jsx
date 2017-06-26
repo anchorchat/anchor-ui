@@ -18,7 +18,11 @@ class Lightbox extends Component {
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the overlay element */
     overlayStyle: PropTypes.instanceOf(Object),
-    /** Function to hide dialog element */
+    /**
+     * Callback fired when the Lightbox is closed
+     *
+     * function(event: object) => void
+     */
     hideLightbox: PropTypes.func.isRequired,
     /** Link to the image */
     image: PropTypes.string.isRequired,

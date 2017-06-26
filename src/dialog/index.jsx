@@ -67,7 +67,11 @@ Dialog.propTypes = {
   overlayStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
-  /** Function to hide dialog element */
+  /**
+   * Callback fired when the close button is clicked
+   *
+   * function(event: object) => void
+   */
   hideDialog: PropTypes.func.isRequired,
   /** Optional children, will only render children and headerText with other styles */
   children: PropTypes.node,

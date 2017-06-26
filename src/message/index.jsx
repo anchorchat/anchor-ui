@@ -69,7 +69,11 @@ class Message extends Component {
     collapsed: PropTypes.bool,
     /** Text to display for collapsed image messages */
     collapsedText: PropTypes.node,
-    /** Expand a collapsed image message */
+    /**
+     * Callback fired when 'expand' MenuItem is clicked
+     *
+     * function(event: object) => void
+     */
     expand: PropTypes.func,
     /** Text to show in expand menu item */
     expandText: PropTypes.node,
@@ -85,6 +89,19 @@ class Message extends Component {
     locale: PropTypes.instanceOf(Object),
     /** Show a separator above the message */
     separator: PropTypes.node,
+    /**
+     * Mention users, should be an array of usernames.
+     * 'mentions' is an array of usernames that are mentioned in a certain message.
+     *
+     * Text matching '@username' will be highlighted
+     */
+    mentions: PropTypes.arrayOf(String),
+    /**
+     * Callback fired when a command is clicked
+     *
+     * function(event: object, username: string) => void
+     */
+    onMentionClick: PropTypes.func,
     color: PropTypes.string.isRequired
   }
 
@@ -109,7 +126,9 @@ class Message extends Component {
     collapsedText: 'This image has been collapsed, click the button to expand it.',
     edited: null,
     locale: en,
-    separator: null
+    separator: null,
+    mentions: [],
+    onMentionClick: null
   }
 
   constructor() {
@@ -193,6 +212,8 @@ class Message extends Component {
       collapsedText, // eslint-disable-line no-unused-vars
       edited, // eslint-disable-line no-unused-vars
       locale, // eslint-disable-line no-unused-vars
+      mentions, // eslint-disable-line no-unused-vars
+      onMentionClick, // eslint-disable-line no-unused-vars
       color,
       separator,
       ...custom

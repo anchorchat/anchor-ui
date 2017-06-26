@@ -43,15 +43,18 @@ main {
 }
 
 .small .emojione {
-  width: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 .medium .emojione {
-  width: 20px;
+  width: 28px;
+  height: 28px;
 }
 
 .large .emojione {
-  width: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 a {
@@ -156,5 +159,6 @@ tbody tr td:nth-of-type(2) {
 }
 
 .emojione {
-  width: 24px;
+  width: 32px;
+  height: 32px;
 }

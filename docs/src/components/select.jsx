@@ -22,13 +22,13 @@ class SelectDoc extends Component {
     this.changeValueError = this.changeValueError.bind(this);
   }
 
-  changeValue(value) {
+  changeValue(event, value) {
     this.setState({
       value
     });
   }
 
-  changeValueError(valueError) {
+  changeValueError(event, valueError) {
     this.setState({
       valueError
     });

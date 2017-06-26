@@ -137,7 +137,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Function to hide the alert",
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -423,7 +423,7 @@
           "name": "func"
         },
         "required": true,
-        "description": ""
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void"
       },
       "style": {
         "type": {
@@ -467,7 +467,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Button onClick function",
+        "description": "Callback fired when the Button is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -782,7 +782,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "The input's onChange function"
+        "description": "Callback fired when the input's value is changed\n\nfunction(event: object) => void"
       },
       "checked": {
         "type": {
@@ -881,9 +881,14 @@
           "value": {
             "name": "shape",
             "value": {
-              "title": {
-                "name": "node",
-                "description": "The command to execute",
+              "value": {
+                "name": "string",
+                "description": "The command's value",
+                "required": true
+              },
+              "prefix": {
+                "name": "string",
+                "description": "The command's prefix",
                 "required": true
               },
               "description": {
@@ -905,7 +910,7 @@
           }
         },
         "required": true,
-        "description": "The list of commands. Must be an array of objects containing the following:\n\n{ title: Node, description: Node (optional), param: Node (optional), avatar: Node (optional) }"
+        "description": "The list of commands. Must be an array of objects containing the following:\n\n{\n  value: String,\n  prefix: String,\n  description: Node (optional),\n  param: Node (optional),\n  avatar: Node (optional)\n}"
       },
       "value": {
         "type": {
@@ -987,6 +992,17 @@
         },
         "required": true,
         "description": "Callback fired when a command is moused over\n\nfunction(event: object, command: string) => void"
+      },
+      "leading": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Match first word or entire input",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       },
       "color": {
         "type": {
@@ -1136,7 +1152,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Function to hide dialog element"
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void"
       },
       "children": {
         "type": {
@@ -1462,148 +1478,6 @@
       }
     }
   },
-  "components/emoji-menu/index.jsx": {
-    "description": "Menu for sending messages with emoji",
-    "displayName": "EmojiMenu",
-    "methods": [
-      {
-        "name": "changeTone",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "tone",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "changeCategory",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "category",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "sendEmoji",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "emoji",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "sendEmoji": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": "Send an emoji"
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the header element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "modifierStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the color modifiers",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "categoryStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the emoji category",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "emojiStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the emojis",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "footerStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the footer element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "iconStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the footer icons",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
   "components/empty-state/index.jsx": {
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
@@ -1705,7 +1579,12 @@
         "name": "closeMenu",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       },
       {
@@ -1810,7 +1689,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback function fired when the IconMenu closes",
+        "description": "Callback fired when the IconMenu closes\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -3027,7 +2906,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value"
+        "description": "Callback fired when the Input's value is changed\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -3224,7 +3103,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Function to hide dialog element"
+        "description": "Callback fired when the Lightbox is closed\n\nfunction(event: object) => void"
       },
       "image": {
         "type": {
@@ -3332,6 +3211,17 @@
           "value": "true",
           "computed": false
         }
+      },
+      "nestedLevel": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Nested depth of List. This property is automatically managed, modify at own risk.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
       }
     }
   },
@@ -3343,7 +3233,12 @@
         "name": "toggleNestedList",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],
@@ -3418,7 +3313,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Click function for the root element",
+        "description": "Callback fired when the ListItem is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3517,9 +3412,20 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback function fired when the ListItem toggles its nested list",
+        "description": "Callback fired when the nested list is toggled\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "nestedLevel": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Nested depth of ListItem. This property is automatically managed, modify at own risk.",
+        "defaultValue": {
+          "value": "0",
           "computed": false
         }
       },
@@ -3604,12 +3510,12 @@
           "computed": false
         }
       },
-      "toggleMenu": {
+      "closeMenu": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Toggle the Menu's visibility, Menu will render as a sidebar if this prop is not supplied.",
+        "description": "Callback fired when Menu's overlay or MenuItems are clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3690,7 +3596,12 @@
         "name": "handleClick",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],
@@ -3729,7 +3640,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "MenuItem onClick function"
+        "description": "Callback fired when MenuItem is clicked\n\nfunction(event: object) => void"
       },
       "style": {
         "type": {
@@ -3767,24 +3678,12 @@
           "computed": false
         }
       },
-      "buttonStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the right button element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
       "closeMenu": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Closes IconMenu if MenuItem is child",
+        "description": "Callback fired when the MenuItem closes a Menu/IconMenu\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3798,6 +3697,18 @@
         "description": "Right-hand side placed button",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the right button element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -4074,7 +3985,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Expand a collapsed image message",
+        "description": "Callback fired when 'expand' MenuItem is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -4136,6 +4047,32 @@
           "computed": false
         }
       },
+      "mentions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "String"
+          }
+        },
+        "required": false,
+        "description": "Mention users, should be an array of usernames.\n'mentions' is an array of usernames that are mentioned in a certain message.\n\nText matching '@username' will be highlighted",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onMentionClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when a command is clicked\n\nfunction(event: object, username: string) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
@@ -4168,14 +4105,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value"
+        "description": "Callback fired when MessageInput's value changes\n\nfunction(event: object) => void"
       },
       "sendMessage": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Send a message"
+        "description": "Callback fired when a message is sent\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -4347,7 +4284,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the <ul /> element",
+        "description": "Override the styles of the ul element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4504,7 +4441,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when the navigation changes\n\n@param {pager} object Object containing { items, totalItems, totalPages, currentPage  }."
+        "description": "Callback fired when the navigation changes\n\nfunction(event: object, pager: object) => void"
       },
       "initialPage": {
         "type": {
@@ -5003,7 +4940,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "The input's onChange function",
+        "description": "Callback fired when RadioButton's value changes\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5102,7 +5039,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the RadioButtonGroup's value"
+        "description": "Callback fired when RadioButtonGroup's value changes\n\nfunction(event: object) => void"
       },
       "children": {
         "type": {
@@ -5181,7 +5118,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "value",
+            "name": "event",
             "type": null
           }
         ],
@@ -5206,14 +5143,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the input's value"
+        "description": "Callback fired when SearchBox's value changes\n\nfunction(event: object) => void"
       },
       "changeSearchQuery": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Change the search query with debounce"
+        "description": "Callback fired when SearchBox's query changes, with debounce\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -5303,7 +5240,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "The Selects content (MenuItem), each child must have a value prop"
+        "description": "The Select's content (MenuItem), each child must have a value prop"
       },
       "value": {
         "type": {
@@ -5329,7 +5266,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the Selects value"
+        "description": "Callback fired when Select's value changes\n\nfunction(event: object, value: string || number) => void"
       },
       "style": {
         "type": {
@@ -5395,7 +5332,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The Selects placeholder",
+        "description": "The Select's placeholder",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -5443,7 +5380,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Change the slider's value"
+        "description": "Callback fired when Slider's value changes\n\nfunction(event: object) => void"
       },
       "value": {
         "type": {
@@ -5583,7 +5520,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "The switch's active state",
+        "description": "The Switch's active state",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -5594,14 +5531,14 @@
           "name": "func"
         },
         "required": true,
-        "description": "Toggle the switch's active state"
+        "description": "Callback fired when Switch's value changes\n\nfunction(event: object, value: string || number) => void"
       },
       "label": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "The switch's label",
+        "description": "The Switch's label",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5703,7 +5640,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Tab onClick function"
+        "description": "Callback fired when Tab is clicked\n\nfunction(event: object, value: string || number) => void"
       },
       "style": {
         "type": {
@@ -6063,31 +6000,6 @@
   "components/theme-provider/index.jsx": {
     "description": "",
     "displayName": "ThemeProvider",
-    "methods": [],
-    "props": {
-      "color": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Your theme's color",
-        "defaultValue": {
-          "value": "colors.theme",
-          "computed": true
-        }
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Children to apply theme color to"
-      }
-    }
-  },
-  "components/with-theme/index.jsx": {
-    "description": "",
-    "displayName": "WithTheme",
     "methods": [],
     "props": {
       "color": {

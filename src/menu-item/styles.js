@@ -29,7 +29,8 @@ const styleSheet = {
     lineHeight: '24px',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    fontWeight: 'inherit'
+    fontWeight: 'inherit',
+    whiteSpace: 'nowrap'
   },
   icon: {
     position: 'absolute',

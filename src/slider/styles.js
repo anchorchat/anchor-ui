@@ -69,6 +69,6 @@ export default {
     fontSize: '14px'
   },
   disabled: {
-    opacity: '0.38'
+    opacity: '0.5'
   }
 };
