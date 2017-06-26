@@ -88,13 +88,22 @@ class EmojiFilter extends Component {
   }
 
   filterEmoji = (value) => {
+    const split = value.split(':');
+    console.log(split);
     const argument = value.split(':')[1];
 
     if (argument.length < 2) {
       return [];
     }
 
-    return filter(emoji, icon => icon.shortname.replace(/:/g, '').indexOf(argument) === 0);
+    const filteredEmoji = filter(emoji, icon => icon.shortname.replace(/:/g, '').indexOf(argument) === 0);
+
+    if (filteredEmoji.length === 1 && includes(value, filteredEmoji[0].shortname)) {
+      console.log(filteredEmoji, argument);
+      return [];
+    }
+
+    return filteredEmoji;
   }
 
   handleClickOutside = () => {
