@@ -45,4 +45,9 @@ export default {
     fontSize: '14px',
     textDecoration: 'none'
   },
+  emojiIcon: {
+    width: '24px',
+    height: '24px',
+    marginRight: '4px'
+  }
 };

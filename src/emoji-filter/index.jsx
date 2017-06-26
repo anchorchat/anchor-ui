@@ -8,6 +8,7 @@ import includes from 'lodash/includes';
 import isEmpty from 'lodash/isEmpty';
 import onClickOutside from 'react-onclickoutside';
 import emojione from 'emojione';
+import htmlParser from 'html-react-parser';
 import getStyles from './get-styles';
 import styles from './styles';
 import emoji from '../emoji-menu/emoji';
@@ -116,6 +117,24 @@ class EmojiFilter extends Component {
 
   changeTone = tone => this.setState({ tone })
 
+  parseHtml = (html) => {
+    const options = {
+      replace(domNode) {
+        if (domNode.attribs && domNode.attribs.class === 'emojione') {
+          const src = domNode.attribs.src;
+          const alt = domNode.attribs.alt;
+          const title = domNode.attribs.title;
+
+          return <img src={src} alt={alt} title={title} style={styles.emojiIcon} />;
+        }
+
+        return domNode;
+      }
+    };
+
+    return htmlParser(html, options);
+  }
+
   render() {
     const {
       header,
@@ -165,7 +184,7 @@ class EmojiFilter extends Component {
               onMouseOver={event => onMouseOver(event, icon)}
               onClick={event => onSelect(event, icon)}
             >
-              <div dangerouslySetInnerHTML={{ __html: emojione.toImage(icon.shortname) }} />
+              {this.parseHtml(emojione.toImage(icon.shortname))}
               {icon.shortname}
             </div>
           ))}
