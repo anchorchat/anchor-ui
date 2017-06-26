@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v3.8.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.0...HEAD)
+
+**Merged pull requests:**
+
+- 4.0.0 [\#762](https://github.com/anchorchat/anchor-ui/pull/762) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.0.0](https://github.com/anchorchat/anchor-ui/tree/v4.0.0) (2017-06-23)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v3.8.0...v4.0.0)
 
 **Implemented enhancements:**
 
