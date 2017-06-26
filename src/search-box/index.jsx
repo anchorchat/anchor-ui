@@ -20,7 +20,7 @@ class SearchBox extends Component {
     /**
      * Callback fired when SearchBox's query changes, with debounce
      *
-     * function(event: object) => void
+     * function(query: string) => void
      */
     changeSearchQuery: PropTypes.func.isRequired,
     /** The input's value */
@@ -59,7 +59,7 @@ class SearchBox extends Component {
     const { onChange } = this.props;
 
     onChange(event);
-    this.changeSearchQuery(event);
+    this.changeSearchQuery(event.currentTarget.value);
   }
 
   render() {
