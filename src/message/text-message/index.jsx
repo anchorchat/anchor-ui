@@ -160,7 +160,7 @@ TextMessage.propTypes = {
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
   mentions: PropTypes.arrayOf(String).isRequired,
-  onMentionClick: PropTypes.func.isRequired
+  onMentionClick: PropTypes.func
 };
 
 TextMessage.defaultProps = {
@@ -178,7 +178,8 @@ TextMessage.defaultProps = {
   enableLightbox: false,
   color: colors.theme,
   iconMenu: null,
-  edited: null
+  edited: null,
+  onMentionClick: null
 };
 
 export default TextMessage;

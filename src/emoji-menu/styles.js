@@ -36,7 +36,8 @@ export default {
   attributionLink: {
     color: colors.secondaryText,
     fontWeight: 'inherit',
-    fontSize: '14px'
+    fontSize: '14px',
+    textDecoration: 'none'
   },
   category: {
     height: 'calc(100% - 80px)',
