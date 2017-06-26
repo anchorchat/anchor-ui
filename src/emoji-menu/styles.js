@@ -28,7 +28,7 @@ export default {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    background: colors.white,
+    backgroundColor: colors.white,
     padding: '0 8px',
     height: '40px',
     boxSizing: 'border-box'
@@ -36,7 +36,8 @@ export default {
   attributionLink: {
     color: colors.secondaryText,
     fontWeight: 'inherit',
-    fontSize: '14px'
+    fontSize: '14px',
+    textDecoration: 'none'
   },
   category: {
     height: 'calc(100% - 80px)',

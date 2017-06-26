@@ -8,8 +8,8 @@ import styles from './styles';
 
 function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   return (
-    <header style={styles.modifierHeader}>
-      <div style={getStyles.modifierHeader(style)}>
+    <header style={getStyles.modifierHeader(style)}>
+      <div style={styles.modifiers}>
         <div
           onClick={() => changeTone('tone0')}
           className="modifier"

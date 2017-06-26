@@ -22,7 +22,7 @@ function categoryEmoji(overrideStyle) {
 }
 
 function modifierHeader(overrideStyle) {
-  return combineStyles(styles.modifiers, overrideStyle);
+  return combineStyles(styles.modifierHeader, overrideStyle);
 }
 
 function modifier(active, overrideStyle) {
