@@ -4,13 +4,14 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
+import includes from 'lodash/includes';
 import isEmpty from 'lodash/isEmpty';
 import onClickOutside from 'react-onclickoutside';
 import emojione from 'emojione';
-import themeable from '../themeable';
 import getStyles from './get-styles';
 import styles from './styles';
 import emoji from '../emoji-menu/emoji';
+import EmojiModifiers from '../emoji-menu/emoji-modifiers';
 
 const propTypes = {
   /** Text to display in the header */
@@ -32,8 +33,7 @@ const propTypes = {
    *
    * function(event: object, command: string) => void
    */
-  onMouseOver: PropTypes.func.isRequired,
-  color: PropTypes.string.isRequired
+  onMouseOver: PropTypes.func.isRequired
 };
 
 const defaultProps = {
@@ -49,7 +49,8 @@ class EmojiFilter extends Component {
 
     this.state = {
       open: false,
-      emoji: []
+      emoji: [],
+      tone: 'tone0'
     };
   }
 
@@ -113,11 +114,12 @@ class EmojiFilter extends Component {
     onSelect(event, shortname);
   }
 
+  changeTone = tone => this.setState({ tone })
+
   render() {
     const {
       header,
       value, // eslint-disable-line no-unused-vars
-      color,
       onMouseOver,
       onSelect, // eslint-disable-line no-unused-vars
       style,
@@ -131,17 +133,32 @@ class EmojiFilter extends Component {
       leading, // eslint-disable-line no-unused-vars, react/prop-types
       ...custom
     } = this.props;
-    const { open } = this.state;
+    const { open, tone } = this.state;
 
     if (!open) {
       return null;
     }
 
+    const modifiers = filter(emoji, { category: 'modifier' });
+
+    const filteredEmoji = filter(this.state.emoji, (icon) => {
+      if (icon.diversity) {
+        return includes(icon.title, tone);
+      }
+
+      return true;
+    });
+
     return (
       <section style={getStyles.root(style)} {...custom}>
-        <header style={getStyles.header(color, headerStyle)}>{header}</header>
+        <EmojiModifiers
+          modifiers={modifiers}
+          changeTone={this.changeTone}
+          tone={tone}
+          style={getStyles.header(headerStyle)}
+        />
         <section style={getStyles.commands()}>
-          {map(this.state.emoji, icon => (
+          {map(filteredEmoji, icon => (
             <div key={icon.shortname} style={styles.command}>
               <div dangerouslySetInnerHTML={{ __html: emojione.toImage(icon.shortname) }} />
               {icon.shortname}
@@ -158,7 +175,6 @@ EmojiFilter.propTypes = propTypes;
 EmojiFilter.defaultProps = defaultProps;
 
 const enhance = compose(
-  themeable(),
   onClickOutside,
   Radium
 );

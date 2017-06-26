@@ -8,19 +8,11 @@ export default {
     backgroundColor: colors.white,
     overflow: 'hidden',
     width: '100%',
-    height: '200px',
+    maxHeight: '200px',
     boxShadow: styles.depthShadows[0]
   },
   header: {
-    backgroundColor: colors.theme,
-    color: colors.white,
-    transition: 'background .3s ease-in-out',
-    padding: '8px',
-    height: '40px',
-    fontSize: '16px',
-    lineHeight: '24px',
-    boxSizing: 'border-box',
-    fontWeight: 'inherit'
+    backgroundColor: colors.background
   },
   commands: {
     height: 'calc(100% - 40px)',
@@ -47,30 +39,10 @@ export default {
       backgroundColor: darken(colors.white, 0.15)
     }
   },
-  title: {
-    fontWeight: 'bolder',
-    marginRight: '5px',
-    fontSize: '14px',
-    lineHeight: '14px'
-  },
-  description: {
-    fontStyle: 'italic',
+  attributionLink: {
+    color: colors.secondaryText,
     fontWeight: 'inherit',
     fontSize: '14px',
-    lineHeight: '14px',
-    float: 'right'
+    textDecoration: 'none'
   },
-  titleContainer: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  avatarContainer: {
-    width: '30px',
-    height: '30px',
-    marginRight: '8px'
-  },
-  avatar: {
-    width: '100%',
-    height: '100%'
-  }
 };
