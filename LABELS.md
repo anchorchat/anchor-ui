@@ -72,16 +72,16 @@ Kind of type this PR should be released in. Patch, minor or major according to [
 
 ## All labels
 
-Group | --- | --- | --- | ---
---- | --- | --- | --- | ---
-Problems | bugs | security
-Mindless | chore |
-Experience | design | ux
-Environment | production | staging | test
-Feedback | question | request for comment | discussion
-Improvements | enhancement | optimization
-Additions | feature
-Pending | in progress | watchlist
-Inactive | wont fix | on hold | invalid | duplicate
-Help Wanted | help wanted
-Release | major | minor | patch
+Group        | ----------- | ------------------- | ------------- | ----------------- |
+------------ | ----------- | ------------------- | ------------- | ----------------- |
+Problems     | bugs        | security            |               |                   |
+Mindless     | chore       | refactor            | documentation |                   |
+Experience   | design      | ux                  | affordance    |                   |
+Environment  | production  | staging             | test          |                   |
+Feedback     | question    | request for comment | discussion    |                   |
+Improvements | enhancement | optimization        |               |                   |
+Additions    | feature     |                     |               |                   |
+Pending      | in progress | watchlist           |               |                   |
+Inactive     | wont fix    | on hold             | invalid       | duplicate         |
+Help Wanted  | help wanted |                     |               |                   |
+Release      | major       | minor               | patch         | ready for release |
