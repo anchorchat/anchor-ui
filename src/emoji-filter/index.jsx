@@ -12,7 +12,6 @@ import onClickOutside from 'react-onclickoutside';
 import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
 import EventListener from 'react-event-listener';
-import FocusTrap from 'focus-trap-react';
 import getStyles from './get-styles';
 import styles from './styles';
 import emoji from '../emoji-menu/emoji';
@@ -237,7 +236,7 @@ class EmojiFilter extends Component {
     const modifiers = filter(emoji, { category: 'modifier' });
 
     return (
-      <FocusTrap style={getStyles.root(style)} {...custom}>
+      <section style={getStyles.root(style)} {...custom}>
         <EmojiModifiers
           modifiers={modifiers}
           changeTone={this.changeTone}
@@ -258,7 +257,7 @@ class EmojiFilter extends Component {
           ))}
         </section>
         <EventListener target="window" onKeyDown={this.handleKeyDown} />
-      </FocusTrap>
+      </section>
     );
   }
 }
