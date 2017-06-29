@@ -76,7 +76,7 @@ Group        | ----------- | ------------------- | ------------- | -------------
 ------------ | ----------- | ------------------- | ------------- | ----------------- |
 Problems     | bugs        | security            |               |                   |
 Mindless     | chore       | refactor            | documentation |                   |
-Experience   | design      | ux                  | affordance    |                   |
+Experience   | design      | ux                  | affordance    | styling           |
 Environment  | production  | staging             | test          |                   |
 Feedback     | question    | request for comment | discussion    |                   |
 Improvements | enhancement | optimization        |               |                   |
