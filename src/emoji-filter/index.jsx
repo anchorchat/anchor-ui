@@ -259,7 +259,7 @@ class EmojiFilter extends Component {
             <div
               key={icon.shortname}
               style={getStyles.emoji(color, index === selectedIndex)}
-              onMouseOver={event => this.handleSelect(event, icon, index)}
+              onMouseOver={event => this.handleChange(event, icon, index)}
               onClick={event => this.handleSelect(event, icon, index)}
             >
               {this.parseHtml(emojione.toImage(icon.shortname))}
