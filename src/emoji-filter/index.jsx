@@ -113,22 +113,29 @@ class EmojiFilter extends Component {
   }
 
   handleKeyDown = (event) => {
-    const key = event.which;
+    const key = event.which || event.keyCode;
     const { shiftKey } = event;
+    const { selectedIndex } = this.state;
+
+    if (key === 9) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
 
     if (key === 27) {
       return this.hideMenu(event);
     }
 
     if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.selectNext(event);
+      return this.selectNext(event);
     }
 
     if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
-      event.preventDefault();
-      this.selectPrevious(event);
+      return this.selectPrevious(event);
+    }
+
+    if (key === 13) {
+      this.selectEmoji(event, this.state.emoji[selectedIndex], selectedIndex);
     }
 
     return false;
