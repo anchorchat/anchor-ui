@@ -26,14 +26,14 @@ const ChannelHeader = ({
       ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
       : null
     }
-    <div style={styles.textContainer}>
+    <section style={styles.textContainer}>
       <h1 style={getStyles.text(textStyle)}>{name}</h1>
       {
         secondaryText
         ? <h2 style={getStyles.secondaryText(color, secondaryTextStyle)}>{secondaryText}</h2>
         : null
       }
-    </div>
+    </section>
     {
       rightButton
       ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
