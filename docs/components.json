@@ -1317,6 +1317,17 @@
         "required": true,
         "description": "Callback fired when a emoji is changed by navigating with the 'arrow keys' or 'tab'\n\nfunction(event: object, emoji: object) => void"
       },
+      "onMenuClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is closed\n\nfunction() => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"

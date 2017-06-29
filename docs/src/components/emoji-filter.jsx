@@ -16,7 +16,8 @@ class EmojiFilterDoc extends Component {
 
     this.state = {
       value: '',
-      valueToMatch: ''
+      valueToMatch: '',
+      selectedEmoji: ''
     };
   }
 
@@ -45,21 +46,25 @@ class EmojiFilterDoc extends Component {
   }
 
   handleSelect = (event, emoji) => {
-    const { value, valueToMatch } = this.state;
-    console.log('handleSelect');
+    const { value, valueToMatch, selectedEmoji } = this.state;
+
     this.setState({
-      value: value.replace(valueToMatch, emoji.shortname),
-      valueToMatch: ''
+      value: value.replace(selectedEmoji || valueToMatch, emoji.shortname),
+      valueToMatch: '',
+      selectedEmoji: ''
     });
   }
 
   handleChange = (event, emoji) => {
-    const { value, valueToMatch } = this.state;
-    console.log('handleChange');
+    const { value, valueToMatch, selectedEmoji } = this.state;
+
     this.setState({
-      value: value.replace(valueToMatch, emoji.shortname)
+      value: value.replace(selectedEmoji || valueToMatch, emoji.shortname),
+      selectedEmoji: emoji.shortname
     });
   }
+
+  handleClose = () => this.setState({ valueToMatch: '', selectedEmoji: '' })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'EmojiFilter');
@@ -102,6 +107,7 @@ class EmojiFilterDoc extends Component {
               value={this.state.valueToMatch}
               onSelect={this.handleSelect}
               onChange={this.handleChange}
+              onMenuClose={this.handleClose}
             />
             <MessageInput
               onChange={this.changeValue}

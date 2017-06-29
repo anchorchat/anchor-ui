@@ -39,13 +39,20 @@ const propTypes = {
    * function(event: object, emoji: object) => void
    */
   onChange: PropTypes.func.isRequired,
+  /**
+   * Callback fired when the menu is closed
+   *
+   * function() => void
+   */
+  onMenuClose: PropTypes.func,
   color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
   header: 'EmojiFilter',
   style: {},
-  headerStyle: {}
+  headerStyle: {},
+  onMenuClose: () => {}
 };
 
 /** Used for displaying a list of commands */
@@ -105,8 +112,11 @@ class EmojiFilter extends Component {
   }
 
   hideMenu = () => {
+    const { onMenuClose } = this.props;
+
     if (this.state.open) {
       this.setState({ open: false, emoji: [], selectedIndex: 0 });
+      onMenuClose();
     }
   }
 
