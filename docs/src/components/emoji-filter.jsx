@@ -51,6 +51,8 @@ class EmojiFilterDoc extends Component {
       valueToMatch: '',
       selectedEmoji: ''
     });
+
+    this.input.focus();
   }
 
   handleChange = (event, emoji) => {
