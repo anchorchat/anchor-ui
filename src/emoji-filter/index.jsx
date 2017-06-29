@@ -28,11 +28,17 @@ const propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
   /**
-   * Callback fired when a emoji is clicked
+   * Callback fired when a emoji is selected by pressing 'enter', 'escape' or by clicking the emoji
    *
    * function(event: object, emoji: object) => void
    */
   onSelect: PropTypes.func.isRequired,
+  /**
+   * Callback fired when a emoji is changed by navigating with the 'arrow keys' or 'tab'
+   *
+   * function(event: object, emoji: object) => void
+   */
+  onChange: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
 };
 
@@ -60,10 +66,7 @@ class EmojiFilter extends Component {
     const { open } = this.state;
 
     if (!value) {
-      return this.setState({
-        open: false,
-        emoji: []
-      });
+      return this.hideMenu();
     }
 
     const filteredEmoji = this.filterEmoji(nextProps.value);
@@ -76,10 +79,7 @@ class EmojiFilter extends Component {
     }
 
     if (isEmpty(filteredEmoji) && open) {
-      return this.setState({
-        open: false,
-        emoji: []
-      });
+      return this.hideMenu();
     }
 
     return this.setState({
@@ -88,14 +88,12 @@ class EmojiFilter extends Component {
   }
 
   filterEmoji = (value, tone = this.state.tone) => {
-    const argument = value.split(':')[1];
-
-    if (argument.length < 2) {
+    if (!value || value.length < 2) {
       return [];
     }
 
     const filteredEmoji = _.chain(emoji)
-    .filter(icon => icon.shortname.replace(/:/g, '').indexOf(argument) === 0)
+    .filter(icon => icon.shortname.indexOf(value) === 0)
     .reject(icon => icon.diversity && !includes(icon.title, tone))
     .value();
 
@@ -108,7 +106,7 @@ class EmojiFilter extends Component {
 
   hideMenu = () => {
     if (this.state.open) {
-      this.setState({ open: false, emoji: [] });
+      this.setState({ open: false, emoji: [], selectedIndex: 0 });
     }
   }
 
@@ -117,25 +115,24 @@ class EmojiFilter extends Component {
     const { shiftKey } = event;
     const { selectedIndex } = this.state;
 
-    if (key === 9) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-    }
-
     if (key === 27) {
       return this.hideMenu(event);
     }
 
     if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
       return this.selectNext(event);
     }
 
     if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
       return this.selectPrevious(event);
     }
 
     if (key === 13) {
-      this.selectEmoji(event, this.state.emoji[selectedIndex], selectedIndex);
+      this.handleSelect(event, this.state.emoji[selectedIndex], selectedIndex);
     }
 
     return false;
@@ -150,11 +147,11 @@ class EmojiFilter extends Component {
     const emojiSize = size(this.state.emoji);
 
     if (selectedIndex + 1 < emojiSize) {
-      return this.selectEmoji(event, this.state.emoji[selectedIndex + 1], selectedIndex + 1);
+      return this.handleChange(event, this.state.emoji[selectedIndex + 1], selectedIndex + 1);
     }
 
     if (selectedIndex === emojiSize - 1) {
-      return this.selectEmoji(event, this.state.emoji[0], 0);
+      return this.handleChange(event, this.state.emoji[0], 0);
     }
 
     return false;
@@ -165,25 +162,14 @@ class EmojiFilter extends Component {
     const emojiSize = size(this.state.emoji);
 
     if (selectedIndex === 0) {
-      return this.selectEmoji(event, this.state.emoji[emojiSize - 1], emojiSize - 1);
+      return this.handleChange(event, this.state.emoji[emojiSize - 1], emojiSize - 1);
     }
 
     if (selectedIndex - 1 < emojiSize) {
-      return this.selectEmoji(event, this.state.emoji[selectedIndex - 1], selectedIndex - 1);
+      return this.handleChange(event, this.state.emoji[selectedIndex - 1], selectedIndex - 1);
     }
 
     return false;
-  }
-
-  handleSelect = (event, shortname) => {
-    const { onSelect } = this.props;
-
-    this.setState({
-      open: false,
-      emoji: ''
-    });
-
-    onSelect(event, shortname);
   }
 
   changeTone = (tone) => {
@@ -211,11 +197,18 @@ class EmojiFilter extends Component {
     return htmlParser(html, options);
   }
 
-  selectEmoji = (event, icon, index) => {
+  handleSelect = (event, icon, index) => {
     const { onSelect } = this.props;
 
     this.setState({ selectedIndex: index });
     onSelect(event, icon);
+  }
+
+  handleChange = (event, icon, index) => {
+    const { onChange } = this.props;
+
+    this.setState({ selectedIndex: index });
+    onChange(event, icon);
   }
 
   render() {
@@ -256,8 +249,8 @@ class EmojiFilter extends Component {
             <div
               key={icon.shortname}
               style={getStyles.emoji(color, index === selectedIndex)}
-              onMouseOver={event => this.selectEmoji(event, icon, index)}
-              onClick={event => this.selectEmoji(event, icon, index)}
+              onMouseOver={event => this.handleSelect(event, icon, index)}
+              onClick={event => this.handleSelect(event, icon, index)}
             >
               {this.parseHtml(emojione.toImage(icon.shortname))}
               {icon.shortname}

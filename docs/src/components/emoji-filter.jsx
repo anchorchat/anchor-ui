@@ -15,18 +15,50 @@ class EmojiFilterDoc extends Component {
     super();
 
     this.state = {
-      value: ''
+      value: '',
+      valueToMatch: ''
     };
   }
 
-  changeValue = event => this.setState({ value: event.currentTarget.value })
+  changeValue = (event) => {
+    const value = event.currentTarget.value;
+
+    let valueToMatch = '';
+
+    if (value.indexOf(':') > -1) {
+      valueToMatch = _.last(value.split(':'));
+    }
+
+    if (value.length > this.input.selectionStart) {
+      const slicedValue = value.slice(0, this.input.selectionStart);
+
+      if (slicedValue.indexOf(':') > -1) {
+        const splitValue = slicedValue.split(':');
+
+        valueToMatch = _.last(splitValue);
+      }
+    }
+
+    console.log('valueToMatch', valueToMatch);
+
+    this.setState({ value, valueToMatch: `:${valueToMatch}` });
+  }
 
   handleSelect = (event, emoji) => {
-    // this.setState({
-    //   value: `${this.state.value} ${emoji.shortname}`
-    // });
+    const { value, valueToMatch } = this.state;
+    console.log('handleSelect');
+    this.setState({
+      value: value.replace(valueToMatch, emoji.shortname),
+      valueToMatch: ''
+    });
+  }
 
-    console.log(`selected ${emoji.shortname}`);
+  handleChange = (event, emoji) => {
+    const { value, valueToMatch } = this.state;
+    console.log('handleChange');
+    this.setState({
+      value: value.replace(valueToMatch, emoji.shortname)
+    });
   }
 
   render() {
@@ -67,8 +99,9 @@ class EmojiFilterDoc extends Component {
           <Paper style={style.paper}>
             <EmojiFilter
               style={style.commands}
-              value={this.state.value}
+              value={this.state.valueToMatch}
               onSelect={this.handleSelect}
+              onChange={this.handleChange}
             />
             <MessageInput
               onChange={this.changeValue}
@@ -76,6 +109,7 @@ class EmojiFilterDoc extends Component {
               value={this.state.value}
               sendMessage={() => {}}
               style={style.messageInput}
+              inputRef={(node) => { this.input = node; }}
             />
           </Paper>
         </section>
