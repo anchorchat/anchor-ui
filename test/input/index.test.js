@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 /* eslint react/jsx-filename-extension: [0] */
 import React from 'react';
+import { Style } from 'radium';
 import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
@@ -55,18 +56,23 @@ describe('Input', () => {
     expect(wrapper.find('input')).to.have.length(1);
   });
 
-  it('should always render a Style element', () => {
+  it('should always render a Style component', () => {
     const wrapper = shallow(<Input {...props} />).dive();
 
-    expect(wrapper.find('Style')).to.have.length(1);
+    expect(wrapper.find(Style)).to.have.length(1);
   });
 
-  it('should always render the value of the error prop', () => {
-    props.error = <span>text</span>;
+  it('should not render a span element if the error prop is not passed', () => {
     const wrapper = shallow(<Input {...props} />).dive();
 
-    expect(wrapper.find('span')).to.have.length(2);
-    expect(wrapper.containsMatchingElement(<span>text</span>)).to.equal(true);
+    expect(wrapper.find('span')).to.have.length(0);
+  });
+
+  it('should render a span element if the error prop is passed', () => {
+    props.error = 'error';
+    const wrapper = shallow(<Input {...props} />).dive();
+
+    expect(wrapper.containsMatchingElement(<span>error</span>)).to.equal(true);
     props.error = '';
   });
 
@@ -84,7 +90,9 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Input {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.disabled, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.disabled, props.style
+    );
   });
 
   it('should get label styles', () => {
@@ -98,7 +106,9 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'input');
 
     shallow(<Input {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.error, props.inputStyle);
+    expect(spy).to.have.been.calledWith(
+      props.error, props.inputStyle
+    );
   });
 
   it('should get error styles', () => {

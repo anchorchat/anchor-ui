@@ -68,7 +68,7 @@ describe('Lightbox', () => {
     expect(wrapper.find('img')).to.have.length(1);
   });
 
-  it('should pass the value of the title prop to the header element', () => {
+  it('should pass the title prop to the header element', () => {
     const wrapper = shallow(<Lightbox {...props} />);
 
     expect(wrapper.containsMatchingElement(
@@ -81,7 +81,7 @@ describe('Lightbox', () => {
     ).to.equal(true);
   });
 
-  it('should execute section onClick function', () => {
+  it('should call section onClick function', () => {
     const spy = sinon.spy();
     props.hideLightbox = spy;
     const wrapper = shallow(<Lightbox {...props} />);
@@ -91,7 +91,7 @@ describe('Lightbox', () => {
     props.hideLightbox = () => {};
   });
 
-  it('should execute Button onClick function', () => {
+  it('should call Button onClick function', () => {
     const spy = sinon.spy();
     props.hideLightbox = spy;
     const wrapper = shallow(<Lightbox {...props} />);

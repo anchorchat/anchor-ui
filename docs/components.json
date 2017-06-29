@@ -5307,7 +5307,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when SearchBox's query changes, with debounce\n\nfunction(event: object) => void"
+        "description": "Callback fired when SearchBox's query changes, with debounce\n\nfunction(query: string) => void"
       },
       "value": {
         "type": {
