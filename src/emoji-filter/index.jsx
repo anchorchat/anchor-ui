@@ -6,9 +6,13 @@ import map from 'lodash/map';
 import filter from 'lodash/filter';
 import includes from 'lodash/includes';
 import isEmpty from 'lodash/isEmpty';
+import size from 'lodash/size';
+import _ from 'lodash';
 import onClickOutside from 'react-onclickoutside';
 import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
+import EventListener from 'react-event-listener';
+import FocusTrap from 'focus-trap-react';
 import getStyles from './get-styles';
 import styles from './styles';
 import emoji from '../emoji-menu/emoji';
@@ -85,29 +89,85 @@ class EmojiFilter extends Component {
   }
 
   filterEmoji = (value) => {
-    const split = value.split(':');
-    console.log(split);
     const argument = value.split(':')[1];
+    console.log(this.state.tone);
 
     if (argument.length < 2) {
       return [];
     }
 
-    const filteredEmoji = filter(emoji, icon => icon.shortname.replace(/:/g, '').indexOf(argument) === 0);
+    const filteredEmoji = _.chain(emoji)
+    .filter(icon => icon.shortname.replace(/:/g, '').indexOf(argument) === 0)
+    .reject(icon => icon.diversity && !includes(icon.title, this.state.tone))
+    .value();
 
     if (filteredEmoji.length === 1 && includes(value, filteredEmoji[0].shortname)) {
-      console.log(filteredEmoji, argument);
       return [];
     }
 
     return filteredEmoji;
   }
 
+  hideMenu = () => {
+    if (this.state.open) {
+      this.setState({ open: false, emoji: [] });
+    }
+  }
+
+  handleKeyDown = (event) => {
+    const key = event.which;
+    const { shiftKey } = event;
+
+    if (key === 27) {
+      return this.hideMenu(event);
+    }
+
+    if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.selectNext(event);
+    }
+
+    if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
+      event.preventDefault();
+      this.selectPrevious(event);
+    }
+
+    return false;
+  }
+
   handleClickOutside = () => {
-    this.setState({
-      open: false,
-      emoji: []
-    });
+    this.hideMenu();
+  }
+
+  selectNext = (event) => {
+    const { selectedIndex } = this.state;
+    const emojiSize = size(this.state.emoji);
+
+    if (selectedIndex + 1 < emojiSize) {
+      return this.selectEmoji(event, this.state.emoji[selectedIndex + 1], selectedIndex + 1);
+    }
+
+    if (selectedIndex === emojiSize - 1) {
+      return this.selectEmoji(event, this.state.emoji[0], 0);
+    }
+
+    return false;
+  }
+
+  selectPrevious = (event) => {
+    const { selectedIndex } = this.state;
+    const emojiSize = size(this.state.emoji);
+
+    if (selectedIndex === 0) {
+      return this.selectEmoji(event, this.state.emoji[emojiSize - 1], emojiSize - 1);
+    }
+
+    if (selectedIndex - 1 < emojiSize) {
+      return this.selectEmoji(event, this.state.emoji[selectedIndex - 1], selectedIndex - 1);
+    }
+
+    return false;
   }
 
   handleSelect = (event, shortname) => {
@@ -121,7 +181,10 @@ class EmojiFilter extends Component {
     onSelect(event, shortname);
   }
 
-  changeTone = tone => this.setState({ tone })
+  changeTone = (tone) => {
+    this.setState({ tone });
+    this.filterEmoji(this.props.value);
+  }
 
   parseHtml = (html) => {
     const options = {
@@ -173,16 +236,8 @@ class EmojiFilter extends Component {
 
     const modifiers = filter(emoji, { category: 'modifier' });
 
-    const filteredEmoji = filter(this.state.emoji, (icon) => {
-      if (icon.diversity) {
-        return includes(icon.title, tone);
-      }
-
-      return true;
-    });
-
     return (
-      <section style={getStyles.root(style)} {...custom}>
+      <FocusTrap style={getStyles.root(style)} {...custom}>
         <EmojiModifiers
           modifiers={modifiers}
           changeTone={this.changeTone}
@@ -190,7 +245,7 @@ class EmojiFilter extends Component {
           style={getStyles.header(headerStyle)}
         />
         <section style={getStyles.commands()}>
-          {map(filteredEmoji, (icon, index) => (
+          {map(this.state.emoji, (icon, index) => (
             <div
               key={icon.shortname}
               style={getStyles.emoji(color, index === selectedIndex)}
@@ -202,7 +257,8 @@ class EmojiFilter extends Component {
             </div>
           ))}
         </section>
-      </section>
+        <EventListener target="window" onKeyDown={this.handleKeyDown} />
+      </FocusTrap>
     );
   }
 }

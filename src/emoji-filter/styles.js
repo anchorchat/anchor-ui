@@ -27,7 +27,6 @@ export default {
     fontSize: '14px',
     cursor: 'pointer',
     color: colors.secondaryText,
-    transition: 'all .3s ease-in-out',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
