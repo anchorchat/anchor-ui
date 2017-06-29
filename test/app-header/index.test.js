@@ -48,7 +48,6 @@ describe('AppHeader', () => {
     props.leftButton = <button />;
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.leftButton = null;
   });
@@ -63,22 +62,20 @@ describe('AppHeader', () => {
     props.icon = <img alt="alt" />;
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><img alt="alt" /></div>)).to.equal(true);
     props.icon = null;
   });
 
-  it('should not render a h1 element if the text prop is not passed', () => {
+  it('should not render an h1 element if the text prop is not passed', () => {
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
     expect(wrapper.find('h1')).to.have.length(0);
   });
 
-  it('should render a h1 element if the text prop is passed', () => {
+  it('should render an h1 element if the text prop is passed', () => {
     props.text = 'text';
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
-    expect(wrapper.find('h1')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
     props.text = null;
   });
@@ -93,7 +90,6 @@ describe('AppHeader', () => {
     props.rightButton = <button />;
     const wrapper = shallow(<AppHeader {...props} />).dive().dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.rightButton = null;
   });

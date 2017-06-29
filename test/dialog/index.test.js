@@ -66,17 +66,16 @@ describe('Dialog', () => {
     expect(wrapper.find(IconClose)).to.have.length(1);
   });
 
-  it('should not render a h1 element if the header prop is not passed', () => {
+  it('should not render an h1 element if the header prop is not passed', () => {
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
     expect(wrapper.find('h1')).to.have.length(0);
   });
 
-  it('should render a h1 element if the header prop is passed', () => {
+  it('should render an h1 element if the header prop is passed', () => {
     props.header = 'header';
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
-    expect(wrapper.find('h1')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
     props.header = null;
   });
@@ -87,7 +86,7 @@ describe('Dialog', () => {
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
-  it('should execute section onClick function', () => {
+  it('should call section onClick function', () => {
     const spy = sinon.spy();
     props.hideDialog = spy;
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
@@ -97,7 +96,7 @@ describe('Dialog', () => {
     props.hideDialog = () => {};
   });
 
-  it('should execute Button onClick function', () => {
+  it('should call Button onClick function', () => {
     const spy = sinon.spy();
     props.hideDialog = spy;
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
@@ -111,7 +110,9 @@ describe('Dialog', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Dialog {...props} />).dive().dive();
-    expect(spy).to.have.been.calledWith(props.color, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.color, props.style
+    );
   });
 
   it('should get header styles', () => {

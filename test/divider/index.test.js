@@ -38,7 +38,7 @@ describe('Divider', () => {
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
-  it('should pass the value of the text prop to the h1 element', () => {
+  it('should pass the text prop to the h1 element', () => {
     const wrapper = shallow(<Divider {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
