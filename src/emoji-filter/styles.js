@@ -1,6 +1,5 @@
 import colors from '../settings/colors';
 import styles from '../settings/styles';
-import darken from '../internal/darken';
 
 export default {
   root: {
@@ -24,6 +23,7 @@ export default {
     height: '32px',
     boxSizing: 'border-box',
     padding: '4px',
+    margin: '4px',
     fontSize: '14px',
     cursor: 'pointer',
     color: colors.secondaryText,
@@ -31,13 +31,7 @@ export default {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-
-    ':hover': {
-      backgroundColor: darken(colors.white, 0.05)
-    },
-    ':active': {
-      backgroundColor: darken(colors.white, 0.15)
-    }
+    borderRadius: '3px'
   },
   attributionLink: {
     color: colors.secondaryText,

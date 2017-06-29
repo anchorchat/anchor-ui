@@ -13,6 +13,7 @@ import getStyles from './get-styles';
 import styles from './styles';
 import emoji from '../emoji-menu/emoji';
 import EmojiModifiers from '../emoji-menu/emoji-modifiers';
+import themeable from '../themeable';
 
 const propTypes = {
   /** Text to display in the header */
@@ -29,12 +30,7 @@ const propTypes = {
    * function(event: object, emoji: object) => void
    */
   onSelect: PropTypes.func.isRequired,
-  /**
-   * Callback fired when a emoji is moused over
-   *
-   * function(event: object, emoji: object) => void
-   */
-  onMouseOver: PropTypes.func.isRequired
+  color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
@@ -51,7 +47,8 @@ class EmojiFilter extends Component {
     this.state = {
       open: false,
       emoji: [],
-      tone: 'tone0'
+      tone: 'tone0',
+      selectedIndex: 0
     };
   }
 
@@ -144,11 +141,17 @@ class EmojiFilter extends Component {
     return htmlParser(html, options);
   }
 
+  selectEmoji = (event, icon, index) => {
+    const { onSelect } = this.props;
+
+    this.setState({ selectedIndex: index });
+    onSelect(event, icon);
+  }
+
   render() {
     const {
       header,
       value, // eslint-disable-line no-unused-vars
-      onMouseOver,
       onSelect, // eslint-disable-line no-unused-vars
       style,
       headerStyle,
@@ -159,9 +162,10 @@ class EmojiFilter extends Component {
       disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       leading, // eslint-disable-line no-unused-vars, react/prop-types
+      color,
       ...custom
     } = this.props;
-    const { open, tone } = this.state;
+    const { open, tone, selectedIndex } = this.state;
 
     if (!open) {
       return null;
@@ -186,12 +190,12 @@ class EmojiFilter extends Component {
           style={getStyles.header(headerStyle)}
         />
         <section style={getStyles.commands()}>
-          {map(filteredEmoji, icon => (
+          {map(filteredEmoji, (icon, index) => (
             <div
               key={icon.shortname}
-              style={styles.emoji}
-              onMouseOver={event => onMouseOver(event, icon)}
-              onClick={event => onSelect(event, icon)}
+              style={getStyles.emoji(color, index === selectedIndex)}
+              onMouseOver={event => this.selectEmoji(event, icon, index)}
+              onClick={event => this.selectEmoji(event, icon, index)}
             >
               {this.parseHtml(emojione.toImage(icon.shortname))}
               {icon.shortname}
@@ -208,6 +212,7 @@ EmojiFilter.propTypes = propTypes;
 EmojiFilter.defaultProps = defaultProps;
 
 const enhance = compose(
+  themeable(),
   onClickOutside,
   Radium
 );

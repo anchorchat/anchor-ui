@@ -1,5 +1,3 @@
-/* global alert */
-/* eslint no-alert: [0] */
 /* eslint no-console: [0] */
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -23,14 +21,12 @@ class EmojiFilterDoc extends Component {
 
   changeValue = event => this.setState({ value: event.currentTarget.value })
 
-  handleMouseOver = (event, emoji) => console.log(emoji.shortname)
-
   handleSelect = (event, emoji) => {
-    this.setState({
-      value: `${this.state.value} ${emoji.shortname}`
-    });
+    // this.setState({
+    //   value: `${this.state.value} ${emoji.shortname}`
+    // });
 
-    alert(`selected ${emoji.shortname}`);
+    console.log(`selected ${emoji.shortname}`);
   }
 
   render() {
@@ -72,7 +68,6 @@ class EmojiFilterDoc extends Component {
             <EmojiFilter
               style={style.commands}
               value={this.state.value}
-              onMouseOver={this.handleMouseOver}
               onSelect={this.handleSelect}
             />
             <MessageInput
