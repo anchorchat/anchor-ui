@@ -40,8 +40,6 @@ class EmojiFilterDoc extends Component {
       }
     }
 
-    console.log('valueToMatch', valueToMatch);
-
     this.setState({ value, valueToMatch: `:${valueToMatch}` });
   }
 
