@@ -7,6 +7,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import Alert from '../../src/alert';
 import Button from '../../src/button';
+import IconClose from '../../src/icons/icon-close';
 import IconSuccess from '../../src/icons/icon-success';
 import getStyles from '../../src/alert/get-styles';
 
@@ -63,19 +64,33 @@ describe('Alert', () => {
     props.hideAlert = null;
   });
 
-  it('should pass the value of the text prop to the p element', () => {
+  it('should not render an IconClose icon if the hideAlert prop is not passed', () => {
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    expect(wrapper.find(IconClose)).to.have.length(0);
+  });
+
+  it('should render an IconClose icon if the hideAlert prop is passed', () => {
+    props.hideAlert = () => {};
+    const wrapper = shallow(<Alert {...props} />).dive();
+
+    expect(wrapper.find(IconClose)).to.have.length(1);
+    props.hideAlert = null;
+  });
+
+  it('should pass the text prop to the p element', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<p>text</p>)).to.equal(true);
   });
 
-  it('should pass the value of the type prop to the icons object', () => {
+  it('should pass the type prop to the icons object', () => {
     const wrapper = shallow(<Alert {...props} />).dive();
 
     expect(wrapper.find(IconSuccess)).to.have.length(1);
   });
 
-  it('should execute Button onClick function', () => {
+  it('should call Button onClick function', () => {
     const spy = sinon.spy();
     props.hideAlert = spy;
     const wrapper = shallow(<Alert {...props} />).dive();
@@ -89,7 +104,9 @@ describe('Alert', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Alert {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.type, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.type, props.style
+    );
   });
 
   it('should get icon styles', () => {

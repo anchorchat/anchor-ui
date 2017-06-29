@@ -50,7 +50,9 @@ describe('Avatar', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Avatar {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.image, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.image, props.style
+    );
   });
 
   it('should get status styles', () => {
@@ -58,7 +60,9 @@ describe('Avatar', () => {
     const spy = sinon.spy(getStyles, 'status');
 
     shallow(<Avatar {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.status, props.statusStyle);
+    expect(spy).to.have.been.calledWith(
+      props.status, props.statusStyle
+    );
     props.status = '';
   });
 });
