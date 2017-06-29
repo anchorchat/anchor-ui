@@ -234,7 +234,7 @@ class EmojiFilter extends Component {
       stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
       disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
       enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      leading, // eslint-disable-line no-unused-vars, react/prop-types
+      onMenuClose, // eslint-disable-line no-unused-vars
       color,
       ...custom
     } = this.props;
