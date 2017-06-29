@@ -95,7 +95,7 @@ class EmojiFilter extends Component {
   }
 
   filterEmoji = (value, tone = this.state.tone) => {
-    if (!value || value.length < 2) {
+    if (!value || value.length < 3) {
       return [];
     }
 
