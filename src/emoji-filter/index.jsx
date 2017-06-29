@@ -19,8 +19,6 @@ import EmojiModifiers from '../emoji-menu/emoji-modifiers';
 import themeable from '../themeable';
 
 const propTypes = {
-  /** Text to display in the header */
-  header: PropTypes.node,
   /** Filter emoji based on input value */
   value: PropTypes.string.isRequired,
   /** Override the styles of the root element */
@@ -49,7 +47,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  header: 'EmojiFilter',
   style: {},
   headerStyle: {},
   onMenuClose: () => {}
@@ -223,7 +220,6 @@ class EmojiFilter extends Component {
 
   render() {
     const {
-      header,
       value, // eslint-disable-line no-unused-vars
       onSelect, // eslint-disable-line no-unused-vars
       style,

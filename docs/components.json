@@ -1261,17 +1261,6 @@
     "displayName": "EmojiFilter",
     "methods": [],
     "props": {
-      "header": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Text to display in the header",
-        "defaultValue": {
-          "value": "'EmojiFilter'",
-          "computed": false
-        }
-      },
       "value": {
         "type": {
           "name": "string"
