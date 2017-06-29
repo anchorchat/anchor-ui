@@ -87,9 +87,8 @@ class EmojiFilter extends Component {
     });
   }
 
-  filterEmoji = (value) => {
+  filterEmoji = (value, tone = this.state.tone) => {
     const argument = value.split(':')[1];
-    console.log(this.state.tone);
 
     if (argument.length < 2) {
       return [];
@@ -97,7 +96,7 @@ class EmojiFilter extends Component {
 
     const filteredEmoji = _.chain(emoji)
     .filter(icon => icon.shortname.replace(/:/g, '').indexOf(argument) === 0)
-    .reject(icon => icon.diversity && !includes(icon.title, this.state.tone))
+    .reject(icon => icon.diversity && !includes(icon.title, tone))
     .value();
 
     if (filteredEmoji.length === 1 && includes(value, filteredEmoji[0].shortname)) {
@@ -181,8 +180,10 @@ class EmojiFilter extends Component {
   }
 
   changeTone = (tone) => {
-    this.setState({ tone });
-    this.filterEmoji(this.props.value);
+    this.setState({
+      tone,
+      emoji: this.filterEmoji(this.props.value, tone)
+    });
   }
 
   parseHtml = (html) => {
