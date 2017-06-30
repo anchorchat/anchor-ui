@@ -20,11 +20,25 @@ class Input extends Component {
     const { onChange } = this.props;
     const { height } = this.state;
 
+    this.textarea.style.height = '1px';
+
+    if (this.textarea.scrollHeight > 48) {
+      this.setState({
+        multiLine: true
+      });
+    } else if (this.textarea.scrollHeight <= 48) {
+      this.setState({
+        multiLine: false
+      });
+    }
+
     if (this.textarea.scrollHeight !== height) {
       this.setState({
         height: this.textarea.scrollHeight
       });
     }
+
+    this.textarea.style.height = '100%';
 
     onChange(event);
   }
