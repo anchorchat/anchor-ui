@@ -5,7 +5,7 @@ const styleSheet = {
     background: colors.white,
     borderBottom: `1px solid ${colors.grey}`,
     position: 'relative',
-    padding: '8px',
+    padding: '8px 56px',
     boxSizing: 'border-box',
     height: '60px',
     display: 'flex',
@@ -13,7 +13,7 @@ const styleSheet = {
     alignItems: 'center'
   },
   textContainer: {
-    width: 'calc(100% - 96px)'
+    width: '100%'
   },
   text: {
     color: colors.secondaryText,
@@ -40,11 +40,15 @@ const styleSheet = {
   },
   rightButton: {
     width: '40px',
-    height: '40px'
+    height: '40px',
+    position: 'absolute',
+    right: '8px'
   },
   leftButton: {
     width: '40px',
-    height: '40px'
+    height: '40px',
+    position: 'absolute',
+    left: '8px'
   }
 };
 
