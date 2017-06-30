@@ -6,3 +6,4 @@ debug
 /components
 .nyc_output
 emojione.json
+package-lock.json
