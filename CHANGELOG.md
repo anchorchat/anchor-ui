@@ -2,11 +2,30 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.2...HEAD)
 
 **Merged pull requests:**
 
+- \[4.0.2\] Added secondaryText to ChannelHeader, fixed TableHeader text alignment, fixed Pagination buttons, added tests. [\#775](https://github.com/anchorchat/anchor-ui/pull/775) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.0.2](https://github.com/anchorchat/anchor-ui/tree/v4.0.2) (2017-06-29)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.1...v4.0.2)
+
+**Implemented enhancements:**
+
+- Added secondaryText to ChannelHeader. [\#773](https://github.com/anchorchat/anchor-ui/pull/773) ([sjaakluthart](https://github.com/sjaakluthart))
+- added textAlign: 'left' [\#772](https://github.com/anchorchat/anchor-ui/pull/772) ([MrBamBam](https://github.com/MrBamBam))
+
+**Fixed bugs:**
+
+- \[Pagination\] instead of button width, use min-width [\#770](https://github.com/anchorchat/anchor-ui/issues/770)
+
+**Merged pull requests:**
+
+- Issue \#770 [\#774](https://github.com/anchorchat/anchor-ui/pull/774) ([sjaakluthart](https://github.com/sjaakluthart))
+- Updated LABELS.md. [\#771](https://github.com/anchorchat/anchor-ui/pull/771) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.0.1\] Added textDecoration none to EmojiMenu attribution link, made onMentionClick not required, fixed bug with SearchBox changeQuery by passing value instead of event [\#768](https://github.com/anchorchat/anchor-ui/pull/768) ([sjaakluthart](https://github.com/sjaakluthart))
+- Component tests: Consistency and test fixes [\#763](https://github.com/anchorchat/anchor-ui/pull/763) ([Ralphvandodewaard](https://github.com/Ralphvandodewaard))
 
 ## [v4.0.1](https://github.com/anchorchat/anchor-ui/tree/v4.0.1) (2017-06-26)
 [Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.0...v4.0.1)
