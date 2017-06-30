@@ -1,0 +1,91 @@
+{
+  "name": "anchor-ui",
+  "version": "4.0.3",
+  "description": "React Component UI Kit",
+  "main": "dist/index.js",
+  "files": [
+    "/*"
+  ],
+  "scripts": {
+    "test": "NODE_ENV=test nyc mocha --compilers js:babel-core/register test/*",
+    "test:watch": "NODE_ENV=test mocha --watch --compilers js:babel-core/register test/*",
+    "watch": "babel -d dist/ -w src/",
+    "compile": "rm -rf dist && babel -d dist/ src/",
+    "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
+    "copy": "cp -rf package.json README.md dist",
+    "build": "npm run compile && npm run copy",
+    "dist": "cd dist && npm publish",
+    "docs": "react-docgen components --out docs/components.json --pretty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchorchat/anchor-ui.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Sjaak Luthart <sjaak.luthart@anchor.chat>",
+  "contributors": [
+    "Ian Stewart <ian.stewart@anchor.chat>",
+    "Lars Tadema <lars.tadema@anchor.chat>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anchorchat/anchor-ui/issues"
+  },
+  "homepage": "https://github.com/anchorchat/anchor-ui#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.7.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.1.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-react": "^7.1.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
+    "prettier": "^1.4.4",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-docgen": "^2.14.0",
+    "react-dom": "^15.4.2",
+    "react-test-renderer": "^15.5.4",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.9.0"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  },
+  "peerDependencies": {
+    "prop-types": "^15.4.1",
+    "react": "^15.4.1"
+  },
+  "dependencies": {
+    "color": "^1.0.3",
+    "date-fns": "^1.27.2",
+    "emojione": "^3.0.3",
+    "escape-html": "^1.0.3",
+    "html-react-parser": "^0.3.4",
+    "lodash": "^4.17.4",
+    "radium": "^0.19.0",
+    "react-event-listener": "^0.4.5",
+    "react-measure": "^1.4.5",
+    "react-onclickoutside": "^6.1.1",
+    "recompose": "^0.22.0",
+    "tlds": "^1.182.0"
+  }
+}
