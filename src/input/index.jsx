@@ -58,6 +58,8 @@ const defaultProps = {
   multiLine: false
 };
 
+const displayName = 'Input';
+
 /** General purpose form input */
 class Input extends Component {
   constructor() {
@@ -164,7 +166,7 @@ class Input extends Component {
   }
 }
 
-Input.displayName = 'Input';
+Input.displayName = displayName;
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 
