@@ -143,12 +143,12 @@ class Select extends Component {
       error,
       errorStyle,
       color,
-      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
-      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
-      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
-      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
-      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      eventTypes, // eslint-disable-line react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line react/prop-types
+      preventDefault, // eslint-disable-line react/prop-types
+      stopPropagation, // eslint-disable-line react/prop-types
+      disableOnClickOutside, // eslint-disable-line react/prop-types
+      enableOnClickOutside, // eslint-disable-line react/prop-types
       ...custom
     } = this.props;
 

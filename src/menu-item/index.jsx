@@ -80,8 +80,8 @@ class MenuItem extends Component {
       textStyle,
       iconStyle,
       active,
-      closeMenu, // eslint-disable-line no-unused-vars
-      onClick, // eslint-disable-line no-unused-vars
+      closeMenu,
+      onClick,
       rightButton,
       buttonStyle,
       color,

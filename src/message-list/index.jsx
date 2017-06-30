@@ -92,9 +92,9 @@ class MessageList extends Component {
       children,
       style,
       listStyle,
-      addRef, // eslint-disable-line no-unused-vars
-      scrollOffset, // eslint-disable-line no-unused-vars
-      autoScroll, // eslint-disable-line no-unused-vars
+      addRef,
+      scrollOffset,
+      autoScroll,
       ...custom
     } = this.props;
 
