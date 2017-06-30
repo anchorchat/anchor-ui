@@ -76,16 +76,6 @@ class Input extends Component {
 
     this.textarea.style.height = '1px';
 
-    if (this.textarea.scrollHeight > 48) {
-      this.setState({
-        multiLine: true
-      });
-    } else if (this.textarea.scrollHeight <= 48) {
-      this.setState({
-        multiLine: false
-      });
-    }
-
     if (this.textarea.scrollHeight !== height) {
       this.setState({
         height: this.textarea.scrollHeight

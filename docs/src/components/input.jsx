@@ -84,6 +84,7 @@ class InputDoc extends Component {
               label="Default value example"
               name="example"
               style={style.input}
+              multiLine
             />
             <Input
               onChange={this.handleChangeText}
