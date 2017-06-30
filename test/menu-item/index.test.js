@@ -21,11 +21,9 @@ describe('MenuItem', () => {
     closeMenu: null,
     rightButton: null,
     color: '#1BA6C4',
-    text: '',
+    text: 'text',
     onClick: () => {}
   };
-  const text = 'text';
-  const onClick = () => {};
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -36,47 +34,63 @@ describe('MenuItem', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<MenuItem {...props}>{onClick}</MenuItem>).dive();
+    const wrapper = shallow(<MenuItem {...props} />).dive();
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
+  it('should not render a div element if the icon prop is not passed', () => {
+    const wrapper = shallow(<MenuItem {...props} />).dive();
+
+    expect(wrapper.find('div')).to.have.length(0);
+  });
+
+  it('should render a div element if the icon prop is passed', () => {
+    props.icon = <span />;
+    const wrapper = shallow(<MenuItem {...props} />).dive();
+
+    expect(wrapper.containsMatchingElement(<div><span /></div>)).to.equal(true);
+    props.icon = null;
+  });
+
   it('should always render a p element', () => {
-    const wrapper = shallow(<MenuItem {...props}>{text}</MenuItem>).dive();
+    const wrapper = shallow(<MenuItem {...props} />).dive();
 
     expect(wrapper.find('p')).to.have.length(1);
   });
 
-  it('should always render the value of the text prop', () => {
-    const wrapper = shallow(<MenuItem {...props} >{text}</MenuItem>);
+  it('should pass the text prop to the p element', () => {
+    const wrapper = shallow(<MenuItem {...props} />).dive();
 
-    expect(wrapper.contains(text)).to.equal(true);
+    expect(wrapper.containsMatchingElement(
+      <p>
+        text
+      </p>)
+    ).to.equal(true);
   });
 
-  it('should render a div element if the icon prop is passed', () => {
-    let wrapper = shallow(<MenuItem {...props} />).dive();
+  it('should not render a div element if the rightButton prop is not passed', () => {
+    const wrapper = shallow(<MenuItem {...props} />).dive();
 
     expect(wrapper.find('div')).to.have.length(0);
-
-    props.icon = 'text';
-    wrapper = shallow(<MenuItem {...props} />).dive();
-
-    expect(wrapper.find('div')).to.have.length(1);
-    expect(wrapper.containsMatchingElement(<div>text</div>)).to.equal(true);
-    props.icon = null;
   });
 
   it('should render a div element if the rightButton prop is passed', () => {
-    let wrapper = shallow(<MenuItem {...props} />).dive();
+    props.rightButton = <button />;
+    const wrapper = shallow(<MenuItem {...props} />).dive();
 
-    expect(wrapper.find('div')).to.have.length(0);
-
-    props.rightButton = 'text';
-    wrapper = shallow(<MenuItem {...props} />).dive();
-
-    expect(wrapper.find('div')).to.have.length(1);
-    expect(wrapper.containsMatchingElement(<div>text</div>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.rightButton = null;
+  });
+
+  it('should call section onClick function', () => {
+    const spy = sinon.spy();
+    props.onClick = spy;
+    const wrapper = shallow(<MenuItem {...props} />).dive();
+
+    wrapper.find('section').simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.onClick = () => {};
   });
 
   it('should get root styles', () => {

@@ -1,4 +1,7 @@
 export default {
+  root: {
+    position: 'relative'
+  },
   messageContainer: {
     display: 'flex',
     flexDirection: 'row',

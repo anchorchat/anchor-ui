@@ -18,7 +18,7 @@ class MessageList extends Component {
     addRef: PropTypes.func,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
-    /** Override the styles of the <ul /> element */
+    /** Override the styles of the ul element */
     listStyle: PropTypes.instanceOf(Object),
     /** Enable autoScroll */
     autoScroll: PropTypes.bool
@@ -92,9 +92,9 @@ class MessageList extends Component {
       children,
       style,
       listStyle,
-      addRef, // eslint-disable-line no-unused-vars
-      scrollOffset, // eslint-disable-line no-unused-vars
-      autoScroll, // eslint-disable-line no-unused-vars
+      addRef,
+      scrollOffset,
+      autoScroll,
       ...custom
     } = this.props;
 

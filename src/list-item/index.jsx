@@ -30,7 +30,11 @@ class ListItem extends Component {
     primaryTextStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the secondaryText element */
     secondaryTextStyle: PropTypes.instanceOf(Object),
-    /** Click function for the root element */
+    /**
+     * Callback fired when the ListItem is clicked
+     *
+     * function(event: object) => void
+     */
     onClick: PropTypes.func,
     /** Add active styles to ListItem */
     active: PropTypes.bool,
@@ -49,8 +53,14 @@ class ListItem extends Component {
     children: PropTypes.node,
     /** Control toggle state of nested list. */
     open: PropTypes.bool,
-    /** Callback function fired when the ListItem toggles its nested list */
+    /**
+     * Callback fired when the nested list is toggled
+     *
+     * function(event: object) => void
+     */
     onNestedListToggle: PropTypes.func,
+    /** Nested depth of ListItem. This property is automatically managed, modify at own risk. */
+    nestedLevel: PropTypes.number,
     color: PropTypes.string.isRequired
   }
 
@@ -69,7 +79,8 @@ class ListItem extends Component {
     blocked: false,
     children: null,
     open: null,
-    onNestedListToggle: () => {}
+    onNestedListToggle: () => {},
+    nestedLevel: 0
   }
 
   static contextTypes = {
@@ -102,11 +113,11 @@ class ListItem extends Component {
     }
   }
 
-  toggleNestedList() {
+  toggleNestedList(event) {
     const { onNestedListToggle } = this.props;
 
     this.setState({ open: !this.state.open });
-    onNestedListToggle(!this.state.open);
+    onNestedListToggle(event, !this.state.open);
   }
 
   render() {
@@ -125,8 +136,9 @@ class ListItem extends Component {
       muted,
       blocked,
       children,
-      open, // eslint-disable-line no-unused-vars
-      onNestedListToggle, // eslint-disable-line no-unused-vars
+      open,
+      onNestedListToggle,
+      nestedLevel,
       color,
       ...custom
     } = this.props;
@@ -136,7 +148,7 @@ class ListItem extends Component {
 
     if (children) {
       nestedList = (
-        <List open={this.state.open}>
+        <List nestedLevel={nestedLevel + 1} open={this.state.open}>
           {children}
         </List>
       );
@@ -144,7 +156,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, style)} {...custom}>
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, nestedLevel, style)} {...custom}>
           {
             avatar
             ? <div style={styles.avatar}>

@@ -4,6 +4,7 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import find from 'lodash/find';
 import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
 import IconChevronDown from '../icons/icon-chevron-down';
@@ -17,11 +18,15 @@ class Select extends Component {
   static displayName = 'Select'
 
   static propTypes = {
-    /** The Selects content (MenuItem), each child must have a value prop */
+    /** The Select's content (MenuItem), each child must have a value prop */
     children: PropTypes.node.isRequired,
     /** The Selects value */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    /** Change the Selects value */
+    /**
+     * Callback fired when Select's value changes
+     *
+     * function(event: object, value: string || number) => void
+     */
     onChange: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
@@ -33,7 +38,7 @@ class Select extends Component {
     labelStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the content container */
     contentStyle: PropTypes.instanceOf(Object),
-    /** The Selects placeholder */
+    /** The Select's placeholder */
     placeholder: PropTypes.string,
     /** Display an error message */
     error: PropTypes.node,
@@ -103,13 +108,25 @@ class Select extends Component {
   }
 
   closeSelect() {
-    this.setState({
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
+
+    return this.setState({
       open: false,
       positioned: false
     });
   }
 
   handleClickOutside = () => this.closeSelect()
+
+  handleKeyUp = (event) => {
+    if (event.which === 27) {
+      this.closeSelect();
+    }
+  }
 
   render() {
     const { open, position, popOverWidth } = this.state;
@@ -126,12 +143,12 @@ class Select extends Component {
       error,
       errorStyle,
       color,
-      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
-      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
-      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
-      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
-      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      eventTypes, // eslint-disable-line react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line react/prop-types
+      preventDefault, // eslint-disable-line react/prop-types
+      stopPropagation, // eslint-disable-line react/prop-types
+      disableOnClickOutside, // eslint-disable-line react/prop-types
+      enableOnClickOutside, // eslint-disable-line react/prop-types
       ...custom
     } = this.props;
 
@@ -141,7 +158,7 @@ class Select extends Component {
         {
           closeMenu: this.closeSelect,
           active: child.props.value === value,
-          onClick: () => onChange(child.props.value)
+          onClick: event => onChange(event, child.props.value)
         }
       )
     );
@@ -178,6 +195,11 @@ class Select extends Component {
           {childrenWithProps}
         </PopOver>
         {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
+        {
+          open
+          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
+          : null
+        }
       </section>
     );
   }

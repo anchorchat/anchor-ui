@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 /* eslint react/jsx-filename-extension: [0] */
 import React from 'react';
+import { Style } from 'radium';
 import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
@@ -12,23 +13,22 @@ chai.use(sinonChai);
 
 describe('Input', () => {
   const props = {
-    style: {},
-    inputStyle: {},
-    labelStyle: {},
+    onChange: () => {},
+    value: 1,
+    type: 'text',
+    placeholder: '',
+    label: '',
+    name: '',
+    style: { root: true },
+    inputStyle: { input: true },
+    labelStyle: { label: true },
     maxLength: 500,
     inputRef: null,
     disabled: false,
-    error: null,
-    type: 'text',
-    errorStyle: {},
-    placeholder: '',
-    label: null,
-    placeholderStyle: {},
-    value: 1,
-    name: '',
-    onChange: () => {}
+    error: '',
+    errorStyle: { error: true },
+    placeholderStyle: { placeholder: true }
   };
-
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -50,32 +50,49 @@ describe('Input', () => {
     expect(wrapper.find('label')).to.have.length(1);
   });
 
-  it('should always render a input element', () => {
+  it('should always render an input element', () => {
     const wrapper = shallow(<Input {...props} />).dive();
 
     expect(wrapper.find('input')).to.have.length(1);
   });
 
-  it('should always render a Style element', () => {
+  it('should always render a Style component', () => {
     const wrapper = shallow(<Input {...props} />).dive();
 
-    expect(wrapper.find('Style')).to.have.length(1);
+    expect(wrapper.find(Style)).to.have.length(1);
   });
 
-  it('should always render the value of the error prop', () => {
-    props.error = <span>text</span>;
+  it('should not render a span element if the error prop is not passed', () => {
     const wrapper = shallow(<Input {...props} />).dive();
 
-    expect(wrapper.find('span')).to.have.length(2);
-    expect(wrapper.containsMatchingElement(<span>text</span>)).to.equal(true);
-    props.error = null;
+    expect(wrapper.find('span')).to.have.length(0);
+  });
+
+  it('should render a span element if the error prop is passed', () => {
+    props.error = 'error';
+    const wrapper = shallow(<Input {...props} />).dive();
+
+    expect(wrapper.containsMatchingElement(<span>error</span>)).to.equal(true);
+    props.error = '';
+  });
+
+  it('should call input onChange function', () => {
+    const spy = sinon.spy();
+    props.onChange = spy;
+    const wrapper = shallow(<Input {...props} />).dive();
+
+    wrapper.find('input').simulate('change');
+    expect(spy).to.have.callCount(1);
+    props.onChange = () => {};
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Input {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.disabled, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.disabled, props.style
+    );
   });
 
   it('should get label styles', () => {
@@ -89,7 +106,9 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'input');
 
     shallow(<Input {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.error, props.inputStyle);
+    expect(spy).to.have.been.calledWith(
+      props.error, props.inputStyle
+    );
   });
 
   it('should get error styles', () => {

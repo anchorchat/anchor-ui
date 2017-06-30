@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import shallowEqual from 'recompose/shallowEqual';
 import Radium from 'radium';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
@@ -18,7 +18,11 @@ class Lightbox extends Component {
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the overlay element */
     overlayStyle: PropTypes.instanceOf(Object),
-    /** Function to hide dialog element */
+    /**
+     * Callback fired when the Lightbox is closed
+     *
+     * function(event: object) => void
+     */
     hideLightbox: PropTypes.func.isRequired,
     /** Link to the image */
     image: PropTypes.string.isRequired,
@@ -37,11 +41,12 @@ class Lightbox extends Component {
     open: false
   }
 
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext)
-    );
+  handleKeyUp = (event) => {
+    const { hideLightbox } = this.props;
+
+    if (event.which === 27) {
+      hideLightbox(event);
+    }
   }
 
   render() {
@@ -72,6 +77,11 @@ class Lightbox extends Component {
           </header>
           <img style={styles.image} src={image} alt="lightbox" />
         </section>
+        {
+          open
+          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
+          : null
+        }
       </Overlay>
     );
   }

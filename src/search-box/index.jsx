@@ -11,9 +11,17 @@ class SearchBox extends Component {
   static displayName = 'SearchBox'
 
   static propTypes = {
-    /** Change the input's value */
+    /**
+     * Callback fired when SearchBox's value changes
+     *
+     * function(event: object) => void
+     */
     onChange: PropTypes.func.isRequired,
-    /** Change the search query with debounce */
+    /**
+     * Callback fired when SearchBox's query changes, with debounce
+     *
+     * function(query: string) => void
+     */
     changeSearchQuery: PropTypes.func.isRequired,
     /** The input's value */
     value: PropTypes.string.isRequired,
@@ -41,16 +49,16 @@ class SearchBox extends Component {
     this.changeSearchQuery = debounce(this.changeSearchQuery.bind(this), 300, false);
   }
 
-  changeSearchQuery(value) {
+  changeSearchQuery(event) {
     const { changeSearchQuery } = this.props;
 
-    changeSearchQuery(value);
+    changeSearchQuery(event);
   }
 
   handleChange(event) {
     const { onChange } = this.props;
 
-    onChange(event.currentTarget.value);
+    onChange(event);
     this.changeSearchQuery(event.currentTarget.value);
   }
 
@@ -61,8 +69,8 @@ class SearchBox extends Component {
       style,
       inputStyle,
       iconStyle,
-      changeSearchQuery, // eslint-disable-line no-unused-vars
-      onChange, // eslint-disable-line no-unused-vars
+      changeSearchQuery,
+      onChange,
       ...custom
     } = this.props;
 

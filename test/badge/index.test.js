@@ -12,10 +12,10 @@ chai.use(sinonChai);
 
 describe('Badge', () => {
   const props = {
-    style: {},
-    inverted: false,
     value: 1,
     maxValue: 2,
+    style: { root: true },
+    inverted: false,
     color: '#1BA6C4'
   };
 
@@ -51,6 +51,8 @@ describe('Badge', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Badge {...props} />).dive().dive();
-    expect(spy).to.have.been.calledWith(props.color, props.inverted, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.color, props.inverted, props.style
+    );
   });
 });

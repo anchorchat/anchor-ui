@@ -12,13 +12,13 @@ chai.use(sinonChai);
 
 describe('ChannelHeader', () => {
   const props = {
-    style: {},
-    textStyle: {},
-    rightButtonStyle: {},
-    leftButtonStyle: {},
+    name: 'name',
     rightButton: null,
     leftButton: null,
-    name: 'name'
+    style: { root: true },
+    textStyle: { text: true },
+    rightButtonStyle: { rightButton: true },
+    leftButtonStyle: { leftButton: true }
   };
 
   beforeEach(() => {
@@ -35,6 +35,12 @@ describe('ChannelHeader', () => {
     expect(wrapper.find('header')).to.have.length(1);
   });
 
+  it('should always render a h1 element', () => {
+    const wrapper = shallow(<ChannelHeader {...props} />).dive();
+
+    expect(wrapper.find('h1')).to.have.length(1);
+  });
+
   it('should not render a div element if the leftButton prop is not passed', () => {
     const wrapper = shallow(<ChannelHeader {...props} />).dive();
 
@@ -45,21 +51,8 @@ describe('ChannelHeader', () => {
     props.leftButton = <button />;
     const wrapper = shallow(<ChannelHeader {...props} />).dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.leftButton = null;
-  });
-
-  it('should always render a h1 element', () => {
-    const wrapper = shallow(<ChannelHeader {...props} />).dive();
-
-    expect(wrapper.find('h1')).to.have.length(1);
-  });
-
-  it('should pass the value of the name prop to the h1 element', () => {
-    const wrapper = shallow(<ChannelHeader {...props} />).dive();
-
-    expect(wrapper.containsMatchingElement(<h1>name</h1>)).to.equal(true);
   });
 
   it('should not render a div element if the rightButton prop is not passed', () => {
@@ -72,9 +65,14 @@ describe('ChannelHeader', () => {
     props.rightButton = <button />;
     const wrapper = shallow(<ChannelHeader {...props} />).dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
     props.rightButton = null;
+  });
+
+  it('should pass the name prop to the h1 element', () => {
+    const wrapper = shallow(<ChannelHeader {...props} />).dive();
+
+    expect(wrapper.containsMatchingElement(<h1>name</h1>)).to.equal(true);
   });
 
   it('should get root styles', () => {

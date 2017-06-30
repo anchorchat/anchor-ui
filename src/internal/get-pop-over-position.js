@@ -13,8 +13,16 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
     horizontal = 'right';
   }
 
+  if (!fitsRightFromButton && !fitsLeftFromButton) {
+    horizontal = 'middle';
+  }
+
   if (fitsAboveButton && !fitsBelowButton) {
     vertical = 'top';
+  }
+
+  if (!fitsAboveButton && !fitsBelowButton) {
+    vertical = 'middle';
   }
 
   let position = {
@@ -29,12 +37,20 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
     position = combineStyles(position, { top: 'initial', bottom: (window.innerHeight - button.bottom) + button.height });
   }
 
+  if (vertical === 'middle') {
+    position = combineStyles(position, { top: 'initial', bottom: (window.innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2) });
+  }
+
   if (horizontal === 'left') {
     position = combineStyles(position, { left: 'initial', right: (window.innerWidth - button.right) + (button.width / 2) });
   }
 
   if (horizontal === 'right') {
     position = combineStyles(position, { left: button.left + (button.width / 2), right: 'initial' });
+  }
+
+  if (horizontal === 'middle') {
+    position = combineStyles(position, { left: 'initial', right: (button.right - (popOver.width / 2)) - (button.width / 2) });
   }
 
   if (type === 'select') {

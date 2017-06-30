@@ -38,7 +38,7 @@ describe('Button.getStyles', () => {
     it('should add disabled styles', () => {
       const style = getStyles.root('red', false, false, true);
 
-      expect(style).to.have.property('opacity', '0.38');
+      expect(style).to.have.property('opacity', '0.5');
     });
 
     it('should add flatButton styles', () => {

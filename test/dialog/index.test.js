@@ -15,13 +15,13 @@ chai.use(sinonChai);
 
 describe('Dialog', () => {
   const props = {
-    style: {},
-    overlayStyle: {},
-    headerStyle: {},
-    iconColor: 'red',
     header: null,
-    open: true,
+    style: { root: true },
+    overlayStyle: { overlay: true },
+    headerStyle: { header: true },
     hideDialog: () => {},
+    iconColor: 'red',
+    open: true,
     color: '#1BA6C4'
   };
   const children = <p>children</p>;
@@ -60,23 +60,22 @@ describe('Dialog', () => {
     expect(wrapper.find(Button)).to.have.length(1);
   });
 
-  it('should always render a IconClose icon', () => {
+  it('should always render an IconClose icon', () => {
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
     expect(wrapper.find(IconClose)).to.have.length(1);
   });
 
-  it('should not render a h1 element if the header prop is not passed', () => {
+  it('should not render an h1 element if the header prop is not passed', () => {
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
     expect(wrapper.find('h1')).to.have.length(0);
   });
 
-  it('should render a h1 element if the header prop is passed', () => {
+  it('should render an h1 element if the header prop is passed', () => {
     props.header = 'header';
     const wrapper = shallow(<Dialog {...props} />).dive().dive();
 
-    expect(wrapper.find('h1')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
     props.header = null;
   });
@@ -87,11 +86,33 @@ describe('Dialog', () => {
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
+  it('should call section onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find('section').at(0).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
+  });
+
+  it('should call Button onClick function', () => {
+    const spy = sinon.spy();
+    props.hideDialog = spy;
+    const wrapper = shallow(<Dialog {...props} />).dive().dive();
+
+    wrapper.find(Button).simulate('click');
+    expect(spy).to.have.callCount(1);
+    props.hideDialog = () => {};
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Dialog {...props} />).dive().dive();
-    expect(spy).to.have.been.calledWith(props.color, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.color, props.style
+    );
   });
 
   it('should get header styles', () => {

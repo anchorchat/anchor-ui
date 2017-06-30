@@ -29,7 +29,6 @@ import IconMenu from './components/icon-menu';
 import SearchBox from './components/search-box';
 import MenuItem from './components/menu-item';
 import PopOver from './components/pop-over';
-import WithTheme from './components/with-theme';
 import Paper from './components/paper';
 import Modal from './components/modal';
 import AdminBadge from './components/admin-badge';
@@ -48,6 +47,7 @@ import themeable from './components/themeable';
 import Table from './components/table';
 import Pagination from './components/pagination';
 import Commands from './components/commands';
+import DateSeparator from './components/date-separator';
 import './index.css';
 
 ReactDOM.render(
@@ -80,7 +80,6 @@ ReactDOM.render(
         <Route path="/menu-item" component={MenuItem} />
         <Route path="/pop-over" component={PopOver} />
         <Route path="/paper" component={Paper} />
-        <Route path="/with-theme" component={WithTheme} />
         <Route path="/modal" component={Modal} />
         <Route path="/divider" component={Divider} />
         <Route path="/select" component={Select} />
@@ -97,6 +96,7 @@ ReactDOM.render(
         <Route path="/themeable" component={themeable} />
         <Route path="/pagination" component={Pagination} />
         <Route path="/commands" component={Commands} />
+        <Route path="/date-separator" component={DateSeparator} />
       </Route>
     </Router>
   </StyleRoot>,

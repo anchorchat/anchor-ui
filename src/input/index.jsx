@@ -4,7 +4,6 @@ import Radium, { Style } from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
 import colors from '../settings/colors';
-import fade from '../internal/fade';
 import combineStyles from '../internal/combine-styles';
 
 /** General purpose form input */
@@ -61,6 +60,7 @@ class Input extends Component {
         maxLength={maxLength}
         id={name}
         placeholder={placeholder}
+        disabled={disabled}
         {...custom}
       />
     );
@@ -77,6 +77,7 @@ class Input extends Component {
           id={name}
           placeholder={placeholder}
           ref={node => (this.textarea = node)}
+          disabled={disabled}
           {...custom}
         />
       );
@@ -88,7 +89,7 @@ class Input extends Component {
         {input}
         <Style
           rules={{
-            '.input::placeholder': combineStyles({ color: fade(colors.white, 0.38) }, placeholderStyle)
+            '.input::placeholder': combineStyles({ color: colors.placeholderText }, placeholderStyle)
           }}
         />
         {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
@@ -100,7 +101,11 @@ class Input extends Component {
 Input.displayName = 'Input';
 
 Input.propTypes = {
-  /** Change the input's value */
+  /**
+   * Callback fired when the Input's value is changed
+   *
+   * function(event: object) => void
+   */
   onChange: PropTypes.func.isRequired,
   /** The input's value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

@@ -9,7 +9,7 @@ export default {
     display: 'flex'
   },
   navButton: {
-    width: '30px',
+    minWidth: '30px',
     height: '30px',
     padding: '6px',
     lineHeight: '18px',

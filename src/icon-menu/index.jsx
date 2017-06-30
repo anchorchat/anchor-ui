@@ -30,7 +30,11 @@ class IconMenu extends Component {
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the content container */
     contentStyle: PropTypes.instanceOf(Object),
-    /** Callback function fired when the IconMenu closes */
+    /**
+     * Callback fired when the IconMenu closes
+     *
+     * function(event: object) => void
+     */
     onMenuClose: PropTypes.func
   }
 
@@ -81,23 +85,34 @@ class IconMenu extends Component {
     });
   }
 
-  closeMenu() {
+  closeMenu(event) {
     const { onMenuClose } = this.props;
+    const { open } = this.state;
+
+    if (!open) {
+      return false;
+    }
 
     this.setState({
       open: false,
       positioned: false
     });
 
-    onMenuClose();
+    return onMenuClose(event);
   }
 
-  handleClickOutside = () => this.closeMenu()
+  handleClickOutside = event => this.closeMenu(event)
 
   applyCloseMenuToChildren(children) {
     return React.Children.map(
       children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
     );
+  }
+
+  handleKeyUp = (event) => {
+    if (event.which === 27) {
+      this.closeMenu();
+    }
   }
 
   render() {
@@ -110,13 +125,13 @@ class IconMenu extends Component {
       style,
       contentStyle,
       dividerText,
-      onMenuClose, // eslint-disable-line no-unused-vars
-      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
-      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
-      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
-      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
-      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      onMenuClose,
+      eventTypes, // eslint-disable-line react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line react/prop-types
+      preventDefault, // eslint-disable-line react/prop-types
+      stopPropagation, // eslint-disable-line react/prop-types
+      disableOnClickOutside, // eslint-disable-line react/prop-types
+      enableOnClickOutside, // eslint-disable-line react/prop-types
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -135,6 +150,7 @@ class IconMenu extends Component {
           ? <EventListener
             target="window"
             onResize={this.closeMenu}
+            onKeyUp={this.handleKeyUp}
           />
           : null
         }

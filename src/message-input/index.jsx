@@ -14,9 +14,17 @@ class MessageInput extends Component {
   static displayName = 'MessageInput'
 
   static propTypes = {
-    /** Change the input's value */
+    /**
+     * Callback fired when MessageInput's value changes
+     *
+     * function(event: object) => void
+     */
     onChange: PropTypes.func.isRequired,
-    /** Send a message */
+    /**
+     * Callback fired when a message is sent
+     *
+     * function(event: object) => void
+     */
     sendMessage: PropTypes.func.isRequired,
     /** The input's value */
     value: PropTypes.string.isRequired,
@@ -64,6 +72,7 @@ class MessageInput extends Component {
   handleChange = (event) => {
     const { onChange } = this.props;
     const { height } = this.state;
+
 
     if (this.textarea.scrollHeight > 48) {
       this.setState({

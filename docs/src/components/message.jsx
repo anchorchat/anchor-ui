@@ -1,3 +1,4 @@
+/* global alert */
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import _ from 'underscore';
@@ -14,21 +15,21 @@ const usage = '```js\n import Message from \'anchor-ui/message\';';
 
 const messages = [
   {
-    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
+    body: 'Stop talking, brain thinking. @Lars Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
     username: 'Sjaak',
     avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
     id: 1
   },
   {
-    body: 'Daleks have no concept of elegance.',
+    body: 'Daleks have no concept of elegance. https://anchor.chat',
     createdAt: new Date(),
     username: 'Ian',
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
     id: 2
   },
   {
-    body: ':hammer:',
+    body: ':hammer: @Ian @test',
     createdAt: new Date(),
     username: 'Lars',
     avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
@@ -57,6 +58,14 @@ const messages = [
     avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
     id: 6,
     type: 'image'
+  },
+  {
+    body: 'is typing',
+    createdAt: new Date(),
+    username: 'Lars',
+    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    id: 7,
+    type: 'typing'
   },
 ];
 
@@ -108,15 +117,18 @@ class MessageDoc extends Component {
     };
     const scalingEmoji = `
       .small .emojione {
-        width: 18px;
+        width: 24px;
+        height: 24px;
       }
 
       .medium .emojione {
-        width: 20px;
+        width: 28px;
+        height: 28px;
       }
 
       .large .emojione {
-        width: 24px;
+        width: 32px;
+        height: 32px;
       }
     `;
 
@@ -136,6 +148,13 @@ class MessageDoc extends Component {
           <h1>Usage</h1>
           <ReactMarkdown source={usage} className="markdown" />
         </section>
+        <a
+          href="https://www.emojione.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          This component uses free Emoji icons supplied by EmojiOne
+        </a>
         <section>
           <h1>Scaling emoji&apos;s</h1>
           <p>
@@ -184,6 +203,12 @@ class MessageDoc extends Component {
                   compact={this.state.compact}
                   menuItems={this.state.iconMenu ? menuItems : null}
                   edited={this.state.edited ? 'edited' : null}
+                  mentions={[
+                    'Lars',
+                    'Ian'
+                  ]}
+                  onMentionClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
+                  enableLinks
                 />
               ))}
             </MessageList>

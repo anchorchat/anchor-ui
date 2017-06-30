@@ -7,21 +7,19 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EmptyState from '../../src/empty-state';
 import getStyles from '../../src/empty-state/get-styles';
-import button from '../../src/button';
 
 chai.use(sinonChai);
 
-describe('empty-state', () => {
+describe('EmptyState', () => {
   const props = {
-    button: null,
-    background: '',
-    style: {},
-    headingStyle: {},
-    bodyStyle: {},
     headerText: '',
-    bodyText: ''
+    bodyText: '',
+    button: <button>text</button>,
+    background: '',
+    style: { root: true },
+    headingStyle: { heading: true },
+    bodyStyle: { body: true }
   };
-
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -37,7 +35,7 @@ describe('empty-state', () => {
     expect(wrapper.find('section')).to.have.length(1);
   });
 
-  it('should always render a h1 element', () => {
+  it('should always render an h1 element', () => {
     const wrapper = shallow(<EmptyState {...props} />).dive();
 
     expect(wrapper.find('h1')).to.have.length(1);
@@ -49,19 +47,18 @@ describe('empty-state', () => {
     expect(wrapper.find('p')).to.have.length(1);
   });
 
-  it('should always render the value of the button prop', () => {
-    props.button = <button>text</button>;
+  it('should always render the button prop', () => {
     const wrapper = shallow(<EmptyState {...props} />).dive();
 
-    expect(wrapper.find('button')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<button>text</button>)).to.equal(true);
-    props.button = null;
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<EmptyState {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.background, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.background, props.style
+    );
   });
 });

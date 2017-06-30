@@ -12,12 +12,13 @@ chai.use(sinonChai);
 
 describe('CardHeader', () => {
   const props = {
-    style: {},
-    titleStyle: {},
-    subtitleStyle: {},
-    subtitle: null,
+    style: { root: true },
+    titleStyle: { title: true },
+    title: '',
+    subtitleStyle: { subtitle: true },
+    subtitle: '',
     avatar: '',
-    avatarStyle: {}
+    avatarStyle: { avatar: true }
   };
 
   beforeEach(() => {
@@ -72,7 +73,7 @@ describe('CardHeader', () => {
     const spy = sinon.spy(getStyles, 'title');
 
     shallow(<CardHeader {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.style);
+    expect(spy).to.have.been.calledWith(props.titleStyle);
   });
 
   it('should get subtitle styles', () => {

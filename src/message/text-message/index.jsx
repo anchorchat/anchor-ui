@@ -1,78 +1,138 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import escape from 'escape-html';
+import isEmpty from 'lodash/isEmpty';
+import forEach from 'lodash/forEach';
+import htmlParser from 'html-react-parser';
+import domToReact from 'html-react-parser/lib/dom-to-react';
 import colors from '../../settings/colors';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import urlRegex from '../../url-regex';
+import styles from './styles';
 
-function createMarkup(text, enableLinks) {
-  const escapedText = escape(text);
+class TextMessage extends Component {
+  createMarkup = () => {
+    const { message, enableLinks, emoji, mentions } = this.props;
+    const text = message.body;
 
-  let parsedText = escapedText;
+    const escapedText = escape(text);
 
-  if (enableLinks) {
-    const urlSchemeRegex = /^(?:https?:\/\/)/;
+    let parsedText = escapedText;
 
-    parsedText = escapedText.replace(urlRegex, (url) => {
-      if (!urlSchemeRegex.test(url)) {
-        // Add default http:// scheme for urls like example.com
-        return (`<a href="http://${url}" target="_blank">${url}</a>`);
-      }
-      return (`<a href="${url}" target="_blank">${url}</a>`);
-    });
+    if (enableLinks) {
+      const urlSchemeRegex = /^(?:https?:\/\/)/;
+
+      parsedText = escapedText.replace(urlRegex, (url) => {
+        if (!urlSchemeRegex.test(url)) {
+          // Add default http:// scheme for urls like example.com
+          return (`<a class="link" value="http://${url}" href="http://${url}">${url}</a>`);
+        }
+        return (`<a class="link" value="${url}" href="${url}">${url}</a>`);
+      });
+    }
+
+    if (!isEmpty(mentions)) {
+      forEach(mentions, (mention) => {
+        parsedText = parsedText.replace(`@${mention}`, `<span class="mention" value="${mention}">@${mention}</span>`);
+      });
+    }
+
+    let html = parsedText;
+
+    if (emoji) {
+      html = emojione.toImage(parsedText);
+    }
+
+    return html;
   }
 
-  return {
-    __html: emojione.toImage(parsedText)
-  };
-}
+  parseHtml = () => {
+    const { onMentionClick, color, myMessage } = this.props;
 
-function TextMessage({
-  color,
-  myMessage,
-  avatar,
-  compact,
-  style,
-  fontSize,
-  messageHeaderStyle,
-  message,
-  messageBodyStyle,
-  messageTimeStyle,
-  timeFormat,
-  emoji,
-  enableLinks,
-  edited
-}) {
-  return (
-    <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
-      <MessageHeader
-        avatar={avatar}
-        compact={compact}
-        myMessage={myMessage}
-        fontSize={fontSize}
-        headerStyle={messageHeaderStyle}
-        username={message.username}
-      />
-      <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
-        {
-          enableLinks || emoji
-          ? <span dangerouslySetInnerHTML={createMarkup(message.body, enableLinks, emoji)} />
-          : message.body
+    const options = {
+      replace: (domNode) => {
+        if (domNode.attribs && domNode.attribs.class === 'mention') {
+          const value = domNode.attribs.value;
+
+          return (
+            <strong
+              style={getStyles.mention(color, myMessage, onMentionClick)}
+              onClick={onMentionClick ? e => onMentionClick(e, value) : null}
+            >
+              {domToReact(domNode.children)}
+            </strong>
+          );
         }
-        <MessageTime
+
+        if (domNode.attribs && domNode.attribs.class === 'link') {
+          const value = domNode.attribs.value;
+
+          return (
+            <a style={styles.link} href={value} target="_blank" rel="noopener noreferrer">
+              {domToReact(domNode.children)}
+            </a>
+          );
+        }
+
+        return domNode;
+      }
+    };
+
+    return htmlParser(this.createMarkup(), options);
+  }
+
+  render() {
+    const {
+      color,
+      myMessage,
+      avatar,
+      compact,
+      style,
+      fontSize,
+      messageHeaderStyle,
+      message,
+      messageBodyStyle,
+      messageTimeStyle,
+      timeFormat,
+      emoji,
+      enableLinks,
+      edited,
+      locale,
+      mentions
+    } = this.props;
+
+    return (
+      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+        <MessageHeader
+          avatar={avatar}
+          compact={compact}
           myMessage={myMessage}
-          type={message.type}
-          style={messageTimeStyle}
-          createdAt={message.createdAt}
-          timeFormat={timeFormat}
-          edited={edited}
+          fontSize={fontSize}
+          headerStyle={messageHeaderStyle}
+          username={message.username}
         />
-      </p>
-    </div>
-  );
+        <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+          {
+            enableLinks || emoji || !isEmpty(mentions)
+            ? <span>{this.parseHtml()}</span>
+            : message.body
+          }
+          <MessageTime
+            myMessage={myMessage}
+            type={message.type}
+            style={messageTimeStyle}
+            createdAt={message.createdAt}
+            timeFormat={timeFormat}
+            edited={edited}
+            locale={locale}
+          />
+        </p>
+      </div>
+    );
+  }
 }
 
 TextMessage.propTypes = {
@@ -84,7 +144,7 @@ TextMessage.propTypes = {
       PropTypes.instanceOf(Date)
     ]).isRequired,
     username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker'])
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
   }).isRequired,
   timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
@@ -97,7 +157,10 @@ TextMessage.propTypes = {
   enableLinks: PropTypes.bool,
   compact: PropTypes.bool,
   edited: PropTypes.node,
-  color: PropTypes.string
+  color: PropTypes.string,
+  locale: PropTypes.instanceOf(Object).isRequired,
+  mentions: PropTypes.arrayOf(String).isRequired,
+  onMentionClick: PropTypes.func
 };
 
 TextMessage.defaultProps = {
@@ -115,7 +178,8 @@ TextMessage.defaultProps = {
   enableLightbox: false,
   color: colors.theme,
   iconMenu: null,
-  edited: null
+  edited: null,
+  onMentionClick: null
 };
 
 export default TextMessage;

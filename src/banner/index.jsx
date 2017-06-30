@@ -21,6 +21,11 @@ class Banner extends Component {
       /** 320x50 banner */
       mobile: PropTypes.node.isRequired
     }).isRequired,
+    /**
+     * Callback fired when the close button is clicked
+     *
+     * function(event: object) => void
+     */
     hideBanner: PropTypes.func.isRequired,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),

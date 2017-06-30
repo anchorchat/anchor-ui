@@ -10,12 +10,12 @@ import getStyles from '../../src/avatar/get-styles';
 
 chai.use(sinonChai);
 
-describe('Avatar.index', () => {
+describe('Avatar', () => {
   const props = {
-    style: {},
+    image: 'image',
+    style: { root: true },
     status: '',
-    statusStyle: {},
-    image: 'imageurl'
+    statusStyle: { status: true }
   };
 
   beforeEach(() => {
@@ -50,7 +50,9 @@ describe('Avatar.index', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Avatar {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.image, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.image, props.style
+    );
   });
 
   it('should get status styles', () => {
@@ -58,7 +60,9 @@ describe('Avatar.index', () => {
     const spy = sinon.spy(getStyles, 'status');
 
     shallow(<Avatar {...props} />).dive();
-    expect(spy).to.have.been.calledWith(props.status, props.statusStyle);
+    expect(spy).to.have.been.calledWith(
+      props.status, props.statusStyle
+    );
     props.status = '';
   });
 });

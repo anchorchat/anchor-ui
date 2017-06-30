@@ -5,28 +5,50 @@ const styleSheet = {
     background: colors.white,
     borderBottom: `1px solid ${colors.grey}`,
     position: 'relative',
-    padding: '0 48px',
-    boxSizing: 'border-box'
+    padding: '8px 56px',
+    boxSizing: 'border-box',
+    height: '60px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  textContainer: {
+    width: '100%'
   },
   text: {
     color: colors.secondaryText,
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: 'bolder',
     margin: 0,
     textAlign: 'center',
-    lineHeight: '48px',
+    lineHeight: '16px',
     overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
+  },
+  secondaryText: {
+    color: colors.theme,
+    fontSize: '14px',
+    fontWeight: 'inherit',
+    marginTop: '8px',
+    marginBottom: 0,
+    textAlign: 'center',
+    lineHeight: '16px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   },
   rightButton: {
+    width: '40px',
+    height: '40px',
     position: 'absolute',
-    right: '4px',
-    top: '4px'
+    right: '8px'
   },
   leftButton: {
+    width: '40px',
+    height: '40px',
     position: 'absolute',
-    left: '4px',
-    top: '4px'
+    left: '8px'
   }
 };
 

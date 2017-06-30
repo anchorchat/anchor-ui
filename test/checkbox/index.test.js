@@ -13,14 +13,14 @@ chai.use(sinonChai);
 
 describe('Checkbox', () => {
   const props = {
-    style: {},
-    inputStyle: {},
-    iconStyle: {},
-    labelStyle: {},
-    checked: false,
     label: 'label',
     name: 'name',
     onChange: () => {},
+    checked: false,
+    style: { root: true },
+    inputStyle: { input: true },
+    iconStyle: { icon: true },
+    labelStyle: { label: true },
     value: 'value',
     color: '#1BA6C4'
   };
@@ -39,7 +39,7 @@ describe('Checkbox', () => {
     expect(wrapper.find('label')).to.have.length(1);
   });
 
-  it('should always render a input element', () => {
+  it('should always render an input element', () => {
     const wrapper = shallow(<Checkbox {...props} />).dive().dive();
 
     expect(wrapper.find('input')).to.have.length(1);
@@ -63,29 +63,39 @@ describe('Checkbox', () => {
     const wrapper = shallow(<Checkbox {...props} />).dive().dive();
 
     expect(wrapper.find('div')).to.have.length(2);
-    expect(wrapper.find(IconCheckbox)).to.have.length(0);
   });
 
-  it('should render an IconCheckbox if the value of the checked prop is true', () => {
+  it('should render an IconCheckbox icon if the value of the checked prop is true', () => {
     props.checked = true;
     const wrapper = shallow(<Checkbox {...props} />).dive().dive();
 
-    expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.find(IconCheckbox)).to.have.length(1);
     props.checked = false;
   });
 
-  it('should pass the value of the label prop to the span element', () => {
+  it('should pass the label prop to the span element', () => {
     const wrapper = shallow(<Checkbox {...props} />).dive().dive();
 
     expect(wrapper.containsMatchingElement(<span>label</span>)).to.equal(true);
+  });
+
+  it('should call input onChange function', () => {
+    const spy = sinon.spy();
+    props.onChange = spy;
+    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+
+    wrapper.find('input').simulate('change');
+    expect(spy).to.have.callCount(1);
+    props.onChange = () => {};
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Checkbox {...props} />).dive().dive();
-    expect(spy).to.have.been.calledWith(props.color, props.style);
+    expect(spy).to.have.been.calledWith(
+      props.color, props.style
+    );
   });
 
   it('should get input styles', () => {
