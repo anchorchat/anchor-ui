@@ -191,29 +191,29 @@ class Message extends Component {
 
   render() {
     const {
-      avatar, // eslint-disable-line no-unused-vars
+      avatar,
       message,
-      timeFormat, // eslint-disable-line no-unused-vars
+      timeFormat,
       myMessage,
-      style, // eslint-disable-line no-unused-vars
-      messageHeaderStyle, // eslint-disable-line no-unused-vars
-      messageBodyStyle, // eslint-disable-line no-unused-vars
-      messageTimeStyle, // eslint-disable-line no-unused-vars
+      style,
+      messageHeaderStyle,
+      messageBodyStyle,
+      messageTimeStyle,
       compact,
-      fontSize, // eslint-disable-line no-unused-vars
-      emoji, // eslint-disable-line no-unused-vars
-      enableLinks, // eslint-disable-line no-unused-vars
-      menuItems, // eslint-disable-line no-unused-vars
-      enableLightbox, // eslint-disable-line no-unused-vars
-      collapsed, // eslint-disable-line no-unused-vars
-      expand, // eslint-disable-line no-unused-vars
-      expandText, // eslint-disable-line no-unused-vars
-      expandIcon, // eslint-disable-line no-unused-vars
-      collapsedText, // eslint-disable-line no-unused-vars
-      edited, // eslint-disable-line no-unused-vars
-      locale, // eslint-disable-line no-unused-vars
-      mentions, // eslint-disable-line no-unused-vars
-      onMentionClick, // eslint-disable-line no-unused-vars
+      fontSize,
+      emoji,
+      enableLinks,
+      menuItems,
+      enableLightbox,
+      collapsed,
+      expand,
+      expandText,
+      expandIcon,
+      collapsedText,
+      edited,
+      locale,
+      mentions,
+      onMentionClick,
       color,
       separator,
       ...custom

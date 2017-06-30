@@ -136,8 +136,8 @@ class ListItem extends Component {
       muted,
       blocked,
       children,
-      open, // eslint-disable-line no-unused-vars
-      onNestedListToggle, // eslint-disable-line no-unused-vars
+      open,
+      onNestedListToggle,
       nestedLevel,
       color,
       ...custom

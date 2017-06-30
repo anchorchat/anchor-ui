@@ -79,7 +79,7 @@ class Tabs extends Component {
       tabContainerStyle,
       contentContainerStyle,
       contentStyle,
-      initialSelectedIndex, // eslint-disable-line no-unused-vars
+      initialSelectedIndex,
       ...custom
     } = this.props;
     const { value } = this.state;

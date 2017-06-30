@@ -69,8 +69,8 @@ class SearchBox extends Component {
       style,
       inputStyle,
       iconStyle,
-      changeSearchQuery, // eslint-disable-line no-unused-vars
-      onChange, // eslint-disable-line no-unused-vars
+      changeSearchQuery,
+      onChange,
       ...custom
     } = this.props;
 

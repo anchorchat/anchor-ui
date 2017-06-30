@@ -69,7 +69,8 @@ const MessageListDoc = () => {
           <MessageList style={style.messageList}>
             {messages.map(message => (
               <Message
-                message={message} key={`message-${message.id}`}
+                message={message}
+                key={`message-${message.id}`}
                 myMessage={message.username === currentUser}
                 avatar={message.avatar}
                 emoji
