@@ -12,7 +12,7 @@ describe('MessageInput.getStyles', () => {
 
     it('should get disabled styles', () => {
       const style = getStyles.root(true, 32, false, { color: 'red' });
-      expect(style).to.have.property('opacity', '0.38');
+      expect(style).to.have.property('opacity', '0.5');
     });
 
     it('should get multiLine styles', () => {
