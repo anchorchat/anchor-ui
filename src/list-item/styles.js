@@ -43,8 +43,7 @@ export default {
     padding: '8px',
     boxSizing: 'border-box',
     backgroundColor: 'rgba(21, 21, 21, .75)',
-    borderRadius: '50%',
-    zIndex: 1
+    borderRadius: '50%'
   },
   rightButton: {
     paddingRight: '52px'
@@ -89,8 +88,7 @@ export default {
   badge: {
     position: 'absolute',
     right: '-3px',
-    top: '-3px',
-    zIndex: 1
+    top: '-3px'
   },
   container: {
     width: '100%'
