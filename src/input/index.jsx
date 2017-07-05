@@ -6,6 +6,60 @@ import getStyles from './get-styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 
+const propTypes = {
+  /**
+   * Callback fired when the Input's value is changed
+   *
+   * function(event: object) => void
+   */
+  onChange: PropTypes.func.isRequired,
+  /** The input's value */
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  /** Type of input */
+  type: PropTypes.string,
+  /** Type of input */
+  placeholder: PropTypes.string,
+  /** The input's label */
+  label: PropTypes.node,
+  /** The input's name */
+  name: PropTypes.string.isRequired,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the input element */
+  inputStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the label element */
+  labelStyle: PropTypes.instanceOf(Object),
+  /** The input's max length */
+  maxLength: PropTypes.number,
+  /** Disables the input */
+  disabled: PropTypes.bool,
+  /** Display an error message */
+  error: PropTypes.node,
+  /** Override the styles of the error element */
+  errorStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the placeholder */
+  placeholderStyle: PropTypes.instanceOf(Object),
+  /** Multi line input. If true, a textarea element will be rendered. */
+  multiLine: PropTypes.bool
+};
+
+const defaultProps = {
+  style: {},
+  inputStyle: {},
+  labelStyle: {},
+  maxLength: 500,
+  disabled: false,
+  error: null,
+  type: 'text',
+  errorStyle: {},
+  placeholder: '',
+  label: null,
+  placeholderStyle: {},
+  multiLine: false
+};
+
+const displayName = 'Input';
+
 /** General purpose form input */
 class Input extends Component {
   constructor() {
@@ -21,16 +75,6 @@ class Input extends Component {
     const { height } = this.state;
 
     this.textarea.style.height = '1px';
-
-    if (this.textarea.scrollHeight > 48) {
-      this.setState({
-        multiLine: true
-      });
-    } else if (this.textarea.scrollHeight <= 48) {
-      this.setState({
-        multiLine: false
-      });
-    }
 
     if (this.textarea.scrollHeight !== height) {
       this.setState({
@@ -112,58 +156,8 @@ class Input extends Component {
   }
 }
 
-Input.displayName = 'Input';
-
-Input.propTypes = {
-  /**
-   * Callback fired when the Input's value is changed
-   *
-   * function(event: object) => void
-   */
-  onChange: PropTypes.func.isRequired,
-  /** The input's value */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  /** Type of input */
-  type: PropTypes.string,
-  /** Type of input */
-  placeholder: PropTypes.string,
-  /** The input's label */
-  label: PropTypes.node,
-  /** The input's name */
-  name: PropTypes.string.isRequired,
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
-  /** Override the styles of the input element */
-  inputStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
-  /** The input's max length */
-  maxLength: PropTypes.number,
-  /** Disables the input */
-  disabled: PropTypes.bool,
-  /** Display an error message */
-  error: PropTypes.node,
-  /** Override the styles of the error element */
-  errorStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the placeholder */
-  placeholderStyle: PropTypes.instanceOf(Object),
-  /** Multi line input. If true, a textarea element will be rendered. */
-  multiLine: PropTypes.bool
-};
-
-Input.defaultProps = {
-  style: {},
-  inputStyle: {},
-  labelStyle: {},
-  maxLength: 500,
-  disabled: false,
-  error: null,
-  type: 'text',
-  errorStyle: {},
-  placeholder: '',
-  label: null,
-  placeholderStyle: {},
-  multiLine: false
-};
+Input.displayName = displayName;
+Input.propTypes = propTypes;
+Input.defaultProps = defaultProps;
 
 export default pure(Radium(Input));
