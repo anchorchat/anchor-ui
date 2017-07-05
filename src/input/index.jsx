@@ -125,19 +125,21 @@ class Input extends Component {
 
     if (multiLine) {
       input = (
-        <textarea
-          className="input"
-          style={getStyles.textarea(height, error, inputStyle)}
-          onChange={this.handleChange}
-          value={value}
-          type={type}
-          maxLength={maxLength}
-          id={name}
-          placeholder={placeholder}
-          ref={node => (this.textarea = node)}
-          disabled={disabled}
-          {...custom}
-        />
+        <section style={getStyles.inputRoot(height)}>
+          <textarea
+            className="input"
+            style={getStyles.textarea(error, inputStyle)}
+            onChange={this.handleChange}
+            value={value}
+            type={type}
+            maxLength={maxLength}
+            id={name}
+            placeholder={placeholder}
+            ref={node => (this.textarea = node)}
+            disabled={disabled}
+            {...custom}
+          />
+        </section>
       );
     }
 

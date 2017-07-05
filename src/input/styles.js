@@ -5,6 +5,9 @@ export default {
     maxWidth: '250px',
     width: '100%',
   },
+  inputRoot: {
+    height: '32px'
+  },
   input: {
     appearance: 'none',
     backgroundColor: colors.inputs,
