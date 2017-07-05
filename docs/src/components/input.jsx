@@ -14,6 +14,7 @@ class InputDoc extends Component {
 
     this.state = {
       value: 'Default value',
+      valueMultiline: '',
       valueText: '',
       valueNumber: '',
       valueDate: '',
@@ -22,6 +23,7 @@ class InputDoc extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeMultiline = this.handleChangeMultiline.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
     this.handleChangeMaxLength = this.handleChangeMaxLength.bind(this);
     this.handleChangeError = this.handleChangeError.bind(this);
@@ -30,6 +32,12 @@ class InputDoc extends Component {
   handleChange(event) {
     this.setState({
       value: event.currentTarget.value
+    });
+  }
+
+  handleChangeMultiline(event) {
+    this.setState({
+      valueMultiline: event.currentTarget.value
     });
   }
 
@@ -83,6 +91,14 @@ class InputDoc extends Component {
               type="text"
               label="Default value example"
               name="example"
+              style={style.input}
+            />
+            <Input
+              onChange={this.handleChangeMultiline}
+              value={this.state.valueMultiline}
+              type="text"
+              label="Multiline value example"
+              name="Multiline example"
               style={style.input}
               multiLine
             />
