@@ -5,11 +5,15 @@ export default {
     maxWidth: '250px',
     width: '100%',
   },
+  inputRoot: {
+    height: '32px'
+  },
   input: {
     appearance: 'none',
     backgroundColor: colors.inputs,
     border: '0',
     borderRadius: '3px',
+    height: '32px',
     boxSizing: 'border-box',
     color: colors.primaryText,
     fontSize: '16px',
@@ -22,6 +26,10 @@ export default {
     ':focus': {
       outline: 'none'
     }
+  },
+  textarea: {
+    resize: 'none',
+    overflow: 'auto'
   },
   label: {
     fontSize: '16px',

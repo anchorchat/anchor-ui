@@ -686,6 +686,17 @@
         "required": true,
         "description": "The channel's name"
       },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional text to display below `name`",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "rightButton": {
         "type": {
           "name": "node"
@@ -732,6 +743,18 @@
           "computed": false
         }
       },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "leftButtonStyle": {
         "type": {
           "name": "instanceOf",
@@ -755,6 +778,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3104,17 +3134,6 @@
           "computed": false
         }
       },
-      "inputRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Ref function to the element",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "disabled": {
         "type": {
           "name": "bool"
@@ -3158,6 +3177,17 @@
         "description": "Override the styles of the placeholder",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "multiLine": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Multi line input. If true, a textarea element will be rendered.",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       }
@@ -4179,20 +4209,7 @@
   "components/message-input/index.jsx": {
     "description": "Message input with send button",
     "displayName": "MessageInput",
-    "methods": [
-      {
-        "name": "handleKeyDown",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "onChange": {
         "type": {
@@ -4284,7 +4301,11 @@
           "name": "func"
         },
         "required": false,
-        "description": "Ref function to the element"
+        "description": "Ref function to the element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "disabled": {
         "type": {
@@ -4292,6 +4313,17 @@
         },
         "required": false,
         "description": "Disables the input for the messageInput area",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "multiLine": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Multi line input. If true, a textarea element will be rendered.",
         "defaultValue": {
           "value": "false",
           "computed": false
