@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import EventListener from 'react-event-listener';
-import compose from 'recompose/compose';
-import onClickOutside from 'react-onclickoutside';
+import Portal from 'react-portal';
 import PopOver from '../pop-over';
 import Button from '../button';
 import getStyles from './get-styles';
@@ -86,6 +85,12 @@ class IconMenu extends Component {
   }
 
   closeMenu(event) {
+    console.log('hi from close event');
+    this.portal.closePortal();
+    this.handleClose(event);
+  }
+
+  handleClose = (event) => {
     const { onMenuClose } = this.props;
     const { open } = this.state;
 
@@ -101,18 +106,10 @@ class IconMenu extends Component {
     return onMenuClose(event);
   }
 
-  handleClickOutside = event => this.closeMenu(event)
-
   applyCloseMenuToChildren(children) {
     return React.Children.map(
       children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
     );
-  }
-
-  handleKeyUp = (event) => {
-    if (event.which === 27) {
-      this.closeMenu();
-    }
   }
 
   render() {
@@ -143,6 +140,12 @@ class IconMenu extends Component {
       secondaryMenuItemsWithProps = this.applyCloseMenuToChildren(secondaryMenuItems);
     }
 
+    const portalButton = (
+      <div ref={button => (this.button = button)}>
+        <Button iconButton onClick={!open ? this.openMenu : this.closeMenu}>{icon}</Button>
+      </div>
+    );
+
     return (
       <div style={getStyles.root(style)} {...custom}>
         {
@@ -150,33 +153,32 @@ class IconMenu extends Component {
           ? <EventListener
             target="window"
             onResize={this.closeMenu}
-            onKeyUp={this.handleKeyUp}
           />
           : null
         }
-        <div ref={button => (this.button = button)}>
-          <Button iconButton onClick={!open ? this.openMenu : this.closeMenu}>{icon}</Button>
-        </div>
-        <PopOver
-          style={contentStyle}
-          header={header}
-          headerStyle={headerStyle}
-          open={open}
-          popOverRef={popOver => (this.popOver = popOver)}
-          position={position}
-          secondaryMenuItems={secondaryMenuItemsWithProps}
-          dividerText={dividerText}
+        <Portal
+          ref={node => (this.portal = node)}
+          openByClickOn={portalButton}
+          closeOnEsc
+          closeOnOutsideClick
+          onClose={this.handleClose}
         >
-          {menuItemsWithProps}
-        </PopOver>
+          <PopOver
+            style={contentStyle}
+            header={header}
+            headerStyle={headerStyle}
+            open
+            popOverRef={popOver => (this.popOver = popOver)}
+            position={position}
+            secondaryMenuItems={secondaryMenuItemsWithProps}
+            dividerText={dividerText}
+          >
+            {menuItemsWithProps}
+          </PopOver>
+        </Portal>
       </div>
     );
   }
 }
 
-const enhance = compose(
-  onClickOutside,
-  Radium
-);
-
-export default enhance(IconMenu);
+export default Radium(IconMenu);
