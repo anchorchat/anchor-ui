@@ -7,3 +7,4 @@ debug
 .nyc_output
 emojione.json
 package-lock.json
+coverage
