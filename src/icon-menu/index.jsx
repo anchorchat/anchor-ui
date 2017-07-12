@@ -85,7 +85,6 @@ class IconMenu extends Component {
   }
 
   closeMenu(event) {
-    console.log('hi from close event');
     this.portal.closePortal();
     this.handleClose(event);
   }
@@ -156,9 +155,16 @@ class IconMenu extends Component {
           />
           : null
         }
+        {
+          open
+          ? <div ref={button => (this.button = button)}>
+            <Button iconButton>{icon}</Button>
+          </div>
+          : null
+        }
         <Portal
           ref={node => (this.portal = node)}
-          openByClickOn={portalButton}
+          openByClickOn={!open ? portalButton : null}
           closeOnEsc
           closeOnOutsideClick
           onClose={this.handleClose}
