@@ -46,11 +46,11 @@ const IconMenuDoc = () => {
             icon={<IconRocket />}
             header="Items"
             headerStyle={style.headerStyle}
-            secondaryMenuItems={[<MenuItem icon={<IconRocket />} text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
+            secondaryMenuItems={[<MenuItem icon={<IconRocket />} text="An item" onClick={() => console.log('clickie clickie')} />, <MenuItem text="Another item" onClick={() => console.log('clickie clickie')} />]}
             dividerText="More items"
           >
-            <MenuItem text="Active item" onClick={() => {}} active />
-            <MenuItem text="Inactive item" onClick={() => {}} />
+            <MenuItem text="Active item" onClick={() => console.log('clickie clickie')} active />
+            <MenuItem text="Inactive item" onClick={() => console.log('clickie clickie')} />
           </IconMenu>
         </Paper>
       </section>
