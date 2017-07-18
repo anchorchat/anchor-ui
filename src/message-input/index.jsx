@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import MobileDetect from 'mobile-detect';
 import styles from './styles';
 import getStyles from './get-styles';
 import Button from '../button';
@@ -97,6 +98,13 @@ class MessageInput extends Component {
   }
 
   handleKeyDown = (event) => {
+    const { multiLine } = this.props;
+    const md = new MobileDetect(window.navigator.userAgent);
+
+    if (md.mobile() && multiLine) {
+      return;
+    }
+
     if (event.which === 13 && !event.shiftKey) {
       this.handleMessageSend(event);
     }
