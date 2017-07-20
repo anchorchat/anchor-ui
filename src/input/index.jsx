@@ -40,7 +40,9 @@ const propTypes = {
   /** Override the styles of the placeholder */
   placeholderStyle: PropTypes.instanceOf(Object),
   /** Multi line input. If true, a textarea element will be rendered. */
-  multiLine: PropTypes.bool
+  multiLine: PropTypes.bool,
+  /** Multi line input's max visible rows. */
+  maxRows: PropTypes.number
 };
 
 const defaultProps = {
@@ -55,7 +57,8 @@ const defaultProps = {
   placeholder: '',
   label: null,
   placeholderStyle: {},
-  multiLine: false
+  multiLine: false,
+  maxRows: 12
 };
 
 const displayName = 'Input';
@@ -70,16 +73,22 @@ class Input extends Component {
     };
   }
 
-  handleChange = (event) => {
+  handleChange = (event, rows, lineHeight) => {
     const { onChange } = this.props;
     const { height } = this.state;
 
     this.textarea.style.height = '1px';
 
-    if (this.textarea.scrollHeight !== height) {
-      this.setState({
-        height: this.textarea.scrollHeight
-      });
+    if (this.textarea.scrollHeight !== height && this.textarea.scrollHeight < (rows * lineHeight)) {
+      if (this.textarea.scrollHeight < 32) {
+        this.setState({
+          height: 32
+        });
+      } else {
+        this.setState({
+          height: this.textarea.scrollHeight
+        });
+      }
     }
 
     this.textarea.style.height = '100%';
@@ -104,9 +113,11 @@ class Input extends Component {
       placeholder,
       placeholderStyle,
       multiLine,
+      maxRows,
       ...custom
     } = this.props;
     const { height } = this.state;
+    const { lineHeight } = getStyles.textarea(error, inputStyle);
 
     let input = (
       <input
@@ -129,10 +140,11 @@ class Input extends Component {
           <textarea
             className="input"
             style={getStyles.textarea(error, inputStyle)}
-            onChange={this.handleChange}
+            onChange={event => this.handleChange(event, maxRows, parseInt(lineHeight, 10))}
             value={value}
             type={type}
             maxLength={maxLength}
+            rows={maxRows}
             id={name}
             placeholder={placeholder}
             ref={node => (this.textarea = node)}
