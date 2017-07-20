@@ -13,7 +13,7 @@ export default {
     wordBreak: 'break-word'
   },
   avatar: {
-    marginLeft: '66px'
+    marginLeft: '48px'
   },
   myMessage: {
     backgroundColor: colors.theme,

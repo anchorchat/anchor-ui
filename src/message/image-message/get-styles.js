@@ -17,7 +17,7 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
   }
 
   if (myMessage && avatar) {
-    style = combineStyles(style, { marginLeft: '0', marginRight: '66px' });
+    style = combineStyles(style, { marginLeft: '0', marginRight: '48px' });
   }
 
   if (compact) {
