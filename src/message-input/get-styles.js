@@ -12,8 +12,10 @@ const root = (disabled, overrideStyle) => {
 };
 
 const input = overrideStyle => combineStyles(styles.input, overrideStyle);
+const placeholder = overrideStyle => combineStyles(styles.placeholder, overrideStyle);
 
 export default {
   root,
-  input
+  input,
+  placeholder
 };

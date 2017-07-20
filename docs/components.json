@@ -4327,6 +4327,40 @@
           "computed": false
         }
       },
+      "sendIconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color for the send button icon",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sendIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom send button icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input's placeholder",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
