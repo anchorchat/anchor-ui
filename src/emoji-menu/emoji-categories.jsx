@@ -10,38 +10,39 @@ import IconActivity from '../icons/icon-activity';
 import IconTravel from '../icons/icon-travel';
 import IconObjects from '../icons/icon-objects';
 import IconSymbols from '../icons/icon-symbols';
-import colors from '../settings/colors';
 import getStyles from './get-styles';
 
-const EmojiCategories = ({ changeCategory, category, activeColor, recent, style, iconStyle }) => (
+const EmojiCategories = ({
+  changeCategory, category, activeColor, recent, style, iconStyle, iconColor
+}) => (
   <footer style={getStyles.categories(style)}>
     {
       recent
       ? <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('recent')}>
-        <IconClock color={category === 'recent' ? activeColor : colors.icons} />
+        <IconClock color={category === 'recent' ? activeColor : iconColor} />
       </div>
       : null
     }
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('people')}>
-      <IconEmoji color={category === 'people' ? activeColor : colors.icons} />
+      <IconEmoji color={category === 'people' ? activeColor : iconColor} />
     </div>
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('nature')}>
-      <IconNature color={category === 'nature' ? activeColor : colors.icons} />
+      <IconNature color={category === 'nature' ? activeColor : iconColor} />
     </div>
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('food')}>
-      <IconFood color={category === 'food' ? activeColor : colors.icons} />
+      <IconFood color={category === 'food' ? activeColor : iconColor} />
     </div>
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('activity')}>
-      <IconActivity color={category === 'activity' ? activeColor : colors.icons} />
+      <IconActivity color={category === 'activity' ? activeColor : iconColor} />
     </div>
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('travel')}>
-      <IconTravel color={category === 'travel' ? activeColor : colors.icons} />
+      <IconTravel color={category === 'travel' ? activeColor : iconColor} />
     </div>
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('objects')}>
-      <IconObjects color={category === 'objects' ? activeColor : colors.icons} />
+      <IconObjects color={category === 'objects' ? activeColor : iconColor} />
     </div>
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('symbols')}>
-      <IconSymbols color={category === 'symbols' ? activeColor : colors.icons} />
+      <IconSymbols color={category === 'symbols' ? activeColor : iconColor} />
     </div>
   </footer>
 );
@@ -52,7 +53,8 @@ EmojiCategories.propTypes = {
   activeColor: PropTypes.string.isRequired,
   recent: PropTypes.bool.isRequired,
   style: PropTypes.instanceOf(Object),
-  iconStyle: PropTypes.instanceOf(Object)
+  iconStyle: PropTypes.instanceOf(Object),
+  iconColor: PropTypes.string.isRequired
 };
 
 EmojiCategories.defaultProps = {
