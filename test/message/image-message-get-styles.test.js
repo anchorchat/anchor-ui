@@ -32,7 +32,7 @@ describe('ImageMessage.getStyles', () => {
     it('should add avatar styles', () => {
       const style = getStyles.root('red', false, true);
 
-      expect(style).to.have.property('marginLeft', '66px');
+      expect(style).to.have.property('marginLeft', '48px');
     });
 
     it('should add compact styles', () => {

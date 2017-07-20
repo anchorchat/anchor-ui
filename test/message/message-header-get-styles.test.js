@@ -58,21 +58,7 @@ describe('MessageHeader.getStyles', () => {
     it('should add myMessage styles', () => {
       const style = getStyles.avatar(true);
 
-      expect(style).to.have.property('right', '-66px');
-    });
-  });
-
-  describe('arrow', () => {
-    it('should get styles', () => {
-      const style = getStyles.arrow();
-
-      expect(style).to.deep.equal(styles.arrow);
-    });
-
-    it('should add myMessage styles', () => {
-      const style = getStyles.arrow(true);
-
-      expect(style).to.have.property('borderRight', '10px solid');
+      expect(style).to.have.property('right', '-48px');
     });
   });
 });
