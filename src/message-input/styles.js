@@ -46,6 +46,9 @@ export default {
   buttons: {
     display: 'flex'
   },
+  placeholder: {
+    color: colors.placeholderText
+  },
   textarea: {
     height: 'calc(100% - 31px)',
     resize: 'none',

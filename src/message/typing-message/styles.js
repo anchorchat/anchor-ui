@@ -14,11 +14,11 @@ export default {
     fontWeight: 'inherit'
   },
   avatar: {
-    marginLeft: '66px'
+    marginLeft: '48px'
   },
   myAvatar: {
     marginLeft: '0',
-    marginRight: '66px'
+    marginRight: '48px'
   },
   myMessage: {
     backgroundColor: colors.theme,

@@ -1311,6 +1311,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -1593,6 +1600,17 @@
         "required": true,
         "description": "Function to hide the menu"
       },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Category icon color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      },
       "color": {
         "type": {
           "name": "string"
@@ -1816,6 +1834,18 @@
         "description": "Callback fired when the IconMenu closes\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
@@ -3190,6 +3220,17 @@
           "value": "false",
           "computed": false
         }
+      },
+      "maxRows": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Multi line input's max visible rows.",
+        "defaultValue": {
+          "value": "12",
+          "computed": false
+        }
       }
     }
   },
@@ -4329,6 +4370,51 @@
           "computed": false
         }
       },
+      "maxRows": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Multi line input's max visible rows.",
+        "defaultValue": {
+          "value": "12",
+          "computed": false
+        }
+      },
+      "sendIconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color for the send button icon",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sendIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom send button icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input's placeholder",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
@@ -4837,6 +4923,18 @@
           "value": "null",
           "computed": false
         }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -5327,6 +5425,18 @@
         },
         "required": false,
         "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input's placeholder",
         "defaultValue": {
           "value": "{}",
           "computed": false

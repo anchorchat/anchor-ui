@@ -39,8 +39,10 @@ const DividerDoc = () => {
         <Paper style={style.paper}>
           <List style={style.list}>
             <ListItem primaryText="ListItem" />
-            <Divider text="Divider" />
+            <Divider />
             <ListItem primaryText="ListItem 2" />
+            <Divider text="Divider with text" />
+            <ListItem primaryText="ListItem 3" />
           </List>
         </Paper>
       </section>

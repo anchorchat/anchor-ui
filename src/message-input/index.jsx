@@ -1,7 +1,7 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import Radium, { Style } from 'radium';
 import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -45,19 +45,28 @@ const propTypes = {
   multiLine: PropTypes.bool,
   /** Multi line input's max visible rows. */
   maxRows: PropTypes.number,
+  /** Color for the send button icon */
+  sendIconColor: PropTypes.string,
+  /** Custom send button icon */
+  sendIcon: PropTypes.node,
+  /** Override the styles of the input's placeholder */
+  placeholderStyle: PropTypes.instanceOf(Object),
   color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
   style: {},
   inputStyle: {},
+  placeholderStyle: {},
   maxLength: 500,
   leftButton: null,
   disabled: false,
   rightButton: null,
   inputRef: null,
   multiLine: false,
-  maxRows: 12
+  maxRows: 12,
+  sendIconColor: '',
+  sendIcon: null
 };
 
 const displayName = 'MessageInput';
@@ -157,6 +166,9 @@ class MessageInput extends Component {
       rightButton,
       multiLine,
       maxRows,
+      sendIconColor,
+      sendIcon,
+      placeholderStyle,
       ...custom
     } = this.props;
     const { height } = this.state;
@@ -174,6 +186,7 @@ class MessageInput extends Component {
         ref={inputRef}
         disabled={disabled}
         key="input"
+        className="message-input"
         {...custom}
       />
     );
@@ -198,6 +211,7 @@ class MessageInput extends Component {
           }}
           disabled={disabled}
           key="input"
+          className="message-input"
           {...custom}
         />
       );
@@ -219,9 +233,14 @@ class MessageInput extends Component {
             iconButton
             onClick={this.handleMessageSend}
           >
-            <IconSend color={color} />
+            {sendIcon || <IconSend color={sendIconColor || color} />}
           </Button>
         </div>
+        <Style
+          rules={{
+            '.message-input::placeholder': getStyles.placeholder(placeholderStyle)
+          }}
+        />
       </section>
     );
   }
@@ -235,5 +254,9 @@ const enhance = compose(
   themeable(),
   Radium
 );
+
+MessageInput.displayName = displayName;
+MessageInput.propTypes = propTypes;
+MessageInput.defaultProps = defaultProps;
 
 export default enhance(MessageInput);

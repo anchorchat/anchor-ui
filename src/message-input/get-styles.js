@@ -16,6 +16,7 @@ const root = (disabled, height = '48px', multiLine, overrideStyle) => {
 };
 
 const input = overrideStyle => combineStyles(styles.input, overrideStyle);
+const placeholder = overrideStyle => combineStyles(styles.placeholder, overrideStyle);
 
 const textarea = overrideStyle => (
   combineStyles(combineStyles(styles.input, styles.textarea), overrideStyle)
@@ -24,5 +25,6 @@ const textarea = overrideStyle => (
 export default {
   root,
   input,
+  placeholder,
   textarea
 };

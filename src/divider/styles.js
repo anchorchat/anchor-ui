@@ -5,7 +5,7 @@ export default {
     marginRight: 0,
     marginLeft: 0,
     marginBottom: 0,
-    marginTop: -1,
+    marginTop: 0,
     height: 1,
     border: 'none',
     backgroundColor: colors.grey,

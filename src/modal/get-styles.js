@@ -7,7 +7,7 @@ const root = overrideStyle => combineStyles(styles.root, overrideStyle);
 const content = overrideStyle => combineStyles(styles.content, overrideStyle);
 
 const footer = (color = colors.theme, overrideStyle) => {
-  const style = combineStyles(styles.footer, { background: color });
+  const style = combineStyles(styles.footer, { backgroundColor: color });
 
   return combineStyles(style, overrideStyle);
 };

@@ -6,11 +6,6 @@ import styles from './styles';
 
 const MessageHeader = ({ compact, myMessage, avatar, fontSize, headerStyle, username }) => (
   <div style={styles.container}>
-    {
-      compact
-      ? null
-      : <div style={getStyles.arrow(myMessage)} />
-    }
     {avatar && !compact ? <Avatar image={avatar} style={getStyles.avatar(myMessage)} /> : null}
     <header
       style={

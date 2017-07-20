@@ -37,7 +37,7 @@ const themeable = options => ChildComponent => (
     render() {
       const propName = (options && options.propName) || 'color';
       const customPropName = { [propName]: this.state.color };
-      const combinedProps = { ...this.props, ...customPropName };
+      const combinedProps = { ...customPropName, ...this.props };
 
       return <ChildComponent {...combinedProps} />;
     }

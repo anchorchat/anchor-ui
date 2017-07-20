@@ -2,10 +2,18 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.2...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.3...HEAD)
 
 **Merged pull requests:**
 
+- \[4.0.3\] Fixed ChannelHeader styling for buttons. [\#777](https://github.com/anchorchat/anchor-ui/pull/777) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.0.3](https://github.com/anchorchat/anchor-ui/tree/v4.0.3) (2017-06-30)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.2...v4.0.3)
+
+**Merged pull requests:**
+
+- Fixed mistake with Button styling. [\#776](https://github.com/anchorchat/anchor-ui/pull/776) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.0.2\] Added secondaryText to ChannelHeader, fixed TableHeader text alignment, fixed Pagination buttons, added tests. [\#775](https://github.com/anchorchat/anchor-ui/pull/775) ([sjaakluthart](https://github.com/sjaakluthart))
 
 ## [v4.0.2](https://github.com/anchorchat/anchor-ui/tree/v4.0.2) (2017-06-29)
