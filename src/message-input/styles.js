@@ -29,6 +29,7 @@ export default {
     outline: 'none',
     padding: '0 8px',
     border: 0,
+    backgroundColor: 'inherit',
 
     ':focus': {
       outline: 'none'
