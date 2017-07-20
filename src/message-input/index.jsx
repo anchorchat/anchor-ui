@@ -43,6 +43,8 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** Multi line input. If true, a textarea element will be rendered. */
   multiLine: PropTypes.bool,
+  /** Multi line input's max visible rows. */
+  maxRows: PropTypes.number,
   color: PropTypes.string.isRequired
 };
 
@@ -54,7 +56,8 @@ const defaultProps = {
   disabled: false,
   rightButton: null,
   inputRef: null,
-  multiLine: false
+  multiLine: false,
+  maxRows: 12
 };
 
 const displayName = 'MessageInput';
@@ -70,7 +73,7 @@ class MessageInput extends Component {
     };
   }
 
-  handleChange = (event) => {
+  handleChange = (event, rows, lineHeight) => {
     const { onChange } = this.props;
     const { height } = this.state;
 
@@ -86,13 +89,22 @@ class MessageInput extends Component {
       });
     }
 
-    if (this.textarea.scrollHeight !== height) {
-      this.setState({
-        height: this.textarea.scrollHeight
-      });
+    if (
+      this.textarea.scrollHeight + 31 !== height
+      && this.textarea.scrollHeight < (rows * lineHeight)
+    ) {
+      if (this.textarea.scrollHeight + 31 < 48) {
+        this.setState({
+          height: 48
+        });
+      } else {
+        this.setState({
+          height: (this.textarea.scrollHeight + 31)
+        });
+      }
     }
 
-    this.textarea.style.height = '100%';
+    this.textarea.style.height = 'calc(100% - 31px)';
 
     onChange(event);
   }
@@ -144,9 +156,11 @@ class MessageInput extends Component {
       color,
       rightButton,
       multiLine,
+      maxRows,
       ...custom
     } = this.props;
     const { height } = this.state;
+    const { lineHeight } = getStyles.textarea(inputStyle);
 
     let input = (
       <input
@@ -169,11 +183,12 @@ class MessageInput extends Component {
         <textarea
           style={getStyles.textarea(inputStyle)}
           placeholder={placeholder}
-          onChange={this.handleChange}
+          onChange={event => this.handleChange(event, maxRows, parseInt(lineHeight, 10))}
           value={value}
           type="text"
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
+          rows={maxRows}
           ref={(node) => {
             this.textarea = node;
 

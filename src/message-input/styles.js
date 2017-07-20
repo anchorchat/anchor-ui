@@ -16,8 +16,7 @@ export default {
     borderRadius: '3px',
     backgroundColor: colors.white,
     boxShadow: styles.depthShadows[0],
-    overflow: 'auto',
-    maxHeight: '200px'
+    overflow: 'auto'
   },
   input: {
     flex: '1',
@@ -31,6 +30,7 @@ export default {
     outline: 'none',
     padding: '0 8px',
     border: 0,
+    backgroundColor: 'inherit',
 
     ':focus': {
       outline: 'none'
@@ -47,9 +47,11 @@ export default {
     display: 'flex'
   },
   textarea: {
+    height: 'calc(100% - 31px)',
     resize: 'none',
     overflow: 'auto',
-    padding: '16px 8px',
+    padding: '0 8px',
+    margin: '15px 0 16px',
     boxSizing: 'border-box'
   }
 };
