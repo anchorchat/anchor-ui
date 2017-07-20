@@ -1818,6 +1818,18 @@
           "value": "() => {}",
           "computed": false
         }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -4867,6 +4879,18 @@
         "description": "Text to divide the menu items",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
