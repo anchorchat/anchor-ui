@@ -1,7 +1,7 @@
 /* eslint react/require-default-props: 0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
+import Radium, { Style } from 'radium';
 import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -46,12 +46,15 @@ const propTypes = {
   sendIconColor: PropTypes.string,
   /** Custom send button icon */
   sendIcon: PropTypes.node,
+  /** Override the styles of the input's placeholder */
+  placeholderStyle: PropTypes.instanceOf(Object),
   color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
   style: {},
   inputStyle: {},
+  placeholderStyle: {},
   maxLength: 500,
   leftButton: null,
   disabled: false,
@@ -92,6 +95,7 @@ class MessageInput extends Component {
       rightButton,
       sendIconColor,
       sendIcon,
+      placeholderStyle,
       ...custom
     } = this.props;
 
@@ -115,6 +119,7 @@ class MessageInput extends Component {
           ref={inputRef}
           disabled={disabled}
           key="input"
+          className="message-input"
           {...custom}
         />
         <div style={styles.buttons}>
@@ -126,6 +131,11 @@ class MessageInput extends Component {
             {sendIcon || <IconSend color={sendIconColor || color} />}
           </Button>
         </div>
+        <Style
+          rules={{
+            '.message-input::placeholder': getStyles.placeholder(placeholderStyle)
+          }}
+        />
       </section>
     );
   }

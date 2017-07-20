@@ -44,5 +44,8 @@ export default {
   },
   buttons: {
     display: 'flex'
+  },
+  placeholder: {
+    color: colors.placeholderText
   }
 };
