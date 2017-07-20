@@ -28,17 +28,7 @@ const avatar = (myMessage) => {
   let style = styles.avatar;
 
   if (myMessage) {
-    style = combineStyles(style, { left: 'initial', right: '-66px', marginLeft: 0 });
-  }
-
-  return style;
-};
-
-const arrow = (myMessage) => {
-  let style = styles.arrow;
-
-  if (myMessage) {
-    style = combineStyles(style, styles.myArrow);
+    style = combineStyles(style, { left: 'initial', right: '-48px', marginLeft: 0 });
   }
 
   return style;
@@ -46,6 +36,5 @@ const arrow = (myMessage) => {
 
 export default {
   header,
-  avatar,
-  arrow
+  avatar
 };
