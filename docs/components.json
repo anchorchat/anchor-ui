@@ -686,6 +686,17 @@
         "required": true,
         "description": "The channel's name"
       },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional text to display below `name`",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "rightButton": {
         "type": {
           "name": "node"
@@ -732,6 +743,18 @@
           "computed": false
         }
       },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "leftButtonStyle": {
         "type": {
           "name": "instanceOf",
@@ -755,6 +778,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -4294,6 +4324,28 @@
         "description": "Disables the input for the messageInput area",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "sendIconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color for the send button icon",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "sendIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom send button icon",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
