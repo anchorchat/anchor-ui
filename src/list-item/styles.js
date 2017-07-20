@@ -5,7 +5,6 @@ export default {
   root: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
-    borderTop: `1px solid ${colors.white}`,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
@@ -17,6 +16,7 @@ export default {
     paddingBottom: '0',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
+
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
@@ -27,6 +27,7 @@ export default {
   active: {
     backgroundColor: colors.theme,
     color: colors.white,
+
     ':hover': {
       backgroundColor: darken(colors.theme, 0.05)
     },
