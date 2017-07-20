@@ -86,16 +86,17 @@ class Pagination extends Component {
         >
           <IconChevronLeft color={colors.white} />
         </Button>
-        {map(pages, (page, index) =>
+        {map(pages, (page, index) => (
           <Button
-            key={index} onClick={event => this.setPage(event, page, list, pageSize)}
+            key={index}
+            onClick={event => this.setPage(event, page, list, pageSize)}
             style={getStyles.navButton(navButtonStyle)}
             disabled={currentPage === page}
             inverted
           >
             {page}
           </Button>
-        )}
+        ))}
         <Button
           disabled={currentPage === totalPages}
           onClick={event => this.setPage(event, currentPage + 1, list, pageSize)}

@@ -6,22 +6,6 @@ export default {
     borderRightColor: 'inherit',
     flexShrink: 0
   },
-  arrow: {
-    borderBottom: '5px solid transparent',
-    borderRight: `10px solid ${colors.white}`,
-    borderTop: '5px solid transparent',
-    height: '0',
-    left: '-10px',
-    position: 'absolute',
-    top: '15px'
-  },
-  myArrow: {
-    borderRight: '10px solid',
-    borderRightColor: 'inherit',
-    left: 'initial',
-    right: '-10px',
-    transform: 'rotate(180deg)'
-  },
   header: {
     color: colors.secondaryText,
     fontSize: '14px',
@@ -31,7 +15,7 @@ export default {
   },
   avatar: {
     position: 'absolute',
-    left: '-66px',
+    left: '-48px',
     top: '0'
   }
 };

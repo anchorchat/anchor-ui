@@ -8,7 +8,7 @@ export default {
   root: {
     width: '256px',
     height: '100%',
-    background: colors.white,
+    backgroundColor: colors.white,
     overflowY: 'scroll',
     transform: 'translateX(-256px)',
     transition: 'all .3s ease-in-out',
@@ -41,7 +41,7 @@ export default {
     position: 'relative',
     width: '256px',
     height: '100%',
-    background: colors.white,
+    backgroundColor: colors.white,
     overflowY: 'scroll',
     borderRight: `1px solid ${colors.grey}`
   }

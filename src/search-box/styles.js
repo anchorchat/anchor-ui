@@ -31,5 +31,8 @@ export default {
     position: 'absolute',
     top: '12px',
     left: '8px'
+  },
+  placeholder: {
+    color: colors.placeholderText
   }
 };

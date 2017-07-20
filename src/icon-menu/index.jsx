@@ -35,7 +35,9 @@ class IconMenu extends Component {
      *
      * function(event: object) => void
      */
-    onMenuClose: PropTypes.func
+    onMenuClose: PropTypes.func,
+    /** Override the styles of the divider element */
+    dividerStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
@@ -43,6 +45,7 @@ class IconMenu extends Component {
     style: {},
     headerStyle: {},
     contentStyle: {},
+    dividerStyle: {},
     secondaryMenuItems: null,
     dividerText: null,
     onMenuClose: () => {}
@@ -125,13 +128,14 @@ class IconMenu extends Component {
       style,
       contentStyle,
       dividerText,
-      onMenuClose, // eslint-disable-line no-unused-vars
-      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
-      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
-      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
-      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
-      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
+      onMenuClose,
+      eventTypes, // eslint-disable-line react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line react/prop-types
+      preventDefault, // eslint-disable-line react/prop-types
+      stopPropagation, // eslint-disable-line react/prop-types
+      disableOnClickOutside, // eslint-disable-line react/prop-types
+      enableOnClickOutside, // eslint-disable-line react/prop-types
+      dividerStyle,
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -166,6 +170,7 @@ class IconMenu extends Component {
           position={position}
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}
+          dividerStyle={dividerStyle}
         >
           {menuItemsWithProps}
         </PopOver>

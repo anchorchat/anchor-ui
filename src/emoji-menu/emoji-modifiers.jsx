@@ -8,13 +8,13 @@ import styles from './styles';
 
 function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   return (
-    <header style={styles.modifierHeader}>
-      <div style={getStyles.modifierHeader(style)}>
+    <header style={getStyles.header(style)}>
+      <div style={getStyles.modifiers(modifierStyle)}>
         <div
           onClick={() => changeTone('tone0')}
           className="modifier"
           style={
-            getStyles.modifier(tone === 'tone0', modifierStyle)
+            getStyles.modifier(tone === 'tone0')
           }
         >
           <svg width="50px" height="50px" viewBox="0 0 50 50" className="emojione">

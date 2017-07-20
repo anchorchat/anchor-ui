@@ -136,8 +136,8 @@ class ListItem extends Component {
       muted,
       blocked,
       children,
-      open, // eslint-disable-line no-unused-vars
-      onNestedListToggle, // eslint-disable-line no-unused-vars
+      open,
+      onNestedListToggle,
       nestedLevel,
       color,
       ...custom
@@ -160,6 +160,7 @@ class ListItem extends Component {
           {
             avatar
             ? <div style={styles.avatar}>
+              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
               {
                 muted && !blocked
                 ? <div style={styles.icon}><IconMute color={colors.white} /></div>
@@ -167,7 +168,6 @@ class ListItem extends Component {
               }
               {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
               {badge ? <div style={styles.badge}>{badge}</div> : null}
-              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
             </div>
             : null
           }

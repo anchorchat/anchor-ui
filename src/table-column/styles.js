@@ -4,8 +4,6 @@ export default {
     color: 'inherit',
     fontWeight: 'inherit',
     fontSize: 'inherit',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap'
+    verticalAlign: 'top'
   }
 };
