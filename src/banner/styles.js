@@ -33,12 +33,13 @@ export default {
     top: '4px',
     right: '4px',
     boxShadow: styles.depthShadows[0],
-    background: colors.primaryText,
+    backgroundColor: colors.primaryText,
+
     ':hover': {
-      background: darken(colors.primaryText, 0.15)
+      backgroundColor: darken(colors.primaryText, 0.15)
     },
     ':active': {
-      background: darken(colors.primaryText, 0.25)
+      backgroundColor: darken(colors.primaryText, 0.25)
     }
   }
 };

@@ -6,7 +6,7 @@ export default {
     width: '80%',
     maxWidth: '350px',
     margin: '0 auto',
-    background: colors.white,
+    backgroundColor: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -18,7 +18,7 @@ export default {
   },
   footer: {
     padding: '12px 16px',
-    background: colors.theme,
+    backgroundColor: colors.theme,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

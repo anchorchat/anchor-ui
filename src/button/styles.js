@@ -5,7 +5,7 @@ import styles from '../settings/styles';
 
 export default {
   iconButton: {
-    background: 'none',
+    backgroundColor: 'transparent',
     borderRadius: '50%',
     border: 0,
     cursor: 'pointer',
@@ -15,8 +15,9 @@ export default {
     transition: 'all .3s ease-in-out',
     flexShrink: 0,
     width: '40px',
+
     ':hover': {
-      background: fade(colors.black, 0.9)
+      backgroundColor: fade(colors.black, 0.9)
     },
     ':active': {
       boxShadow: styles.depthShadows[0]
@@ -37,6 +38,7 @@ export default {
     padding: '6px 12px',
     transition: 'all .3s ease-in-out',
     flexShrink: 0,
+
     ':hover': {
       backgroundColor: darken(colors.theme, 0.15)
     },
@@ -47,6 +49,7 @@ export default {
   inverted: {
     color: colors.theme,
     backgroundColor: colors.white,
+
     ':hover': {
       backgroundColor: darken(colors.white, 0.15)
     },
@@ -62,6 +65,7 @@ export default {
     boxShadow: 'none',
     textTransform: 'uppercase',
     flexShrink: 0,
+
     ':hover': {
       backgroundColor: fade(colors.black, 0.95)
     },

@@ -5,7 +5,7 @@ export default {
   root: {
     width: '100%',
     height: '250px',
-    background: colors.background,
+    backgroundColor: colors.background,
     overflow: 'hidden',
     borderRadius: '3px',
     boxShadow: styles.depthShadows[0],
@@ -28,7 +28,7 @@ export default {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    background: colors.white,
+    backgroundColor: colors.white,
     padding: '0 8px',
     height: '40px',
     boxSizing: 'border-box'
@@ -69,7 +69,7 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     padding: '5px',
-    background: colors.white,
+    backgroundColor: colors.white,
     category: {
       width: '30px',
       height: '30px',
