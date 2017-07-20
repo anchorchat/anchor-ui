@@ -90,6 +90,8 @@ class MessageInput extends Component {
       inputStyle,
       color,
       rightButton,
+      sendIconColor,
+      sendIcon,
       ...custom
     } = this.props;
 
@@ -121,7 +123,7 @@ class MessageInput extends Component {
             iconButton
             onClick={sendMessage}
           >
-            <IconSend color={color} />
+            {sendIcon || <IconSend color={sendIconColor || color} />}
           </Button>
         </div>
       </section>
