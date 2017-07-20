@@ -5363,6 +5363,18 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the input's placeholder",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },

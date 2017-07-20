@@ -1,20 +1,14 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function root(overrideStyle) {
-  return combineStyles(styles.root, overrideStyle);
-}
-
-function icon(overrideStyle) {
-  return combineStyles(styles.icon, overrideStyle);
-}
-
-function input(overrideStyle) {
-  return combineStyles(styles.input, overrideStyle);
-}
+const root = overrideStyle => combineStyles(styles.root, overrideStyle);
+const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
+const input = overrideStyle => combineStyles(styles.input, overrideStyle);
+const placeholder = overrideStyle => combineStyles(styles.placeholder, overrideStyle);
 
 export default {
   root,
   icon,
-  input
+  input,
+  placeholder
 };
