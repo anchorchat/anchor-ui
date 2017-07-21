@@ -1311,6 +1311,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -1592,6 +1599,17 @@
         },
         "required": true,
         "description": "Function to hide the menu"
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Category icon color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
       },
       "color": {
         "type": {
@@ -3843,6 +3861,18 @@
         },
         "required": false,
         "description": "Override the styles of the right button element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "activeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override style applied when the MenuItem is active",
         "defaultValue": {
           "value": "{}",
           "computed": false
