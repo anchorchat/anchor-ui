@@ -20,7 +20,7 @@ class Select extends Component {
   static propTypes = {
     /** The Select's content (MenuItem), each child must have a value prop */
     children: PropTypes.node.isRequired,
-    /** The Selects value */
+    /** The Select's value */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     /**
      * Callback fired when Select's value changes
@@ -32,7 +32,7 @@ class Select extends Component {
     style: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
     headerStyle: PropTypes.instanceOf(Object),
-    /** The Selects label */
+    /** The Select's label */
     label: PropTypes.node,
     /** Override the styles of the label element */
     labelStyle: PropTypes.instanceOf(Object),
@@ -44,6 +44,8 @@ class Select extends Component {
     error: PropTypes.node,
     /** Override the styles of the error element */
     errorStyle: PropTypes.instanceOf(Object),
+    /** The header icon color */
+    iconColor: PropTypes.string,
     color: PropTypes.string.isRequired
   }
 
@@ -56,7 +58,8 @@ class Select extends Component {
     contentStyle: {},
     placeholder: '',
     error: null,
-    errorStyle: {}
+    errorStyle: {},
+    iconColor: colors.white
   }
 
   constructor() {
@@ -149,6 +152,7 @@ class Select extends Component {
       stopPropagation, // eslint-disable-line react/prop-types
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
+      iconColor,
       ...custom
     } = this.props;
 
@@ -184,7 +188,7 @@ class Select extends Component {
           onClick={this.toggleSelect}
         >
           {headerText}
-          <IconChevronDown color={colors.white} style={getStyles.icon(open)} />
+          <IconChevronDown color={iconColor} style={getStyles.icon(open)} />
         </header>
         <PopOver
           style={popOverStyle}
