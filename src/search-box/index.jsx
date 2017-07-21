@@ -5,6 +5,7 @@ import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
 import IconSearch from '../icons/icon-search';
 import getStyles from './get-styles';
+import colors from '../settings/colors';
 
 const displayName = 'SearchBox';
 
@@ -32,7 +33,9 @@ const propTypes = {
   /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the input's placeholder */
-  placeholderStyle: PropTypes.instanceOf(Object)
+  placeholderStyle: PropTypes.instanceOf(Object),
+  /** The search icon's color */
+  iconColor: PropTypes.string
 };
 
 const defaultProps = {
@@ -40,7 +43,8 @@ const defaultProps = {
   inputStyle: {},
   iconStyle: {},
   placeholder: 'Search something...',
-  placeholderStyle: {}
+  placeholderStyle: {},
+  iconColor: colors.icons
 };
 
 /** General purpose Search box */
@@ -75,12 +79,13 @@ class SearchBox extends Component {
       changeSearchQuery,
       onChange,
       placeholderStyle,
+      iconColor,
       ...custom
     } = this.props;
 
     return (
       <section style={getStyles.root(style)} {...custom}>
-        <div style={getStyles.icon(iconStyle)}><IconSearch /></div>
+        <div style={getStyles.icon(iconStyle)}><IconSearch color={iconColor} /></div>
         <input
           style={getStyles.input(inputStyle)}
           value={value}

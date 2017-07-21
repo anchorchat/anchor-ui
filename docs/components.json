@@ -1311,6 +1311,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -1592,6 +1599,17 @@
         },
         "required": true,
         "description": "Function to hide the menu"
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Category icon color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
       },
       "color": {
         "type": {
@@ -5398,6 +5416,17 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
+        }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The search icon's color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
         }
       }
     }
