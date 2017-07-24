@@ -5578,7 +5578,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The header icon color",
+        "description": "The header's icon color",
         "defaultValue": {
           "value": "colors.white",
           "computed": true

@@ -44,7 +44,7 @@ class Select extends Component {
     error: PropTypes.node,
     /** Override the styles of the error element */
     errorStyle: PropTypes.instanceOf(Object),
-    /** The header icon color */
+    /** The header's icon color */
     iconColor: PropTypes.string,
     color: PropTypes.string.isRequired
   }
