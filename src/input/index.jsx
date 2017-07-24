@@ -148,7 +148,7 @@ class Input extends Component {
             rows={maxRows}
             id={name}
             placeholder={placeholder}
-            ref={node => (this.textarea = node)}
+            ref={(node) => { this.textarea = node; }}
             disabled={disabled}
             {...custom}
           />
