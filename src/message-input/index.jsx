@@ -172,7 +172,8 @@ class MessageInput extends Component {
       ...custom
     } = this.props;
     const { height } = this.state;
-    const { lineHeight } = getStyles.textarea(inputStyle);
+    const textareaStyle = getStyles.textarea(inputStyle);
+    const { lineHeight } = textareaStyle;
 
     let input = (
       <input
@@ -194,7 +195,7 @@ class MessageInput extends Component {
     if (multiLine) {
       input = (
         <textarea
-          style={getStyles.textarea(inputStyle)}
+          style={textareaStyle}
           placeholder={placeholder}
           onChange={event => this.handleChange(event, maxRows, parseInt(lineHeight, 10))}
           value={value}
