@@ -117,7 +117,8 @@ class Input extends Component {
       ...custom
     } = this.props;
     const { height } = this.state;
-    const { lineHeight } = getStyles.textarea(error, inputStyle);
+    const textareaStyle = getStyles.textarea(error, inputStyle);
+    const { lineHeight } = textareaStyle;
 
     let input = (
       <input
@@ -139,7 +140,7 @@ class Input extends Component {
         <section style={getStyles.inputRoot(height)}>
           <textarea
             className="input"
-            style={getStyles.textarea(error, inputStyle)}
+            style={textareaStyle}
             onChange={event => this.handleChange(event, maxRows, parseInt(lineHeight, 10))}
             value={value}
             type={type}
