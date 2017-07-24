@@ -38,6 +38,8 @@ class MenuItem extends Component {
     rightButton: PropTypes.node,
     /** Override the styles of the right button element */
     buttonStyle: PropTypes.instanceOf(Object),
+    /** Override style applied when the MenuItem is active */
+    activeStyle: PropTypes.instanceOf(Object),
     color: PropTypes.string.isRequired
   };
 
@@ -49,7 +51,8 @@ class MenuItem extends Component {
     iconStyle: {},
     buttonStyle: {},
     closeMenu: null,
-    rightButton: null
+    rightButton: null,
+    activeStyle: {}
   };
 
   static contextTypes = {
@@ -85,12 +88,13 @@ class MenuItem extends Component {
       rightButton,
       buttonStyle,
       color,
+      activeStyle,
       ...custom
     } = this.props;
 
     return (
       <section
-        style={getStyles.root(color, icon, active, rightButton, style)}
+        style={getStyles.root(color, icon, active, rightButton, style, activeStyle)}
         onClick={this.handleClick}
         {...custom}
       >

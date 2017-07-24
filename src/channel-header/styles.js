@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 
 const styleSheet = {
   root: {
-    background: colors.white,
+    backgroundColor: colors.white,
     borderBottom: `1px solid ${colors.grey}`,
     position: 'relative',
     padding: '8px 56px',
