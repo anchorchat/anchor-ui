@@ -5429,6 +5429,17 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The search's icon color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
       }
     }
   },
