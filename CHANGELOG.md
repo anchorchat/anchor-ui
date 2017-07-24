@@ -2,10 +2,34 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.1...HEAD)
 
 **Merged pull requests:**
 
+- \[4.1.1\] Added more override capabilities. [\#812](https://github.com/anchorchat/anchor-ui/pull/812) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.1.1](https://github.com/anchorchat/anchor-ui/tree/v4.1.1) (2017-07-24)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.0...v4.1.1)
+
+**Implemented enhancements:**
+
+- \[Powered by\] Make it text with SVG instead [\#805](https://github.com/anchorchat/anchor-ui/issues/805)
+
+**Fixed bugs:**
+
+- \\[Powered by\\] Make it text with SVG instead [\#805](https://github.com/anchorchat/anchor-ui/issues/805)
+
+**Closed issues:**
+
+- Add activeStyle to MenuItem [\#808](https://github.com/anchorchat/anchor-ui/issues/808)
+- Add iconColor prop to Select [\#807](https://github.com/anchorchat/anchor-ui/issues/807)
+- Add iconColor prop to SearchBox [\#804](https://github.com/anchorchat/anchor-ui/issues/804)
+
+**Merged pull requests:**
+
+- Added activeStyle to MenuItem, fixed issue \#808. [\#811](https://github.com/anchorchat/anchor-ui/pull/811) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added iconColor to SearchBox, fixed issue \#804. [\#810](https://github.com/anchorchat/anchor-ui/pull/810) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added iconColor to select, fixed issue \#807. [\#809](https://github.com/anchorchat/anchor-ui/pull/809) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.1.0\] Added theming capabilities [\#803](https://github.com/anchorchat/anchor-ui/pull/803) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.1.0](https://github.com/anchorchat/anchor-ui/tree/v4.1.0) (2017-07-20)
@@ -87,14 +111,6 @@
 - Added textDecoration: none to attribution link [\#767](https://github.com/anchorchat/anchor-ui/pull/767) ([sjaakluthart](https://github.com/sjaakluthart))
 - Made prop onMentionClick not required. [\#766](https://github.com/anchorchat/anchor-ui/pull/766) ([sjaakluthart](https://github.com/sjaakluthart))
 - Fixed Searchbox changeSearchQuery [\#765](https://github.com/anchorchat/anchor-ui/pull/765) ([sjaakluthart](https://github.com/sjaakluthart))
-
-**Implemented enhancements:**
-
-- Added option to match commands non leading, changed command.title to command.value, added command.prefix [\#753](https://github.com/anchorchat/anchor-ui/pull/753) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#725 [\#750](https://github.com/anchorchat/anchor-ui/pull/750) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#652 [\#711](https://github.com/anchorchat/anchor-ui/pull/711) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#705 [\#707](https://github.com/anchorchat/anchor-ui/pull/707) ([sjaakluthart](https://github.com/sjaakluthart))
-- :lipstick: Adjusted styles to conform with design. [\#701](https://github.com/anchorchat/anchor-ui/pull/701) ([IanCStewart](https://github.com/IanCStewart))
 
 **Merged pull requests:**
 
