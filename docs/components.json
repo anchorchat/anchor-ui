@@ -5423,7 +5423,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "The search icon's color",
+        "description": "The search's icon color",
         "defaultValue": {
           "value": "colors.icons",
           "computed": true

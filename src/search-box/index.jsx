@@ -34,7 +34,7 @@ const propTypes = {
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the input's placeholder */
   placeholderStyle: PropTypes.instanceOf(Object),
-  /** The search icon's color */
+  /** The search's icon color */
   iconColor: PropTypes.string
 };
 
