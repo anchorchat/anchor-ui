@@ -1311,6 +1311,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -1592,6 +1599,17 @@
         },
         "required": true,
         "description": "Function to hide the menu"
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Category icon color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
       },
       "color": {
         "type": {
@@ -3848,6 +3866,18 @@
           "computed": false
         }
       },
+      "activeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override style applied when the MenuItem is active",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
@@ -5399,6 +5429,17 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The search's icon color",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
       }
     }
   },
@@ -5449,7 +5490,7 @@
           ]
         },
         "required": false,
-        "description": "The Selects value",
+        "description": "The Select's value",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -5491,7 +5532,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "The Selects label",
+        "description": "The Select's label",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5553,6 +5594,17 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
+        }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The header's icon color",
+        "defaultValue": {
+          "value": "colors.white",
+          "computed": true
         }
       },
       "color": {
