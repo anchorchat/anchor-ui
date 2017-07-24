@@ -39,11 +39,14 @@ const error = overrideStyle => combineStyles(styles.error, overrideStyle);
 
 const inputRoot = (height = 32) => combineStyles(styles.inputRoot, { height });
 
+const placeholder = overrideStyle => combineStyles(styles.placeholder, overrideStyle);
+
 export default {
   root,
   label,
   input,
   error,
   textarea,
-  inputRoot
+  inputRoot,
+  placeholder
 };

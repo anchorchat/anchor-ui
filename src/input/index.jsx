@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
 import pure from 'recompose/pure';
 import getStyles from './get-styles';
-import colors from '../settings/colors';
-import combineStyles from '../internal/combine-styles';
 
 const propTypes = {
   /**
@@ -162,7 +160,7 @@ class Input extends Component {
         {input}
         <Style
           rules={{
-            '.input::placeholder': combineStyles({ color: colors.placeholderText }, placeholderStyle)
+            '.input::placeholder': getStyles.placeholder(placeholderStyle)
           }}
         />
         {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}

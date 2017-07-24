@@ -51,5 +51,8 @@ export default {
     paddingLeft: '8px',
     color: colors.error,
     fontSize: '14px'
+  },
+  placeholder: {
+    color: colors.placeholderText
   }
 };
