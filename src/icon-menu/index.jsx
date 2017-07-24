@@ -158,7 +158,7 @@ class IconMenu extends Component {
           />
           : null
         }
-        <div ref={button => (this.button = button)}>
+        <div ref={(button) => { this.button = button; }}>
           <Button iconButton onClick={!open ? this.openMenu : this.closeMenu}>{icon}</Button>
         </div>
         <PopOver
@@ -166,7 +166,7 @@ class IconMenu extends Component {
           header={header}
           headerStyle={headerStyle}
           open={open}
-          popOverRef={popOver => (this.popOver = popOver)}
+          popOverRef={(popOver) => { this.popOver = popOver; }}
           position={position}
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}

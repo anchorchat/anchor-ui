@@ -177,13 +177,13 @@ class Select extends Component {
 
     return (
       <section
-        ref={container => (this.container = container)}
+        ref={(container) => { this.container = container; }}
         style={combineStyles(styles.root, style)}
         {...custom}
       >
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         <header
-          ref={button => (this.button = button)}
+          ref={(button) => { this.button = button; }}
           style={getStyles.header(error, color, headerStyle)}
           onClick={this.toggleSelect}
         >
@@ -193,7 +193,7 @@ class Select extends Component {
         <PopOver
           style={popOverStyle}
           open={open}
-          popOverRef={popOver => (this.popOver = popOver)}
+          popOverRef={(popOver) => { this.popOver = popOver; }}
           position={position}
         >
           {childrenWithProps}

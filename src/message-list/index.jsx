@@ -102,7 +102,7 @@ class MessageList extends Component {
       <article style={getStyles.root(style)} {...custom}>
         <ul
           style={getStyles.list(listStyle)}
-          ref={messageList => (this.messageList = messageList)}
+          ref={(messageList) => { this.messageList = messageList; }}
         >
           {children}
         </ul>
