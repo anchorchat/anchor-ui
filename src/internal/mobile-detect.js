@@ -1,3 +1,6 @@
 import MobileDetect from 'mobile-detect';
+import get from 'lodash/get';
 
-export default new MobileDetect(window.navigator.userAgent);
+const userAgent = get(window, 'navigator.userAgent', '');
+
+export default new MobileDetect(userAgent);
