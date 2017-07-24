@@ -5479,7 +5479,7 @@
           ]
         },
         "required": false,
-        "description": "The Selects value",
+        "description": "The Select's value",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -5521,7 +5521,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "The Selects label",
+        "description": "The Select's label",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5583,6 +5583,17 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
+        }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The header's icon color",
+        "defaultValue": {
+          "value": "colors.white",
+          "computed": true
         }
       },
       "color": {
