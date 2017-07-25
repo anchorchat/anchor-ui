@@ -46,6 +46,8 @@ const propTypes = {
   titleStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the description element */
   descriptionStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the command element */
+  commandStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the param element */
   paramStyle: PropTypes.instanceOf(Object),
   /**
@@ -74,7 +76,8 @@ const defaultProps = {
   titleStyle: {},
   descriptionStyle: {},
   paramStyle: {},
-  leading: true
+  leading: true,
+  commandStyle: {}
 };
 
 /** Used for displaying a list of commands */
@@ -183,6 +186,7 @@ class Commands extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       leading, // eslint-disable-line react/prop-types
+      commandStyle,
       ...custom
     } = this.props;
     const { open } = this.state;
@@ -198,7 +202,7 @@ class Commands extends Component {
           {map(this.state.commands, command => (
             <div
               onMouseOver={event => onMouseOver(event, `${command.prefix}${command.value}`)}
-              style={getStyles.command()}
+              style={getStyles.command(commandStyle)}
               key={command.value}
               onClick={event => this.handleSelect(event, `${command.prefix}${command.value}`)}
             >

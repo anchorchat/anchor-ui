@@ -997,6 +997,18 @@
           "computed": false
         }
       },
+      "commandStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the command element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "paramStyle": {
         "type": {
           "name": "instanceOf",
