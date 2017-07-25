@@ -46,7 +46,7 @@ const propTypes = {
   titleStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the description element */
   descriptionStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the description element */
+  /** Override the styles of the command element */
   commandStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the param element */
   paramStyle: PropTypes.instanceOf(Object),

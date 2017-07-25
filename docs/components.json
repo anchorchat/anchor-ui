@@ -1003,7 +1003,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the description element",
+        "description": "Override the styles of the command element",
         "defaultValue": {
           "value": "{}",
           "computed": false
