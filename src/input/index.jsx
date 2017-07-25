@@ -40,7 +40,9 @@ const propTypes = {
   /** Multi line input. If true, a textarea element will be rendered. */
   multiLine: PropTypes.bool,
   /** Multi line input's max visible rows. */
-  maxRows: PropTypes.number
+  maxRows: PropTypes.number,
+  /** Multi line input's row height. */
+  rowHeight: PropTypes.number
 };
 
 const defaultProps = {
@@ -56,7 +58,8 @@ const defaultProps = {
   label: null,
   placeholderStyle: {},
   multiLine: false,
-  maxRows: 12
+  maxRows: 12,
+  rowHeight: 16
 };
 
 const displayName = 'Input';
@@ -71,13 +74,16 @@ class Input extends Component {
     };
   }
 
-  handleChange = (event, rows, lineHeight) => {
-    const { onChange } = this.props;
+  handleChange = (event) => {
+    const { onChange, rowHeight, maxRows } = this.props;
     const { height } = this.state;
 
     this.textarea.style.height = '1px';
 
-    if (this.textarea.scrollHeight !== height && this.textarea.scrollHeight < (rows * lineHeight)) {
+    if (
+      this.textarea.scrollHeight !== height &&
+      this.textarea.scrollHeight < (maxRows * rowHeight)
+    ) {
       if (this.textarea.scrollHeight < 32) {
         this.setState({
           height: 32
@@ -115,8 +121,6 @@ class Input extends Component {
       ...custom
     } = this.props;
     const { height } = this.state;
-    const textareaStyle = getStyles.textarea(error, inputStyle);
-    const { lineHeight } = textareaStyle;
 
     let input = (
       <input
@@ -138,8 +142,8 @@ class Input extends Component {
         <section style={getStyles.inputRoot(height)}>
           <textarea
             className="input"
-            style={textareaStyle}
-            onChange={event => this.handleChange(event, maxRows, parseInt(lineHeight, 10))}
+            style={getStyles.textarea(error, inputStyle)}
+            onChange={this.handleChange}
             value={value}
             type={type}
             maxLength={maxLength}
