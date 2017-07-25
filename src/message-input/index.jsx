@@ -85,17 +85,17 @@ class MessageInput extends Component {
     };
   }
 
-  handleChange = (event, rows, lineHeight) => {
-    const { onChange } = this.props;
+  handleChange = (event) => {
+    const { onChange, rowHeight, maxRows } = this.props;
     const { height } = this.state;
 
     this.textarea.style.height = '1px';
 
-    if (this.textarea.scrollHeight > 48) {
+    if (this.textarea.scrollHeight > 31) {
       this.setState({
         multiLine: true
       });
-    } else if (this.textarea.scrollHeight <= 48) {
+    } else {
       this.setState({
         multiLine: false
       });
@@ -103,7 +103,7 @@ class MessageInput extends Component {
 
     if (
       this.textarea.scrollHeight + 31 !== height
-      && this.textarea.scrollHeight < (rows * lineHeight)
+      && this.textarea.scrollHeight < (maxRows * rowHeight)
     ) {
       if (this.textarea.scrollHeight + 31 < 48) {
         this.setState({
