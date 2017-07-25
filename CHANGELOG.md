@@ -2,10 +2,19 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.2...HEAD)
 
 **Merged pull requests:**
 
+- \[4.1.2\] Added more overriding styles capabilities. [\#816](https://github.com/anchorchat/anchor-ui/pull/816) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.1.2](https://github.com/anchorchat/anchor-ui/tree/v4.1.2) (2017-07-25)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.1...v4.1.2)
+
+**Merged pull requests:**
+
+- Added commandStyle. [\#815](https://github.com/anchorchat/anchor-ui/pull/815) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added expandMenuItem to Message. [\#814](https://github.com/anchorchat/anchor-ui/pull/814) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.1.1\] Added more override capabilities. [\#812](https://github.com/anchorchat/anchor-ui/pull/812) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.1.1](https://github.com/anchorchat/anchor-ui/tree/v4.1.1) (2017-07-24)
