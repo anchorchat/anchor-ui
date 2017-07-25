@@ -47,7 +47,7 @@ const messages = [
     body: 'https://telegram.org/file/811140750/1/KwtOAxwo1SA/452620c767366798d3',
     createdAt: new Date(),
     username: 'Sjaak',
-    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
     id: 5,
     type: 'sticker'
   },
@@ -55,15 +55,15 @@ const messages = [
     body: 'https://source.unsplash.com/random/375x667',
     createdAt: new Date(),
     username: 'Sjaak',
-    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
     id: 6,
     type: 'image'
   },
   {
     body: 'is typing',
     createdAt: new Date(),
-    username: 'Lars',
-    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    username: 'Ian',
+    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
     id: 7,
     type: 'typing'
   },
@@ -84,15 +84,15 @@ class MessageDoc extends Component {
     };
   }
 
-  selectCollapse = collapsed => this.setState({ collapsed })
+  selectCollapse = (event, collapsed) => this.setState({ collapsed })
 
   selectCompact = () => this.setState({ compact: !this.state.compact })
 
-  selectFontSize = fontSize => this.setState({ fontSize })
+  selectFontSize = (event, fontSize) => this.setState({ fontSize })
 
-  selectIconMenu = iconMenu => this.setState({ iconMenu })
+  selectIconMenu = (event, iconMenu) => this.setState({ iconMenu })
 
-  selectEdited = edited => this.setState({ edited })
+  selectEdited = (event, edited) => this.setState({ edited })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Message');

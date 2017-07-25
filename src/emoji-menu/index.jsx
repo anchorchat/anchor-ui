@@ -13,6 +13,7 @@ import EmojiCategories from './emoji-categories';
 import Storage from './storage';
 import getStyles from './get-styles';
 import themeable from '../themeable';
+import colors from '../settings/colors';
 
 const storage = new Storage();
 
@@ -43,6 +44,8 @@ const propTypes = {
   open: PropTypes.bool,
   /** Function to hide the menu */
   hideMenu: PropTypes.func.isRequired,
+  /** Category icon color */
+  iconColor: PropTypes.string,
   color: PropTypes.string.isRequired
 };
 
@@ -54,7 +57,8 @@ const defaultProps = {
   emojiStyle: {},
   footerStyle: {},
   iconStyle: {},
-  open: false
+  open: false,
+  iconColor: colors.icons
 };
 
 const displayName = 'EmojiMenu';
@@ -136,6 +140,7 @@ class EmojiMenu extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       hideMenu,
+      iconColor,
       ...custom
     } = this.props;
 
@@ -191,6 +196,7 @@ class EmojiMenu extends Component {
           recent={storedEmojis.length > 0}
           style={footerStyle}
           iconStyle={iconStyle}
+          iconColor={iconColor}
         />
         <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>

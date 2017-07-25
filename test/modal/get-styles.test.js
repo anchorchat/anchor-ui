@@ -42,7 +42,7 @@ describe('Modal.getStyles', () => {
     it('should override color', () => {
       const style = getStyles.footer('red');
 
-      expect(style.background).to.equal('red');
+      expect(style.backgroundColor).to.equal('red');
     });
 
     it('should combine styles', () => {

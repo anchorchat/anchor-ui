@@ -76,13 +76,13 @@ describe('EmojiMenu.getStyles', () => {
 
   describe('modifierHeader', () => {
     it('should get styles', () => {
-      const style = getStyles.modifierHeader();
+      const style = getStyles.header();
 
-      expect(style).to.deep.equal(styles.modifiers);
+      expect(style).to.deep.equal(styles.header);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.modifierHeader({ color: 'red' });
+      const style = getStyles.header({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });

@@ -16,6 +16,7 @@ const PopOver = ({
   position,
   secondaryMenuItems,
   dividerText,
+  dividerStyle,
   ...custom
 }) => {
   if (!open) {
@@ -25,11 +26,11 @@ const PopOver = ({
   let divider = null;
 
   if (secondaryMenuItems) {
-    divider = <Divider />;
+    divider = <Divider style={dividerStyle} />;
   }
 
   if (secondaryMenuItems && dividerText) {
-    divider = <Divider text={dividerText} />;
+    divider = <Divider text={dividerText} style={dividerStyle} />;
   }
 
   return (
@@ -66,7 +67,9 @@ PopOver.propTypes = {
   /** Secondary set of MenuItems */
   secondaryMenuItems: PropTypes.node,
   /** Text to divide the menu items */
-  dividerText: PropTypes.node
+  dividerText: PropTypes.node,
+  /** Override the styles of the divider element */
+  dividerStyle: PropTypes.instanceOf(Object)
 };
 
 PopOver.defaultProps = {
@@ -76,7 +79,8 @@ PopOver.defaultProps = {
   open: false,
   position: {},
   secondaryMenuItems: null,
-  dividerText: null
+  dividerText: null,
+  dividerStyle: {}
 };
 
 export default pure(Radium(PopOver));

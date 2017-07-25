@@ -6,7 +6,7 @@ export default {
   root: {
     padding: '10px',
     borderRadius: '3px',
-    background: colors.white,
+    backgroundColor: colors.white,
     margin: '10px'
   }
 };

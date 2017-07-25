@@ -21,8 +21,12 @@ function categoryEmoji(overrideStyle) {
   return combineStyles(styles.category.emoji, overrideStyle);
 }
 
-function modifierHeader(overrideStyle) {
-  return combineStyles(styles.modifierHeader, overrideStyle);
+function header(overrideStyle) {
+  return combineStyles(styles.header, overrideStyle);
+}
+
+function modifiers(overrideStyle) {
+  return combineStyles(styles.modifiers, overrideStyle);
 }
 
 function modifier(active, overrideStyle) {
@@ -41,6 +45,7 @@ export default {
   categoriesCategory,
   category,
   categoryEmoji,
-  modifierHeader,
+  modifiers,
+  header,
   modifier
 };

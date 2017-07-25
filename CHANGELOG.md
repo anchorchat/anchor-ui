@@ -2,10 +2,57 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.2...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.0...HEAD)
 
 **Merged pull requests:**
 
+- \[4.1.0\] Added theming capabilities [\#803](https://github.com/anchorchat/anchor-ui/pull/803) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.1.0](https://github.com/anchorchat/anchor-ui/tree/v4.1.0) (2017-07-20)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.3...v4.1.0)
+
+**Implemented enhancements:**
+
+- Switch active style [\#793](https://github.com/anchorchat/anchor-ui/issues/793)
+- Add send icon prop to MessageInput [\#790](https://github.com/anchorchat/anchor-ui/issues/790)
+- Remove borderTop from ListItem [\#787](https://github.com/anchorchat/anchor-ui/issues/787)
+- Add placeholder style to SearchBox [\#786](https://github.com/anchorchat/anchor-ui/issues/786)
+- Issue \#800 [\#802](https://github.com/anchorchat/anchor-ui/pull/802) ([sjaakluthart](https://github.com/sjaakluthart))
+- Props to themeable component override color passed by theme, fixed is… [\#796](https://github.com/anchorchat/anchor-ui/pull/796) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added placeholderStyle to SearchBox. [\#795](https://github.com/anchorchat/anchor-ui/pull/795) ([sjaakluthart](https://github.com/sjaakluthart))
+
+**Fixed bugs:**
+
+- \[EmojiMenu\] headerStyle does not work [\#797](https://github.com/anchorchat/anchor-ui/issues/797)
+- Switch active style [\#793](https://github.com/anchorchat/anchor-ui/issues/793)
+- Add send icon prop to MessageInput [\#790](https://github.com/anchorchat/anchor-ui/issues/790)
+- Make sure a Message's `arrow` changes with Message background color [\#789](https://github.com/anchorchat/anchor-ui/issues/789)
+- Make sure colour prop in ChannelAvatar has priority over theme colour [\#788](https://github.com/anchorchat/anchor-ui/issues/788)
+- Changed to longhand backgroundColor. [\#801](https://github.com/anchorchat/anchor-ui/pull/801) ([sjaakluthart](https://github.com/sjaakluthart))
+- Fixed EmojiMenu styling, closes issue \#797. [\#799](https://github.com/anchorchat/anchor-ui/pull/799) ([sjaakluthart](https://github.com/sjaakluthart))
+- Bug/doc table [\#798](https://github.com/anchorchat/anchor-ui/pull/798) ([IanCStewart](https://github.com/IanCStewart))
+- Props to themeable component override color passed by theme, fixed is… [\#796](https://github.com/anchorchat/anchor-ui/pull/796) ([sjaakluthart](https://github.com/sjaakluthart))
+
+**Closed issues:**
+
+- Add override styles for Divider to IconMenu [\#800](https://github.com/anchorchat/anchor-ui/issues/800)
+- Emoji menu fix the emojis [\#781](https://github.com/anchorchat/anchor-ui/issues/781)
+
+**Merged pull requests:**
+
+- Removed borderTop, fixes issue \#787. [\#794](https://github.com/anchorchat/anchor-ui/pull/794) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#789 [\#792](https://github.com/anchorchat/anchor-ui/pull/792) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#790 [\#791](https://github.com/anchorchat/anchor-ui/pull/791) ([sjaakluthart](https://github.com/sjaakluthart))
+- List-item bug [\#782](https://github.com/anchorchat/anchor-ui/pull/782) ([IanCStewart](https://github.com/IanCStewart))
+- Eslint [\#779](https://github.com/anchorchat/anchor-ui/pull/779) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[4.0.3\] Fixed ChannelHeader styling for buttons. [\#777](https://github.com/anchorchat/anchor-ui/pull/777) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.0.3](https://github.com/anchorchat/anchor-ui/tree/v4.0.3) (2017-06-30)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.0.2...v4.0.3)
+
+**Merged pull requests:**
+
+- Fixed mistake with Button styling. [\#776](https://github.com/anchorchat/anchor-ui/pull/776) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.0.2\] Added secondaryText to ChannelHeader, fixed TableHeader text alignment, fixed Pagination buttons, added tests. [\#775](https://github.com/anchorchat/anchor-ui/pull/775) ([sjaakluthart](https://github.com/sjaakluthart))
 
 ## [v4.0.2](https://github.com/anchorchat/anchor-ui/tree/v4.0.2) (2017-06-29)

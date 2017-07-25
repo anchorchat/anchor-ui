@@ -5,7 +5,7 @@ export default {
   root: {
     width: '100%',
     height: '250px',
-    background: colors.background,
+    backgroundColor: colors.background,
     overflow: 'hidden',
     borderRadius: '3px',
     boxShadow: styles.depthShadows[0],
@@ -24,17 +24,18 @@ export default {
       transform: 'scale(1.2)'
     }
   },
-  modifierHeader: {
+  header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: colors.white,
     padding: '0 8px',
     height: '40px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    color: colors.secondaryText
   },
   attributionLink: {
-    color: colors.secondaryText,
+    color: 'inherit',
     fontWeight: 'inherit',
     fontSize: '14px',
     textDecoration: 'none'
@@ -44,13 +45,16 @@ export default {
     padding: '10px 6px 6px 6px',
     overflowY: 'scroll',
     boxSizing: 'border-box',
+    color: colors.primaryText,
+
     header: {
       marginTop: '0',
       fontWeight: 'bolder',
       textTransform: 'capitalize',
       marginBottom: '10px',
       fontSize: '16px',
-      lineHeight: '16px'
+      lineHeight: '16px',
+      color: 'inherit'
     },
     emojiContainer: {
       display: 'flex',
@@ -69,7 +73,7 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     padding: '5px',
-    background: colors.white,
+    backgroundColor: colors.white,
     category: {
       width: '30px',
       height: '30px',

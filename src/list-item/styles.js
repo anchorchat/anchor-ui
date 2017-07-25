@@ -5,7 +5,6 @@ export default {
   root: {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
-    borderTop: `1px solid ${colors.white}`,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
@@ -17,6 +16,7 @@ export default {
     paddingBottom: '0',
     position: 'relative',
     transition: 'background-color .3s ease-in-out',
+
     ':hover': {
       backgroundColor: darken(colors.white, 0.05)
     },
@@ -27,6 +27,7 @@ export default {
   active: {
     backgroundColor: colors.theme,
     color: colors.white,
+
     ':hover': {
       backgroundColor: darken(colors.theme, 0.05)
     },
@@ -43,8 +44,7 @@ export default {
     padding: '8px',
     boxSizing: 'border-box',
     backgroundColor: 'rgba(21, 21, 21, .75)',
-    borderRadius: '50%',
-    zIndex: 1
+    borderRadius: '50%'
   },
   rightButton: {
     paddingRight: '52px'
@@ -89,8 +89,7 @@ export default {
   badge: {
     position: 'absolute',
     right: '-3px',
-    top: '-3px',
-    zIndex: 1
+    top: '-3px'
   },
   container: {
     width: '100%'

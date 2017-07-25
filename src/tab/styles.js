@@ -7,7 +7,7 @@ export default {
     borderRight: 0,
     borderBottom: '3px solid transparent',
     borderLeft: 0,
-    background: colors.white,
+    backgroundColor: colors.white,
     outline: 0,
     cursor: 'pointer',
     boxSizing: 'border-box',
