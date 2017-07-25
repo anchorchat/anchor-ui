@@ -4179,6 +4179,17 @@
           "computed": false
         }
       },
+      "expandMenuItem": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom menu item, should be a MenuItem component.\n This component should handle the image expand.\n None of the other 'expand' props are passed to this component.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "edited": {
         "type": {
           "name": "node"
