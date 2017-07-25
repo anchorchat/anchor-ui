@@ -79,9 +79,9 @@ class Message extends Component {
     expandText: PropTypes.node,
     /** Icon to show in expand menu item */
     expandIcon: PropTypes.node,
-    /** Custom menu item, should be a MenuItem component.
-     *  This component should handle the image expand.
-     *  None of the other 'expand' props are passed to this component.
+    /** Custom menu item. Should be a MenuItem component.
+     *  Make sure this component handles image expanding.
+     *  If this is passed none of the other expand props will be used.
      */
     expandMenuItem: PropTypes.node,
     /** Text to display for edited banner */
