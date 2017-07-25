@@ -997,6 +997,18 @@
           "computed": false
         }
       },
+      "commandStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the command element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "paramStyle": {
         "type": {
           "name": "instanceOf",
@@ -4174,6 +4186,17 @@
         },
         "required": false,
         "description": "Icon to show in expand menu item",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "expandMenuItem": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom menu item. Should be a MenuItem component.\n Make sure this component handles image expanding.\n If this is passed none of the other expand props will be used.",
         "defaultValue": {
           "value": "null",
           "computed": false
