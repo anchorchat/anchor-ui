@@ -2,10 +2,19 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.2...HEAD)
 
 **Merged pull requests:**
 
+- \[4.1.2\] Added more overriding styles capabilities. [\#816](https://github.com/anchorchat/anchor-ui/pull/816) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.1.2](https://github.com/anchorchat/anchor-ui/tree/v4.1.2) (2017-07-25)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.1...v4.1.2)
+
+**Merged pull requests:**
+
+- Added commandStyle. [\#815](https://github.com/anchorchat/anchor-ui/pull/815) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added expandMenuItem to Message. [\#814](https://github.com/anchorchat/anchor-ui/pull/814) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.1.1\] Added more override capabilities. [\#812](https://github.com/anchorchat/anchor-ui/pull/812) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.1.1](https://github.com/anchorchat/anchor-ui/tree/v4.1.1) (2017-07-24)
@@ -111,14 +120,6 @@
 - Added textDecoration: none to attribution link [\#767](https://github.com/anchorchat/anchor-ui/pull/767) ([sjaakluthart](https://github.com/sjaakluthart))
 - Made prop onMentionClick not required. [\#766](https://github.com/anchorchat/anchor-ui/pull/766) ([sjaakluthart](https://github.com/sjaakluthart))
 - Fixed Searchbox changeSearchQuery [\#765](https://github.com/anchorchat/anchor-ui/pull/765) ([sjaakluthart](https://github.com/sjaakluthart))
-
-**Implemented enhancements:**
-
-- Added option to match commands non leading, changed command.title to command.value, added command.prefix [\#753](https://github.com/anchorchat/anchor-ui/pull/753) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#725 [\#750](https://github.com/anchorchat/anchor-ui/pull/750) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#652 [\#711](https://github.com/anchorchat/anchor-ui/pull/711) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#705 [\#707](https://github.com/anchorchat/anchor-ui/pull/707) ([sjaakluthart](https://github.com/sjaakluthart))
-- :lipstick: Adjusted styles to conform with design. [\#701](https://github.com/anchorchat/anchor-ui/pull/701) ([IanCStewart](https://github.com/IanCStewart))
 
 **Merged pull requests:**
 
