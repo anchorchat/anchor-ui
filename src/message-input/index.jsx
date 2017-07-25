@@ -45,6 +45,8 @@ const propTypes = {
   multiLine: PropTypes.bool,
   /** Multi line input's max visible rows. */
   maxRows: PropTypes.number,
+  /** Multi line input's row height. */
+  rowHeight: PropTypes.number,
   /** Color for the send button icon */
   sendIconColor: PropTypes.string,
   /** Custom send button icon */
@@ -66,7 +68,8 @@ const defaultProps = {
   multiLine: false,
   maxRows: 12,
   sendIconColor: '',
-  sendIcon: null
+  sendIcon: null,
+  rowHeight: 16
 };
 
 const displayName = 'MessageInput';
@@ -169,11 +172,10 @@ class MessageInput extends Component {
       sendIconColor,
       sendIcon,
       placeholderStyle,
+      rowHeight,
       ...custom
     } = this.props;
     const { height } = this.state;
-    const textareaStyle = getStyles.textarea(inputStyle);
-    const { lineHeight } = textareaStyle;
 
     let input = (
       <input
@@ -195,9 +197,9 @@ class MessageInput extends Component {
     if (multiLine) {
       input = (
         <textarea
-          style={textareaStyle}
+          style={getStyles.textarea(inputStyle)}
           placeholder={placeholder}
-          onChange={event => this.handleChange(event, maxRows, parseInt(lineHeight, 10))}
+          onChange={this.handleChange}
           value={value}
           type="text"
           onKeyDown={this.handleKeyDown}

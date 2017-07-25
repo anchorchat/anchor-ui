@@ -4393,6 +4393,17 @@
           "computed": false
         }
       },
+      "rowHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Multi line input's row height.",
+        "defaultValue": {
+          "value": "16",
+          "computed": false
+        }
+      },
       "sendIconColor": {
         "type": {
           "name": "string"
