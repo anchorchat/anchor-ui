@@ -168,7 +168,7 @@ class Message extends Component {
       expandMenuItem
     } = this.props;
 
-    if (!expand || (!menuItems && !collapsed)) {
+    if ((!expand && !expandMenuItem) || (!menuItems && !collapsed)) {
       return null;
     }
 
