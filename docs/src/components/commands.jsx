@@ -148,6 +148,7 @@ class CommandsDoc extends Component {
               onChange={this.handleChange}
               onSelect={this.handleSelect}
               leading
+              onMenuClose={() => console.log('close')}
             />
             <Commands
               header="Mentions"
@@ -157,6 +158,7 @@ class CommandsDoc extends Component {
               onChange={this.handleChange}
               onSelect={this.handleSelect}
               leading={false}
+              onMenuClose={() => console.log('close')}
             />
             <MessageInput
               onChange={this.changeValue}
