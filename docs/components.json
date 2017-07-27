@@ -1046,6 +1046,13 @@
           "computed": false
         }
       },
+      "onMenuClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when the menu is closed\n\nfunction() => void"
+      },
       "color": {
         "type": {
           "name": "string"

@@ -6,6 +6,7 @@ import map from 'lodash/map';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
 import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import themeable from '../themeable';
 import getStyles from './get-styles';
 import Avatar from '../avatar';
@@ -66,6 +67,12 @@ const propTypes = {
    * Match first word or entire input
    */
   leading: PropTypes.bool,
+  /**
+   * Callback fired when the menu is closed
+   *
+   * function() => void
+   */
+  onMenuClose: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired
 };
 
@@ -96,10 +103,7 @@ class Commands extends Component {
     const { open } = this.state;
 
     if (!value) {
-      return this.setState({
-        open: false,
-        commands: nextProps.commands
-      });
+      this.hideMenu();
     }
 
     const filteredCommands = this.filterCommands(nextProps.commands, nextProps.value);
@@ -112,10 +116,7 @@ class Commands extends Component {
     }
 
     if (isEmpty(filteredCommands) && open) {
-      return this.setState({
-        open: false,
-        commands: nextProps.commands
-      });
+      this.hideMenu();
     }
 
     return this.setState({
@@ -141,13 +142,15 @@ class Commands extends Component {
     });
   }
 
-  handleClickOutside = () => {
-    const { commands } = this.props;
+  hideMenu = () => {
+    const { commands, onMenuClose } = this.props;
     const { open } = this.state;
 
     if (!open) {
       return false;
     }
+
+    onMenuClose();
 
     return this.setState({
       open: false,
@@ -155,13 +158,20 @@ class Commands extends Component {
     });
   }
 
-  handleSelect = (event, command) => {
-    const { onSelect, commands } = this.props;
+  handleClickOutside = () => this.hideMenu()
 
-    this.setState({
-      open: false,
-      commands
-    });
+  handleKeyDown = (event) => {
+    const key = event.which || event.keyCode;
+
+    if (key === 27) {
+      return this.hideMenu();
+    }
+
+    return false;
+  }
+
+  handleSelect = (event, command) => {
+    const { onSelect } = this.props;
 
     onSelect(event, command);
   }
@@ -186,6 +196,7 @@ class Commands extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       leading, // eslint-disable-line react/prop-types
+      onMenuClose,
       commandStyle,
       ...custom
     } = this.props;
@@ -229,6 +240,7 @@ class Commands extends Component {
             </div>
           ))}
         </section>
+        <EventListener target="window" onKeyDown={this.handleKeyDown} />
       </section>
     );
   }
