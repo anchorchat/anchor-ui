@@ -26,7 +26,7 @@ export default {
     overflowY: 'scroll'
   },
   command: {
-    padding: '4px 16px 4px 8px',
+    padding: '8px 16px 8px 8px',
     margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
@@ -54,8 +54,8 @@ export default {
     alignItems: 'center'
   },
   avatarContainer: {
-    width: '24px',
-    height: '24px',
+    width: '20px',
+    height: '20px',
     marginRight: '8px'
   },
   avatar: {
