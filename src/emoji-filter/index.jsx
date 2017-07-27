@@ -56,7 +56,7 @@ class EmojiFilter extends Component {
       open: false,
       emoji: [],
       tone: 'tone0',
-      selectedIndex: 0
+      selectedIndex: null
     };
   }
 
@@ -148,6 +148,10 @@ class EmojiFilter extends Component {
     const { selectedIndex } = this.state;
     const emojiSize = _.size(this.state.emoji);
 
+    if (selectedIndex === null) {
+      return this.handleChange(event, this.state.emoji[0], 0);
+    }
+
     if (selectedIndex + 1 < emojiSize) {
       return this.handleChange(event, this.state.emoji[selectedIndex + 1], selectedIndex + 1);
     }
@@ -162,6 +166,10 @@ class EmojiFilter extends Component {
   selectPrevious = (event) => {
     const { selectedIndex } = this.state;
     const emojiSize = _.size(this.state.emoji);
+
+    if (selectedIndex === null) {
+      return this.handleChange(event, this.state.emoji[0], 0);
+    }
 
     if (selectedIndex === 0) {
       return this.handleChange(event, this.state.emoji[emojiSize - 1], emojiSize - 1);
