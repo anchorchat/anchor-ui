@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import map from 'lodash/map';
+import size from 'lodash/size';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
 import onClickOutside from 'react-onclickoutside';
@@ -155,7 +156,8 @@ class Commands extends Component {
 
     return this.setState({
       open: false,
-      commands
+      commands,
+      selectedIndex: null
     });
   }
 
@@ -163,9 +165,67 @@ class Commands extends Component {
 
   handleKeyDown = (event) => {
     const key = event.which || event.keyCode;
+    const { shiftKey } = event;
+    const { selectedIndex } = this.state;
 
     if (key === 27) {
       return this.hideMenu();
+    }
+
+    if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectNext(event);
+    }
+
+    if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectPrevious(event);
+    }
+
+    if (key === 13) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      this.handleSelect(event, this.state.commands[selectedIndex], selectedIndex);
+    }
+
+    return false;
+  }
+
+  selectNext = (event) => {
+    const { selectedIndex } = this.state;
+    const commandsSize = size(this.state.commands);
+
+    if (selectedIndex === null) {
+      return this.handleChange(event, this.state.commands[0], 0);
+    }
+
+    if (selectedIndex + 1 < commandsSize) {
+      return this.handleChange(event, this.state.commands[selectedIndex + 1], selectedIndex + 1);
+    }
+
+    if (selectedIndex === commandsSize - 1) {
+      return this.handleChange(event, this.state.commands[0], 0);
+    }
+
+    return false;
+  }
+
+  selectPrevious = (event) => {
+    const { selectedIndex } = this.state;
+    const commandsSize = size(this.state.commands);
+
+    if (selectedIndex === null) {
+      return this.handleChange(event, this.state.commands[0], 0);
+    }
+
+    if (selectedIndex === 0) {
+      return this.handleChange(event, this.state.commands[commandsSize - 1], commandsSize - 1);
+    }
+
+    if (selectedIndex - 1 < commandsSize) {
+      return this.handleChange(event, this.state.commands[selectedIndex - 1], selectedIndex - 1);
     }
 
     return false;
@@ -175,14 +235,14 @@ class Commands extends Component {
     const { onSelect } = this.props;
 
     this.setState({ selectedIndex: index });
-    onSelect(event, command);
+    onSelect(event, `${command.prefix}${command.value}`);
   }
 
   handleChange = (event, command, index) => {
     const { onChange } = this.props;
 
     this.setState({ selectedIndex: index });
-    onChange(event, command);
+    onChange(event, `${command.prefix}${command.value}`);
   }
 
   render() {
@@ -223,8 +283,8 @@ class Commands extends Component {
             <div
               key={command.value}
               style={getStyles.command(color, index === selectedIndex, commandStyle)}
-              onClick={event => this.handleSelect(event, `${command.prefix}${command.value}`, index)}
-              onMouseOver={event => this.handleChange(event, `${command.prefix}${command.value}`, index)}
+              onClick={event => this.handleSelect(event, command, index)}
+              onMouseOver={event => this.handleChange(event, command, index)}
             >
               <span style={styles.titleContainer}>
                 {
