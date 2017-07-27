@@ -35,7 +35,7 @@ class CommandsDoc extends Component {
     return this.setState({ value: event.currentTarget.value });
   }
 
-  handleMouseOver = (event, command) => this.setState({ command })
+  handleChange = (event, command) => this.setState({ command })
 
   handleSelect = (event, command) => {
     this.setState({
@@ -145,7 +145,7 @@ class CommandsDoc extends Component {
               style={style.commands}
               value={this.state.value}
               commands={commands}
-              onMouseOver={this.handleMouseOver}
+              onChange={this.handleChange}
               onSelect={this.handleSelect}
               leading
             />
@@ -154,7 +154,7 @@ class CommandsDoc extends Component {
               style={style.commands}
               value={this.state.value}
               commands={mentions}
-              onMouseOver={this.handleMouseOver}
+              onChange={this.handleChange}
               onSelect={this.handleSelect}
               leading={false}
             />

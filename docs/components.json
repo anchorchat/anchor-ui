@@ -1028,7 +1028,7 @@
         "required": true,
         "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
       },
-      "onMouseOver": {
+      "onChange": {
         "type": {
           "name": "func"
         },

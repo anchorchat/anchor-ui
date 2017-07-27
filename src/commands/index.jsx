@@ -62,7 +62,7 @@ const propTypes = {
    *
    * function(event: object, command: string) => void
    */
-  onMouseOver: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   /**
    * Match first word or entire input
    */
@@ -94,7 +94,8 @@ class Commands extends Component {
 
     this.state = {
       open: false,
-      commands: this.filterCommands(props.commands, props.value)
+      commands: this.filterCommands(props.commands, props.value),
+      selectedIndex: null
     };
   }
 
@@ -170,10 +171,18 @@ class Commands extends Component {
     return false;
   }
 
-  handleSelect = (event, command) => {
+  handleSelect = (event, command, index) => {
     const { onSelect } = this.props;
 
+    this.setState({ selectedIndex: index });
     onSelect(event, command);
+  }
+
+  handleChange = (event, command, index) => {
+    const { onChange } = this.props;
+
+    this.setState({ selectedIndex: index });
+    onChange(event, command);
   }
 
   render() {
@@ -182,7 +191,7 @@ class Commands extends Component {
       commands,
       value,
       color,
-      onMouseOver,
+      onChange,
       onSelect,
       style,
       headerStyle,
@@ -200,7 +209,7 @@ class Commands extends Component {
       commandStyle,
       ...custom
     } = this.props;
-    const { open } = this.state;
+    const { open, selectedIndex } = this.state;
 
     if (!open) {
       return null;
@@ -208,14 +217,14 @@ class Commands extends Component {
 
     return (
       <section style={getStyles.root(style)} {...custom}>
-        <header style={getStyles.header(color, headerStyle)}>{header}</header>
+        <header style={getStyles.header(headerStyle)}>{header}</header>
         <section style={getStyles.commands()}>
-          {map(this.state.commands, command => (
+          {map(this.state.commands, (command, index) => (
             <div
-              onMouseOver={event => onMouseOver(event, `${command.prefix}${command.value}`)}
-              style={getStyles.command(commandStyle)}
               key={command.value}
-              onClick={event => this.handleSelect(event, `${command.prefix}${command.value}`)}
+              style={getStyles.command(color, index === selectedIndex, commandStyle)}
+              onClick={event => this.handleSelect(event, `${command.prefix}${command.value}`, index)}
+              onMouseOver={event => this.handleChange(event, `${command.prefix}${command.value}`, index)}
             >
               <span style={styles.titleContainer}>
                 {
