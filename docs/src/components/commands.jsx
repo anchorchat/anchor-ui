@@ -1,4 +1,3 @@
-/* global alert */
 /* eslint no-alert: [0] */
 /* eslint no-console: [0] */
 import React, { Component } from 'react';
@@ -18,32 +17,55 @@ class CommandsDoc extends Component {
 
     this.state = {
       value: '',
-      command: ''
+      valueToMatch: '',
+      selectedCommand: ''
     };
   }
 
   changeValue = (event) => {
-    const { command } = this.state;
+    const value = event.currentTarget.value;
 
-    if (command) {
-      return this.setState({
-        command: '',
-        value: command
-      });
+    let valueToMatch = '';
+
+    if (value.indexOf('@') > -1) {
+      valueToMatch = _.last(value.split('@'));
     }
 
-    return this.setState({ value: event.currentTarget.value });
+    if (value.length > this.input.selectionStart) {
+      const slicedValue = value.slice(0, this.input.selectionStart);
+
+      if (slicedValue.indexOf('@') > -1) {
+        const splitValue = slicedValue.split('@');
+
+        valueToMatch = _.last(splitValue);
+      }
+    }
+
+    this.setState({ value, valueToMatch: `@${valueToMatch}` });
   }
 
-  handleChange = (event, command) => this.setState({ command })
+  handleSelect = (event, emoji) => {
+    const { value, valueToMatch, selectedCommand } = this.state;
 
-  handleSelect = (event, command) => {
     this.setState({
-      value: command
+      value: value.replace(selectedCommand || valueToMatch, emoji.shortname),
+      valueToMatch: '',
+      selectedCommand: ''
     });
 
-    alert(`selected ${command}`);
+    this.input.focus();
   }
+
+  handleChange = (event, command) => {
+    const { value, valueToMatch, selectedCommand } = this.state;
+
+    this.setState({
+      value: value.replace(selectedCommand || valueToMatch, command),
+      selectedCommand: command
+    });
+  }
+
+  handleClose = () => this.setState({ valueToMatch: '', selectedCommand: '' })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Commands');
@@ -143,7 +165,7 @@ class CommandsDoc extends Component {
           <Paper style={style.paper}>
             <Commands
               style={style.commands}
-              value={this.state.value}
+              value={this.state.valueToMatch}
               commands={commands}
               onChange={this.handleChange}
               onSelect={this.handleSelect}
@@ -153,7 +175,7 @@ class CommandsDoc extends Component {
             <Commands
               header="Mentions"
               style={style.commands}
-              value={this.state.value}
+              value={this.state.valueToMatch}
               commands={mentions}
               onChange={this.handleChange}
               onSelect={this.handleSelect}
@@ -166,6 +188,7 @@ class CommandsDoc extends Component {
               value={this.state.command || this.state.value}
               sendMessage={() => {}}
               style={style.messageInput}
+              inputRef={(node) => { this.input = node; }}
             />
           </Paper>
         </section>
