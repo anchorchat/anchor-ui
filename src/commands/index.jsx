@@ -6,6 +6,7 @@ import map from 'lodash/map';
 import size from 'lodash/size';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
+import noop from 'lodash/noop';
 import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
 import themeable from '../themeable';
@@ -67,11 +68,17 @@ const propTypes = {
   /** Match first word or entire input */
   leading: PropTypes.bool,
   /**
+   * Callback fired when the menu is opened
+   *
+   * function() => void
+   */
+  onMenuOpen: PropTypes.func,
+  /**
    * Callback fired when the menu is closed
    *
    * function() => void
    */
-  onMenuClose: PropTypes.func.isRequired,
+  onMenuClose: PropTypes.func,
   color: PropTypes.string.isRequired
 };
 
@@ -83,7 +90,9 @@ const defaultProps = {
   descriptionStyle: {},
   paramStyle: {},
   leading: true,
-  commandStyle: {}
+  commandStyle: {},
+  onMenuOpen: noop,
+  onMenuClose: noop
 };
 
 /** Used for displaying a list of commands */
@@ -109,14 +118,16 @@ class Commands extends Component {
     const filteredCommands = this.filterCommands(nextProps.commands, nextProps.value);
 
     if (!isEmpty(filteredCommands) && !open) {
-      return this.setState({
+      this.setState({
         open: true,
         commands: filteredCommands
       });
+
+      return this.props.onMenuOpen();
     }
 
     if (isEmpty(filteredCommands) && open) {
-      this.hideMenu();
+      return this.hideMenu();
     }
 
     return this.setState({
@@ -260,6 +271,7 @@ class Commands extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       leading, // eslint-disable-line react/prop-types
+      onMenuOpen,
       onMenuClose,
       commandStyle,
       ...custom
