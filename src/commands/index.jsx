@@ -105,7 +105,7 @@ class Commands extends Component {
     const { open } = this.state;
 
     if (!value) {
-      this.hideMenu();
+      return this.hideMenu();
     }
 
     const filteredCommands = this.filterCommands(nextProps.commands, nextProps.value);
@@ -148,17 +148,14 @@ class Commands extends Component {
     const { commands, onMenuClose } = this.props;
     const { open } = this.state;
 
-    if (!open) {
-      return false;
+    if (open) {
+      this.setState({
+        open: false,
+        commands,
+        selectedIndex: null
+      });
+      onMenuClose();
     }
-
-    onMenuClose();
-
-    return this.setState({
-      open: false,
-      commands,
-      selectedIndex: null
-    });
   }
 
   handleClickOutside = () => this.hideMenu()
