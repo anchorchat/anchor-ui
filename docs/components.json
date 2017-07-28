@@ -1028,7 +1028,7 @@
         "required": true,
         "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
       },
-      "onMouseOver": {
+      "onChange": {
         "type": {
           "name": "func"
         },
@@ -1044,6 +1044,28 @@
         "defaultValue": {
           "value": "true",
           "computed": false
+        }
+      },
+      "onMenuOpen": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is opened\n\nfunction() => void",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onMenuClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is closed\n\nfunction() => void",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
         }
       },
       "color": {
