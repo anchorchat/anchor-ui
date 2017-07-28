@@ -64,9 +64,7 @@ const propTypes = {
    * function(event: object, command: string) => void
    */
   onChange: PropTypes.func.isRequired,
-  /**
-   * Match first word or entire input
-   */
+  /** Match first word or entire input */
   leading: PropTypes.bool,
   /**
    * Callback fired when the menu is closed
