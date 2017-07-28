@@ -38,13 +38,20 @@ const propTypes = {
    * function() => void
    */
   onMenuClose: PropTypes.func,
+  /**
+   * Callback fired when the menu is opened
+   *
+   * function() => void
+   */
+  onMenuOpen: PropTypes.func,
   color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
   style: {},
   headerStyle: {},
-  onMenuClose: () => {}
+  onMenuClose: _.noop,
+  onMenuOpen: _.noop,
 };
 
 /** Used for displaying a list of commands */
@@ -71,10 +78,11 @@ class EmojiFilter extends Component {
     const filteredEmoji = this.filterEmoji(nextProps.value);
 
     if (!_.isEmpty(filteredEmoji) && !open) {
-      return this.setState({
+      this.setState({
         open: true,
         emoji: filteredEmoji
       });
+      return this.props.onMenuOpen();
     }
 
     if (_.isEmpty(filteredEmoji) && open) {

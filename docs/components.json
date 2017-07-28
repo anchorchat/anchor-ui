@@ -1313,8 +1313,19 @@
         "required": false,
         "description": "Callback fired when the menu is closed\n\nfunction() => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "_.noop",
+          "computed": true
+        }
+      },
+      "onMenuOpen": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is opened\n\nfunction() => void",
+        "defaultValue": {
+          "value": "_.noop",
+          "computed": true
         }
       },
       "color": {
