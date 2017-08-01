@@ -118,6 +118,7 @@ class Input extends Component {
       placeholderStyle,
       multiLine,
       maxRows,
+      rowHeight,
       ...custom
     } = this.props;
     const { height } = this.state;
