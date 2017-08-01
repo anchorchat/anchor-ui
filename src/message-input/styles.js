@@ -14,9 +14,9 @@ export default {
     display: 'flex',
     alignItems: 'center',
     borderRadius: '3px',
-    overflow: 'hidden',
     backgroundColor: colors.white,
-    boxShadow: styles.depthShadows[0]
+    boxShadow: styles.depthShadows[0],
+    overflow: 'auto'
   },
   input: {
     flex: '1',
@@ -24,6 +24,7 @@ export default {
     appearance: 'none',
     color: colors.primaryText,
     fontSize: '16px',
+    lineHeight: '16px',
     fontWeight: 'inherit',
     fontFamily: 'inherit',
     outline: 'none',
@@ -47,5 +48,13 @@ export default {
   },
   placeholder: {
     color: colors.placeholderText
+  },
+  textarea: {
+    height: 'calc(100% - 31px)',
+    resize: 'none',
+    overflow: 'auto',
+    padding: '0 8px',
+    margin: '15px 0 16px',
+    boxSizing: 'border-box'
   }
 };

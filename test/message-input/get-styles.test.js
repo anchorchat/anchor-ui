@@ -10,8 +10,18 @@ describe('MessageInput.getStyles', () => {
       expect(style).to.deep.equal(styles.root);
     });
 
+    it('should get disabled styles', () => {
+      const style = getStyles.root(true, 32, false, { color: 'red' });
+      expect(style).to.have.property('opacity', '0.5');
+    });
+
+    it('should get multiLine styles', () => {
+      const style = getStyles.root(false, 32, true, { color: 'red' });
+      expect(style).to.have.property('alignItems', 'flex-end');
+    });
+
     it('should combine styles', () => {
-      const style = getStyles.root(false, { color: 'red' });
+      const style = getStyles.root(false, 32, false, { color: 'red' });
       expect(style).to.have.property('color', 'red');
     });
   });
