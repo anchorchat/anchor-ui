@@ -2103,6 +2103,42 @@
       }
     }
   },
+  "components/icons/icon-broadcast.jsx": {
+    "description": "",
+    "displayName": "IconBroadcast",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-cart.jsx": {
+    "description": "",
+    "displayName": "IconCart",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-channel-settings.jsx": {
     "description": "",
     "displayName": "IconChannelSettings",
@@ -2268,6 +2304,24 @@
   "components/icons/icon-close.jsx": {
     "description": "",
     "displayName": "IconClose",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-coins.jsx": {
+    "description": "",
+    "displayName": "IconCoins",
     "methods": [],
     "props": {
       "color": {
@@ -3024,6 +3078,24 @@
   "components/icons/icon-settings.jsx": {
     "description": "",
     "displayName": "IconSettings",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-shop.jsx": {
+    "description": "",
+    "displayName": "IconShop",
     "methods": [],
     "props": {
       "color": {
