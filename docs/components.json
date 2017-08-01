@@ -997,6 +997,18 @@
           "computed": false
         }
       },
+      "commandStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the command element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "paramStyle": {
         "type": {
           "name": "instanceOf",
@@ -1016,7 +1028,7 @@
         "required": true,
         "description": "Callback fired when a command is clicked\n\nfunction(event: object, command: string) => void"
       },
-      "onMouseOver": {
+      "onChange": {
         "type": {
           "name": "func"
         },
@@ -1032,6 +1044,28 @@
         "defaultValue": {
           "value": "true",
           "computed": false
+        }
+      },
+      "onMenuOpen": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is opened\n\nfunction() => void",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onMenuClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is closed\n\nfunction() => void",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
         }
       },
       "color": {
@@ -4255,6 +4289,17 @@
         },
         "required": false,
         "description": "Icon to show in expand menu item",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "expandMenuItem": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom menu item. Should be a MenuItem component.\n Make sure this component handles image expanding.\n If this is passed none of the other expand props will be used.",
         "defaultValue": {
           "value": "null",
           "computed": false

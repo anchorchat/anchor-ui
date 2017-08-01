@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import map from 'lodash/map';
+import size from 'lodash/size';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
+import noop from 'lodash/noop';
 import onClickOutside from 'react-onclickoutside';
+import EventListener from 'react-event-listener';
 import themeable from '../themeable';
 import getStyles from './get-styles';
 import Avatar from '../avatar';
@@ -46,6 +49,8 @@ const propTypes = {
   titleStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the description element */
   descriptionStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the command element */
+  commandStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the param element */
   paramStyle: PropTypes.instanceOf(Object),
   /**
@@ -59,11 +64,21 @@ const propTypes = {
    *
    * function(event: object, command: string) => void
    */
-  onMouseOver: PropTypes.func.isRequired,
-  /**
-   * Match first word or entire input
-   */
+  onChange: PropTypes.func.isRequired,
+  /** Match first word or entire input */
   leading: PropTypes.bool,
+  /**
+   * Callback fired when the menu is opened
+   *
+   * function() => void
+   */
+  onMenuOpen: PropTypes.func,
+  /**
+   * Callback fired when the menu is closed
+   *
+   * function() => void
+   */
+  onMenuClose: PropTypes.func,
   color: PropTypes.string.isRequired
 };
 
@@ -74,7 +89,10 @@ const defaultProps = {
   titleStyle: {},
   descriptionStyle: {},
   paramStyle: {},
-  leading: true
+  leading: true,
+  commandStyle: {},
+  onMenuOpen: noop,
+  onMenuClose: noop
 };
 
 /** Used for displaying a list of commands */
@@ -84,7 +102,8 @@ class Commands extends Component {
 
     this.state = {
       open: false,
-      commands: this.filterCommands(props.commands, props.value)
+      commands: this.filterCommands(props.commands, props.value),
+      selectedIndex: null
     };
   }
 
@@ -93,26 +112,22 @@ class Commands extends Component {
     const { open } = this.state;
 
     if (!value) {
-      return this.setState({
-        open: false,
-        commands: nextProps.commands
-      });
+      return this.hideMenu();
     }
 
     const filteredCommands = this.filterCommands(nextProps.commands, nextProps.value);
 
     if (!isEmpty(filteredCommands) && !open) {
-      return this.setState({
+      this.setState({
         open: true,
         commands: filteredCommands
       });
+
+      return this.props.onMenuOpen();
     }
 
     if (isEmpty(filteredCommands) && open) {
-      return this.setState({
-        open: false,
-        commands: nextProps.commands
-      });
+      return this.hideMenu();
     }
 
     return this.setState({
@@ -138,29 +153,102 @@ class Commands extends Component {
     });
   }
 
-  handleClickOutside = () => {
-    const { commands } = this.props;
+  hideMenu = () => {
+    const { commands, onMenuClose } = this.props;
     const { open } = this.state;
 
-    if (!open) {
-      return false;
+    if (open) {
+      this.setState({
+        open: false,
+        commands,
+        selectedIndex: null
+      });
+      onMenuClose();
     }
-
-    return this.setState({
-      open: false,
-      commands
-    });
   }
 
-  handleSelect = (event, command) => {
-    const { onSelect, commands } = this.props;
+  handleClickOutside = () => this.hideMenu()
 
-    this.setState({
-      open: false,
-      commands
-    });
+  handleKeyDown = (event) => {
+    const key = event.which || event.keyCode;
+    const { shiftKey } = event;
+    const { selectedIndex } = this.state;
 
-    onSelect(event, command);
+    if (key === 27) {
+      return this.hideMenu();
+    }
+
+    if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectNext(event);
+    }
+
+    if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectPrevious(event);
+    }
+
+    if (key === 13) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      this.handleSelect(event, this.state.commands[selectedIndex], selectedIndex);
+    }
+
+    return false;
+  }
+
+  selectNext = (event) => {
+    const { selectedIndex } = this.state;
+    const commandsSize = size(this.state.commands);
+
+    if (selectedIndex === null) {
+      return this.handleChange(event, this.state.commands[0], 0);
+    }
+
+    if (selectedIndex + 1 < commandsSize) {
+      return this.handleChange(event, this.state.commands[selectedIndex + 1], selectedIndex + 1);
+    }
+
+    if (selectedIndex === commandsSize - 1) {
+      return this.handleChange(event, this.state.commands[0], 0);
+    }
+
+    return false;
+  }
+
+  selectPrevious = (event) => {
+    const { selectedIndex } = this.state;
+    const commandsSize = size(this.state.commands);
+
+    if (selectedIndex === null) {
+      return this.handleChange(event, this.state.commands[0], 0);
+    }
+
+    if (selectedIndex === 0) {
+      return this.handleChange(event, this.state.commands[commandsSize - 1], commandsSize - 1);
+    }
+
+    if (selectedIndex - 1 < commandsSize) {
+      return this.handleChange(event, this.state.commands[selectedIndex - 1], selectedIndex - 1);
+    }
+
+    return false;
+  }
+
+  handleSelect = (event, command, index) => {
+    const { onSelect } = this.props;
+
+    this.setState({ selectedIndex: index });
+    onSelect(event, `${command.prefix}${command.value}`);
+  }
+
+  handleChange = (event, command, index) => {
+    const { onChange } = this.props;
+
+    this.setState({ selectedIndex: index });
+    onChange(event, `${command.prefix}${command.value}`);
   }
 
   render() {
@@ -169,7 +257,7 @@ class Commands extends Component {
       commands,
       value,
       color,
-      onMouseOver,
+      onChange,
       onSelect,
       style,
       headerStyle,
@@ -183,9 +271,12 @@ class Commands extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       leading, // eslint-disable-line react/prop-types
+      onMenuOpen,
+      onMenuClose,
+      commandStyle,
       ...custom
     } = this.props;
-    const { open } = this.state;
+    const { open, selectedIndex } = this.state;
 
     if (!open) {
       return null;
@@ -193,14 +284,14 @@ class Commands extends Component {
 
     return (
       <section style={getStyles.root(style)} {...custom}>
-        <header style={getStyles.header(color, headerStyle)}>{header}</header>
+        <header style={getStyles.header(headerStyle)}>{header}</header>
         <section style={getStyles.commands()}>
-          {map(this.state.commands, command => (
+          {map(this.state.commands, (command, index) => (
             <div
-              onMouseOver={event => onMouseOver(event, `${command.prefix}${command.value}`)}
-              style={getStyles.command()}
               key={command.value}
-              onClick={event => this.handleSelect(event, `${command.prefix}${command.value}`)}
+              style={getStyles.command(color, index === selectedIndex, commandStyle)}
+              onClick={event => this.handleSelect(event, command, index)}
+              onMouseOver={event => this.handleChange(event, command, index)}
             >
               <span style={styles.titleContainer}>
                 {
@@ -225,6 +316,7 @@ class Commands extends Component {
             </div>
           ))}
         </section>
+        <EventListener target="window" onKeyDown={this.handleKeyDown} />
       </section>
     );
   }

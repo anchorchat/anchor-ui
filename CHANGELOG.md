@@ -2,10 +2,43 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.2...HEAD)
 
 **Merged pull requests:**
 
+- \[4.1.2\] Added more overriding styles capabilities. [\#816](https://github.com/anchorchat/anchor-ui/pull/816) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.1.2](https://github.com/anchorchat/anchor-ui/tree/v4.1.2) (2017-07-25)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.1...v4.1.2)
+
+**Merged pull requests:**
+
+- Added commandStyle. [\#815](https://github.com/anchorchat/anchor-ui/pull/815) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added expandMenuItem to Message. [\#814](https://github.com/anchorchat/anchor-ui/pull/814) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[4.1.1\] Added more override capabilities. [\#812](https://github.com/anchorchat/anchor-ui/pull/812) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.1.1](https://github.com/anchorchat/anchor-ui/tree/v4.1.1) (2017-07-24)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.0...v4.1.1)
+
+**Implemented enhancements:**
+
+- \[Powered by\] Make it text with SVG instead [\#805](https://github.com/anchorchat/anchor-ui/issues/805)
+
+**Fixed bugs:**
+
+- \\[Powered by\\] Make it text with SVG instead [\#805](https://github.com/anchorchat/anchor-ui/issues/805)
+
+**Closed issues:**
+
+- Add activeStyle to MenuItem [\#808](https://github.com/anchorchat/anchor-ui/issues/808)
+- Add iconColor prop to Select [\#807](https://github.com/anchorchat/anchor-ui/issues/807)
+- Add iconColor prop to SearchBox [\#804](https://github.com/anchorchat/anchor-ui/issues/804)
+
+**Merged pull requests:**
+
+- Added activeStyle to MenuItem, fixed issue \#808. [\#811](https://github.com/anchorchat/anchor-ui/pull/811) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added iconColor to SearchBox, fixed issue \#804. [\#810](https://github.com/anchorchat/anchor-ui/pull/810) ([sjaakluthart](https://github.com/sjaakluthart))
+- Added iconColor to select, fixed issue \#807. [\#809](https://github.com/anchorchat/anchor-ui/pull/809) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.1.0\] Added theming capabilities [\#803](https://github.com/anchorchat/anchor-ui/pull/803) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.1.0](https://github.com/anchorchat/anchor-ui/tree/v4.1.0) (2017-07-20)

@@ -79,6 +79,11 @@ class Message extends Component {
     expandText: PropTypes.node,
     /** Icon to show in expand menu item */
     expandIcon: PropTypes.node,
+    /** Custom menu item. Should be a MenuItem component.
+     *  Make sure this component handles image expanding.
+     *  If this is passed none of the other expand props will be used.
+     */
+    expandMenuItem: PropTypes.node,
     /** Text to display for edited banner */
     edited: PropTypes.node,
     /**
@@ -128,7 +133,8 @@ class Message extends Component {
     locale: en,
     separator: null,
     mentions: [],
-    onMentionClick: null
+    onMentionClick: null,
+    expandMenuItem: null
   }
 
   constructor() {
@@ -159,16 +165,19 @@ class Message extends Component {
       expandIcon,
       expandText,
       menuItems,
+      expandMenuItem
     } = this.props;
 
-    if (!expand || (!menuItems && !collapsed)) {
+    if ((!expand && !expandMenuItem) || (!menuItems && !collapsed)) {
       return null;
     }
+
+    const menuItem = <MenuItem icon={expandIcon} text={expandText} onClick={expand} />;
 
     if (!menuItems && collapsed) {
       return (
         <IconMenu icon={<IconChevronDown />}>
-          <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
+          {expandMenuItem || menuItem}
         </IconMenu>
       );
     }
@@ -184,7 +193,7 @@ class Message extends Component {
     return (
       <IconMenu icon={<IconChevronDown />}>
         {menuItems}
-        <MenuItem icon={expandIcon} text={expandText} onClick={expand} />
+        {expandMenuItem || menuItem}
       </IconMenu>
     );
   }
@@ -216,6 +225,7 @@ class Message extends Component {
       onMentionClick,
       color,
       separator,
+      expandMenuItem,
       ...custom
     } = this.props;
 
