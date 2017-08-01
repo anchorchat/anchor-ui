@@ -2,11 +2,36 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.3...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.2.1...HEAD)
+
+**Merged pull requests:**
+
+- \[4.2.1\] Added four new icons, destructed rowHeight prop in Input to prevent warnings. [\#822](https://github.com/anchorchat/anchor-ui/pull/822) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.2.1](https://github.com/anchorchat/anchor-ui/tree/v4.2.1) (2017-08-01)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.2.0...v4.2.1)
+
+**Fixed bugs:**
+
+- Destructed rowHeight prop. [\#821](https://github.com/anchorchat/anchor-ui/pull/821) ([sjaakluthart](https://github.com/sjaakluthart))
+
+**Merged pull requests:**
+
+- Added icons. [\#820](https://github.com/anchorchat/anchor-ui/pull/820) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[4.2.0\] Added multiline to Input and MessageInput. Added key events to Commands, added EmojiFilter component [\#819](https://github.com/anchorchat/anchor-ui/pull/819) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.2.0](https://github.com/anchorchat/anchor-ui/tree/v4.2.0) (2017-08-01)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.3...v4.2.0)
+
+**Implemented enhancements:**
+
+- Added key events to Commands [\#818](https://github.com/anchorchat/anchor-ui/pull/818) ([sjaakluthart](https://github.com/sjaakluthart))
 
 **Merged pull requests:**
 
 - Fixed Message expand menu item, added missing check for expandMenuItem prop. [\#817](https://github.com/anchorchat/anchor-ui/pull/817) ([sjaakluthart](https://github.com/sjaakluthart))
+- Emoji filter [\#813](https://github.com/anchorchat/anchor-ui/pull/813) ([sjaakluthart](https://github.com/sjaakluthart))
+- Multiline input [\#785](https://github.com/anchorchat/anchor-ui/pull/785) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.1.3](https://github.com/anchorchat/anchor-ui/tree/v4.1.3) (2017-07-25)
 [Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.2...v4.1.3)
@@ -127,14 +152,6 @@
 - Added textDecoration: none to attribution link [\#767](https://github.com/anchorchat/anchor-ui/pull/767) ([sjaakluthart](https://github.com/sjaakluthart))
 - Made prop onMentionClick not required. [\#766](https://github.com/anchorchat/anchor-ui/pull/766) ([sjaakluthart](https://github.com/sjaakluthart))
 - Fixed Searchbox changeSearchQuery [\#765](https://github.com/anchorchat/anchor-ui/pull/765) ([sjaakluthart](https://github.com/sjaakluthart))
-
-**Implemented enhancements:**
-
-- Added option to match commands non leading, changed command.title to command.value, added command.prefix [\#753](https://github.com/anchorchat/anchor-ui/pull/753) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#725 [\#750](https://github.com/anchorchat/anchor-ui/pull/750) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#652 [\#711](https://github.com/anchorchat/anchor-ui/pull/711) ([sjaakluthart](https://github.com/sjaakluthart))
-- Issue \#705 [\#707](https://github.com/anchorchat/anchor-ui/pull/707) ([sjaakluthart](https://github.com/sjaakluthart))
-- :lipstick: Adjusted styles to conform with design. [\#701](https://github.com/anchorchat/anchor-ui/pull/701) ([IanCStewart](https://github.com/IanCStewart))
 
 **Merged pull requests:**
 
