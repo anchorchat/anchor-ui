@@ -1290,6 +1290,87 @@
       }
     }
   },
+  "components/emoji-filter/index.jsx": {
+    "description": "Used for displaying a list of commands",
+    "displayName": "EmojiFilter",
+    "methods": [],
+    "props": {
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Filter emoji based on input value"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onSelect": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a emoji is selected by pressing 'enter', 'escape' or by clicking the emoji\n\nfunction(event: object, emoji: object) => void"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when a emoji is changed by navigating with the 'arrow keys' or 'tab'\n\nfunction(event: object, emoji: object) => void"
+      },
+      "onMenuClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is closed\n\nfunction() => void",
+        "defaultValue": {
+          "value": "_.noop",
+          "computed": true
+        }
+      },
+      "onMenuOpen": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the menu is opened\n\nfunction() => void",
+        "defaultValue": {
+          "value": "_.noop",
+          "computed": true
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "components/emoji-menu/emoji-categories.jsx": {
     "description": "",
     "methods": [],

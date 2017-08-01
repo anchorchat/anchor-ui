@@ -51,6 +51,12 @@ const createMarkup = (text) => {
 const Props = ({ props }) => {
   const propsWithoutColor = _.omit(props, 'color');
 
+  const style = {
+    column: {
+      whiteSpace: 'wrap'
+    }
+  };
+
   return (
     <section>
       <h1>Props</h1>
@@ -67,11 +73,14 @@ const Props = ({ props }) => {
         <TableBody>
           {_.map(propsWithoutColor, (prop, name) => (
             <TableRow key={name}>
-              <TableColumn>{name}</TableColumn>
-              <TableColumn>{getPropType(prop.type)}</TableColumn>
-              <TableColumn dangerouslySetInnerHTML={createMarkup(prop.description)} />
-              <TableColumn>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
-              <TableColumn>{prop.required ? 'Yes' : 'No'}</TableColumn>
+              <TableColumn style={style.column}>{name}</TableColumn>
+              <TableColumn style={style.column}>{getPropType(prop.type)}</TableColumn>
+              <TableColumn
+                style={style.column}
+                dangerouslySetInnerHTML={createMarkup(prop.description)}
+              />
+              <TableColumn style={style.column}>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
+              <TableColumn style={style.column}>{prop.required ? 'Yes' : 'No'}</TableColumn>
             </TableRow>
           ))}
         </TableBody>
