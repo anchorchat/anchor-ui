@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.2...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.3...HEAD)
+
+**Merged pull requests:**
+
+- Fixed Message expand menu item, added missing check for expandMenuItem prop. [\#817](https://github.com/anchorchat/anchor-ui/pull/817) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.1.3](https://github.com/anchorchat/anchor-ui/tree/v4.1.3) (2017-07-25)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.1.2...v4.1.3)
 
 **Merged pull requests:**
 
