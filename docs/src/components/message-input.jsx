@@ -15,17 +15,18 @@ class MessageInputDoc extends React.Component {
     super();
 
     this.state = {
-      name: ''
+      value: '',
+      multiLine: ''
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(name) {
-    this.setState({
-      name: name.target.value
-    });
-  }
+  handleChange = event => this.setState({ value: event.currentTarget.value })
+
+  handleMultiLineChange = event => this.setState({ multiLine: event.currentTarget.value })
+
+  sendMessage = () => this.setState({ value: '' })
+
+  sendMultiLineMessage = () => this.setState({ multiLine: '' })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'MessageInput');
@@ -56,8 +57,8 @@ class MessageInputDoc extends React.Component {
             <MessageInput
               onChange={this.handleChange}
               placeholder="Type something..."
-              value={this.state.name}
-              sendMessage={() => {}}
+              value={this.state.value}
+              sendMessage={this.sendMessage}
               leftButton={
                 <Button iconButton onClick={() => {}}>
                   <IconEmoji />
@@ -68,6 +69,24 @@ class MessageInputDoc extends React.Component {
                   <IconEmoji />
                 </Button>
               }
+            />
+            <span dangerouslySetInnerHTML={{ __html: this.state.multiLine.replace(/\n/g, '<br />') }} />
+            <MessageInput
+              onChange={this.handleMultiLineChange}
+              placeholder="Multi line example..."
+              value={this.state.multiLine}
+              sendMessage={this.sendMultiLineMessage}
+              leftButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconEmoji />
+                </Button>
+              }
+              rightButton={
+                <Button iconButton onClick={() => {}}>
+                  <IconEmoji />
+                </Button>
+              }
+              multiLine
             />
           </Paper>
         </section>

@@ -32,6 +32,7 @@ const Nav = (props, context) => {
       <MenuItem onClick={() => router.push('/date-separator')} active={router.isActive('/date-separator')} text="DateSeparator" />
       <MenuItem onClick={() => router.push('/dialog')} active={router.isActive('/dialog')} text="Dialog" />
       <MenuItem onClick={() => router.push('/divider')} active={router.isActive('/divider')} text="Divider" />
+      <MenuItem onClick={() => router.push('/emoji-filter')} active={router.isActive('/emoji-filter')} text="EmojiFilter" />
       <MenuItem onClick={() => router.push('/emoji-menu')} active={router.isActive('/emoji-menu')} text="EmojiMenu" />
       <MenuItem onClick={() => router.push('/empty-state')} active={router.isActive('/empty-state')} text="EmptyState" />
       <MenuItem onClick={() => router.push('/icons')} active={router.isActive('/icons')} text="Icons" />

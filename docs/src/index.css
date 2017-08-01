@@ -95,6 +95,11 @@ h2 {
   color: #757575;
 }
 
+.home th {
+  color: #757575;
+  font-weight: bolder;
+}
+
 h2 {
   font-weight: normal;
   font-size: 18px;

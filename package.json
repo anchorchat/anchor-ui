@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "4.1.3",
+  "version": "4.2.0",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
@@ -15,7 +15,8 @@
     "copy": "cp -rf package.json README.md dist",
     "build": "npm run compile && npm run copy",
     "dist": "cd dist && npm publish",
-    "docs": "react-docgen components --out docs/components.json --pretty"
+    "docs": "react-docgen components --out docs/components.json --pretty",
+    "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js"
   },
   "repository": {
     "type": "git",
@@ -81,6 +82,7 @@
     "escape-html": "^1.0.3",
     "html-react-parser": "^0.3.4",
     "lodash": "^4.17.4",
+    "mobile-detect": "^1.3.6",
     "radium": "^0.19.0",
     "react-event-listener": "^0.4.5",
     "react-measure": "^1.4.5",

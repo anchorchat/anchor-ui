@@ -1,6 +1,5 @@
 import colors from '../settings/colors';
 import styles from '../settings/styles';
-import darken from '../internal/darken';
 
 export default {
   root: {
@@ -12,18 +11,18 @@ export default {
     boxShadow: styles.depthShadows[0]
   },
   header: {
-    backgroundColor: colors.theme,
-    color: colors.white,
+    backgroundColor: colors.background,
+    color: colors.secondaryText,
     transition: 'background .3s ease-in-out',
     padding: '8px',
-    height: '40px',
+    height: '32px',
     fontSize: '16px',
-    lineHeight: '24px',
+    lineHeight: '16px',
     boxSizing: 'border-box',
-    fontWeight: 'inherit'
+    fontWeight: 'bolder'
   },
   commands: {
-    height: 'calc(100% - 40px)',
+    height: 'calc(100% - 32px)',
     overflowY: 'scroll'
   },
   command: {
@@ -31,18 +30,11 @@ export default {
     margin: 0,
     fontSize: '14px',
     cursor: 'pointer',
-    color: colors.secondaryText,
-    transition: 'all .3s ease-in-out',
+    color: colors.primaryText,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-
-    ':hover': {
-      backgroundColor: darken(colors.white, 0.05)
-    },
-    ':active': {
-      backgroundColor: darken(colors.white, 0.15)
-    }
+    backgroundColor: colors.white
   },
   title: {
     fontWeight: 'bolder',
@@ -62,8 +54,8 @@ export default {
     alignItems: 'center'
   },
   avatarContainer: {
-    width: '30px',
-    height: '30px',
+    width: '20px',
+    height: '20px',
     marginRight: '8px'
   },
   avatar: {
