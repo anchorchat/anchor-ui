@@ -20,6 +20,7 @@ export default {
     fontSize: '14px'
   },
   avatar: {
-    marginRight: '16px'
+    marginRight: '16px',
+    flexShrink: 0
   }
 };
