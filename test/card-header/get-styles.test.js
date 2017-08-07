@@ -18,6 +18,26 @@ describe('CardHeader.getStyles', () => {
     });
   });
 
+  describe('header', () => {
+    it('should get styles', () => {
+      const style = getStyles.header();
+
+      expect(style).to.deep.equal({});
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.header(false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add avatar styles', () => {
+      const style = getStyles.header(true, {});
+
+      expect(style).to.have.property('maxWidth', 'calc(100% - 56px)');
+    });
+  });
+
   describe('title', () => {
     it('should get styles', () => {
       const style = getStyles.title();
