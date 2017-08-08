@@ -4,6 +4,7 @@ import emojione from 'emojione';
 import escape from 'escape-html';
 import isEmpty from 'lodash/isEmpty';
 import forEach from 'lodash/forEach';
+import find from 'lodash/find';
 import htmlParser from 'html-react-parser';
 import domToReact from 'html-react-parser/lib/dom-to-react';
 import colors from '../../settings/colors';
@@ -15,7 +16,7 @@ import styles from './styles';
 
 class TextMessage extends Component {
   createMarkup = () => {
-    const { message, enableLinks, emoji, mentions } = this.props;
+    const { message, enableLinks, emoji, highlights } = this.props;
     const text = message.body;
 
     const escapedText = escape(text);
@@ -34,9 +35,9 @@ class TextMessage extends Component {
       });
     }
 
-    if (!isEmpty(mentions)) {
-      forEach(mentions, (mention) => {
-        parsedText = parsedText.replace(`@${mention}`, `<span class="mention" value="${mention}">@${mention}</span>`);
+    if (!isEmpty(highlights)) {
+      forEach(highlights, (highlight) => {
+        parsedText = parsedText.replace(`${highlight.prefix}${highlight.value}`, `<span class="highlight" value="${highlight.id}">${highlight.prefix}${highlight.value}</span>`);
       });
     }
 
@@ -50,17 +51,17 @@ class TextMessage extends Component {
   }
 
   parseHtml = () => {
-    const { onMentionClick, color, myMessage } = this.props;
+    const { onHighlightClick, color, myMessage, highlights } = this.props;
 
     const options = {
       replace: (domNode) => {
-        if (domNode.attribs && domNode.attribs.class === 'mention') {
-          const value = domNode.attribs.value;
+        if (domNode.attribs && domNode.attribs.class === 'highlight') {
+          const value = find(highlights, { id: domNode.attribs.value });
 
           return (
             <strong
-              style={getStyles.mention(color, myMessage, onMentionClick)}
-              onClick={onMentionClick ? e => onMentionClick(e, value) : null}
+              style={getStyles.mention(color, myMessage, onHighlightClick)}
+              onClick={e => onHighlightClick(e, value)}
             >
               {domToReact(domNode.children)}
             </strong>
@@ -101,7 +102,7 @@ class TextMessage extends Component {
       enableLinks,
       edited,
       locale,
-      mentions
+      highlights
     } = this.props;
 
     return (
@@ -116,7 +117,7 @@ class TextMessage extends Component {
         />
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
-            enableLinks || emoji || !isEmpty(mentions)
+            enableLinks || emoji || !isEmpty(highlights)
             ? <span>{this.parseHtml()}</span>
             : message.body
           }
@@ -159,8 +160,12 @@ TextMessage.propTypes = {
   edited: PropTypes.node,
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
-  mentions: PropTypes.arrayOf(String).isRequired,
-  onMentionClick: PropTypes.func
+  highlights: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    prefix: PropTypes.string,
+    value: PropTypes.string,
+  })),
+  onHighlightClick: PropTypes.func.isRequired
 };
 
 TextMessage.defaultProps = {
@@ -179,7 +184,7 @@ TextMessage.defaultProps = {
   color: colors.theme,
   iconMenu: null,
   edited: null,
-  onMentionClick: null
+  highlights: []
 };
 
 export default TextMessage;

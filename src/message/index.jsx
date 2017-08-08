@@ -4,6 +4,7 @@ import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import en from 'date-fns/locale/en';
+import noop from 'lodash/noop';
 import IconMenu from '../icon-menu';
 import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
@@ -95,18 +96,17 @@ class Message extends Component {
     /** Show a separator above the message */
     separator: PropTypes.node,
     /**
-     * Mention users, should be an array of usernames.
-     * 'mentions' is an array of usernames that are mentioned in a certain message.
+     * Highlight text, must be an array of objects containing id, value, and prefix.
      *
-     * Text matching '@username' will be highlighted
+     * Text matching '[prefix][value]' will be highlighted
      */
-    mentions: PropTypes.arrayOf(String),
+    highlights: PropTypes.arrayOf(String),
     /**
-     * Callback fired when a command is clicked
+     * Callback fired when highlighted text is clicked
      *
-     * function(event: object, username: string) => void
+     * function(event: object, highlight: object) => void
      */
-    onMentionClick: PropTypes.func,
+    onHighlightClick: PropTypes.func,
     color: PropTypes.string.isRequired
   }
 
@@ -132,8 +132,8 @@ class Message extends Component {
     edited: null,
     locale: en,
     separator: null,
-    mentions: [],
-    onMentionClick: null,
+    highlights: [],
+    onHighlightClick: noop,
     expandMenuItem: null
   }
 
@@ -221,8 +221,8 @@ class Message extends Component {
       collapsedText,
       edited,
       locale,
-      mentions,
-      onMentionClick,
+      highlights,
+      onHighlightClick,
       color,
       separator,
       expandMenuItem,
