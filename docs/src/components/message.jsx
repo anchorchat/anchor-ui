@@ -203,11 +203,19 @@ class MessageDoc extends Component {
                   compact={this.state.compact}
                   menuItems={this.state.iconMenu ? menuItems : null}
                   edited={this.state.edited ? 'edited' : null}
-                  mentions={[
-                    'Lars',
-                    'Ian'
+                  highlights={[
+                    {
+                      prefix: '@',
+                      value: 'Lars',
+                      id: '1'
+                    },
+                    {
+                      prefix: '@',
+                      value: 'Ian',
+                      id: '2'
+                    }
                   ]}
-                  onMentionClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
+                  onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
                   enableLinks
                 />
               ))}
