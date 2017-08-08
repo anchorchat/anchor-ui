@@ -96,7 +96,7 @@ class Message extends Component {
     /** Show a separator above the message */
     separator: PropTypes.node,
     /**
-     * Highlights text, should be an array of objects containing id, value, and prefix.
+     * Highlight text, must be an array of objects containing id, value, and prefix.
      *
      * Text matching '[prefix][value]' will be highlighted
      */

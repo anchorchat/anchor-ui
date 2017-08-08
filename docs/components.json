@@ -4433,7 +4433,7 @@
           "computed": false
         }
       },
-      "mentions": {
+      "highlights": {
         "type": {
           "name": "arrayOf",
           "value": {
@@ -4442,21 +4442,21 @@
           }
         },
         "required": false,
-        "description": "Mention users, should be an array of usernames.\n'mentions' is an array of usernames that are mentioned in a certain message.\n\nText matching '@username' will be highlighted",
+        "description": "Highlight text, must be an array of objects containing id, value, and prefix.\n\nText matching '[prefix][value]' will be highlighted",
         "defaultValue": {
           "value": "[]",
           "computed": false
         }
       },
-      "onMentionClick": {
+      "onHighlightClick": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when a command is clicked\n\nfunction(event: object, username: string) => void",
+        "description": "Callback fired when highlighted text is clicked\n\nfunction(event: object, highlight: object) => void",
         "defaultValue": {
-          "value": "null",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "color": {
