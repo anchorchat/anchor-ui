@@ -2,10 +2,27 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.2.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.0...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.0\] Changed Message mentions to highlights, changed how highlights are matched. [\#827](https://github.com/anchorchat/anchor-ui/pull/827) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.3.0](https://github.com/anchorchat/anchor-ui/tree/v4.3.0) (2017-08-08)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.2.2...v4.3.0)
+
+**Merged pull requests:**
+
+- \[4.2.2\] Added override for CardHeader [\#826](https://github.com/anchorchat/anchor-ui/pull/826) ([IanCStewart](https://github.com/IanCStewart))
+- Changed mentions to highlights. [\#824](https://github.com/anchorchat/anchor-ui/pull/824) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.2.2](https://github.com/anchorchat/anchor-ui/tree/v4.2.2) (2017-08-07)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.2.1...v4.2.2)
+
+**Merged pull requests:**
+
+- \[4.2.2\] Card header override [\#825](https://github.com/anchorchat/anchor-ui/pull/825) ([IanCStewart](https://github.com/IanCStewart))
+- Patch/card header styles [\#823](https://github.com/anchorchat/anchor-ui/pull/823) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.2.1\] Added four new icons, destructed rowHeight prop in Input to prevent warnings. [\#822](https://github.com/anchorchat/anchor-ui/pull/822) ([sjaakluthart](https://github.com/sjaakluthart))
 
 ## [v4.2.1](https://github.com/anchorchat/anchor-ui/tree/v4.2.1) (2017-08-01)
