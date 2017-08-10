@@ -79,18 +79,17 @@ class Profile extends Component {
       <section style={getStyles.root(style)} {...custom}>
         <section style={styles.cover}>
           <section style={getStyles.coverImage(coverBackground)} />
-          <section style={styles.coverOverlay} />
-          {
-            avatar
-            ? <Avatar
-              image={avatar}
-              style={getStyles.avatar(avatarStyle)}
-              statusStyle={styles.status}
-              status={status}
-            />
-            : null
-          }
         </section>
+        {
+          avatar
+          ? <Avatar
+            image={avatar}
+            style={getStyles.avatar(avatarStyle)}
+            statusStyle={styles.status}
+            status={status}
+          />
+          : null
+        }
         <h1 style={getStyles.header(headerStyle)}>{header}</h1>
         {
           secondaryText
