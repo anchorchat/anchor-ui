@@ -3,7 +3,13 @@ import combineStyles from '../internal/combine-styles';
 
 const root = overrideStyles => combineStyles(styles.root, overrideStyles);
 
-const coverImage = overrideStyles => combineStyles(styles.coverImage, overrideStyles);
+const cover = overrideStyles => combineStyles(styles.cover, overrideStyles);
+
+const coverImage = (image, overrideStyles) => {
+  const style = combineStyles(styles.coverImage, image);
+
+  return combineStyles(style, overrideStyles);
+};
 
 const avatar = overrideStyles => combineStyles(styles.avatar, overrideStyles);
 
@@ -13,6 +19,7 @@ const secondaryText = overrideStyles => combineStyles(styles.secondaryText, over
 
 export default {
   root,
+  cover,
   coverImage,
   avatar,
   header,
