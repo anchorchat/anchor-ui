@@ -25,6 +25,10 @@ class Profile extends Component {
     children: PropTypes.node,
     /** Override the styles of the root element */
     style: PropTypes.instanceOf(Object),
+    /** Override the styles of the cover element */
+    coverStyle: PropTypes.instanceOf(Object),
+    /** Override the styles of the coverImage element */
+    coverImageStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the header element */
     headerStyle: PropTypes.instanceOf(Object),
     /** Override the styles of the secondaryText element */
@@ -42,6 +46,8 @@ class Profile extends Component {
     button: null,
     secondaryText: '',
     style: {},
+    coverStyle: {},
+    coverImageStyle: {},
     headerStyle: {},
     secondaryTextStyle: {},
     avatarStyle: {},
@@ -64,6 +70,8 @@ class Profile extends Component {
       children,
       button,
       style,
+      coverStyle,
+      coverImageStyle,
       headerStyle,
       secondaryTextStyle,
       avatarStyle,
@@ -77,20 +85,19 @@ class Profile extends Component {
 
     return (
       <section style={getStyles.root(style)} {...custom}>
-        <section style={styles.cover}>
-          <section style={getStyles.coverImage(coverBackground)} />
-          <section style={styles.coverOverlay} />
-          {
-            avatar
-            ? <Avatar
-              image={avatar}
-              style={getStyles.avatar(avatarStyle)}
-              statusStyle={styles.status}
-              status={status}
-            />
-            : null
-          }
+        <section style={getStyles.cover(coverStyle)}>
+          <section style={getStyles.coverImage(coverBackground, coverImageStyle)} />
         </section>
+        {
+          avatar
+          ? <Avatar
+            image={avatar}
+            style={getStyles.avatar(avatarStyle)}
+            statusStyle={styles.status}
+            status={status}
+          />
+          : null
+        }
         <h1 style={getStyles.header(headerStyle)}>{header}</h1>
         {
           secondaryText

@@ -37,10 +37,10 @@ describe('Profile', () => {
     global.navigator = undefined;
   });
 
-  it('should always render four section elements', () => {
+  it('should always render three section elements', () => {
     const wrapper = shallow(<Profile {...props} />);
 
-    expect(wrapper.find('section')).to.have.length(4);
+    expect(wrapper.find('section')).to.have.length(3);
   });
 
   it('should always render a h1 element', () => {

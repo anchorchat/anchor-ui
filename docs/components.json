@@ -5261,6 +5261,30 @@
           "computed": false
         }
       },
+      "coverStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the cover element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "coverImageStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the coverImage element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "headerStyle": {
         "type": {
           "name": "instanceOf",
