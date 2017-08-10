@@ -18,6 +18,20 @@ describe('Profile.getStyles', () => {
     });
   });
 
+  describe('cover', () => {
+    it('should get styles', () => {
+      const style = getStyles.cover();
+
+      expect(style).to.deep.equal(styles.cover);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.cover({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
   describe('coverImage', () => {
     it('should get styles', () => {
       const style = getStyles.coverImage();
@@ -25,8 +39,14 @@ describe('Profile.getStyles', () => {
       expect(style).to.deep.equal(styles.coverImage);
     });
 
+    it('should add image styles', () => {
+      const style = getStyles.coverImage({ backgroundImage: 'url(https://avatars1.githubusercontent.com/u/6596471?v=3&s=400)' });
+
+      expect(style).to.have.property('backgroundImage', 'url(https://avatars1.githubusercontent.com/u/6596471?v=3&s=400)');
+    });
+
     it('should combine styles', () => {
-      const style = getStyles.coverImage({ color: 'red' });
+      const style = getStyles.coverImage({}, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
