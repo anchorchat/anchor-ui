@@ -2,10 +2,26 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.1...HEAD)
+
+**Closed issues:**
+
+- Add override styles for Profile cover image [\#830](https://github.com/anchorchat/anchor-ui/issues/830)
 
 **Merged pull requests:**
 
+- \[4.3.1\] Added override capabilities to profile component [\#832](https://github.com/anchorchat/anchor-ui/pull/832) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.1](https://github.com/anchorchat/anchor-ui/tree/v4.3.1) (2017-08-10)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.0...v4.3.1)
+
+**Closed issues:**
+
+- New icon for product not found page [\#828](https://github.com/anchorchat/anchor-ui/issues/828)
+
+**Merged pull requests:**
+
+- Issue \#830 [\#831](https://github.com/anchorchat/anchor-ui/pull/831) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.0\] Changed Message mentions to highlights, changed how highlights are matched. [\#827](https://github.com/anchorchat/anchor-ui/pull/827) ([sjaakluthart](https://github.com/sjaakluthart))
 
 ## [v4.3.0](https://github.com/anchorchat/anchor-ui/tree/v4.3.0) (2017-08-08)
