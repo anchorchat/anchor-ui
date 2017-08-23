@@ -33,7 +33,8 @@ export default {
     border: `3px solid ${colors.white}`,
     position: 'absolute',
     top: '200px',
-    transform: 'translateY(-50%)'
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
   },
   close: {
     position: 'absolute',
