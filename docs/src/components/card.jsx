@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Card from '../../../dist/card';
 import CardHeader from '../../../dist/card-header';
 import CardContent from '../../../dist/card-content';

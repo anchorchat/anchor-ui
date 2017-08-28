@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import IconMenu from '../../../dist/icon-menu';
 import MenuItem from '../../../dist/menu-item';
 import IconRocket from '../../../dist/icons/icon-rocket';

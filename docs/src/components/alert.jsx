@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Props from './props';
 import Alert from '../../../dist/alert';
 import components from '../../components.json';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import RadioButton from '../../../dist/radio-button';
 import RadioButtonGroup from '../../../dist/radio-button-group';
 import Props from './props';

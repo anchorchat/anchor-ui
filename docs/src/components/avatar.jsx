@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Avatar from '../../../dist/avatar';
 import components from '../../components.json';
 import Props from './props';

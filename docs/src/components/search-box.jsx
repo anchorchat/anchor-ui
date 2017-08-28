@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import SearchBox from '../../../dist/search-box';
 import Props from './props';
 import components from '../../components.json';

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import MessageInput from '../../../dist/message-input';
 import Button from '../../../dist/button';
 import IconEmoji from '../../../dist/icons/icon-emoji';

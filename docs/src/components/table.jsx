@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Table from '../../../dist/table';
 import TableHeader from '../../../dist/table-header';
 import TableHeaderColumn from '../../../dist/table-header-column';

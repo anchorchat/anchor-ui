@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import AppHeader from '../../../dist/app-header';
 import Button from '../../../dist/button';
 import { colors } from '../../../dist/settings';
