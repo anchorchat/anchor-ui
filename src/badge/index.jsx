@@ -9,8 +9,13 @@ import themeable from '../themeable';
 /** Used for displaying a (notification) counter */
 const Badge = ({ value, maxValue, inverted, style, color, ...custom }) => {
   let content = value;
+  let max = maxValue;
 
-  if (value > maxValue) {
+  if (!maxValue) {
+    max = value;
+  }
+
+  if (value > max) {
     content = `${maxValue}+`;
   }
 
@@ -31,14 +36,16 @@ Badge.propTypes = {
   /** Inverts color */
   inverted: PropTypes.bool,
   /** Maximum value that will be shown.
-   * This will result in `${maxValue}+` if value exceeds maxValue */
-  maxValue: PropTypes.number.isRequired,
+   * This will result in `${maxValue}+` if value exceeds maxValue.
+   */
+  maxValue: PropTypes.number,
   color: PropTypes.string.isRequired
 };
 
 Badge.defaultProps = {
   style: {},
-  inverted: false
+  inverted: false,
+  maxValue: null
 };
 
 const enhance = compose(
