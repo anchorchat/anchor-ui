@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
+import isNumber from 'lodash/isNumber';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
@@ -11,7 +12,7 @@ const Badge = ({ value, maxValue, inverted, style, color, ...custom }) => {
   let content = value;
   let max = maxValue;
 
-  if (!maxValue) {
+  if (!isNumber(maxValue) && !maxValue) {
     max = value;
   }
 
