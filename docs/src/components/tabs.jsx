@@ -36,7 +36,7 @@ const TabsDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <Tabs style={style.tabs}>
+          <Tabs style={style.tabs} onTabChange={() => console.log('on tab change callback fired!')}>
             <Tab label="Tab 1">Content 1</Tab>
             <Tab label="Tab 2">Content 2</Tab>
             <Tab label="Tab 3">Content 3</Tab>
