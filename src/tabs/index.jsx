@@ -2,6 +2,7 @@ import React, { Component, createElement, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
+import noop from 'lodash/noop';
 import getStyles from './get-styles';
 
 class Tabs extends Component {
@@ -23,7 +24,13 @@ class Tabs extends Component {
      * If `initialSelectedIndex` is set but larger than the total amount of specified tabs,
      * `initialSelectedIndex` will revert back to default.
      */
-    initialSelectedIndex: PropTypes.number
+    initialSelectedIndex: PropTypes.number,
+    /**
+     * Callback fired when Tab is switched
+     *
+     * function(event: object, value: string || number) => void
+     */
+    onTabChange: PropTypes.func
   }
 
   static defaultProps = {
@@ -31,7 +38,8 @@ class Tabs extends Component {
     tabContainerStyle: {},
     contentContainerStyle: {},
     contentStyle: {},
-    initialSelectedIndex: 0
+    initialSelectedIndex: 0,
+    onTabChange: noop
   }
 
   static contextTypes = {
@@ -66,10 +74,14 @@ class Tabs extends Component {
     }
   }
 
-  toggleTab(value) {
+  toggleTab(event, value) {
+    const { onTabChange } = this.props;
+
     this.setState({
       value
     });
+
+    onTabChange(event, value);
   }
 
   render() {
@@ -80,6 +92,7 @@ class Tabs extends Component {
       contentContainerStyle,
       contentStyle,
       initialSelectedIndex,
+      onTabChange,
       ...custom
     } = this.props;
     const { value } = this.state;
@@ -101,7 +114,7 @@ class Tabs extends Component {
         {
           key: index,
           selected: index === value,
-          onClick: () => this.toggleTab(index)
+          onClick: event => this.toggleTab(event, index)
         }
       );
     });
