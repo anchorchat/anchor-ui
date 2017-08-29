@@ -10,13 +10,8 @@ import themeable from '../themeable';
 /** Used for displaying a (notification) counter */
 const Badge = ({ value, maxValue, inverted, style, color, ...custom }) => {
   let content = value;
-  let max = maxValue;
 
-  if (!isNumber(maxValue) && !maxValue) {
-    max = value;
-  }
-
-  if (value > max) {
+  if (isNumber(maxValue) && value > maxValue) {
     content = `${maxValue}+`;
   }
 
