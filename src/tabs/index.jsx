@@ -25,7 +25,11 @@ class Tabs extends Component {
      * `initialSelectedIndex` will revert back to default.
      */
     initialSelectedIndex: PropTypes.number,
-    /** Callback fired when Tab is switched */
+    /**
+     * Callback fired when Tab is switched
+     *
+     * function(event: object, value: string || number) => void
+     */
     onTabChange: PropTypes.func
   }
 
@@ -70,12 +74,14 @@ class Tabs extends Component {
     }
   }
 
-  toggleTab(value, callback) {
+  toggleTab(event, value) {
+    const { onTabChange } = this.props;
+
     this.setState({
       value
     });
 
-    callback();
+    onTabChange(event, value);
   }
 
   render() {
@@ -108,7 +114,7 @@ class Tabs extends Component {
         {
           key: index,
           selected: index === value,
-          onClick: () => this.toggleTab(index, onTabChange)
+          onClick: event => this.toggleTab(event, index)
         }
       );
     });
