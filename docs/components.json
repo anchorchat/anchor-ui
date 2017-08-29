@@ -6447,11 +6447,11 @@
         "modifiers": [],
         "params": [
           {
-            "name": "value",
+            "name": "event",
             "type": null
           },
           {
-            "name": "callback",
+            "name": "value",
             "type": null
           }
         ],
@@ -6530,7 +6530,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Tab is switched",
+        "description": "Callback fired when Tab is switched\n\nfunction(event: object, value: string || number) => void",
         "defaultValue": {
           "value": "noop",
           "computed": true
