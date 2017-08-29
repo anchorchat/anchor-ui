@@ -2,10 +2,32 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.2...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.3...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.3\] Added callback to Tabs and fixed badge styling bug. [\#840](https://github.com/anchorchat/anchor-ui/pull/840) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.3](https://github.com/anchorchat/anchor-ui/tree/v4.3.3) (2017-08-29)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.2...v4.3.3)
+
+**Implemented enhancements:**
+
+- Replace underscore with lodash in docs [\#778](https://github.com/anchorchat/anchor-ui/issues/778)
+
+**Fixed bugs:**
+
+- \[Badge\] Badge with value \> 9 and maxValue \> 9 [\#837](https://github.com/anchorchat/anchor-ui/issues/837)
+
+**Closed issues:**
+
+- Fix home icon [\#829](https://github.com/anchorchat/anchor-ui/issues/829)
+
+**Merged pull requests:**
+
+- Issue \#837 [\#839](https://github.com/anchorchat/anchor-ui/pull/839) ([IanCStewart](https://github.com/IanCStewart))
+- Tab change callback [\#838](https://github.com/anchorchat/anchor-ui/pull/838) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#778 [\#836](https://github.com/anchorchat/anchor-ui/pull/836) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.2\] Fixed Profile styling issue [\#835](https://github.com/anchorchat/anchor-ui/pull/835) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.2](https://github.com/anchorchat/anchor-ui/tree/v4.3.2) (2017-08-23)
