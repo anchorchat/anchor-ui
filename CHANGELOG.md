@@ -2,7 +2,18 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.2...HEAD)
+
+**Merged pull requests:**
+
+- \[4.3.2\] Fixed Profile styling issue [\#835](https://github.com/anchorchat/anchor-ui/pull/835) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.2](https://github.com/anchorchat/anchor-ui/tree/v4.3.2) (2017-08-23)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.1...v4.3.2)
+
+**Fixed bugs:**
+
+- \[Profile\] Avatar styling broken [\#833](https://github.com/anchorchat/anchor-ui/issues/833)
 
 **Closed issues:**
 
@@ -10,6 +21,7 @@
 
 **Merged pull requests:**
 
+- \[Profile\] Fixed IOS9 styling bug [\#834](https://github.com/anchorchat/anchor-ui/pull/834) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.1\] Added override capabilities to profile component [\#832](https://github.com/anchorchat/anchor-ui/pull/832) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.1](https://github.com/anchorchat/anchor-ui/tree/v4.3.1) (2017-08-10)
