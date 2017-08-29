@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
 import Props from './props';

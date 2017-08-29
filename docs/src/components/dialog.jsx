@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Dialog from '../../../dist/dialog';
 import Button from '../../../dist/button';
 import Props from './props';

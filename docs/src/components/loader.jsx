@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Loader from '../../../dist/loader';
 import colors from '../../../dist/settings/colors';
 import Props from './props';

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Badge from '../../../dist/badge';
 import Props from './props';
 import components from '../../components.json';
@@ -38,6 +38,9 @@ const BadgeDoc = () => {
           <Badge style={style.badge} value={9} maxValue={9} />
           <Badge style={style.badge} value={10} maxValue={9} />
           <Badge style={style.badge} value={10} maxValue={9} inverted />
+          <Badge style={style.badge} value={100} />
+          <Badge style={style.badge} value={100} maxValue={99} />
+          <Badge style={style.badge} value={1000} />
         </Paper>
       </section>
       <Props props={componentData.props} />

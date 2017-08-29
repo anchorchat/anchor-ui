@@ -369,8 +369,12 @@
         "type": {
           "name": "number"
         },
-        "required": true,
-        "description": "Maximum value that will be shown.\nThis will result in `${maxValue}+` if value exceeds maxValue"
+        "required": false,
+        "description": "Maximum value that will be shown.\nThis will result in `${maxValue}+` if value exceeds maxValue.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "color": {
         "type": {
@@ -6447,6 +6451,10 @@
         "modifiers": [],
         "params": [
           {
+            "name": "event",
+            "type": null
+          },
+          {
             "name": "value",
             "type": null
           }
@@ -6519,6 +6527,17 @@
         "defaultValue": {
           "value": "0",
           "computed": false
+        }
+      },
+      "onTabChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Tab is switched\n\nfunction(event: object, value: string || number) => void",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
         }
       }
     }

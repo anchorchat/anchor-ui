@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Tab from '../../../dist/tab';
 import Tabs from '../../../dist/tabs';
 import Props from './props';
@@ -36,7 +36,7 @@ const TabsDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <Tabs style={style.tabs}>
+          <Tabs style={style.tabs} onTabChange={(event, index) => console.log('on tab change callback fired! clicked tab => ', index)}>
             <Tab label="Tab 1">Content 1</Tab>
             <Tab label="Tab 2">Content 2</Tab>
             <Tab label="Tab 3">Content 3</Tab>

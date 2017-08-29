@@ -1,7 +1,7 @@
 /* eslint no-console: [0] */
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import EmojiFilter from '../../../dist/emoji-filter';
 import MessageInput from '../../../dist/message-input';
 import Props from './props';

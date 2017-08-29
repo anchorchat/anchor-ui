@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'underscore';
+import _ from 'lodash';
 import Menu from '../../../dist/menu';
 import MenuItem from '../../../dist/menu-item';
 import npmPackage from '../../../package.json';
