@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Switch from '../../../dist/switch';
 import Props from './props';
 import components from '../../components.json';

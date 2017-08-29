@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'underscore';
+import _ from 'lodash';
 import escape from 'escape-html';
 import Table from '../../../dist/table';
 import TableHeader from '../../../dist/table-header';

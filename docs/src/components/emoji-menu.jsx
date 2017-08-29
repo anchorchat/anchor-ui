@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import emojione from 'emojione';
 import EmojiMenu from '../../../dist/emoji-menu';
 import Button from '../../../dist/button';

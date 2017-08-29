@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Badge from '../../../dist/badge';
 import Props from './props';
 import components from '../../components.json';

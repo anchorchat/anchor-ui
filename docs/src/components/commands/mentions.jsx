@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'underscore';
+import _ from 'lodash';
 import Commands from '../../../../dist/commands';
 import MessageInput from '../../../../dist/message-input';
 import Paper from '../../../../dist/paper';

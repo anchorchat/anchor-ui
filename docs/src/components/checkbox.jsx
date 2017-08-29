@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Checkbox from '../../../dist/checkbox';
 import Divider from '../../../dist/divider';
 import colors from '../../../dist/settings/colors';
@@ -26,11 +26,11 @@ class CheckboxDoc extends Component {
     const checked = event.target.checked;
     const value = event.target.value;
 
-    if (checked && !_.contains(values, value)) {
+    if (checked && !_.includes(values, value)) {
       values.push(value);
     }
 
-    if (!checked && _.contains(values, value)) {
+    if (!checked && _.includes(values, value)) {
       const index = _.indexOf(values, value);
       values.splice(index, 1);
     }
@@ -78,7 +78,7 @@ class CheckboxDoc extends Component {
                 label="One"
                 name="One"
                 style={style.checkbox}
-                checked={_.contains(values, 'One')}
+                checked={_.includes(values, 'One')}
                 value="One"
               />
               <Checkbox
@@ -86,7 +86,7 @@ class CheckboxDoc extends Component {
                 label="Two"
                 name="Two"
                 style={style.checkbox}
-                checked={_.contains(values, 'Two')}
+                checked={_.includes(values, 'Two')}
                 value="Two"
               />
             </section>

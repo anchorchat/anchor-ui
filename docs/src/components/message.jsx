@@ -1,7 +1,7 @@
 /* global alert */
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
 import MenuItem from '../../../dist/menu-item';

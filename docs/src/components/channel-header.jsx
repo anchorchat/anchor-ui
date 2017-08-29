@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import ChannelHeader from '../../../dist/channel-header';
 import Button from '../../../dist/button';
 import IconChannels from '../../../dist/icons/icon-channels';

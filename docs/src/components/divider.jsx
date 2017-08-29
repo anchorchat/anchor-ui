@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Divider from '../../../dist/divider';
 import List from '../../../dist/list';
 import ListItem from '../../../dist/list-item';

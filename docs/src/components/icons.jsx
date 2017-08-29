@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import * as icons from '../../../dist/icons';
 import Paper from '../../../dist/paper';
 import Table from '../../../dist/table';

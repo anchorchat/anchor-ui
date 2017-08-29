@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import _ from 'underscore';
+import _ from 'lodash';
 import Tab from '../../../dist/tab';
 import Tabs from '../../../dist/tabs';
 import Props from './props';
