@@ -6449,6 +6449,10 @@
           {
             "name": "value",
             "type": null
+          },
+          {
+            "name": "callback",
+            "type": null
           }
         ],
         "returns": null
@@ -6519,6 +6523,17 @@
         "defaultValue": {
           "value": "0",
           "computed": false
+        }
+      },
+      "onTabChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Tab is switched",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
         }
       }
     }
