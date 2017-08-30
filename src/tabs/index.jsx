@@ -47,13 +47,11 @@ class Tabs extends Component {
   }
 
   static getSelectedTab(props) {
-    let initialSelectedIndex = 0;
-
-    if (props.initialSelectedIndex && props.initialSelectedIndex <= props.children.length - 1) {
-      initialSelectedIndex = props.initialSelectedIndex;
+    if (props.initialSelectedIndex > props.children.length - 1) {
+      return 0;
     }
 
-    return initialSelectedIndex;
+    return props.initialSelectedIndex;
   }
 
   constructor(props) {
