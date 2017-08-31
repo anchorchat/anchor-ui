@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import pure from 'recompose/pure';
 import noop from 'lodash/noop';
+import isNumber from 'lodash/isNumber';
 import getStyles from './get-styles';
 
 class Tabs extends Component {
@@ -73,7 +74,7 @@ class Tabs extends Component {
     const { selectedIndex } = this.props;
     const { value } = this.state;
 
-    if (selectedIndex) {
+    if (isNumber(selectedIndex)) {
       return index === selectedIndex;
     }
 
@@ -120,9 +121,9 @@ class Tabs extends Component {
         {
           key: index,
           selected: this.isSelectedTab(index),
-          onClick: !selectedIndex
-            ? event => this.toggleTab(event, index)
-            : event => onTabChange(event, index)
+          onClick: isNumber(selectedIndex)
+            ? event => onTabChange(event, index)
+            : event => this.toggleTab(event, index)
         }
       );
     });
