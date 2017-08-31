@@ -30,7 +30,9 @@ class Tabs extends Component {
      *
      * function(event: object, value: string || number) => void
      */
-    onTabChange: PropTypes.func
+    onTabChange: PropTypes.func,
+    /** Index of the selected Tab */
+    selectedIndex: PropTypes.number,
   }
 
   static defaultProps = {
@@ -39,26 +41,19 @@ class Tabs extends Component {
     contentContainerStyle: {},
     contentStyle: {},
     initialSelectedIndex: 0,
-    onTabChange: noop
+    onTabChange: noop,
+    selectedIndex: null
   }
 
   static contextTypes = {
     color: PropTypes.string
   }
 
-  static getSelectedTab(props) {
-    if (props.initialSelectedIndex > props.children.length - 1) {
-      return 0;
-    }
-
-    return props.initialSelectedIndex;
-  }
-
   constructor(props) {
     super(props);
 
     this.state = {
-      value: Tabs.getSelectedTab(props)
+      value: this.getInitialSelectedTab(props)
     };
 
     this.toggleTab = this.toggleTab.bind(this);
@@ -67,9 +62,30 @@ class Tabs extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.initialSelectedIndex !== nextProps.initialSelectedIndex) {
       this.setState({
-        value: Tabs.getSelectedTab(nextProps)
+        value: this.getInitialSelectedTab(nextProps)
       });
     }
+  }
+
+  getInitialSelectedTab() {
+    const { initialSelectedIndex, children } = this.props;
+
+    if (initialSelectedIndex > children.length - 1) {
+      return 0;
+    }
+
+    return initialSelectedIndex;
+  }
+
+  getSelectedIndex(index) {
+    const { selectedIndex } = this.props;
+    const { value } = this.state;
+
+    if (selectedIndex) {
+      return (index === selectedIndex);
+    }
+
+    return (index === value);
   }
 
   toggleTab(event, value) {
@@ -91,9 +107,9 @@ class Tabs extends Component {
       contentStyle,
       initialSelectedIndex,
       onTabChange,
+      selectedIndex,
       ...custom
     } = this.props;
-    const { value } = this.state;
     const tabContent = [];
 
     const tabs = children.map((tab, index) => {
@@ -101,7 +117,7 @@ class Tabs extends Component {
         createElement(
           'div', {
             key: index,
-            style: getStyles.tabContent(index === value, contentStyle)
+            style: getStyles.tabContent(this.getSelectedIndex(index), contentStyle)
           },
           tab.props.children
         )
@@ -111,8 +127,10 @@ class Tabs extends Component {
         tab,
         {
           key: index,
-          selected: index === value,
-          onClick: event => this.toggleTab(event, index)
+          selected: this.getSelectedIndex(index),
+          onClick: !selectedIndex
+            ? event => this.toggleTab(event, index)
+            : event => onTabChange(event, index)
         }
       );
     });
