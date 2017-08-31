@@ -6427,6 +6427,137 @@
       }
     }
   },
+  "components/tabs/index.jsx": {
+    "description": "",
+    "displayName": "Tabs",
+    "methods": [
+      {
+        "name": "getInitialSelectedTab",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "isSelectedTab",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "toggleTab",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The Tabs's content (Tab)"
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the tab container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the tab content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the tab content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "initialSelectedIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify initial visible tab index.\nIf `initialSelectedIndex` is set but larger than the total amount of specified tabs,\n`initialSelectedIndex` will revert back to default.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "onTabChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Tab is switched\n\nfunction(event: object, value: string || number) => void",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "selectedIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Index of the selected Tab",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/theme-provider/index.jsx": {
     "description": "",
     "displayName": "ThemeProvider",
