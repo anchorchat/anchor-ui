@@ -6432,14 +6432,19 @@
     "displayName": "Tabs",
     "methods": [
       {
-        "name": "getSelectedTab",
+        "name": "getInitialSelectedTab",
         "docblock": null,
-        "modifiers": [
-          "static"
-        ],
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "isSelectedTab",
+        "docblock": null,
+        "modifiers": [],
         "params": [
           {
-            "name": "props",
+            "name": "index",
             "type": null
           }
         ],
@@ -6538,6 +6543,17 @@
         "defaultValue": {
           "value": "noop",
           "computed": true
+        }
+      },
+      "selectedIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Index of the selected Tab",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       }
     }
