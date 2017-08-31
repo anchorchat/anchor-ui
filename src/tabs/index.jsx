@@ -53,7 +53,7 @@ class Tabs extends Component {
     super(props);
 
     this.state = {
-      value: this.getInitialSelectedTab(props)
+      value: this.getInitialSelectedTab()
     };
 
     this.toggleTab = this.toggleTab.bind(this);
@@ -68,7 +68,11 @@ class Tabs extends Component {
   }
 
   getInitialSelectedTab() {
-    const { initialSelectedIndex, children } = this.props;
+    const { initialSelectedIndex, children, selectedIndex } = this.props;
+
+    if (selectedIndex) {
+      return selectedIndex;
+    }
 
     if (initialSelectedIndex > children.length - 1) {
       return 0;
@@ -77,7 +81,7 @@ class Tabs extends Component {
     return initialSelectedIndex;
   }
 
-  getSelectedIndex(index) {
+  isSelectedTab(index) {
     const { selectedIndex } = this.props;
     const { value } = this.state;
 
