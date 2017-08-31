@@ -59,20 +59,8 @@ class Tabs extends Component {
     this.toggleTab = this.toggleTab.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.initialSelectedIndex !== nextProps.initialSelectedIndex) {
-      this.setState({
-        value: this.getInitialSelectedTab(nextProps)
-      });
-    }
-  }
-
   getInitialSelectedTab() {
-    const { initialSelectedIndex, children, selectedIndex } = this.props;
-
-    if (selectedIndex) {
-      return selectedIndex;
-    }
+    const { initialSelectedIndex, children } = this.props;
 
     if (initialSelectedIndex > children.length - 1) {
       return 0;
@@ -86,10 +74,10 @@ class Tabs extends Component {
     const { value } = this.state;
 
     if (selectedIndex) {
-      return (index === selectedIndex);
+      return index === selectedIndex;
     }
 
-    return (index === value);
+    return index === value;
   }
 
   toggleTab(event, value) {
