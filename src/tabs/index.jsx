@@ -121,7 +121,7 @@ class Tabs extends Component {
         createElement(
           'div', {
             key: index,
-            style: getStyles.tabContent(this.getSelectedIndex(index), contentStyle)
+            style: getStyles.tabContent(this.isSelectedTab(index), contentStyle)
           },
           tab.props.children
         )
@@ -131,7 +131,7 @@ class Tabs extends Component {
         tab,
         {
           key: index,
-          selected: this.getSelectedIndex(index),
+          selected: this.isSelectedTab(index),
           onClick: !selectedIndex
             ? event => this.toggleTab(event, index)
             : event => onTabChange(event, index)
