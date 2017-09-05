@@ -4475,6 +4475,17 @@
           "computed": true
         }
       },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Badge to display next to message.username",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
