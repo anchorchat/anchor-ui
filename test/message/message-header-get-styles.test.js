@@ -12,7 +12,7 @@ describe('MessageHeader.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.header(false, false, 'small', { color: 'red' });
+      const style = getStyles.header(false, false, 'small', null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -45,6 +45,13 @@ describe('MessageHeader.getStyles', () => {
       const style = getStyles.header(false, false, 'large');
 
       expect(style).to.have.property('fontSize', '18px');
+    });
+
+    it('should add badge styles', () => {
+      const style = getStyles.header(false, false, 'large', 'badge');
+
+      expect(style).to.have.property('display', 'flex');
+      expect(style).to.have.property('alignItems', 'center');
     });
   });
 

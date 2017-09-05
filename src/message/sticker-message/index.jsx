@@ -18,7 +18,8 @@ const StickerMessage = ({
   messageBodyStyle,
   messageTimeStyle,
   timeFormat,
-  locale
+  locale,
+  badge
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
@@ -34,6 +35,7 @@ const StickerMessage = ({
           headerStyle={headerStyle}
           username={message.username}
           stickerMessage
+          badge={badge}
         />
         <MessageTime
           myMessage={myMessage}
@@ -68,7 +70,8 @@ StickerMessage.propTypes = {
   myMessage: PropTypes.bool,
   compact: PropTypes.bool,
   color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired
+  locale: PropTypes.instanceOf(Object).isRequired,
+  badge: PropTypes.node
 };
 
 StickerMessage.defaultProps = {
@@ -85,7 +88,8 @@ StickerMessage.defaultProps = {
   compact: false,
   enableLightbox: false,
   color: colors.theme,
-  iconMenu: null
+  iconMenu: null,
+  badge: null
 };
 
 export default StickerMessage;

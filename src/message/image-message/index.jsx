@@ -44,7 +44,8 @@ class ImageMessage extends Component {
       enableLightbox,
       collapsed,
       collapsedText,
-      locale
+      locale,
+      badge
     } = this.props;
     const { lightbox } = this.state;
 
@@ -75,6 +76,7 @@ class ImageMessage extends Component {
           fontSize={fontSize}
           headerStyle={headerStyle}
           username={message.username}
+          badge={badge}
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
@@ -129,7 +131,8 @@ ImageMessage.propTypes = {
   color: PropTypes.string,
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node,
-  locale: PropTypes.instanceOf(Object).isRequired
+  locale: PropTypes.instanceOf(Object).isRequired,
+  badge: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
@@ -146,7 +149,8 @@ ImageMessage.defaultProps = {
   color: '',
   collapsed: false,
   collapsedText: 'This image has been collapsed, click the button to expand it.',
-  iconMenu: null
+  iconMenu: null,
+  badge: null
 };
 
 export default ImageMessage;
