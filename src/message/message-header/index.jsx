@@ -4,7 +4,7 @@ import Avatar from '../../avatar';
 import getStyles from './get-styles';
 import styles from './styles';
 
-const MessageHeader = ({ compact, myMessage, avatar, fontSize, headerStyle, username }) => (
+const MessageHeader = ({ compact, myMessage, avatar, fontSize, headerStyle, username, badge }) => (
   <div style={styles.container}>
     {avatar && !compact ? <Avatar image={avatar} style={getStyles.avatar(myMessage)} /> : null}
     <header
@@ -13,6 +13,7 @@ const MessageHeader = ({ compact, myMessage, avatar, fontSize, headerStyle, user
       }
     >
       {username}
+      {badge ? <div style={styles.badge}>{badge}</div> : null}
     </header>
   </div>
 );
@@ -23,7 +24,8 @@ MessageHeader.propTypes = {
   myMessage: PropTypes.bool,
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   headerStyle: PropTypes.instanceOf(Object),
-  username: PropTypes.string.isRequired
+  username: PropTypes.string.isRequired,
+  badge: PropTypes.node
 };
 
 MessageHeader.defaultProps = {
@@ -31,7 +33,8 @@ MessageHeader.defaultProps = {
   headerStyle: {},
   fontSize: 'small',
   myMessage: false,
-  compact: false
+  compact: false,
+  badge: null
 };
 
 export default MessageHeader;

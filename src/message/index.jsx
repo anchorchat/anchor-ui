@@ -107,6 +107,10 @@ class Message extends Component {
      * function(event: object, highlight: object) => void
      */
     onHighlightClick: PropTypes.func,
+    /**
+     * Badge to display next to message.username
+     */
+    badge: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -134,7 +138,8 @@ class Message extends Component {
     separator: null,
     highlights: [],
     onHighlightClick: noop,
-    expandMenuItem: null
+    expandMenuItem: null,
+    badge: null
   }
 
   constructor() {
@@ -226,6 +231,7 @@ class Message extends Component {
       color,
       separator,
       expandMenuItem,
+      badge,
       ...custom
     } = this.props;
 

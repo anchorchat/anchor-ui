@@ -15,7 +15,8 @@ function TypingMessage({
   fontSize,
   messageHeaderStyle,
   message,
-  messageBodyStyle
+  messageBodyStyle,
+  badge
 }) {
   return (
     <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
@@ -26,6 +27,7 @@ function TypingMessage({
         fontSize={fontSize}
         headerStyle={messageHeaderStyle}
         username={message.username}
+        badge={badge}
       />
       <div className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
         <Loader dotStyle={styles.loaderDot} />
@@ -51,7 +53,8 @@ TypingMessage.propTypes = {
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   myMessage: PropTypes.bool,
   compact: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  badge: PropTypes.node
 };
 
 TypingMessage.defaultProps = {
@@ -66,6 +69,7 @@ TypingMessage.defaultProps = {
   enableLightbox: false,
   color: colors.theme,
   iconMenu: null,
+  badge: null
 };
 
 export default TypingMessage;

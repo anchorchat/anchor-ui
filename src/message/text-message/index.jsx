@@ -102,7 +102,8 @@ class TextMessage extends Component {
       enableLinks,
       edited,
       locale,
-      highlights
+      highlights,
+      badge
     } = this.props;
 
     return (
@@ -114,6 +115,7 @@ class TextMessage extends Component {
           fontSize={fontSize}
           headerStyle={messageHeaderStyle}
           username={message.username}
+          badge={badge}
         />
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
@@ -165,7 +167,8 @@ TextMessage.propTypes = {
     prefix: PropTypes.string,
     value: PropTypes.string,
   })),
-  onHighlightClick: PropTypes.func.isRequired
+  onHighlightClick: PropTypes.func.isRequired,
+  badge: PropTypes.node
 };
 
 TextMessage.defaultProps = {
@@ -184,7 +187,8 @@ TextMessage.defaultProps = {
   color: colors.theme,
   iconMenu: null,
   edited: null,
-  highlights: []
+  highlights: [],
+  badge: null
 };
 
 export default TextMessage;

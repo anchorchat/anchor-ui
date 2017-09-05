@@ -17,5 +17,8 @@ export default {
     position: 'absolute',
     left: '-48px',
     top: '0'
+  },
+  badge: {
+    marginLeft: '4px'
   }
 };

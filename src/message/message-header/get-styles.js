@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const header = (myMessage, compact, fontSize, overrideStyle) => {
+const header = (myMessage, compact, fontSize, badge, overrideStyle) => {
   let style = styles.header;
 
   if (myMessage) {
@@ -19,6 +19,10 @@ const header = (myMessage, compact, fontSize, overrideStyle) => {
 
   if (fontSize === 'large') {
     style = combineStyles(style, { fontSize: '18px', lineHeight: '24px' });
+  }
+
+  if (badge) {
+    style = combineStyles(style, { display: 'flex', alignItems: 'center' });
   }
 
   return combineStyles(style, overrideStyle);
