@@ -6,7 +6,7 @@ before_install:
 before_script:
   npm run compile && npm run lint
 before_deploy:
-  cd docs && npm run build
+  cd docs && npm run build && cd ../
 deploy:
   provider: pages
   skip_cleanup: true
