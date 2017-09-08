@@ -4486,6 +4486,17 @@
           "computed": false
         }
       },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color for the IconMenu's icon",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      },
       "color": {
         "type": {
           "name": "string"

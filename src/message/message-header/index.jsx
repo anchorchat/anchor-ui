@@ -9,7 +9,7 @@ const MessageHeader = ({ compact, myMessage, avatar, fontSize, headerStyle, user
     {avatar && !compact ? <Avatar image={avatar} style={getStyles.avatar(myMessage)} /> : null}
     <header
       style={
-        getStyles.header(myMessage, compact, fontSize, headerStyle)
+        getStyles.header(myMessage, compact, fontSize, badge, headerStyle)
       }
     >
       {username}
