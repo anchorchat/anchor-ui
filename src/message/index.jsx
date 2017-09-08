@@ -15,6 +15,7 @@ import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
 import themeable from '../themeable';
 import styles from './styles';
+import colors from '../settings/colors';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -107,10 +108,10 @@ class Message extends Component {
      * function(event: object, highlight: object) => void
      */
     onHighlightClick: PropTypes.func,
-    /**
-     * Badge to display next to message.username
-     */
+    /** Badge to display next to message.username */
     badge: PropTypes.node,
+    /** Color for the IconMenu's icon */
+    iconColor: PropTypes.string,
     color: PropTypes.string.isRequired
   }
 
@@ -139,7 +140,8 @@ class Message extends Component {
     highlights: [],
     onHighlightClick: noop,
     expandMenuItem: null,
-    badge: null
+    badge: null,
+    iconColor: colors.icons
   }
 
   constructor() {
@@ -150,14 +152,14 @@ class Message extends Component {
   }
 
   renderIconMenu() {
-    const { menuItems } = this.props;
+    const { menuItems, iconColor } = this.props;
 
     if (!menuItems) {
       return null;
     }
 
     return (
-      <IconMenu icon={<IconChevronDown />}>
+      <IconMenu icon={<IconChevronDown color={iconColor} />}>
         {menuItems}
       </IconMenu>
     );
@@ -170,7 +172,8 @@ class Message extends Component {
       expandIcon,
       expandText,
       menuItems,
-      expandMenuItem
+      expandMenuItem,
+      iconColor
     } = this.props;
 
     if ((!expand && !expandMenuItem) || (!menuItems && !collapsed)) {
@@ -181,7 +184,7 @@ class Message extends Component {
 
     if (!menuItems && collapsed) {
       return (
-        <IconMenu icon={<IconChevronDown />}>
+        <IconMenu icon={<IconChevronDown color={iconColor} />}>
           {expandMenuItem || menuItem}
         </IconMenu>
       );
@@ -189,14 +192,14 @@ class Message extends Component {
 
     if (menuItems && !collapsed) {
       return (
-        <IconMenu icon={<IconChevronDown />}>
+        <IconMenu icon={<IconChevronDown color={iconColor} />}>
           {menuItems}
         </IconMenu>
       );
     }
 
     return (
-      <IconMenu icon={<IconChevronDown />}>
+      <IconMenu icon={<IconChevronDown color={iconColor} />}>
         {menuItems}
         {expandMenuItem || menuItem}
       </IconMenu>
@@ -232,6 +235,7 @@ class Message extends Component {
       separator,
       expandMenuItem,
       badge,
+      iconColor,
       ...custom
     } = this.props;
 
