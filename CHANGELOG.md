@@ -2,10 +2,52 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.3...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.7...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.7\] Fixed Message theming and override capabilities [\#853](https://github.com/anchorchat/anchor-ui/pull/853) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.7](https://github.com/anchorchat/anchor-ui/tree/v4.3.7) (2017-09-08)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.6...v4.3.7)
+
+**Implemented enhancements:**
+
+- Automate docs website deployment with Travis [\#667](https://github.com/anchorchat/anchor-ui/issues/667)
+
+**Merged pull requests:**
+
+- Issue \#851 [\#852](https://github.com/anchorchat/anchor-ui/pull/852) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#667 [\#850](https://github.com/anchorchat/anchor-ui/pull/850) ([IanCStewart](https://github.com/IanCStewart))
+- Added automated deployment of docs. Should fix \#667. [\#849](https://github.com/anchorchat/anchor-ui/pull/849) ([IanCStewart](https://github.com/IanCStewart))
+- \[4.3.6\] Added badge prop to Message. [\#847](https://github.com/anchorchat/anchor-ui/pull/847) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.3.6](https://github.com/anchorchat/anchor-ui/tree/v4.3.6) (2017-09-05)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.5...v4.3.6)
+
+**Merged pull requests:**
+
+- Message badge [\#846](https://github.com/anchorchat/anchor-ui/pull/846) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[4.3.5\] Fixed 0 is falsie check in Tabs [\#845](https://github.com/anchorchat/anchor-ui/pull/845) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.5](https://github.com/anchorchat/anchor-ui/tree/v4.3.5) (2017-08-31)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.4...v4.3.5)
+
+**Closed issues:**
+
+- New channellist [\#842](https://github.com/anchorchat/anchor-ui/issues/842)
+
+**Merged pull requests:**
+
+- Tabs selected index [\#844](https://github.com/anchorchat/anchor-ui/pull/844) ([IanCStewart](https://github.com/IanCStewart))
+- \[4.3.4\] Made Tabs so it can work as a controlled component [\#843](https://github.com/anchorchat/anchor-ui/pull/843) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.4](https://github.com/anchorchat/anchor-ui/tree/v4.3.4) (2017-08-31)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.3...v4.3.4)
+
+**Merged pull requests:**
+
+- Tabs selected index [\#841](https://github.com/anchorchat/anchor-ui/pull/841) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.3\] Added callback to Tabs and fixed badge styling bug. [\#840](https://github.com/anchorchat/anchor-ui/pull/840) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.3](https://github.com/anchorchat/anchor-ui/tree/v4.3.3) (2017-08-29)
