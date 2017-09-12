@@ -103,7 +103,7 @@ class Commands extends Component {
     this.state = {
       open: false,
       commands: this.filterCommands(props.commands, props.value),
-      selectedIndex: null
+      selectedIndex: 0
     };
   }
 
@@ -161,7 +161,7 @@ class Commands extends Component {
       this.setState({
         open: false,
         commands,
-        selectedIndex: null
+        selectedIndex: 0
       });
       onMenuClose();
     }
@@ -203,10 +203,6 @@ class Commands extends Component {
     const { selectedIndex } = this.state;
     const commandsSize = size(this.state.commands);
 
-    if (selectedIndex === null) {
-      return this.handleChange(event, this.state.commands[0], 0);
-    }
-
     if (selectedIndex + 1 < commandsSize) {
       return this.handleChange(event, this.state.commands[selectedIndex + 1], selectedIndex + 1);
     }
@@ -221,10 +217,6 @@ class Commands extends Component {
   selectPrevious = (event) => {
     const { selectedIndex } = this.state;
     const commandsSize = size(this.state.commands);
-
-    if (selectedIndex === null) {
-      return this.handleChange(event, this.state.commands[0], 0);
-    }
 
     if (selectedIndex === 0) {
       return this.handleChange(event, this.state.commands[commandsSize - 1], commandsSize - 1);
