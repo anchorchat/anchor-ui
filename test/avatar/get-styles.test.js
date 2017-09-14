@@ -13,7 +13,7 @@ describe('Avatar.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('', { color: 'red' });
+      const style = getStyles.root('', '', { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
