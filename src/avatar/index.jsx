@@ -5,8 +5,8 @@ import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** An user's profile image */
-const Avatar = ({ image, fallbackImage, style, status, statusStyle, ...custom }) => (
-  <section style={getStyles.root(image, fallbackImage, style)} {...custom}>
+const Avatar = ({ image, defaultImage, style, status, statusStyle, ...custom }) => (
+  <section style={getStyles.root(image, defaultImage, style)} {...custom}>
     {status ? <div style={getStyles.status(status, statusStyle)} /> : null}
   </section>
 );
@@ -16,8 +16,8 @@ Avatar.displayName = 'Avatar';
 Avatar.propTypes = {
   /** Path to user's profile image */
   image: PropTypes.string.isRequired,
-  /** Path to fallback image */
-  fallbackImage: PropTypes.string,
+  /** Path to default image */
+  defaultImage: PropTypes.string,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** An user's status. One of the following: ["online", "away", "offline"] */
@@ -30,7 +30,7 @@ Avatar.defaultProps = {
   style: {},
   status: '',
   statusStyle: {},
-  fallbackImage: null
+  defaultImage: null
 };
 
 export default pure(Radium(Avatar));

@@ -13,6 +13,7 @@ chai.use(sinonChai);
 describe('Avatar', () => {
   const props = {
     image: 'image',
+    defaultImage: 'defaultImage',
     style: { root: true },
     status: '',
     statusStyle: { status: true }
@@ -51,7 +52,7 @@ describe('Avatar', () => {
 
     shallow(<Avatar {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.image, props.style
+      props.image, props.defaultImage, props.style
     );
   });
 
