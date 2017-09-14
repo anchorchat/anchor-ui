@@ -2,8 +2,12 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-const root = (image, overrideStyle) => {
-  const style = combineStyles(styles.root, { backgroundImage: `url(${image})` });
+const root = (image, fallbackImage, overrideStyle) => {
+  let style = combineStyles(styles.root, { backgroundImage: `url(${image})` });
+
+  if (fallbackImage) {
+    style = combineStyles(style, { backgroundImage: `url(${image}), url(${fallbackImage})` });
+  }
 
   return combineStyles(style, overrideStyle);
 };
