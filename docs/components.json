@@ -275,6 +275,17 @@
         "required": true,
         "description": "Path to user's profile image"
       },
+      "fallbackImage": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to fallback image",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "instanceOf",
