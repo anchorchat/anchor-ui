@@ -16,7 +16,7 @@ Avatar.displayName = 'Avatar';
 Avatar.propTypes = {
   /** Path to user's profile image */
   image: PropTypes.string.isRequired,
-  /** Path to default image. This image will be shown if the image url doesn't resolve */
+  /** Path to default image. This image will be shown if the image path doesn't resolve */
   defaultImage: PropTypes.string,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
