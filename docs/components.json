@@ -280,7 +280,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to default image",
+        "description": "Path to default image. This image will be shown if the image url doesn't resolve",
         "defaultValue": {
           "value": "null",
           "computed": false
