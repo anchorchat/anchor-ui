@@ -275,6 +275,17 @@
         "required": true,
         "description": "Path to user's profile image"
       },
+      "defaultImage": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to default image. This image will be shown if the image path doesn't resolve",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "instanceOf",
