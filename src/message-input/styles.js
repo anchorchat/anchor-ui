@@ -50,11 +50,10 @@ export default {
     color: colors.placeholderText
   },
   textarea: {
-    height: 'calc(100% - 31px)',
+    height: '100%',
     resize: 'none',
     overflow: 'auto',
-    padding: '0 8px',
-    margin: '15px 0 16px',
+    padding: '15px 8px 16px',
     boxSizing: 'border-box'
   }
 };
