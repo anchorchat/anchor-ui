@@ -68,3 +68,5 @@ export IconBroadcast from './icon-broadcast';
 export IconCart from './icon-cart';
 export IconCoins from './icon-coins';
 export IconShop from './icon-shop';
+export IconArrowLeft from './icon-arrow-left';
+export IconArrowRight from './icon-arrow-right';

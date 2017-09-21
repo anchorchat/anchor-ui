@@ -91,7 +91,7 @@ class MessageInput extends Component {
 
     this.textarea.style.height = '1px';
 
-    if (this.textarea.scrollHeight > 31) {
+    if (this.textarea.scrollHeight > 48) {
       this.setState({
         multiLine: true
       });
@@ -102,21 +102,22 @@ class MessageInput extends Component {
     }
 
     if (
-      this.textarea.scrollHeight + 31 !== height
+      this.textarea.scrollHeight !== height
       && this.textarea.scrollHeight < (maxRows * rowHeight)
     ) {
-      if (this.textarea.scrollHeight + 31 < 48) {
+      if (this.textarea.scrollHeight < 48) {
         this.setState({
           height: 48
         });
       } else {
         this.setState({
-          height: (this.textarea.scrollHeight + 31)
+          height: this.textarea.scrollHeight
         });
       }
     }
 
-    this.textarea.style.height = 'calc(100% - 31px)';
+    this.textarea.scrollTop = this.textarea.scrollHeight;
+    this.textarea.style.height = '100%';
 
     onChange(event);
   }

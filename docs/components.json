@@ -2094,6 +2094,42 @@
       }
     }
   },
+  "components/icons/icon-arrow-left.jsx": {
+    "description": "",
+    "displayName": "IconArrowLeft",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-arrow-right.jsx": {
+    "description": "",
+    "displayName": "IconArrowRight",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-block.jsx": {
     "description": "",
     "displayName": "IconBlock",
