@@ -2,10 +2,55 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.7...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.10...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.10\] Added arrow icons & fixed MessageInput clickable area [\#866](https://github.com/anchorchat/anchor-ui/pull/866) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.10](https://github.com/anchorchat/anchor-ui/tree/v4.3.10) (2017-09-21)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.9...v4.3.10)
+
+**Implemented enhancements:**
+
+- \[EmojiMenu\] Add filter [\#752](https://github.com/anchorchat/anchor-ui/issues/752)
+- \[Loader\] Create a loader that can be used inside buttons [\#631](https://github.com/anchorchat/anchor-ui/issues/631)
+
+**Fixed bugs:**
+
+- \[MessageInput\] Clickable area [\#862](https://github.com/anchorchat/anchor-ui/issues/862)
+- \[MessageInput\] weird black bar on android 7.1.1 [\#856](https://github.com/anchorchat/anchor-ui/issues/856)
+
+**Merged pull requests:**
+
+- Added icons [\#865](https://github.com/anchorchat/anchor-ui/pull/865) ([sjaakluthart](https://github.com/sjaakluthart))
+- Fixed clickable error bug. Fixes \#862. [\#863](https://github.com/anchorchat/anchor-ui/pull/863) ([IanCStewart](https://github.com/IanCStewart))
+- \[4.3.9\] Added defaultImage to avatar [\#861](https://github.com/anchorchat/anchor-ui/pull/861) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.9](https://github.com/anchorchat/anchor-ui/tree/v4.3.9) (2017-09-14)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.8...v4.3.9)
+
+**Implemented enhancements:**
+
+- \[Avatar\] Should have a fallback [\#859](https://github.com/anchorchat/anchor-ui/issues/859)
+- \[Message\] theming & overrides on MessageHeader and collapse/expand icon [\#851](https://github.com/anchorchat/anchor-ui/issues/851)
+
+**Fixed bugs:**
+
+- \\[Message\\] theming & overrides on MessageHeader and collapse/expand icon [\#851](https://github.com/anchorchat/anchor-ui/issues/851)
+
+**Merged pull requests:**
+
+- Issue \#859 [\#860](https://github.com/anchorchat/anchor-ui/pull/860) ([IanCStewart](https://github.com/IanCStewart))
+- Removed safari windows latest from support list. [\#858](https://github.com/anchorchat/anchor-ui/pull/858) ([IanCStewart](https://github.com/IanCStewart))
+- \[4.3.8\] Changed selectedIndex default value to 0 to prevent TypeError if handleSelect was fired before selectedIndex was changed. [\#857](https://github.com/anchorchat/anchor-ui/pull/857) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.3.8](https://github.com/anchorchat/anchor-ui/tree/v4.3.8) (2017-09-12)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.7...v4.3.8)
+
+**Merged pull requests:**
+
+- Changed to 0 in favour of null. [\#854](https://github.com/anchorchat/anchor-ui/pull/854) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.3.7\] Fixed Message theming and override capabilities [\#853](https://github.com/anchorchat/anchor-ui/pull/853) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.7](https://github.com/anchorchat/anchor-ui/tree/v4.3.7) (2017-09-08)
