@@ -41,10 +41,4 @@ class AdminBadge extends Component {
   }
 }
 
-const enhance = compose(
-  themeable(),
-  Radium,
-  pure
-);
-
-export default enhance(AdminBadge);
+export default AdminBadge;
