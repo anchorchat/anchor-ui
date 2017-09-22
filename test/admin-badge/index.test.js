@@ -17,28 +17,31 @@ describe('AdminBadge', () => {
     inverted: false,
     color: '#1BA6C4'
   };
-  let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<AdminBadge {...props} />);
     global.navigator = { userAgent: 'all' };
   });
 
   afterEach(() => {
-    wrapper = undefined;
     global.navigator = undefined;
   });
 
   it('should always be an instanceOf AdminBadge', () => {
-    expect(wrapper.instance()).to.be.instanceOf(AdminBadge);
+    const component = shallow(<AdminBadge {...props} />);
+
+    expect(component.instance()).to.be.instanceOf(AdminBadge);
   });
 
   it('should always render a span element', () => {
-    expect(wrapper.find('span')).to.have.length(1);
+    const component = shallow(<AdminBadge {...props} />);
+
+    expect(component.find('span')).to.have.length(1);
   });
 
-  it('should pass the text prop to the span element', () => {
-    expect(wrapper.containsMatchingElement(<span>Admin</span>)).to.equal(true);
+  it('should pass text to the span element', () => {
+    const component = shallow(<AdminBadge {...props} />);
+
+    expect(component.containsMatchingElement(<span>Admin</span>)).to.equal(true);
   });
 
   it('should get root styles', () => {
