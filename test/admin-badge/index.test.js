@@ -44,7 +44,7 @@ describe('AdminBadge', () => {
     expect(component.containsMatchingElement(<span>Admin</span>)).to.equal(true);
   });
 
-  it('should render span in span element', () => {
+  it('should render node in span element', () => {
     const combinedProps = {
       ...props,
       text: <span>Node</span>
