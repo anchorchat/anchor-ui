@@ -26,25 +26,25 @@ describe('AdminBadge', () => {
     global.navigator = undefined;
   });
 
-  it('should always be an instanceOf AdminBadge', () => {
+  it('should be an instanceOf AdminBadge', () => {
     const component = shallow(<AdminBadge {...props} />);
 
     expect(component.instance()).to.be.instanceOf(AdminBadge);
   });
 
-  it('should always render a span element', () => {
+  it('should render a span element', () => {
     const component = shallow(<AdminBadge {...props} />);
 
     expect(component.find('span')).to.have.length(1);
   });
 
-  it('should pass text to the span element', () => {
+  it('should render text in span element', () => {
     const component = shallow(<AdminBadge {...props} />);
 
     expect(component.containsMatchingElement(<span>Admin</span>)).to.equal(true);
   });
 
-  it('should pass text to the span element', () => {
+  it('should render span in span element', () => {
     const combinedProps = {
       ...props,
       text: <span>Node</span>
