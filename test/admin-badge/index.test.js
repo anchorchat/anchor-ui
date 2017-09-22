@@ -17,25 +17,32 @@ describe('AdminBadge', () => {
     inverted: false,
     color: '#1BA6C4'
   };
+  let wrapper;
 
   beforeEach(() => {
+    wrapper = shallow(<AdminBadge {...props} />);
     global.navigator = { userAgent: 'all' };
   });
 
   afterEach(() => {
+    wrapper = undefined;
     global.navigator = undefined;
   });
 
-  it('should always render a span element', () => {
-    const wrapper = shallow(<AdminBadge {...props} />).dive().dive();
+  it('should be an instanceOf ThemeableComponent', () => {
+    expect(wrapper.instance()).to.be.instanceOf(AdminBadge);
+  });
 
-    expect(wrapper.find('span')).to.have.length(1);
+  it('should render RadiumEnhancer', () => {
+    expect(wrapper.find('RadiumEnhancer')).to.have.length(1);
+  });
+
+  it('should always render a span element', () => {
+    expect(wrapper.dive().dive().find('span')).to.have.length(1);
   });
 
   it('should pass the text prop to the span element', () => {
-    const wrapper = shallow(<AdminBadge {...props} />).dive().dive();
-
-    expect(wrapper.containsMatchingElement(<span>Admin</span>)).to.equal(true);
+    expect(wrapper.dive().dive().containsMatchingElement(<span>Admin</span>)).to.equal(true);
   });
 
   it('should get root styles', () => {
