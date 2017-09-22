@@ -44,6 +44,17 @@ describe('AdminBadge', () => {
     expect(component.containsMatchingElement(<span>Admin</span>)).to.equal(true);
   });
 
+  it('should pass text to the span element', () => {
+    const combinedProps = {
+      ...props,
+      text: <span>Node</span>
+    };
+    const component = shallow(<AdminBadge {...combinedProps} />);
+
+    expect(component.find('span > span')).to.have.length(1);
+    expect(component.find('span').containsMatchingElement(<span>Node</span>)).to.equal(true);
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
