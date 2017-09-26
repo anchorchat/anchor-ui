@@ -4159,6 +4159,265 @@
       }
     }
   },
+  "components/message/giphy-message/index.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "message": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "body": {
+              "name": "node",
+              "required": true
+            },
+            "createdAt": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "instanceOf",
+                  "value": "Date"
+                }
+              ],
+              "required": true
+            },
+            "username": {
+              "name": "string",
+              "required": true
+            },
+            "type": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'text'",
+                  "computed": false
+                },
+                {
+                  "value": "'image'",
+                  "computed": false
+                },
+                {
+                  "value": "'sticker'",
+                  "computed": false
+                },
+                {
+                  "value": "'giphy'",
+                  "computed": false
+                },
+                {
+                  "value": "'typing'",
+                  "computed": false
+                }
+              ],
+              "required": false
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeFormat": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'HH:mm'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "enableLightbox": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "collapsedText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'This GIF has been collapsed, click the button to expand it.'",
+          "computed": false
+        }
+      },
+      "sentByText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'Sent using /giphy'",
+          "computed": false
+        }
+      },
+      "locale": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconMenu": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
@@ -4235,6 +4494,10 @@
                 },
                 {
                   "value": "'typing'",
+                  "computed": false
+                },
+                {
+                  "value": "'giphy'",
                   "computed": false
                 }
               ],
