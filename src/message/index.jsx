@@ -10,6 +10,7 @@ import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
+import GiphyMessage from './giphy-message';
 import StickerMessage from './sticker-message';
 import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
@@ -37,7 +38,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing', 'giphy'])
     }).isRequired,
     /**
      * The format of displaying message.createdAt
@@ -247,6 +248,10 @@ class Message extends Component {
 
     if (message.type === 'sticker') {
       messageElement = <StickerMessage color={color} {...this.props} />;
+    }
+
+    if (message.type === 'giphy') {
+      messageElement = <GiphyMessage color={color} {...this.props} />
     }
 
     if (message.type === 'typing') {
