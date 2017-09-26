@@ -251,7 +251,7 @@ class Message extends Component {
     }
 
     if (message.type === 'giphy') {
-      messageElement = <GiphyMessage color={color} {...this.props} />
+      messageElement = <GiphyMessage color={color} {...this.props} />;
     }
 
     if (message.type === 'typing') {
