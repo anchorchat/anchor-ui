@@ -81,7 +81,7 @@ class GiphyMessage extends Component {
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
-            !collapsed
+            !collapsed && sentByText
             ? <span style={styles.sentByText}>{sentByText}</span>
             : null
           }

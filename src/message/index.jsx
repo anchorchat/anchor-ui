@@ -70,8 +70,10 @@ class Message extends Component {
     enableLightbox: PropTypes.bool,
     /** Collapse an image message */
     collapsed: PropTypes.bool,
-    /** Text to display for collapsed image messages */
+    /** Text to display for collapsed messages */
     collapsedText: PropTypes.node,
+    /** Text to display above giphy messages */
+    sentByText: PropTypes.node,
     /**
      * Callback fired when 'expand' MenuItem is clicked
      *
