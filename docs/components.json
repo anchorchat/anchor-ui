@@ -4675,11 +4675,18 @@
           "name": "node"
         },
         "required": false,
-        "description": "Text to display for collapsed image messages",
+        "description": "Text to display for collapsed messages",
         "defaultValue": {
           "value": "'This image has been collapsed, click the button to expand it.'",
           "computed": false
         }
+      },
+      "sentByText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Text to display above giphy messages"
       },
       "expand": {
         "type": {
