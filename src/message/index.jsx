@@ -263,7 +263,7 @@ class Message extends Component {
         {separator}
         <section style={getStyles.container(myMessage, compact)} {...custom}>
           {messageElement}
-          {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
+          {message.type === 'image' || message.type === 'giphy' ? this.renderImageIconMenu() : this.renderIconMenu()}
         </section>
       </div>
     );
