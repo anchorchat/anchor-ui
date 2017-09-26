@@ -137,6 +137,7 @@ class Message extends Component {
     expandText: 'Expand image',
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
+    sentByText: 'Sent using /giphy',
     edited: null,
     locale: en,
     separator: null,
