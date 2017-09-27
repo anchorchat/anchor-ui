@@ -60,11 +60,19 @@ const messages = [
     type: 'image'
   },
   {
-    body: 'is typing',
+    body: 'https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif',
     createdAt: new Date(),
     username: 'Ian',
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
     id: 7,
+    type: 'giphy'
+  },
+  {
+    body: 'is typing',
+    createdAt: new Date(),
+    username: 'Ian',
+    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    id: 8,
     type: 'typing'
   },
 ];
@@ -198,6 +206,11 @@ class MessageDoc extends Component {
                   avatar={message.avatar}
                   emoji
                   collapsed={this.state.collapsed}
+                  collapsedText={
+                    message.type === 'giphy'
+                    ? 'This GIF has been collapsed, click the button to expand it.'
+                    : 'This image has been collapsed, click the button to expand it.'
+                  }
                   expand={() => this.selectCollapse(false)}
                   fontSize={this.state.fontSize}
                   compact={this.state.compact}

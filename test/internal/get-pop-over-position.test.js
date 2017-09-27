@@ -246,7 +246,7 @@ describe('getPopOverPosition', () => {
         bottom: 172,
         height: 40,
         left: 5,
-        right: 45,
+        right: 25,
         top: 132,
         width: 40
       };
@@ -254,7 +254,7 @@ describe('getPopOverPosition', () => {
         bottom: 132,
         height: 555,
         left: 225,
-        right: 25,
+        right: 5,
         top: 277,
         width: 200
       };

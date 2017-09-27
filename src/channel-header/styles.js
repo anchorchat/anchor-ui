@@ -7,7 +7,7 @@ const styleSheet = {
     position: 'relative',
     padding: '8px 56px',
     boxSizing: 'border-box',
-    height: '60px',
+    height: '48px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'

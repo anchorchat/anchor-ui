@@ -45,7 +45,7 @@ TypingMessage.propTypes = {
       PropTypes.instanceOf(Date)
     ]).isRequired,
     username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
   }).isRequired,
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
