@@ -17,6 +17,7 @@ const PopOver = ({
   secondaryMenuItems,
   dividerText,
   dividerStyle,
+  onHeaderClick,
   ...custom
 }) => {
   if (!open) {
@@ -39,7 +40,11 @@ const PopOver = ({
       ref={popOverRef}
       {...custom}
     >
-      {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
+      {
+        header
+        ? <h1 onClick={onHeaderClick} style={getStyles.header(headerStyle)}>{header}</h1>
+        : null
+      }
       {children}
       {divider}
       {secondaryMenuItems}
@@ -69,7 +74,13 @@ PopOver.propTypes = {
   /** Text to divide the menu items */
   dividerText: PropTypes.node,
   /** Override the styles of the divider element */
-  dividerStyle: PropTypes.instanceOf(Object)
+  dividerStyle: PropTypes.instanceOf(Object),
+  /**
+   * Callback fired when the PopOver's header is clicked
+   *
+   * function(event: object) => void
+   */
+  onHeaderClick: PropTypes.func
 };
 
 PopOver.defaultProps = {
@@ -80,7 +91,8 @@ PopOver.defaultProps = {
   position: {},
   secondaryMenuItems: null,
   dividerText: null,
-  dividerStyle: {}
+  dividerStyle: {},
+  onHeaderClick: null
 };
 
 export default pure(Radium(PopOver));
