@@ -240,6 +240,7 @@ class Message extends Component {
       expandMenuItem,
       badge,
       iconColor,
+      giphyDescription,
       ...custom
     } = this.props;
 
