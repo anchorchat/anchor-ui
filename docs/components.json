@@ -1882,6 +1882,18 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "handleHeaderClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -1988,6 +2000,17 @@
         "description": "Override the styles of the divider element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "onHeaderClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the IconMenu's header is clicked\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
           "computed": false
         }
       }
@@ -5265,6 +5288,17 @@
         "description": "Override the styles of the divider element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "onHeaderClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the PopOver's header is clicked\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }
