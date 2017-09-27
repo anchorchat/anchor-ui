@@ -7,7 +7,7 @@ import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
 
-class ImageMessage extends Component {
+class GiphyMessage extends Component {
   constructor() {
     super();
 
@@ -44,6 +44,7 @@ class ImageMessage extends Component {
       enableLightbox,
       collapsed,
       collapsedText,
+      giphyDescription,
       locale,
       badge
     } = this.props;
@@ -56,15 +57,15 @@ class ImageMessage extends Component {
     }
 
     let headerStyle = messageHeaderStyle;
-    let imageStyle = styles.image;
+    let giphyStyle = styles.giphy;
 
     if (compact) {
       headerStyle = combineStyles(headerStyle, { position: 'absolute', bottom: '12px' });
-      imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
+      giphyStyle = combineStyles(giphyStyle, { marginBottom: '5px' });
     }
 
     if (enableLightbox) {
-      imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
+      giphyStyle = combineStyles(giphyStyle, { cursor: 'pointer' });
     }
 
     return (
@@ -80,8 +81,13 @@ class ImageMessage extends Component {
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
+            !collapsed && giphyDescription
+            ? <span style={styles.giphyDescription}>{giphyDescription}</span>
+            : null
+          }
+          {
             !collapsed
-            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            ? <img onClick={onClick} style={giphyStyle} src={message.body} alt="user-upload" />
             : <span>{collapsedText}</span>
           }
           <MessageTime
@@ -108,7 +114,7 @@ class ImageMessage extends Component {
   }
 }
 
-ImageMessage.propTypes = {
+GiphyMessage.propTypes = {
   avatar: PropTypes.string,
   message: PropTypes.shape({
     body: PropTypes.node.isRequired,
@@ -131,11 +137,12 @@ ImageMessage.propTypes = {
   color: PropTypes.string,
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node,
+  giphyDescription: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node
 };
 
-ImageMessage.defaultProps = {
+GiphyMessage.defaultProps = {
   avatar: '',
   style: {},
   timeFormat: 'HH:mm',
@@ -148,9 +155,10 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  collapsedText: 'This image has been collapsed, click the button to expand it.',
+  collapsedText: 'This GIF has been collapsed, click the button to expand it.',
+  giphyDescription: 'Sent using /giphy',
   iconMenu: null,
   badge: null
 };
 
-export default ImageMessage;
+export default GiphyMessage;

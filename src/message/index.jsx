@@ -10,6 +10,7 @@ import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
+import GiphyMessage from './giphy-message';
 import StickerMessage from './sticker-message';
 import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
@@ -37,7 +38,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing', 'giphy'])
     }).isRequired,
     /**
      * The format of displaying message.createdAt
@@ -69,8 +70,10 @@ class Message extends Component {
     enableLightbox: PropTypes.bool,
     /** Collapse an image message */
     collapsed: PropTypes.bool,
-    /** Text to display for collapsed image messages */
+    /** Text to display for collapsed messages */
     collapsedText: PropTypes.node,
+    /** Text to display above giphy messages */
+    giphyDescription: PropTypes.node,
     /**
      * Callback fired when 'expand' MenuItem is clicked
      *
@@ -134,6 +137,7 @@ class Message extends Component {
     expandText: 'Expand image',
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
+    giphyDescription: 'Sent using /giphy',
     edited: null,
     locale: en,
     separator: null,
@@ -249,6 +253,10 @@ class Message extends Component {
       messageElement = <StickerMessage color={color} {...this.props} />;
     }
 
+    if (message.type === 'giphy') {
+      messageElement = <GiphyMessage color={color} {...this.props} />;
+    }
+
     if (message.type === 'typing') {
       messageElement = <TypingMessage color={color} {...this.props} />;
     }
@@ -258,7 +266,7 @@ class Message extends Component {
         {separator}
         <section style={getStyles.container(myMessage, compact)} {...custom}>
           {messageElement}
-          {message.type === 'image' ? this.renderImageIconMenu() : this.renderIconMenu()}
+          {message.type === 'image' || message.type === 'giphy' ? this.renderImageIconMenu() : this.renderIconMenu()}
         </section>
       </div>
     );
