@@ -37,7 +37,13 @@ class IconMenu extends Component {
      */
     onMenuClose: PropTypes.func,
     /** Override the styles of the divider element */
-    dividerStyle: PropTypes.instanceOf(Object)
+    dividerStyle: PropTypes.instanceOf(Object),
+    /**
+     * Callback fired when the IconMenu's header is clicked
+     *
+     * function(event: object) => void
+     */
+    onHeaderClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -48,7 +54,8 @@ class IconMenu extends Component {
     dividerStyle: {},
     secondaryMenuItems: null,
     dividerText: null,
-    onMenuClose: () => {}
+    onMenuClose: () => {},
+    onHeaderClick: () => {}
   }
 
   constructor() {
@@ -62,6 +69,7 @@ class IconMenu extends Component {
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
     this.positionPopOver = this.positionPopOver.bind(this);
+    this.handleHeaderClick = this.handleHeaderClick.bind(this);
   }
 
   componentDidUpdate() {
@@ -118,6 +126,13 @@ class IconMenu extends Component {
     }
   }
 
+  handleHeaderClick(event) {
+    const { onHeaderClick } = this.props;
+
+    onHeaderClick(event);
+    this.closeMenu(event);
+  }
+
   render() {
     const {
       children,
@@ -136,6 +151,7 @@ class IconMenu extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       dividerStyle,
+      onHeaderClick,
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -171,6 +187,7 @@ class IconMenu extends Component {
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}
           dividerStyle={dividerStyle}
+          onHeaderClick={this.handleHeaderClick}
         >
           {menuItemsWithProps}
         </PopOver>
