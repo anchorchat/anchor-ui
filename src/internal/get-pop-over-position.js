@@ -2,10 +2,11 @@ import combineStyles from './combine-styles';
 
 const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   const { innerWidth, innerHeight } = window;
+  const halfButtonWidth = (button.width / 2);
 
   const fitsAboveButton = button.top > popOver.height;
-  const fitsRightFromButton = (innerWidth - button.right - (button.width / 2)) > popOver.width;
-  const fitsLeftFromButton = button.left + (button.width / 2) > popOver.width;
+  const fitsRightFromButton = (innerWidth - button.right - halfButtonWidth) > popOver.width;
+  const fitsLeftFromButton = button.left + halfButtonWidth > popOver.width;
   const fitsBelowButton = (innerHeight - button.bottom) > popOver.height;
 
   let horizontal = 'left';
@@ -44,15 +45,15 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   }
 
   if (horizontal === 'left') {
-    position = combineStyles(position, { left: 'initial', right: (innerWidth - button.right) + (button.width / 2) });
+    position = combineStyles(position, { left: 'initial', right: (innerWidth - button.right) + halfButtonWidth });
   }
 
   if (horizontal === 'right') {
-    position = combineStyles(position, { left: button.left + (button.width / 2), right: 'initial' });
+    position = combineStyles(position, { left: button.left + halfButtonWidth, right: 'initial' });
   }
 
   if (horizontal === 'middle') {
-    position = combineStyles(position, { left: 'initial', right: (button.right - (popOver.width / 2)) - (button.width / 2) });
+    position = combineStyles(position, { left: 'initial', right: (button.right - (popOver.width / 2)) - halfButtonWidth });
   }
 
   if (type === 'select') {
