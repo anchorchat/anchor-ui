@@ -2,10 +2,28 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.10...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.11...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.11\] Added giphy message, adjusted get-pop-over-position calculation & decreased Tab height. [\#874](https://github.com/anchorchat/anchor-ui/pull/874) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.11](https://github.com/anchorchat/anchor-ui/tree/v4.3.11) (2017-09-27)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.10...v4.3.11)
+
+**Implemented enhancements:**
+
+- \[Message\] Type giphy [\#868](https://github.com/anchorchat/anchor-ui/issues/868)
+
+**Fixed bugs:**
+
+- \[PopOver\] Incorrect calculation [\#871](https://github.com/anchorchat/anchor-ui/issues/871)
+
+**Merged pull requests:**
+
+- Used correct calculations. Fixes \#871. [\#873](https://github.com/anchorchat/anchor-ui/pull/873) ([IanCStewart](https://github.com/IanCStewart))
+- Decreased Tab and ChannelHeader height. [\#870](https://github.com/anchorchat/anchor-ui/pull/870) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#868 [\#869](https://github.com/anchorchat/anchor-ui/pull/869) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.10\] Added arrow icons & fixed MessageInput clickable area [\#866](https://github.com/anchorchat/anchor-ui/pull/866) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.10](https://github.com/anchorchat/anchor-ui/tree/v4.3.10) (2017-09-21)
