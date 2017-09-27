@@ -73,7 +73,7 @@ class Message extends Component {
     /** Text to display for collapsed messages */
     collapsedText: PropTypes.node,
     /** Text to display above giphy messages */
-    sentByText: PropTypes.node,
+    giphyDescription: PropTypes.node,
     /**
      * Callback fired when 'expand' MenuItem is clicked
      *
@@ -137,7 +137,7 @@ class Message extends Component {
     expandText: 'Expand image',
     expandIcon: null,
     collapsedText: 'This image has been collapsed, click the button to expand it.',
-    sentByText: 'Sent using /giphy',
+    giphyDescription: 'Sent using /giphy',
     edited: null,
     locale: en,
     separator: null,

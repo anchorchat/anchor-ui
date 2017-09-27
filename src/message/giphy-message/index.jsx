@@ -44,7 +44,7 @@ class GiphyMessage extends Component {
       enableLightbox,
       collapsed,
       collapsedText,
-      sentByText,
+      giphyDescription,
       locale,
       badge
     } = this.props;
@@ -81,8 +81,8 @@ class GiphyMessage extends Component {
         />
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
-            !collapsed && sentByText
-            ? <span style={styles.sentByText}>{sentByText}</span>
+            !collapsed && giphyDescription
+            ? <span style={styles.giphyDescription}>{giphyDescription}</span>
             : null
           }
           {
@@ -137,7 +137,7 @@ GiphyMessage.propTypes = {
   color: PropTypes.string,
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node,
-  sentByText: PropTypes.node,
+  giphyDescription: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node
 };
@@ -156,7 +156,7 @@ GiphyMessage.defaultProps = {
   color: '',
   collapsed: false,
   collapsedText: 'This GIF has been collapsed, click the button to expand it.',
-  sentByText: 'Sent using /giphy',
+  giphyDescription: 'Sent using /giphy',
   iconMenu: null,
   badge: null
 };

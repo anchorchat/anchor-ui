@@ -36,7 +36,7 @@ export default {
     maxWidth: '100%',
     maxHeight: '200px',
   },
-  sentByText: {
+  giphyDescription: {
     marginBottom: '8px',
     opacity: '.65'
   },
