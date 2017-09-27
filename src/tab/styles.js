@@ -11,7 +11,7 @@ export default {
     outline: 0,
     cursor: 'pointer',
     boxSizing: 'border-box',
-    padding: '10px',
+    padding: '0 8px',
     transition: 'opacity .3s ease-in-out, border .3s ease-in-out',
     opacity: '0.5',
     display: 'flex',
@@ -20,7 +20,7 @@ export default {
     flex: 1,
     flexGrow: 'none',
     justifyContent: 'center',
-    height: '60px',
+    height: '48px',
     position: 'relative'
   },
   label: {
