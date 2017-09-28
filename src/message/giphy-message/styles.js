@@ -37,8 +37,7 @@ export default {
     maxHeight: '200px',
   },
   giphyDescription: {
-    marginBottom: '8px',
-    opacity: '.65'
+    marginBottom: '8px'
   },
   compact: {
     marginLeft: '0',
