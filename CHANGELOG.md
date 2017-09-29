@@ -2,10 +2,27 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.11...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.13...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.13\] Fixed giphyDescription prop passthrough & giphyDescription styling. [\#879](https://github.com/anchorchat/anchor-ui/pull/879) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.13](https://github.com/anchorchat/anchor-ui/tree/v4.3.13) (2017-09-28)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.12...v4.3.13)
+
+**Merged pull requests:**
+
+- Removed opacity on giphy description. [\#878](https://github.com/anchorchat/anchor-ui/pull/878) ([IanCStewart](https://github.com/IanCStewart))
+- Fixed passthrough. [\#877](https://github.com/anchorchat/anchor-ui/pull/877) ([IanCStewart](https://github.com/IanCStewart))
+- \[4.3.12\] Added onHeaderClick to IconMenu and PopOver. [\#876](https://github.com/anchorchat/anchor-ui/pull/876) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.3.12](https://github.com/anchorchat/anchor-ui/tree/v4.3.12) (2017-09-27)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.11...v4.3.12)
+
+**Merged pull requests:**
+
+- Added onHeaderClick to IconMenu and PopOver. [\#875](https://github.com/anchorchat/anchor-ui/pull/875) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.3.11\] Added giphy message, adjusted get-pop-over-position calculation & decreased Tab height. [\#874](https://github.com/anchorchat/anchor-ui/pull/874) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.11](https://github.com/anchorchat/anchor-ui/tree/v4.3.11) (2017-09-27)
