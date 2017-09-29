@@ -1,6 +1,7 @@
 # Anchor UI
 
 [![Build Status](https://travis-ci.org/anchorchat/anchor-ui.svg?branch=master)](https://travis-ci.org/anchorchat/anchor-ui)
+[![npm version](https://badge.fury.io/js/anchor-ui.svg)](https://badge.fury.io/js/anchor-ui)
 
 UI kit for chat engines with React
 
