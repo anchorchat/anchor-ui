@@ -35,6 +35,7 @@ export default {
     height: 'auto',
     maxWidth: '100%',
     maxHeight: '200px',
+    objectFit: 'cover'
   },
   compact: {
     marginLeft: '0',
