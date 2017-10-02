@@ -45,6 +45,7 @@ export TableBody from './table-body';
 export TableRow from './table-row';
 export TableColumn from './table-column';
 export Commands from './commands';
+export Gallery from './gallery';
 
 export icons from './icons';
 

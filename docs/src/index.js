@@ -49,6 +49,7 @@ import Pagination from './components/pagination';
 import Commands from './components/commands';
 import DateSeparator from './components/date-separator';
 import EmojiFilter from './components/emoji-filter';
+import Gallery from './components/gallery';
 import './index.css';
 
 ReactDOM.render(
@@ -99,6 +100,7 @@ ReactDOM.render(
         <Route path="/commands" component={Commands} />
         <Route path="/date-separator" component={DateSeparator} />
         <Route path="/emoji-filter" component={EmojiFilter} />
+        <Route path="/gallery" component={Gallery} />
       </Route>
     </Router>
   </StyleRoot>,
