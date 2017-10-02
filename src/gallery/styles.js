@@ -9,7 +9,7 @@ export default {
   },
   imageContainer: {
     position: 'relative',
-    height: '120px',
+    height: '320px',
     flexGrow: '1',
     margin: '2px',
     display: 'block',
@@ -19,7 +19,7 @@ export default {
     border: 'none'
   },
   image: {
-    height: '120px',
+    height: '320px',
     objectFit: 'cover',
     maxWidth: '100%',
     minWidth: '100%',

@@ -6,22 +6,22 @@ import styles from './styles';
 import getStyles from './get-styles';
 
 /** An image gallery shapping images to the same size */
-const Gallery = ({ images, imageHeight, onItemClick, style, imageContainerStyle, imageStyle }) => (
+const Gallery = ({ images, imageHeight, onItemClick, style, itemContainerStyle, itemStyle }) => (
   <section style={getStyles.root(style)}>
     {map(images, (image, index) => (
       <div
-        style={getStyles.imageContainer(imageHeight, imageContainerStyle)}
-        key={`${image.id || 'image'}-${index}`}
-        onClick={onItemClick}
+        style={getStyles.imageContainer(imageHeight, itemContainerStyle)}
+        key={`gallery-${index}`}
+        onClick={event => onItemClick(event, image)}
       >
         <img
           src={image.src}
           alt={image.alt}
-          style={getStyles.image(imageHeight, imageStyle)}
+          style={getStyles.image(imageHeight, itemStyle)}
         />
       </div>
     ))}
-    <div style={styles.after}/>
+    <div style={styles.after} />
   </section>
 );
 
@@ -31,31 +31,30 @@ Gallery.propTypes = {
   /** Array of paths to the galleries images */
   images: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-    id: PropTypes.string
+    alt: PropTypes.string.isRequired
   })).isRequired,
   /** Height of the images within the gallery */
-  imageHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  imageHeight: PropTypes.number,
   /**
-   * Callback fired when an image container is clicked
+   * Callback fired when a Gallery's image container is clicked
    *
-   * function(event: object) => void
+   * function(event: object, image: object) => void
    */
   onItemClick: PropTypes.func,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the image container element */
-  imageContainerStyle: PropTypes.instanceOf(Object),
+  itemContainerStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the image element */
-  imageStyle: PropTypes.instanceOf(Object)
+  itemStyle: PropTypes.instanceOf(Object)
 };
 
 Gallery.defaultProps = {
-  imageHeight: null,
+  imageHeight: 320,
   onItemClick: null,
   style: {},
-  imageContainerStyle: {},
-  imageStyle: {}
+  itemContainerStyle: {},
+  itemStyle: {}
 };
 
 export default Radium(Gallery);
