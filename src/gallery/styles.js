@@ -24,5 +24,10 @@ export default {
     maxWidth: '100%',
     minWidth: '100%',
     vertialAlign: 'bottom'
+  },
+  after: {
+    flexGrow: 9999,
+    minWidth: '300px',
+    height: '0'
   }
 };

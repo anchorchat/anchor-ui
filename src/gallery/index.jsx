@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import map from 'lodash/map';
+import styles from './styles';
 import getStyles from './get-styles';
 
 /** An image gallery shapping images to the same size */
@@ -20,6 +21,7 @@ const Gallery = ({ images, imageHeight, onItemClick, style, imageContainerStyle,
         />
       </div>
     ))}
+    <div style={styles.after}/>
   </section>
 );
 
