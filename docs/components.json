@@ -1859,10 +1859,6 @@
               "alt": {
                 "name": "string",
                 "required": true
-              },
-              "id": {
-                "name": "string",
-                "required": false
               }
             }
           }
@@ -1872,20 +1868,12 @@
       },
       "imageHeight": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
+          "name": "number"
         },
         "required": false,
         "description": "Height of the images within the gallery",
         "defaultValue": {
-          "value": "null",
+          "value": "320",
           "computed": false
         }
       },
@@ -1894,7 +1882,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when an image container is clicked\n\nfunction(event: object) => void",
+        "description": "Callback fired when a Gallery's image container is clicked\n\nfunction(event: object, image: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1912,7 +1900,7 @@
           "computed": false
         }
       },
-      "imageContainerStyle": {
+      "itemContainerStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
@@ -1924,7 +1912,7 @@
           "computed": false
         }
       },
-      "imageStyle": {
+      "itemStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
