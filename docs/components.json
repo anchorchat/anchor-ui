@@ -5842,6 +5842,17 @@
           "value": "colors.icons",
           "computed": true
         }
+      },
+      "inputRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Add a ref to the input element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },

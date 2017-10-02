@@ -35,7 +35,9 @@ const propTypes = {
   /** Override the styles of the input's placeholder */
   placeholderStyle: PropTypes.instanceOf(Object),
   /** The search's icon color */
-  iconColor: PropTypes.string
+  iconColor: PropTypes.string,
+  /** Add a ref to the input element */
+  inputRef: PropTypes.func
 };
 
 const defaultProps = {
@@ -44,7 +46,8 @@ const defaultProps = {
   iconStyle: {},
   placeholder: 'Search something...',
   placeholderStyle: {},
-  iconColor: colors.icons
+  iconColor: colors.icons,
+  inputRef: null
 };
 
 /** General purpose Search box */
@@ -80,6 +83,7 @@ class SearchBox extends Component {
       onChange,
       placeholderStyle,
       iconColor,
+      inputRef,
       ...custom
     } = this.props;
 
@@ -92,6 +96,7 @@ class SearchBox extends Component {
           onChange={this.handleChange}
           placeholder={placeholder}
           className="search-box"
+          ref={inputRef}
         />
         <Style
           rules={{
