@@ -1864,14 +1864,14 @@
           }
         },
         "required": true,
-        "description": "Array of paths to the galleries images"
+        "description": "Array of objects containing gallery images, each object must have a 'src' and 'alt' key"
       },
       "itemHeight": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "Height of the images within the gallery",
+        "description": "Height of the items within the gallery",
         "defaultValue": {
           "value": "320",
           "computed": false
@@ -1882,7 +1882,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when a Gallery's image container is clicked\n\nfunction(event: object, image: object) => void",
+        "description": "Callback fired when a Gallery's item is clicked\n\nfunction(event: object, image: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false

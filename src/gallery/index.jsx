@@ -28,15 +28,17 @@ const Gallery = ({ items, itemHeight, onItemClick, style, itemContainerStyle, it
 Gallery.displayName = 'Gallery';
 
 Gallery.propTypes = {
-  /** Array of paths to the galleries images */
-  items: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired
-  })).isRequired,
-  /** Height of the images within the gallery */
+  /** Array of objects containing gallery images, each object must have a 'src' and 'alt' key */
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  /** Height of the items within the gallery */
   itemHeight: PropTypes.number,
   /**
-   * Callback fired when a Gallery's image container is clicked
+   * Callback fired when a Gallery's item is clicked
    *
    * function(event: object, image: object) => void
    */
