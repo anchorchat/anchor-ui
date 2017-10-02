@@ -1841,6 +1841,103 @@
       }
     }
   },
+  "components/gallery/index.jsx": {
+    "description": "An image gallery shapping images to the same size",
+    "displayName": "Gallery",
+    "methods": [],
+    "props": {
+      "images": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "src": {
+                "name": "string",
+                "required": true
+              },
+              "alt": {
+                "name": "string",
+                "required": true
+              },
+              "id": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Array of paths to the galleries images"
+      },
+      "imageHeight": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Height of the images within the gallery",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onItemClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when an image container is clicked\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "imageContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the image container element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "imageStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the image element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/icon-menu/index.jsx": {
     "description": "Open a menu from an Icon, give options related to the icon",
     "displayName": "IconMenu",
