@@ -5,19 +5,19 @@ import map from 'lodash/map';
 import styles from './styles';
 import getStyles from './get-styles';
 
-/** An image gallery shapping images to the same size */
+/** Justified grid layout for showcasing images. */
 const Gallery = ({ items, itemHeight, onItemClick, style, itemContainerStyle, itemStyle }) => (
   <section style={getStyles.root(style)}>
     {map(items, (item, index) => (
       <div
-        style={getStyles.imageContainer(itemHeight, itemContainerStyle)}
+        style={getStyles.itemContainer(itemHeight, itemContainerStyle)}
         key={`gallery-${index}`}
         onClick={event => onItemClick(event, item)}
       >
         <img
           src={item.src}
           alt={item.alt}
-          style={getStyles.image(itemHeight, itemStyle)}
+          style={getStyles.item(itemHeight, itemStyle)}
         />
       </div>
     ))}

@@ -1842,7 +1842,7 @@
     }
   },
   "components/gallery/index.jsx": {
-    "description": "An image gallery shapping images to the same size",
+    "description": "Justified grid layout for showcasing images.",
     "displayName": "Gallery",
     "methods": [],
     "props": {

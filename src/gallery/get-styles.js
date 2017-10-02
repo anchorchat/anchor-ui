@@ -3,8 +3,8 @@ import combineStyles from '../internal/combine-styles';
 
 const root = overrideStyle => combineStyles(styles.root, overrideStyle);
 
-const imageContainer = (height, overrideStyle) => {
-  let style = styles.imageContainer;
+const itemContainer = (height, overrideStyle) => {
+  let style = styles.itemContainer;
 
   if (height) {
     style = combineStyles(style, { height: `${height}px` });
@@ -13,8 +13,8 @@ const imageContainer = (height, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const image = (height, overrideStyle) => {
-  let style = styles.image;
+const item = (height, overrideStyle) => {
+  let style = styles.item;
 
   if (height) {
     style = combineStyles(style, { height: `${height}px` });
@@ -25,6 +25,6 @@ const image = (height, overrideStyle) => {
 
 export default {
   root,
-  imageContainer,
-  image
+  itemContainer,
+  item
 };

@@ -68,7 +68,7 @@ const GalleryDoc = () => {
         <Paper style={style.paper}>
           <h2>Default</h2>
           <Gallery items={images} />
-          <h2>With imageHeight</h2>
+          <h2>With itemHeight</h2>
           <Gallery items={images} itemHeight={240} />
         </Paper>
       </section>

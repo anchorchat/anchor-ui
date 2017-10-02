@@ -7,7 +7,7 @@ export default {
     padding: '2px',
     boxSizing: 'border-box'
   },
-  imageContainer: {
+  itemContainer: {
     position: 'relative',
     height: '320px',
     flexGrow: '1',
@@ -18,7 +18,7 @@ export default {
     outline: 'none',
     border: 'none'
   },
-  image: {
+  item: {
     height: '320px',
     objectFit: 'cover',
     maxWidth: '100%',
