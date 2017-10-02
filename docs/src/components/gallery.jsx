@@ -67,9 +67,9 @@ const GalleryDoc = () => {
         <h1>Examples</h1>
         <Paper style={style.paper}>
           <h2>Default</h2>
-          <Gallery images={images} />
+          <Gallery items={images} />
           <h2>With imageHeight</h2>
-          <Gallery images={images} imageHeight={240} />
+          <Gallery items={images} itemHeight={240} />
         </Paper>
       </section>
       <Props props={componentData.props} />

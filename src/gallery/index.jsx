@@ -6,18 +6,18 @@ import styles from './styles';
 import getStyles from './get-styles';
 
 /** An image gallery shapping images to the same size */
-const Gallery = ({ items, imageHeight, onItemClick, style, itemContainerStyle, itemStyle }) => (
+const Gallery = ({ items, itemHeight, onItemClick, style, itemContainerStyle, itemStyle }) => (
   <section style={getStyles.root(style)}>
     {map(items, (item, index) => (
       <div
-        style={getStyles.imageContainer(imageHeight, itemContainerStyle)}
+        style={getStyles.imageContainer(itemHeight, itemContainerStyle)}
         key={`gallery-${index}`}
         onClick={event => onItemClick(event, item)}
       >
         <img
           src={item.src}
           alt={item.alt}
-          style={getStyles.image(imageHeight, itemStyle)}
+          style={getStyles.image(itemHeight, itemStyle)}
         />
       </div>
     ))}
@@ -34,7 +34,7 @@ Gallery.propTypes = {
     alt: PropTypes.string.isRequired
   })).isRequired,
   /** Height of the images within the gallery */
-  imageHeight: PropTypes.number,
+  itemHeight: PropTypes.number,
   /**
    * Callback fired when a Gallery's image container is clicked
    *
@@ -50,7 +50,7 @@ Gallery.propTypes = {
 };
 
 Gallery.defaultProps = {
-  imageHeight: 320,
+  itemHeight: 320,
   onItemClick: null,
   style: {},
   itemContainerStyle: {},
