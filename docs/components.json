@@ -1846,7 +1846,7 @@
     "displayName": "Gallery",
     "methods": [],
     "props": {
-      "images": {
+      "items": {
         "type": {
           "name": "arrayOf",
           "value": {
@@ -1866,7 +1866,7 @@
         "required": true,
         "description": "Array of paths to the galleries images"
       },
-      "imageHeight": {
+      "itemHeight": {
         "type": {
           "name": "number"
         },
