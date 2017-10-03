@@ -12,7 +12,6 @@ import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import GiphyMessage from './giphy-message';
 import StickerMessage from './sticker-message';
-import TypingMessage from './typing-message';
 import MenuItem from '../menu-item';
 import themeable from '../themeable';
 import styles from './styles';
