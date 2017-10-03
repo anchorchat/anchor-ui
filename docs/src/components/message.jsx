@@ -66,15 +66,7 @@ const messages = [
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
     id: 7,
     type: 'giphy'
-  },
-  {
-    body: 'is typing',
-    createdAt: new Date(),
-    username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
-    id: 8,
-    type: 'typing'
-  },
+  }
 ];
 
 const currentUser = 'Sjaak';

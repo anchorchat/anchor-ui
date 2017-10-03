@@ -38,7 +38,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing', 'giphy'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy'])
     }).isRequired,
     /**
      * The format of displaying message.createdAt
@@ -256,10 +256,6 @@ class Message extends Component {
 
     if (message.type === 'giphy') {
       messageElement = <GiphyMessage color={color} {...this.props} />;
-    }
-
-    if (message.type === 'typing') {
-      messageElement = <TypingMessage color={color} {...this.props} />;
     }
 
     return (
