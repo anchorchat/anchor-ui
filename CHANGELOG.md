@@ -2,10 +2,18 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.13...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.14...HEAD)
 
 **Merged pull requests:**
 
+- \[4.3.14\] Added object-fit to images & giphies, fixes stretching. [\#881](https://github.com/anchorchat/anchor-ui/pull/881) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.3.14](https://github.com/anchorchat/anchor-ui/tree/v4.3.14) (2017-09-29)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.13...v4.3.14)
+
+**Merged pull requests:**
+
+- Added object-fit cover to overcome image & giphy stretching. [\#880](https://github.com/anchorchat/anchor-ui/pull/880) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.13\] Fixed giphyDescription prop passthrough & giphyDescription styling. [\#879](https://github.com/anchorchat/anchor-ui/pull/879) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.13](https://github.com/anchorchat/anchor-ui/tree/v4.3.13) (2017-09-28)
