@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
+const root = (color = colors.theme, myMessage, avatar, compact, iconMenu, overrideStyle) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -22,6 +22,10 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
 
   if (compact) {
     style = combineStyles(style, styles.compact);
+  }
+
+  if (compact && iconMenu) {
+    style = combineStyles(style, { padding: '12px 40px 12px 12px' });
   }
 
   return combineStyles(style, overrideStyle);

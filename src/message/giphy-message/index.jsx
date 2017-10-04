@@ -63,17 +63,17 @@ class GiphyMessage extends Component {
     }
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
           myMessage={myMessage}
           fontSize={fontSize}
-          headerStyle={messageHeaderStyle}
+          headerStyle={headerStyle}
           username={message.username}
           badge={badge}
         />
-        <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+        <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {
             !collapsed && giphyDescription
             ? <span style={styles.giphyDescription}>{giphyDescription}</span>
@@ -91,6 +91,7 @@ class GiphyMessage extends Component {
             createdAt={message.createdAt}
             timeFormat={timeFormat}
             locale={locale}
+            collapsed={collapsed}
           />
         </p>
         {iconMenu}

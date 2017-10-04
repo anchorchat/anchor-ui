@@ -61,7 +61,7 @@ class ImageMessage extends Component {
     }
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -71,7 +71,7 @@ class ImageMessage extends Component {
           username={message.username}
           badge={badge}
         />
-        <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+        <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {
             !collapsed
             ? <img onClick={onClick} style={getStyles.image(enableLightbox)} src={message.body} alt="user-upload" />
@@ -84,6 +84,7 @@ class ImageMessage extends Component {
             createdAt={message.createdAt}
             timeFormat={timeFormat}
             locale={locale}
+            collapsed={collapsed}
           />
         </p>
         {iconMenu}

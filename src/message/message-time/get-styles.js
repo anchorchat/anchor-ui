@@ -2,14 +2,14 @@ import combineStyles from '../../internal/combine-styles';
 import colors from '../../settings/colors';
 import styles from './styles';
 
-const root = (myMessage, type, edited, overrideStyle) => {
+const root = (myMessage, type, edited, collapsed, overrideStyle) => {
   let style = styles.root;
 
   if (myMessage) {
     style = combineStyles(style, { color: colors.white });
   }
 
-  if (type === 'image' || type === 'giphy') {
+  if ((type === 'image' || type === 'giphy') && !collapsed) {
     style = combineStyles(style, styles.image);
   }
 

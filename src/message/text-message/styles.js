@@ -37,8 +37,7 @@ export default {
     marginLeft: '0',
     marginRight: '0',
     maxWidth: 'calc(100% - 40px)',
-    display: 'flex',
-    padding: '12px 40px 12px 12px'
+    display: 'flex'
   },
   link: {
     color: 'inherit',

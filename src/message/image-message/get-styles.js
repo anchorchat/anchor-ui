@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
+const root = (color = colors.theme, myMessage, avatar, compact, collapsed, overrideStyle) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -21,20 +21,17 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
   }
 
   if (compact) {
-    style = combineStyles(
-      style,
-      {
-        marginLeft: '0',
-        marginRight: '0',
-        maxWidth: '100%'
-      }
-    );
+    style = combineStyles(style, styles.compact);
+  }
+
+  if (compact && collapsed) {
+    style = combineStyles(style, { display: 'flex', padding: '12px 40px 12px 12px' });
   }
 
   return combineStyles(style, overrideStyle);
 };
 
-const body = (myMessage, fontSize, overrideStyle) => {
+const body = (myMessage, fontSize, collapsed, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
@@ -47,6 +44,10 @@ const body = (myMessage, fontSize, overrideStyle) => {
 
   if (fontSize === 'large') {
     style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
+  }
+
+  if (collapsed) {
+    style = combineStyles(style, { flexDirection: 'row' });
   }
 
   return combineStyles(style, overrideStyle);

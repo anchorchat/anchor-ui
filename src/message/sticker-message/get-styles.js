@@ -32,7 +32,7 @@ const header = (
   }
 
   if (iconMenu) {
-    style = combineStyles(style, { paddingRight: '40px' });
+    style = combineStyles(style, { padding: '12px 40px 12px 12px' });
   }
 
   return combineStyles(style, overrideStyle);
