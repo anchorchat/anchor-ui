@@ -12,7 +12,7 @@ describe('TextMessage.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -45,6 +45,12 @@ describe('TextMessage.getStyles', () => {
       const style = getStyles.root('red', false, false, true);
 
       expect(style).to.have.property('marginRight', '0');
+    });
+
+    it('should add iconMenu styles', () => {
+      const style = getStyles.root('red', false, false, true, true);
+
+      expect(style).to.have.property('padding', '12px 40px 12px 12px');
     });
   });
 });

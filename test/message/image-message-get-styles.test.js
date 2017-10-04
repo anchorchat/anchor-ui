@@ -12,7 +12,7 @@ describe('ImageMessage.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -40,6 +40,12 @@ describe('ImageMessage.getStyles', () => {
 
       expect(style).to.have.property('marginLeft', '0');
     });
+
+    it('should add collapsed styles', () => {
+      const style = getStyles.root('red', false, false, true, true);
+
+      expect(style).to.have.property('display', 'flex');
+    });
   });
 
   describe('body', () => {
@@ -50,7 +56,7 @@ describe('ImageMessage.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.body(false, 'small', { color: 'red' });
+      const style = getStyles.body(false, 'small', false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -77,6 +83,12 @@ describe('ImageMessage.getStyles', () => {
       const style = getStyles.body(false, 'large');
 
       expect(style).to.have.property('fontSize', '22px');
+    });
+
+    it('should add collapsed styles', () => {
+      const style = getStyles.body(false, 'small', true);
+
+      expect(style).to.have.property('flexDirection', 'row');
     });
   });
 });
