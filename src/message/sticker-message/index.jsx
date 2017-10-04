@@ -19,7 +19,8 @@ const StickerMessage = ({
   messageTimeStyle,
   timeFormat,
   locale,
-  badge
+  badge,
+  iconMenu
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
@@ -46,6 +47,7 @@ const StickerMessage = ({
           locale={locale}
         />
       </div>
+      {iconMenu}
     </div>
   );
 };
@@ -71,7 +73,8 @@ StickerMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 StickerMessage.defaultProps = {
@@ -88,8 +91,8 @@ StickerMessage.defaultProps = {
   compact: false,
   enableLightbox: false,
   color: colors.theme,
-  iconMenu: null,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 export default StickerMessage;

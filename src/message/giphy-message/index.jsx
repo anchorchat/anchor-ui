@@ -46,7 +46,8 @@ class GiphyMessage extends Component {
       collapsedText,
       giphyDescription,
       locale,
-      badge
+      badge,
+      iconMenu
     } = this.props;
     const { lightbox } = this.state;
 
@@ -99,6 +100,7 @@ class GiphyMessage extends Component {
             locale={locale}
           />
         </p>
+        {iconMenu}
         {
           enableLightbox
           ? <Lightbox
@@ -139,7 +141,8 @@ GiphyMessage.propTypes = {
   collapsedText: PropTypes.node,
   giphyDescription: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 GiphyMessage.defaultProps = {
@@ -157,8 +160,8 @@ GiphyMessage.defaultProps = {
   collapsed: false,
   collapsedText: 'This GIF has been collapsed, click the button to expand it.',
   giphyDescription: 'Sent using /giphy',
-  iconMenu: null,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 export default GiphyMessage;

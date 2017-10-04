@@ -103,7 +103,8 @@ class TextMessage extends Component {
       edited,
       locale,
       highlights,
-      badge
+      badge,
+      iconMenu
     } = this.props;
 
     return (
@@ -133,6 +134,7 @@ class TextMessage extends Component {
             locale={locale}
           />
         </p>
+        {iconMenu}
       </div>
     );
   }
@@ -168,7 +170,8 @@ TextMessage.propTypes = {
     value: PropTypes.string,
   })),
   onHighlightClick: PropTypes.func.isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 TextMessage.defaultProps = {
@@ -185,10 +188,10 @@ TextMessage.defaultProps = {
   compact: false,
   enableLightbox: false,
   color: colors.theme,
-  iconMenu: null,
   edited: null,
   highlights: [],
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 export default TextMessage;

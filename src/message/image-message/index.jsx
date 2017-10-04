@@ -45,7 +45,8 @@ class ImageMessage extends Component {
       collapsed,
       collapsedText,
       locale,
-      badge
+      badge,
+      iconMenu
     } = this.props;
     const { lightbox } = this.state;
 
@@ -93,6 +94,7 @@ class ImageMessage extends Component {
             locale={locale}
           />
         </p>
+        {iconMenu}
         {
           enableLightbox
           ? <Lightbox
@@ -132,7 +134,8 @@ ImageMessage.propTypes = {
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
@@ -149,8 +152,8 @@ ImageMessage.defaultProps = {
   color: '',
   collapsed: false,
   collapsedText: 'This image has been collapsed, click the button to expand it.',
-  iconMenu: null,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 export default ImageMessage;

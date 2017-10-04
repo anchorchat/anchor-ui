@@ -243,18 +243,42 @@ class Message extends Component {
       ...custom
     } = this.props;
 
-    let messageElement = <TextMessage color={color} {...this.props} />;
+    let messageElement = (
+      <TextMessage
+        color={color}
+        iconMenu={this.renderIconMenu()}
+        {...this.props}
+      />
+    );
 
     if (message.type === 'image') {
-      messageElement = <ImageMessage color={color} {...this.props} />;
+      messageElement = (
+        <ImageMessage
+          color={color}
+          iconMenu={this.renderImageIconMenu()}
+          {...this.props}
+        />
+      );
     }
 
     if (message.type === 'sticker') {
-      messageElement = <StickerMessage color={color} {...this.props} />;
+      messageElement = (
+        <StickerMessage
+          color={color}
+          iconMenu={this.renderIconMenu()}
+          {...this.props}
+        />
+      );
     }
 
     if (message.type === 'giphy') {
-      messageElement = <GiphyMessage color={color} {...this.props} />;
+      messageElement = (
+        <GiphyMessage
+          color={color}
+          iconMenu={this.renderImageIconMenu()}
+          {...this.props}
+        />
+      );
     }
 
     return (
@@ -262,7 +286,6 @@ class Message extends Component {
         {separator}
         <section style={getStyles.container(myMessage, compact)} {...custom}>
           {messageElement}
-          {message.type === 'image' || message.type === 'giphy' ? this.renderImageIconMenu() : this.renderIconMenu()}
         </section>
       </div>
     );
