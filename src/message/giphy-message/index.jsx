@@ -52,21 +52,14 @@ class GiphyMessage extends Component {
     const { lightbox } = this.state;
 
     let onClick = null;
+    let headerStyle = messageHeaderStyle;
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
-    let headerStyle = messageHeaderStyle;
-    let giphyStyle = styles.giphy;
-
     if (compact) {
-      headerStyle = combineStyles(headerStyle, { position: 'absolute', bottom: '12px' });
-      giphyStyle = combineStyles(giphyStyle, { marginBottom: '5px' });
-    }
-
-    if (enableLightbox) {
-      giphyStyle = combineStyles(giphyStyle, { cursor: 'pointer' });
+      headerStyle = combineStyles(headerStyle, { marginBottom: '5px' });
     }
 
     return (
@@ -76,7 +69,7 @@ class GiphyMessage extends Component {
           compact={compact}
           myMessage={myMessage}
           fontSize={fontSize}
-          headerStyle={headerStyle}
+          headerStyle={messageHeaderStyle}
           username={message.username}
           badge={badge}
         />
@@ -88,7 +81,7 @@ class GiphyMessage extends Component {
           }
           {
             !collapsed
-            ? <img onClick={onClick} style={giphyStyle} src={message.body} alt="user-upload" />
+            ? <img onClick={onClick} style={getStyles.giphy(enableLightbox)} src={message.body} alt="user-upload" />
             : <span>{collapsedText}</span>
           }
           <MessageTime

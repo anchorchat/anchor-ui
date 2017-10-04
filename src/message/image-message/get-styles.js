@@ -26,8 +26,7 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
       {
         marginLeft: '0',
         marginRight: '0',
-        maxWidth: '100%',
-        display: 'flex'
+        maxWidth: '100%'
       }
     );
   }
@@ -53,7 +52,18 @@ const body = (myMessage, fontSize, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
+const image = (lightbox) => {
+  let style = styles.image;
+
+  if (lightbox) {
+    style = combineStyles(style, { cursor: 'pointer' });
+  }
+
+  return style;
+};
+
 export default {
   root,
-  body
+  body,
+  image
 };

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
 
@@ -51,21 +50,14 @@ class ImageMessage extends Component {
     const { lightbox } = this.state;
 
     let onClick = null;
+    let headerStyle = messageHeaderStyle;
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
-    let headerStyle = messageHeaderStyle;
-    let imageStyle = styles.image;
-
     if (compact) {
-      headerStyle = combineStyles(headerStyle, { position: 'absolute', bottom: '12px' });
-      imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
-    }
-
-    if (enableLightbox) {
-      imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
+      headerStyle = combineStyles(headerStyle, { marginBottom: '5px' });
     }
 
     return (
@@ -82,7 +74,7 @@ class ImageMessage extends Component {
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
             !collapsed
-            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            ? <img onClick={onClick} style={getStyles.image(enableLightbox)} src={message.body} alt="user-upload" />
             : <span>{collapsedText}</span>
           }
           <MessageTime
