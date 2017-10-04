@@ -26,7 +26,6 @@ const StickerMessage = ({
 
   return (
     <div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
       <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
         <MessageHeader
           avatar={avatar}
@@ -48,6 +47,7 @@ const StickerMessage = ({
         />
         {iconMenu}
       </div>
+      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
     </div>
   );
 };

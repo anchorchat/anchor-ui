@@ -29,7 +29,7 @@ export default {
     height: '120px',
     marginLeft: '16px',
     float: 'left',
-    marginBottom: '5px'
+    marginTop: '5px'
   },
   compact: {
     marginLeft: '0',
