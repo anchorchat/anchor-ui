@@ -46,8 +46,8 @@ const StickerMessage = ({
           timeFormat={timeFormat}
           locale={locale}
         />
+        {iconMenu}
       </div>
-      {iconMenu}
     </div>
   );
 };

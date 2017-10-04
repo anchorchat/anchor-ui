@@ -162,7 +162,7 @@ class Message extends Component {
     }
 
     return (
-      <IconMenu icon={<IconChevronDown color={iconColor} />}>
+      <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
         {menuItems}
       </IconMenu>
     );
@@ -187,7 +187,7 @@ class Message extends Component {
 
     if (!menuItems && collapsed) {
       return (
-        <IconMenu icon={<IconChevronDown color={iconColor} />}>
+        <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
           {expandMenuItem || menuItem}
         </IconMenu>
       );
@@ -195,14 +195,14 @@ class Message extends Component {
 
     if (menuItems && !collapsed) {
       return (
-        <IconMenu icon={<IconChevronDown color={iconColor} />}>
+        <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
           {menuItems}
         </IconMenu>
       );
     }
 
     return (
-      <IconMenu icon={<IconChevronDown color={iconColor} />}>
+      <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
         {menuItems}
         {expandMenuItem || menuItem}
       </IconMenu>

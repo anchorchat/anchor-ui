@@ -10,6 +10,7 @@ import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
+import colors from '../../../dist/settings/colors';
 
 const usage = '```js\n import Message from \'anchor-ui/message\';';
 
@@ -222,6 +223,7 @@ class MessageDoc extends Component {
                   ]}
                   onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
                   enableLinks
+                  iconColor={message.username === currentUser ? colors.white : colors.icon}
                 />
               ))}
             </MessageList>
