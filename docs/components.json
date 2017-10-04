@@ -1841,6 +1841,91 @@
       }
     }
   },
+  "components/gallery/index.jsx": {
+    "description": "Justified grid layout for showcasing images.",
+    "displayName": "Gallery",
+    "methods": [],
+    "props": {
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "src": {
+                "name": "string",
+                "required": true
+              },
+              "alt": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Array of objects containing gallery images, each object must have a 'src' and 'alt' key"
+      },
+      "itemHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Height of the items within the gallery",
+        "defaultValue": {
+          "value": "320",
+          "computed": false
+        }
+      },
+      "onItemClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when a Gallery's item is clicked\n\nfunction(event: object, image: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the image container element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the image element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/icon-menu/index.jsx": {
     "description": "Open a menu from an Icon, give options related to the icon",
     "displayName": "IconMenu",
@@ -5841,6 +5926,17 @@
         "defaultValue": {
           "value": "colors.icons",
           "computed": true
+        }
+      },
+      "inputRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Add a ref to the input element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       }
     }
