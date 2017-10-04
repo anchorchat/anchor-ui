@@ -6,8 +6,16 @@ import styles from './styles';
 import getStyles from './get-styles';
 
 /** Justified grid layout for showcasing images. */
-const Gallery = ({ items, itemHeight, onItemClick, style, itemContainerStyle, itemStyle }) => (
-  <section style={getStyles.root(style)}>
+const Gallery = ({
+  items,
+  itemHeight,
+  onItemClick,
+  style,
+  itemContainerStyle,
+  itemStyle,
+  ...custom
+}) => (
+  <section style={getStyles.root(style)} {...custom}>
     {map(items, (item, index) => (
       <div
         style={getStyles.itemContainer(itemHeight, itemContainerStyle)}
