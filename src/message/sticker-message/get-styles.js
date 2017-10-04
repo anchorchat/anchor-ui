@@ -61,7 +61,6 @@ const body = (myMessage, avatar, compact, overrideStyle) => {
 };
 
 export default {
-  root,
   header,
   body
 };
