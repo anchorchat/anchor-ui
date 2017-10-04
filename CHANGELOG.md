@@ -2,10 +2,23 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.14...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.0...HEAD)
 
 **Merged pull requests:**
 
+- \[4.4.0\] Added gallery component, fixed image and gif stretching and added inputRef [\#885](https://github.com/anchorchat/anchor-ui/pull/885) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.4.0](https://github.com/anchorchat/anchor-ui/tree/v4.4.0) (2017-10-04)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.3.14...v4.4.0)
+
+**Closed issues:**
+
+- Add Gallery component [\#882](https://github.com/anchorchat/anchor-ui/issues/882)
+
+**Merged pull requests:**
+
+- Added inputRef to SearchBox. [\#884](https://github.com/anchorchat/anchor-ui/pull/884) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#882 [\#883](https://github.com/anchorchat/anchor-ui/pull/883) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.3.14\] Added object-fit to images & giphies, fixes stretching. [\#881](https://github.com/anchorchat/anchor-ui/pull/881) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.3.14](https://github.com/anchorchat/anchor-ui/tree/v4.3.14) (2017-09-29)
