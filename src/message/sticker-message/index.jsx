@@ -26,7 +26,7 @@ const StickerMessage = ({
 
   return (
     <div>
-      <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.header(color, myMessage, avatar, compact, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}

@@ -12,7 +12,7 @@ export default {
   },
   iconMenu: {
     position: 'absolute',
-    top: 0,
+    top: '1px',
     right: 0,
     padding: 0
   }
