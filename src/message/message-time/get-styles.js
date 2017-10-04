@@ -6,11 +6,15 @@ const root = (myMessage, type, edited, overrideStyle) => {
   let style = styles.root;
 
   if (myMessage) {
-    style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75', color: colors.white });
+    style = combineStyles(style, { color: colors.white });
   }
 
   if (type === 'image' || type === 'giphy') {
-    style = combineStyles(style, { marginTop: '10px' });
+    style = combineStyles(style, styles.image);
+  }
+
+  if (type === 'sticker') {
+    style = combineStyles(style, { alignSelf: 'center', paddingTop: '2px' });
   }
 
   if (edited) {
