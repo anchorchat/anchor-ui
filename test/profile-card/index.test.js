@@ -13,9 +13,9 @@ chai.use(sinonChai);
 describe('ProfileCard', () => {
   const props = {
     avatar: '',
-    style: { root: true },
-    usernameStyle: { username: true },
-    username: null,
+    style: {},
+    usernameStyle: {},
+    username: 'test',
     color: '#1BA6C4'
   };
 
@@ -41,16 +41,10 @@ describe('ProfileCard', () => {
   });
 
   it('should render a h1 element if the username prop is passed', () => {
-    let wrapper = shallow(<ProfileCard {...props} />).dive();
-
-    expect(wrapper.find('h1')).to.have.length(0);
-
-    props.username = 'text';
-    wrapper = shallow(<ProfileCard {...props} />).dive();
+    const wrapper = shallow(<ProfileCard {...props} />).dive();
 
     expect(wrapper.find('h1')).to.have.length(1);
-    expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
-    props.username = null;
+    expect(wrapper.containsMatchingElement(<h1>test</h1>)).to.equal(true);
   });
 
   it('should get root styles', () => {
