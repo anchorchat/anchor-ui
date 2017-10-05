@@ -6,7 +6,7 @@ export default {
     borderRadius: '3px',
     boxSizing: 'border-box',
     marginLeft: '16px',
-    maxWidth: '75%',
+    maxWidth: '80%',
     padding: '12px',
     position: 'relative',
     clear: 'both',

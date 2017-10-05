@@ -9,6 +9,10 @@ const header = (myMessage, compact, fontSize, badge, iconMenu, overrideStyle) =>
     style = combineStyles(style, { color: colors.white });
   }
 
+  if (iconMenu) {
+    style = combineStyles(style, { marginRight: '28px' });
+  }
+
   if (compact) {
     style = combineStyles(style, { flexShrink: '0', marginRight: '10px', marginBottom: '0' });
   }
@@ -23,10 +27,6 @@ const header = (myMessage, compact, fontSize, badge, iconMenu, overrideStyle) =>
 
   if (badge) {
     style = combineStyles(style, { display: 'flex', alignItems: 'center' });
-  }
-
-  if (iconMenu) {
-    style = combineStyles(style, { marginRight: '28px' });
   }
 
   return combineStyles(style, overrideStyle);
