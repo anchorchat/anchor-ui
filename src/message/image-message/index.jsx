@@ -128,7 +128,7 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
+  collapsedText: PropTypes.node.isRequired,
   locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.node
@@ -147,7 +147,6 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  collapsedText: 'This image has been collapsed, click the button to expand it.',
   badge: null,
   iconMenu: null
 };

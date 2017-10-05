@@ -224,8 +224,8 @@ class MessageDoc extends Component {
                     collapsed={this.state.collapsed}
                     collapsedText={
                       message.type === 'giphy'
-                      ? 'This GIF has been collapsed, click the button to expand it.'
-                      : 'This image has been collapsed, click the button to expand it.'
+                      ? 'This GIF has been collapsed.'
+                      : 'This image has been collapsed.'
                     }
                     // expand={() => this.selectCollapse(false)}
                     fontSize={this.state.fontSize}

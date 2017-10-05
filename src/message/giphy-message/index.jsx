@@ -134,8 +134,8 @@ GiphyMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
-  giphyDescription: PropTypes.node,
+  collapsedText: PropTypes.node.isRequired,
+  giphyDescription: PropTypes.node.isRequired,
   locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.node
@@ -154,8 +154,6 @@ GiphyMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  collapsedText: 'This GIF has been collapsed, click the button to expand it.',
-  giphyDescription: 'Sent using /giphy',
   badge: null,
   iconMenu: null
 };
