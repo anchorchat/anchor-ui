@@ -27,13 +27,13 @@ describe('AdminBadge', () => {
   });
 
   it('should always render a span element', () => {
-    const wrapper = shallow(<AdminBadge {...props} />).dive().dive();
+    const wrapper = shallow(<AdminBadge {...props} />).dive();
 
     expect(wrapper.find('span')).to.have.length(1);
   });
 
   it('should pass the text prop to the span element', () => {
-    const wrapper = shallow(<AdminBadge {...props} />).dive().dive();
+    const wrapper = shallow(<AdminBadge {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<span>Admin</span>)).to.equal(true);
   });
@@ -41,7 +41,7 @@ describe('AdminBadge', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<AdminBadge {...props} />).dive().dive();
+    shallow(<AdminBadge {...props} />).dive();
     expect(spy).to.have.been.calledWith(
       props.color, props.inverted, props.style
     );
