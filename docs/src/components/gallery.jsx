@@ -13,31 +13,38 @@ const usage = '```js\n import Gallery from \'anchor-ui/gallery\';';
 const images = [
   {
     src: 'https://source.unsplash.com/featured/?man',
-    alt: 'https://source.unsplash.com/featured/?man'
+    alt: 'man',
+    title: 'man'
   },
   {
     src: 'https://source.unsplash.com/featured/?woman',
-    alt: 'https://source.unsplash.com/featured/?woman'
+    alt: 'woman',
+    title: 'woman'
   },
   {
     src: 'https://source.unsplash.com/featured/?nature',
-    alt: 'https://source.unsplash.com/featured/?nature'
+    alt: 'nature',
+    title: 'nature'
   },
   {
     src: 'https://source.unsplash.com/featured/?portrait',
-    alt: 'https://source.unsplash.com/featured/?portrait'
+    alt: 'portrait',
+    title: 'portrait'
   },
   {
     src: 'https://source.unsplash.com/featured/?office',
-    alt: 'https://source.unsplash.com/featured/?office'
+    alt: 'office',
+    title: 'office'
   },
   {
     src: 'https://source.unsplash.com/featured/?design',
-    alt: 'https://source.unsplash.com/featured/?design'
+    alt: 'design',
+    title: 'design'
   },
   {
     src: 'https://source.unsplash.com/featured/?tree',
-    alt: 'https://source.unsplash.com/featured/?tree'
+    alt: 'tree',
+    title: 'tree'
   }
 ];
 
