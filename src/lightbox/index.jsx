@@ -27,7 +27,7 @@ class Lightbox extends Component {
     /** Link to the image */
     image: PropTypes.string.isRequired,
     /** The image's title */
-    title: PropTypes.string.isRequired,
+    title: PropTypes.node,
     /** The close button's icon color */
     iconColor: PropTypes.string,
     /** Toggle the Lightboxs visibility */
@@ -38,7 +38,8 @@ class Lightbox extends Component {
     style: {},
     overlayStyle: {},
     iconColor: colors.white,
-    open: false
+    open: false,
+    title: null
   }
 
   handleKeyUp = (event) => {
