@@ -96,7 +96,7 @@ class GiphyMessage extends Component {
             collapsed={collapsed}
           />
         </p>
-        {iconMenu}
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
           ? <Lightbox

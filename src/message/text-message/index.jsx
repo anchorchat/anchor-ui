@@ -135,7 +135,7 @@ class TextMessage extends Component {
             locale={locale}
           />
         </p>
-        {iconMenu}
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
     );
   }

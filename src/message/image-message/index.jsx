@@ -6,6 +6,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import styles from './styles';
 
 class ImageMessage extends Component {
   constructor() {
@@ -89,7 +90,7 @@ class ImageMessage extends Component {
             collapsed={collapsed}
           />
         </p>
-        {iconMenu}
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
           ? <Lightbox

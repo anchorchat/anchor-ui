@@ -44,5 +44,10 @@ export default {
     marginLeft: '0',
     marginRight: '0',
     maxWidth: '100%'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '1px',
+    right: '0'
   }
 };
