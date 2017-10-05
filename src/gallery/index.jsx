@@ -59,7 +59,7 @@ class Gallery extends Component {
             >
               <img
                 src={item.src}
-                alt={item.alt}
+                alt={item.alt || item.src}
                 style={getStyles.item(itemHeight, itemStyle)}
               />
             </div>
