@@ -25,13 +25,13 @@ describe('Card', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<Card {...props}>{children}</Card>).dive();
+    const wrapper = shallow(<Card {...props}>{children}</Card>);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<Card {...props}>{children}</Card>).dive();
+    const wrapper = shallow(<Card {...props}>{children}</Card>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +39,7 @@ describe('Card', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Card {...props} >{children}</Card>).dive();
+    shallow(<Card {...props} >{children}</Card>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });
