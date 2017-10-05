@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import map from 'lodash/map';
+import isEmpty from 'lodash/isEmpty';
 import styles from './styles';
 import getStyles from './get-styles';
 import Lightbox from '../lightbox';
@@ -12,22 +13,19 @@ class Gallery extends Component {
     super();
 
     this.state = {
-      open: false,
       lightbox: {}
     };
   }
 
   showLightbox = (item) => {
     this.setState({
-      lightbox: item,
-      open: true
+      lightbox: item
     });
   }
 
   hideLightbox = () => {
     this.setState({
-      lightbox: {},
-      open: false
+      lightbox: {}
     });
   }
 
@@ -42,7 +40,7 @@ class Gallery extends Component {
       enableLightbox,
       ...custom
     } = this.props;
-    const { open, lightbox } = this.state;
+    const { lightbox } = this.state;
 
     return (
       <section style={getStyles.root(style)} {...custom}>
@@ -69,9 +67,9 @@ class Gallery extends Component {
         })}
         <div style={styles.after} />
         {
-          enableLightbox
+          enableLightbox && !isEmpty(lightbox)
           ? <Lightbox
-            open={open}
+            open={!isEmpty(lightbox)}
             image={lightbox.src}
             title={lightbox.title}
             hideLightbox={this.hideLightbox}
