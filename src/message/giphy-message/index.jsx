@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
@@ -72,6 +73,7 @@ class GiphyMessage extends Component {
           headerStyle={headerStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
         <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {

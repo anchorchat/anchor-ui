@@ -2,7 +2,7 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const header = (myMessage, compact, fontSize, badge, overrideStyle) => {
+const header = (myMessage, compact, fontSize, badge, iconMenu, overrideStyle) => {
   let style = styles.header;
 
   if (myMessage) {
@@ -23,6 +23,10 @@ const header = (myMessage, compact, fontSize, badge, overrideStyle) => {
 
   if (badge) {
     style = combineStyles(style, { display: 'flex', alignItems: 'center' });
+  }
+
+  if (iconMenu) {
+    style = combineStyles(style, { marginRight: '28px' });
   }
 
   return combineStyles(style, overrideStyle);

@@ -31,7 +31,8 @@ export default {
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
-    margin: '0'
+    margin: '0',
+    justifyContent: 'space-between'
   },
   compact: {
     marginLeft: '0',

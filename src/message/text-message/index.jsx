@@ -117,6 +117,7 @@ class TextMessage extends Component {
           headerStyle={messageHeaderStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
