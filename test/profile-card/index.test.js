@@ -29,13 +29,13 @@ describe('ProfileCard', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<ProfileCard {...props} />).dive().dive();
+    const wrapper = shallow(<ProfileCard {...props} />).dive();
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should always render a h1 element', () => {
-    const wrapper = shallow(<ProfileCard {...props} />).dive().dive();
+    const wrapper = shallow(<ProfileCard {...props} />).dive();
 
     expect(wrapper.find('h1')).to.have.length(1);
   });
@@ -46,7 +46,7 @@ describe('ProfileCard', () => {
     expect(wrapper.find('h1')).to.have.length(0);
 
     props.username = 'text';
-    wrapper = shallow(<ProfileCard {...props} />).dive().dive();
+    wrapper = shallow(<ProfileCard {...props} />).dive();
 
     expect(wrapper.find('h1')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
@@ -56,7 +56,7 @@ describe('ProfileCard', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<ProfileCard {...props} />).dive().dive();
+    shallow(<ProfileCard {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.color, props.avatar, props.style);
   });
 });

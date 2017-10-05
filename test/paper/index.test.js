@@ -27,7 +27,7 @@ describe('Paper', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<Paper {...props} />).dive();
+    const wrapper = shallow(<Paper {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
@@ -41,7 +41,7 @@ describe('Paper', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Paper {...props} />).dive();
+    shallow(<Paper {...props} />);
     expect(spy).to.have.been.calledWith(props.depth, props.style);
   });
 });
