@@ -11,6 +11,8 @@ import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
 import colors from '../../../dist/settings/colors';
+import IconMenu from '../../../dist/icon-menu';
+import IconChevronDown from '../../../dist/icons/icon-chevron-down';
 
 const usage = '```js\n import Message from \'anchor-ui/message\';';
 
@@ -133,11 +135,6 @@ class MessageDoc extends Component {
       }
     `;
 
-    const menuItems = [
-      <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
-      <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
-    ];
-
     return (
       <article className="doc">
         <h1>Message</h1>
@@ -191,41 +188,68 @@ class MessageDoc extends Component {
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={message.avatar}
-                  emoji
-                  collapsed={this.state.collapsed}
-                  collapsedText={
-                    message.type === 'giphy'
-                    ? 'This GIF has been collapsed, click the button to expand it.'
-                    : 'This image has been collapsed, click the button to expand it.'
-                  }
-                  expand={() => this.selectCollapse(false)}
-                  fontSize={this.state.fontSize}
-                  compact={this.state.compact}
-                  menuItems={this.state.iconMenu ? menuItems : null}
-                  edited={this.state.edited ? 'edited' : null}
-                  highlights={[
-                    {
-                      prefix: '@',
-                      value: 'Lars',
-                      id: '1'
-                    },
-                    {
-                      prefix: '@',
-                      value: 'Ian',
-                      id: '2'
+              {messages.map((message) => {
+                const menuItems = [
+                  <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
+                  <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
+                ];
+
+                const expandMenuItem = <MenuItem key="expand" text="Expand image" onClick={() => this.selectCollapse(false)} />;
+
+                if ((message.type === 'image' || message.type === 'giphy') && this.state.collapsed) {
+                  menuItems.push(expandMenuItem);
+                }
+
+                let iconMenu = null;
+
+                const myMessage = message.username === currentUser;
+
+                if (this.state.iconMenu) {
+                  iconMenu = (
+                    <IconMenu
+                      icon={<IconChevronDown color={myMessage ? colors.white : colors.icon} />}
+                    >
+                      {menuItems}
+                    </IconMenu>
+                  );
+                }
+
+                return (
+                  <Message
+                    message={message}
+                    key={`message-${message.id}`}
+                    myMessage={myMessage}
+                    avatar={message.avatar}
+                    emoji
+                    collapsed={this.state.collapsed}
+                    collapsedText={
+                      message.type === 'giphy'
+                      ? 'This GIF has been collapsed, click the button to expand it.'
+                      : 'This image has been collapsed, click the button to expand it.'
                     }
-                  ]}
-                  onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
-                  enableLinks
-                  iconColor={message.username === currentUser ? colors.white : colors.icon}
-                />
-              ))}
+                    // expand={() => this.selectCollapse(false)}
+                    fontSize={this.state.fontSize}
+                    compact={this.state.compact}
+                    // menuItems={this.state.iconMenu ? menuItems : null}
+                    edited={this.state.edited ? 'edited' : null}
+                    highlights={[
+                      {
+                        prefix: '@',
+                        value: 'Lars',
+                        id: '1'
+                      },
+                      {
+                        prefix: '@',
+                        value: 'Ian',
+                        id: '2'
+                      }
+                    ]}
+                    onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
+                    enableLinks
+                    iconMenu={iconMenu}
+                  />
+                );
+              })}
             </MessageList>
           </Paper>
         </section>
