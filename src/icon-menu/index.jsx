@@ -44,7 +44,7 @@ class IconMenu extends Component {
      * function(event: object) => void
      */
     onHeaderClick: PropTypes.func,
-    /** Override the styles of the Button container */
+    /** Override the styles of the Button component */
     buttonStyle: PropTypes.instanceOf(Object)
   }
 

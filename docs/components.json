@@ -2105,7 +2105,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the Button container",
+        "description": "Override the styles of the Button component",
         "defaultValue": {
           "value": "{}",
           "computed": false
