@@ -43,7 +43,9 @@ class IconMenu extends Component {
      *
      * function(event: object) => void
      */
-    onHeaderClick: PropTypes.func
+    onHeaderClick: PropTypes.func,
+    /** Override the styles of the Button container */
+    buttonStyle: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
@@ -55,7 +57,8 @@ class IconMenu extends Component {
     secondaryMenuItems: null,
     dividerText: null,
     onMenuClose: () => {},
-    onHeaderClick: () => {}
+    onHeaderClick: () => {},
+    buttonStyle: {}
   }
 
   constructor() {
@@ -152,6 +155,7 @@ class IconMenu extends Component {
       enableOnClickOutside, // eslint-disable-line react/prop-types
       dividerStyle,
       onHeaderClick,
+      buttonStyle,
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -175,7 +179,13 @@ class IconMenu extends Component {
           : null
         }
         <div ref={(button) => { this.button = button; }}>
-          <Button iconButton onClick={!open ? this.openMenu : this.closeMenu}>{icon}</Button>
+          <Button
+            style={buttonStyle}
+            iconButton
+            onClick={!open ? this.openMenu : this.closeMenu}
+          >
+            {icon}
+          </Button>
         </div>
         <PopOver
           style={contentStyle}
