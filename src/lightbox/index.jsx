@@ -78,11 +78,7 @@ class Lightbox extends Component {
           </header>
           <img style={styles.image} src={image} alt="lightbox" />
         </section>
-        {
-          open
-          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
-          : null
-        }
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </Overlay>
     );
   }
