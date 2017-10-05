@@ -32,7 +32,8 @@ export default {
     fontSize: '16px',
     lineHeight: '18px',
     margin: '0',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    maxWidth: '40em'
   },
   compact: {
     marginLeft: '0',
