@@ -114,6 +114,8 @@ class Message extends Component {
     badge: PropTypes.node,
     /** Color for the IconMenu's icon */
     iconColor: PropTypes.string,
+    /** IconMenu icon */
+    menuIcon: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -144,7 +146,8 @@ class Message extends Component {
     onHighlightClick: noop,
     expandMenuItem: null,
     badge: null,
-    iconColor: colors.icons
+    iconColor: colors.icons,
+    menuIcon: null
   }
 
   constructor() {
@@ -155,14 +158,16 @@ class Message extends Component {
   }
 
   renderIconMenu() {
-    const { menuItems, iconColor } = this.props;
+    const { menuItems, iconColor, menuIcon } = this.props;
 
     if (!menuItems) {
       return null;
     }
 
+    const icon = menuIcon || <IconChevronDown color={iconColor} />;
+
     return (
-      <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
+      <IconMenu style={styles.iconMenu} icon={icon}>
         {menuItems}
       </IconMenu>
     );
@@ -176,18 +181,21 @@ class Message extends Component {
       expandText,
       menuItems,
       expandMenuItem,
-      iconColor
+      iconColor,
+      menuIcon
     } = this.props;
 
     if ((!expand && !expandMenuItem) || (!menuItems && !collapsed)) {
       return null;
     }
 
+    const icon = menuIcon || <IconChevronDown color={iconColor} />;
+
     const menuItem = <MenuItem icon={expandIcon} text={expandText} onClick={expand} />;
 
     if (!menuItems && collapsed) {
       return (
-        <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
+        <IconMenu style={styles.iconMenu} icon={icon}>
           {expandMenuItem || menuItem}
         </IconMenu>
       );
@@ -195,14 +203,14 @@ class Message extends Component {
 
     if (menuItems && !collapsed) {
       return (
-        <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
+        <IconMenu style={styles.iconMenu} icon={icon}>
           {menuItems}
         </IconMenu>
       );
     }
 
     return (
-      <IconMenu style={styles.iconMenu} icon={<IconChevronDown color={iconColor} />}>
+      <IconMenu style={styles.iconMenu} icon={icon}>
         {menuItems}
         {expandMenuItem || menuItem}
       </IconMenu>
@@ -240,6 +248,7 @@ class Message extends Component {
       badge,
       iconColor,
       giphyDescription,
+      menuIcon,
       ...custom
     } = this.props;
 

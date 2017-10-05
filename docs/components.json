@@ -4342,10 +4342,6 @@
                   "computed": false
                 },
                 {
-                  "value": "'typing'",
-                  "computed": false
-                },
-                {
                   "value": "'giphy'",
                   "computed": false
                 }
@@ -4665,6 +4661,17 @@
         "defaultValue": {
           "value": "colors.icons",
           "computed": true
+        }
+      },
+      "menuIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "IconMenu icon",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "color": {
