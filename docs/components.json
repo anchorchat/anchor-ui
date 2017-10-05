@@ -2098,6 +2098,18 @@
           "value": "() => {}",
           "computed": false
         }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the Button component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
