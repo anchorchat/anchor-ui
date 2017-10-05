@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
-import pure from 'recompose/pure';
 import debounce from 'lodash/debounce';
 import IconSearch from '../icons/icon-search';
 import getStyles from './get-styles';
@@ -112,4 +111,4 @@ SearchBox.displayName = displayName;
 SearchBox.propTypes = propTypes;
 SearchBox.defaultProps = defaultProps;
 
-export default pure(Radium(SearchBox));
+export default Radium(SearchBox);

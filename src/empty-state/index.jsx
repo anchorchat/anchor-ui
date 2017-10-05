@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import styles from './styles';
 import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
@@ -45,4 +44,4 @@ EmptyState.defaultProps = {
   bodyStyle: {}
 };
 
-export default pure(Radium(EmptyState));
+export default Radium(EmptyState);

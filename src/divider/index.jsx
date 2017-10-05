@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import getStyles from './get-styles';
 
@@ -27,4 +26,4 @@ Divider.defaultProps = {
 
 Divider.displayName = 'Divider';
 
-export default pure(Radium(Divider));
+export default Radium(Divider);

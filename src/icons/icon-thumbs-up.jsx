@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconThumbsUp = ({ color, ...custom }) => (
@@ -22,4 +21,4 @@ IconThumbsUp.defaultProps = {
 
 IconThumbsUp.displayName = 'IconThumbsUp';
 
-export default pure(IconThumbsUp);
+export default IconThumbsUp;

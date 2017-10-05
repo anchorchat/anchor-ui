@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import Radium, { Style } from 'radium';
 import createMarkup from './create-markup';
 import getStyles from './get-styles';
@@ -76,4 +75,4 @@ EmojiModifiers.defaultProps = {
   modifierStyle: {}
 };
 
-export default pure(Radium(EmojiModifiers));
+export default Radium(EmojiModifiers);

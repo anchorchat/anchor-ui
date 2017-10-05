@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconReport = ({ color, ...custom }) => (
@@ -25,4 +24,4 @@ IconReport.defaultProps = {
 
 IconReport.displayName = 'IconReport';
 
-export default pure(IconReport);
+export default IconReport;

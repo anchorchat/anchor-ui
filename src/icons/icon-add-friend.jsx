@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconAddFriend = ({ color, ...custom }) => (
@@ -25,4 +24,4 @@ IconAddFriend.defaultProps = {
 
 IconAddFriend.displayName = 'IconAddFriend';
 
-export default pure(IconAddFriend);
+export default IconAddFriend;

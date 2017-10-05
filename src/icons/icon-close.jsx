@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconClose = ({ color, ...custom }) => (
@@ -21,4 +20,4 @@ IconClose.defaultProps = {
 
 IconClose.displayName = 'IconClose';
 
-export default pure(IconClose);
+export default IconClose;

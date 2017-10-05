@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconFont = ({ color, ...custom }) => (
@@ -26,4 +25,4 @@ IconFont.defaultProps = {
 
 IconFont.displayName = 'IconFont';
 
-export default pure(IconFont);
+export default IconFont;

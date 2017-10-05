@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconGenderMale = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconGenderMale.defaultProps = {
 
 IconGenderMale.displayName = 'IconGenderMale';
 
-export default pure(IconGenderMale);
+export default IconGenderMale;

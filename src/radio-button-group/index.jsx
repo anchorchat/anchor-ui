@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
+import Radium from 'radium';
 import getStyles from './get-styles';
 
 const RadioButtonGroup = ({
@@ -60,4 +60,4 @@ RadioButtonGroup.defaultProps = {
 
 RadioButtonGroup.displayName = 'RadioButtonGroup';
 
-export default pure(RadioButtonGroup);
+export default Radium(RadioButtonGroup);

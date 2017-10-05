@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
-import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 const propTypes = {
@@ -178,4 +177,4 @@ Input.displayName = displayName;
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 
-export default pure(Radium(Input));
+export default Radium(Input);

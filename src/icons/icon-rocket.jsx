@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconRocket = ({ color, ...custom }) => (
@@ -26,4 +25,4 @@ IconRocket.defaultProps = {
 
 IconRocket.displayName = 'IconRocket';
 
-export default pure(IconRocket);
+export default IconRocket;

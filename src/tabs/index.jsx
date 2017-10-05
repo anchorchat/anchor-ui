@@ -1,7 +1,6 @@
 import React, { Component, createElement, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import noop from 'lodash/noop';
 import isNumber from 'lodash/isNumber';
 import getStyles from './get-styles';
@@ -141,4 +140,4 @@ class Tabs extends Component {
   }
 }
 
-export default pure(Radium(Tabs));
+export default Radium(Tabs);
