@@ -34,47 +34,47 @@ describe('Checkbox', () => {
   });
 
   it('should always render a label element', () => {
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.find('label')).to.have.length(1);
   });
 
   it('should always render an input element', () => {
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.find('input')).to.have.length(1);
   });
 
   it('should always render a div element', () => {
     props.checked = true;
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.find('div')).to.have.length(1);
     props.checked = false;
   });
 
   it('should always render a span element', () => {
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.find('span')).to.have.length(1);
   });
 
   it('should render a div element if the value of the checked prop is false', () => {
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.find('div')).to.have.length(2);
   });
 
   it('should render an IconCheckbox icon if the value of the checked prop is true', () => {
     props.checked = true;
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.find(IconCheckbox)).to.have.length(1);
     props.checked = false;
   });
 
   it('should pass the label prop to the span element', () => {
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<span>label</span>)).to.equal(true);
   });
@@ -82,7 +82,7 @@ describe('Checkbox', () => {
   it('should call input onChange function', () => {
     const spy = sinon.spy();
     props.onChange = spy;
-    const wrapper = shallow(<Checkbox {...props} />).dive().dive();
+    const wrapper = shallow(<Checkbox {...props} />).dive();
 
     wrapper.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
@@ -92,7 +92,7 @@ describe('Checkbox', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Checkbox {...props} />).dive().dive();
+    shallow(<Checkbox {...props} />).dive();
     expect(spy).to.have.been.calledWith(
       props.color, props.style
     );
@@ -101,21 +101,21 @@ describe('Checkbox', () => {
   it('should get input styles', () => {
     const spy = sinon.spy(getStyles, 'input');
 
-    shallow(<Checkbox {...props} />).dive().dive();
+    shallow(<Checkbox {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.inputStyle);
   });
 
   it('should get icon styles', () => {
     const spy = sinon.spy(getStyles, 'icon');
 
-    shallow(<Checkbox {...props} />).dive().dive();
+    shallow(<Checkbox {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.iconStyle);
   });
 
   it('should get label styles', () => {
     const spy = sinon.spy(getStyles, 'label');
 
-    shallow(<Checkbox {...props} />).dive().dive();
+    shallow(<Checkbox {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.labelStyle);
   });
 });
