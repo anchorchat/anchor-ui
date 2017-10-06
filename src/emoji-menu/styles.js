@@ -73,12 +73,13 @@ export default {
   categories: {
     display: 'flex',
     flexDirection: 'row',
-    padding: '5px',
+    padding: '4px',
     backgroundColor: colors.white,
+
     category: {
-      width: '30px',
-      height: '30px',
-      padding: '3px',
+      width: '32px',
+      height: '32px',
+      padding: '4px',
       boxSizing: 'border-box',
       cursor: 'pointer'
     }
