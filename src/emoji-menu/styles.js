@@ -60,13 +60,14 @@ export default {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
-      justifyContent: 'space-around'
+      justifyContent: 'space-between'
     },
     emoji: {
-      width: '30px',
-      height: '30px',
-      padding: '5px',
-      cursor: 'pointer'
+      width: '32px',
+      height: '32px',
+      padding: '4px',
+      cursor: 'pointer',
+      flexShrink: '0'
     }
   },
   categories: {
@@ -81,5 +82,10 @@ export default {
       boxSizing: 'border-box',
       cursor: 'pointer'
     }
+  },
+  after: {
+    flexGrow: 9999,
+    minWidth: '40px',
+    height: '0'
   }
 };
