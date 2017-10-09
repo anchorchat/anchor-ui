@@ -6,6 +6,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import styles from './styles';
 
 class ImageMessage extends Component {
   constructor() {
@@ -89,7 +90,7 @@ class ImageMessage extends Component {
             collapsed={collapsed}
           />
         </p>
-        {iconMenu}
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
           ? <Lightbox
@@ -127,7 +128,7 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
+  collapsedText: PropTypes.node.isRequired,
   locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.node
@@ -146,7 +147,6 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  collapsedText: 'This image has been collapsed, click the button to expand it.',
   badge: null,
   iconMenu: null
 };

@@ -5,6 +5,7 @@ import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
+import styles from './styles';
 
 const StickerMessage = ({
   color,
@@ -45,7 +46,7 @@ const StickerMessage = ({
           timeFormat={timeFormat}
           locale={locale}
         />
-        {iconMenu}
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
       <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
     </div>

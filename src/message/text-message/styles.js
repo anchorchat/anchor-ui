@@ -51,5 +51,10 @@ export default {
     color: 'inherit',
     fontSize: 'inherit',
     fontWeight: 'bolder'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '1px',
+    right: '0'
   }
 };

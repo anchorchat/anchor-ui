@@ -9,11 +9,5 @@ export default {
   },
   myContainer: {
     flexDirection: 'row-reverse'
-  },
-  iconMenu: {
-    position: 'absolute',
-    top: '1px',
-    right: 0,
-    padding: 0
   }
 };

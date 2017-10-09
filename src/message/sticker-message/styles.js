@@ -36,5 +36,10 @@ export default {
     marginRight: '0',
     maxWidth: '100%',
     display: 'flex'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '1px',
+    right: '0'
   }
 };
