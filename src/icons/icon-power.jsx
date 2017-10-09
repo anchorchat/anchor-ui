@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconPower = ({ color, ...custom }) => (
@@ -22,4 +21,4 @@ IconPower.defaultProps = {
 
 IconPower.displayName = 'IconPower';
 
-export default pure(IconPower);
+export default IconPower;

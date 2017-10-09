@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import getStyles from './get-styles';
 import IconSuccess from '../icons/icon-success';
@@ -65,4 +64,4 @@ Alert.defaultProps = {
   hideAlert: null
 };
 
-export default pure(Radium(Alert));
+export default Radium(Alert);

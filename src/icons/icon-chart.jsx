@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconChart = ({ color, ...custom }) => (
@@ -24,4 +23,4 @@ IconChart.defaultProps = {
 
 IconChart.displayName = 'IconChart';
 
-export default pure(IconChart);
+export default IconChart;

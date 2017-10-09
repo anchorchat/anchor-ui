@@ -34,26 +34,26 @@ describe('Modal', () => {
   });
 
   it('should always render a Overlay element', () => {
-    const wrapper = shallow(<Modal {...props}>{children}</Modal>).dive().dive();
+    const wrapper = shallow(<Modal {...props}>{children}</Modal>).dive();
 
     expect(wrapper.find(Overlay)).to.have.length(1);
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<Modal {...props} />).dive().dive();
+    const wrapper = shallow(<Modal {...props} />).dive();
 
     expect(wrapper.find('section')).to.have.length(2);
   });
 
   it('should always render a footer element', () => {
-    const wrapper = shallow(<Modal {...props} />).dive().dive();
+    const wrapper = shallow(<Modal {...props} />).dive();
 
     expect(wrapper.find('footer')).to.have.length(1);
   });
 
   it('should only render if the open prop equals true', () => {
     props.open = false;
-    const wrapper = shallow(<Modal {...props} />).dive().dive();
+    const wrapper = shallow(<Modal {...props} />).dive();
 
     expect(wrapper.find(Overlay)).to.have.length(0);
     props.open = true;
@@ -74,21 +74,21 @@ describe('Modal', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Modal {...props} />).dive().dive();
+    shallow(<Modal {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.style);
   });
 
   it('should get content styles', () => {
     const spy = sinon.spy(getStyles, 'content');
 
-    shallow(<Modal {...props} />).dive().dive();
+    shallow(<Modal {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.contentStyle);
   });
 
   it('should get footer styles', () => {
     const spy = sinon.spy(getStyles, 'footer');
 
-    shallow(<Modal {...props} />).dive().dive();
+    shallow(<Modal {...props} />).dive();
     expect(spy).to.have.been.calledWith(props.color, props.footerStyle);
   });
 });

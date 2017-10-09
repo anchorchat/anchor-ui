@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import Avatar from '../avatar';
@@ -50,8 +49,7 @@ ProfileCard.defaultProps = {
 
 const enhance = compose(
   themeable(),
-  Radium,
-  pure
+  Radium
 );
 
 export default enhance(ProfileCard);

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconChevronLeft = ({ color, ...custom }) => (
@@ -21,4 +20,4 @@ IconChevronLeft.defaultProps = {
 
 IconChevronLeft.displayName = 'IconChevronLeft';
 
-export default pure(IconChevronLeft);
+export default IconChevronLeft;

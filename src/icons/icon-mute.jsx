@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconMute = ({ color, ...custom }) => (
@@ -34,4 +33,4 @@ IconMute.defaultProps = {
 
 IconMute.displayName = 'IconMute';
 
-export default pure(IconMute);
+export default IconMute;

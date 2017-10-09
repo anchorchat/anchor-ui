@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconLanguage = ({ color, ...custom }) => (
@@ -24,4 +23,4 @@ IconLanguage.defaultProps = {
 
 IconLanguage.displayName = 'IconLanguage';
 
-export default pure(IconLanguage);
+export default IconLanguage;

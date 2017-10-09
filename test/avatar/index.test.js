@@ -28,20 +28,20 @@ describe('Avatar', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<Avatar {...props} />).dive();
+    const wrapper = shallow(<Avatar {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should not render a div element if the status prop is not passed', () => {
-    const wrapper = shallow(<Avatar {...props} />).dive();
+    const wrapper = shallow(<Avatar {...props} />);
 
     expect(wrapper.find('div')).to.have.length(0);
   });
 
   it('should render a div element if the status prop is passed', () => {
     props.status = 'online';
-    const wrapper = shallow(<Avatar {...props} />).dive();
+    const wrapper = shallow(<Avatar {...props} />);
 
     expect(wrapper.find('div')).to.have.length(1);
     props.status = '';
@@ -50,7 +50,7 @@ describe('Avatar', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Avatar {...props} />).dive();
+    shallow(<Avatar {...props} />);
     expect(spy).to.have.been.calledWith(
       props.image, props.defaultImage, props.style
     );
@@ -60,7 +60,7 @@ describe('Avatar', () => {
     props.status = 'online';
     const spy = sinon.spy(getStyles, 'status');
 
-    shallow(<Avatar {...props} />).dive();
+    shallow(<Avatar {...props} />);
     expect(spy).to.have.been.calledWith(
       props.status, props.statusStyle
     );

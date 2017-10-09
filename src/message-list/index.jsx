@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
 import getStyles from './get-styles';
 
 /** Render a list of items (Messages) with optional auto scroll */
@@ -42,10 +41,6 @@ class MessageList extends Component {
     if (autoScroll && this.messageList && this.shouldScrollToBottom(this.messageList)) {
       this.scrollDown();
     }
-  }
-
-  shouldComponentUpdate(nextProps) {
-    return (!shallowEqual(this.props, nextProps));
   }
 
   componentWillUnmount() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconChannels = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconChannels.defaultProps = {
 
 IconChannels.displayName = 'IconChannels';
 
-export default pure(IconChannels);
+export default IconChannels;

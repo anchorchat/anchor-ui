@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconBlock = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconBlock.defaultProps = {
 
 IconBlock.displayName = 'IconBlock';
 
-export default pure(IconBlock);
+export default IconBlock;

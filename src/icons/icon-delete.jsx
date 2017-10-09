@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconDelete = ({ color, ...custom }) => (
@@ -26,4 +25,4 @@ IconDelete.defaultProps = {
 
 IconDelete.displayName = 'IconDelete';
 
-export default pure(IconDelete);
+export default IconDelete;

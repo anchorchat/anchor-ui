@@ -19,7 +19,7 @@ describe('Lightbox', () => {
     overlayStyle: { overlay: true },
     hideLightbox: () => {},
     image: 'image',
-    title: 'title',
+    title: <span>title</span>,
     iconColor: 'red',
     open: true,
   };
@@ -71,14 +71,7 @@ describe('Lightbox', () => {
   it('should pass the title prop to the header element', () => {
     const wrapper = shallow(<Lightbox {...props} />);
 
-    expect(wrapper.containsMatchingElement(
-      <header>
-        title
-        <Button>
-          <IconClose />
-        </Button>
-      </header>)
-    ).to.equal(true);
+    expect(wrapper.find('header > span')).to.have.length(1);
   });
 
   it('should call section onClick function', () => {

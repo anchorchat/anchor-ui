@@ -28,20 +28,20 @@ describe('Badge', () => {
   });
 
   it('should always render a span element', () => {
-    const wrapper = shallow(<Badge {...props} />).dive().dive();
+    const wrapper = shallow(<Badge {...props} />).dive();
 
     expect(wrapper.find('span')).to.have.length(1);
   });
 
   it('should pass the content prop to the span element if the value prop is not greater than the maxValue prop', () => {
-    const wrapper = shallow(<Badge {...props} />).dive().dive();
+    const wrapper = shallow(<Badge {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<span>{1}</span>)).to.equal(true);
   });
 
   it('should pass the content prop to the span element if the value prop is greater than the maxValue prop', () => {
     props.value = 3;
-    const wrapper = shallow(<Badge {...props} />).dive().dive();
+    const wrapper = shallow(<Badge {...props} />).dive();
 
     expect(wrapper.containsMatchingElement(<span>2+</span>)).to.equal(true);
     props.value = 1;
@@ -50,7 +50,7 @@ describe('Badge', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Badge {...props} />).dive().dive();
+    shallow(<Badge {...props} />).dive();
     expect(spy).to.have.been.calledWith(
       props.color, props.inverted, props.style
     );

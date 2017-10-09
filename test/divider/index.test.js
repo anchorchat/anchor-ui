@@ -26,20 +26,20 @@ describe('Divider', () => {
 
   it('should render an hr element if the text prop is not passed', () => {
     props.text = null;
-    const wrapper = shallow(<Divider {...props} />).dive();
+    const wrapper = shallow(<Divider {...props} />);
 
     expect(wrapper.find('hr')).to.have.length(1);
     props.text = 'text';
   });
 
   it('should render an h1 element if the text prop is passed', () => {
-    const wrapper = shallow(<Divider {...props} />).dive();
+    const wrapper = shallow(<Divider {...props} />);
 
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
   it('should pass the text prop to the h1 element', () => {
-    const wrapper = shallow(<Divider {...props} />).dive();
+    const wrapper = shallow(<Divider {...props} />);
 
     expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
   });
@@ -48,7 +48,7 @@ describe('Divider', () => {
     props.text = null;
     const spy = sinon.spy(getStyles, 'hr');
 
-    shallow(<Divider {...props} />).dive();
+    shallow(<Divider {...props} />);
     expect(spy).to.have.been.calledWith(props.style);
     props.text = 'text';
   });
@@ -56,7 +56,7 @@ describe('Divider', () => {
   it('should get text styles', () => {
     const spy = sinon.spy(getStyles, 'text');
 
-    shallow(<Divider {...props} />).dive();
+    shallow(<Divider {...props} />);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });
