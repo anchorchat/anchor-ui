@@ -1,16 +1,21 @@
 import colors from '../../settings/colors';
 
 export default {
+  container: {
+    maxWidth: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+    clear: 'both',
+  },
   message: {
     backgroundColor: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
     marginLeft: '16px',
-    maxWidth: '80%',
     padding: '12px',
     position: 'relative',
-    clear: 'both',
-    display: 'flex'
+    display: 'flex',
+    alignSelf: 'flex-start',
   },
   avatar: {
     marginLeft: '48px'
@@ -26,7 +31,9 @@ export default {
   },
   body: {
     width: 'auto',
-    height: '120px',
+    height: 'auto',
+    maxWidth: '152px',
+    maxHeight: '152px',
     marginLeft: '16px',
     float: 'left',
     marginTop: '5px'

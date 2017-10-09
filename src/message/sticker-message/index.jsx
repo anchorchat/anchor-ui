@@ -26,7 +26,7 @@ const StickerMessage = ({
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
   return (
-    <div>
+    <div style={styles.container}>
       <div style={getStyles.header(color, myMessage, avatar, compact, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
