@@ -18,11 +18,11 @@ const header = (myMessage, compact, fontSize, badge, iconMenu, overrideStyle) =>
   }
 
   if (fontSize === 'medium') {
-    style = combineStyles(style, { fontSize: '16px', lineHeight: '20px' });
+    style = combineStyles(style, { fontSize: '16px', lineHeight: '24px' });
   }
 
   if (fontSize === 'large') {
-    style = combineStyles(style, { fontSize: '18px', lineHeight: '24px' });
+    style = combineStyles(style, { fontSize: '18px', lineHeight: '28px' });
   }
 
   if (badge) {

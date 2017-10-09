@@ -27,12 +27,10 @@ export default {
     marginRight: '16px',
   },
   body: {
-    display: 'flex',
     color: colors.primaryText,
     fontSize: '16px',
-    lineHeight: '18px',
+    lineHeight: '22px',
     margin: '0',
-    justifyContent: 'space-between',
     maxWidth: '40em'
   },
   compact: {
@@ -54,7 +52,7 @@ export default {
   },
   iconMenu: {
     position: 'absolute',
-    top: '1px',
+    top: '3px',
     right: '0'
   }
 };

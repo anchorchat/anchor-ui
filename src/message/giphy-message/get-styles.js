@@ -2,7 +2,15 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const root = (color = colors.theme, myMessage, avatar, compact, collapsed, overrideStyle) => {
+const root = (
+  color = colors.theme,
+  myMessage,
+  avatar,
+  compact,
+  collapsed,
+  iconMenu,
+  overrideStyle
+) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -25,7 +33,11 @@ const root = (color = colors.theme, myMessage, avatar, compact, collapsed, overr
   }
 
   if (compact && collapsed) {
-    style = combineStyles(style, { display: 'flex', padding: '12px 40px 12px 12px' });
+    style = combineStyles(style, { display: 'flex' });
+  }
+
+  if (collapsed && iconMenu) {
+    style = combineStyles(style, { padding: '12px 40px 12px 12px' });
   }
 
   return combineStyles(style, overrideStyle);
@@ -47,7 +59,7 @@ const body = (myMessage, fontSize, collapsed, overrideStyle) => {
   }
 
   if (collapsed) {
-    style = combineStyles(style, { flexDirection: 'row' });
+    style = combineStyles(style, { display: 'initial' });
   }
 
   return combineStyles(style, overrideStyle);

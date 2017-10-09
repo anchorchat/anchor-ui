@@ -52,18 +52,18 @@ class ImageMessage extends Component {
     const { lightbox } = this.state;
 
     let onClick = null;
-    let headerStyle = messageHeaderStyle;
+    let headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '8px' });
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
-    if (compact) {
-      headerStyle = combineStyles(headerStyle, { marginBottom: '5px' });
+    if (collapsed) {
+      headerStyle = combineStyles(headerStyle, { marginBottom: '0' });
     }
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}

@@ -47,7 +47,7 @@ export default {
   },
   iconMenu: {
     position: 'absolute',
-    top: '1px',
+    top: '3px',
     right: '0'
   }
 };

@@ -9,9 +9,7 @@ export default {
     lineHeight: '12px',
     textAlign: 'right',
     padding: '0 0 0 10px',
-    opacity: '.75',
-    flexShrink: '0',
-    alignSelf: 'flex-end'
+    opacity: '.75'
   },
   edited: {
     marginRight: '4px'

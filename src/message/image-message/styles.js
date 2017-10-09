@@ -26,8 +26,7 @@ export default {
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
-    margin: '0',
-    flexDirection: 'column'
+    margin: '0'
   },
   image: {
     borderRadius: '3px',
@@ -44,7 +43,7 @@ export default {
   },
   iconMenu: {
     position: 'absolute',
-    top: '1px',
+    top: '3px',
     right: '0'
   }
 };
