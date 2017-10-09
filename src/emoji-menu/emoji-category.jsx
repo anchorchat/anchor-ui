@@ -18,6 +18,7 @@ const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
           className="emoji"
         />
       ))}
+      <div style={styles.after} />
     </section>
     <Style
       scopeSelector=".emoji"

@@ -26,15 +26,21 @@ describe('Gallery.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.itemContainer(null, { color: 'red' });
+      const style = getStyles.itemContainer(null, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
 
     it('should add height', () => {
-      const style = getStyles.itemContainer(240, {});
+      const style = getStyles.itemContainer(240, false, {});
 
       expect(style).to.have.property('height', '240px');
+    });
+
+    it('should add cursor', () => {
+      const style = getStyles.itemContainer(null, true, {});
+
+      expect(style).to.have.property('cursor', 'pointer');
     });
   });
 

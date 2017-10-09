@@ -1,5 +1,5 @@
 {
-  "components/admin-badge/index.jsx": {
+  "components/admin-badge/component.jsx": {
     "description": "Used for displaying an user's Admin status",
     "displayName": "AdminBadge",
     "methods": [],
@@ -2096,6 +2096,18 @@
         "description": "Callback fired when the IconMenu's header is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the Button component",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
