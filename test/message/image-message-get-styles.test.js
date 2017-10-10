@@ -12,7 +12,7 @@ describe('ImageMessage.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, false, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -45,6 +45,12 @@ describe('ImageMessage.getStyles', () => {
       const style = getStyles.root('red', false, false, true, true);
 
       expect(style).to.have.property('display', 'flex');
+    });
+
+    it('should add collapsed styles', () => {
+      const style = getStyles.root('red', false, false, false, true, true);
+
+      expect(style).to.have.property('padding', '12px 40px 12px 12px');
     });
   });
 
@@ -88,7 +94,7 @@ describe('ImageMessage.getStyles', () => {
     it('should add collapsed styles', () => {
       const style = getStyles.body(false, 'small', true);
 
-      expect(style).to.have.property('flexDirection', 'row');
+      expect(style).to.have.property('display', 'initial');
     });
   });
 });
