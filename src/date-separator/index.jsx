@@ -20,8 +20,6 @@ const propTypes = {
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the text element */
   textStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the hr element */
-  hrStyle: PropTypes.instanceOf(Object),
   /**
    * Internationalization, defaults to English
    *
@@ -41,11 +39,9 @@ const defaultProps = {
 const displayName = 'DateSeparator';
 
 /** A separator to show above a Message */
-const DateSeparator = ({ date, format, style, textStyle, hrStyle, locale }) => (
+const DateSeparator = ({ date, format, style, textStyle, locale }) => (
   <section style={getStyles.root(style)}>
-    <hr style={getStyles.hr(hrStyle)} />
     <p style={getStyles.text(textStyle)}>{formatDate(date, format, { locale })}</p>
-    <hr style={getStyles.hr(hrStyle)} />
   </section>
 );
 

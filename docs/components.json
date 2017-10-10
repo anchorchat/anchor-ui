@@ -1160,18 +1160,6 @@
           "computed": false
         }
       },
-      "hrStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the hr element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
       "locale": {
         "type": {
           "name": "instanceOf",
@@ -1182,6 +1170,12 @@
         "defaultValue": {
           "value": "en",
           "computed": true
+        }
+      },
+      "hrStyle": {
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       }
     }
