@@ -1171,12 +1171,6 @@
           "value": "en",
           "computed": true
         }
-      },
-      "hrStyle": {
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
       }
     }
   },

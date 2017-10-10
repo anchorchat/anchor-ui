@@ -32,7 +32,6 @@ const defaultProps = {
   format: 'DD MMM',
   style: {},
   textStyle: {},
-  hrStyle: {},
   locale: en
 };
 
