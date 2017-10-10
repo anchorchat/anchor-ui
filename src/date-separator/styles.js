@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 
 const styles = {
   root: {
-    margin: '16px 0',
+    margin: '8px 0',
     width: '100%',
     display: 'flex',
     justifyContent: 'center'
