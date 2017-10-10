@@ -30,7 +30,7 @@ export default {
     display: 'flex',
     color: colors.primaryText,
     fontSize: '16px',
-    lineHeight: '18px',
+    lineHeight: '22px',
     margin: '0'
   },
   compact: {
