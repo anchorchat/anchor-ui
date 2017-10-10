@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconCart = ({ color, ...custom }) => (
@@ -27,4 +26,4 @@ IconCart.defaultProps = {
 
 IconCart.displayName = 'IconCart';
 
-export default pure(IconCart);
+export default IconCart;

@@ -33,59 +33,59 @@ describe('Alert', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should always render a div element', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find('div')).to.have.length(1);
   });
 
   it('should always render a p element', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find('p')).to.have.length(1);
   });
 
   it('should not render a Button component if the hideAlert prop is not passed', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find(Button)).to.have.length(0);
   });
 
   it('should render a Button component if the hideAlert prop is passed', () => {
     props.hideAlert = () => {};
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find(Button)).to.have.length(1);
     props.hideAlert = null;
   });
 
   it('should not render an IconClose icon if the hideAlert prop is not passed', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find(IconClose)).to.have.length(0);
   });
 
   it('should render an IconClose icon if the hideAlert prop is passed', () => {
     props.hideAlert = () => {};
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find(IconClose)).to.have.length(1);
     props.hideAlert = null;
   });
 
   it('should pass the text prop to the p element', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.containsMatchingElement(<p>text</p>)).to.equal(true);
   });
 
   it('should pass the type prop to the icons object', () => {
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     expect(wrapper.find(IconSuccess)).to.have.length(1);
   });
@@ -93,7 +93,7 @@ describe('Alert', () => {
   it('should call Button onClick function', () => {
     const spy = sinon.spy();
     props.hideAlert = spy;
-    const wrapper = shallow(<Alert {...props} />).dive();
+    const wrapper = shallow(<Alert {...props} />);
 
     wrapper.find(Button).simulate('click');
     expect(spy).to.have.callCount(1);
@@ -103,7 +103,7 @@ describe('Alert', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Alert {...props} />).dive();
+    shallow(<Alert {...props} />);
     expect(spy).to.have.been.calledWith(
       props.type, props.style
     );
@@ -112,14 +112,14 @@ describe('Alert', () => {
   it('should get icon styles', () => {
     const spy = sinon.spy(getStyles, 'icon');
 
-    shallow(<Alert {...props} />).dive();
+    shallow(<Alert {...props} />);
     expect(spy).to.have.been.calledWith(props.iconStyle);
   });
 
   it('should get text styles', () => {
     const spy = sinon.spy(getStyles, 'text');
 
-    shallow(<Alert {...props} />).dive();
+    shallow(<Alert {...props} />);
     expect(spy).to.have.been.calledWith(props.textStyle);
   });
 });

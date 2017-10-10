@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconExit = ({ color, ...custom }) => (
@@ -25,4 +24,4 @@ IconExit.defaultProps = {
 
 IconExit.displayName = 'IconExit';
 
-export default pure(IconExit);
+export default IconExit;

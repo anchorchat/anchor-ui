@@ -1,5 +1,5 @@
 {
-  "components/admin-badge/index.jsx": {
+  "components/admin-badge/component.jsx": {
     "description": "Used for displaying an user's Admin status",
     "displayName": "AdminBadge",
     "methods": [],
@@ -1858,13 +1858,17 @@
               },
               "alt": {
                 "name": "string",
-                "required": true
+                "required": false
+              },
+              "title": {
+                "name": "node",
+                "required": false
               }
             }
           }
         },
         "required": true,
-        "description": "Array of objects containing gallery images, each object must have a 'src' and 'alt' key"
+        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt' and 'title' are optional"
       },
       "itemHeight": {
         "type": {
@@ -1882,9 +1886,9 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when a Gallery's item is clicked\n\nfunction(event: object, image: object) => void",
+        "description": "Callback fired when a Gallery's item is clicked, only works if enableLightbox equals false\n\nfunction(event: object, image: object) => void",
         "defaultValue": {
-          "value": "null",
+          "value": "() => {}",
           "computed": false
         }
       },
@@ -1921,6 +1925,17 @@
         "description": "Override the styles of the image element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "enableLightbox": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Open a Lightbox when an item is clicked",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       }
@@ -2096,6 +2111,18 @@
         "description": "Callback fired when the IconMenu's header is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the Button component",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
@@ -3648,10 +3675,14 @@
       },
       "title": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
-        "required": true,
-        "description": "The image's title"
+        "required": false,
+        "description": "The image's title",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "iconColor": {
         "type": {

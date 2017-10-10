@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import getStyles from './get-styles';
 import Divider from '../divider';
 
@@ -95,4 +94,4 @@ PopOver.defaultProps = {
   onHeaderClick: null
 };
 
-export default pure(Radium(PopOver));
+export default Radium(PopOver);

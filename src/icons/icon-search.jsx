@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconSearch = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconSearch.defaultProps = {
 
 IconSearch.displayName = 'IconSearch';
 
-export default pure(IconSearch);
+export default IconSearch;

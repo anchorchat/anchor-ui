@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import shallowEqual from 'recompose/shallowEqual';
 import Avatar from '../avatar';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -52,13 +51,6 @@ class Profile extends Component {
     secondaryTextStyle: {},
     avatarStyle: {},
     status: ''
-  }
-
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return (
-      !shallowEqual(this.props, nextProps) ||
-      !shallowEqual(this.context, nextContext)
-    );
   }
 
   render() {

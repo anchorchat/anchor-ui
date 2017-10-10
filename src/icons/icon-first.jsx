@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 function IconFirst({ color, ...custom }) {
@@ -24,4 +23,4 @@ IconFirst.defaultProps = {
 
 IconFirst.displayName = 'IconFirst';
 
-export default pure(IconFirst);
+export default IconFirst;

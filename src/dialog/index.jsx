@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import EventListener from 'react-event-listener';
@@ -94,8 +93,7 @@ Dialog.defaultProps = {
 
 const enhance = compose(
   themeable(),
-  Radium,
-  pure
+  Radium
 );
 
 export default enhance(Dialog);

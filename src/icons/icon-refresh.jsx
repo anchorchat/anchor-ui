@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconRefresh = ({ color, ...custom }) => (
@@ -22,4 +21,4 @@ IconRefresh.defaultProps = {
 
 IconRefresh.displayName = 'IconRefresh';
 
-export default pure(IconRefresh);
+export default IconRefresh;

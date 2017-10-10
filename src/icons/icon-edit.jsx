@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconEdit = ({ color, ...custom }) => (
@@ -26,4 +25,4 @@ IconEdit.defaultProps = {
 
 IconEdit.displayName = 'IconEdit';
 
-export default pure(IconEdit);
+export default IconEdit;

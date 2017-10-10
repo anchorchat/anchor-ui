@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconPicture = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconPicture.defaultProps = {
 
 IconPicture.displayName = 'IconPicture';
 
-export default pure(IconPicture);
+export default IconPicture;

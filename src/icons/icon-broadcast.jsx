@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconBroadcast = ({ color, ...custom }) => (
@@ -29,4 +28,4 @@ IconBroadcast.defaultProps = {
 
 IconBroadcast.displayName = 'IconBroadcast';
 
-export default pure(IconBroadcast);
+export default IconBroadcast;

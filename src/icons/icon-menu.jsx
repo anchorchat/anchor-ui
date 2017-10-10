@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconMenu = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconMenu.defaultProps = {
 
 IconMenu.displayName = 'IconMenu';
 
-export default pure(IconMenu);
+export default IconMenu;

@@ -10,7 +10,7 @@ export default {
     color: colors.secondaryText,
     fontSize: '14px',
     fontWeight: 'bolder',
-    lineHeight: '18px',
+    lineHeight: '22px',
     marginBottom: '5px'
   },
   avatar: {

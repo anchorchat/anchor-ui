@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconMail = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconMail.defaultProps = {
 
 IconMail.displayName = 'IconMail';
 
-export default pure(IconMail);
+export default IconMail;

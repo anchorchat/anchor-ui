@@ -35,7 +35,7 @@ describe('PopOver', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<PopOver {...props} />).dive();
+    const wrapper = shallow(<PopOver {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
@@ -59,12 +59,12 @@ describe('PopOver', () => {
   });
 
   it('should render a h1 element if the header prop is passed', () => {
-    let wrapper = shallow(<PopOver {...props} />).dive();
+    let wrapper = shallow(<PopOver {...props} />);
 
     expect(wrapper.find('p')).to.have.length(0);
 
     props.header = 'text';
-    wrapper = shallow(<PopOver {...props} />).dive();
+    wrapper = shallow(<PopOver {...props} />);
 
     expect(wrapper.find('h1')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
@@ -74,7 +74,7 @@ describe('PopOver', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<PopOver {...props} />).dive();
+    shallow(<PopOver {...props} />);
     expect(spy).to.have.been.calledWith(props.position, props.style);
   });
 
@@ -82,7 +82,7 @@ describe('PopOver', () => {
     const spy = sinon.spy(getStyles, 'header');
     props.header = 'text';
 
-    shallow(<PopOver {...props} />).dive();
+    shallow(<PopOver {...props} />);
     expect(spy).to.have.been.calledWith(props.headerStyle);
     props.header = '';
   });

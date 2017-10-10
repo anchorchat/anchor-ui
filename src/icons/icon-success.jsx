@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconSuccess = ({ color, ...custom }) => (
@@ -19,4 +18,4 @@ IconSuccess.defaultProps = {
 
 IconSuccess.displayName = 'IconSuccess';
 
-export default pure(IconSuccess);
+export default IconSuccess;

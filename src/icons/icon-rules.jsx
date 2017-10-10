@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconRules = ({ color, ...custom }) => (
@@ -28,4 +27,4 @@ IconRules.defaultProps = {
 
 IconRules.displayName = 'IconRules';
 
-export default pure(IconRules);
+export default IconRules;

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconMicrophone = ({ color, ...custom }) => (
@@ -32,4 +31,4 @@ IconMicrophone.defaultProps = {
 
 IconMicrophone.displayName = 'IconMicrophone';
 
-export default pure(IconMicrophone);
+export default IconMicrophone;

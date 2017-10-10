@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A Paper element is a basic container that can give depth to the page. */
@@ -27,4 +26,4 @@ Paper.defaultProps = {
   style: {}
 };
 
-export default pure(Radium(Paper));
+export default Radium(Paper);

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconBomb = ({ color, ...custom }) => (
@@ -30,4 +29,4 @@ IconBomb.defaultProps = {
 
 IconBomb.displayName = 'IconBomb';
 
-export default pure(IconBomb);
+export default IconBomb;

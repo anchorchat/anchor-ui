@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A wrapper for ListItems */
@@ -55,4 +54,4 @@ List.defaultProps = {
   nestedLevel: 0
 };
 
-export default pure(Radium(List));
+export default Radium(List);
