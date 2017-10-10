@@ -5,6 +5,7 @@ import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
+import styles from './styles';
 
 const StickerMessage = ({
   color,
@@ -24,8 +25,7 @@ const StickerMessage = ({
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
   return (
-    <div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
+    <div style={styles.container}>
       <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
         <MessageHeader
           avatar={avatar}
@@ -46,6 +46,7 @@ const StickerMessage = ({
           locale={locale}
         />
       </div>
+      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
     </div>
   );
 };
