@@ -13,7 +13,8 @@ const styles = {
     fontSize: '16px',
     fontFamily: 'inherit',
     padding: '0 8px',
-    flexShrink: 0
+    flexShrink: 0,
+    margin: 0
   },
   hr: {
     height: '1px',
