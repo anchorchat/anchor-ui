@@ -124,19 +124,25 @@ class MessageDoc extends Component {
       }
     };
     const scalingEmoji = `
+      /* default */
+      .emojione {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        margin-top: -4px;
+      }
+
+      /* scaling */
       .small .emojione {
-        width: 24px;
-        height: 24px;
+        font-size: 22px;
       }
 
       .medium .emojione {
-        width: 28px;
-        height: 28px;
+        font-size: 26px;
       }
 
       .large .emojione {
-        width: 32px;
-        height: 32px;
+        font-size: 30px;
       }
     `;
 
