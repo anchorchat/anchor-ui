@@ -21,24 +21,32 @@ describe('Alert.getStyles', () => {
       const style = getStyles.root('success');
 
       expect(style).to.have.property('backgroundColor', '#DDF3D5');
+      expect(style).to.have.property('border', '1px solid hsl(104, 55.6%, 80.5%)');
+      expect(style).to.have.property('color', 'hsl(104, 55.6%, 31.3%)');
     });
 
     it('should add error type styles', () => {
       const style = getStyles.root('error');
 
       expect(style).to.have.property('backgroundColor', '#EDC8C5');
+      expect(style).to.have.property('border', '1px solid hsl(4.5, 52.6%, 76.6%)');
+      expect(style).to.have.property('color', 'hsl(4.5, 52.6%, 29.8%)');
     });
 
     it('should add warning type styles', () => {
       const style = getStyles.root('warning');
 
       expect(style).to.have.property('backgroundColor', '#F8F4D5');
+      expect(style).to.have.property('border', '1px solid hsl(53.10000000000002, 71.4%, 81.4%)');
+      expect(style).to.have.property('color', 'hsl(53.10000000000002, 71.4%, 31.6%)');
     });
 
     it('should add info type styles', () => {
       const style = getStyles.root('info');
 
       expect(style).to.have.property('backgroundColor', '#CDE8F5');
+      expect(style).to.have.property('border', '1px solid hsl(199.5, 66.7%, 79.4%)');
+      expect(style).to.have.property('color', 'hsl(199.5, 66.7%, 30.9%)');
     });
   });
 
