@@ -13,7 +13,7 @@ chai.use(sinonChai);
 describe('AdminBadge', () => {
   const props = {
     text: 'Admin',
-    style: { root: true },
+    style: {},
     inverted: false,
     color: '#1BA6C4'
   };
@@ -52,7 +52,9 @@ describe('AdminBadge', () => {
     const component = shallow(<AdminBadge {...combinedProps} />);
 
     expect(component.find('span > span')).to.have.length(1);
-    expect(component.find('span').containsMatchingElement(<span>Node</span>)).to.equal(true);
+    expect(component.find('span')
+      .containsMatchingElement(<span>Node</span>))
+      .to.equal(true);
   });
 
   it('should get root styles', () => {
