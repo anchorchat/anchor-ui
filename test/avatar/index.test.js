@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Avatar from '../../src/avatar';
+import Avatar from '../../src/avatar/component';
 import getStyles from '../../src/avatar/get-styles';
 
 chai.use(sinonChai);
@@ -13,10 +13,10 @@ chai.use(sinonChai);
 describe('Avatar', () => {
   const props = {
     image: 'image',
-    defaultImage: 'defaultImage',
-    style: { root: true },
+    defaultImage: '',
+    style: {},
     status: '',
-    statusStyle: { status: true }
+    statusStyle: {}
   };
 
   beforeEach(() => {
@@ -27,24 +27,25 @@ describe('Avatar', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a section element', () => {
-    const wrapper = shallow(<Avatar {...props} />);
+  it('should render a section element', () => {
+    const component = shallow(<Avatar {...props} />);
 
-    expect(wrapper.find('section')).to.have.length(1);
+    expect(component.find('section')).to.have.length(1);
   });
 
-  it('should not render a div element if the status prop is not passed', () => {
-    const wrapper = shallow(<Avatar {...props} />);
+  it('should render status element', () => {
+    const component = shallow(<Avatar {...props} />);
 
-    expect(wrapper.find('div')).to.have.length(0);
-  });
+    expect(component.find('div')).to.have.length(0);
 
-  it('should render a div element if the status prop is passed', () => {
-    props.status = 'online';
-    const wrapper = shallow(<Avatar {...props} />);
+    component.setProps({ status: 'online' });
+    expect(component.find('div')).to.have.length(1);
 
-    expect(wrapper.find('div')).to.have.length(1);
-    props.status = '';
+    component.setProps({ status: 'away' });
+    expect(component.find('div')).to.have.length(1);
+
+    component.setProps({ status: 'offline' });
+    expect(component.find('div')).to.have.length(1);
   });
 
   it('should get root styles', () => {
@@ -57,13 +58,15 @@ describe('Avatar', () => {
   });
 
   it('should get status styles', () => {
-    props.status = 'online';
     const spy = sinon.spy(getStyles, 'status');
+    const combinedProps = {
+      ...props,
+      status: 'online'
+    };
 
-    shallow(<Avatar {...props} />);
+    shallow(<Avatar {...combinedProps} />);
     expect(spy).to.have.been.calledWith(
-      props.status, props.statusStyle
+      combinedProps.status, props.statusStyle
     );
-    props.status = '';
   });
 });
