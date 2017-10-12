@@ -59,8 +59,7 @@ class ImageMessage extends Component {
     let imageStyle = styles.image;
 
     if (compact) {
-      headerStyle = combineStyles(headerStyle, { position: 'absolute', bottom: '12px' });
-      imageStyle = combineStyles(imageStyle, { marginBottom: '5px' });
+      headerStyle = combineStyles(headerStyle, { marginBottom: '8px' });
     }
 
     if (enableLightbox) {

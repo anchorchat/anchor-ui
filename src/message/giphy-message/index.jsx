@@ -60,8 +60,7 @@ class GiphyMessage extends Component {
     let giphyStyle = styles.giphy;
 
     if (compact) {
-      headerStyle = combineStyles(headerStyle, { position: 'absolute', bottom: '12px' });
-      giphyStyle = combineStyles(giphyStyle, { marginBottom: '5px' });
+      headerStyle = combineStyles(headerStyle, { marginBottom: '8px' });
     }
 
     if (enableLightbox) {
