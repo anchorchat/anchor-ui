@@ -23,12 +23,7 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
   if (compact) {
     style = combineStyles(
       style,
-      {
-        marginLeft: '0',
-        marginRight: '0',
-        maxWidth: '100%',
-        display: 'flex'
-      }
+      style.compact
     );
   }
 
