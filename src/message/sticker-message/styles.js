@@ -42,6 +42,7 @@ export default {
     marginLeft: '0',
     marginRight: '0',
     maxWidth: '100%',
-    display: 'flex'
+    display: 'flex',
+    alignSelf: 'flex-start'
   }
 };
