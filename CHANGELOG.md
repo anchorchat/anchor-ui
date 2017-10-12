@@ -2,10 +2,29 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.2...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.3...HEAD)
 
 **Merged pull requests:**
 
+- \[4.4.3\] Adjusted date separator styles, fixed tests and fixed image/giphy message bug [\#912](https://github.com/anchorchat/anchor-ui/pull/912) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.4.3](https://github.com/anchorchat/anchor-ui/tree/v4.4.3) (2017-10-12)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.2...v4.4.3)
+
+**Fixed bugs:**
+
+- \[Message\] compact image styles [\#910](https://github.com/anchorchat/anchor-ui/issues/910)
+
+**Merged pull requests:**
+
+- Issue \#910 [\#911](https://github.com/anchorchat/anchor-ui/pull/911) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 banner [\#909](https://github.com/anchorchat/anchor-ui/pull/909) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 badge [\#908](https://github.com/anchorchat/anchor-ui/pull/908) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 avatar [\#907](https://github.com/anchorchat/anchor-ui/pull/907) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 app header [\#906](https://github.com/anchorchat/anchor-ui/pull/906) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 alert [\#905](https://github.com/anchorchat/anchor-ui/pull/905) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 admin badge [\#904](https://github.com/anchorchat/anchor-ui/pull/904) ([IanCStewart](https://github.com/IanCStewart))
+- Date separator [\#903](https://github.com/anchorchat/anchor-ui/pull/903) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.4.2\] Added lightbox option to gallery, removed pure exports, added override styles to iconButton in messages & patched some message bugs [\#902](https://github.com/anchorchat/anchor-ui/pull/902) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.4.2](https://github.com/anchorchat/anchor-ui/tree/v4.4.2) (2017-10-10)
