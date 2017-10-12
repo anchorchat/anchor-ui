@@ -13,9 +13,15 @@ describe('Avatar.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('', '', { color: 'red' });
+      const style = getStyles.root(false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add defaultImage styles', () => {
+      const style = getStyles.root('image1', 'image2');
+
+      expect(style).to.have.property('backgroundImage', 'url(image1), url(image2)');
     });
   });
 

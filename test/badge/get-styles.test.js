@@ -27,6 +27,7 @@ describe('Badge.getStyles', () => {
       const style = getStyles.root('red', true);
 
       expect(style).to.have.property('backgroundColor', '#FEFEFE');
+      expect(style).to.have.property('color', 'red');
     });
   });
 });

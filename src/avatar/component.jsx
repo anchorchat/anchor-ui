@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** An user's profile image */
@@ -32,4 +31,4 @@ Avatar.defaultProps = {
   defaultImage: null
 };
 
-export default Radium(Avatar);
+export default Avatar;

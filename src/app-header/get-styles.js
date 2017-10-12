@@ -2,7 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-const root = (color = colors.theme, overrideStyle, left, right) => {
+const root = (color = colors.theme, left, right, overrideStyle) => {
   let style = combineStyles(styles.root, { backgroundColor: color });
 
   if (left) {

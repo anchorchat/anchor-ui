@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import getStyles from './get-styles';
 import IconSuccess from '../icons/icon-success';
 import IconError from '../icons/icon-error';
@@ -64,4 +63,4 @@ Alert.defaultProps = {
   hideAlert: null
 };
 
-export default Radium(Alert);
+export default Alert;

@@ -2,26 +2,21 @@ import colors from '../settings/colors';
 
 const styles = {
   root: {
-    margin: '16px 0',
+    margin: '8px 0',
     width: '100%',
     display: 'flex',
-    alignItems: 'center'
+    justifyContent: 'center'
   },
   text: {
-    fontWeight: 'bolder',
-    color: colors.secondaryText,
+    fontWeight: 'inherit',
+    color: colors.white,
     fontSize: '16px',
+    padding: '4px 8px',
     fontFamily: 'inherit',
-    padding: '0 8px',
-    flexShrink: 0,
-    margin: 0
-  },
-  hr: {
-    height: '1px',
-    border: 0,
     margin: 0,
-    backgroundColor: colors.grey,
-    flex: 1
+    backgroundColor: 'rgba(117, 127, 133, 0.4)',
+    backdropFilter: 'blur(10px)',
+    borderRadius: '3px'
   }
 };
 
