@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import Measure from 'react-measure';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -86,4 +85,4 @@ class Banner extends Component {
   }
 }
 
-export default Radium(Banner);
+export default Banner;

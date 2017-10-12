@@ -21,12 +21,14 @@ describe('Banner.getStyles', () => {
       const style = getStyles.root('desktop');
 
       expect(style).to.have.property('width', '728px');
+      expect(style).to.have.property('height', '90px');
     });
 
     it('should add mobile type styles', () => {
       const style = getStyles.root('mobile');
 
       expect(style).to.have.property('width', '320px');
+      expect(style).to.have.property('height', '50px');
     });
   });
 });
