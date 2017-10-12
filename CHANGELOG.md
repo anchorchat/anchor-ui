@@ -2,10 +2,18 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.3...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.4...HEAD)
 
 **Merged pull requests:**
 
+- \[4.4.4\] Fixed my sticker message style bug [\#914](https://github.com/anchorchat/anchor-ui/pull/914) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.4.4](https://github.com/anchorchat/anchor-ui/tree/v4.4.4) (2017-10-12)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.3...v4.4.4)
+
+**Merged pull requests:**
+
+- Made sure myMessage style for stickers is correct. [\#913](https://github.com/anchorchat/anchor-ui/pull/913) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.4.3\] Adjusted date separator styles, fixed tests and fixed image/giphy message bug [\#912](https://github.com/anchorchat/anchor-ui/pull/912) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.4.3](https://github.com/anchorchat/anchor-ui/tree/v4.4.3) (2017-10-12)
