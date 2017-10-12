@@ -23,7 +23,7 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
   if (compact) {
     style = combineStyles(
       style,
-      style.compact
+      styles.compact
     );
   }
 
