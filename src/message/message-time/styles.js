@@ -3,7 +3,6 @@ import colors from '../../settings/colors';
 
 export default {
   root: {
-    width: '32px',
     color: 'currentColor',
     fontSize: '12px',
     lineHeight: '12px',

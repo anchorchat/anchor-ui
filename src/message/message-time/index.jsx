@@ -15,7 +15,7 @@ const MessageTime = ({
   collapsed,
   fontSize
 }) => (
-  <span style={getStyles.root(myMessage, type, edited, collapsed, fontSize, style)}>
+  <span style={getStyles.root(myMessage, type, collapsed, fontSize, style)}>
     {edited ? <span style={styles.edited}>{edited}</span> : null}
     <span>{format(createdAt, timeFormat, { locale })}</span>
   </span>
