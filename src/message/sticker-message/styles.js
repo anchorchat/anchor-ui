@@ -35,7 +35,7 @@ export default {
     maxWidth: '152px',
     maxHeight: '152px',
     marginLeft: '16px',
-    float: 'left',
+    alignSelf: 'flex-start',
     marginTop: '5px'
   },
   compact: {

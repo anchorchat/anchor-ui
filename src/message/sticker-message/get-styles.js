@@ -42,7 +42,7 @@ const body = (myMessage, avatar, compact, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
-    style = combineStyles(style, { marginLeft: '0', marginRight: '16px', float: 'right' });
+    style = combineStyles(style, { marginLeft: '0', marginRight: '16px', alignSelf: 'flex-end' });
   }
 
   if (avatar) {
@@ -54,7 +54,7 @@ const body = (myMessage, avatar, compact, overrideStyle) => {
   }
 
   if (compact) {
-    style = combineStyles(style, { float: 'none', marginLeft: 0, marginRight: 0 });
+    style = combineStyles(style, { alignSelf: 'flex-start', marginLeft: 0, marginRight: 0 });
   }
 
   return combineStyles(style, overrideStyle);
