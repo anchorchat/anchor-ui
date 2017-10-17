@@ -46,7 +46,7 @@ export default {
     textDecoration: 'underline'
   },
   mention: {
-    color: 'inherit',
+    color: colors.theme,
     fontSize: 'inherit',
     fontWeight: 'bolder'
   },

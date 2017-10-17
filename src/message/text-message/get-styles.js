@@ -50,10 +50,10 @@ const body = (myMessage, fontSize, overrideStyle) => {
 };
 
 const mention = (color = colors.theme, myMessage, onClick) => {
-  let style = styles.mention;
+  let style = combineStyles(styles.mention, { color });
 
-  if (!myMessage) {
-    style = combineStyles(style, { color });
+  if (myMessage) {
+    style = combineStyles(style, { color: colors.white });
   }
 
   if (onClick) {

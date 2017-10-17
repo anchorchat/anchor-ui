@@ -35,6 +35,13 @@ describe('GiphyMessage.getStyles', () => {
       expect(style).to.have.property('marginLeft', '48px');
     });
 
+    it('should add myAvatar styles', () => {
+      const style = getStyles.root('red', true, true);
+
+      expect(style).to.have.property('marginLeft', '0');
+      expect(style).to.have.property('marginRight', '48px');
+    });
+
     it('should add compact styles', () => {
       const style = getStyles.root('red', false, false, true);
 
@@ -95,6 +102,20 @@ describe('GiphyMessage.getStyles', () => {
       const style = getStyles.body(false, 'small', true);
 
       expect(style).to.have.property('display', 'initial');
+    });
+  });
+
+  describe('giphy', () => {
+    it('should get styles', () => {
+      const style = getStyles.giphy();
+
+      expect(style).to.deep.equal(styles.giphy);
+    });
+
+    it('should add lightbox styles', () => {
+      const style = getStyles.giphy(true);
+
+      expect(style).to.have.property('cursor', 'pointer');
     });
   });
 });

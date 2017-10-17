@@ -70,7 +70,7 @@ describe('StickerMessage.getStyles', () => {
 
       expect(style).to.have.property('marginLeft', '0');
       expect(style).to.have.property('marginRight', '16px');
-      expect(style).to.have.property('float', 'right');
+      expect(style).to.have.property('alignSelf', 'flex-end');
     });
 
     it('should add avatar styles', () => {
@@ -89,7 +89,7 @@ describe('StickerMessage.getStyles', () => {
     it('should add compact styles', () => {
       const style = getStyles.body(false, false, true);
 
-      expect(style).to.have.property('float', 'none');
+      expect(style).to.have.property('alignSelf', 'flex-start');
       expect(style).to.have.property('marginLeft', 0);
       expect(style).to.have.property('marginRight', 0);
     });
