@@ -88,6 +88,7 @@ class ImageMessage extends Component {
             timeFormat={timeFormat}
             locale={locale}
             collapsed={collapsed}
+            fontSize={fontSize}
           />
         </p>
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}

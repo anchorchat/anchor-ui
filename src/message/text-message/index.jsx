@@ -133,6 +133,7 @@ class TextMessage extends Component {
             timeFormat={timeFormat}
             edited={edited}
             locale={locale}
+            fontSize={fontSize}
           />
         </p>
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}

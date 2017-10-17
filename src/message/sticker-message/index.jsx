@@ -45,6 +45,7 @@ const StickerMessage = ({
           createdAt={message.createdAt}
           timeFormat={timeFormat}
           locale={locale}
+          fontSize={fontSize}
         />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>

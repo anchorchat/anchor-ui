@@ -12,9 +12,10 @@ const MessageTime = ({
   timeFormat,
   edited,
   locale,
-  collapsed
+  collapsed,
+  fontSize
 }) => (
-  <span style={getStyles.root(myMessage, type, edited, collapsed, style)}>
+  <span style={getStyles.root(myMessage, type, edited, collapsed, fontSize, style)}>
     {edited ? <span style={styles.edited}>{edited}</span> : null}
     <span>{format(createdAt, timeFormat, { locale })}</span>
   </span>
@@ -31,7 +32,8 @@ MessageTime.propTypes = {
   ]).isRequired,
   edited: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
-  collapsed: PropTypes.bool
+  collapsed: PropTypes.bool,
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large'])
 };
 
 MessageTime.defaultProps = {
@@ -40,7 +42,8 @@ MessageTime.defaultProps = {
   style: {},
   timeFormat: 'HH:mm',
   edited: null,
-  collapsed: false
+  collapsed: false,
+  fontSize: 'small'
 };
 
 export default MessageTime;
