@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconLock = ({ color, ...custom }) => (
@@ -23,4 +22,4 @@ IconLock.defaultProps = {
 
 IconLock.displayName = 'IconLock';
 
-export default pure(IconLock);
+export default IconLock;

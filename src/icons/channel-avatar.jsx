@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
-import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import themeable from '../themeable';
 
@@ -34,9 +32,4 @@ ChannelAvatar.defaultProps = {
 
 ChannelAvatar.displayName = 'ChannelAvatar';
 
-const enhance = compose(
-  themeable(),
-  pure
-);
-
-export default enhance(ChannelAvatar);
+export default themeable()(ChannelAvatar);

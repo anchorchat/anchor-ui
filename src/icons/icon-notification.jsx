@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconNotification = ({ color, ...custom }) => (
@@ -25,4 +24,4 @@ IconNotification.defaultProps = {
 
 IconNotification.displayName = 'IconNotification';
 
-export default pure(IconNotification);
+export default IconNotification;

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import IconClock from '../icons/icon-clock';
 import IconEmoji from '../icons/icon-emoji';
 import IconNature from '../icons/icon-nature';
@@ -62,4 +61,4 @@ EmojiCategories.defaultProps = {
   iconStyle: {}
 };
 
-export default pure(Radium(EmojiCategories));
+export default Radium(EmojiCategories);

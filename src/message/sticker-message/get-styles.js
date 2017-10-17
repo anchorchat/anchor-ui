@@ -15,7 +15,7 @@ const header = (
   if (myMessage) {
     style = combineStyles(
       combineStyles(styles.message, styles.myMessage),
-      { backgroundColor: color, borderRightColor: color }
+      { backgroundColor: color, borderRightColor: color, alignSelf: 'flex-end' }
     );
   }
 

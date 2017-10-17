@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
-import pure from 'recompose/pure';
 import createMarkup from './create-markup';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -19,6 +18,7 @@ const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
           className="emoji"
         />
       ))}
+      <div style={styles.after} />
     </section>
     <Style
       scopeSelector=".emoji"
@@ -50,4 +50,4 @@ EmojiCategory.defaultProps = {
   emojiStyle: {}
 };
 
-export default pure(Radium(EmojiCategory));
+export default Radium(EmojiCategory);

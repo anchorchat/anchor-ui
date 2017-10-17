@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import getStyles from './get-styles';
-import themeable from '../themeable';
 
 /** Your app's header */
 const AppHeader = (
@@ -22,7 +18,7 @@ const AppHeader = (
     ...custom
   }
 ) => (
-  <header style={getStyles.root(color, style, leftButton, rightButton)} {...custom}>
+  <header style={getStyles.root(color, leftButton, rightButton, style)} {...custom}>
     {
       leftButton
       ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
@@ -74,10 +70,4 @@ AppHeader.defaultProps = {
   leftButtonStyle: {}
 };
 
-const enhance = compose(
-  themeable(),
-  Radium,
-  pure
-);
-
-export default enhance(AppHeader);
+export default AppHeader;

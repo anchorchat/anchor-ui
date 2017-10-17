@@ -2,6 +2,7 @@
 import { expect } from 'chai';
 import getStyles from '../../src/admin-badge/get-styles';
 import styles from '../../src/admin-badge/styles';
+import combineStyles from '../../src/internal/combine-styles';
 
 describe('AdminBadge.getStyles', () => {
   describe('root', () => {
@@ -21,12 +22,14 @@ describe('AdminBadge.getStyles', () => {
       const style = getStyles.root('red');
 
       expect(style).to.have.property('backgroundColor', 'red');
+      expect(style).to.have.property('border', '1px solid red');
     });
 
     it('should add inverted styles', () => {
       const style = getStyles.root('red', true);
+      const invertedStyle = combineStyles(styles.invertedStyle, { color: 'red' });
 
-      expect(style).to.have.property('backgroundColor', '#FEFEFE');
+      expect(style).to.deep.include(invertedStyle);
     });
   });
 });

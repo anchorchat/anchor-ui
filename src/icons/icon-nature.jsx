@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconNature = ({ color, ...custom }) => (
@@ -25,4 +24,4 @@ IconNature.defaultProps = {
 
 IconNature.displayName = 'IconNature';
 
-export default pure(IconNature);
+export default IconNature;

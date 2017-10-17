@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import each from 'lodash/each';
 import filter from 'lodash/filter';
 import colors from '../settings/colors';
@@ -62,4 +61,4 @@ class ThemeProvider extends Component {
   }
 }
 
-export default pure(ThemeProvider);
+export default ThemeProvider;

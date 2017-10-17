@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import AppHeader from '../../src/app-header';
+import AppHeader from '../../src/app-header/component';
 import getStyles from '../../src/app-header/get-styles';
 
 chai.use(sinonChai);
@@ -16,11 +16,11 @@ describe('AppHeader', () => {
     icon: null,
     rightButton: null,
     leftButton: null,
-    style: { root: true },
-    textStyle: { text: true },
-    iconStyle: { icon: true },
-    rightButtonStyle: { rightButton: true },
-    leftButtonStyle: { leftButton: true },
+    style: {},
+    textStyle: {},
+    iconStyle: {},
+    rightButtonStyle: {},
+    leftButtonStyle: {},
     color: '#1BA6C4'
   };
 
@@ -33,109 +33,104 @@ describe('AppHeader', () => {
   });
 
   it('should always render a header element', () => {
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
+    const component = shallow(<AppHeader {...props} />);
 
-    expect(wrapper.find('header')).to.have.length(1);
+    expect(component.find('header')).to.have.length(1);
   });
 
-  it('should not render a div element if the leftButton prop is not passed', () => {
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
+  it('should render a leftButton element', () => {
+    const component = shallow(<AppHeader {...props} />);
 
-    expect(wrapper.find('div')).to.have.length(0);
+    expect(component.find('div')).to.have.length(0);
+
+    component.setProps({ leftButton: <button /> });
+    expect(component.find('div')).to.have.length(1);
+    expect(component.find('div').containsMatchingElement(<button />)).to.equal(true);
   });
 
-  it('should render a div element if the leftButton prop is passed', () => {
-    props.leftButton = <button />;
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
+  it('should render icon element', () => {
+    const component = shallow(<AppHeader {...props} />);
 
-    expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
-    props.leftButton = null;
+    expect(component.find('div')).to.have.length(0);
+
+    component.setProps({ icon: <img alt="alt" /> });
+    expect(component.find('div').containsMatchingElement(<img alt="alt" />)).to.equal(true);
   });
 
-  it('should not render a div element if the icon prop is not passed', () => {
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
+  it('should render text', () => {
+    const component = shallow(<AppHeader {...props} />);
 
-    expect(wrapper.find('div')).to.have.length(0);
+    expect(component.find('h1')).to.have.length(0);
+
+    component.setProps({ text: 'Test' });
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.containsMatchingElement(<h1>Test</h1>)).to.equal(true);
+
+    component.setProps({ text: <span>Node</span> });
+    expect(component.find('h1 > span')).to.have.length(1);
+    expect(component.find('h1').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
-  it('should render a div element if the icon prop is passed', () => {
-    props.icon = <img alt="alt" />;
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
+  it('should render a rightButton element', () => {
+    const component = shallow(<AppHeader {...props} />);
 
-    expect(wrapper.containsMatchingElement(<div><img alt="alt" /></div>)).to.equal(true);
-    props.icon = null;
-  });
+    expect(component.find('div')).to.have.length(0);
 
-  it('should not render an h1 element if the text prop is not passed', () => {
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
-
-    expect(wrapper.find('h1')).to.have.length(0);
-  });
-
-  it('should render an h1 element if the text prop is passed', () => {
-    props.text = 'text';
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
-
-    expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
-    props.text = null;
-  });
-
-  it('should not render a div element if the rightButton prop is not passed', () => {
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
-
-    expect(wrapper.find('div')).to.have.length(0);
-  });
-
-  it('should render a div element if the rightButton prop is passed', () => {
-    props.rightButton = <button />;
-    const wrapper = shallow(<AppHeader {...props} />).dive().dive();
-
-    expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
-    props.rightButton = null;
+    component.setProps({ rightButton: <button /> });
+    expect(component.find('div')).to.have.length(1);
+    expect(component.find('div').containsMatchingElement(<button />)).to.equal(true);
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<AppHeader {...props} />).dive().dive();
+    shallow(<AppHeader {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.color, props.style, props.leftButton, props.rightButton
+      props.color, props.leftButton, props.rightButton, props.style
     );
   });
 
   it('should get leftButton styles', () => {
-    props.leftButton = <button />;
     const spy = sinon.spy(getStyles, 'leftButton');
+    const combinedProps = {
+      ...props,
+      leftButton: <button />
+    };
 
-    shallow(<AppHeader {...props} />).dive().dive();
+    shallow(<AppHeader {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.leftButtonStyle);
-    props.leftButton = null;
   });
 
   it('should get icon styles', () => {
-    props.icon = <img alt="alt" />;
     const spy = sinon.spy(getStyles, 'icon');
+    const combinedProps = {
+      ...props,
+      icon: <img alt="alt" />
+    };
 
-    shallow(<AppHeader {...props} />).dive().dive();
+    shallow(<AppHeader {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.iconStyle);
-    props.icon = null;
   });
 
   it('should get text styles', () => {
-    props.text = 'text';
     const spy = sinon.spy(getStyles, 'text');
+    const combinedProps = {
+      ...props,
+      text: 'Test'
+    };
 
-    shallow(<AppHeader {...props} />).dive().dive();
+    shallow(<AppHeader {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.textStyle);
-    props.text = null;
   });
 
   it('should get rightButton styles', () => {
-    props.rightButton = <button />;
     const spy = sinon.spy(getStyles, 'rightButton');
+    const combinedProps = {
+      ...props,
+      rightButton: <button />
+    };
 
-    shallow(<AppHeader {...props} />).dive().dive();
+    shallow(<AppHeader {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.rightButtonStyle);
-    props.rightButton = null;
   });
 });

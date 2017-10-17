@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Badge from '../../src/badge';
+import Badge from '../../src/badge/component';
 import getStyles from '../../src/badge/get-styles';
 
 chai.use(sinonChai);
@@ -27,30 +27,33 @@ describe('Badge', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a span element', () => {
-    const wrapper = shallow(<Badge {...props} />).dive().dive();
+  it('should render a span element', () => {
+    const component = shallow(<Badge {...props} />);
 
-    expect(wrapper.find('span')).to.have.length(1);
+    expect(component.find('span')).to.have.length(1);
   });
 
-  it('should pass the content prop to the span element if the value prop is not greater than the maxValue prop', () => {
-    const wrapper = shallow(<Badge {...props} />).dive().dive();
+  it('should render content element', () => {
+    const component = shallow(<Badge {...props} />);
 
-    expect(wrapper.containsMatchingElement(<span>{1}</span>)).to.equal(true);
+    expect(component.find('span').containsMatchingElement(1)).to.equal(true);
   });
 
-  it('should pass the content prop to the span element if the value prop is greater than the maxValue prop', () => {
-    props.value = 3;
-    const wrapper = shallow(<Badge {...props} />).dive().dive();
+  it('should render maxValue+ element', () => {
+    const combinedProps = {
+      ...props,
+      value: 3
+    };
 
-    expect(wrapper.containsMatchingElement(<span>2+</span>)).to.equal(true);
-    props.value = 1;
+    const component = shallow(<Badge {...combinedProps} />);
+
+    expect(component.find('span').containsMatchingElement('2+')).to.equal(true);
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Badge {...props} />).dive().dive();
+    shallow(<Badge {...props} />);
     expect(spy).to.have.been.calledWith(
       props.color, props.inverted, props.style
     );

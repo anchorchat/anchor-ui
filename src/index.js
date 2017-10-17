@@ -46,6 +46,7 @@ export TableRow from './table-row';
 export TableColumn from './table-column';
 export Commands from './commands';
 export Gallery from './gallery';
+export DateSeparator from './date-separator';
 
 export icons from './icons';
 

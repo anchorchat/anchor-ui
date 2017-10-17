@@ -39,38 +39,38 @@ describe('Input', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should always render a label element', () => {
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     expect(wrapper.find('label')).to.have.length(1);
   });
 
   it('should always render an input element', () => {
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     expect(wrapper.find('input')).to.have.length(1);
   });
 
   it('should always render a Style component', () => {
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     expect(wrapper.find(Style)).to.have.length(1);
   });
 
   it('should not render a span element if the error prop is not passed', () => {
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     expect(wrapper.find('span')).to.have.length(0);
   });
 
   it('should render a span element if the error prop is passed', () => {
     props.error = 'error';
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     expect(wrapper.containsMatchingElement(<span>error</span>)).to.equal(true);
     props.error = '';
@@ -79,7 +79,7 @@ describe('Input', () => {
   it('should call input onChange function', () => {
     const spy = sinon.spy();
     props.onChange = spy;
-    const wrapper = shallow(<Input {...props} />).dive();
+    const wrapper = shallow(<Input {...props} />);
 
     wrapper.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
@@ -89,7 +89,7 @@ describe('Input', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Input {...props} />).dive();
+    shallow(<Input {...props} />);
     expect(spy).to.have.been.calledWith(
       props.disabled, props.style
     );
@@ -98,14 +98,14 @@ describe('Input', () => {
   it('should get label styles', () => {
     const spy = sinon.spy(getStyles, 'label');
 
-    shallow(<Input {...props} />).dive();
+    shallow(<Input {...props} />);
     expect(spy).to.have.been.calledWith(props.labelStyle);
   });
 
   it('should get input styles', () => {
     const spy = sinon.spy(getStyles, 'input');
 
-    shallow(<Input {...props} />).dive();
+    shallow(<Input {...props} />);
     expect(spy).to.have.been.calledWith(
       props.error, props.inputStyle
     );
@@ -115,7 +115,7 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'error');
     props.error = 'error';
 
-    shallow(<Input {...props} />).dive();
+    shallow(<Input {...props} />);
     expect(spy).to.have.been.calledWith(props.errorStyle);
     props.error = null;
   });

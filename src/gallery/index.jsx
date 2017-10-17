@@ -1,52 +1,104 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import map from 'lodash/map';
+import isEmpty from 'lodash/isEmpty';
 import styles from './styles';
 import getStyles from './get-styles';
+import Lightbox from '../lightbox';
 
 /** Justified grid layout for showcasing images. */
-const Gallery = ({
-  items,
-  itemHeight,
-  onItemClick,
-  style,
-  itemContainerStyle,
-  itemStyle,
-  ...custom
-}) => (
-  <section style={getStyles.root(style)} {...custom}>
-    {map(items, (item, index) => (
-      <div
-        style={getStyles.itemContainer(itemHeight, itemContainerStyle)}
-        key={`gallery-${index}`}
-        onClick={event => onItemClick(event, item)}
-      >
-        <img
-          src={item.src}
-          alt={item.alt}
-          style={getStyles.item(itemHeight, itemStyle)}
-        />
-      </div>
-    ))}
-    <div style={styles.after} />
-  </section>
-);
+class Gallery extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      lightbox: {}
+    };
+  }
+
+  showLightbox = (item) => {
+    this.setState({
+      lightbox: item
+    });
+  }
+
+  hideLightbox = () => {
+    this.setState({
+      lightbox: {}
+    });
+  }
+
+  render() {
+    const {
+      items,
+      itemHeight,
+      onItemClick,
+      style,
+      itemContainerStyle,
+      itemStyle,
+      enableLightbox,
+      ...custom
+    } = this.props;
+    const { lightbox } = this.state;
+
+    return (
+      <section style={getStyles.root(style)} {...custom}>
+        {map(items, (item, index) => {
+          let onClick = event => onItemClick(event, item);
+
+          if (enableLightbox) {
+            onClick = () => this.showLightbox(item);
+          }
+
+          return (
+            <div
+              style={getStyles.itemContainer(itemHeight, enableLightbox, itemContainerStyle)}
+              key={`gallery-${index}`}
+              onClick={onClick}
+            >
+              <img
+                src={item.src}
+                alt={item.alt || item.src}
+                style={getStyles.item(itemHeight, itemStyle)}
+              />
+            </div>
+          );
+        })}
+        <div style={styles.after} />
+        {
+          enableLightbox && !isEmpty(lightbox)
+          ? <Lightbox
+            open={!isEmpty(lightbox)}
+            image={lightbox.src}
+            title={lightbox.title}
+            hideLightbox={this.hideLightbox}
+          />
+          : null
+        }
+      </section>
+    );
+  }
+}
 
 Gallery.displayName = 'Gallery';
 
 Gallery.propTypes = {
-  /** Array of objects containing gallery images, each object must have a 'src' and 'alt' key */
+  /**
+   * Array of objects containing gallery images.
+   * Each object must have a 'src' key, 'alt' and 'title' are optional
+   */
   items: PropTypes.arrayOf(
     PropTypes.shape({
       src: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired
+      alt: PropTypes.string,
+      title: PropTypes.node
     })
   ).isRequired,
   /** Height of the items within the gallery */
   itemHeight: PropTypes.number,
   /**
-   * Callback fired when a Gallery's item is clicked
+   * Callback fired when a Gallery's item is clicked, only works if enableLightbox equals false
    *
    * function(event: object, image: object) => void
    */
@@ -56,15 +108,18 @@ Gallery.propTypes = {
   /** Override the styles of the image container element */
   itemContainerStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the image element */
-  itemStyle: PropTypes.instanceOf(Object)
+  itemStyle: PropTypes.instanceOf(Object),
+  /** Open a Lightbox when an item is clicked */
+  enableLightbox: PropTypes.bool
 };
 
 Gallery.defaultProps = {
   itemHeight: 320,
-  onItemClick: null,
+  onItemClick: () => {},
   style: {},
   itemContainerStyle: {},
-  itemStyle: {}
+  itemStyle: {},
+  enableLightbox: false
 };
 
 export default Radium(Gallery);

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import getStyles from './get-styles';
 
 /** A Card is a piece of paper with unique related data */
@@ -24,4 +23,4 @@ Card.defaultProps = {
   style: {}
 };
 
-export default pure(Radium(Card));
+export default Radium(Card);

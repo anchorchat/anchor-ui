@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import pure from 'recompose/pure';
 import getStyles from './get-styles';
 import Avatar from '../avatar';
 
@@ -49,4 +48,4 @@ CardHeader.defaultProps = {
   avatarStyle: {}
 };
 
-export default pure(Radium(CardHeader));
+export default Radium(CardHeader);

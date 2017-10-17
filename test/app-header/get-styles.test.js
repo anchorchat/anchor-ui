@@ -11,6 +11,12 @@ describe('AppHeader.getStyles', () => {
       expect(style).to.deep.equal(styles.root);
     });
 
+    it('should combine styles', () => {
+      const style = getStyles.root('red', false, false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+
     it('should change theme color', () => {
       const style = getStyles.root('red');
 
@@ -18,22 +24,15 @@ describe('AppHeader.getStyles', () => {
     });
 
     it('should add left button styles', () => {
-      const style = getStyles.root('red', {}, true);
+      const style = getStyles.root('red', true);
 
       expect(style).to.have.property('paddingLeft', '56px');
     });
 
     it('should add right button styles', () => {
-      const style = getStyles.root('red', {}, false, true);
+      const style = getStyles.root('red', false, true);
 
       expect(style).to.have.property('paddingRight', '56px');
-    });
-
-    it('should combine styles', () => {
-      const style = getStyles.root('red', { color: 'red' });
-
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
     });
   });
 
@@ -47,8 +46,7 @@ describe('AppHeader.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.text({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 
@@ -62,8 +60,7 @@ describe('AppHeader.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.leftButton({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 
@@ -77,8 +74,7 @@ describe('AppHeader.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.rightButton({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 
@@ -92,8 +88,7 @@ describe('AppHeader.getStyles', () => {
     it('should combine styles', () => {
       const style = getStyles.icon({ color: 'red' });
 
-      expect(style).to.have.property('color');
-      expect(style.color).to.equal('red');
+      expect(style).to.have.property('color', 'red');
     });
   });
 });

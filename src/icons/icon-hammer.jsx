@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconHammer = ({ color, ...custom }) => (
@@ -27,4 +26,4 @@ IconHammer.defaultProps = {
 
 IconHammer.displayName = 'IconHammer';
 
-export default pure(IconHammer);
+export default IconHammer;

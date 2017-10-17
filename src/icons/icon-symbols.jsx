@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconSymbols = ({ color, ...custom }) => (
@@ -25,4 +24,4 @@ IconSymbols.defaultProps = {
 
 IconSymbols.displayName = 'IconSymbols';
 
-export default pure(IconSymbols);
+export default IconSymbols;

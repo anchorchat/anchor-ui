@@ -123,7 +123,7 @@ class MessageDoc extends Component {
       .emojione {
         width: 1em;
         height: 1em;
-        vertical-align: center;
+        vertical-align: middle;
         margin-top: -4px;
       }
 

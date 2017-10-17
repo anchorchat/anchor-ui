@@ -30,25 +30,25 @@ describe('EmptyState', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<EmptyState {...props} />).dive();
+    const wrapper = shallow(<EmptyState {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should always render an h1 element', () => {
-    const wrapper = shallow(<EmptyState {...props} />).dive();
+    const wrapper = shallow(<EmptyState {...props} />);
 
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
   it('should always render a p element', () => {
-    const wrapper = shallow(<EmptyState {...props} />).dive();
+    const wrapper = shallow(<EmptyState {...props} />);
 
     expect(wrapper.find('p')).to.have.length(1);
   });
 
   it('should always render the button prop', () => {
-    const wrapper = shallow(<EmptyState {...props} />).dive();
+    const wrapper = shallow(<EmptyState {...props} />);
 
     expect(wrapper.containsMatchingElement(<button>text</button>)).to.equal(true);
   });
@@ -56,7 +56,7 @@ describe('EmptyState', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<EmptyState {...props} />).dive();
+    shallow(<EmptyState {...props} />);
     expect(spy).to.have.been.calledWith(
       props.background, props.style
     );

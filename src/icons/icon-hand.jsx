@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconHand = ({ color, ...custom }) => (
@@ -24,4 +23,4 @@ IconHand.defaultProps = {
 
 IconHand.displayName = 'IconHand';
 
-export default pure(IconHand);
+export default IconHand;

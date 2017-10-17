@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import styles from './styles';
@@ -54,8 +53,7 @@ Switch.defaultProps = {
 
 const enhance = compose(
   themeable(),
-  Radium,
-  pure
+  Radium
 );
 
 export default enhance(Switch);

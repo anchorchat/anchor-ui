@@ -15,7 +15,7 @@ export default {
     padding: '12px',
     position: 'relative',
     display: 'flex',
-    alignSelf: 'flex-start',
+    alignSelf: 'flex-start'
   },
   avatar: {
     marginLeft: '48px'
@@ -42,7 +42,8 @@ export default {
     marginLeft: '0',
     marginRight: '0',
     maxWidth: '100%',
-    display: 'flex'
+    display: 'flex',
+    alignSelf: 'flex-start'
   },
   iconMenu: {
     position: 'absolute',

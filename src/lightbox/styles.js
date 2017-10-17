@@ -49,6 +49,7 @@ export default {
     boxSizing: 'border-box',
     backgroundColor: fade(colors.black, 0.4),
     textAlign: 'center',
-    pointerEvents: 'all'
+    pointerEvents: 'all',
+    height: '56px'
   },
 };

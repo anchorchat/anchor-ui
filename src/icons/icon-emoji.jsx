@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconEmoji = ({ color, ...custom }) => (
@@ -24,4 +23,4 @@ IconEmoji.defaultProps = {
 
 IconEmoji.displayName = 'IconEmoji';
 
-export default pure(IconEmoji);
+export default IconEmoji;

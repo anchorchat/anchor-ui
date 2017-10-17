@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pure from 'recompose/pure';
 import colors from '../settings/colors';
 
 const IconClock = ({ color, ...custom }) => (
@@ -35,4 +34,4 @@ IconClock.defaultProps = {
 
 IconClock.displayName = 'IconClock';
 
-export default pure(IconClock);
+export default IconClock;
