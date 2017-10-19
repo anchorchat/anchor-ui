@@ -95,7 +95,8 @@ class MessageDoc extends Component {
       fontSize: 'small',
       compact: false,
       iconMenu: false,
-      edited: false
+      edited: false,
+      multiline: false
     };
   }
 
@@ -108,6 +109,8 @@ class MessageDoc extends Component {
   selectIconMenu = (event, iconMenu) => this.setState({ iconMenu })
 
   selectEdited = (event, edited) => this.setState({ edited })
+
+  selectMultiline = (event, multiline) => this.setState({ multiline })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Message');
@@ -208,6 +211,10 @@ class MessageDoc extends Component {
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
+            <Select style={style.select} label="Enable multiline" value={this.state.multiline} onChange={this.selectMultiline}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
@@ -243,7 +250,7 @@ class MessageDoc extends Component {
                   ]}
                   onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
                   enableLinks
-                  enableMultiline
+                  enableMultiline={this.state.multiline}
                 />
               ))}
             </MessageList>
