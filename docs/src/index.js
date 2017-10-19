@@ -50,6 +50,7 @@ import Commands from './components/commands';
 import DateSeparator from './components/date-separator';
 import EmojiFilter from './components/emoji-filter';
 import Gallery from './components/gallery';
+import Media from './components/media';
 import './index.css';
 
 ReactDOM.render(
@@ -101,6 +102,7 @@ ReactDOM.render(
         <Route path="/date-separator" component={DateSeparator} />
         <Route path="/emoji-filter" component={EmojiFilter} />
         <Route path="/gallery" component={Gallery} />
+        <Route path="/media" component={Media} />
       </Route>
     </Router>
   </StyleRoot>,

@@ -47,7 +47,7 @@
       }
     }
   },
-  "components/alert/index.jsx": {
+  "components/alert/component.jsx": {
     "description": "Four types of (system) messages for alerting your user",
     "displayName": "Alert",
     "methods": [],
@@ -145,7 +145,7 @@
       }
     }
   },
-  "components/app-header/index.jsx": {
+  "components/app-header/component.jsx": {
     "description": "Your app's header",
     "displayName": "AppHeader",
     "methods": [],
@@ -263,7 +263,7 @@
       }
     }
   },
-  "components/avatar/index.jsx": {
+  "components/avatar/component.jsx": {
     "description": "An user's profile image",
     "displayName": "Avatar",
     "methods": [],
@@ -341,7 +341,7 @@
       }
     }
   },
-  "components/badge/index.jsx": {
+  "components/badge/component.jsx": {
     "description": "Used for displaying a (notification) counter",
     "displayName": "Badge",
     "methods": [],
@@ -396,7 +396,7 @@
       }
     }
   },
-  "components/banner/index.jsx": {
+  "components/banner/component.jsx": {
     "description": "728x90 and 320x50 banners",
     "displayName": "Banner",
     "methods": [
@@ -4040,6 +4040,30 @@
       }
     }
   },
+  "components/media/index.jsx": {
+    "description": "CSS media query component, listens to matches for given queries",
+    "displayName": "Media",
+    "methods": [],
+    "props": {
+      "query": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": true,
+        "description": "Media query to listen for, must be an object of valid CSS Media queries"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when the window resizes, is also fired on mount\n\nfunction(matches: object) => void"
+      }
+    }
+  },
   "components/menu/index.jsx": {
     "description": "Menu that slides in from the left",
     "displayName": "Menu",
@@ -4684,6 +4708,17 @@
         "defaultValue": {
           "value": "colors.icons",
           "computed": true
+        }
+      },
+      "enableMultiline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables multiline messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       },
       "color": {
