@@ -17,6 +17,7 @@ import styles from './styles';
 class TextMessage extends Component {
   createMarkup = () => {
     const { message, enableLinks, emoji, highlights } = this.props;
+
     const text = message.body;
 
     const escapedText = escape(text);
@@ -46,6 +47,8 @@ class TextMessage extends Component {
     if (emoji) {
       html = emojione.toImage(parsedText);
     }
+
+    html = html.replace(/\n/g, '<br />');
 
     return html;
   }
