@@ -2,10 +2,24 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.4...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.0...HEAD)
 
 **Merged pull requests:**
 
+- \[4.5.0\] Added Media component & added multiline capabilities to Message component [\#918](https://github.com/anchorchat/anchor-ui/pull/918) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.5.0](https://github.com/anchorchat/anchor-ui/tree/v4.5.0) (2017-10-19)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.4.4...v4.5.0)
+
+**Implemented enhancements:**
+
+- \[Message\] Parse multiline message and render break elements [\#898](https://github.com/anchorchat/anchor-ui/issues/898)
+- Issue \#848 [\#888](https://github.com/anchorchat/anchor-ui/pull/888) ([IanCStewart](https://github.com/IanCStewart))
+
+**Merged pull requests:**
+
+- Issue \#898 [\#917](https://github.com/anchorchat/anchor-ui/pull/917) ([IanCStewart](https://github.com/IanCStewart))
+- Media [\#915](https://github.com/anchorchat/anchor-ui/pull/915) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[4.4.4\] Fixed my sticker message style bug [\#914](https://github.com/anchorchat/anchor-ui/pull/914) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.4.4](https://github.com/anchorchat/anchor-ui/tree/v4.4.4) (2017-10-12)
