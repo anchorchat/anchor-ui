@@ -16,7 +16,7 @@ import styles from './styles';
 
 class TextMessage extends Component {
   createMarkup = () => {
-    const { message, enableLinks, emoji, highlights } = this.props;
+    const { message, enableLinks, emoji, highlights, enableMultiline } = this.props;
 
     const text = message.body;
 
@@ -48,7 +48,9 @@ class TextMessage extends Component {
       html = emojione.toImage(parsedText);
     }
 
-    html = html.replace(/\n/g, '<br />');
+    if (enableMultiline) {
+      html = html.replace(/\n/g, '<br />');
+    }
 
     return html;
   }
@@ -106,7 +108,8 @@ class TextMessage extends Component {
       edited,
       locale,
       highlights,
-      badge
+      badge,
+      enableMultiline
     } = this.props;
 
     return (
@@ -122,7 +125,7 @@ class TextMessage extends Component {
         />
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
-            enableLinks || emoji || !isEmpty(highlights)
+            enableLinks || enableMultiline || emoji || !isEmpty(highlights)
             ? <span>{this.parseHtml()}</span>
             : message.body
           }
@@ -171,7 +174,8 @@ TextMessage.propTypes = {
     value: PropTypes.string,
   })),
   onHighlightClick: PropTypes.func.isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  enableMultiline: PropTypes.bool
 };
 
 TextMessage.defaultProps = {
@@ -191,7 +195,8 @@ TextMessage.defaultProps = {
   iconMenu: null,
   edited: null,
   highlights: [],
-  badge: null
+  badge: null,
+  enableMultiline: false
 };
 
 export default TextMessage;

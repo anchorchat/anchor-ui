@@ -4710,6 +4710,17 @@
           "computed": true
         }
       },
+      "enableMultiline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables multiline messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
