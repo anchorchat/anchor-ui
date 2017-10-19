@@ -4041,23 +4041,26 @@
     }
   },
   "components/media/index.jsx": {
-    "description": "CSS media query component, listens to matches for a given query",
+    "description": "CSS media query component, listens to matches for given queries",
     "displayName": "Media",
     "methods": [],
     "props": {
       "query": {
         "type": {
-          "name": "string"
+          "name": "objectOf",
+          "value": {
+            "name": "string"
+          }
         },
         "required": true,
-        "description": "Media query to listen for, must be a valid CSS Media query"
+        "description": "Media query to listen for, must be an object of valid CSS Media queries"
       },
       "onChange": {
         "type": {
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired when the window resizes, is also fired on mount\n\nfunction(query: string, matches: boolean) => void"
+        "description": "Callback fired when the window resizes, is also fired on mount\n\nfunction(matches: object) => void"
       }
     }
   },

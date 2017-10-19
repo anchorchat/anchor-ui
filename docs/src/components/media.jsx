@@ -6,20 +6,32 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 
-const usage = '```js\n import Media from \'anchor-ui/media\';';
+const usage = `
+  \`\`\`js
+  import Media from 'anchor-ui/media'
+
+  const query = {
+    large: '(max-width: 1024px)',
+    small: '(min-width: 400px)',
+    medium: '(min-width: 768px)'
+  };
+
+  <Media query={query} onChange={this.setMedia} />
+  \`\`\`
+`;
 
 class MediaDoc extends Component {
   constructor() {
     super();
 
     this.state = {
-      '(min-width: 800px)': false
+      media: {}
     };
   }
 
-  setMedia = (query, matches) => {
+  setMedia = (matches) => {
     this.setState({
-      [query]: matches
+      media: matches
     });
   }
 
@@ -32,6 +44,12 @@ class MediaDoc extends Component {
       }
     };
 
+    const query = {
+      large: '(max-width: 1024px)',
+      small: '(min-width: 400px)',
+      medium: '(min-width: 768px)'
+    };
+
     return (
       <article className="doc">
         <h1>Media</h1>
@@ -42,18 +60,16 @@ class MediaDoc extends Component {
         <section>
           <h1>Usage</h1>
           <ReactMarkdown source={usage} className="markdown" />
-          <p>The query prop must be a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">CSS Media Query</a>.</p>
+          <p>The query prop must be an object of valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">CSS Media Queries</a>.</p>
         </section>
         <section>
           <h1>Examples</h1>
           <p>Resize your window to change the values</p>
           <Paper style={style.paper}>
-            <p>(min-width: 400px): {`${this.state['(min-width: 400px)']}`}</p>
-            <p>(min-width: 768px): {`${this.state['(min-width: 768px)']}`}</p>
-            <p>(max-width: 1024px): {`${this.state['(max-width: 1024px)']}`}</p>
-            <Media query="(min-width: 400px)" onChange={this.setMedia} />
-            <Media query="(min-width: 768px)" onChange={this.setMedia} />
-            <Media query="(max-width: 1024px)" onChange={this.setMedia} />
+            <p>(min-width: 400px): {`${this.state.media.small}`}</p>
+            <p>(min-width: 768px): {`${this.state.media.medium}`}</p>
+            <p>(max-width: 1024px): {`${this.state.media.large}`}</p>
+            <Media query={query} onChange={this.setMedia} />
           </Paper>
         </section>
         <Props props={componentData.props} />
