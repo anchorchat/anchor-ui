@@ -1,24 +1,30 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import isObject from 'lodash/isObject';
+import forEach from 'lodash/forEach';
+import mapValues from 'lodash/mapValues';
 
 const propTypes = {
-  /**
-  * Media query to listen for, must be a valid CSS Media query
-  */
-  query: PropTypes.string.isRequired,
+  /** Media query to listen for, must be an object of valid CSS Media queries */
+  query: PropTypes.objectOf(PropTypes.string).isRequired,
   /**
    * Callback fired when the window resizes, is also fired on mount
    *
-   * function(query: string, matches: boolean) => void
+   * function(matches: object) => void
    */
   onChange: PropTypes.func.isRequired
 };
 
 const displayName = 'Media';
 
-/** CSS media query component, listens to matches for a given query */
+/** CSS media query component, listens to matches for given queries */
 class Media extends Component {
+  constructor() {
+    super();
+
+    this.mediaQueryList = {};
+  }
+
   componentDidMount() {
     if (!isObject(window)) {
       return false;
@@ -26,8 +32,10 @@ class Media extends Component {
 
     const { query } = this.props;
 
-    this.mediaQueryList = window.matchMedia(query);
-    this.mediaQueryList.addListener(this.updateMatches);
+    forEach(query, (value, key) => {
+      this.mediaQueryList[key] = window.matchMedia(value);
+      this.mediaQueryList[key].addListener(this.updateMatches);
+    });
 
     return this.updateMatches();
   }
@@ -37,9 +45,11 @@ class Media extends Component {
   }
 
   updateMatches = () => {
-    const { onChange, query } = this.props;
+    const { onChange } = this.props;
 
-    onChange(query, this.mediaQueryList.matches);
+    const matches = mapValues(this.mediaQueryList, 'matches');
+
+    onChange(matches);
   }
 
   render() {
