@@ -36,11 +36,18 @@ const messages = [
     id: 3
   },
   {
+    body: '🎈\n\n\n\n\n____________🏃\nrun forest run.',
+    createdAt: new Date(),
+    username: 'Ian',
+    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    id: 4
+  },
+  {
     body: 'https://telegram.org/file/811140066/1/7fM-CwKk4F0/53f9f1fc731c63547d',
     createdAt: new Date(),
     username: 'Lars',
     avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
-    id: 4,
+    id: 5,
     type: 'sticker'
   },
   {
@@ -48,7 +55,7 @@ const messages = [
     createdAt: new Date(),
     username: 'Sjaak',
     avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
-    id: 5,
+    id: 6,
     type: 'sticker'
   },
   {
@@ -56,7 +63,7 @@ const messages = [
     createdAt: new Date(),
     username: 'Sjaak',
     avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
-    id: 6,
+    id: 7,
     type: 'image'
   },
   {
@@ -64,7 +71,7 @@ const messages = [
     createdAt: new Date(),
     username: 'Ian',
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
-    id: 7,
+    id: 8,
     type: 'giphy'
   },
   {
@@ -72,7 +79,7 @@ const messages = [
     createdAt: new Date(),
     username: 'Ian',
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
-    id: 8,
+    id: 9,
     type: 'typing'
   },
 ];
@@ -88,7 +95,8 @@ class MessageDoc extends Component {
       fontSize: 'small',
       compact: false,
       iconMenu: false,
-      edited: false
+      edited: false,
+      multiline: false
     };
   }
 
@@ -101,6 +109,8 @@ class MessageDoc extends Component {
   selectIconMenu = (event, iconMenu) => this.setState({ iconMenu })
 
   selectEdited = (event, edited) => this.setState({ edited })
+
+  selectMultiline = (event, multiline) => this.setState({ multiline })
 
   render() {
     const componentData = _.find(components, component => component.displayName === 'Message');
@@ -201,6 +211,10 @@ class MessageDoc extends Component {
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
+            <Select style={style.select} label="Enable multiline" value={this.state.multiline} onChange={this.selectMultiline}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
@@ -236,6 +250,7 @@ class MessageDoc extends Component {
                   ]}
                   onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
                   enableLinks
+                  enableMultiline={this.state.multiline}
                 />
               ))}
             </MessageList>
