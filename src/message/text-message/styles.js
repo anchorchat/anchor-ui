@@ -7,7 +7,7 @@ export default {
     boxSizing: 'border-box',
     color: colors.primaryText,
     marginLeft: '16px',
-    maxWidth: '75%',
+    maxWidth: '80%',
     padding: '12px',
     position: 'relative',
     wordBreak: 'break-word',
@@ -27,11 +27,11 @@ export default {
     marginRight: '16px',
   },
   body: {
-    display: 'flex',
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '22px',
-    margin: '0'
+    margin: '0',
+    maxWidth: '40em'
   },
   compact: {
     marginLeft: '0',
@@ -46,8 +46,13 @@ export default {
     textDecoration: 'underline'
   },
   mention: {
-    color: 'inherit',
+    color: colors.theme,
     fontSize: 'inherit',
     fontWeight: 'bolder'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '3px',
+    right: '0'
   }
 };

@@ -4289,22 +4289,7 @@
   "components/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
-    "methods": [
-      {
-        "name": "renderIconMenu",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "renderImageIconMenu",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "avatar": {
         "type": {
@@ -4358,10 +4343,6 @@
                 },
                 {
                   "value": "'sticker'",
-                  "computed": false
-                },
-                {
-                  "value": "'typing'",
                   "computed": false
                 },
                 {
@@ -4505,17 +4486,6 @@
           "computed": false
         }
       },
-      "menuItems": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Enables PopOver with MenuItems",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "enableLightbox": {
         "type": {
           "name": "bool"
@@ -4545,7 +4515,7 @@
         "required": false,
         "description": "Text to display for collapsed messages",
         "defaultValue": {
-          "value": "'This image has been collapsed, click the button to expand it.'",
+          "value": "'This image has been collapsed.'",
           "computed": false
         }
       },
@@ -4557,50 +4527,6 @@
         "description": "Text to display above giphy messages",
         "defaultValue": {
           "value": "'Sent using /giphy'",
-          "computed": false
-        }
-      },
-      "expand": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when 'expand' MenuItem is clicked\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "expandText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Text to show in expand menu item",
-        "defaultValue": {
-          "value": "'Expand image'",
-          "computed": false
-        }
-      },
-      "expandIcon": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Icon to show in expand menu item",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "expandMenuItem": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Custom menu item. Should be a MenuItem component.\n Make sure this component handles image expanding.\n If this is passed none of the other expand props will be used.",
-        "defaultValue": {
-          "value": "null",
           "computed": false
         }
       },
@@ -4675,15 +4601,15 @@
           "computed": false
         }
       },
-      "iconColor": {
+      "iconMenu": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": false,
-        "description": "Color for the IconMenu's icon",
+        "description": "Render an IconMenu in Message",
         "defaultValue": {
-          "value": "colors.icons",
-          "computed": true
+          "value": "null",
+          "computed": false
         }
       },
       "color": {

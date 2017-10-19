@@ -2,19 +2,27 @@ import combineStyles from '../../internal/combine-styles';
 import colors from '../../settings/colors';
 import styles from './styles';
 
-const root = (myMessage, type, edited, overrideStyle) => {
+const root = (myMessage, type, collapsed, fontSize, overrideStyle) => {
   let style = styles.root;
 
   if (myMessage) {
-    style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75', color: colors.white });
+    style = combineStyles(style, { color: colors.white });
   }
 
-  if (type === 'image' || type === 'giphy') {
-    style = combineStyles(style, { marginTop: '10px' });
+  if ((type === 'image' || type === 'giphy') && !collapsed) {
+    style = combineStyles(style, styles.image);
   }
 
-  if (edited) {
-    style = combineStyles(style, { width: 'auto' });
+  if (type === 'sticker') {
+    style = combineStyles(style, { alignSelf: 'center', paddingTop: '2px' });
+  }
+
+  if (fontSize === 'medium') {
+    style = combineStyles(style, { fontSize: '14px', lineHeight: '14px' });
+  }
+
+  if (fontSize === 'large') {
+    style = combineStyles(style, { fontSize: '16px', lineHeight: '16px' });
   }
 
   return combineStyles(style, overrideStyle);

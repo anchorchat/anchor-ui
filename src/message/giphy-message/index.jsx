@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
@@ -46,29 +47,24 @@ class GiphyMessage extends Component {
       collapsedText,
       giphyDescription,
       locale,
-      badge
+      badge,
+      iconMenu
     } = this.props;
     const { lightbox } = this.state;
 
     let onClick = null;
+    let headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '8px' });
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
-    let headerStyle = messageHeaderStyle;
-    let giphyStyle = styles.giphy;
-
-    if (compact) {
-      headerStyle = combineStyles(headerStyle, { marginBottom: '8px' });
-    }
-
-    if (enableLightbox) {
-      giphyStyle = combineStyles(giphyStyle, { cursor: 'pointer' });
+    if (collapsed) {
+      headerStyle = combineStyles(headerStyle, { marginBottom: '0' });
     }
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -77,8 +73,9 @@ class GiphyMessage extends Component {
           headerStyle={headerStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
-        <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+        <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {
             !collapsed && giphyDescription
             ? <span style={styles.giphyDescription}>{giphyDescription}</span>
@@ -86,7 +83,7 @@ class GiphyMessage extends Component {
           }
           {
             !collapsed
-            ? <img onClick={onClick} style={giphyStyle} src={message.body} alt="user-upload" />
+            ? <img onClick={onClick} style={getStyles.giphy(enableLightbox)} src={message.body} alt="user-upload" />
             : <span>{collapsedText}</span>
           }
           <MessageTime
@@ -96,8 +93,11 @@ class GiphyMessage extends Component {
             createdAt={message.createdAt}
             timeFormat={timeFormat}
             locale={locale}
+            collapsed={collapsed}
+            fontSize={fontSize}
           />
         </p>
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
           ? <Lightbox
@@ -135,10 +135,11 @@ GiphyMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
-  giphyDescription: PropTypes.node,
+  collapsedText: PropTypes.node.isRequired,
+  giphyDescription: PropTypes.node.isRequired,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 GiphyMessage.defaultProps = {
@@ -154,10 +155,8 @@ GiphyMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  collapsedText: 'This GIF has been collapsed, click the button to expand it.',
-  giphyDescription: 'Sent using /giphy',
-  iconMenu: null,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 export default GiphyMessage;

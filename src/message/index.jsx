@@ -4,18 +4,13 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import en from 'date-fns/locale/en';
 import noop from 'lodash/noop';
-import IconMenu from '../icon-menu';
-import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import GiphyMessage from './giphy-message';
 import StickerMessage from './sticker-message';
-import TypingMessage from './typing-message';
-import MenuItem from '../menu-item';
 import themeable from '../themeable';
 import styles from './styles';
-import colors from '../settings/colors';
 
 /** Messages with optional styling for the current user's message,
 different font sizes and message styles */
@@ -37,7 +32,7 @@ class Message extends Component {
       /** The sender's username */
       username: PropTypes.string.isRequired,
       /** The message's type */
-      type: PropTypes.oneOf(['text', 'image', 'sticker', 'typing', 'giphy'])
+      type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy'])
     }).isRequired,
     /**
      * The format of displaying message.createdAt
@@ -63,8 +58,6 @@ class Message extends Component {
     enableLinks: PropTypes.bool,
     /** Enables compact messages */
     compact: PropTypes.bool,
-    /** Enables PopOver with MenuItems */
-    menuItems: PropTypes.node,
     /** Enables Lighbox for image messages */
     enableLightbox: PropTypes.bool,
     /** Collapse an image message */
@@ -73,21 +66,6 @@ class Message extends Component {
     collapsedText: PropTypes.node,
     /** Text to display above giphy messages */
     giphyDescription: PropTypes.node,
-    /**
-     * Callback fired when 'expand' MenuItem is clicked
-     *
-     * function(event: object) => void
-     */
-    expand: PropTypes.func,
-    /** Text to show in expand menu item */
-    expandText: PropTypes.node,
-    /** Icon to show in expand menu item */
-    expandIcon: PropTypes.node,
-    /** Custom menu item. Should be a MenuItem component.
-     *  Make sure this component handles image expanding.
-     *  If this is passed none of the other expand props will be used.
-     */
-    expandMenuItem: PropTypes.node,
     /** Text to display for edited banner */
     edited: PropTypes.node,
     /**
@@ -112,8 +90,8 @@ class Message extends Component {
     onHighlightClick: PropTypes.func,
     /** Badge to display next to message.username */
     badge: PropTypes.node,
-    /** Color for the IconMenu's icon */
-    iconColor: PropTypes.string,
+    /** Render an IconMenu in Message */
+    iconMenu: PropTypes.node,
     color: PropTypes.string.isRequired
   }
 
@@ -129,84 +107,17 @@ class Message extends Component {
     emoji: false,
     enableLinks: false,
     compact: false,
-    menuItems: null,
     enableLightbox: false,
     collapsed: false,
-    expand: null,
-    expandText: 'Expand image',
-    expandIcon: null,
-    collapsedText: 'This image has been collapsed, click the button to expand it.',
+    collapsedText: 'This image has been collapsed.',
     giphyDescription: 'Sent using /giphy',
     edited: null,
     locale: en,
     separator: null,
     highlights: [],
     onHighlightClick: noop,
-    expandMenuItem: null,
     badge: null,
-    iconColor: colors.icons
-  }
-
-  constructor() {
-    super();
-
-    this.renderIconMenu = this.renderIconMenu.bind(this);
-    this.renderImageIconMenu = this.renderImageIconMenu.bind(this);
-  }
-
-  renderIconMenu() {
-    const { menuItems, iconColor } = this.props;
-
-    if (!menuItems) {
-      return null;
-    }
-
-    return (
-      <IconMenu icon={<IconChevronDown color={iconColor} />}>
-        {menuItems}
-      </IconMenu>
-    );
-  }
-
-  renderImageIconMenu() {
-    const {
-      collapsed,
-      expand,
-      expandIcon,
-      expandText,
-      menuItems,
-      expandMenuItem,
-      iconColor
-    } = this.props;
-
-    if ((!expand && !expandMenuItem) || (!menuItems && !collapsed)) {
-      return null;
-    }
-
-    const menuItem = <MenuItem icon={expandIcon} text={expandText} onClick={expand} />;
-
-    if (!menuItems && collapsed) {
-      return (
-        <IconMenu icon={<IconChevronDown color={iconColor} />}>
-          {expandMenuItem || menuItem}
-        </IconMenu>
-      );
-    }
-
-    if (menuItems && !collapsed) {
-      return (
-        <IconMenu icon={<IconChevronDown color={iconColor} />}>
-          {menuItems}
-        </IconMenu>
-      );
-    }
-
-    return (
-      <IconMenu icon={<IconChevronDown color={iconColor} />}>
-        {menuItems}
-        {expandMenuItem || menuItem}
-      </IconMenu>
-    );
+    iconMenu: null
   }
 
   render() {
@@ -223,12 +134,8 @@ class Message extends Component {
       fontSize,
       emoji,
       enableLinks,
-      menuItems,
       enableLightbox,
       collapsed,
-      expand,
-      expandText,
-      expandIcon,
       collapsedText,
       edited,
       locale,
@@ -236,10 +143,9 @@ class Message extends Component {
       onHighlightClick,
       color,
       separator,
-      expandMenuItem,
       badge,
-      iconColor,
       giphyDescription,
+      iconMenu,
       ...custom
     } = this.props;
 
@@ -257,16 +163,11 @@ class Message extends Component {
       messageElement = <GiphyMessage color={color} {...this.props} />;
     }
 
-    if (message.type === 'typing') {
-      messageElement = <TypingMessage color={color} {...this.props} />;
-    }
-
     return (
       <div style={styles.root}>
         {separator}
         <section style={getStyles.container(myMessage, compact)} {...custom}>
           {messageElement}
-          {message.type === 'image' || message.type === 'giphy' ? this.renderImageIconMenu() : this.renderIconMenu()}
         </section>
       </div>
     );
