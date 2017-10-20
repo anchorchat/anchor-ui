@@ -45,6 +45,12 @@ const MenuItemDoc = () => {
             <MenuItem text="Menu item" onClick={() => {}} />
             <MenuItem icon={<IconReport />} text="Menu item with icon" onClick={() => {}} />
             <MenuItem
+              icon={<IconReport />}
+              text="Active Menu item with icon"
+              onClick={() => {}}
+              active
+            />
+            <MenuItem
               rightButton={
                 <IconMenu
                   icon={<IconMore />}
