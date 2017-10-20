@@ -4180,6 +4180,13 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "renderIcon",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
