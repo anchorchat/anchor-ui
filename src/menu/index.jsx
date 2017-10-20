@@ -38,7 +38,7 @@ class Menu extends Component {
       cloneElement(child, { closeMenu })
     ));
 
-    let rootStyle = getStyles.root(open, footer, style);
+    let rootStyle = getStyles.root(open, style);
 
     if (!closeMenu) {
       rootStyle = getStyles.sidebar(style);
@@ -46,22 +46,22 @@ class Menu extends Component {
 
     return (
       <nav style={rootStyle} {...custom}>
+        {
+          headerIcon
+          ? <div style={getStyles.icon(iconStyle)}>
+            {React.cloneElement(headerIcon, { color })}
+          </div>
+          : null
+        }
+        {
+          header
+          ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1>
+          : null
+        }
         <section style={getStyles.contentContainer(footer, contentContainerStyle)}>
-          {
-            headerIcon
-            ? <div style={getStyles.icon(iconStyle)}>
-              {React.cloneElement(headerIcon, { color })}
-            </div>
-            : null
-          }
-          {
-            header
-            ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1>
-            : null
-          }
           {menuItems}
+          {footer ? <span style={getStyles.footer(!closeMenu, footerStyle)}>{footer}</span> : null}
         </section>
-        {footer ? <span style={getStyles.footer(!closeMenu, footerStyle)}>{footer}</span> : null}
       </nav>
     );
   }
