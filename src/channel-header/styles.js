@@ -42,13 +42,15 @@ const styleSheet = {
     width: '40px',
     height: '40px',
     position: 'absolute',
-    right: '8px'
+    right: '8px',
+    top: '4px'
   },
   leftButton: {
     width: '40px',
     height: '40px',
     position: 'absolute',
-    left: '8px'
+    left: '8px',
+    top: '4px'
   }
 };
 
