@@ -22,11 +22,14 @@ class Menu extends Component {
       children,
       open,
       header,
+      footer,
       headerIcon,
       closeMenu,
       style,
       iconStyle,
       headerStyle,
+      footerStyle,
+      contentContainerStyle,
       color,
       ...custom
     } = this.props;
@@ -35,7 +38,7 @@ class Menu extends Component {
       cloneElement(child, { closeMenu })
     ));
 
-    let rootStyle = getStyles.root(open, style);
+    let rootStyle = getStyles.root(open, footer, style);
 
     if (!closeMenu) {
       rootStyle = getStyles.sidebar(style);
@@ -43,13 +46,22 @@ class Menu extends Component {
 
     return (
       <nav style={rootStyle} {...custom}>
-        {
-          headerIcon
-          ? <div style={getStyles.icon(iconStyle)}>{React.cloneElement(headerIcon, { color })}</div>
-          : null
-        }
-        {header ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1> : null}
-        {menuItems}
+        <section style={getStyles.contentContainer(footer, contentContainerStyle)}>
+          {
+            headerIcon
+            ? <div style={getStyles.icon(iconStyle)}>
+              {React.cloneElement(headerIcon, { color })}
+            </div>
+            : null
+          }
+          {
+            header
+            ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1>
+            : null
+          }
+          {menuItems}
+        </section>
+        {footer ? <span style={getStyles.footer(!closeMenu, footerStyle)}>{footer}</span> : null}
       </nav>
     );
   }
@@ -95,12 +107,18 @@ Menu.propTypes = {
   header: PropTypes.node,
   /** The header's icon */
   headerIcon: PropTypes.node,
+  /** The Menu's footer */
+  footer: PropTypes.node,
   /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
-  /** Override the styles of the root element */
+  /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the footer element */
+  footerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the footer element */
+  contentContainerStyle: PropTypes.instanceOf(Object),
   color: PropTypes.string.isRequired
 };
 
@@ -108,10 +126,13 @@ Menu.defaultProps = {
   open: false,
   closeMenu: null,
   header: null,
+  footer: null,
   style: {},
   headerStyle: {},
   headerIcon: null,
-  iconStyle: {}
+  iconStyle: {},
+  footerStyle: {},
+  contentContainerStyle: {}
 };
 
 const enhance = compose(
