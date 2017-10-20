@@ -4120,6 +4120,17 @@
           "computed": false
         }
       },
+      "footer": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Menu's footer",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "iconStyle": {
         "type": {
           "name": "instanceOf",
@@ -4150,7 +4161,31 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "footerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
         "defaultValue": {
           "value": "{}",
           "computed": false
