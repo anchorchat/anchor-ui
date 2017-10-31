@@ -6,6 +6,7 @@ import RadioButtonGroup from '../../../dist/radio-button-group';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Avatar from '../../../dist/avatar';
 
 const usage = '```js\n import RadioButton from \'anchor-ui/radio-button\';';
 
@@ -37,7 +38,13 @@ class RadioButtonDoc extends Component {
         margin: 0,
         padding: '20px'
       },
-      radioButtonGroup: { margin: '10px' }
+      radioButtonGroup: {
+        margin: '10px'
+      },
+      avatar: {
+        width: '24px',
+        height: '24px'
+      }
     };
 
     return (
@@ -67,6 +74,14 @@ class RadioButtonDoc extends Component {
               <RadioButton
                 label="Unchecked"
                 value="two"
+              />
+              <RadioButton
+                label="Custom icon"
+                value="three"
+                icon={<Avatar style={style.avatar} image="https://avatars2.githubusercontent.com/u/16486197?v=3&s=400" />}
+              />
+              <RadioButton
+                value="four"
               />
             </RadioButtonGroup>
           </Paper>
