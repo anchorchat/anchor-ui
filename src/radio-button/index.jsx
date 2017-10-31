@@ -24,9 +24,11 @@ const RadioButton = ({
     <div style={getStyles.icon(iconStyle)}>
       <IconRadio color={checked ? color || colors.theme : colors.icons} />
     </div>
-    <span style={getStyles.label(labelStyle)}>
-      {label}
-    </span>
+    {
+      label
+      ? <span style={getStyles.label(labelStyle)}>{label}</span>
+      : null
+    }
   </label>
 );
 
@@ -36,7 +38,7 @@ RadioButton.propTypes = {
   /** The input's value */
   value: PropTypes.string.isRequired,
   /** The input's label text */
-  label: PropTypes.node.isRequired,
+  label: PropTypes.node,
   /**
    * Callback fired when RadioButton's value changes
    *
@@ -62,7 +64,8 @@ RadioButton.defaultProps = {
   iconStyle: {},
   labelStyle: {},
   checked: false,
-  onChange: null
+  onChange: null,
+  label: null
 };
 
 const enhance = compose(
