@@ -5727,8 +5727,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "The input's label text"
+        "required": false,
+        "description": "The input's label text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "onChange": {
         "type": {
@@ -5797,6 +5801,17 @@
         "description": "Override the styles of the label element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -5873,6 +5888,18 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the button container",
         "defaultValue": {
           "value": "{}",
           "computed": false

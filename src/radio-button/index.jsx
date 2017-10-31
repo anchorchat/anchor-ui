@@ -9,7 +9,7 @@ import themeable from '../themeable';
 
 /** Radio buttons are switches used for selection from multiple options */
 const RadioButton = ({
-  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, ...custom
+  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, icon, ...custom
 }) => (
   <label key="radio" htmlFor={value} style={getStyles.root(color, style)}>
     <input
@@ -22,11 +22,13 @@ const RadioButton = ({
       {...custom}
     />
     <div style={getStyles.icon(iconStyle)}>
-      <IconRadio color={checked ? color || colors.theme : colors.icons} />
+      {icon || <IconRadio color={checked ? color || colors.theme : colors.icons} />}
     </div>
-    <span style={getStyles.label(labelStyle)}>
-      {label}
-    </span>
+    {
+      label
+      ? <span style={getStyles.label(labelStyle)}>{label}</span>
+      : null
+    }
   </label>
 );
 
@@ -36,7 +38,7 @@ RadioButton.propTypes = {
   /** The input's value */
   value: PropTypes.string.isRequired,
   /** The input's label text */
-  label: PropTypes.node.isRequired,
+  label: PropTypes.node,
   /**
    * Callback fired when RadioButton's value changes
    *
@@ -53,6 +55,8 @@ RadioButton.propTypes = {
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the label element */
+  icon: PropTypes.node,
   color: PropTypes.string.isRequired
 };
 
@@ -62,7 +66,9 @@ RadioButton.defaultProps = {
   iconStyle: {},
   labelStyle: {},
   checked: false,
-  onChange: null
+  onChange: null,
+  label: null,
+  icon: null
 };
 
 const enhance = compose(
