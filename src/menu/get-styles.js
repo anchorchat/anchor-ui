@@ -24,6 +24,16 @@ const root = (open, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
+const contentContainer = (footer, overrideStyle) => {
+  let style = styles.contentContainer;
+
+  if (footer) {
+    style = combineStyles(style, { maxHeight: 'calc(100% - 35px)' });
+  }
+
+  return combineStyles(style, overrideStyle);
+};
+
 const header = (color = colors.theme, icon = false, overrideStyle) => {
   let style = combineStyles(styles.header, { color });
 
@@ -38,11 +48,23 @@ const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
 const sidebar = overrideStyle => combineStyles(styles.sidebar, overrideStyle);
 
+const footer = (isSidebar, overrideStyle) => {
+  let style = styles.footer;
+
+  if (isSidebar) {
+    style = combineStyles(style, { position: 'initial' });
+  }
+
+  return combineStyles(style, overrideStyle);
+};
+
 export default {
   container,
   overlay,
   root,
   header,
   icon,
-  sidebar
+  sidebar,
+  footer,
+  contentContainer
 };

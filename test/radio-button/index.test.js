@@ -19,7 +19,7 @@ describe('RadioButton', () => {
     checked: false,
     onChange: null,
     color: '#1BA6C4',
-    label: null
+    label: 'label'
   };
   const label = 'text';
 
@@ -65,7 +65,7 @@ describe('RadioButton', () => {
 
     expect(wrapper.find('span')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<span>text</span>)).to.equal(true);
-    props.label = null;
+    props.label = 'label';
   });
 
   it('should always render the value of the label prop', () => {

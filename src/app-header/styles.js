@@ -31,11 +31,13 @@ const styleSheet = {
   },
   leftButton: {
     position: 'absolute',
-    left: '8px'
+    left: '8px',
+    top: '8px'
   },
   rightButton: {
     position: 'absolute',
-    right: '8px'
+    right: '8px',
+    top: '8px'
   },
   icon: {
     height: '100%',

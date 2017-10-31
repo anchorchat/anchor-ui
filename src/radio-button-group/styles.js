@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 
 export default {
-  root: {
+  buttons: {
     display: 'flex',
     flexWrap: 'wrap'
   },
@@ -9,7 +9,7 @@ export default {
     fontSize: '16px',
     color: colors.secondaryText,
     fontWeight: 'bolder',
-    marginBottom: '10px',
+    padding: '0 0 8px 8px',
     display: 'inline-block'
   },
   error: {
