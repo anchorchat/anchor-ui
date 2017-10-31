@@ -9,7 +9,7 @@ import themeable from '../themeable';
 
 /** Radio buttons are switches used for selection from multiple options */
 const RadioButton = ({
-  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, ...custom
+  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, icon, ...custom
 }) => (
   <label key="radio" htmlFor={value} style={getStyles.root(color, style)}>
     <input
@@ -22,7 +22,7 @@ const RadioButton = ({
       {...custom}
     />
     <div style={getStyles.icon(iconStyle)}>
-      <IconRadio color={checked ? color || colors.theme : colors.icons} />
+      {icon || <IconRadio color={checked ? color || colors.theme : colors.icons} />}
     </div>
     {
       label
@@ -55,6 +55,8 @@ RadioButton.propTypes = {
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the label element */
+  icon: PropTypes.node,
   color: PropTypes.string.isRequired
 };
 
@@ -65,7 +67,8 @@ RadioButton.defaultProps = {
   labelStyle: {},
   checked: false,
   onChange: null,
-  label: null
+  label: null,
+  icon: null
 };
 
 const enhance = compose(
