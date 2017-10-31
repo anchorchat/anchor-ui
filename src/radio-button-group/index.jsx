@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import getStyles from './get-styles';
-import styles from './styles';
 
 const RadioButtonGroup = ({
-  value, onChange, children, label, labelStyle, style, error, errorStyle, ...custom
+  value, onChange, children, buttonStyle, label, labelStyle, style, error, errorStyle, ...custom
 }) => {
   const childrenWithProps = React.Children.map(
     children, child => React.cloneElement(
@@ -20,7 +19,7 @@ const RadioButtonGroup = ({
   return (
     <section {...custom} style={style}>
       {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
-      <section style={styles.root}>
+      <section style={getStyles.buttons(buttonStyle)}>
         {childrenWithProps}
       </section>
       {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
@@ -45,6 +44,8 @@ RadioButtonGroup.propTypes = {
   labelStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
+  /** Override the styles of the button container */
+  buttonStyle: PropTypes.instanceOf(Object),
   /** Display an error message */
   error: PropTypes.node,
   /** Override the styles of the error element */
@@ -56,7 +57,8 @@ RadioButtonGroup.defaultProps = {
   labelStyle: {},
   style: {},
   error: null,
-  errorStyle: {}
+  errorStyle: {},
+  buttonStyle: {}
 };
 
 RadioButtonGroup.displayName = 'RadioButtonGroup';

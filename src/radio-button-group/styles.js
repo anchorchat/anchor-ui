@@ -1,7 +1,7 @@
 import colors from '../settings/colors';
 
 export default {
-  root: {
+  buttons: {
     display: 'flex',
     flexWrap: 'wrap'
   },
