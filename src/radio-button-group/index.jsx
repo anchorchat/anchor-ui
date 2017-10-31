@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import getStyles from './get-styles';
+import styles from './styles';
 
 const RadioButtonGroup = ({
   value, onChange, children, label, labelStyle, style, error, errorStyle, ...custom
@@ -17,9 +18,9 @@ const RadioButtonGroup = ({
   );
 
   return (
-    <section {...custom}>
+    <section {...custom} style={style}>
       {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
-      <section style={getStyles.root(style)}>
+      <section style={styles.root}>
         {childrenWithProps}
       </section>
       {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
