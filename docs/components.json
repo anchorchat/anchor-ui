@@ -47,7 +47,7 @@
       }
     }
   },
-  "components/alert/index.jsx": {
+  "components/alert/component.jsx": {
     "description": "Four types of (system) messages for alerting your user",
     "displayName": "Alert",
     "methods": [],
@@ -145,7 +145,7 @@
       }
     }
   },
-  "components/app-header/index.jsx": {
+  "components/app-header/component.jsx": {
     "description": "Your app's header",
     "displayName": "AppHeader",
     "methods": [],
@@ -263,7 +263,7 @@
       }
     }
   },
-  "components/avatar/index.jsx": {
+  "components/avatar/component.jsx": {
     "description": "An user's profile image",
     "displayName": "Avatar",
     "methods": [],
@@ -341,7 +341,7 @@
       }
     }
   },
-  "components/badge/index.jsx": {
+  "components/badge/component.jsx": {
     "description": "Used for displaying a (notification) counter",
     "displayName": "Badge",
     "methods": [],
@@ -396,7 +396,7 @@
       }
     }
   },
-  "components/banner/index.jsx": {
+  "components/banner/component.jsx": {
     "description": "728x90 and 320x50 banners",
     "displayName": "Banner",
     "methods": [
@@ -919,7 +919,114 @@
   "components/commands/index.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "Commands",
-    "methods": [],
+    "methods": [
+      {
+        "name": "filterCommands",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "commands",
+            "type": null
+          },
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "hideMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "selectNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "selectPrevious",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleSelect",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "command",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "command",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "header": {
         "type": {
@@ -1177,7 +1284,20 @@
   "components/dialog/index.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "header": {
         "type": {
@@ -1308,7 +1428,138 @@
   "components/emoji-filter/index.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "EmojiFilter",
-    "methods": [],
+    "methods": [
+      {
+        "name": "filterEmoji",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          },
+          {
+            "name": "tone",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "hideMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "selectNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "selectPrevious",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "changeTone",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "tone",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "parseHtml",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "html",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleSelect",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "icon",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "icon",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "value": {
         "type": {
@@ -1513,6 +1764,7 @@
   },
   "components/emoji-menu/emoji-modifiers.jsx": {
     "description": "",
+    "displayName": "EmojiModifiers",
     "methods": [],
     "props": {
       "modifiers": {
@@ -1579,6 +1831,30 @@
     "description": "Menu for sending messages with emoji",
     "displayName": "EmojiMenu",
     "methods": [
+      {
+        "name": "handleClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
       {
         "name": "changeTone",
         "docblock": null,
@@ -1832,7 +2108,27 @@
   "components/gallery/index.jsx": {
     "description": "Justified grid layout for showcasing images.",
     "displayName": "Gallery",
-    "methods": [],
+    "methods": [
+      {
+        "name": "showLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "item",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "hideLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "items": {
         "type": {
@@ -1960,12 +2256,36 @@
         "returns": null
       },
       {
+        "name": "handleClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "applyCloseMenuToChildren",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
             "name": "children",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
             "type": null
           }
         ],
@@ -3426,7 +3746,20 @@
   "components/input/index.jsx": {
     "description": "General purpose form input",
     "displayName": "Input",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "onChange": {
         "type": {
@@ -3621,7 +3954,20 @@
   "components/lightbox/index.jsx": {
     "description": "Lightbox for images",
     "displayName": "Lightbox",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "style": {
         "type": {
@@ -4040,10 +4386,62 @@
       }
     }
   },
+  "components/media/index.jsx": {
+    "description": "CSS media query component, listens to matches for given queries",
+    "displayName": "Media",
+    "methods": [
+      {
+        "name": "updateMatches",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "query": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": true,
+        "description": "Media query to listen for, must be an object of valid CSS Media queries"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when the window resizes, is also fired on mount\n\nfunction(matches: object) => void"
+      }
+    }
+  },
   "components/menu/index.jsx": {
     "description": "Menu that slides in from the left",
     "displayName": "Menu",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderNav",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "children": {
         "type": {
@@ -4096,6 +4494,17 @@
           "computed": false
         }
       },
+      "footer": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The Menu's footer",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "iconStyle": {
         "type": {
           "name": "instanceOf",
@@ -4126,7 +4535,31 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "footerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentContainerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4155,6 +4588,13 @@
             "type": null
           }
         ],
+        "returns": null
+      },
+      {
+        "name": "renderIcon",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
         "returns": null
       }
     ],
@@ -4289,7 +4729,22 @@
   "components/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderIconMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderImageIconMenu",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "avatar": {
         "type": {
@@ -4612,6 +5067,28 @@
           "computed": false
         }
       },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color for the IconMenu's icon",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      },
+      "enableMultiline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enables multiline messages",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
@@ -4624,7 +5101,44 @@
   "components/message-input/index.jsx": {
     "description": "Message input with send button",
     "displayName": "MessageInput",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleMessageSend",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "onChange": {
         "type": {
@@ -5020,7 +5534,32 @@
   "components/pagination/index.jsx": {
     "description": "Navigate through large sets of data",
     "displayName": "Pagination",
-    "methods": [],
+    "methods": [
+      {
+        "name": "setPage",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "page",
+            "type": null
+          },
+          {
+            "name": "list",
+            "type": null
+          },
+          {
+            "name": "pageSize",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "list": {
         "type": {
@@ -5576,8 +6115,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "The input's label text"
+        "required": false,
+        "description": "The input's label text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "onChange": {
         "type": {
@@ -5646,6 +6189,17 @@
         "description": "Override the styles of the label element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -5722,6 +6276,18 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the button container",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -5909,6 +6475,25 @@
         "docblock": null,
         "modifiers": [],
         "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],

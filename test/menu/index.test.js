@@ -38,7 +38,7 @@ describe('Menu', () => {
   it('should not render a section element if the closeMenu prop is not passed', () => {
     const wrapper = shallow(<Menu {...props} >{menuItems}</Menu>).dive();
 
-    expect(wrapper.find('section')).to.have.length(0);
+    expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should not render an overlay component if the closeMenu prop is not passed', () => {

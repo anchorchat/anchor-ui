@@ -1,4 +1,5 @@
 import colors from '../settings/colors';
+import lighten from '../internal/lighten';
 
 export default {
   container: {
@@ -9,12 +10,17 @@ export default {
     width: '256px',
     height: '100%',
     backgroundColor: colors.white,
-    overflowY: 'scroll',
     transform: 'translateX(-256px)',
     transition: 'all .3s ease-in-out',
     position: 'fixed',
     top: 0,
     left: 0
+  },
+  contentContainer: {
+    position: 'relative',
+    maxHeight: '100%',
+    width: '100%',
+    overflowY: 'auto',
   },
   overlay: {
     zIndex: 'initial',
@@ -44,5 +50,17 @@ export default {
     backgroundColor: colors.white,
     overflowY: 'scroll',
     borderRight: `1px solid ${colors.grey}`
+  },
+  footer: {
+    padding: '8px',
+    display: 'block',
+    width: '100%',
+    boxSizing: 'border-box',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    color: lighten(colors.primaryText, 0.8),
+    backgroundColor: colors.white,
+    fontSize: '16px'
   }
 };

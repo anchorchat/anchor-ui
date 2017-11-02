@@ -92,6 +92,8 @@ class Message extends Component {
     badge: PropTypes.node,
     /** Render an IconMenu in Message */
     iconMenu: PropTypes.node,
+    /** Enables multiline messages */
+    enableMultiline: PropTypes.bool,
     color: PropTypes.string.isRequired
   }
 
@@ -117,7 +119,8 @@ class Message extends Component {
     highlights: [],
     onHighlightClick: noop,
     badge: null,
-    iconMenu: null
+    iconMenu: null,
+    enableMultiline: false
   }
 
   render() {
@@ -146,6 +149,7 @@ class Message extends Component {
       badge,
       giphyDescription,
       iconMenu,
+      enableMultiline,
       ...custom
     } = this.props;
 

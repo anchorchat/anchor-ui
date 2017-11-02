@@ -64,7 +64,11 @@ class MenuDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <Menu style={{ height: 'auto', display: 'inline-block' }} header="Sidebar menu">
+            <Menu
+              style={{ height: 'auto', display: 'inline-block' }}
+              header="Sidebar menu"
+              footer="version 8af2fbb"
+            >
               <MenuItem text="Active Menu item" onClick={() => {}} active />
               <MenuItem text="Menu item" onClick={() => {}} />
               <MenuItem text="Menu item" onClick={() => {}} />
@@ -95,8 +99,11 @@ class MenuDoc extends Component {
               header="IconHeader Menu"
               open={openIconHeader}
               headerIcon={<IconRocket />}
+              footer="version 8af2fbb"
             >
               <MenuItem text="Active Menu item" onClick={() => {}} active />
+              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Menu item" onClick={() => {}} />
               <MenuItem text="Menu item" onClick={() => {}} />
               <MenuItem text="Menu item" onClick={() => {}} />
             </Menu>

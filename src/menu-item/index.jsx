@@ -75,6 +75,16 @@ class MenuItem extends Component {
     onClick(event);
   }
 
+  renderIcon() {
+    const { icon, active, color } = this.props;
+
+    if (active) {
+      return React.cloneElement(icon, { color });
+    }
+
+    return icon;
+  }
+
   render() {
     const {
       icon,
@@ -98,7 +108,7 @@ class MenuItem extends Component {
         onClick={this.handleClick}
         {...custom}
       >
-        {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
+        {icon ? <div style={getStyles.icon(iconStyle)}>{this.renderIcon()}</div> : null}
         <p style={getStyles.text(textStyle)}>
           {text}
         </p>
