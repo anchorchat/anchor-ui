@@ -51,6 +51,7 @@ import DateSeparator from './components/date-separator';
 import EmojiFilter from './components/emoji-filter';
 import Gallery from './components/gallery';
 import Media from './components/media';
+import './css/meyer-reset.css';
 import './index.css';
 import './prism.css';
 
