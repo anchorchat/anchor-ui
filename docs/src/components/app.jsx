@@ -33,7 +33,7 @@ class App extends Component {
 
     return (
       <ThemeProvider color={this.state.color}>
-        <main className="app">
+        <main>
           <AppHeader
             text="Anchor UI"
             icon={
