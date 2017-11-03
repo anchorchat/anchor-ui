@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Props from './props';
 import Alert from '../../../dist/alert';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Alert from \'anchor-ui/alert\';';
+const usage = `
+  \`\`\`js
+  import Alert from 'anchor-ui/alert';
+  \`\`\`
+`;
 
 const AlertDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Alert');
@@ -30,7 +34,7 @@ const AlertDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} className="markdown" />
       </section>
       <section>
         <h1>Examples</h1>

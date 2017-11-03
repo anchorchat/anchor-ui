@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Checkbox from '../../../dist/checkbox';
 import Divider from '../../../dist/divider';
@@ -7,8 +6,13 @@ import colors from '../../../dist/settings/colors';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Checkbox from \'anchor-ui/checkbox\';';
+const usage = `
+  \`\`\`js
+  import Checkbox from 'anchor-ui/checkbox';
+  \`\`\`
+`;
 
 class CheckboxDoc extends Component {
   constructor() {
@@ -67,7 +71,7 @@ class CheckboxDoc extends Component {
         </section>
         <section>
           <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
+          <Markdown markdown={usage} />
         </section>
         <section>
           <h1>Examples</h1>

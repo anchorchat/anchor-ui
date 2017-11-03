@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import AppHeader from '../../../dist/app-header';
 import Button from '../../../dist/button';
@@ -9,8 +8,13 @@ import Props from './props';
 import components from '../../components.json';
 import logo from '../assets/images/logo.svg';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import AppHeader from \'anchor-ui/app-header\';';
+const usage = `
+  \`\`\`js
+  import AppHeader from 'anchor-ui/app-header';
+  \`\`\`
+`;
 
 const AppHeaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'AppHeader');
@@ -34,7 +38,7 @@ const AppHeaderDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

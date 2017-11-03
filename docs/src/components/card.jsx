@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Card from '../../../dist/card';
 import CardHeader from '../../../dist/card-header';
@@ -7,8 +6,13 @@ import CardContent from '../../../dist/card-content';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Card from \'anchor-ui/card\';';
+const usage = `
+  \`\`\`js
+  import Card from 'anchor-ui/card';
+  \`\`\`
+`;
 
 const CardDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Card');
@@ -34,7 +38,7 @@ const CardDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

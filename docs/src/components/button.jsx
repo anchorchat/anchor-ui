@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import IconEmoji from '../../../dist/icons/icon-emoji';
 import Button from '../../../dist/button';
@@ -7,8 +6,13 @@ import Props from './props';
 import components from '../../components.json';
 import colors from '../../../dist/settings/colors';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Button from \'anchor-ui/button\';';
+const usage = `
+  \`\`\`js
+  import Button from 'anchor-ui/button';
+  \`\`\`
+`;
 
 const ButtonDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Button');
@@ -36,7 +40,7 @@ const ButtonDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>
