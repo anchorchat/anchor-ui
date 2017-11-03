@@ -48,13 +48,14 @@ h2 {
 }
 
 h1 {
-  font-size: 24px;
-  margin-bottom: 16px;
+  font-size: 32px;
+  margin-bottom: 24px;
 }
 
-h2 {
-  font-size: 16px;
-  margin-bottom: 8px;
+h2,
+.page > section h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
 .docs {
