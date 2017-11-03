@@ -71,7 +71,7 @@ h2,
   box-sizing: border-box;
 }
 
-.page > section {
+.page > section:not(:last-child) {
   margin-bottom: 16px;
 }
 
