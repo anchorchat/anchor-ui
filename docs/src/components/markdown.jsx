@@ -39,9 +39,6 @@ class Markdown extends Component {
     const { markdown, title } = this.props;
 
     const style = {
-      container: {
-        margin: '16px 0'
-      },
       header: {
         display: 'flex',
         alignItems: 'center',
@@ -72,7 +69,7 @@ class Markdown extends Component {
     };
 
     return (
-      <section style={style.container}>
+      <section>
         <header style={style.header} onClick={this.toggleOpen}>
           <p style={style.heading}>{title}</p>
           <Button iconButton>
