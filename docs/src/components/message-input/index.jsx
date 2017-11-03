@@ -47,8 +47,7 @@ class MessageInputDoc extends React.Component {
           <p>{componentData.description}</p>
         </section>
         <section>
-          <h1>Usage</h1>
-          <Markdown markdown={example} />
+          <Markdown markdown={example} title="Code example" />
         </section>
         <section>
           <h1>Examples</h1>
