@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import AdminBadge from '../../../dist/admin-badge';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import AdminBadge from \'anchor-ui/admin-badge\';';
+const usage = `
+  \`\`\`js
+  import AdminBadge from 'anchor-ui/admin-badge';
+  \`\`\`
+`;
 
 const AdminBadgeDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'AdminBadge');
@@ -30,7 +34,7 @@ const AdminBadgeDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>
