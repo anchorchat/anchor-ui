@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import emojione from 'emojione';
 import EmojiMenu from '../../../dist/emoji-menu';
@@ -7,8 +6,13 @@ import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import EmojiMenu from \'anchor-ui/emoji-menu\';';
+const usage = `
+  \`\`\`js
+  import EmojiMenu from 'anchor-ui/emoji-menu';
+  \`\`\`
+`;
 
 class EmojiMenuDoc extends Component {
   static createMarkup = text => ({
@@ -57,7 +61,7 @@ class EmojiMenuDoc extends Component {
         </a>
         <section>
           <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
+          <Markdown markdown={usage} />
         </section>
         <section>
           <h1>Examples</h1>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Gallery from '../../../dist/gallery';
 import Props from './props';
@@ -7,8 +6,13 @@ import components from '../../components.json';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
 import MenuItem from '../../../dist/menu-item';
+import Markdown from './markdown';
 
-const usage = '```js\n import Gallery from \'anchor-ui/gallery\';';
+const usage = `
+  \`\`\`js
+  import Gallery from 'anchor-ui/gallery';
+  \`\`\`
+`;
 
 const images = [
   {
@@ -92,7 +96,7 @@ class GalleryDoc extends Component {
         </section>
         <section>
           <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
+          <Markdown markdown={usage} />
         </section>
         <section>
           <h1>Examples</h1>

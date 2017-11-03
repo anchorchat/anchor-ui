@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Divider from '../../../dist/divider';
 import List from '../../../dist/list';
@@ -7,8 +6,13 @@ import ListItem from '../../../dist/list-item';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Divider from \'anchor-ui/divider\';';
+const usage = `
+  \`\`\`js
+  import Divider from 'anchor-ui/divider';
+  \`\`\`
+`;
 
 const DividerDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Divider');
@@ -32,7 +36,7 @@ const DividerDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>
