@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Loader from '../../../dist/loader';
 import colors from '../../../dist/settings/colors';
@@ -7,8 +6,13 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 import Alert from '../../../dist/alert';
+import Markdown from './markdown';
 
-const usage = '```js\n import Loader from \'anchor-ui/loader\';';
+const usage = `
+  \`\`\`js
+  import Loader from 'anchor-ui/loader';
+  \`\`\`
+`;
 
 const LoaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Loader');
@@ -60,7 +64,7 @@ const LoaderDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

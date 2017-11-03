@@ -1,13 +1,17 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Profile from '../../../dist/profile';
 import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Profile from \'anchor-ui/profile\';';
+const usage = `
+  \`\`\`js
+  import Profile from 'anchor-ui/profile';
+  \`\`\`
+`;
 
 const ProfileDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Profile');
@@ -33,7 +37,7 @@ const ProfileDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

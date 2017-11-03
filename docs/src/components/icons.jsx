@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import * as icons from '../../../dist/icons';
 import Paper from '../../../dist/paper';
@@ -9,8 +8,14 @@ import TableHeaderColumn from '../../../dist/table-header-column';
 import TableBody from '../../../dist/table-body';
 import TableRow from '../../../dist/table-row';
 import TableColumn from '../../../dist/table-column';
+import Markdown from './markdown';
 
-const usage = '```js\n import { IconEmoji } from \'anchor-ui/icons\'; \n import IconHammer from \'anchor-ui/icons/icon-hammer\'';
+const usage = `
+  \`\`\`js
+  import { IconEmoji } from 'anchor-ui/icons';
+  import IconHammer from 'anchor-ui/icons/icon-hammer';
+  \`\`\`
+`;
 
 const IconsDoc = () => {
   const style = {
@@ -47,7 +52,7 @@ const IconsDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

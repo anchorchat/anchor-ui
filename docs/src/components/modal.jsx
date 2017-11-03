@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Modal from '../../../dist/modal';
 import Button from '../../../dist/button';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Modal from \'anchor-ui/modal\';';
+const usage = `
+  \`\`\`js
+  import Modal from 'anchor-ui/modal';
+  \`\`\`
+`;
 
 class ModalDoc extends Component {
   constructor() {
@@ -49,7 +53,7 @@ class ModalDoc extends Component {
         </section>
         <section>
           <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
+          <Markdown markdown={usage} />
         </section>
         <section>
           <h1>Examples</h1>

@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Switch from '../../../dist/switch';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Switch from \'anchor-ui/switch\';';
+const usage = `
+  \`\`\`js
+  import Switch from 'anchor-ui/switch';
+  \`\`\`
+`;
 
 class SwitchDoc extends Component {
   constructor() {
@@ -55,7 +59,7 @@ class SwitchDoc extends Component {
         </section>
         <section>
           <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
+          <Markdown markdown={usage} />
         </section>
         <section>
           <h1>Examples</h1>

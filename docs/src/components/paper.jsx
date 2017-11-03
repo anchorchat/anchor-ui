@@ -1,11 +1,15 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Paper from \'anchor-ui/paper\';';
+const usage = `
+  \`\`\`js
+  import Markdown from 'anchor-ui/markdown';
+  \`\`\`
+`;
 
 const PaperDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Paper');
@@ -28,7 +32,7 @@ const PaperDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

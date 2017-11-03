@@ -1,13 +1,26 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Tab from '../../../dist/tab';
 import Tabs from '../../../dist/tabs';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Tabs from \'anchor-ui/tabs\';';
+const usage = `
+  \`\`\`jsx
+  import Tabs from 'anchor-ui/tabs';
+  import Tab from 'anchor-ui/tab';
+
+  const MyTabs = () => (
+    <Tabs>
+      <Tab label="Tab 1">Content 1</Tab>
+      <Tab label="Tab 2">Content 2</Tab>
+      <Tab label="Tab 3">Content 3</Tab>
+    </Tabs>
+  );
+  \`\`\`
+`;
 
 const TabsDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Tabs');
@@ -31,7 +44,7 @@ const TabsDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

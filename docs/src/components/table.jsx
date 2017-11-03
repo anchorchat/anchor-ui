@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Table from '../../../dist/table';
 import TableHeader from '../../../dist/table-header';
@@ -10,8 +9,57 @@ import TableColumn from '../../../dist/table-column';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Table from \'anchor-ui/table\';';
+const usage = `
+  \`\`\`jsx
+  import Table from 'anchor-ui/table';
+  import TableHeader from 'anchor-ui/table-header';
+  import TableHeaderColumn from 'anchor-ui/table-header-column';
+  import TableBody from 'anchor-ui/table-body';
+  import TableRow from 'anchor-ui/table-row';
+  import TableColumn from 'anchor-ui/table-column';
+
+  const MyTable = () => (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHeaderColumn>Column 1</TableHeaderColumn>
+          <TableHeaderColumn>Column 2</TableHeaderColumn>
+          <TableHeaderColumn>Column 3</TableHeaderColumn>
+          <TableHeaderColumn>Column 4</TableHeaderColumn>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableColumn>Row 1</TableColumn>
+          <TableColumn>Row 1</TableColumn>
+          <TableColumn>Row 1</TableColumn>
+          <TableColumn>Row 1</TableColumn>
+        </TableRow>
+        <TableRow>
+          <TableColumn>Row 2</TableColumn>
+          <TableColumn>Row 2</TableColumn>
+          <TableColumn>Row 2</TableColumn>
+          <TableColumn>Row 2</TableColumn>
+        </TableRow>
+        <TableRow>
+          <TableColumn>Row 3</TableColumn>
+          <TableColumn>Row 3</TableColumn>
+          <TableColumn>Row 3</TableColumn>
+          <TableColumn>Row 3</TableColumn>
+        </TableRow>
+        <TableRow>
+          <TableColumn>Row 4</TableColumn>
+          <TableColumn>Row 4</TableColumn>
+          <TableColumn>Row 4</TableColumn>
+          <TableColumn>Row 4</TableColumn>
+        </TableRow>
+      </TableBody>
+    </Table>
+  );
+  \`\`\`
+`;
 
 const TableDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Table');
@@ -41,7 +89,7 @@ const TableDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>

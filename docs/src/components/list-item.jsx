@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import ListItem from '../../../dist/list-item';
 import List from '../../../dist/list';
@@ -13,8 +12,13 @@ import Paper from '../../../dist/paper';
 import IconMenu from '../../../dist/icon-menu';
 import MenuItem from '../../../dist/menu-item';
 import IconRocket from '../../../dist/icons/icon-rocket';
+import Markdown from './markdown';
 
-const usage = '```js\n import ListItem from \'anchor-ui/list-item\';';
+const usage = `
+  \`\`\`js
+  import ListItem from 'anchor-ui/list-item';
+  \`\`\`
+`;
 
 const ListItemDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ListItem');
@@ -40,7 +44,7 @@ const ListItemDoc = () => {
       </section>
       <section>
         <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
+        <Markdown markdown={usage} />
       </section>
       <section>
         <h1>Examples</h1>
