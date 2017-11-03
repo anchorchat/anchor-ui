@@ -118,10 +118,6 @@ tr {
   width: 24px;
 }
 
-tbody tr td:nth-of-type(2) {
-  text-transform: capitalize;
-}
-
 .emojione {
   width: 1em;
   height: 1em;
