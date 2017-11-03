@@ -87,10 +87,7 @@ const TableDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <Markdown markdown={usage} />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>

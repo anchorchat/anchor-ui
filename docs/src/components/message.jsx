@@ -174,10 +174,7 @@ class MessageDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <section>
-          <h1>Usage</h1>
-          <Markdown markdown={usage} />
-        </section>
+        <Markdown markdown={usage} title="Code example" />
         <a
           href="https://www.emojione.com/"
           target="_blank"
@@ -191,7 +188,7 @@ class MessageDoc extends Component {
             If you would like the emoji&apos;s to scale with the font size add the
             following to your style sheet:
           </p>
-          <Markdown markdown={scalingEmoji} />
+          <Markdown markdown={scalingEmoji} title="Scaling emoji's" />
         </section>
         <section>
           <h1>Examples</h1>

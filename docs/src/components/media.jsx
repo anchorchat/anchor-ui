@@ -57,11 +57,8 @@ class MediaDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <section>
-          <h1>Usage</h1>
-          <Markdown markdown={usage} />
-          <p>The query prop must be an object of valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">CSS Media Queries</a>.</p>
-        </section>
+        <Markdown markdown={usage} title="Code example" />
+        <p>The query prop must be an object of valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">CSS Media Queries</a>.</p>
         <section>
           <h1>Examples</h1>
           <p>Resize your window to change the values</p>

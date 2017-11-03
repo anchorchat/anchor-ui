@@ -36,10 +36,8 @@ const ThemeableDoc = () => (
       </p>
     </section>
     <section>
-      <h1>Usage</h1>
-      <Markdown markdown={usage} />
-      <h1>Usage with propName option</h1>
-      <Markdown markdown={customPropName} />
+      <Markdown markdown={usage} title="Code example" />
+      <Markdown markdown={customPropName} title="Usage with propName option" />
     </section>
     <section>
       <h1>Options</h1>

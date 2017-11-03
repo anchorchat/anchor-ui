@@ -59,10 +59,7 @@ class EmojiMenuDoc extends Component {
         >
           This component uses free Emoji icons supplied by EmojiOne
         </a>
-        <section>
-          <h1>Usage</h1>
-          <Markdown markdown={usage} />
-        </section>
+        <Markdown markdown={usage} title="Code example" />
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
