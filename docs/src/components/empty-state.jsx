@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import EmptyState from '../../../dist/empty-state';
 import Button from '../../../dist/button';
@@ -7,8 +6,13 @@ import Props from './props';
 import components from '../../components.json';
 import emptyStateBackground from '../assets/images/empty_state_users.jpg';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import EmptyState from \'anchor-ui/empty-state\';';
+const usage = `
+  \`\`\`js
+  import EmptyState from 'anchor-ui/empty-state';
+  \`\`\`
+`;
 
 const EmptyStateDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'EmptyState');
@@ -41,10 +45,7 @@ const EmptyStateDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>

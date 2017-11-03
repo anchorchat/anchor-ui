@@ -1,14 +1,13 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
-import MessageInput from '../../../dist/message-input';
-import Button from '../../../dist/button';
-import IconEmoji from '../../../dist/icons/icon-emoji';
-import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-
-const usage = '```js\n import MessageInput from \'anchor-ui/message-input\';';
+import MessageInput from '../../../../dist/message-input';
+import Button from '../../../../dist/button';
+import IconEmoji from '../../../../dist/icons/icon-emoji';
+import Props from '../props';
+import components from '../../../components.json';
+import Paper from '../../../../dist/paper';
+import example from './example';
+import Markdown from '../markdown';
 
 class MessageInputDoc extends React.Component {
   constructor() {
@@ -48,8 +47,7 @@ class MessageInputDoc extends React.Component {
           <p>{componentData.description}</p>
         </section>
         <section>
-          <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
+          <Markdown markdown={example} title="Code example" />
         </section>
         <section>
           <h1>Examples</h1>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import MenuItem from '../../../dist/menu-item';
 import IconMenu from '../../../dist/icon-menu';
@@ -8,8 +7,13 @@ import components from '../../components.json';
 import IconReport from '../../../dist/icons/icon-report';
 import IconMore from '../../../dist/icons/icon-more';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import MenuItem from \'anchor-ui/menu-item\';';
+const usage = `
+  \`\`\`js
+  import MenuItem from 'anchor-ui/menu-item';
+  \`\`\`
+`;
 
 const MenuItemDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'MenuItem');
@@ -33,10 +37,7 @@ const MenuItemDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>

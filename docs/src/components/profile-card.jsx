@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import ProfileCard from '../../../dist/profile-card';
 import components from '../../components.json';
 import Props from './props';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import ProfileCard from \'anchor-ui/profile-card\';';
+const usage = `
+  \`\`\`js
+  import ProfileCard from 'anchor-ui/profile-card';
+  \`\`\`
+`;
 
 const ProfileCardDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ProfileCard');
@@ -24,10 +28,7 @@ const ProfileCardDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>

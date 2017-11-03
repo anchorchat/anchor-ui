@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Avatar from '../../../dist/avatar';
 import components from '../../components.json';
 import Props from './props';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Avatar from \'anchor-ui/avatar\';';
+const usage = `
+  \`\`\`js
+  import Avatar from 'anchor-ui/avatar';
+  \`\`\`
+`;
 
 const AvatarDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Avatar');
@@ -28,10 +32,7 @@ const AvatarDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>

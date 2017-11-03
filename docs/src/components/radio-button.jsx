@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import RadioButton from '../../../dist/radio-button';
 import RadioButtonGroup from '../../../dist/radio-button-group';
@@ -7,8 +6,13 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 import Avatar from '../../../dist/avatar';
+import Markdown from './markdown';
 
-const usage = '```js\n import RadioButton from \'anchor-ui/radio-button\';';
+const usage = `
+  \`\`\`js
+  import RadioButton from 'anchor-ui/radio-button';
+  \`\`\`
+`;
 
 class RadioButtonDoc extends Component {
   constructor() {
@@ -54,10 +58,7 @@ class RadioButtonDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <section>
-          <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
-        </section>
+        <Markdown markdown={usage} title="Code example" />
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>

@@ -1,6 +1,5 @@
 /* global alert */
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
@@ -10,8 +9,37 @@ import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
+import Markdown from './markdown';
 
-const usage = '```js\n import Message from \'anchor-ui/message\';';
+const usage = `
+  \`\`\`js
+  import Message from 'anchor-ui/message';
+  \`\`\`
+`;
+const scalingEmoji = `
+  \`\`\`css
+  /* default */
+  .emojione {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-top: -4px;
+  }
+
+  /* scaling */
+  .small .emojione {
+    font-size: 22px;
+  }
+
+  .medium .emojione {
+    font-size: 26px;
+  }
+
+  .large .emojione {
+    font-size: 30px;
+  }
+  \`\`\`
+`;
 
 const messages = [
   {
@@ -133,28 +161,6 @@ class MessageDoc extends Component {
         margin: '5px'
       }
     };
-    const scalingEmoji = `
-      /* default */
-      .emojione {
-        width: 1em;
-        height: 1em;
-        vertical-align: middle;
-        margin-top: -4px;
-      }
-
-      /* scaling */
-      .small .emojione {
-        font-size: 22px;
-      }
-
-      .medium .emojione {
-        font-size: 26px;
-      }
-
-      .large .emojione {
-        font-size: 30px;
-      }
-    `;
 
     const menuItems = [
       <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
@@ -168,10 +174,7 @@ class MessageDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <section>
-          <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
-        </section>
+        <Markdown markdown={usage} title="Code example" />
         <a
           href="https://www.emojione.com/"
           target="_blank"
@@ -185,7 +188,7 @@ class MessageDoc extends Component {
             If you would like the emoji&apos;s to scale with the font size add the
             following to your style sheet:
           </p>
-          <ReactMarkdown source={scalingEmoji} className="markdown" />
+          <Markdown markdown={scalingEmoji} title="Scaling emoji's" />
         </section>
         <section>
           <h1>Examples</h1>

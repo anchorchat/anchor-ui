@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import ChannelHeader from '../../../dist/channel-header';
 import Button from '../../../dist/button';
@@ -8,8 +7,13 @@ import IconPeople from '../../../dist/icons/icon-people';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import ChannelHeader from \'anchor-ui/channel-header\';';
+const usage = `
+  \`\`\`js
+  import ChannelHeader from 'anchor-ui/channel-header';
+  \`\`\`
+`;
 
 const ChannelHeaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ChannelHeader');
@@ -34,10 +38,7 @@ const ChannelHeaderDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
