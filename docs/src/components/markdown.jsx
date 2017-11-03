@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import marked from 'marked';
 import prism from 'prismjs';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-jsx';
 
 const propTypes = {
@@ -9,8 +11,8 @@ const propTypes = {
 };
 
 marked.setOptions({
-  highlight(code) {
-    return prism.highlight(code, prism.languages.jsx);
+  highlight(code, language) {
+    return prism.highlight(code, prism.languages[language]);
   }
 });
 
