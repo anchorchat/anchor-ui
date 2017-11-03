@@ -72,7 +72,7 @@ h2,
 }
 
 .page > section:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .github {
