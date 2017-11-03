@@ -62,7 +62,7 @@ h2 {
   height: calc(100% - 56px);
 }
 
-main > article > article {
+.page {
   width: calc(100% - 200px);
   height: 100%;
   overflow-y: auto;
