@@ -52,6 +52,7 @@ import EmojiFilter from './components/emoji-filter';
 import Gallery from './components/gallery';
 import Media from './components/media';
 import './index.css';
+import './prism.css';
 
 ReactDOM.render(
   <StyleRoot>

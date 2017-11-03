@@ -137,25 +137,6 @@ tr {
   width: 24px;
 }
 
-.markdown {
-  padding: 15px;
-  background: #F7F7F7;
-  margin: 16px 0;
-  width: auto;
-}
-
-.markdown * {
-  font-family: 'Inconsolata', monospace;
-}
-
-pre {
-  margin: 0;
-}
-
-code {
-  color: #1BA6C4;
-}
-
 tbody tr td:nth-of-type(2) {
   text-transform: capitalize;
 }
