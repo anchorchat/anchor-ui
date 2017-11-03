@@ -46,7 +46,7 @@ const LoaderDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Loader</h1>
       <Alert
         style={style.alert}

@@ -28,7 +28,7 @@ const DividerDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Divider</h1>
       <section>
         <h1>Description</h1>

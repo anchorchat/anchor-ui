@@ -65,7 +65,7 @@ class PaginationDoc extends Component {
       button: { margin: '10px' }
     };
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Pagination</h1>
         <section>
           <h1>Description</h1>

@@ -26,7 +26,7 @@ const AvatarDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Avatar</h1>
       <section>
         <h1>Description</h1>

@@ -63,7 +63,7 @@ class CheckboxDoc extends Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Checkbox</h1>
         <section>
           <h1>Description</h1>

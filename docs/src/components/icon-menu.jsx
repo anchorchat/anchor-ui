@@ -43,7 +43,7 @@ const IconMenuDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>IconMenu</h1>
       <section>
         <h1>Description</h1>

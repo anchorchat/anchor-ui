@@ -30,7 +30,7 @@ const AppHeaderDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>AppHeader</h1>
       <section>
         <h1>Description</h1>

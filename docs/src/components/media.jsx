@@ -51,7 +51,7 @@ class MediaDoc extends Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Media</h1>
         <section>
           <h1>Description</h1>

@@ -40,7 +40,7 @@ class MessageInputDoc extends React.Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>MessageInput</h1>
         <section>
           <h1>Description</h1>

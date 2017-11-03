@@ -88,7 +88,7 @@ class GalleryDoc extends Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Gallery</h1>
         <section>
           <h1>Description</h1>

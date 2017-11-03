@@ -81,7 +81,7 @@ const TableDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Table</h1>
       <section>
         <h1>Description</h1>

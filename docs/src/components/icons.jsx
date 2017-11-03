@@ -44,7 +44,7 @@ const IconsDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Icons</h1>
       <section>
         <h1>Description</h1>

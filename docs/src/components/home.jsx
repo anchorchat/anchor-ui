@@ -56,7 +56,7 @@ const Home = () => {
   };
 
   return (
-    <article className="home">
+    <article className="page home">
       <h1>UI kit for chat engines made with React</h1>
       <section>
         <p>
