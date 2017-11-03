@@ -110,7 +110,9 @@ const Home = () => {
             ))}
           </tbody>
         </table>
-        <h2>Peer Dependencies</h2>
+      </section>
+      <section>
+        <h1>Peer Dependencies</h1>
         <table>
           <thead>
             <tr>
