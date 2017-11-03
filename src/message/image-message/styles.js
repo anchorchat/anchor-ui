@@ -7,7 +7,7 @@ export default {
     boxSizing: 'border-box',
     color: colors.primaryText,
     marginLeft: '16px',
-    maxWidth: '75%',
+    maxWidth: '80%',
     padding: '12px',
     position: 'relative',
     wordBreak: 'break-word'
@@ -26,8 +26,7 @@ export default {
     color: colors.primaryText,
     fontSize: '16px',
     lineHeight: '18px',
-    margin: '0',
-    flexDirection: 'column'
+    margin: '0'
   },
   image: {
     borderRadius: '3px',
@@ -41,5 +40,10 @@ export default {
     marginLeft: '0',
     marginRight: '0',
     maxWidth: '100%'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '3px',
+    right: '0'
   }
 };

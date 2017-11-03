@@ -12,7 +12,7 @@ describe('MessageHeader.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.header(false, false, 'small', null, { color: 'red' });
+      const style = getStyles.header(false, false, 'small', null, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -48,10 +48,16 @@ describe('MessageHeader.getStyles', () => {
     });
 
     it('should add badge styles', () => {
-      const style = getStyles.header(false, false, 'large', 'badge');
+      const style = getStyles.header(false, false, 'small', 'badge');
 
       expect(style).to.have.property('display', 'flex');
       expect(style).to.have.property('alignItems', 'center');
+    });
+
+    it('should add iconMenu styles', () => {
+      const style = getStyles.header(false, false, 'small', null, true);
+
+      expect(style).to.have.property('marginRight', '28px');
     });
   });
 

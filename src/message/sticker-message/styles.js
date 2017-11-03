@@ -35,7 +35,7 @@ export default {
     maxWidth: '152px',
     maxHeight: '152px',
     marginLeft: '16px',
-    float: 'left',
+    alignSelf: 'flex-start',
     marginTop: '5px'
   },
   compact: {
@@ -44,5 +44,10 @@ export default {
     maxWidth: '100%',
     display: 'flex',
     alignSelf: 'flex-start'
+  },
+  iconMenu: {
+    position: 'absolute',
+    top: '3px',
+    right: '0'
   }
 };

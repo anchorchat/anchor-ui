@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import styles from './styles';
 
 class ImageMessage extends Component {
   constructor() {
@@ -45,29 +46,24 @@ class ImageMessage extends Component {
       collapsed,
       collapsedText,
       locale,
-      badge
+      badge,
+      iconMenu
     } = this.props;
     const { lightbox } = this.state;
 
     let onClick = null;
+    let headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '8px' });
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
-    let headerStyle = messageHeaderStyle;
-    let imageStyle = styles.image;
-
-    if (compact) {
-      headerStyle = combineStyles(headerStyle, { marginBottom: '8px' });
-    }
-
-    if (enableLightbox) {
-      imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
+    if (collapsed) {
+      headerStyle = combineStyles(headerStyle, { marginBottom: '0' });
     }
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -76,11 +72,12 @@ class ImageMessage extends Component {
           headerStyle={headerStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
-        <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+        <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {
             !collapsed
-            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            ? <img onClick={onClick} style={getStyles.image(enableLightbox)} src={message.body} alt="user-upload" />
             : <span>{collapsedText}</span>
           }
           <MessageTime
@@ -90,8 +87,11 @@ class ImageMessage extends Component {
             createdAt={message.createdAt}
             timeFormat={timeFormat}
             locale={locale}
+            collapsed={collapsed}
+            fontSize={fontSize}
           />
         </p>
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
           ? <Lightbox
@@ -129,9 +129,10 @@ ImageMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
+  collapsedText: PropTypes.node.isRequired,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 ImageMessage.defaultProps = {
@@ -147,9 +148,8 @@ ImageMessage.defaultProps = {
   enableLightbox: false,
   color: '',
   collapsed: false,
-  collapsedText: 'This image has been collapsed, click the button to expand it.',
-  iconMenu: null,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 export default ImageMessage;
