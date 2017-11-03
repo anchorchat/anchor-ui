@@ -57,7 +57,7 @@ class App extends Component {
               </a>
             }
           />
-          <article className="doc">
+          <article className="docs">
             <Nav />
             {childrenWithProps}
           </article>
