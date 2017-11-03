@@ -1,29 +1,29 @@
 /**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
- * Based on https://github.com/chriskempson/tomorrow-theme
- * @author Rose Pritchard
- */
+* prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+* Based on https://github.com/chriskempson/tomorrow-theme
+* @author Rose Pritchard
+*/
 
 code,
 pre {
-	color: #E46C75;
-	background: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+  color: #E46C75;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
   font-size: 14px;
   border-radius: 4px;
 }
@@ -31,21 +31,21 @@ pre {
 /* Code blocks */
 pre {
   height: 100%;
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
 }
 
 :not(pre) > code,
 pre {
-	background: #282C34;
+  background: #282C34;
 }
 
 /* Inline code */
 :not(pre) > code {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
 }
 
 .token.comment,
@@ -53,18 +53,18 @@ pre {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #999;
+  color: #999;
 }
 
 .token.punctuation {
-	color: #ccc;
+  color: #ccc;
 }
 
 .token.tag,
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-	color: #e2777a;
+  color: #e2777a;
 }
 
 .token.tag {
@@ -76,13 +76,13 @@ pre {
 }
 
 .token.function-name {
-	color: #6196cc;
+  color: #6196cc;
 }
 
 .token.boolean,
 .token.number,
 .token.function {
-	color: #f08d49;
+  color: #f08d49;
 }
 
 .token.function {
@@ -93,7 +93,7 @@ pre {
 .token.class-name,
 .token.constant,
 .token.symbol {
-	color: #f8c555;
+  color: #f8c555;
 }
 
 .token.property {
@@ -104,7 +104,7 @@ pre {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-	color: #BF78DC;
+  color: #BF78DC;
 }
 
 .token.selector {
@@ -116,30 +116,30 @@ pre {
 .token.attr-value,
 .token.regex,
 .token.variable {
-	color: #95C37A;
+  color: #95C37A;
 }
 
 .token.operator,
 .token.entity {
-	color: #C978DC;
+  color: #C978DC;
 }
 
 .token.url {
-	color: #67cdcc;
+  color: #67cdcc;
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 .token.inserted {
-	color: green;
+  color: green;
 }
