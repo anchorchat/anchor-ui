@@ -19,7 +19,8 @@ export default {
   contentContainer: {
     position: 'relative',
     maxHeight: '100%',
-    width: '100%'
+    width: '100%',
+    overflowY: 'auto',
   },
   overlay: {
     zIndex: 'initial',
