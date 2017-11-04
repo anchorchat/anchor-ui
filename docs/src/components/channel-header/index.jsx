@@ -1,19 +1,14 @@
 import React from 'react';
 import _ from 'lodash';
-import ChannelHeader from '../../../dist/channel-header';
-import Button from '../../../dist/button';
-import IconChannels from '../../../dist/icons/icon-channels';
-import IconPeople from '../../../dist/icons/icon-people';
-import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Markdown from './markdown';
-
-const usage = `
-  \`\`\`js
-  import ChannelHeader from 'anchor-ui/channel-header';
-  \`\`\`
-`;
+import ChannelHeader from '../../../../dist/channel-header';
+import Button from '../../../../dist/button';
+import IconChannels from '../../../../dist/icons/icon-channels';
+import IconPeople from '../../../../dist/icons/icon-people';
+import Props from '../props';
+import components from '../../../components.json';
+import Paper from '../../../../dist/paper';
+import Markdown from '../markdown';
+import example from './example';
 
 const ChannelHeaderDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'ChannelHeader');
@@ -38,9 +33,9 @@ const ChannelHeaderDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
+        <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
           <ChannelHeader
             name="Channel 1"
