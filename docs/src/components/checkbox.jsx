@@ -66,6 +66,10 @@ class CheckboxDoc extends Component {
         marginTop: '20px',
         color: colors.primaryText
       },
+      list: {
+        paddingLeft: '24px',
+        listStyle: 'initial'
+      }
     };
 
     return (
@@ -99,12 +103,14 @@ class CheckboxDoc extends Component {
             </section>
             <Divider />
             <section>
-              <p style={style.label}>Checked Items: </p>
-              {
-                _.map(values, (value, key) => (
-                  <p key={key} style={style.label}>- {value}</p>
-                ))
-              }
+              <p style={style.label}>Checked Items:</p>
+              <ul style={style.list}>
+                {
+                  _.map(values, (value, key) => (
+                    <li key={key} style={style.label}>{value}</li>
+                  ))
+                }
+              </ul>
             </section>
           </Paper>
         </section>
