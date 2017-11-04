@@ -1,18 +1,13 @@
 import React from 'react';
 import _ from 'lodash';
-import IconEmoji from '../../../dist/icons/icon-emoji';
-import Button from '../../../dist/button';
-import Props from './props';
-import components from '../../components.json';
-import colors from '../../../dist/settings/colors';
-import Paper from '../../../dist/paper';
-import Markdown from './markdown';
-
-const usage = `
-  \`\`\`js
-  import Button from 'anchor-ui/button';
-  \`\`\`
-`;
+import IconEmoji from '../../../../dist/icons/icon-emoji';
+import Button from '../../../../dist/button';
+import Props from '../props';
+import components from '../../../components.json';
+import colors from '../../../../dist/settings/colors';
+import Paper from '../../../../dist/paper';
+import Markdown from '../markdown';
+import example from './example';
 
 const ButtonDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Button');
@@ -38,42 +33,23 @@ const ButtonDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
+        <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
-          <Button
-            style={style.button}
-            onClick={() => {}}
-          >
+          <Button style={style.button}>
             <p>Default</p>
           </Button>
-          <Button
-            style={style.button}
-            onClick={() => {}}
-            inverted
-          >
+          <Button style={style.button} inverted>
             <p>Inverted</p>
           </Button>
-          <Button
-            style={style.button}
-            onClick={() => {}}
-            disabled
-          >
+          <Button style={style.button} disabled>
             <p>Disabled</p>
           </Button>
-          <Button
-            style={style.flatbutton}
-            onClick={() => {}}
-            flatButton
-          >
+          <Button style={style.flatbutton} flatButton>
             <p>Flatbutton</p>
           </Button>
-          <Button
-            style={style.button}
-            onClick={() => {}}
-            iconButton
-          >
+          <Button style={style.button} iconButton>
             <IconEmoji />
           </Button>
         </Paper>
