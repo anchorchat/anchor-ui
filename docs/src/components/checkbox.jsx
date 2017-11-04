@@ -27,19 +27,21 @@ class CheckboxDoc extends Component {
 
   changeCheckBox = (event) => {
     const { values } = this.state;
-    const checked = event.target.checked;
-    const value = event.target.value;
+    const { value, checked } = event.target;
 
     if (checked && !_.includes(values, value)) {
-      values.push(value);
+      return this.setState({
+        values: _.union(values, [value])
+      });
     }
 
     if (!checked && _.includes(values, value)) {
-      const index = _.indexOf(values, value);
-      values.splice(index, 1);
+      return this.setState({
+        values: _.without(values, value)
+      });
     }
 
-    this.setState({ values });
+    return false;
   }
 
   render() {
