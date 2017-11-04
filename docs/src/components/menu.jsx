@@ -55,7 +55,7 @@ class MenuDoc extends Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Menu</h1>
         <section>
           <h1>Description</h1>

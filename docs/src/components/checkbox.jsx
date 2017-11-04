@@ -50,11 +50,15 @@ class CheckboxDoc extends Component {
       checkboxWrapper: {
         display: 'flex',
         flexWrap: 'wrap',
-        alignItems: 'center',
+        alignItems: 'center'
+      },
+      paper: {
         margin: 0,
         padding: '20px'
       },
-      checkbox: { margin: '10px' },
+      checkbox: {
+        margin: '10px'
+      },
       label: {
         paddingLeft: 0,
         marginTop: '20px',
@@ -63,7 +67,7 @@ class CheckboxDoc extends Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Checkbox</h1>
         <section>
           <h1>Description</h1>
@@ -72,7 +76,7 @@ class CheckboxDoc extends Component {
         <Markdown markdown={usage} title="Code example" />
         <section>
           <h1>Examples</h1>
-          <Paper>
+          <Paper style={style.paper}>
             <section style={style.checkboxWrapper}>
               <Checkbox
                 onChange={this.changeCheckBox}

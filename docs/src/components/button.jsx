@@ -32,7 +32,7 @@ const ButtonDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Button</h1>
       <section>
         <h1>Description</h1>

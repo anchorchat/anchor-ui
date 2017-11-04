@@ -40,7 +40,7 @@ const ThemeProviderDoc = ({ setColor }) => {
     button: { margin: '10px' }
   };
   return (
-    <article className="doc">
+    <article className="page">
       <h1>ThemeProvider</h1>
       <section>
         <h1>Description</h1>

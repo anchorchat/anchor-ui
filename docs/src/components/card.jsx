@@ -30,7 +30,7 @@ const CardDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Card</h1>
       <section>
         <h1>Description</h1>

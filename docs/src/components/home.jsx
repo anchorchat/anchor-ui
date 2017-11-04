@@ -2,6 +2,12 @@ import React from 'react';
 import _ from 'lodash';
 import npmPackage from '../../../package.json';
 import Markdown from './markdown';
+import Table from '../../../dist/table';
+import TableHeader from '../../../dist/table-header';
+import TableHeaderColumn from '../../../dist/table-header-column';
+import TableBody from '../../../dist/table-body';
+import TableRow from '../../../dist/table-row';
+import TableColumn from '../../../dist/table-column';
 
 const install = `
   \`\`\`bash
@@ -52,11 +58,21 @@ const Home = () => {
     link: {
       textDecoration: 'underline',
       fontWeight: 'normal'
+    },
+    table: {
+      minWidth: '240px',
+      maxWidth: '360px',
+      flex: '1'
+    },
+    tables: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between'
     }
   };
 
   return (
-    <article className="home">
+    <article className="page">
       <h1>UI kit for chat engines made with React</h1>
       <section>
         <p>
@@ -67,56 +83,70 @@ const Home = () => {
       <section>
         <h1>Getting started</h1>
         <Markdown markdown={install} title="Install from npm" />
-        <h2>Font</h2>
+      </section>
+      <section>
+        <h1>Font</h1>
         <p>
           Anchor UI is designed with <a href="https://fonts.google.com/specimen/Lato" target="_blank" rel="noopener noreferrer">Lato</a> but you can also supply your own font with CSS.
         </p>
         <Markdown markdown={font} title="Install Lato" />
-        <h2>Usage</h2>
+      </section>
+      <section>
+        <h1>Usage</h1>
         <Markdown markdown={named} title="Import using named import" />
         <Markdown markdown={defaultImport} title="Or use default import" />
-        <h2>Theme</h2>
+      </section>
+      <section>
+        <h1>Theme</h1>
         <p>
           Add your own color to the components, color is applied with props. <br />
           Wrap ThemeProvider around components you want your theme color in.
         </p>
         <Markdown markdown={theme} title="Code example" />
+      </section>
+      <section>
         <h2>StyleRoot</h2>
         <p>If you want to use inline Media Queries or inline CSS animations you need to wrap your app in <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component</p>
-        <h2>Dependencies</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Version</th>
-            </tr>
-          </thead>
-          <tbody>
-            {_.map(npmPackage.dependencies, (version, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td>{version}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <h2>Peer Dependencies</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Version</th>
-            </tr>
-          </thead>
-          <tbody>
-            {_.map(npmPackage.peerDependencies, (version, name) => (
-              <tr key={name}>
-                <td>{name}</td>
-                <td>{version}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      </section>
+      <section style={style.tables}>
+        <section>
+          <h1>Dependencies</h1>
+          <Table style={style.table}>
+            <TableHeader>
+              <TableRow>
+                <TableHeaderColumn>Name</TableHeaderColumn>
+                <TableHeaderColumn>Version</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {_.map(npmPackage.dependencies, (version, name) => (
+                <TableRow key={name}>
+                  <TableColumn>{name}</TableColumn>
+                  <TableColumn>{version}</TableColumn>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </section>
+        <section>
+          <h1>Peer Dependencies</h1>
+          <Table style={style.table}>
+            <TableHeader>
+              <TableRow>
+                <TableHeaderColumn>Name</TableHeaderColumn>
+                <TableHeaderColumn>Version</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {_.map(npmPackage.peerDependencies, (version, name) => (
+                <TableRow key={name}>
+                  <TableColumn>{name}</TableColumn>
+                  <TableColumn>{version}</TableColumn>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </section>
       </section>
     </article>
   );

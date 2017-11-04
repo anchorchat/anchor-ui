@@ -39,7 +39,7 @@ class SearchBoxDoc extends React.Component {
     };
 
     return (
-      <article className="doc">
+      <article className="page">
         <h1>SearchBox</h1>
         <section>
           <h1>Description</h1>

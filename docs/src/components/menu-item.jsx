@@ -31,7 +31,7 @@ const MenuItemDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Menu Item</h1>
       <section>
         <h1>Description</h1>

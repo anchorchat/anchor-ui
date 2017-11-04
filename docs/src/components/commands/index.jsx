@@ -16,7 +16,7 @@ const CommandsDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Commands');
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Commands</h1>
       <section>
         <h1>Description</h1>

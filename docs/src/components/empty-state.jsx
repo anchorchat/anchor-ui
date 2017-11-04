@@ -39,7 +39,7 @@ const EmptyStateDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>EmptyState</h1>
       <section>
         <h1>Description</h1>
