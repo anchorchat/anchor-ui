@@ -15,14 +15,8 @@ const usage = `
 `;
 
 class CheckboxDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      values: ['One']
-    };
-
-    this.changeCheckBox = this.changeCheckBox.bind(this);
+  state = {
+    values: ['One']
   }
 
   changeCheckBox = (event) => {
