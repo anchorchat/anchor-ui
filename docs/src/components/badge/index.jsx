@@ -5,26 +5,7 @@ import Props from '../props';
 import components from '../../../components.json';
 import Paper from '../../../../dist/paper';
 import Markdown from '../markdown';
-
-const usage = `
-  \`\`\`jsx
-  import React from 'react';
-  import Badge from 'anchor-ui/badge';
-
-  const BadgeExample = () => (
-    <section>
-      <Badge value={9} maxValue={9} />
-      <Badge value={10} maxValue={9} />
-      <Badge value={10} maxValue={9} inverted />
-      <Badge value={100} />
-      <Badge value={100} maxValue={99} />
-      <Badge value={1000} />
-    </section>
-  );
-
-  export default BadgeExample;
-  \`\`\`
-`;
+import example from './example';
 
 const BadgeDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Badge');
@@ -48,7 +29,7 @@ const BadgeDoc = () => {
       </section>
       <section>
         <h1>Examples</h1>
-        <Markdown markdown={usage} title="Code example" />
+        <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
           <Badge style={style.badge} value={9} maxValue={9} />
           <Badge style={style.badge} value={10} maxValue={9} />

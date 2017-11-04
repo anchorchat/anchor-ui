@@ -1,18 +1,13 @@
 import React from 'react';
 import _ from 'lodash';
-import Card from '../../../dist/card';
-import CardHeader from '../../../dist/card-header';
-import CardContent from '../../../dist/card-content';
-import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Markdown from './markdown';
-
-const usage = `
-  \`\`\`js
-  import Card from 'anchor-ui/card';
-  \`\`\`
-`;
+import Card from '../../../../dist/card';
+import CardHeader from '../../../../dist/card-header';
+import CardContent from '../../../../dist/card-content';
+import Props from '../props';
+import components from '../../../components.json';
+import Paper from '../../../../dist/paper';
+import Markdown from '../markdown';
+import example from './example';
 
 const CardDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Card');
@@ -36,9 +31,9 @@ const CardDoc = () => {
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
+        <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
           <Card style={style.card}>
             <CardHeader title="Title" />
