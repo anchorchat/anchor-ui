@@ -47,6 +47,38 @@ describe('Menu.getStyles', () => {
     });
   });
 
+  describe('contentContainer', () => {
+    it('should get styles', () => {
+      const style = getStyles.contentContainer();
+
+      expect(style).to.deep.equal(styles.contentContainer);
+    });
+
+    it('should add header styles', () => {
+      const style = getStyles.contentContainer(true);
+
+      expect(style).to.have.property('maxHeight', 'calc(100% - 48px)');
+    });
+
+    it('should add footer styles', () => {
+      const style = getStyles.contentContainer(false, true);
+
+      expect(style).to.have.property('maxHeight', 'calc(100% - 35px)');
+    });
+
+    it('should add header & footer styles', () => {
+      const style = getStyles.contentContainer(true, true);
+
+      expect(style).to.have.property('maxHeight', 'calc(100% - 83px)');
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.contentContainer(false, false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
   describe('header', () => {
     it('should get styles', () => {
       const style = getStyles.header();
