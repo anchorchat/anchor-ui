@@ -56,9 +56,9 @@ class MenuDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <Markdown markdown={example} title="Code example" />
         <section>
           <h1>Examples</h1>
+          <Markdown markdown={example} title="Code example" />
           <Paper style={style.paper}>
             <Menu
               style={{ height: 'auto', display: 'inline-block' }}

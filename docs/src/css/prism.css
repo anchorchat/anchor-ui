@@ -34,6 +34,11 @@ pre {
   background: #282C34;
 }
 
+code > *::selection,
+pre > *::selection {
+  background-color: #abb2bf;
+}
+
 /* Inline code */
 :not(pre) > code {
   padding: .1em;
