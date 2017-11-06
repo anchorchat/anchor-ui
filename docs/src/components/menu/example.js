@@ -7,7 +7,7 @@ export default `
   class MyComponent extends Component {
     state = {
       open: false,
-      active: ''
+      activeRoute: ''
     };
 
     toggleMenu() {
@@ -16,17 +16,14 @@ export default `
       });
     }
 
-    handleOnClick(location) {
-      // Assuming you use react-router
-      history.push(location);
-
+    handleClick(location) {
       this.setState({
-        active: location
+        activeRoute: location
       });
     }
 
     render() {
-      const { open, active } = this.state;
+      const { open, activeRoute } = this.state;
 
       return (
         <section>
@@ -35,22 +32,22 @@ export default `
             header="Menu"
             open={open}
             headerIcon={<IconRocket />}
-            footer="version 8af2fbb"
+            footer="Footer"
           >
             <MenuItem
               text="Home"
-              onClick={() => this.handleOnClick('/')}
-              active={active === '/'}
+              onClick={() => this.handleClick('/')}
+              active={activeRoute === '/'}
             />
             <MenuItem
               text="Docs"
-              onClick={() => this.handleOnClick('/docs')}
-              active={active === '/docs'}
+              onClick={() => this.handleClick('/docs')}
+              active={activeRoute === '/docs'}
             />
             <MenuItem
               text="Dashboard"
-              onClick={() => this.handleOnClick('/dashboard')}
-              active={active === '/dashboard'}
+              onClick={() => this.handleClick('/dashboard')}
+              active={activeRoute === '/dashboard'}
             />
           </Menu>
         </section>
