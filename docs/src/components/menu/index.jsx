@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Menu from '../../../dist/menu';
-import MenuItem from '../../../dist/menu-item';
-import Button from '../../../dist/button';
-import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import IconRocket from '../../../dist/icons/icon-rocket';
-import Markdown from './markdown';
-
-const usage = `
-  \`\`\`js
-  import Menu from 'anchor-ui/menu';
-  \`\`\`
-`;
+import Menu from '../../../../dist/menu';
+import MenuItem from '../../../../dist/menu-item';
+import Button from '../../../../dist/button';
+import Props from '../props';
+import components from '../../../components.json';
+import Paper from '../../../../dist/paper';
+import IconRocket from '../../../../dist/icons/icon-rocket';
+import Markdown from '../markdown';
+import example from './example';
 
 class MenuDoc extends Component {
   constructor() {
@@ -61,7 +56,7 @@ class MenuDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <Markdown markdown={usage} title="Code example" />
+        <Markdown markdown={example} title="Code example" />
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>

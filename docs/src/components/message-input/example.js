@@ -1,5 +1,5 @@
 export default `
-  \`\`\`js
+  \`\`\`jsx
   import React, { Component } from 'react';
   import MessageInput from 'anchor-ui/message-input';
 
