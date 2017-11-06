@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Pagination from '../../../dist/pagination';
 import Props from './props';
@@ -12,8 +11,13 @@ import TableHeaderColumn from '../../../dist/table-header-column';
 import TableBody from '../../../dist/table-body';
 import TableRow from '../../../dist/table-row';
 import TableColumn from '../../../dist/table-column';
+import Markdown from './markdown';
 
-const usage = '```js\n import Pagination from \'anchor-ui/pagination\';';
+const usage = `
+  \`\`\`js
+  import Pagination from 'anchor-ui/pagination';
+  \`\`\`
+`;
 
 const range = _.range(1, 351);
 const listDefault = _.map(range, number => ({ id: number, name: `Item ${number}` }));
@@ -61,16 +65,13 @@ class PaginationDoc extends Component {
       button: { margin: '10px' }
     };
     return (
-      <article className="doc">
+      <article className="page">
         <h1>Pagination</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <section>
-          <h1>Usage</h1>
-          <ReactMarkdown source={usage} className="markdown" />
-        </section>
+        <Markdown markdown={usage} title="Code example" />
         <section>
           <h1>Default pagination</h1>
           <Paper style={style.paper}>

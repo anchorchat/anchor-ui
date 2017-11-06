@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
@@ -7,8 +6,13 @@ import Props from './props';
 import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import Lightbox from \'anchor-ui/message\';';
+const usage = `
+  \`\`\`js
+  import Lightbox from 'anchor-ui/lightbox';
+  \`\`\`
+`;
 
 const message = {
   body: 'https://source.unsplash.com/random/1280x1080',
@@ -35,16 +39,13 @@ const LightboxDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Lightbox</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Example</h1>
         <Paper style={style.paper}>

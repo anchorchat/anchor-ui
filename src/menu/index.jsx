@@ -58,7 +58,7 @@ class Menu extends Component {
           ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1>
           : null
         }
-        <section style={getStyles.contentContainer(footer, contentContainerStyle)}>
+        <section style={getStyles.contentContainer(header, footer, contentContainerStyle)}>
           {menuItems}
           {footer ? <span style={getStyles.footer(!closeMenu, footerStyle)}>{footer}</span> : null}
         </section>

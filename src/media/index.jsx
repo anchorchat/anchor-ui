@@ -41,7 +41,9 @@ class Media extends Component {
   }
 
   componentWillUnmount() {
-    this.mediaQueryList.removeListener(this.updateMatches);
+    forEach(this.mediaQueryList, (value, key) => {
+      this.mediaQueryList[key].removeListener(this.updateMatches);
+    });
   }
 
   updateMatches = () => {
