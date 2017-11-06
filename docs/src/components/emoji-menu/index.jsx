@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import emojione from 'emojione';
-import EmojiMenu from '../../../dist/emoji-menu';
-import Button from '../../../dist/button';
-import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Markdown from './markdown';
-
-const usage = `
-  \`\`\`js
-  import EmojiMenu from 'anchor-ui/emoji-menu';
-  \`\`\`
-`;
+import EmojiMenu from '../../../../dist/emoji-menu';
+import Button from '../../../../dist/button';
+import Props from '../props';
+import components from '../../../components.json';
+import Paper from '../../../../dist/paper';
+import Markdown from '../markdown';
+import example from './example';
 
 class EmojiMenuDoc extends Component {
   static createMarkup = text => ({
@@ -52,16 +47,18 @@ class EmojiMenuDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <a
-          href="https://www.emojione.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          This component uses free Emoji icons supplied by EmojiOne
-        </a>
-        <Markdown markdown={usage} title="Code example" />
+        <section>
+          <a
+            href="https://www.emojione.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            This component uses free Emoji icons supplied by EmojiOne
+          </a>
+        </section>
         <section>
           <h1>Examples</h1>
+          <Markdown markdown={example} title="Code example" />
           <Paper style={style.paper}>
             {
               this.state.emoji
