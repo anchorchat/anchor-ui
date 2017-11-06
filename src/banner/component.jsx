@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Measure from 'react-measure';
 import styles from './styles';
 import getStyles from './get-styles';
+import Media from '../media';
 import Button from '../button';
 import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
@@ -42,20 +42,18 @@ class Banner extends Component {
     this.state = {
       type: 'desktop'
     };
-
-    this.handleMeasure = this.handleMeasure.bind(this);
   }
 
-  handleMeasure(dimensions) {
+  setMedia = (matches) => {
     const { type } = this.state;
 
-    if (dimensions.width < 728 && type === 'desktop') {
+    if (!matches.small && type === 'desktop') {
       this.setState({
         type: 'mobile'
       });
     }
 
-    if (dimensions.width > 728 && type === 'mobile') {
+    if (matches.small && type === 'mobile') {
       this.setState({
         type: 'desktop'
       });
@@ -70,17 +68,20 @@ class Banner extends Component {
       return null;
     }
 
+    const query = {
+      small: '(min-width: 728px)'
+    };
+
     return (
-      <Measure onMeasure={this.handleMeasure}>
-        <section style={styles.wrapper}>
-          <section style={getStyles.root(type, style)}>
-            {content[type]}
-            <Button iconButton onClick={hideBanner} style={styles.button}>
-              <IconClose color={colors.white} />
-            </Button>
-          </section>
+      <section style={styles.wrapper}>
+        <section style={getStyles.root(type, style)}>
+          {content[type]}
+          <Button iconButton onClick={hideBanner} style={styles.button}>
+            <IconClose color={colors.white} />
+          </Button>
         </section>
-      </Measure>
+        <Media query={query} onChange={this.setMedia} />
+      </section>
     );
   }
 }
