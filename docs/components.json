@@ -465,7 +465,7 @@
       }
     }
   },
-  "components/button/index.jsx": {
+  "components/button/component.jsx": {
     "description": "General purpose button with three types",
     "displayName": "Button",
     "methods": [],
