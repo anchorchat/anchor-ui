@@ -1,17 +1,16 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import addDays from 'date-fns/add_days';
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days';
-import Message from '../../../dist/message';
-import MessageList from '../../../dist/message-list';
-import Props from './props';
-import components from '../../components.json';
-import background from '../assets/images/channel-background.jpg';
-import Paper from '../../../dist/paper';
-import DateSeparator from '../../../dist/date-separator';
-
-const usage = '```js\n import DateSeparator from \'anchor-ui/date-separator\';';
+import Message from '../../../../dist/message';
+import MessageList from '../../../../dist/message-list';
+import Props from '../props';
+import components from '../../../components.json';
+import background from '../../assets/images/channel-background.jpg';
+import Paper from '../../../../dist/paper';
+import DateSeparator from '../../../../dist/date-separator';
+import Markdown from '../markdown';
+import example from './example';
 
 const messages = [
   {
@@ -58,18 +57,15 @@ const DateSeparatorDoc = () => {
   let lastDate = new Date();
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>{componentData.displayName}</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
       <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
-      <section>
         <h1>Examples</h1>
+        <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
           <MessageList style={style.messageList}>
             {messages.map((message, index) => {

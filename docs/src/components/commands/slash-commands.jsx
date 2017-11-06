@@ -61,7 +61,6 @@ class SlashCommands extends Component {
   }
 
   handleClose = () => {
-    console.log('close');
     this.setState({ valueToMatch: '', selectedCommand: '' });
   }
 

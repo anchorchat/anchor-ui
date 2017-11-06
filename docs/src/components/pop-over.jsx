@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import IconMenu from '../../../dist/icon-menu';
 import MenuItem from '../../../dist/menu-item';
@@ -7,8 +6,13 @@ import IconLanguage from '../../../dist/icons/icon-language';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Markdown from './markdown';
 
-const usage = '```js\n import PopOver from \'anchor-ui/pop-over\';';
+const usage = `
+  \`\`\`js
+  import PopOver from 'anchor-ui/pop-over';
+  \`\`\`
+`;
 
 const PopOverDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'PopOver');
@@ -28,16 +32,13 @@ const PopOverDoc = () => {
   };
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>PopOver</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
