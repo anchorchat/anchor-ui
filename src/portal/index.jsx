@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'; // eslint-disable-line import/no-extra
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 
-/** For transportation of elements to document.body of an element of choice */
+/** For transportation of elements to document.body or an element of choice */
 class Portal extends React.Component {
   static displayName = 'Portal'
 
