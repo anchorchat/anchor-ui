@@ -12,7 +12,7 @@ class Portal extends React.Component {
     /** Content to be portaled */
     children: PropTypes.node.isRequired,
     /** Optional node to portal children to */
-    node: PropTypes.node
+    node: PropTypes.instanceOf(Object)
   };
 
   static defaultProps = {
@@ -28,22 +28,24 @@ class Portal extends React.Component {
   }
 
   render() {
+    const { children, node } = this.props;
+
     if (!isObject(window) && !window.document && !window.document.createElement) {
       return false;
     }
 
-    if (!this.props.node && !this.defaultNode) {
+    if (!node && !this.defaultNode) {
       this.defaultNode = document.createElement('div');
       document.body.appendChild(this.defaultNode);
     }
 
     if (!isFunction(createPortal)) {
-      return this.props.children;
+      return children;
     }
 
     return createPortal(
-      this.props.children,
-      this.props.node || this.defaultNode
+      children,
+      node || this.defaultNode
     );
   }
 }
