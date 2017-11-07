@@ -24,11 +24,19 @@ const root = (open, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const contentContainer = (footer, overrideStyle) => {
+const contentContainer = (header, footer, overrideStyle) => {
   let style = styles.contentContainer;
+
+  if (header) {
+    style = combineStyles(style, { maxHeight: 'calc(100% - 48px)' });
+  }
 
   if (footer) {
     style = combineStyles(style, { maxHeight: 'calc(100% - 35px)' });
+  }
+
+  if (header && footer) {
+    style = combineStyles(style, { maxHeight: 'calc(100% - 83px)' });
   }
 
   return combineStyles(style, overrideStyle);

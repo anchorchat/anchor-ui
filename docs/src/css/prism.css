@@ -1,0 +1,143 @@
+/**
+* prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+* Based on https://github.com/chriskempson/tomorrow-theme
+* @author Rose Pritchard
+*/
+
+code,
+pre {
+  color: #E46C75;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Code blocks */
+pre {
+  height: 100%;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code,
+pre {
+  background: #282C34;
+}
+
+code > *::selection,
+pre > *::selection {
+  background-color: #abb2bf;
+}
+
+/* Inline code */
+:not(pre) > code {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.tag {
+  color: #E6C07C;
+}
+
+.token.attr-name {
+  color: #D39858;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.function {
+  color: #86b0f4;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.property {
+  color: #ABB2BF;
+}
+
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #BF78DC;
+}
+
+.token.selector {
+  color: #D39A67;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #95C37A;
+}
+
+.token.operator,
+.token.entity {
+  color: #C978DC;
+}
+
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
