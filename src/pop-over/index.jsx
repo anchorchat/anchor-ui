@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import { Portal } from 'react-portal';
+import Portal from '../portal';
 import getStyles from './get-styles';
 import Divider from '../divider';
 
@@ -36,7 +36,7 @@ const PopOver = ({
   }
 
   return (
-    <Portal node={document && document.getElementsByTagName('main')[0]}>
+    <Portal node={document.getElementsByTagName('main')[0]}>
       <section
         style={getStyles.root(position, style)}
         ref={popOverRef}

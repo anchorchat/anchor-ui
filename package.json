@@ -88,7 +88,6 @@
     "react-event-listener": "^0.4.5",
     "react-measure": "^1.4.5",
     "react-onclickoutside": "^6.6.3",
-    "react-portal": "^4.0.0",
     "recompose": "^0.22.0",
     "tlds": "^1.182.0"
   }
