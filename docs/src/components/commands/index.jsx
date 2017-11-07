@@ -1,27 +1,28 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import Props from '../props';
 import components from '../../../components.json';
 import SlashCommands from './slash-commands';
 import Mentions from './mentions';
+import Markdown from '../markdown';
 
-const usage = '```js\n import Commands from \'anchor-ui/commands\';';
+const usage = `
+  \`\`\`js
+  import Commands from 'anchor-ui/commands';
+  \`\`\`
+`;
 
 const CommandsDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Commands');
 
   return (
-    <article className="doc">
+    <article className="page">
       <h1>Commands</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <SlashCommands />

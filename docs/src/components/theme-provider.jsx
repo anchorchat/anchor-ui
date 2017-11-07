@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import _ from 'lodash';
 import ThemeProvider from '../../../dist/theme-provider';
 import Button from '../../../dist/button';
@@ -8,8 +7,25 @@ import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
 import colors from '../../../dist/settings/colors';
+import Markdown from './markdown';
 
-const usage = '```js\n import ThemeProvider from \'anchor-ui/theme-provider\';';
+const usage = `
+  \`\`\`jsx
+  import ThemeProvider from 'anchor-ui/theme-provider';
+
+  const App = () => (
+    <section>
+      <ThemeProvider color="#f2912c">
+        <Button>Orange Button</Button>
+      </ThemeProvider>
+      <ThemeProvider color="#22ac55">
+        <Button>Green Button</Button>
+      </ThemeProvider>
+    </section>
+  );
+  \`\`\`
+`;
+
 
 const ThemeProviderDoc = ({ setColor }) => {
   const componentData = _.find(components, component => component.displayName === 'ThemeProvider');
@@ -24,16 +40,13 @@ const ThemeProviderDoc = ({ setColor }) => {
     button: { margin: '10px' }
   };
   return (
-    <article className="doc">
+    <article className="page">
       <h1>ThemeProvider</h1>
       <section>
         <h1>Description</h1>
         <p>{componentData.description}</p>
       </section>
-      <section>
-        <h1>Usage</h1>
-        <ReactMarkdown source={usage} className="markdown" />
-      </section>
+      <Markdown markdown={usage} title="Code example" />
       <section>
         <h1>Examples</h1>
         <h2>Click one of the buttons to change the app&apos;s theme</h2>
