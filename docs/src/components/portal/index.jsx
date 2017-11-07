@@ -4,6 +4,7 @@ import _ from 'lodash';
 import IconRocket from '../../../../dist/icons/icon-rocket';
 import Button from '../../../../dist/button';
 import Portal from '../../../../dist/portal';
+import Alert from '../../../../dist/alert';
 import Props from '../props';
 import components from '../../../components.json';
 import Paper from '../../../../dist/paper';
@@ -35,12 +36,18 @@ class PortalDoc extends React.Component {
         margin: 0,
         padding: '20px'
       },
-      button: { margin: '10px' }
+      button: { margin: '10px' },
+      alert: { maxWidth: '100%' }
     };
 
     return (
       <article className="page">
         <h1>Portal</h1>
+        <Alert
+          style={style.alert}
+          text="Portal will only transport elements to desired element in React v16 or later. If React isn't at v16 it will render the element where it's called."
+          type="warning"
+        />
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
