@@ -5848,7 +5848,7 @@
     }
   },
   "components/portal/index.jsx": {
-    "description": "",
+    "description": "For transportation of elements to document.body of an element of choice",
     "displayName": "Portal",
     "methods": [],
     "props": {
