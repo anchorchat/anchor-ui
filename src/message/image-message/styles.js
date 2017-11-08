@@ -1,32 +1,10 @@
-import colors from '../../settings/colors';
+import merge from 'lodash/merge';
+import defaultStyles from '../default-styles';
 
-export default {
-  message: {
-    backgroundColor: colors.white,
-    borderRadius: '3px',
-    boxSizing: 'border-box',
-    color: colors.primaryText,
-    marginLeft: '16px',
-    maxWidth: '80%',
-    padding: '12px',
-    position: 'relative',
-    wordBreak: 'break-word'
-  },
-  avatar: {
-    marginLeft: '48px'
-  },
-  myMessage: {
-    backgroundColor: colors.theme,
-    color: colors.white,
-    marginLeft: '0',
-    marginRight: '16px',
-  },
+const overrideStyles = {
   body: {
     display: 'flex',
-    color: colors.primaryText,
-    fontSize: '16px',
     lineHeight: '18px',
-    margin: '0'
   },
   image: {
     borderRadius: '3px',
@@ -37,13 +15,8 @@ export default {
     objectFit: 'cover'
   },
   compact: {
-    marginLeft: '0',
-    marginRight: '0',
-    maxWidth: '100%'
-  },
-  iconMenu: {
-    position: 'absolute',
-    top: '3px',
-    right: '0'
+    display: 'initial'
   }
 };
+
+export default merge({}, defaultStyles, overrideStyles);
