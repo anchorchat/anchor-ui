@@ -2433,6 +2433,18 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "portalNode": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Node to portal PopOver to",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
@@ -5844,6 +5856,18 @@
           "value": "null",
           "computed": false
         }
+      },
+      "portalNode": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Node to portal PopOver to",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
@@ -6633,6 +6657,18 @@
         "defaultValue": {
           "value": "colors.white",
           "computed": true
+        }
+      },
+      "portalNode": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Node to portal PopOver to",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "color": {
