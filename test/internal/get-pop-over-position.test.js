@@ -144,7 +144,7 @@ describe('getPopOverPosition', () => {
     expect(position.position).to.equal('fixed');
     expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
     expect(position.right).to.equal('initial');
-    expect(position.left).to.equal('initial');
+    expect(position.left).to.equal(button.left);
   });
 
 
