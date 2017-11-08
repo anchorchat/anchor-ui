@@ -46,6 +46,8 @@ class Select extends Component {
     errorStyle: PropTypes.instanceOf(Object),
     /** The header's icon color */
     iconColor: PropTypes.string,
+    /** Node to portal PopOver to */
+    portalNode: PropTypes.instanceOf(Object),
     color: PropTypes.string.isRequired
   }
 
@@ -59,7 +61,8 @@ class Select extends Component {
     placeholder: '',
     error: null,
     errorStyle: {},
-    iconColor: colors.white
+    iconColor: colors.white,
+    portalNode: null
   }
 
   constructor() {
@@ -153,6 +156,7 @@ class Select extends Component {
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
       iconColor,
+      portalNode,
       ...custom
     } = this.props;
 
@@ -195,6 +199,7 @@ class Select extends Component {
           open={open}
           popOverRef={(popOver) => { this.popOver = popOver; }}
           position={position}
+          portalNode={portalNode}
         >
           {childrenWithProps}
         </PopOver>

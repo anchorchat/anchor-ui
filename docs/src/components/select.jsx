@@ -1,3 +1,4 @@
+/* global document */
 import React, { Component } from 'react';
 import _ from 'lodash';
 import MenuItem from '../../../dist/menu-item';
@@ -64,6 +65,7 @@ class SelectDoc extends Component {
               label="Select"
               onChange={this.changeValue}
               style={style.select}
+              portalNode={document.getElementsByTagName('main')[0]}
             >
               <MenuItem text="Menu item" value={1} />
               <MenuItem text="Menu item 2" value={2} />
@@ -74,6 +76,7 @@ class SelectDoc extends Component {
               onChange={this.changeValueError}
               style={style.select}
               error="Error message"
+              portalNode={document.getElementsByTagName('main')[0]}
             >
               <MenuItem text="Menu item" value={1} />
               <MenuItem text="Menu item 2" value={2} />

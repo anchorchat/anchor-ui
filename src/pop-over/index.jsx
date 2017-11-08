@@ -1,4 +1,3 @@
-/* global document */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
@@ -19,6 +18,7 @@ const PopOver = ({
   dividerText,
   dividerStyle,
   onHeaderClick,
+  portalNode,
   ...custom
 }) => {
   if (!open) {
@@ -36,7 +36,7 @@ const PopOver = ({
   }
 
   return (
-    <Portal node={document.getElementsByTagName('main')[0]}>
+    <Portal node={portalNode}>
       <section
         style={getStyles.root(position, style)}
         ref={popOverRef}
@@ -83,7 +83,9 @@ PopOver.propTypes = {
    *
    * function(event: object) => void
    */
-  onHeaderClick: PropTypes.func
+  onHeaderClick: PropTypes.func,
+  /** Node to portal PopOver to */
+  portalNode: PropTypes.instanceOf(Object)
 };
 
 PopOver.defaultProps = {
@@ -95,7 +97,8 @@ PopOver.defaultProps = {
   secondaryMenuItems: null,
   dividerText: null,
   dividerStyle: {},
-  onHeaderClick: null
+  onHeaderClick: null,
+  portalNode: null
 };
 
 export default Radium(PopOver);

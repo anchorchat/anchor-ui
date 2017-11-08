@@ -45,7 +45,9 @@ class IconMenu extends Component {
      */
     onHeaderClick: PropTypes.func,
     /** Override the styles of the Button component */
-    buttonStyle: PropTypes.instanceOf(Object)
+    buttonStyle: PropTypes.instanceOf(Object),
+    /** Node to portal PopOver to */
+    portalNode: PropTypes.instanceOf(Object)
   }
 
   static defaultProps = {
@@ -58,7 +60,8 @@ class IconMenu extends Component {
     dividerText: null,
     onMenuClose: () => {},
     onHeaderClick: () => {},
-    buttonStyle: {}
+    buttonStyle: {},
+    portalNode: null
   }
 
   constructor() {
@@ -156,6 +159,7 @@ class IconMenu extends Component {
       dividerStyle,
       onHeaderClick,
       buttonStyle,
+      portalNode,
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -198,6 +202,7 @@ class IconMenu extends Component {
           dividerText={dividerText}
           dividerStyle={dividerStyle}
           onHeaderClick={this.handleHeaderClick}
+          portalNode={portalNode}
         >
           {menuItemsWithProps}
         </PopOver>

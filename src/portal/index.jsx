@@ -31,17 +31,16 @@ class Portal extends React.Component {
   render() {
     const { children, node } = this.props;
 
-    if (!isObject(window) && !window.document && !window.document.createElement) {
-      return false;
+    if (
+      (!isObject(window) && !window.document && !window.document.createElement)
+      || !isFunction(createPortal)
+    ) {
+      return children;
     }
 
     if (!node && !this.defaultNode) {
       this.defaultNode = document.createElement('div');
       document.body.appendChild(this.defaultNode);
-    }
-
-    if (!isFunction(createPortal)) {
-      return children;
     }
 
     return createPortal(
