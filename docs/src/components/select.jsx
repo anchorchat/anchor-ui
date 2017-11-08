@@ -1,4 +1,3 @@
-/* global document */
 import React, { Component } from 'react';
 import _ from 'lodash';
 import MenuItem from '../../../dist/menu-item';

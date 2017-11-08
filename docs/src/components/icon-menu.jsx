@@ -1,4 +1,3 @@
-/* global document */
 import React from 'react';
 import _ from 'lodash';
 import IconMenu from '../../../dist/icon-menu';

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
-import has from 'lodash/has';
+import isFunction from 'lodash/isFunction';
 
 const displayName = 'Portal';
 
@@ -42,10 +42,7 @@ class Portal extends Component {
   render() {
     const { children, node } = this.props;
 
-    if (
-      has(window, 'document.createElement')
-      || createPortal
-    ) {
+    if (!isFunction(document.createElement) || !isFunction(createPortal)) {
       return children;
     }
 
