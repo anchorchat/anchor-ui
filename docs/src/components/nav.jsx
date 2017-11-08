@@ -6,7 +6,19 @@ import MenuItem from '../../../dist/menu-item';
 import npmPackage from '../../../package.json';
 import * as icons from '../../../dist/icons';
 
-const Nav = (props, context) => {
+const propTypes = {
+  media: PropTypes.shape({
+    medium: PropTypes.bool.isRequired
+  }).isRequired,
+  toggleMenu: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired
+};
+
+const contextTypes = {
+  router: PropTypes.object
+};
+
+const Nav = ({ media, toggleMenu, open }, context) => {
   const { router } = context;
 
   const style = {
@@ -17,7 +29,12 @@ const Nav = (props, context) => {
   };
 
   return (
-    <Menu header={`Version: ${npmPackage.version}`} headerIcon={React.createElement(_.sample(icons), { style: style.icon })}>
+    <Menu
+      header={`Version: ${npmPackage.version}`}
+      headerIcon={React.createElement(_.sample(icons), { style: style.icon })}
+      closeMenu={!media.medium ? toggleMenu : null}
+      open={open}
+    >
       <MenuItem onClick={() => router.push('/')} active={router.location.pathname === '/'} text="Getting started" />
       <MenuItem onClick={() => router.push('/admin-badge')} active={router.isActive('/admin-badge')} text="AdminBadge" />
       <MenuItem onClick={() => router.push('/alert')} active={router.isActive('/alert')} text="Alert" />
@@ -68,8 +85,7 @@ const Nav = (props, context) => {
   );
 };
 
-Nav.contextTypes = {
-  router: PropTypes.object
-};
+Nav.propTypes = propTypes;
+Nav.contextTypes = contextTypes;
 
 export default Nav;
