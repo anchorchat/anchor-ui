@@ -57,7 +57,7 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   }
 
   if (type === 'select') {
-    position = combineStyles(position, { left: 'initial', right: 'initial' });
+    position = combineStyles(position, { left: button.left, right: 'initial' });
   }
 
   return position;
