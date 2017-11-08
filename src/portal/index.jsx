@@ -1,12 +1,23 @@
-/* global document */
-import React from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { createPortal } from 'react-dom'; // eslint-disable-line import/no-extraneous-dependencies
-import isObject from 'lodash/isObject';
-import isFunction from 'lodash/isFunction';
+import { createPortal } from 'react-dom';
+import has from 'lodash/has';
+
+const displayName = 'Portal';
+
+const propTypes = {
+  /** Content to be portaled */
+  children: PropTypes.node.isRequired,
+  /** Optional node to portal children to */
+  node: PropTypes.instanceOf(Object)
+};
+
+const defaultProps = {
+  node: null
+};
 
 /** For transportation of elements to document.body or an element of choice */
-class Portal extends React.Component {
+class Portal extends Component {
   static displayName = 'Portal'
 
   static propTypes = {
@@ -32,8 +43,8 @@ class Portal extends React.Component {
     const { children, node } = this.props;
 
     if (
-      (!isObject(window) && !window.document && !window.document.createElement)
-      || !isFunction(createPortal)
+      has(window, 'document.createElement')
+      || createPortal
     ) {
       return children;
     }
@@ -49,5 +60,9 @@ class Portal extends React.Component {
     );
   }
 }
+
+Portal.propTypes = propTypes;
+Portal.defaultProps = defaultProps;
+Portal.displayName = displayName;
 
 export default Portal;

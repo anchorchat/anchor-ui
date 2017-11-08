@@ -18,7 +18,6 @@ const PopOver = ({
   dividerText,
   dividerStyle,
   onHeaderClick,
-  portalNode,
   ...custom
 }) => {
   if (!open) {
@@ -36,7 +35,7 @@ const PopOver = ({
   }
 
   return (
-    <Portal node={portalNode}>
+    <Portal>
       <section
         style={getStyles.root(position, style)}
         ref={popOverRef}
@@ -83,9 +82,7 @@ PopOver.propTypes = {
    *
    * function(event: object) => void
    */
-  onHeaderClick: PropTypes.func,
-  /** Node to portal PopOver to */
-  portalNode: PropTypes.instanceOf(Object)
+  onHeaderClick: PropTypes.func
 };
 
 PopOver.defaultProps = {
@@ -97,8 +94,7 @@ PopOver.defaultProps = {
   secondaryMenuItems: null,
   dividerText: null,
   dividerStyle: {},
-  onHeaderClick: null,
-  portalNode: null
+  onHeaderClick: null
 };
 
 export default Radium(PopOver);

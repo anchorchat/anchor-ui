@@ -63,7 +63,6 @@ const IconMenuDoc = () => {
               headerStyle={style.headerStyle}
               secondaryMenuItems={[<MenuItem icon={<IconRocket />} text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
               dividerText="More items"
-              portalNode={document.getElementsByTagName('main')[0]}
             >
               <MenuItem text="Active item" onClick={() => {}} active />
               <MenuItem text="Inactive item" onClick={() => {}} />
@@ -79,7 +78,6 @@ const IconMenuDoc = () => {
               secondaryMenuItems={[<MenuItem icon={<IconRocket />} text="An item" onClick={() => {}} />, <MenuItem text="Another item" onClick={() => {}} />]}
               dividerText="More items"
               buttonStyle={style.button}
-              portalNode={document.getElementsByTagName('main')[0]}
             >
               <MenuItem text="Active item" onClick={() => {}} active />
               <MenuItem text="Inactive item" onClick={() => {}} />
