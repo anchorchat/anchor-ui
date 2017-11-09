@@ -3,8 +3,7 @@ import combineStyles from './combine-styles';
 const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   const { innerWidth, innerHeight } = window;
   const halfButtonWidth = (button.width / 2);
-console.log('button:\n', button, '\npopOver:\n', popOver);
-console.log('innerWidth:\n', innerWidth, '\ninnerHeight:\n', innerHeight);
+
   const fitsAboveButton = button.top > popOver.height;
   const fitsRightFromButton = (innerWidth - button.right - halfButtonWidth) > popOver.width;
   const fitsLeftFromButton = button.left + halfButtonWidth > popOver.width;
@@ -47,11 +46,11 @@ console.log('innerWidth:\n', innerWidth, '\ninnerHeight:\n', innerHeight);
 
     position = combineStyles(position, { top: 'initial', bottom: (innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2) });
 
-    if (willCutTop && !(popOver.height > innerHeight)) {
+    if (willCutTop && !((popOver.height + 32) > innerHeight)) {
       position = combineStyles(position, { top: '16px', bottom: 'initial' });
     }
 
-    if (willCutBottom && !(popOver.height > innerHeight)) {
+    if (willCutBottom && !((popOver.height + 32) > innerHeight)) {
       position = combineStyles(position, { top: 'initial', bottom: '16px' });
     }
   }
