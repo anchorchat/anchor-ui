@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
+import htmlParser from 'html-react-parser';
 import createMarkup from './create-markup';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -11,12 +12,13 @@ const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
     <section style={styles.category.emojiContainer}>
       {emojis.map(emoji => (
         <div
-          dangerouslySetInnerHTML={createMarkup(emoji.shortname)}
           key={`emoji-${emoji.shortname}`}
           onClick={event => sendEmoji(event, emoji)}
           style={getStyles.categoryEmoji(emojiStyle)}
           className="emoji"
-        />
+        >
+          {htmlParser(createMarkup(emoji.shortname))}
+        </div>
       ))}
       <div style={styles.after} />
     </section>

@@ -1,9 +1,7 @@
 import emojione from 'emojione';
 
 function createMarkup(shortname) {
-  return {
-    __html: emojione.toImage(shortname)
-  };
+  return emojione.toImage(shortname);
 }
 
 export default createMarkup;
