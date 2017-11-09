@@ -65,7 +65,8 @@ console.log('innerWidth:\n', innerWidth, '\ninnerHeight:\n', innerHeight);
   }
 
   if (horizontal === 'middle') {
-    position = combineStyles(position, { left: 'initial', right: (button.right - (popOver.width / 2)) - halfButtonWidth });
+    console.log('middle');
+    position = combineStyles(position, { left: button.right - (popOver.width / 2), right: 'initial' });
   }
 
   if (type === 'select') {
