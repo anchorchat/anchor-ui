@@ -162,46 +162,46 @@ describe('getPopOverPosition', () => {
 
     it('should postion popOver middle from and below button', () => {
       const button = {
-        bottom: 48,
+        bottom: 398,
         height: 40,
-        left: 155,
-        right: 195,
-        top: 8,
+        left: 95,
+        right: 135,
+        top: 358,
         width: 40
       };
       const popOver = {
-        bottom: 303,
-        height: 255,
-        left: 75,
-        right: 175,
-        top: 48,
+        bottom: 627,
+        height: 229,
+        left: 44,
+        right: 244,
+        top: 398,
         width: 200
       };
       const position = getPopOverPosition(button, popOver);
 
       expect(position.position).to.equal('fixed');
       expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
-      expect(position.top).to.equal(48);
-      expect(position.right).to.equal(75);
+      expect(position.top).to.equal(398);
+      expect(position.right).to.equal('initial');
       expect(position.bottom).to.equal('initial');
-      expect(position.left).to.equal('initial');
+      expect(position.left).to.equal(35);
     });
 
     it('should position popOver middle from and above button', () => {
       const button = {
-        bottom: 672,
+        bottom: 460,
         height: 40,
-        left: 155,
-        right: 195,
-        top: 632,
+        left: 95,
+        right: 135,
+        top: 420,
         width: 40
       };
       const popOver = {
-        bottom: 632,
-        height: 255,
-        left: 75,
-        right: 175,
-        top: 377,
+        bottom: 679,
+        height: 229,
+        left: 34,
+        right: 234,
+        top: 450,
         width: 200
       };
       const position = getPopOverPosition(button, popOver);
@@ -209,23 +209,23 @@ describe('getPopOverPosition', () => {
       expect(position.position).to.equal('fixed');
       expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
       expect(position.top).to.equal('initial');
-      expect(position.right).to.equal(75);
-      expect(position.bottom).to.equal(48);
-      expect(position.left).to.equal('initial');
+      expect(position.right).to.equal('initial');
+      expect(position.bottom).to.equal(260);
+      expect(position.left).to.equal(35);
     });
 
     it('should position popOver left from and middle button', () => {
       const button = {
-        bottom: 172,
+        bottom: 360,
         height: 40,
         left: 205,
         right: 245,
-        top: 132,
+        top: 320,
         width: 40
       };
       const popOver = {
         bottom: 132,
-        height: 555,
+        height: 349,
         left: 25,
         right: 225,
         top: 277,
@@ -237,26 +237,26 @@ describe('getPopOverPosition', () => {
       expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
       expect(position.top).to.equal('initial');
       expect(position.right).to.equal(25);
-      expect(position.bottom).to.equal(250.5);
+      expect(position.bottom).to.equal(165.5);
       expect(position.left).to.equal('initial');
     });
 
     it('should position popOver right from and middle button', () => {
       const button = {
-        bottom: 172,
+        bottom: 360,
         height: 40,
         left: 5,
-        right: 25,
-        top: 132,
+        right: 45,
+        top: 320,
         width: 40
       };
       const popOver = {
         bottom: 132,
-        height: 555,
-        left: 225,
-        right: 5,
+        height: 349,
+        left: 25,
+        right: 225,
         top: 277,
-        width: 200
+        width: 180
       };
       const position = getPopOverPosition(button, popOver);
 
@@ -264,7 +264,7 @@ describe('getPopOverPosition', () => {
       expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
       expect(position.top).to.equal('initial');
       expect(position.right).to.equal('initial');
-      expect(position.bottom).to.equal(250.5);
+      expect(position.bottom).to.equal(165.5);
       expect(position.left).to.equal(25);
     });
   });
