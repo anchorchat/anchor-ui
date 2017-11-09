@@ -267,5 +267,113 @@ describe('getPopOverPosition', () => {
       expect(position.bottom).to.equal(165.5);
       expect(position.left).to.equal(25);
     });
+
+    it('should postion popOver offset left from button', () => {
+      const button = {
+        bottom: 398,
+        height: 40,
+        left: 55,
+        right: 95,
+        top: 358,
+        width: 40
+      };
+      const popOver = {
+        bottom: 627,
+        height: 229,
+        left: 44,
+        right: 244,
+        top: 398,
+        width: 200
+      };
+      const position = getPopOverPosition(button, popOver);
+
+      expect(position.position).to.equal('fixed');
+      expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
+      expect(position.top).to.equal(398);
+      expect(position.right).to.equal('initial');
+      expect(position.bottom).to.equal('initial');
+      expect(position.left).to.equal(16);
+    });
+
+    it('should postion popOver offset right from button', () => {
+      const button = {
+        bottom: 398,
+        height: 40,
+        left: 155,
+        right: 195,
+        top: 358,
+        width: 40
+      };
+      const popOver = {
+        bottom: 627,
+        height: 229,
+        left: 44,
+        right: 244,
+        top: 398,
+        width: 200
+      };
+      const position = getPopOverPosition(button, popOver);
+
+      expect(position.position).to.equal('fixed');
+      expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
+      expect(position.top).to.equal(398);
+      expect(position.right).to.equal(16);
+      expect(position.bottom).to.equal('initial');
+      expect(position.left).to.equal('initial');
+    });
+
+    it('should position popOver offset top from button', () => {
+      const button = {
+        bottom: 290,
+        height: 40,
+        left: 205,
+        right: 245,
+        top: 250,
+        width: 40
+      };
+      const popOver = {
+        bottom: 132,
+        height: 629,
+        left: 25,
+        right: 225,
+        top: 277,
+        width: 200
+      };
+      const position = getPopOverPosition(button, popOver);
+
+      expect(position.position).to.equal('fixed');
+      expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
+      expect(position.top).to.equal(16);
+      expect(position.right).to.equal(25);
+      expect(position.bottom).to.equal('initial');
+      expect(position.left).to.equal('initial');
+    });
+
+    it('should position popOver offset top from button', () => {
+      const button = {
+        bottom: 430,
+        height: 40,
+        left: 205,
+        right: 245,
+        top: 390,
+        width: 40
+      };
+      const popOver = {
+        bottom: 132,
+        height: 629,
+        left: 25,
+        right: 225,
+        top: 277,
+        width: 200
+      };
+      const position = getPopOverPosition(button, popOver);
+
+      expect(position.position).to.equal('fixed');
+      expect(position).to.have.all.keys('position', 'top', 'right', 'bottom', 'left');
+      expect(position.top).to.equal('initial');
+      expect(position.right).to.equal(25);
+      expect(position.bottom).to.equal(16);
+      expect(position.left).to.equal('initial');
+    });
   });
 });
