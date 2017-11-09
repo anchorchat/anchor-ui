@@ -65,8 +65,18 @@ console.log('innerWidth:\n', innerWidth, '\ninnerHeight:\n', innerHeight);
   }
 
   if (horizontal === 'middle') {
-    console.log('middle');
+    const willCutLeft = (popOver.width / 2) > (button.left + halfButtonWidth);
+    const willCutRight = (popOver.width / 2) > (innerWidth - button.right);
+
     position = combineStyles(position, { left: button.right - (popOver.width / 2), right: 'initial' });
+
+    if (willCutLeft && !((popOver.width + 32) > innerWidth)) {
+      position = combineStyles(position, { left: '16px', right: 'initial' });
+    }
+
+    if (willCutRight && !((popOver.width + 32) > innerWidth)) {
+      position = combineStyles(position, { left: 'initial', right: '16px' });
+    }
   }
 
   if (type === 'select') {
