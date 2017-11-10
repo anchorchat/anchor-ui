@@ -12,13 +12,13 @@ chai.use(sinonChai);
 
 describe('ChannelHeader', () => {
   const props = {
-    name: 'name',
-    rightButton: null,
-    leftButton: null,
+    name: '',
     style: {},
     textStyle: {},
     rightButtonStyle: {},
-    leftButtonStyle: {}
+    leftButtonStyle: {},
+    secondaryTextStyle: {},
+    color: '#1BA6C4'
   };
 
   beforeEach(() => {
@@ -57,7 +57,12 @@ describe('ChannelHeader', () => {
   it('should render name', () => {
     const component = shallow(<ChannelHeader {...props} />);
 
-    expect(component.containsMatchingElement(<h1>name</h1>)).to.equal(true);
+    component.setProps({ name: 'Name' });
+    expect(component.containsMatchingElement(<h1>Name</h1>)).to.equal(true);
+
+    component.setProps({ name: <span>Node</span> });
+    expect(component.find('h1 > span')).to.have.length(1);
+    expect(component.find('h1').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
   it('should render secondaryText', () => {
@@ -68,6 +73,10 @@ describe('ChannelHeader', () => {
     component.setProps({ secondaryText: 'secondaryText' });
     expect(component.find('h2')).to.have.length(1);
     expect(component.containsMatchingElement(<h2>secondaryText</h2>)).to.equal(true);
+
+    component.setProps({ secondaryText: <span>Node</span> });
+    expect(component.find('h2 > span')).to.have.length(1);
+    expect(component.find('h2').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
   it('should get root styles', () => {
@@ -104,7 +113,7 @@ describe('ChannelHeader', () => {
     };
 
     shallow(<ChannelHeader {...combinedProps} />);
-    expect(spy).to.have.been.calledWith(props.secondaryTextStyle);
+    expect(spy).to.have.been.calledWith(props.color, props.secondaryTextStyle);
   });
 
   it('should get rightButton styles', () => {
