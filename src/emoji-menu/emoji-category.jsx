@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
+import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
-import createMarkup from './create-markup';
 import styles from './styles';
 import getStyles from './get-styles';
 
@@ -17,7 +17,7 @@ const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
           style={getStyles.categoryEmoji(emojiStyle)}
           className="emoji"
         >
-          {htmlParser(createMarkup(emoji.shortname))}
+          {htmlParser(emojione.toImage(emoji.shortname))}
         </div>
       ))}
       <div style={styles.after} />
