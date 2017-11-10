@@ -553,7 +553,7 @@
       }
     }
   },
-  "components/card/index.jsx": {
+  "components/card/component.jsx": {
     "description": "A Card is a piece of paper with unique related data",
     "displayName": "Card",
     "methods": [],
