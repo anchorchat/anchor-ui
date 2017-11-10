@@ -5,20 +5,21 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import CardHeader from '../../src/card-header';
+import CardHeader from '../../src/card-header/component';
+import Avatar from '../../src/avatar';
 import getStyles from '../../src/card-header/get-styles';
 
 chai.use(sinonChai);
 
 describe('CardHeader', () => {
   const props = {
-    style: { root: true },
-    titleStyle: { title: true },
+    style: {},
+    titleStyle: {},
     title: '',
-    subtitleStyle: { subtitle: true },
+    subtitleStyle: {},
     subtitle: '',
     avatar: '',
-    avatarStyle: { avatar: true }
+    avatarStyle: {}
   };
 
   beforeEach(() => {
@@ -29,37 +30,47 @@ describe('CardHeader', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a header element', () => {
-    const wrapper = shallow(<CardHeader {...props} />);
+  it('should render a header element containing a div and h1 elements', () => {
+    const component = shallow(<CardHeader {...props} />);
 
-    expect(wrapper.find('header')).to.have.length(1);
+    expect(component.find('header')).to.have.length(1);
+    expect(component.find('div')).to.have.length(1);
+    expect(component.find('h1')).to.have.length(1);
   });
 
-  it('should always render a div element', () => {
-    const wrapper = shallow(<CardHeader {...props} />);
+  it('should render title', () => {
+    const component = shallow(<CardHeader {...props} />);
 
-    expect(wrapper.find('div')).to.have.length(1);
+    component.setProps({ title: 'Title' });
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.containsMatchingElement(<h1>Title</h1>)).to.equal(true);
+
+    component.setProps({ title: <span>Node</span> });
+    expect(component.find('h1 > span')).to.have.length(1);
+    expect(component.find('h1').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
-  it('should always render a h1 element', () => {
-    const wrapper = shallow(<CardHeader {...props} />);
+  it('should render subtitle', () => {
+    const component = shallow(<CardHeader {...props} />);
 
-    expect(wrapper.find('h1')).to.have.length(1);
+    expect(component.find('h2')).to.have.length(0);
+
+    component.setProps({ subtitle: 'subtitle' });
+    expect(component.find('h2')).to.have.length(1);
+    expect(component.containsMatchingElement(<h2>subtitle</h2>)).to.equal(true);
+
+    component.setProps({ subtitle: <span>Node</span> });
+    expect(component.find('h2 > span')).to.have.length(1);
+    expect(component.find('h2').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
-  it('should not render a h2 element if the subtitle prop is not passed', () => {
-    const wrapper = shallow(<CardHeader {...props} />);
+  it('should render avatar', () => {
+    const component = shallow(<CardHeader {...props} />);
 
-    expect(wrapper.find('h2')).to.have.length(0);
-  });
+    expect(component.find(Avatar)).to.have.length(0);
 
-  it('should render a h2 element if the subtitle prop is passed', () => {
-    props.subtitle = 'text';
-    const wrapper = shallow(<CardHeader {...props} />);
-
-    expect(wrapper.find('h2')).to.have.length(1);
-    expect(wrapper.containsMatchingElement(<h2>text</h2>)).to.equal(true);
-    props.subtitle = '';
+    component.setProps({ avatar: 'image' });
+    expect(component.find(Avatar)).to.have.length(1);
   });
 
   it('should get root styles', () => {
@@ -78,10 +89,23 @@ describe('CardHeader', () => {
 
   it('should get subtitle styles', () => {
     const spy = sinon.spy(getStyles, 'subtitle');
-    props.subtitle = 'text';
+    const combinedProps = {
+      ...props,
+      subtitle: 'subtitle'
+    };
 
-    shallow(<CardHeader {...props} />);
+    shallow(<CardHeader {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.subtitleStyle);
-    props.subtitle = '';
+  });
+
+  it('should get avatar styles', () => {
+    const spy = sinon.spy(getStyles, 'avatar');
+    const combinedProps = {
+      ...props,
+      avatar: 'image'
+    };
+
+    shallow(<CardHeader {...combinedProps} />);
+    expect(spy).to.have.been.calledWith(props.avatarStyle);
   });
 });
