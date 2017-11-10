@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Dialog from '../../../dist/dialog';
-import Button from '../../../dist/button';
-import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Markdown from './markdown';
-
-const usage = `
-  \`\`\`js
-  import Dialog from 'anchor-ui/dialog';
-  \`\`\`
-`;
+import Dialog from '../../../../dist/dialog';
+import Button from '../../../../dist/button';
+import Props from '../props';
+import components from '../../../components.json';
+import Paper from '../../../../dist/paper';
+import Markdown from '../markdown';
+import example from './example';
 
 class DialogDoc extends Component {
   constructor() {
@@ -51,9 +46,9 @@ class DialogDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <Markdown markdown={usage} title="Code example" />
         <section>
           <h1>Examples</h1>
+          <Markdown markdown={example} title="Code example" />
           <Paper style={style.paper}>
             <Button
               style={style.button}

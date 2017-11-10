@@ -5,6 +5,7 @@ import escape from 'escape-html';
 import isEmpty from 'lodash/isEmpty';
 import forEach from 'lodash/forEach';
 import find from 'lodash/find';
+import size from 'lodash/size';
 import htmlParser from 'html-react-parser';
 import domToReact from 'html-react-parser/lib/dom-to-react';
 import colors from '../../settings/colors';
@@ -24,7 +25,10 @@ class TextMessage extends Component {
 
     let parsedText = escapedText;
 
-    if (enableLinks) {
+    // XXX: Should find a prettier solution for this
+    const dotCount = escapedText.match(/([0-9])+./g);
+
+    if (enableLinks && size(dotCount) < 10) {
       const urlSchemeRegex = /^(?:https?:\/\/)/;
 
       parsedText = escapedText.replace(urlRegex, (url) => {

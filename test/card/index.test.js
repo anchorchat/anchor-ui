@@ -5,14 +5,14 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Card from '../../src/card';
+import Card from '../../src/card/component';
 import getStyles from '../../src/card/get-styles';
 
 chai.use(sinonChai);
 
 describe('Card', () => {
   const props = {
-    style: { root: true }
+    style: {}
   };
   const children = <p>children</p>;
 
@@ -24,7 +24,7 @@ describe('Card', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a section element', () => {
+  it('should render a section element', () => {
     const wrapper = shallow(<Card {...props}>{children}</Card>);
 
     expect(wrapper.find('section')).to.have.length(1);
