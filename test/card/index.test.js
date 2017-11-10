@@ -25,15 +25,15 @@ describe('Card', () => {
   });
 
   it('should render a section element', () => {
-    const wrapper = shallow(<Card {...props}>{children}</Card>);
+    const component = shallow(<Card {...props}>{children}</Card>);
 
-    expect(wrapper.find('section')).to.have.length(1);
+    expect(component.find('section')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<Card {...props}>{children}</Card>);
+    const component = shallow(<Card {...props}>{children}</Card>);
 
-    expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
+    expect(component.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
   it('should get root styles', () => {
