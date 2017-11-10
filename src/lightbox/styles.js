@@ -26,7 +26,9 @@ export default {
     maxHeight: '90%',
     pointerEvents: 'all',
     borderRadius: '3px',
-    boxShadow: styles.depthShadows[0]
+    boxShadow: styles.depthShadows[0],
+    backgroundColor: colors.background,
+    color: colors.primaryText
   },
   clickAway: {
     width: '100%',
