@@ -34,7 +34,7 @@ class MessageList extends Component {
     const { autoScroll } = this.props;
 
     if (autoScroll) {
-      this.shouldScroll = this.shouldScrollTo(this.messageList);
+      this.shouldScroll = this.shouldScrollToBottom(this.messageList);
     }
   }
 
@@ -48,7 +48,7 @@ class MessageList extends Component {
     }
   }
 
-  shouldScrollTo = ({ scrollHeight, scrollTop, offsetHeight }) => {
+  shouldScrollToBottom = ({ scrollHeight, scrollTop, offsetHeight }) => {
     const { scrollOffset } = this.props;
 
     const position = scrollHeight - (scrollTop + offsetHeight);
