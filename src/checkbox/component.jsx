@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import IconCheckbox from '../icons/icon-checkbox';
 import styles from './styles';
-import themeable from '../themeable';
 
 /** A checkbox is used to verify which options you want selected from a group. */
 const Checkbox = ({
@@ -69,9 +66,4 @@ Checkbox.defaultProps = {
   checked: false
 };
 
-const enhance = compose(
-  themeable(),
-  Radium
-);
-
-export default enhance(Checkbox);
+export default Checkbox;
