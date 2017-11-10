@@ -32,6 +32,26 @@ describe('ChannelHeader.getStyles', () => {
     });
   });
 
+  describe('secondaryText', () => {
+    it('should get styles', () => {
+      const style = getStyles.secondaryText();
+
+      expect(style).to.deep.equal(styles.secondaryText);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.secondaryText(null, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add theme color', () => {
+      const style = getStyles.secondaryText('HotPink');
+
+      expect(style).to.have.property('color', 'HotPink');
+    });
+  });
+
   describe('LeftButton', () => {
     it('should get styles', () => {
       const style = getStyles.leftButton();
