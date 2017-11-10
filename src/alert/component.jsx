@@ -21,7 +21,7 @@ const icons = {
 const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => (
   <section style={getStyles.root(type, style)} {...custom}>
     <div style={getStyles.icon(iconStyle)}>{icons[type]}</div>
-    <p style={getStyles.text(textStyle)}>{text}</p>
+    <p style={getStyles.text(hideAlert, textStyle)}>{text}</p>
     {
       hideAlert
       ? <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>

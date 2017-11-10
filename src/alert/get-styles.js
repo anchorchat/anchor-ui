@@ -7,7 +7,15 @@ const root = (type, overrideStyle) => (
 
 const icon = overrideStyle => combineStyles(styles.icon, overrideStyle);
 
-const text = overrideStyle => combineStyles(styles.text, overrideStyle);
+const text = (hideAlert = null, overrideStyle) => {
+  let style = styles.text;
+
+  if (hideAlert) {
+    style = combineStyles(style, { paddingRight: '40px' });
+  }
+
+  return combineStyles(style, overrideStyle);
+};
 
 const button = overrideStyle => combineStyles(styles.button, overrideStyle);
 

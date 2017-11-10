@@ -24,7 +24,7 @@ export default {
   text: {
     margin: '0',
     paddingLeft: '32px',
-    paddingRight: '40px',
+
     '&:first-letter': {
       textTransform: 'capitalize'
     }

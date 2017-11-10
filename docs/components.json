@@ -465,7 +465,7 @@
       }
     }
   },
-  "components/button/index.jsx": {
+  "components/button/component.jsx": {
     "description": "General purpose button with three types",
     "displayName": "Button",
     "methods": [],
@@ -4729,22 +4729,7 @@
   "components/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
-    "methods": [
-      {
-        "name": "renderIconMenu",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "renderImageIconMenu",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "avatar": {
         "type": {
@@ -5065,17 +5050,6 @@
         "defaultValue": {
           "value": "null",
           "computed": false
-        }
-      },
-      "iconColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Color for the IconMenu's icon",
-        "defaultValue": {
-          "value": "colors.icons",
-          "computed": true
         }
       },
       "enableMultiline": {

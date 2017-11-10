@@ -72,9 +72,15 @@ describe('Alert.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.text({ color: 'red' });
+      const style = getStyles.text(null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
+    });
+
+    it('should remove hideAlert button padding', () => {
+      const style = getStyles.text(true, {});
+
+      expect(style).to.have.property('paddingRight', '40px');
     });
   });
 
