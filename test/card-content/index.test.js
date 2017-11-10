@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import CardContent from '../../src/card-content';
+import CardContent from '../../src/card-content/component';
 import getStyles from '../../src/card-content/get-styles';
 
 chai.use(sinonChai);
