@@ -12,7 +12,7 @@ chai.use(sinonChai);
 
 describe('CardContent', () => {
   const props = {
-    style: { root: true }
+    style: {}
   };
   const children = <p>children</p>;
 
@@ -24,7 +24,7 @@ describe('CardContent', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a section element', () => {
+  it('should render a section element', () => {
     const wrapper = shallow(<CardContent {...props}>{children}</CardContent>);
 
     expect(wrapper.find('section')).to.have.length(1);
