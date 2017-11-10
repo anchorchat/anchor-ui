@@ -77,7 +77,7 @@ describe('Alert.getStyles', () => {
       expect(style).to.have.property('color', 'red');
     });
 
-    it('should remove hideAlert button padding', () => {
+    it('should add hideAlert button padding', () => {
       const style = getStyles.text(true, {});
 
       expect(style).to.have.property('paddingRight', '40px');
