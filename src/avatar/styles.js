@@ -12,8 +12,8 @@ export default {
     backgroundImage: 'url()'
   },
   status: {
-    width: '10px',
-    height: '10px',
+    width: '8px',
+    height: '8px',
     border: `1px solid ${colors.white}`,
     backgroundColor: colors.offline,
     borderRadius: '50%',
