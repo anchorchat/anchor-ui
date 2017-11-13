@@ -8,7 +8,7 @@ class MyComponent extends Component {
     console.log('Loaded image');
   }
 
-  handleOnLoad = () => {
+  handleOnError = () => {
     console.log('Failed to load image');
   }
 
