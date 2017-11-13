@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
+import Portal from '../portal';
 import getStyles from './get-styles';
 import Divider from '../divider';
 
@@ -34,20 +35,22 @@ const PopOver = ({
   }
 
   return (
-    <section
-      style={getStyles.root(position, style)}
-      ref={popOverRef}
-      {...custom}
-    >
-      {
-        header
-        ? <h1 onClick={onHeaderClick} style={getStyles.header(headerStyle)}>{header}</h1>
-        : null
-      }
-      {children}
-      {divider}
-      {secondaryMenuItems}
-    </section>
+    <Portal>
+      <section
+        style={getStyles.root(position, style)}
+        ref={popOverRef}
+        {...custom}
+      >
+        {
+          header
+          ? <h1 onClick={onHeaderClick} style={getStyles.header(headerStyle)}>{header}</h1>
+          : null
+        }
+        {children}
+        {divider}
+        {secondaryMenuItems}
+      </section>
+    </Portal>
   );
 };
 

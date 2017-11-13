@@ -5847,6 +5847,32 @@
       }
     }
   },
+  "components/portal/index.jsx": {
+    "description": "Transportation of elements",
+    "displayName": "Portal",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content to be portaled"
+      },
+      "node": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Optional node to portal children to",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
   "components/profile/index.jsx": {
     "description": "Profile useful for showing a user's info",
     "displayName": "Profile",
