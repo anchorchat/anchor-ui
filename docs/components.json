@@ -579,7 +579,7 @@
       }
     }
   },
-  "components/card-content/index.jsx": {
+  "components/card-content/component.jsx": {
     "description": "A Card is a piece of paper with unique related data",
     "displayName": "CardContent",
     "methods": [],
@@ -605,7 +605,7 @@
       }
     }
   },
-  "components/card-header/index.jsx": {
+  "components/card-header/component.jsx": {
     "description": "A Card is a piece of paper with unique related data",
     "displayName": "CardHeader",
     "methods": [],
@@ -701,7 +701,7 @@
       }
     }
   },
-  "components/channel-header/index.jsx": {
+  "components/channel-header/component.jsx": {
     "description": "A channel's header",
     "displayName": "ChannelHeader",
     "methods": [],
@@ -815,7 +815,7 @@
       }
     }
   },
-  "components/checkbox/index.jsx": {
+  "components/checkbox/component.jsx": {
     "description": "A checkbox is used to verify which options you want selected from a group.",
     "displayName": "Checkbox",
     "methods": [],
@@ -5918,6 +5918,133 @@
           "value": "null",
           "computed": false
         }
+      }
+    }
+  },
+  "components/preloader/index.jsx": {
+    "description": "",
+    "displayName": "Preloader",
+    "methods": [
+      {
+        "name": "handleError",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "error",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "create",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "destroy",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderImage",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "alt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The alt of the image to be loaded",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "errorComponent": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional error component to show when error did not load",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imgProps": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Optional object for the img component of the image",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onError": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "An optional handler for the error event",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onLoad": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "An optional handler for the load event",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "preloader": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Node to show before image is loaded",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "src": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The URL of the image to be loaded"
       }
     }
   },
