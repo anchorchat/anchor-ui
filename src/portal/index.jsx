@@ -16,21 +16,8 @@ const defaultProps = {
   node: null
 };
 
-/** For transportation of elements to document.body or an element of choice */
+/** Transportation of elements */
 class Portal extends Component {
-  static displayName = 'Portal'
-
-  static propTypes = {
-    /** Content to be portaled */
-    children: PropTypes.node.isRequired,
-    /** Optional node to portal children to */
-    node: PropTypes.instanceOf(Object)
-  };
-
-  static defaultProps = {
-    node: null
-  };
-
   componentWillUnmount() {
     if (this.defaultNode) {
       document.body.removeChild(this.defaultNode);
