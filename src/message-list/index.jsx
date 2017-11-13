@@ -4,18 +4,18 @@ import Radium from 'radium';
 import getStyles from './get-styles';
 
 const propTypes = {
-    /** MessageList content */
-    children: PropTypes.node.isRequired,
-    /** The amount of pixels the user has to scroll up to disable auto scroll */
-    scrollOffset: PropTypes.number,
-    /** Reference list element */
-    listRef: PropTypes.func,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the ul element */
-    listStyle: PropTypes.instanceOf(Object),
-    /** Enable autoScroll */
-    autoScroll: PropTypes.bool
+  /** MessageList content */
+  children: PropTypes.node.isRequired,
+  /** The amount of pixels the user has to scroll up to disable auto scroll */
+  scrollOffset: PropTypes.number,
+  /** Reference list element */
+  listRef: PropTypes.func,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the ul element */
+  listStyle: PropTypes.instanceOf(Object),
+  /** Enable autoScroll */
+  autoScroll: PropTypes.bool
 };
 
 const defaultProps = {
@@ -30,7 +30,7 @@ const displayName = 'MessageList';
 
 /** Render a list of items (Messages) with optional auto scroll */
 class MessageList extends Component {
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     const { autoScroll } = this.props;
 
     if (autoScroll) {
@@ -48,12 +48,12 @@ class MessageList extends Component {
     }
   }
 
-  shouldScrollToBottom = ({ scrollHeight, scrollTop, offsetHeight }) => {
-    const { scrollOffset } = this.props;
+  setRef = (node) => {
+    const { listRef } = this.props;
 
-    const position = scrollHeight - (scrollTop + offsetHeight);
+    this.messageList = node;
 
-    return position < scrollOffset;
+    listRef(node);
   }
 
   scrollToBottom = () => {
@@ -62,12 +62,12 @@ class MessageList extends Component {
     this.messageList.scrollTop = scrollHeight;
   }
 
-  setRef = (node) => {
-    const { listRef } = this.props;
+  shouldScrollToBottom = ({ scrollHeight, scrollTop, offsetHeight }) => {
+    const { scrollOffset } = this.props;
 
-    this.messageList = node;
+    const position = scrollHeight - (scrollTop + offsetHeight);
 
-    listRef(node);
+    return position < scrollOffset;
   }
 
   render() {
