@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import map from 'lodash/map';
 import size from 'lodash/size';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
 import noop from 'lodash/noop';
-import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
-import themeable from '../themeable';
 import getStyles from './get-styles';
 import Avatar from '../avatar';
 import styles from './styles';
@@ -318,10 +314,4 @@ Commands.displayName = 'Commands';
 Commands.propTypes = propTypes;
 Commands.defaultProps = defaultProps;
 
-const enhance = compose(
-  themeable(),
-  onClickOutside,
-  Radium
-);
-
-export default enhance(Commands);
+export default Commands;
