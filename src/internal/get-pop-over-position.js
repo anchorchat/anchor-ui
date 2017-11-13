@@ -41,7 +41,18 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   }
 
   if (vertical === 'middle') {
+    const overflowsTop = (popOver.height / 2) > (button.top + halfButtonWidth);
+    const overflowsBottom = (popOver.height / 2) > (innerHeight - button.bottom);
+
     position = combineStyles(position, { top: 'initial', bottom: (innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2) });
+
+    if (overflowsTop && !((popOver.height + 32) > innerHeight)) {
+      position = combineStyles(position, { top: 16, bottom: 'initial' });
+    }
+
+    if (overflowsBottom && !((popOver.height + 32) > innerHeight)) {
+      position = combineStyles(position, { top: 'initial', bottom: 16 });
+    }
   }
 
   if (horizontal === 'left') {
@@ -53,7 +64,18 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   }
 
   if (horizontal === 'middle') {
-    position = combineStyles(position, { left: 'initial', right: (button.right - (popOver.width / 2)) - halfButtonWidth });
+    const overflowsLeft = (popOver.width / 2) > (button.left + halfButtonWidth);
+    const overflowsRight = (popOver.width / 2) > (innerWidth - button.right);
+
+    position = combineStyles(position, { left: button.right - (popOver.width / 2), right: 'initial' });
+
+    if (overflowsLeft && !((popOver.width + 32) > innerWidth)) {
+      position = combineStyles(position, { left: 16, right: 'initial' });
+    }
+
+    if (overflowsRight && !((popOver.width + 32) > innerWidth)) {
+      position = combineStyles(position, { left: 'initial', right: 16 });
+    }
   }
 
   if (type === 'select') {
