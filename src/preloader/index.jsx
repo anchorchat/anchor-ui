@@ -19,7 +19,7 @@ const propTypes = {
   /** An optional handler for the load event */
   onLoad: PropTypes.func,
   /** Node to show before image is loaded */
-  preloader: PropTypes.node,
+  preloadComponent: PropTypes.node,
   /** The URL of the image to be loaded */
   src: PropTypes.string.isRequired
 };
@@ -30,7 +30,7 @@ const defaultProps = {
   imgProps: {},
   onError: () => {},
   onLoad: () => {},
-  preloader: null
+  preloadComponent: null
 };
 
 const displayName = 'Preloader';
@@ -122,7 +122,7 @@ class Preloader extends Component {
   }
 
   render() {
-    const { preloader, errorComponent, src } = this.props;
+    const { preloadComponent, errorComponent, src } = this.props;
     const { status } = this.state;
 
     if (!src) {
@@ -137,7 +137,7 @@ class Preloader extends Component {
       return errorComponent;
     }
 
-    return preloader;
+    return preloadComponent;
   }
 }
 

@@ -88,7 +88,7 @@ class PreloaderDoc extends Component {
             <Preloader
               src={preloadImage}
               imgProps={imgProps}
-              preloader={
+              preloadComponent={
                 <div style={imgProps}>
                   Loading...
                 </div>
