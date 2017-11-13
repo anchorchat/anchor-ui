@@ -104,14 +104,14 @@ class Commands extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { value } = nextProps;
+    const { value, commands } = nextProps;
     const { open } = this.state;
 
     if (!value) {
       return this.hideMenu();
     }
 
-    const filteredCommands = this.filterCommands(nextProps.commands, nextProps.value);
+    const filteredCommands = this.filterCommands(commands, value);
 
     if (!isEmpty(filteredCommands) && !open) {
       this.setState({
