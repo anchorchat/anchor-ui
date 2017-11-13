@@ -52,7 +52,7 @@ class Preloader extends Component {
   componentWillReceiveProps(nextProps) {
     const { src } = this.props;
 
-    if (nextProps.src && src !== nextProps.src) {
+    if (src !== nextProps.src) {
       this.setState({
         status: Status.LOADING,
       });
