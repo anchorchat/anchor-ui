@@ -21,13 +21,13 @@ class MyComponent extends Component {
 
     const errorComponent = (
       <div>
-        Error while loading component!
+        <p>Error while loading component!</p>
       </div>
     );
 
     const preloadComponent = (
       <div>
-        Loading image...
+        <p>Loading image...</p>
       </div>
     );
 
