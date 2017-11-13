@@ -45,16 +45,13 @@ class Preloader extends Component {
     const { status } = this.state;
 
     if (src && status === Status.LOADING) {
-      console.log('[componentDidMount] this.create()');
       this.create();
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { src } = this.props;
-    console.log('[componentWillReceiveProps] src', src);
-    console.log('[componentWillReceiveProps] nextProps.src', nextProps.src);
-    
+
     if (nextProps.src && src !== nextProps.src) {
       this.setState({
         status: Status.LOADING,
@@ -65,10 +62,8 @@ class Preloader extends Component {
   componentDidUpdate() {
     const { src } = this.props;
     const { status } = this.state;
-    console.log('[componentDidUpdate] status', status);
-    
+
     if (src && status === Status.LOADING && !this.img) {
-      console.log('[componentDidUpdate] this.create()');
       this.create();
     }
   }
@@ -85,8 +80,7 @@ class Preloader extends Component {
     this.setState({
       status: Status.FAILED
     });
-    console.log('error', error);
-    
+
     onError(error);
   }
 
@@ -98,8 +92,7 @@ class Preloader extends Component {
     this.setState({
       status: Status.LOADED
     });
-    console.log('loaded');
-    
+
     onLoad(e);
   }
 
@@ -131,7 +124,6 @@ class Preloader extends Component {
   render() {
     const { preloader, errorComponent, src } = this.props;
     const { status } = this.state;
-    console.log('status', status);
 
     if (!src) {
       return null;
