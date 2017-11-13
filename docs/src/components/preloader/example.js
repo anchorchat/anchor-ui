@@ -12,24 +12,16 @@ class MyComponent extends Component {
     console.log('Failed to load image');
   }
 
-
   render() {
     const imgProps = {
       height: 200,
-      width: 200
+      width: 200,
+      onClick: () => console.log('clicked image')
     };
 
-    const errorComponent = (
-      <div>
-        <p>Error while loading component!</p>
-      </div>
-    );
+    const errorComponent = <p>Error while loading component!</p>;
 
-    const preloadComponent = (
-      <div>
-        <p>Loading image...</p>
-      </div>
-    );
+    const preloadComponent = <p>Loading image...</p>;
 
     return (
       <Preloader

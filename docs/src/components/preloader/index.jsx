@@ -52,14 +52,8 @@ class PreloaderDoc extends Component {
     const componentData = _.find(components, component => component.displayName === 'Preloader');
     const style = {
       paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
         margin: 0,
         padding: '20px'
-      },
-      button: {
-        margin: '10px'
       }
     };
 
@@ -73,19 +67,18 @@ class PreloaderDoc extends Component {
           <p>{componentData.description}</p>
         </section>
         <section>
+          <h1>Examples</h1>
           <Markdown markdown={example} title="Code example" />
-        </section>
-        <section>
           <Paper style={style.paper}>
-            <h1>Basic usage</h1>
-            <Button style={style.button} onClick={this.handleBasicImageLoad}>
+            <p>Basic usage</p>
+            <Button onClick={this.handleBasicImageLoad}>
               <p>Load image</p>
             </Button>
             <Preloader src={basicImage} imgProps={imgProps} />
           </Paper>
           <Paper style={style.paper}>
-            <h1>With preload component</h1>
-            <Button style={style.button} onClick={this.handlePreloadImageLoad}>
+            <p>With preload component</p>
+            <Button onClick={this.handlePreloadImageLoad}>
               <p>Load image</p>
             </Button>
             <Preloader
@@ -99,8 +92,8 @@ class PreloaderDoc extends Component {
             />
           </Paper>
           <Paper style={style.paper}>
-            <h1>With failed image component</h1>
-            <Button style={style.button} onClick={this.handleFailedImageLoad}>
+            <p>With failed image component</p>
+            <Button onClick={this.handleFailedImageLoad}>
               <p>Load image</p>
             </Button>
             <Preloader
