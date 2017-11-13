@@ -25,7 +25,7 @@ export default `
           {
             portalOpen
               ? <Portal node={document.getElementById('root')}>
-                // children to be portaled
+                <div>I got portaled to the bottom of this section!</div>
               </Portal>
               :null
           }
