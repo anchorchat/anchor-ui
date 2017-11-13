@@ -73,6 +73,9 @@ class PreloaderDoc extends Component {
           <p>{componentData.description}</p>
         </section>
         <section>
+          <Markdown markdown={example} title="Code example" />
+        </section>
+        <section>
           <Paper style={style.paper}>
             <h1>Basic usage</h1>
             <Button style={style.button} onClick={this.handleBasicImageLoad}>
