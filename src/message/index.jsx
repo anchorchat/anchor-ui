@@ -116,7 +116,17 @@ class Message extends Component {
     iconColor: PropTypes.string,
     /** Enables multiline messages */
     enableMultiline: PropTypes.bool,
-    color: PropTypes.string.isRequired
+    /** Image placeholder url */
+    imagePlaceholder: PropTypes.string,
+    /** Image error url */
+    imageError: PropTypes.string,
+    /**
+     * Callback fired when an image or giphy is finished loading
+     *
+     * function(event: object) => void
+     */
+    onImageLoad: PropTypes.func,
+    color: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -147,7 +157,10 @@ class Message extends Component {
     expandMenuItem: null,
     badge: null,
     iconColor: colors.icons,
-    enableMultiline: false
+    enableMultiline: false,
+    imagePlaceholder: 'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg',
+    imageError: 'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg',
+    onImageLoad: () => {}
   }
 
   constructor() {
@@ -244,6 +257,9 @@ class Message extends Component {
       iconColor,
       giphyDescription,
       enableMultiline,
+      imagePlaceholder,
+      imageError,
+      onImageLoad,
       ...custom
     } = this.props;
 

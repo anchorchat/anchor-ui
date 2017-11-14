@@ -46,7 +46,10 @@ class ImageMessage extends Component {
       collapsed,
       collapsedText,
       locale,
-      badge
+      badge,
+      imagePlaceholder,
+      imageError,
+      onImageLoad
     } = this.props;
     const { lightbox } = this.state;
 
@@ -72,8 +75,8 @@ class ImageMessage extends Component {
       style: imageStyle
     };
 
-    const placeholder = <img style={imageStyle} src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg" alt="placeholder" />;
-    const error = <img style={imageStyle} src="https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg" alt="error" />;
+    const placeholder = <img style={imageStyle} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={imageStyle} src={imageError} alt="error" />;
 
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
@@ -96,6 +99,7 @@ class ImageMessage extends Component {
                 imgProps={imgProps}
                 placeholder={placeholder}
                 error={error}
+                onLoad={onImageLoad}
               />
             )
             : <span>{collapsedText}</span>
@@ -148,7 +152,10 @@ ImageMessage.propTypes = {
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  imagePlaceholder: PropTypes.string.isRequired,
+  imageError: PropTypes.string.isRequired,
+  onImageLoad: PropTypes.func.isRequired
 };
 
 ImageMessage.defaultProps = {
