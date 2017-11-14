@@ -916,7 +916,7 @@
       }
     }
   },
-  "components/commands/index.jsx": {
+  "components/commands/component.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "Commands",
     "methods": [
@@ -1211,7 +1211,7 @@
       }
     }
   },
-  "components/date-separator/index.jsx": {
+  "components/date-separator/component.jsx": {
     "description": "A separator to show above a Message",
     "displayName": "DateSeparator",
     "methods": [],
@@ -1281,7 +1281,7 @@
       }
     }
   },
-  "components/dialog/index.jsx": {
+  "components/dialog/component.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
     "methods": [
@@ -1425,7 +1425,7 @@
       }
     }
   },
-  "components/emoji-filter/index.jsx": {
+  "components/emoji-filter/component.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "EmojiFilter",
     "methods": [
