@@ -17,7 +17,7 @@
     "dist": "cd dist && npm publish",
     "docs": "react-docgen components --out docs/components.json --pretty",
     "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
-    "coveralls": "^3.0.0",
+    "codecov": "^3.0.0",
     "enzyme": "^2.7.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
