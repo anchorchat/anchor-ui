@@ -5,15 +5,14 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Divider from '../../src/divider';
+import Divider from '../../src/divider/component';
 import getStyles from '../../src/divider/get-styles';
 
 chai.use(sinonChai);
 
 describe('Divider', () => {
   const props = {
-    text: 'text',
-    style: { root: true }
+    style: {}
   };
 
   beforeEach(() => {
@@ -24,39 +23,44 @@ describe('Divider', () => {
     global.navigator = undefined;
   });
 
-  it('should render an hr element if the text prop is not passed', () => {
-    props.text = null;
-    const wrapper = shallow(<Divider {...props} />);
+  it('should render divider element', () => {
+    const component = shallow(<Divider {...props} />);
 
-    expect(wrapper.find('hr')).to.have.length(1);
-    props.text = 'text';
+    expect(component.find('hr')).to.have.length(1);
   });
 
-  it('should render an h1 element if the text prop is passed', () => {
-    const wrapper = shallow(<Divider {...props} />);
+  it('should render h1 divider element', () => {
+    const component = shallow(<Divider {...props} />);
 
-    expect(wrapper.find('h1')).to.have.length(1);
-  });
+    expect(component.find('hr')).to.have.length(1);
+    expect(component.find('h1')).to.have.length(0);
 
-  it('should pass the text prop to the h1 element', () => {
-    const wrapper = shallow(<Divider {...props} />);
+    component.setProps({ text: 'text' });
+    expect(component.find('hr')).to.have.length(0);
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.containsMatchingElement(<h1>text</h1>)).to.equal(true);
 
-    expect(wrapper.containsMatchingElement(<h1>text</h1>)).to.equal(true);
+    component.setProps({ text: <span>node</span> });
+    expect(component.find('hr')).to.have.length(0);
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.find('h1').containsMatchingElement(<span>node</span>)).to.equal(true);
   });
 
   it('should get hr styles', () => {
-    props.text = null;
     const spy = sinon.spy(getStyles, 'hr');
 
     shallow(<Divider {...props} />);
     expect(spy).to.have.been.calledWith(props.style);
-    props.text = 'text';
   });
 
   it('should get text styles', () => {
+    const combinedProps = {
+      ...props,
+      text: 'text'
+    };
     const spy = sinon.spy(getStyles, 'text');
 
-    shallow(<Divider {...props} />);
+    shallow(<Divider {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });
