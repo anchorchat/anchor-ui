@@ -1,3 +1,4 @@
+import Radium from 'radium';
 import DateSeparator from './component';
 
-export default DateSeparator;
+export default Radium(DateSeparator);
