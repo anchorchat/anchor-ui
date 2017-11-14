@@ -14,12 +14,14 @@ class ImageLoaderExample extends Component {
 
   render() {
     const imgProps = {
-      height: 200,
-      width: 200,
+      style: {
+        height: '200px',
+        width: 'auto'
+      },
       onClick: () => console.log('clicked image')
     };
 
-    const error = <p>Error while loading component!</p>;
+    const error = <p>Error while loading image!</p>;
 
     const placeholder = <p>Loading image...</p>;
 

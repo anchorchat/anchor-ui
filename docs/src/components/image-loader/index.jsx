@@ -19,45 +19,67 @@ const images = [
 
 class ImageLoaderDoc extends Component {
   state = {
-    basicImage: '',
-    preloadImage: '',
-    failedImage: ''
+    image: '',
+    placeholderImage: '',
+    errorImage: ''
   }
 
-  handleBasicImageLoad = () => {
+  handleImageLoad = () => {
     const image = _.sample(images);
 
     this.setState({
-      basicImage: image
+      image
     });
   }
 
-  handlePreloadImageLoad = () => {
+  handlePlaceholderLoad = () => {
     const image = _.sample(images);
 
     this.setState({
-      preloadImage: image
+      placeholderImage: image
     });
   }
 
-  handleFailedImageLoad = () => {
+  handleErrorLoad = () => {
     this.setState({
-      failedImage: 'failedImage.jpg'
+      errorImage: 'unknown.jpg'
     });
   }
 
   render() {
-    const { basicImage, preloadImage, failedImage } = this.state;
+    const { image, placeholderImage, errorImage } = this.state;
 
     const componentData = _.find(components, component => component.displayName === 'ImageLoader');
     const style = {
       paper: {
         margin: 0,
-        padding: '20px'
+        padding: '16px'
+      },
+      images: {
+        display: 'flex',
+        flexWrap: 'wrap'
+      },
+      image: {
+        height: '200px',
+        width: 'auto'
+      },
+      error: {
+        height: '200px',
+        width: '200px',
+        color: '#FEFEFE',
+        backgroundColor: '#FD2A43',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      },
+      button: {
+        margin: '8px'
       }
     };
 
-    const imgProps = { width: 200, height: 200 };
+    const imgProps = {
+      style: style.image
+    };
 
     return (
       <article className="page">
@@ -70,41 +92,39 @@ class ImageLoaderDoc extends Component {
           <h1>Examples</h1>
           <Markdown markdown={example} title="Code example" />
           <Paper style={style.paper}>
-            <p>Basic usage</p>
-            <Button onClick={this.handleBasicImageLoad}>
+            <p>Click the buttons to load images</p>
+            <Button style={style.button} onClick={this.handleImageLoad}>
               <p>Load image</p>
             </Button>
-            <ImageLoader src={basicImage} imgProps={imgProps} />
-          </Paper>
-          <Paper style={style.paper}>
-            <p>With placeholder</p>
-            <Button onClick={this.handlePreloadImageLoad}>
-              <p>Load image</p>
+            <Button style={style.button} onClick={this.handlePlaceholderLoad}>
+              <p>With placeholder</p>
             </Button>
-            <ImageLoader
-              src={preloadImage}
-              imgProps={imgProps}
-              placeholder={
-                <div style={imgProps}>
-                  Loading...
-                </div>
-              }
-            />
-          </Paper>
-          <Paper style={style.paper}>
-            <p>With failed image component</p>
-            <Button onClick={this.handleFailedImageLoad}>
-              <p>Load image</p>
+            <Button style={style.button} onClick={this.handleErrorLoad}>
+              <p>With error</p>
             </Button>
-            <ImageLoader
-              src={failedImage}
-              imgProps={imgProps}
-              error={
-                <div style={{ width: 200, height: 200, color: 'red' }}>
-                  Failed to load image
-                </div>
-              }
-            />
+            <div style={style.images}>
+              <ImageLoader src={image} imgProps={imgProps} />
+              <ImageLoader
+                src={placeholderImage}
+                imgProps={imgProps}
+                placeholder={
+                  <img
+                    src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg"
+                    alt="placeholder"
+                    style={style.image}
+                  />
+                }
+              />
+              <ImageLoader
+                src={errorImage}
+                imgProps={imgProps}
+                error={
+                  <div style={style.error}>
+                    <p>Failed to load image</p>
+                  </div>
+                }
+              />
+            </div>
           </Paper>
         </section>
         <Props props={componentData.props} />
