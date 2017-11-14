@@ -67,4 +67,32 @@ describe('EmojiFilter.getStyles', () => {
       expect(style).to.have.property('color', '#FEFEFE');
     });
   });
+
+  describe('title', () => {
+    it('should get styles', () => {
+      const style = getStyles.title();
+
+      expect(style).to.deep.equal(styles.title);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.title({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('description', () => {
+    it('should get styles', () => {
+      const style = getStyles.description();
+
+      expect(style).to.deep.equal(styles.description);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.description({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
 });
