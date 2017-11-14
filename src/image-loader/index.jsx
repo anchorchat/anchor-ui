@@ -29,6 +29,7 @@ const defaultProps = {
 
 const displayName = 'ImageLoader';
 
+/* Show a placeholder while an image is loading or an error when an image fails to load. */
 class ImageLoader extends Component {
   state = {
     status: 'loading'
