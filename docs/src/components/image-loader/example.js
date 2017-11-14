@@ -19,7 +19,7 @@ class ImageLoaderExample extends Component {
       onClick: () => console.log('clicked image')
     };
 
-    const errorComponent = <p>Error while loading component!</p>;
+    const error = <p>Error while loading component!</p>;
 
     const placeholder = <p>Loading image...</p>;
 
@@ -28,7 +28,7 @@ class ImageLoaderExample extends Component {
         src="https://static.pexels.com/photos/205508/pexels-photo-205508.jpeg"
         alt="macbook and coffee"
         imgProps={imgProps}
-        errorComponent={errorComponent}
+        error={error}
         placeholder={placeholder}
         onError={this.handleOnError}
         onLoad={this.handleOnLoad}

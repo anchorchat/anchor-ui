@@ -99,7 +99,7 @@ class ImageLoaderDoc extends Component {
             <ImageLoader
               src={failedImage}
               imgProps={imgProps}
-              errorComponent={
+              error={
                 <div style={{ width: 200, height: 200, color: 'red' }}>
                   Failed to load image
                 </div>

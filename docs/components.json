@@ -3805,7 +3805,7 @@
           "computed": false
         }
       },
-      "errorComponent": {
+      "error": {
         "type": {
           "name": "node"
         },

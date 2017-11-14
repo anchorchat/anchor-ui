@@ -11,7 +11,7 @@ const propTypes = {
   /** The alt of the image to be loaded */
   alt: PropTypes.string,
   /** Optional error component to show when error did not load */
-  errorComponent: PropTypes.node,
+  error: PropTypes.node,
   /** Optional object for the img component of the image */
   imgProps: PropTypes.instanceOf(Object),
   /** An optional handler for the error event */
@@ -26,7 +26,7 @@ const propTypes = {
 
 const defaultProps = {
   alt: '',
-  errorComponent: null,
+  error: null,
   imgProps: {},
   onError: () => {},
   onLoad: () => {},
@@ -122,7 +122,7 @@ class ImageLoader extends Component {
   }
 
   render() {
-    const { placeholder, errorComponent, src } = this.props;
+    const { placeholder, error, src } = this.props;
     const { status } = this.state;
 
     if (!src) {
@@ -134,7 +134,7 @@ class ImageLoader extends Component {
     }
 
     if (status === Status.FAILED) {
-      return errorComponent;
+      return error;
     }
 
     return placeholder;
