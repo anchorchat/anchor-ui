@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "NODE_ENV=test nyc mocha --opts ./mocha.opts test/*",
-    "test:watch": "NODE_ENV=test mocha --watch --compilers js:babel-core/register test/*",
+    "test:watch": "NODE_ENV=test mocha --watch -opts ./mocha.opts test/*",
     "watch": "babel -d dist/ -w src/",
     "compile": "rimraf dist && babel -d dist/ src/",
     "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
@@ -17,7 +17,7 @@
     "dist": "cd dist && npm publish",
     "docs": "react-docgen components --out docs/components.json --pretty",
     "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js",
-    "test:coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",

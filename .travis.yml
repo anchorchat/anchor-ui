@@ -5,7 +5,7 @@ before_install:
   cd docs && npm install && cd ../
 before_script:
   npm run compile && npm run lint
-after_success: npm run test:coveralls
+after_success: npm run coverage
 before_deploy:
   cd docs && npm run build && cd ../
 deploy:
