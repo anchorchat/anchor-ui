@@ -33,9 +33,9 @@ const defaultProps = {
   preloadComponent: null
 };
 
-const displayName = 'Preloader';
+const displayName = 'Image';
 
-class Preloader extends Component {
+class Image extends Component {
   state = {
     status: Status.LOADING
   }
@@ -141,8 +141,8 @@ class Preloader extends Component {
   }
 }
 
-Preloader.propTypes = propTypes;
-Preloader.defaultProps = defaultProps;
-Preloader.displayName = displayName;
+Image.propTypes = propTypes;
+Image.defaultProps = defaultProps;
+Image.displayName = displayName;
 
-export default Preloader;
+export default Image;
