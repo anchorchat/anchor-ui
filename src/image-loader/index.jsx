@@ -4,15 +4,23 @@ import PropTypes from 'prop-types';
 const propTypes = {
   /** The alt of the image to be loaded */
   alt: PropTypes.string,
-  /** Optional error component to show when error did not load */
+  /** Optional error component to show when image failed to load */
   error: PropTypes.node,
-  /** Optional object for the img component of the image */
+  /** Optional props for the img element */
   imgProps: PropTypes.instanceOf(Object),
-  /** An optional handler for the error event */
+  /**
+   * Callback fired when loading throws an error
+   *
+   * function(event: object) => void
+   */
   onError: PropTypes.func,
-  /** An optional handler for the load event */
+  /**
+   * Callback fired when image is finished loading
+   *
+   * function(event: object) => void
+   */
   onLoad: PropTypes.func,
-  /** Node to show before image is loaded */
+  /** Placeholder to show while the image is loading */
   placeholder: PropTypes.node,
   /** The URL of the image to be loaded */
   src: PropTypes.string.isRequired
