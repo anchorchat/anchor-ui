@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const Status = {
-  LOADING: 'loading',
-  LOADED: 'loaded',
-  FAILED: 'failed',
-};
-
 const propTypes = {
   /** The alt of the image to be loaded */
   alt: PropTypes.string,
@@ -37,14 +31,14 @@ const displayName = 'ImageLoader';
 
 class ImageLoader extends Component {
   state = {
-    status: Status.LOADING
+    status: 'loading'
   }
 
   componentDidMount() {
     const { src } = this.props;
     const { status } = this.state;
 
-    if (src && status === Status.LOADING) {
+    if (src && status === 'loading') {
       this.create();
     }
   }
@@ -54,7 +48,7 @@ class ImageLoader extends Component {
 
     if (src !== nextProps.src) {
       this.setState({
-        status: Status.LOADING,
+        status: 'loading',
       });
     }
   }
@@ -63,7 +57,7 @@ class ImageLoader extends Component {
     const { src } = this.props;
     const { status } = this.state;
 
-    if (src && status === Status.LOADING && !this.img) {
+    if (src && status === 'loading' && !this.img) {
       this.create();
     }
   }
@@ -78,7 +72,7 @@ class ImageLoader extends Component {
     this.destroy();
 
     this.setState({
-      status: Status.FAILED
+      status: 'failed'
     });
 
     onError(error);
@@ -90,7 +84,7 @@ class ImageLoader extends Component {
     this.destroy();
 
     this.setState({
-      status: Status.LOADED
+      status: 'loaded'
     });
 
     onLoad(e);
@@ -129,11 +123,11 @@ class ImageLoader extends Component {
       return null;
     }
 
-    if (status === Status.LOADED) {
+    if (status === 'loaded') {
       return this.renderImage();
     }
 
-    if (status === Status.FAILED) {
+    if (status === 'failed') {
       return error;
     }
 
