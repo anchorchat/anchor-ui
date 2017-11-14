@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
-import getStyles from '../../src/admin-badge/get-styles';
+import getStyles from '../../src/badge/get-styles';
 import styles from '../../src/admin-badge/styles';
 
 describe('Badge.getStyles', () => {
@@ -24,10 +24,9 @@ describe('Badge.getStyles', () => {
     });
 
     it('should add inverted styles', () => {
-      const style = getStyles.root('red', true);
+      const style = getStyles.root(undefined, true);
 
-      expect(style).to.have.property('backgroundColor', '#FEFEFE');
-      expect(style).to.have.property('color', 'red');
+      expect(style).to.deep.include(style.inverted);
     });
   });
 });
