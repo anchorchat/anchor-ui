@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Image from '../../../../dist/image';
+import ImageLoader from '../../../../dist/image-loader';
 import Button from '../../../../dist/button';
 import Props from '../props';
 import components from '../../../components.json';
@@ -17,7 +17,7 @@ const images = [
   'https://static.pexels.com/photos/635628/pexels-photo-635628.jpeg'
 ];
 
-class ImageDoc extends Component {
+class ImageLoaderDoc extends Component {
   state = {
     basicImage: '',
     preloadImage: '',
@@ -49,7 +49,7 @@ class ImageDoc extends Component {
   render() {
     const { basicImage, preloadImage, failedImage } = this.state;
 
-    const componentData = _.find(components, component => component.displayName === 'Image');
+    const componentData = _.find(components, component => component.displayName === 'ImageLoader');
     const style = {
       paper: {
         margin: 0,
@@ -61,7 +61,7 @@ class ImageDoc extends Component {
 
     return (
       <article className="page">
-        <h1>Image</h1>
+        <h1>ImageLoader</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
@@ -74,17 +74,17 @@ class ImageDoc extends Component {
             <Button onClick={this.handleBasicImageLoad}>
               <p>Load image</p>
             </Button>
-            <Image src={basicImage} imgProps={imgProps} />
+            <ImageLoader src={basicImage} imgProps={imgProps} />
           </Paper>
           <Paper style={style.paper}>
-            <p>With preload component</p>
+            <p>With placeholder</p>
             <Button onClick={this.handlePreloadImageLoad}>
               <p>Load image</p>
             </Button>
-            <Image
+            <ImageLoader
               src={preloadImage}
               imgProps={imgProps}
-              preloadComponent={
+              placeholder={
                 <div style={imgProps}>
                   Loading...
                 </div>
@@ -96,7 +96,7 @@ class ImageDoc extends Component {
             <Button onClick={this.handleFailedImageLoad}>
               <p>Load image</p>
             </Button>
-            <Image
+            <ImageLoader
               src={failedImage}
               imgProps={imgProps}
               errorComponent={
@@ -113,4 +113,4 @@ class ImageDoc extends Component {
   }
 }
 
-export default ImageDoc;
+export default ImageLoaderDoc;

@@ -31,7 +31,7 @@ export Modal from './modal';
 export Overlay from './overlay';
 export Paper from './paper';
 export PopOver from './pop-over';
-export Image from './image';
+export ImageLoader from './image-loader';
 export Profile from './profile';
 export ProfileCard from './profile-card';
 export RadioButton from './radio-button';

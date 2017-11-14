@@ -3743,9 +3743,9 @@
       }
     }
   },
-  "components/image/index.jsx": {
+  "components/image-loader/index.jsx": {
     "description": "",
-    "displayName": "Image",
+    "displayName": "ImageLoader",
     "methods": [
       {
         "name": "handleError",
@@ -3850,7 +3850,7 @@
           "computed": false
         }
       },
-      "preloadComponent": {
+      "placeholder": {
         "type": {
           "name": "node"
         },

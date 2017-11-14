@@ -19,7 +19,7 @@ const propTypes = {
   /** An optional handler for the load event */
   onLoad: PropTypes.func,
   /** Node to show before image is loaded */
-  preloadComponent: PropTypes.node,
+  placeholder: PropTypes.node,
   /** The URL of the image to be loaded */
   src: PropTypes.string.isRequired
 };
@@ -30,12 +30,12 @@ const defaultProps = {
   imgProps: {},
   onError: () => {},
   onLoad: () => {},
-  preloadComponent: null
+  placeholder: null
 };
 
-const displayName = 'Image';
+const displayName = 'ImageLoader';
 
-class Image extends Component {
+class ImageLoader extends Component {
   state = {
     status: Status.LOADING
   }
@@ -122,7 +122,7 @@ class Image extends Component {
   }
 
   render() {
-    const { preloadComponent, errorComponent, src } = this.props;
+    const { placeholder, errorComponent, src } = this.props;
     const { status } = this.state;
 
     if (!src) {
@@ -137,12 +137,12 @@ class Image extends Component {
       return errorComponent;
     }
 
-    return preloadComponent;
+    return placeholder;
   }
 }
 
-Image.propTypes = propTypes;
-Image.defaultProps = defaultProps;
-Image.displayName = displayName;
+ImageLoader.propTypes = propTypes;
+ImageLoader.defaultProps = defaultProps;
+ImageLoader.displayName = displayName;
 
-export default Image;
+export default ImageLoader;

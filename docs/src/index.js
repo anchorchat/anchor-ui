@@ -51,7 +51,7 @@ import DateSeparator from './components/date-separator';
 import EmojiFilter from './components/emoji-filter';
 import Gallery from './components/gallery';
 import Media from './components/media';
-import Image from './components/image';
+import ImageLoader from './components/image-loader';
 import './css/meyer-reset.css';
 import './css/index.css';
 import './css/prism.css';
@@ -106,7 +106,7 @@ ReactDOM.render(
         <Route path="/emoji-filter" component={EmojiFilter} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/media" component={Media} />
-        <Route path="/preloader" component={Image} />
+        <Route path="/preloader" component={ImageLoader} />
       </Route>
     </Router>
   </StyleRoot>,
