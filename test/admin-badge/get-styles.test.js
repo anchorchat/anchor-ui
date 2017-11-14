@@ -27,7 +27,7 @@ describe('AdminBadge.getStyles', () => {
     it('should add inverted styles', () => {
       const style = getStyles.root(undefined, true);
 
-      expect(style).to.deep.include(style.inverted);
+      expect(style).to.include({ ...style.inverted });
     });
   });
 });
