@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import styles from './styles';
-import themeable from '../themeable';
 
 /** A channel's header */
 const ChannelHeader = ({
@@ -77,9 +74,4 @@ ChannelHeader.defaultProps = {
   secondaryText: null
 };
 
-const enhance = compose(
-  themeable(),
-  Radium
-);
-
-export default enhance(ChannelHeader);
+export default ChannelHeader;

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** A Card is a piece of paper with unique related data */
@@ -23,4 +22,4 @@ CardContent.defaultProps = {
   style: {}
 };
 
-export default Radium(CardContent);
+export default CardContent;

@@ -5,6 +5,7 @@ import colors from '../settings/colors';
 const root = overrideStyle => combineStyles(styles.root, overrideStyle);
 
 const text = overrideStyle => combineStyles(styles.text, overrideStyle);
+
 const secondaryText = (color = colors.theme, overrideStyle) => {
   const style = combineStyles(styles.secondaryText, { color });
 

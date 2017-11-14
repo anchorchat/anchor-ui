@@ -8,6 +8,7 @@
     "react/no-danger": 0
   },
   "globals": {
+    "Image": true,
     "window": true,
     "document": true
   },

@@ -5,16 +5,17 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Card from '../../src/card/component';
-import getStyles from '../../src/card/get-styles';
+import DateSeparator from '../../src/date-separator/component';
+import getStyles from '../../src/date-separator/get-styles';
 
 chai.use(sinonChai);
 
-describe('Card', () => {
+describe('DateSeparator', () => {
   const props = {
-    style: {}
+    date: new Date(),
+    style: {},
+    textStyle: {}
   };
-  const children = <p>children</p>;
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -24,22 +25,24 @@ describe('Card', () => {
     global.navigator = undefined;
   });
 
-  it('should render a section element', () => {
-    const component = shallow(<Card {...props}>{children}</Card>);
+  it('should render root elememts', () => {
+    const component = shallow(<DateSeparator {...props} />);
 
     expect(component.find('section')).to.have.length(1);
-  });
-
-  it('should render children', () => {
-    const component = shallow(<Card {...props}>{children}</Card>);
-
-    expect(component.containsMatchingElement(<p>children</p>)).to.equal(true);
+    expect(component.find('p')).to.have.length(1);
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Card {...props} >{children}</Card>);
+    shallow(<DateSeparator {...props} />);
     expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should get text styles', () => {
+    const spy = sinon.spy(getStyles, 'text');
+
+    shallow(<DateSeparator {...props} />);
+    expect(spy).to.have.been.calledWith(props.textStyle);
   });
 });
