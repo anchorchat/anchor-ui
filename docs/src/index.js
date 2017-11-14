@@ -106,7 +106,7 @@ ReactDOM.render(
         <Route path="/emoji-filter" component={EmojiFilter} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/media" component={Media} />
-        <Route path="/preloader" component={ImageLoader} />
+        <Route path="/image-loader" component={ImageLoader} />
       </Route>
     </Router>
   </StyleRoot>,
