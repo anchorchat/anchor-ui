@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import EventListener from 'react-event-listener';
 import styles from './styles';
 import Button from '../button';
@@ -9,7 +7,42 @@ import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
-import themeable from '../themeable';
+
+const displayName = 'Dialog';
+
+const propTypes = {
+  /** Header text */
+  header: PropTypes.node,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the overlay element */
+  overlayStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the header element */
+  headerStyle: PropTypes.instanceOf(Object),
+  /**
+   * Callback fired when the close button is clicked
+   *
+   * function(event: object) => void
+   */
+  hideDialog: PropTypes.func.isRequired,
+  /** Optional children, will only render children and headerText with other styles */
+  children: PropTypes.node,
+  /** The close button's icon color */
+  iconColor: PropTypes.string,
+  /** Toggle the Dialogs visibility */
+  open: PropTypes.bool,
+  color: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  style: {},
+  overlayStyle: {},
+  headerStyle: {},
+  children: null,
+  iconColor: colors.white,
+  header: null,
+  open: false
+};
 
 /** General purpose dialog */
 class Dialog extends Component {
@@ -55,45 +88,8 @@ class Dialog extends Component {
   }
 }
 
-Dialog.displayName = 'Dialog';
+Dialog.propTypes = propTypes;
+Dialog.defaultProps = defaultProps;
+Dialog.displayName = displayName;
 
-Dialog.propTypes = {
-  /** Header text */
-  header: PropTypes.node,
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
-  /** Override the styles of the overlay element */
-  overlayStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
-  /**
-   * Callback fired when the close button is clicked
-   *
-   * function(event: object) => void
-   */
-  hideDialog: PropTypes.func.isRequired,
-  /** Optional children, will only render children and headerText with other styles */
-  children: PropTypes.node,
-  /** The close button's icon color */
-  iconColor: PropTypes.string,
-  /** Toggle the Dialogs visibility */
-  open: PropTypes.bool,
-  color: PropTypes.string.isRequired
-};
-
-Dialog.defaultProps = {
-  style: {},
-  overlayStyle: {},
-  headerStyle: {},
-  children: null,
-  iconColor: colors.white,
-  header: null,
-  open: false
-};
-
-const enhance = compose(
-  themeable(),
-  Radium
-);
-
-export default enhance(Dialog);
+export default Dialog;
