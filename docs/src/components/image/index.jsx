@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Preloader from '../../../../dist/preloader';
+import Image from '../../../../dist/image';
 import Button from '../../../../dist/button';
 import Props from '../props';
 import components from '../../../components.json';
@@ -17,7 +17,7 @@ const images = [
   'https://static.pexels.com/photos/635628/pexels-photo-635628.jpeg'
 ];
 
-class PreloaderDoc extends Component {
+class ImageDoc extends Component {
   state = {
     basicImage: '',
     preloadImage: '',
@@ -49,7 +49,7 @@ class PreloaderDoc extends Component {
   render() {
     const { basicImage, preloadImage, failedImage } = this.state;
 
-    const componentData = _.find(components, component => component.displayName === 'Preloader');
+    const componentData = _.find(components, component => component.displayName === 'Image');
     const style = {
       paper: {
         margin: 0,
@@ -61,7 +61,7 @@ class PreloaderDoc extends Component {
 
     return (
       <article className="page">
-        <h1>Preloader</h1>
+        <h1>Image</h1>
         <section>
           <h1>Description</h1>
           <p>{componentData.description}</p>
@@ -74,14 +74,14 @@ class PreloaderDoc extends Component {
             <Button onClick={this.handleBasicImageLoad}>
               <p>Load image</p>
             </Button>
-            <Preloader src={basicImage} imgProps={imgProps} />
+            <Image src={basicImage} imgProps={imgProps} />
           </Paper>
           <Paper style={style.paper}>
             <p>With preload component</p>
             <Button onClick={this.handlePreloadImageLoad}>
               <p>Load image</p>
             </Button>
-            <Preloader
+            <Image
               src={preloadImage}
               imgProps={imgProps}
               preloadComponent={
@@ -96,7 +96,7 @@ class PreloaderDoc extends Component {
             <Button onClick={this.handleFailedImageLoad}>
               <p>Load image</p>
             </Button>
-            <Preloader
+            <Image
               src={failedImage}
               imgProps={imgProps}
               errorComponent={
@@ -113,4 +113,4 @@ class PreloaderDoc extends Component {
   }
 }
 
-export default PreloaderDoc;
+export default ImageDoc;

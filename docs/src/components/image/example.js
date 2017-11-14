@@ -1,9 +1,9 @@
 export default `
 \`\`\`jsx
 import React, { Component } from 'react';
-import Preloader from 'anchor-ui/preloader';
+import Image from 'anchor-ui/image';
 
-class MyComponent extends Component {
+class ImageExample extends Component {
   handleOnLoad = () => {
     console.log('Loaded image');
   }
@@ -24,7 +24,7 @@ class MyComponent extends Component {
     const preloadComponent = <p>Loading image...</p>;
 
     return (
-      <Preloader
+      <Image
         src="https://static.pexels.com/photos/205508/pexels-photo-205508.jpeg"
         alt="macbook and coffee"
         imgProps={imgProps}
@@ -36,5 +36,7 @@ class MyComponent extends Component {
     );
   }
 }
+
+export default ImageExample;
 \`\`\`
 `;

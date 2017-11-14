@@ -3743,6 +3743,133 @@
       }
     }
   },
+  "components/image/index.jsx": {
+    "description": "",
+    "displayName": "Image",
+    "methods": [
+      {
+        "name": "handleError",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "error",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "create",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "destroy",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderImage",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "alt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The alt of the image to be loaded",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "errorComponent": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional error component to show when error did not load",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imgProps": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Optional object for the img component of the image",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onError": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "An optional handler for the error event",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onLoad": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "An optional handler for the load event",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "preloadComponent": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Node to show before image is loaded",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "src": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The URL of the image to be loaded"
+      }
+    }
+  },
   "components/input/index.jsx": {
     "description": "General purpose form input",
     "displayName": "Input",
@@ -5918,133 +6045,6 @@
           "value": "null",
           "computed": false
         }
-      }
-    }
-  },
-  "components/preloader/index.jsx": {
-    "description": "",
-    "displayName": "Preloader",
-    "methods": [
-      {
-        "name": "handleError",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "error",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "handleLoad",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "e",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "create",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "destroy",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "renderImage",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "alt": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The alt of the image to be loaded",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "errorComponent": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Optional error component to show when error did not load",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "imgProps": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Optional object for the img component of the image",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "onError": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "An optional handler for the error event",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "onLoad": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "An optional handler for the load event",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "preloader": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Node to show before image is loaded",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "src": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "The URL of the image to be loaded"
       }
     }
   },
