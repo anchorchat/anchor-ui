@@ -3810,7 +3810,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Optional error component to show when error did not load",
+        "description": "Optional error component to show when image failed to load",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3822,7 +3822,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Optional object for the img component of the image",
+        "description": "Optional props for the img element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3833,7 +3833,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "An optional handler for the error event",
+        "description": "Callback fired when loading throws an error\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -3844,7 +3844,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "An optional handler for the load event",
+        "description": "Callback fired when image is finished loading\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -3855,7 +3855,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Node to show before image is loaded",
+        "description": "Placeholder to show while the image is loading",
         "defaultValue": {
           "value": "null",
           "computed": false
