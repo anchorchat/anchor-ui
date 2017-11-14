@@ -10,7 +10,7 @@ import getStyles from '../../src/date-separator/get-styles';
 
 chai.use(sinonChai);
 
-describe('Commands', () => {
+describe('DateSeparator', () => {
   const props = {
     date: new Date(),
     style: {},
