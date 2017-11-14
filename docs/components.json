@@ -1425,7 +1425,7 @@
       }
     }
   },
-  "components/emoji-filter/index.jsx": {
+  "components/emoji-filter/component.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "EmojiFilter",
     "methods": [

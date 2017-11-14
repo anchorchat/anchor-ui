@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import _ from 'lodash';
-import onClickOutside from 'react-onclickoutside';
 import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
 import EventListener from 'react-event-listener';
@@ -11,7 +8,6 @@ import getStyles from './get-styles';
 import styles from './styles';
 import emoji from '../emoji-menu/emoji';
 import EmojiModifiers from '../emoji-menu/emoji-modifiers';
-import themeable from '../themeable';
 
 const propTypes = {
   /** Filter emoji based on input value */
@@ -284,10 +280,4 @@ EmojiFilter.displayName = 'EmojiFilter';
 EmojiFilter.propTypes = propTypes;
 EmojiFilter.defaultProps = defaultProps;
 
-const enhance = compose(
-  themeable(),
-  onClickOutside,
-  Radium
-);
-
-export default enhance(EmojiFilter);
+export default EmojiFilter;
