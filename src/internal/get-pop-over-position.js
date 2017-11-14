@@ -3,6 +3,17 @@ import combineStyles from './combine-styles';
 const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   const { innerWidth, innerHeight } = window;
   const halfButtonWidth = (button.width / 2);
+  const fitsInWindow = (innerHeight - 33) > popOver.height;
+
+  let popOverHeight = popOver.height;
+  let position = {
+    position: 'fixed'
+  };
+
+  if (!fitsInWindow) {
+    popOverHeight = (innerHeight - 32);
+    position = combineStyles(position, { height: popOverHeight });
+  }
 
   const fitsAboveButton = button.top > popOver.height;
   const fitsRightFromButton = (innerWidth - button.right - halfButtonWidth) > popOver.width;
@@ -28,10 +39,6 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
     vertical = 'middle';
   }
 
-  let position = {
-    position: 'fixed'
-  };
-
   if (vertical === 'bottom') {
     position = combineStyles(position, { top: button.top + button.height, bottom: 'initial' });
   }
@@ -44,13 +51,13 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
     const overflowsTop = (popOver.height / 2) > (button.top + halfButtonWidth);
     const overflowsBottom = (popOver.height / 2) > (innerHeight - button.bottom);
 
-    position = combineStyles(position, { top: 'initial', bottom: (innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2) });
+    position = combineStyles(position, { top: 'initial', bottom: (innerHeight - button.bottom - (popOverHeight / 2)) + (button.height / 2) });
 
-    if (overflowsTop && !((popOver.height + 32) > innerHeight)) {
+    if (overflowsTop && !((popOverHeight + 32) > innerHeight)) {
       position = combineStyles(position, { top: 16, bottom: 'initial' });
     }
 
-    if (overflowsBottom && !((popOver.height + 32) > innerHeight)) {
+    if (overflowsBottom && !((popOverHeight + 32) > innerHeight)) {
       position = combineStyles(position, { top: 'initial', bottom: 16 });
     }
   }
