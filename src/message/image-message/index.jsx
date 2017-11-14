@@ -6,6 +6,7 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import ImageLoader from '../../image-loader';
 
 class ImageMessage extends Component {
   constructor() {
@@ -66,6 +67,14 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
     }
 
+    const imgProps = {
+      onClick,
+      style: imageStyle
+    };
+
+    const placeholder = <img style={imageStyle} src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg" alt="placeholder" />;
+    const error = <img style={imageStyle} src="https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg" alt="error" />;
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -80,7 +89,15 @@ class ImageMessage extends Component {
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
             !collapsed
-            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            ? (
+              <ImageLoader
+                src={message.body}
+                alt="user-upload"
+                imgProps={imgProps}
+                placeholder={placeholder}
+                error={error}
+              />
+            )
             : <span>{collapsedText}</span>
           }
           <MessageTime

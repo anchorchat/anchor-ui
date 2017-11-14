@@ -6,6 +6,7 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import ImageLoader from '../../image-loader';
 
 class GiphyMessage extends Component {
   constructor() {
@@ -67,6 +68,14 @@ class GiphyMessage extends Component {
       giphyStyle = combineStyles(giphyStyle, { cursor: 'pointer' });
     }
 
+    const imgProps = {
+      onClick,
+      style: giphyStyle
+    };
+
+    const placeholder = <img style={giphyStyle} src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg" alt="placeholder" />;
+    const error = <img style={giphyStyle} src="https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg" alt="error" />;
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -86,7 +95,15 @@ class GiphyMessage extends Component {
           }
           {
             !collapsed
-            ? <img onClick={onClick} style={giphyStyle} src={message.body} alt="user-upload" />
+            ? (
+              <ImageLoader
+                src={message.body}
+                alt="user-upload"
+                imgProps={imgProps}
+                placeholder={placeholder}
+                error={error}
+              />
+            )
             : <span>{collapsedText}</span>
           }
           <MessageTime
