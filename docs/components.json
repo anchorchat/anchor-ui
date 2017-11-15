@@ -5297,6 +5297,17 @@
           "computed": false
         }
       },
+      "onImageError": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when an image or giphy throws an error while loading\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"

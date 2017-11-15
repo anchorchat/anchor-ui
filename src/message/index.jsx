@@ -126,6 +126,12 @@ class Message extends Component {
      * function(event: object) => void
      */
     onImageLoad: PropTypes.func,
+    /**
+     * Callback fired when an image or giphy throws an error while loading
+     *
+     * function(event: object) => void
+     */
+    onImageError: PropTypes.func,
     color: PropTypes.string.isRequired,
   }
 
@@ -160,7 +166,8 @@ class Message extends Component {
     enableMultiline: false,
     imagePlaceholder: 'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg',
     imageError: 'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg',
-    onImageLoad: () => {}
+    onImageLoad: () => {},
+    onImageError: () => {}
   }
 
   constructor() {
@@ -260,6 +267,7 @@ class Message extends Component {
       imagePlaceholder,
       imageError,
       onImageLoad,
+      onImageError,
       ...custom
     } = this.props;
 

@@ -50,7 +50,8 @@ class GiphyMessage extends Component {
       badge,
       imagePlaceholder,
       imageError,
-      onImageLoad
+      onImageLoad,
+      onImageError
     } = this.props;
     const { lightbox } = this.state;
 
@@ -106,6 +107,7 @@ class GiphyMessage extends Component {
                 placeholder={placeholder}
                 error={error}
                 onLoad={onImageLoad}
+                onError={onImageError}
               />
             )
             : <span>{collapsedText}</span>
@@ -162,7 +164,8 @@ GiphyMessage.propTypes = {
   badge: PropTypes.node,
   imagePlaceholder: PropTypes.string.isRequired,
   imageError: PropTypes.string.isRequired,
-  onImageLoad: PropTypes.func.isRequired
+  onImageLoad: PropTypes.func.isRequired,
+  onImageError: PropTypes.func.isRequired
 };
 
 GiphyMessage.defaultProps = {
