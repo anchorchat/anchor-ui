@@ -24,9 +24,7 @@ export default {
     marginRight: '48px'
   },
   myMessage: {
-    backgroundColor: colors.theme,
-    marginLeft: '0',
-    marginRight: '16px',
+    backgroundColor: colors.theme
   },
   body: {
     width: 'auto',
