@@ -11,7 +11,6 @@ export default {
     backgroundColor: colors.white,
     borderRadius: '3px',
     boxSizing: 'border-box',
-    marginLeft: '16px',
     padding: '12px',
     position: 'relative',
     display: 'flex',
