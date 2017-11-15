@@ -6,6 +6,7 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import ImageLoader from '../../image-loader';
 
 class GiphyMessage extends Component {
   constructor() {
@@ -46,7 +47,11 @@ class GiphyMessage extends Component {
       collapsedText,
       giphyDescription,
       locale,
-      badge
+      badge,
+      imagePlaceholder,
+      imageError,
+      onImageLoad,
+      onImageError
     } = this.props;
     const { lightbox } = this.state;
 
@@ -67,6 +72,14 @@ class GiphyMessage extends Component {
       giphyStyle = combineStyles(giphyStyle, { cursor: 'pointer' });
     }
 
+    const imgProps = {
+      onClick,
+      style: giphyStyle
+    };
+
+    const placeholder = <img style={giphyStyle} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={giphyStyle} src={imageError} alt="error" />;
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -86,7 +99,17 @@ class GiphyMessage extends Component {
           }
           {
             !collapsed
-            ? <img onClick={onClick} style={giphyStyle} src={message.body} alt="user-upload" />
+            ? (
+              <ImageLoader
+                src={message.body}
+                alt="user-upload"
+                imgProps={imgProps}
+                placeholder={placeholder}
+                error={error}
+                onLoad={onImageLoad}
+                onError={onImageError}
+              />
+            )
             : <span>{collapsedText}</span>
           }
           <MessageTime
@@ -138,7 +161,11 @@ GiphyMessage.propTypes = {
   collapsedText: PropTypes.node,
   giphyDescription: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  imagePlaceholder: PropTypes.string.isRequired,
+  imageError: PropTypes.string.isRequired,
+  onImageLoad: PropTypes.func.isRequired,
+  onImageError: PropTypes.func.isRequired
 };
 
 GiphyMessage.defaultProps = {

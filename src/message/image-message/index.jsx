@@ -6,6 +6,7 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import ImageLoader from '../../image-loader';
 
 class ImageMessage extends Component {
   constructor() {
@@ -45,7 +46,11 @@ class ImageMessage extends Component {
       collapsed,
       collapsedText,
       locale,
-      badge
+      badge,
+      imagePlaceholder,
+      imageError,
+      onImageLoad,
+      onImageError
     } = this.props;
     const { lightbox } = this.state;
 
@@ -66,6 +71,14 @@ class ImageMessage extends Component {
       imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
     }
 
+    const imgProps = {
+      onClick,
+      style: imageStyle
+    };
+
+    const placeholder = <img style={imageStyle} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={imageStyle} src={imageError} alt="error" />;
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
         <MessageHeader
@@ -80,7 +93,17 @@ class ImageMessage extends Component {
         <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
             !collapsed
-            ? <img onClick={onClick} style={imageStyle} src={message.body} alt="user-upload" />
+            ? (
+              <ImageLoader
+                src={message.body}
+                alt="user-upload"
+                imgProps={imgProps}
+                placeholder={placeholder}
+                error={error}
+                onLoad={onImageLoad}
+                onError={onImageError}
+              />
+            )
             : <span>{collapsedText}</span>
           }
           <MessageTime
@@ -131,7 +154,11 @@ ImageMessage.propTypes = {
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  imagePlaceholder: PropTypes.string.isRequired,
+  imageError: PropTypes.string.isRequired,
+  onImageLoad: PropTypes.func.isRequired,
+  onImageError: PropTypes.func.isRequired
 };
 
 ImageMessage.defaultProps = {

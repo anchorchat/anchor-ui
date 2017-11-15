@@ -5264,6 +5264,50 @@
           "computed": false
         }
       },
+      "imagePlaceholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Image placeholder url",
+        "defaultValue": {
+          "value": "'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg'",
+          "computed": false
+        }
+      },
+      "imageError": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Image error url",
+        "defaultValue": {
+          "value": "'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg'",
+          "computed": false
+        }
+      },
+      "onImageLoad": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when an image or giphy is finished loading\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onImageError": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when an image or giphy throws an error while loading\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
       "color": {
         "type": {
           "name": "string"
