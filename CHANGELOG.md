@@ -2,12 +2,58 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.2...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.6.0...HEAD)
 
 **Merged pull requests:**
 
+- \[4.6.0\] Updated some test files, added ImageLoader and fixed Message no-Avatar bug. [\#983](https://github.com/anchorchat/anchor-ui/pull/983) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.6.0](https://github.com/anchorchat/anchor-ui/tree/v4.6.0) (2017-11-16)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.2...v4.6.0)
+
+**Fixed bugs:**
+
+- Make sure ref actually works [\#890](https://github.com/anchorchat/anchor-ui/issues/890)
+
+**Closed issues:**
+
+- \[Message\] Margin without avatar being passed [\#981](https://github.com/anchorchat/anchor-ui/issues/981)
+- Display CodeCoverage [\#977](https://github.com/anchorchat/anchor-ui/issues/977)
+
+**Merged pull requests:**
+
+- Issue \#981 [\#982](https://github.com/anchorchat/anchor-ui/pull/982) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#977 [\#980](https://github.com/anchorchat/anchor-ui/pull/980) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaakluthart/image loader message [\#979](https://github.com/anchorchat/anchor-ui/pull/979) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#552 emoji filter [\#978](https://github.com/anchorchat/anchor-ui/pull/978) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 divider [\#976](https://github.com/anchorchat/anchor-ui/pull/976) ([IanCStewart](https://github.com/IanCStewart))
+- Fixed badge uncovered lines. [\#975](https://github.com/anchorchat/anchor-ui/pull/975) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 dialog [\#974](https://github.com/anchorchat/anchor-ui/pull/974) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaakluthart/image [\#973](https://github.com/anchorchat/anchor-ui/pull/973) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#552 date separator [\#972](https://github.com/anchorchat/anchor-ui/pull/972) ([IanCStewart](https://github.com/IanCStewart))
+- Implemented 8dp grid to Card. [\#970](https://github.com/anchorchat/anchor-ui/pull/970) ([IanCStewart](https://github.com/IanCStewart))
+- Implemented 8dp grid to Button. [\#969](https://github.com/anchorchat/anchor-ui/pull/969) ([IanCStewart](https://github.com/IanCStewart))
+- Implemented 8dp grid to Banner. [\#968](https://github.com/anchorchat/anchor-ui/pull/968) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 commands [\#966](https://github.com/anchorchat/anchor-ui/pull/966) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 checkbox [\#965](https://github.com/anchorchat/anchor-ui/pull/965) ([IanCStewart](https://github.com/IanCStewart))
+- Replaced emojione.imagePathPNG for emojione.emojiSize. Fixes \#725. [\#964](https://github.com/anchorchat/anchor-ui/pull/964) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 checkbox [\#962](https://github.com/anchorchat/anchor-ui/pull/962) ([IanCStewart](https://github.com/IanCStewart))
+- Refactored message-list, made ref work again [\#961](https://github.com/anchorchat/anchor-ui/pull/961) ([larstadema](https://github.com/larstadema))
+- Issue \#552 card header [\#960](https://github.com/anchorchat/anchor-ui/pull/960) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 channel header [\#959](https://github.com/anchorchat/anchor-ui/pull/959) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 card content [\#958](https://github.com/anchorchat/anchor-ui/pull/958) ([IanCStewart](https://github.com/IanCStewart))
+- Implemented 8dp grid to AppHeader. [\#956](https://github.com/anchorchat/anchor-ui/pull/956) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#751 alert [\#955](https://github.com/anchorchat/anchor-ui/pull/955) ([IanCStewart](https://github.com/IanCStewart))
+- Bumped messageInput multiline check to `\> 49`. Fixes firefox/Edge15 i… [\#954](https://github.com/anchorchat/anchor-ui/pull/954) ([IanCStewart](https://github.com/IanCStewart))
+- Added backgroundColor and color. [\#953](https://github.com/anchorchat/anchor-ui/pull/953) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#552 card [\#952](https://github.com/anchorchat/anchor-ui/pull/952) ([IanCStewart](https://github.com/IanCStewart))
+- Replace dangerouslySetInnerHTML with html-react-parser. Fixes \#761. [\#951](https://github.com/anchorchat/anchor-ui/pull/951) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#872 [\#950](https://github.com/anchorchat/anchor-ui/pull/950) ([IanCStewart](https://github.com/IanCStewart))
+- Created default style file to make message styles more dry. Fixes \#494. [\#949](https://github.com/anchorchat/anchor-ui/pull/949) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#783 [\#948](https://github.com/anchorchat/anchor-ui/pull/948) ([IanCStewart](https://github.com/IanCStewart))
 - Url regexp [\#946](https://github.com/anchorchat/anchor-ui/pull/946) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.5.2\] Updated react-onclickoutside, updated dev dependecies, fixed unmounting in media component, added new code examples and fixed menu scroll bug. [\#945](https://github.com/anchorchat/anchor-ui/pull/945) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#930 [\#934](https://github.com/anchorchat/anchor-ui/pull/934) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.5.2](https://github.com/anchorchat/anchor-ui/tree/v4.5.2) (2017-11-06)
 [Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.1...v4.5.2)
