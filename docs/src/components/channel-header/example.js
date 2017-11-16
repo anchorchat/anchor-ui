@@ -3,8 +3,8 @@ export default `
   import React from 'react';
   import ChannelHeader from 'anchor-ui/channel-header';
   import Button from 'anchor-ui/button';
-  import IconChannels from 'anchor-ui/cons/icon-channels';
-  import IconPeople from 'anchor-ui/cons/icon-people';
+  import IconChannels from 'anchor-ui/icons/icon-channels';
+  import IconPeople from 'anchor-ui/icons/icon-people';
 
   const ChannelHeaderExample = () => {
     <ChannelHeader
