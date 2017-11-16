@@ -2,10 +2,70 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.2...HEAD)
 
 **Merged pull requests:**
 
+- Url regexp [\#946](https://github.com/anchorchat/anchor-ui/pull/946) ([IanCStewart](https://github.com/IanCStewart))
+- \[4.5.2\] Updated react-onclickoutside, updated dev dependecies, fixed unmounting in media component, added new code examples and fixed menu scroll bug. [\#945](https://github.com/anchorchat/anchor-ui/pull/945) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v4.5.2](https://github.com/anchorchat/anchor-ui/tree/v4.5.2) (2017-11-06)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.1...v4.5.2)
+
+**Implemented enhancements:**
+
+- Make the documentation responsive [\#180](https://github.com/anchorchat/anchor-ui/issues/180)
+
+**Fixed bugs:**
+
+- \[Menu\] content scrolls under header [\#937](https://github.com/anchorchat/anchor-ui/issues/937)
+
+**Closed issues:**
+
+- \[Banner\] make use of Media component instead of react-measure [\#941](https://github.com/anchorchat/anchor-ui/issues/941)
+- sendMessage prop is MessageInput is not returning the text value [\#932](https://github.com/anchorchat/anchor-ui/issues/932)
+- import Message from 'anchor-ui/message' [\#930](https://github.com/anchorchat/anchor-ui/issues/930)
+
+**Merged pull requests:**
+
+- Sjaakluthart/code examples [\#944](https://github.com/anchorchat/anchor-ui/pull/944) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#941 [\#943](https://github.com/anchorchat/anchor-ui/pull/943) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 button [\#942](https://github.com/anchorchat/anchor-ui/pull/942) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#937 [\#940](https://github.com/anchorchat/anchor-ui/pull/940) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaakluthart/code examples [\#939](https://github.com/anchorchat/anchor-ui/pull/939) ([sjaakluthart](https://github.com/sjaakluthart))
+- Sjaakluthart/docs styles [\#938](https://github.com/anchorchat/anchor-ui/pull/938) ([sjaakluthart](https://github.com/sjaakluthart))
+- Sjaak/docs code examples [\#936](https://github.com/anchorchat/anchor-ui/pull/936) ([sjaakluthart](https://github.com/sjaakluthart))
+- Fixed bug in unmounting of media listeners. [\#935](https://github.com/anchorchat/anchor-ui/pull/935) ([larstadema](https://github.com/larstadema))
+- Update dev dependencies [\#933](https://github.com/anchorchat/anchor-ui/pull/933) ([sjaakluthart](https://github.com/sjaakluthart))
+- Updated react-onclickoutside. [\#931](https://github.com/anchorchat/anchor-ui/pull/931) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[4.5.1\] Added optional icon to RadioButton, made label optional. Added optional footer to Menu. [\#929](https://github.com/anchorchat/anchor-ui/pull/929) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v4.5.1](https://github.com/anchorchat/anchor-ui/tree/v4.5.1) (2017-10-31)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.5.0...v4.5.1)
+
+**Implemented enhancements:**
+
+- \[Menu\] Add footer [\#922](https://github.com/anchorchat/anchor-ui/issues/922)
+- Specify max height \(or max number of newLines\) on multiline messages [\#920](https://github.com/anchorchat/anchor-ui/issues/920)
+
+**Fixed bugs:**
+
+- Specify max height \\(or max number of newLines\\) on multiline messages [\#920](https://github.com/anchorchat/anchor-ui/issues/920)
+- \[MenuItem\] icon colour should change with active prop [\#916](https://github.com/anchorchat/anchor-ui/issues/916)
+- \[Button\] Alignment in FireFox seems of [\#891](https://github.com/anchorchat/anchor-ui/issues/891)
+
+**Closed issues:**
+
+- Fix radio button  [\#926](https://github.com/anchorchat/anchor-ui/issues/926)
+- it doesn't work npm run compile [\#925](https://github.com/anchorchat/anchor-ui/issues/925)
+
+**Merged pull requests:**
+
+- Issue \#926 [\#928](https://github.com/anchorchat/anchor-ui/pull/928) ([sjaakluthart](https://github.com/sjaakluthart))
+- Changed rm to rimraf, fixes \#925. [\#927](https://github.com/anchorchat/anchor-ui/pull/927) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#922 [\#923](https://github.com/anchorchat/anchor-ui/pull/923) ([IanCStewart](https://github.com/IanCStewart))
+- Added top: ...px to header buttons. Fixes \#891. [\#921](https://github.com/anchorchat/anchor-ui/pull/921) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#916 [\#919](https://github.com/anchorchat/anchor-ui/pull/919) ([IanCStewart](https://github.com/IanCStewart))
 - \[4.5.0\] Added Media component & added multiline capabilities to Message component [\#918](https://github.com/anchorchat/anchor-ui/pull/918) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.5.0](https://github.com/anchorchat/anchor-ui/tree/v4.5.0) (2017-10-19)
