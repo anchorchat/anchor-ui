@@ -69,6 +69,7 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/modal')} active={router.isActive('/modal')} text="Modal" />
       <MenuItem onClick={() => router.push('/pagination')} active={router.isActive('/pagination')} text="Pagination" />
       <MenuItem onClick={() => router.push('/paper')} active={router.isActive('/paper')} text="Paper" />
+      <MenuItem onClick={() => router.push('/image-loader')} active={router.isActive('/image-loader')} text="ImageLoader" />
       <MenuItem onClick={() => router.push('/pop-over')} active={router.isActive('/pop-over')} text="PopOver" />
       <MenuItem onClick={() => router.push('/profile')} active={router.isActive('/profile')} text="Profile" />
       <MenuItem onClick={() => router.push('/profile-card')} active={router.isActive('/profile-card')} text="ProfileCard" />

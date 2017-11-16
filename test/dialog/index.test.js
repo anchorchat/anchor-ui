@@ -5,7 +5,8 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Dialog from '../../src/dialog';
+import EventListener from 'react-event-listener';
+import Dialog from '../../src/dialog/component';
 import Overlay from '../../src/overlay';
 import Button from '../../src/button';
 import IconClose from '../../src/icons/icon-close';
@@ -15,16 +16,12 @@ chai.use(sinonChai);
 
 describe('Dialog', () => {
   const props = {
-    header: null,
-    style: { root: true },
-    overlayStyle: { overlay: true },
-    headerStyle: { header: true },
+    style: {},
+    overlayStyle: {},
+    headerStyle: {},
     hideDialog: () => {},
-    iconColor: 'red',
-    open: true,
     color: '#1BA6C4'
   };
-  const children = <p>children</p>;
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -34,93 +31,78 @@ describe('Dialog', () => {
     global.navigator = undefined;
   });
 
-  it('should only render if the open prop equals true', () => {
-    props.open = false;
-    const wrapper = shallow(<Dialog {...props} />).dive();
+  it('should render root elements', () => {
+    const component = shallow(<Dialog {...props} />);
 
-    expect(wrapper.find(Overlay)).to.have.length(0);
-    props.open = true;
+    expect(component.find(Overlay)).to.have.length(0);
+    expect(component.find('section')).to.have.length(0);
+    expect(component.find(Button)).to.have.length(0);
+    expect(component.find(IconClose)).to.have.length(0);
+    expect(component.find(EventListener)).to.have.length(0);
+
+    component.setProps({ open: true });
+    expect(component.find(Overlay)).to.have.length(1);
+    expect(component.find('section')).to.have.length(2);
+    expect(component.find(Button)).to.have.length(1);
+    expect(component.find(IconClose)).to.have.length(1);
+    expect(component.find(EventListener)).to.have.length(1);
   });
 
-  it('should always render an Overlay component', () => {
-    const wrapper = shallow(<Dialog {...props} />).dive();
+  it('should render header element', () => {
+    const component = shallow(<Dialog {...props} />);
 
-    expect(wrapper.find(Overlay)).to.have.length(1);
-  });
+    component.setProps({ open: true });
+    expect(component.find('h1')).to.have.length(0);
 
-  it('should always render two section elements', () => {
-    const wrapper = shallow(<Dialog {...props} />).dive();
+    component.setProps({ header: 'header' });
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.containsMatchingElement(<h1>header</h1>)).to.equal(true);
 
-    expect(wrapper.find('section')).to.have.length(2);
-  });
-
-  it('should always render a Button component', () => {
-    const wrapper = shallow(<Dialog {...props} />).dive();
-
-    expect(wrapper.find(Button)).to.have.length(1);
-  });
-
-  it('should always render an IconClose icon', () => {
-    const wrapper = shallow(<Dialog {...props} />).dive();
-
-    expect(wrapper.find(IconClose)).to.have.length(1);
-  });
-
-  it('should not render an h1 element if the header prop is not passed', () => {
-    const wrapper = shallow(<Dialog {...props} />).dive();
-
-    expect(wrapper.find('h1')).to.have.length(0);
-  });
-
-  it('should render an h1 element if the header prop is passed', () => {
-    props.header = 'header';
-    const wrapper = shallow(<Dialog {...props} />).dive();
-
-    expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
-    props.header = null;
+    component.setProps({ header: <span>node</span> });
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.find('h1').containsMatchingElement(<span>node</span>)).to.equal(true);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<Dialog {...props} >{children}</Dialog>).dive();
+    const children = <p>children</p>;
+    const component = shallow(<Dialog {...props}>{children}</Dialog>);
 
-    expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
+    component.setProps({ open: true });
+    expect(component.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
 
-  it('should call section onClick function', () => {
+  it('should call hideDialog', () => {
     const spy = sinon.spy();
-    props.hideDialog = spy;
-    const wrapper = shallow(<Dialog {...props} />).dive();
+    const component = shallow(<Dialog {...props} />);
 
-    wrapper.find('section').at(0).simulate('click');
+    component.setProps({ open: true, hideDialog: spy });
+    component.find('section').at(0).simulate('click');
     expect(spy).to.have.callCount(1);
-    props.hideDialog = () => {};
-  });
 
-  it('should call Button onClick function', () => {
-    const spy = sinon.spy();
-    props.hideDialog = spy;
-    const wrapper = shallow(<Dialog {...props} />).dive();
-
-    wrapper.find(Button).simulate('click');
-    expect(spy).to.have.callCount(1);
-    props.hideDialog = () => {};
+    component.find(Button).simulate('click');
+    expect(spy).to.have.callCount(2);
   });
 
   it('should get root styles', () => {
+    const combinedProps = {
+      ...props,
+      open: true
+    };
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Dialog {...props} />).dive();
-    expect(spy).to.have.been.calledWith(
-      props.color, props.style
-    );
+    shallow(<Dialog {...combinedProps} />);
+    expect(spy).to.have.been.calledWith(props.color, props.style);
   });
 
   it('should get header styles', () => {
-    props.header = 'header';
+    const combinedProps = {
+      ...props,
+      header: 'header',
+      open: true
+    };
     const spy = sinon.spy(getStyles, 'header');
 
-    shallow(<Dialog {...props} />).dive();
+    shallow(<Dialog {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.headerStyle);
-    props.header = null;
   });
 });

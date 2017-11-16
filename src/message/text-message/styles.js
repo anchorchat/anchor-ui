@@ -6,7 +6,6 @@ export default {
     borderRadius: '3px',
     boxSizing: 'border-box',
     color: colors.primaryText,
-    marginLeft: '16px',
     maxWidth: '75%',
     padding: '12px',
     position: 'relative',
@@ -23,8 +22,7 @@ export default {
   myMessage: {
     backgroundColor: colors.theme,
     color: colors.white,
-    marginLeft: '0',
-    marginRight: '16px',
+    marginLeft: '0'
   },
   body: {
     display: 'flex',

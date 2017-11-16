@@ -26,6 +26,7 @@ import MessageList from './components/message-list';
 import ProfileCard from './components/profile-card';
 import Icons from './components/icons';
 import IconMenu from './components/icon-menu';
+import ImageLoader from './components/image-loader';
 import SearchBox from './components/search-box';
 import MenuItem from './components/menu-item';
 import PopOver from './components/pop-over';
@@ -105,6 +106,7 @@ ReactDOM.render(
         <Route path="/emoji-filter" component={EmojiFilter} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/media" component={Media} />
+        <Route path="/image-loader" component={ImageLoader} />
       </Route>
     </Router>
   </StyleRoot>,

@@ -1,14 +1,14 @@
 {
   "name": "anchor-ui",
-  "version": "4.5.2",
+  "version": "4.6.0",
   "description": "React Component UI Kit",
   "main": "dist/index.js",
   "files": [
     "/*"
   ],
   "scripts": {
-    "test": "NODE_ENV=test nyc mocha --compilers js:babel-core/register test/*",
-    "test:watch": "NODE_ENV=test mocha --watch --compilers js:babel-core/register test/*",
+    "test": "NODE_ENV=test nyc mocha --opts ./mocha.opts test/*",
+    "test:watch": "NODE_ENV=test mocha --watch -opts ./mocha.opts test/*",
     "watch": "babel -d dist/ -w src/",
     "compile": "rimraf dist && babel -d dist/ src/",
     "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
@@ -16,7 +16,8 @@
     "build": "npm run compile && npm run copy",
     "dist": "cd dist && npm publish",
     "docs": "react-docgen components --out docs/components.json --pretty",
-    "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js"
+    "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
+    "codecov": "^3.0.0",
     "enzyme": "^2.7.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",

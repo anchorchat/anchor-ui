@@ -105,7 +105,7 @@ class MessageInput extends Component {
       this.textarea.scrollHeight !== height
       && this.textarea.scrollHeight < (maxRows * rowHeight)
     ) {
-      if (this.textarea.scrollHeight < 48) {
+      if (this.textarea.scrollHeight < 49) {
         this.setState({
           height: 48
         });

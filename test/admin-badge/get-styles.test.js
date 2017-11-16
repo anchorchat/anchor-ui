@@ -2,7 +2,6 @@
 import { expect } from 'chai';
 import getStyles from '../../src/admin-badge/get-styles';
 import styles from '../../src/admin-badge/styles';
-import combineStyles from '../../src/internal/combine-styles';
 
 describe('AdminBadge.getStyles', () => {
   describe('root', () => {
@@ -26,10 +25,9 @@ describe('AdminBadge.getStyles', () => {
     });
 
     it('should add inverted styles', () => {
-      const style = getStyles.root('red', true);
-      const invertedStyle = combineStyles(styles.invertedStyle, { color: 'red' });
+      const style = getStyles.root(undefined, true);
 
-      expect(style).to.deep.include(invertedStyle);
+      expect(style).to.include({ ...style.inverted });
     });
   });
 });

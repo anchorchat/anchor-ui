@@ -12,15 +12,15 @@ describe('Dialog.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', { color: 'red' });
+      const style = getStyles.root('blue', { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
 
     it('should change theme color', () => {
-      const style = getStyles.root('red');
+      const style = getStyles.root('HotPink');
 
-      expect(style).to.have.property('backgroundColor', 'red');
+      expect(style).to.have.property('backgroundColor', 'HotPink');
     });
   });
 
