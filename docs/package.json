@@ -63,7 +63,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "deploy": "npm run build&&gh-pages -d build"
   },
-  "homepage": "http://anchorchat.github.io/anchor-ui",
+  "homepage": ".",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
