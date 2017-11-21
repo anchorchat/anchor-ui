@@ -59,9 +59,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "deploy": "npm run build&&gh-pages -d build"
+    "build": "node scripts/build.js && cp CNAME build",
+    "test": "node scripts/test.js --env=jsdom"
   },
   "homepage": "http://anchorchat.github.io/anchor-ui",
   "jest": {
