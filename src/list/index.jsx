@@ -3,32 +3,9 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import getStyles from './get-styles';
 
-/** A wrapper for ListItems */
-const List = ({ children, header, listRef, style, headerStyle, open, nestedLevel, ...custom }) => {
-  if (!open) {
-    return null;
-  }
+const displayName = 'List';
 
-  const childrenWithProps = React.Children.map(
-    children, child => React.cloneElement(
-      child,
-      {
-        nestedLevel
-      }
-    )
-  );
-
-  return (
-    <ul ref={listRef} style={getStyles.root(style)} {...custom}>
-      {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
-      {childrenWithProps}
-    </ul>
-  );
-};
-
-List.displayName = 'List';
-
-List.propTypes = {
+const propTypes = {
   /** ListItems to render */
   children: PropTypes.node.isRequired,
   /** Optional header text */
@@ -45,7 +22,7 @@ List.propTypes = {
   nestedLevel: PropTypes.number,
 };
 
-List.defaultProps = {
+const defaultProps = {
   header: null,
   style: {},
   headerStyle: {},
@@ -53,5 +30,29 @@ List.defaultProps = {
   open: true,
   nestedLevel: 0
 };
+
+/** A wrapper for ListItems */
+const List = ({
+  children, header, listRef, style, headerStyle, open, nestedLevel, ...custom
+}) => {
+  if (!open) {
+    return null;
+  }
+
+  const childrenWithProps = React.Children.map(children, child => (
+    React.cloneElement(child, { nestedLevel })
+  ));
+
+  return (
+    <ul ref={listRef} style={getStyles.root(style)} {...custom}>
+      {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
+      {childrenWithProps}
+    </ul>
+  );
+};
+
+List.displayName = displayName;
+List.propTypes = propTypes;
+List.defaultProps = defaultProps;
 
 export default Radium(List);
