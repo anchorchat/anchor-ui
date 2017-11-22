@@ -10,6 +10,37 @@ import Button from '../button';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
 
+const displayName = 'Alert';
+
+const propTypes = {
+  /** Text to display */
+  text: PropTypes.node.isRequired,
+  /** Type of alert. One of the following: ["info", "success", "warning", "error"] */
+  type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the icon element */
+  iconStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the text element */
+  textStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the button element */
+  buttonStyle: PropTypes.instanceOf(Object),
+  /**
+   * Callback fired when the close button is clicked
+   *
+   * function(event: object) => void
+   */
+  hideAlert: PropTypes.func
+};
+
+const defaultProps = {
+  style: {},
+  iconStyle: {},
+  textStyle: {},
+  buttonStyle: {},
+  hideAlert: null
+};
+
 const icons = {
   success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,
   error: <IconError color={darken(colors.alert.error, 0.65)} />,
@@ -36,35 +67,8 @@ const Alert = ({
   </section>
 );
 
-Alert.displayName = 'Alert';
-
-Alert.propTypes = {
-  /** Text to display */
-  text: PropTypes.node.isRequired,
-  /** Type of alert. One of the following: ["info", "success", "warning", "error"] */
-  type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
-  /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the text element */
-  textStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the button element */
-  buttonStyle: PropTypes.instanceOf(Object),
-  /**
-   * Callback fired when the close button is clicked
-   *
-   * function(event: object) => void
-   */
-  hideAlert: PropTypes.func
-};
-
-Alert.defaultProps = {
-  style: {},
-  iconStyle: {},
-  textStyle: {},
-  buttonStyle: {},
-  hideAlert: null
-};
+Alert.displayName = displayName;
+Alert.propTypes = propTypes;
+Alert.defaultProps = defaultProps;
 
 export default Alert;
