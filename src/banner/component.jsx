@@ -61,7 +61,9 @@ class Banner extends Component {
   }
 
   render() {
-    const { style, content, hideBanner, open } = this.props;
+    const {
+      style, content, hideBanner, open
+    } = this.props;
     const { type } = this.state;
 
     if (!open) {
