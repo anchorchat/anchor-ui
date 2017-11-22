@@ -144,7 +144,9 @@ class MessageDoc extends Component {
   selectAvatar = (event, avatar) => this.setState({ avatar });
 
   render() {
-    const { collapsed, fontSize, compact, iconMenu, edited, multiline, avatar } = this.state;
+    const {
+      collapsed, fontSize, compact, iconMenu, edited, multiline, avatar
+    } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Message');
     const style = {
       paper: {
