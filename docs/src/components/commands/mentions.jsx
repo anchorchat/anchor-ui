@@ -16,7 +16,7 @@ class CommandsDoc extends Component {
   }
 
   changeValue = (event) => {
-    const value = event.currentTarget.value;
+    const { value } = event.currentTarget;
 
     let valueToMatch = '';
 
