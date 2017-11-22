@@ -2,9 +2,7 @@ import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import colors from '../settings/colors';
 
-const root = (
-  color = colors.theme, iconElement, active, rightButton, overrideStyle, activeStyle
-) => {
+const root = (color = colors.theme, iconElement, active, rightButton, overrideStyle, activeStyle) => { // eslint-disable-line max-len
   let style = styles.root;
 
   if (iconElement) {

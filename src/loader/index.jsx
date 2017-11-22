@@ -5,18 +5,9 @@ import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-/** Animated loader */
-const Loader = ({ inverted, style, dotStyle, color, ...custom }) => (
-  <div style={getStyles.root(style)} {...custom}>
-    <span style={getStyles.dot(color, inverted, 0, dotStyle)} />
-    <span style={getStyles.dot(color, inverted, 1, dotStyle)} />
-    <span style={getStyles.dot(color, inverted, 2, dotStyle)} />
-  </div>
-);
+const displayName = 'Loader';
 
-Loader.displayName = 'Loader';
-
-Loader.propTypes = {
+const propTypes = {
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the dot element */
@@ -26,11 +17,26 @@ Loader.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-Loader.defaultProps = {
+const defaultProps = {
   style: {},
   dotStyle: {},
   inverted: false
 };
+
+/** Animated loader */
+const Loader = ({
+  inverted, style, dotStyle, color, ...custom
+}) => (
+  <div style={getStyles.root(style)} {...custom}>
+    <span style={getStyles.dot(color, inverted, 0, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 1, dotStyle)} />
+    <span style={getStyles.dot(color, inverted, 2, dotStyle)} />
+  </div>
+);
+
+Loader.displayName = displayName;
+Loader.propTypes = propTypes;
+Loader.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),
