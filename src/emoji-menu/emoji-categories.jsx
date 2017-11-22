@@ -11,15 +11,32 @@ import IconObjects from '../icons/icon-objects';
 import IconSymbols from '../icons/icon-symbols';
 import getStyles from './get-styles';
 
+const propTypes = {
+  changeCategory: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
+  activeColor: PropTypes.string.isRequired,
+  recent: PropTypes.bool.isRequired,
+  style: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.instanceOf(Object),
+  iconColor: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  style: {},
+  iconStyle: {}
+};
+
 const EmojiCategories = ({
   changeCategory, category, activeColor, recent, style, iconStyle, iconColor
 }) => (
   <footer style={getStyles.categories(style)}>
     {
       recent
-      ? <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('recent')}>
-        <IconClock color={category === 'recent' ? activeColor : iconColor} />
-      </div>
+      ? (
+        <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('recent')}>
+          <IconClock color={category === 'recent' ? activeColor : iconColor} />
+        </div>
+      )
       : null
     }
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('people')}>
@@ -46,19 +63,7 @@ const EmojiCategories = ({
   </footer>
 );
 
-EmojiCategories.propTypes = {
-  changeCategory: PropTypes.func.isRequired,
-  category: PropTypes.string.isRequired,
-  activeColor: PropTypes.string.isRequired,
-  recent: PropTypes.bool.isRequired,
-  style: PropTypes.instanceOf(Object),
-  iconStyle: PropTypes.instanceOf(Object),
-  iconColor: PropTypes.string.isRequired
-};
-
-EmojiCategories.defaultProps = {
-  style: {},
-  iconStyle: {}
-};
+EmojiCategories.propTypes = propTypes;
+EmojiCategories.defaultProps = defaultProps;
 
 export default Radium(EmojiCategories);
