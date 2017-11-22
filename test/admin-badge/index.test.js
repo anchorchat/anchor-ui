@@ -26,12 +26,6 @@ describe('AdminBadge', () => {
     global.navigator = undefined;
   });
 
-  it('should be an instanceOf AdminBadge', () => {
-    const component = shallow(<AdminBadge {...props} />);
-
-    expect(component.instance()).to.be.instanceOf(AdminBadge);
-  });
-
   it('should render a span element', () => {
     const component = shallow(<AdminBadge {...props} />);
 
@@ -61,8 +55,6 @@ describe('AdminBadge', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<AdminBadge {...props} />);
-    expect(spy).to.have.been.calledWith(
-      props.color, props.inverted, props.style
-    );
+    expect(spy).to.have.been.calledWith(props.color, props.inverted, props.style);
   });
 });
