@@ -7,35 +7,35 @@ import Button from '../button';
 import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
 
+const displayName = 'Banner';
+
+const propTypes = {
+  /** Content of the Banner */
+  content: PropTypes.shape({
+    /** 728x90 banner */
+    desktop: PropTypes.node.isRequired,
+    /** 320x50 banner */
+    mobile: PropTypes.node.isRequired
+  }).isRequired,
+  /**
+   * Callback fired when the close button is clicked
+   *
+   * function(event: object) => void
+   */
+  hideBanner: PropTypes.func.isRequired,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Toggle banner open */
+  open: PropTypes.bool
+};
+
+const defaultProps = {
+  style: {},
+  open: false
+};
+
 /** 728x90 and 320x50 banners */
 class Banner extends Component {
-  static displayName = 'Banner'
-
-  static propTypes = {
-    /** Content of the Banner */
-    content: PropTypes.shape({
-      /** 728x90 banner */
-      desktop: PropTypes.node.isRequired,
-      /** 320x50 banner */
-      mobile: PropTypes.node.isRequired
-    }).isRequired,
-    /**
-     * Callback fired when the close button is clicked
-     *
-     * function(event: object) => void
-     */
-    hideBanner: PropTypes.func.isRequired,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Toggle banner open */
-    open: PropTypes.bool
-  }
-
-  static defaultProps = {
-    style: {},
-    open: false
-  }
-
   constructor() {
     super();
 
@@ -87,5 +87,9 @@ class Banner extends Component {
     );
   }
 }
+
+Banner.displayName = displayName;
+Banner.propTypes = propTypes;
+Banner.defaultProps = defaultProps;
 
 export default Banner;
