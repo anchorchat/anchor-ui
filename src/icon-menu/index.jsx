@@ -9,58 +9,58 @@ import Button from '../button';
 import getStyles from './get-styles';
 import getPopOverPosition from '../internal/get-pop-over-position';
 
+const displayName = 'IconMenu';
+
+const propTypes = {
+  /** Icon to toggle the menu with */
+  icon: PropTypes.node.isRequired,
+  /** Content of the IconMenu (MenuItems) */
+  children: PropTypes.node.isRequired,
+  /** Secondary set of MenuItems */
+  secondaryMenuItems: PropTypes.node,
+  /** Text to divide the menu items */
+  dividerText: PropTypes.node,
+  /** Optional header text */
+  header: PropTypes.node,
+  /** Override the styles of the header element */
+  headerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the content container */
+  contentStyle: PropTypes.instanceOf(Object),
+  /**
+   * Callback fired when the IconMenu closes
+   *
+   * function(event: object) => void
+   */
+  onMenuClose: PropTypes.func,
+  /** Override the styles of the divider element */
+  dividerStyle: PropTypes.instanceOf(Object),
+  /**
+   * Callback fired when the IconMenu's header is clicked
+   *
+   * function(event: object) => void
+   */
+  onHeaderClick: PropTypes.func,
+  /** Override the styles of the Button component */
+  buttonStyle: PropTypes.instanceOf(Object)
+};
+
+const defaultProps = {
+  header: null,
+  style: {},
+  headerStyle: {},
+  contentStyle: {},
+  dividerStyle: {},
+  secondaryMenuItems: null,
+  dividerText: null,
+  onMenuClose: () => {},
+  onHeaderClick: () => {},
+  buttonStyle: {}
+};
+
 /** Open a menu from an Icon, give options related to the icon */
 class IconMenu extends Component {
-  static displayName = 'IconMenu'
-
-  static propTypes = {
-    /** Icon to toggle the menu with */
-    icon: PropTypes.node.isRequired,
-    /** Content of the IconMenu (MenuItems) */
-    children: PropTypes.node.isRequired,
-    /** Secondary set of MenuItems */
-    secondaryMenuItems: PropTypes.node,
-    /** Text to divide the menu items */
-    dividerText: PropTypes.node,
-    /** Optional header text */
-    header: PropTypes.node,
-    /** Override the styles of the header element */
-    headerStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the content container */
-    contentStyle: PropTypes.instanceOf(Object),
-    /**
-     * Callback fired when the IconMenu closes
-     *
-     * function(event: object) => void
-     */
-    onMenuClose: PropTypes.func,
-    /** Override the styles of the divider element */
-    dividerStyle: PropTypes.instanceOf(Object),
-    /**
-     * Callback fired when the IconMenu's header is clicked
-     *
-     * function(event: object) => void
-     */
-    onHeaderClick: PropTypes.func,
-    /** Override the styles of the Button component */
-    buttonStyle: PropTypes.instanceOf(Object)
-  }
-
-  static defaultProps = {
-    header: null,
-    style: {},
-    headerStyle: {},
-    contentStyle: {},
-    dividerStyle: {},
-    secondaryMenuItems: null,
-    dividerText: null,
-    onMenuClose: () => {},
-    onHeaderClick: () => {},
-    buttonStyle: {}
-  }
-
   constructor() {
     super();
 
@@ -118,9 +118,9 @@ class IconMenu extends Component {
   handleClickOutside = event => this.closeMenu(event)
 
   applyCloseMenuToChildren(children) {
-    return React.Children.map(
-      children, child => React.cloneElement(child, { closeMenu: this.closeMenu })
-    );
+    return React.Children.map(children, child => (
+      React.cloneElement(child, { closeMenu: this.closeMenu })
+    ));
   }
 
   handleKeyUp = (event) => {
@@ -205,6 +205,10 @@ class IconMenu extends Component {
     );
   }
 }
+
+IconMenu.displayName = displayName;
+IconMenu.propTypes = propTypes;
+IconMenu.defaultProps = defaultProps;
 
 const enhance = compose(
   onClickOutside,
