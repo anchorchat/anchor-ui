@@ -18,15 +18,19 @@ const icons = {
 };
 
 /** Four types of (system) messages for alerting your user */
-const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => (
+const Alert = ({
+  text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom
+}) => (
   <section style={getStyles.root(type, style)} {...custom}>
     <div style={getStyles.icon(iconStyle)}>{icons[type]}</div>
     <p style={getStyles.text(textStyle)}>{text}</p>
     {
       hideAlert
-      ? <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
-        <IconClose color={darken(colors.alert[type], 0.65)} />
-      </Button>
+      ? (
+        <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
+          <IconClose color={darken(colors.alert[type], 0.65)} />
+        </Button>
+      )
       : null
     }
   </section>
