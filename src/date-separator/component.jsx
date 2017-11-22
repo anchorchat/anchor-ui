@@ -38,7 +38,9 @@ const defaultProps = {
 const displayName = 'DateSeparator';
 
 /** A separator to show above a Message */
-const DateSeparator = ({ date, format, style, textStyle, locale }) => (
+const DateSeparator = ({
+  date, format, style, textStyle, locale
+}) => (
   <section style={getStyles.root(style)}>
     <p style={getStyles.text(textStyle)}>{formatDate(date, format, { locale })}</p>
   </section>
