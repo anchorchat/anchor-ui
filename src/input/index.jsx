@@ -160,7 +160,12 @@ class Input extends Component {
 
     return (
       <section style={getStyles.root(disabled, style)}>
-        <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label>
+        <label // eslint-disable-line jsx-a11y/label-has-for
+          style={getStyles.label(labelStyle)}
+          htmlFor={name}
+        >
+          {label}
+        </label>
         {input}
         <Style
           rules={{
