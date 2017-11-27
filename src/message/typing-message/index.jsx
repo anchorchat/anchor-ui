@@ -60,15 +60,12 @@ TypingMessage.propTypes = {
 TypingMessage.defaultProps = {
   avatar: '',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   fontSize: 'small',
   myMessage: false,
   compact: false,
-  enableLightbox: false,
   color: colors.theme,
-  iconMenu: null,
   badge: null
 };
 

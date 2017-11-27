@@ -7,6 +7,44 @@ import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
+const propTypes = {
+  avatar: PropTypes.string,
+  message: PropTypes.shape({
+    body: PropTypes.node.isRequired,
+    createdAt: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(Date)
+    ]).isRequired,
+    username: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
+  }).isRequired,
+  timeFormat: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
+  messageHeaderStyle: PropTypes.instanceOf(Object),
+  messageBodyStyle: PropTypes.instanceOf(Object),
+  messageTimeStyle: PropTypes.instanceOf(Object),
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  myMessage: PropTypes.bool,
+  compact: PropTypes.bool,
+  color: PropTypes.string,
+  locale: PropTypes.instanceOf(Object).isRequired,
+  badge: PropTypes.node
+};
+
+const defaultProps = {
+  avatar: '',
+  style: {},
+  timeFormat: 'HH:mm',
+  messageHeaderStyle: {},
+  messageBodyStyle: {},
+  messageTimeStyle: {},
+  fontSize: 'small',
+  myMessage: false,
+  compact: false,
+  color: colors.theme,
+  badge: null
+};
+
 const StickerMessage = ({
   color,
   myMessage,
@@ -51,46 +89,7 @@ const StickerMessage = ({
   );
 };
 
-StickerMessage.propTypes = {
-  avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
-  timeFormat: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  messageHeaderStyle: PropTypes.instanceOf(Object),
-  messageBodyStyle: PropTypes.instanceOf(Object),
-  messageTimeStyle: PropTypes.instanceOf(Object),
-  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  myMessage: PropTypes.bool,
-  compact: PropTypes.bool,
-  color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
-};
-
-StickerMessage.defaultProps = {
-  avatar: '',
-  style: {},
-  timeFormat: 'HH:mm',
-  messageHeaderStyle: {},
-  messageBodyStyle: {},
-  messageTimeStyle: {},
-  fontSize: 'small',
-  myMessage: false,
-  emoji: false,
-  enableLinks: false,
-  compact: false,
-  enableLightbox: false,
-  color: colors.theme,
-  iconMenu: null,
-  badge: null
-};
+StickerMessage.propTypes = propTypes;
+StickerMessage.defaultProps = defaultProps;
 
 export default StickerMessage;

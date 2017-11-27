@@ -175,7 +175,6 @@ ImageMessage.defaultProps = {
   color: '',
   collapsed: false,
   collapsedText: 'This image has been collapsed, click the button to expand it.',
-  iconMenu: null,
   badge: null
 };
 
