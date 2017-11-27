@@ -227,7 +227,7 @@ class MessageInput extends Component {
           leftButton
           ? <div style={styles.buttons}>
             {leftButton}
-          </div>
+          </div> // eslint-disable-line react/jsx-closing-tag-location
           : null
         }
         {input}

@@ -62,11 +62,11 @@ describe('MenuItem', () => {
   it('should pass the text prop to the p element', () => {
     const wrapper = shallow(<MenuItem {...props} />).dive();
 
-    expect(wrapper.containsMatchingElement(
+    expect(wrapper.containsMatchingElement((
       <p>
         text
-      </p>)
-    ).to.equal(true);
+      </p>
+    ))).to.equal(true);
   });
 
   it('should not render a div element if the rightButton prop is not passed', () => {
@@ -97,9 +97,9 @@ describe('MenuItem', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<MenuItem {...props} />).dive();
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.color, props.icon, props.active, props.rightButton, props.style
-    );
+    ));
   });
 
   it('should get icon styles', () => {

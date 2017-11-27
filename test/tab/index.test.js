@@ -88,9 +88,9 @@ describe('Tab', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Tab {...props} />).dive();
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.color, props.selected, props.style, props.activeStyle
-    );
+    ));
   });
 
   it('should get icon styles', () => {
@@ -98,9 +98,9 @@ describe('Tab', () => {
     const spy = sinon.spy(getStyles, 'icon');
 
     shallow(<Tab {...props} />).dive();
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.selected, props.iconStyle
-    );
+    ));
     props.icon = null;
   });
 
@@ -108,9 +108,9 @@ describe('Tab', () => {
     const spy = sinon.spy(getStyles, 'label');
 
     shallow(<Tab {...props} />).dive();
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.selected, props.labelStyle, props.activeLabelStyle
-    );
+    ));
   });
 
   it('should get badge styles', () => {

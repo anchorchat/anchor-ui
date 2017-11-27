@@ -90,9 +90,9 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Input {...props} />);
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.disabled, props.style
-    );
+    ));
   });
 
   it('should get label styles', () => {
@@ -106,9 +106,9 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'input');
 
     shallow(<Input {...props} />);
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.error, props.inputStyle
-    );
+    ));
   });
 
   it('should get error styles', () => {

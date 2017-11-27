@@ -56,8 +56,8 @@ describe('Button', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Button {...props}>{children}</Button>);
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.color, props.inverted, props.iconButton, props.disabled, props.flatButton, props.style
-    );
+    ));
   });
 });

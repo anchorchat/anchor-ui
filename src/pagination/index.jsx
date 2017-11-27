@@ -28,7 +28,12 @@ class Pagination extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { initialPage, list, pageSize, jumpToPage } = nextProps;
+    const {
+      initialPage,
+      list,
+      pageSize,
+      jumpToPage
+    } = nextProps;
 
     if (!isEqual(list, this.props.list) || !isEqual(pageSize, this.props.pageSize)) {
       this.setPage({}, initialPage, list, pageSize);

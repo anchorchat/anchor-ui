@@ -112,9 +112,9 @@ describe('Alert', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Alert {...props} />);
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.type, props.style
-    );
+    ));
   });
 
   it('should get icon styles', () => {

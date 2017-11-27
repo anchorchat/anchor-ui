@@ -10,7 +10,14 @@ import getStyles from './get-styles';
 import themeable from '../themeable';
 
 /** Card containing the user's profile data */
-const ProfileCard = ({ username, avatar, style, usernameStyle, color, ...custom }) => {
+const ProfileCard = ({
+  username,
+  avatar,
+  style,
+  usernameStyle,
+  color,
+  ...custom
+}) => {
   const avatarStyle = {
     float: 'left',
     width: '80px',

@@ -57,8 +57,8 @@ describe('EmptyState', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<EmptyState {...props} />);
-    expect(spy).to.have.been.calledWith(
+    expect(spy).to.have.been.calledWith((
       props.background, props.style
-    );
+    ));
   });
 });

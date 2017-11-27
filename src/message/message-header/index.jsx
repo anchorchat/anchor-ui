@@ -4,7 +4,15 @@ import Avatar from '../../avatar';
 import getStyles from './get-styles';
 import styles from './styles';
 
-const MessageHeader = ({ compact, myMessage, avatar, fontSize, headerStyle, username, badge }) => (
+const MessageHeader = ({
+  compact,
+  myMessage,
+  avatar,
+  fontSize,
+  headerStyle,
+  username,
+  badge
+}) => (
   <div style={styles.container}>
     {avatar && !compact ? <Avatar image={avatar} style={getStyles.avatar(myMessage)} /> : null}
     <header

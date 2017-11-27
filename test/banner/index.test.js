@@ -56,9 +56,9 @@ describe('Banner', () => {
   it('should render content element', () => {
     const component = shallow(<Banner {...props} />);
 
-    expect(
+    expect((
       component.find('section > section').containsMatchingElement(<span>Node</span>)
-    ).to.equal(true);
+    )).to.equal(true);
   });
 
   it('should call Button onClick function', () => {
