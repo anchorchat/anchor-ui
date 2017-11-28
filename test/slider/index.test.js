@@ -95,9 +95,10 @@ describe('Slider', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Slider {...props} />).dive();
-    expect(spy).to.have.been.calledWith((
-      props.style, props.disabled
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.style,
+      props.disabled
+    );
   });
 
   it('should get label styles', () => {
@@ -111,9 +112,10 @@ describe('Slider', () => {
     const spy = sinon.spy(getStyles, 'filled');
 
     shallow(<Slider {...props} />).dive();
-    expect(spy).to.have.been.calledWith((
-      props.color, percentage
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      percentage
+    );
   });
 
   it('should get remaining styles', () => {
@@ -127,8 +129,9 @@ describe('Slider', () => {
     const spy = sinon.spy(getStyles, 'button');
 
     shallow(<Slider {...props} />).dive();
-    expect(spy).to.have.been.calledWith((
-      props.color, percentage
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      percentage
+    );
   });
 });

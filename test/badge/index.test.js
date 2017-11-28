@@ -54,8 +54,10 @@ describe('Badge', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Badge {...props} />);
-    expect(spy).to.have.been.calledWith((
-      props.color, props.inverted, props.style
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      props.inverted,
+      props.style
+    );
   });
 });

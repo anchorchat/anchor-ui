@@ -97,9 +97,13 @@ describe('MenuItem', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<MenuItem {...props} />).dive();
-    expect(spy).to.have.been.calledWith((
-      props.color, props.icon, props.active, props.rightButton, props.style
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      props.icon,
+      props.active,
+      props.rightButton,
+      props.style
+    );
   });
 
   it('should get icon styles', () => {

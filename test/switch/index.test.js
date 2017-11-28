@@ -75,17 +75,21 @@ describe('Switch', () => {
     const spy = sinon.spy(getStyles, 'track');
 
     shallow(<Switch {...props} />).dive();
-    expect(spy).to.have.been.calledWith((
-      props.color, props.active, props.trackStyle
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      props.active,
+      props.trackStyle
+    );
   });
 
   it('should get knob styles', () => {
     const spy = sinon.spy(getStyles, 'knob');
 
     shallow(<Switch {...props} />).dive();
-    expect(spy).to.have.been.calledWith((
-      props.color, props.active, props.knobStyle
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      props.active,
+      props.knobStyle
+    );
   });
 });

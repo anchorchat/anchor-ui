@@ -85,9 +85,12 @@ describe('AppHeader', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<AppHeader {...props} />);
-    expect(spy).to.have.been.calledWith((
-      props.color, props.leftButton, props.rightButton, props.style
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      props.leftButton,
+      props.rightButton,
+      props.style
+    );
   });
 
   it('should get leftButton styles', () => {

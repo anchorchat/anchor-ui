@@ -127,9 +127,11 @@ describe('Menu', () => {
     const spy = sinon.spy(getStyles, 'header');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
-    expect(spy).to.have.been.calledWith((
-      props.color, props.headerIcon, props.headerStyle
-    ));
+    expect(spy).to.have.been.calledWith(
+      props.color,
+      props.headerIcon,
+      props.headerStyle
+    );
     props.header = '';
   });
 
