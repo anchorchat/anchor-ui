@@ -24,7 +24,7 @@ const Slider = ({
   labelStyle,
   color,
   ...custom
-}, ) => { // eslint-disable-line space-in-parens
+}) => {
   const percentage = getPercentage(value, min, max);
 
   return (
