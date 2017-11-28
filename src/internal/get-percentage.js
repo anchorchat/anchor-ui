@@ -1,5 +1,5 @@
 // date: 28-11 '17
-// This function used to make use of lodash isNumber()
+// This function should make of lodash isNumber()
 // however this doesn't work as expected
 // Should remove isNaN when isNumber works as intended
 const getPercentage = (value, min, max) => {
