@@ -6,7 +6,7 @@ import getStyles from './get-styles';
 const RadioButtonGroup = ({
   value, onChange, children, buttonStyle, label, labelStyle, style, error, errorStyle, ...custom
 }) => {
-  const childrenWithProps = React.Children.map(
+  const childrenWithProps = React.Children.map((
     children, child => React.cloneElement(
       child,
       {
@@ -14,7 +14,7 @@ const RadioButtonGroup = ({
         onChange
       }
     )
-  );
+  ));
 
   return (
     <section {...custom} style={style}>

@@ -72,9 +72,11 @@ const ListDoc = () => {
                 active={currentChannel === channel.name}
                 rightButton={
                   currentChannel === channel.name
-                  ? <Button iconButton onClick={() => {}}>
-                    <IconClose color={colors.white} />
-                  </Button>
+                  ? (
+                    <Button iconButton onClick={() => {}}>
+                      <IconClose color={colors.white} />
+                    </Button>
+                  )
                   : null
                 }
                 avatar={channel.avatar}

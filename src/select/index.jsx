@@ -156,7 +156,7 @@ class Select extends Component {
       ...custom
     } = this.props;
 
-    const childrenWithProps = React.Children.map(
+    const childrenWithProps = React.Children.map((
       children, child => React.cloneElement(
         child,
         {
@@ -165,7 +165,7 @@ class Select extends Component {
           onClick: event => onChange(event, child.props.value)
         }
       )
-    );
+    ));
 
     const activeChild = find(childrenWithProps, child => child.props.value === value);
 

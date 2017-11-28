@@ -25,7 +25,8 @@ const ProfileDoc = () => {
     },
     profile: {
       width: '100%',
-      margin: '10px' }
+      margin: '10px'
+    }
   };
 
   return (

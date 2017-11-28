@@ -113,7 +113,8 @@ describe('Alert', () => {
 
     shallow(<Alert {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.type, props.style
+      props.type,
+      props.style
     );
   });
 

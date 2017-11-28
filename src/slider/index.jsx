@@ -24,8 +24,7 @@ const Slider = ({
   labelStyle,
   color,
   ...custom
-},
-) => {
+}) => {
   const percentage = getPercentage(value, min, max);
 
   return (

@@ -58,7 +58,8 @@ describe('EmptyState', () => {
 
     shallow(<EmptyState {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.background, props.style
+      props.background,
+      props.style
     );
   });
 });

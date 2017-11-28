@@ -78,4 +78,9 @@ const textContainer = (avatar, rightButton) => {
   return style;
 };
 
-export default { root, text, nestedListButton, textContainer };
+export default {
+  root,
+  text,
+  nestedListButton,
+  textContainer
+};

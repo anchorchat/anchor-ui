@@ -86,7 +86,10 @@ describe('AppHeader', () => {
 
     shallow(<AppHeader {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.color, props.leftButton, props.rightButton, props.style
+      props.color,
+      props.leftButton,
+      props.rightButton,
+      props.style
     );
   });
 

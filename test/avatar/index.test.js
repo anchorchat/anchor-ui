@@ -53,7 +53,9 @@ describe('Avatar', () => {
 
     shallow(<Avatar {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.image, props.defaultImage, props.style
+      props.image,
+      props.defaultImage,
+      props.style
     );
   });
 
@@ -66,7 +68,8 @@ describe('Avatar', () => {
 
     shallow(<Avatar {...combinedProps} />);
     expect(spy).to.have.been.calledWith(
-      combinedProps.status, props.statusStyle
+      combinedProps.status,
+      props.statusStyle
     );
   });
 });

@@ -91,7 +91,8 @@ describe('Input', () => {
 
     shallow(<Input {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.disabled, props.style
+      props.disabled,
+      props.style
     );
   });
 
@@ -107,7 +108,8 @@ describe('Input', () => {
 
     shallow(<Input {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.error, props.inputStyle
+      props.error,
+      props.inputStyle
     );
   });
 

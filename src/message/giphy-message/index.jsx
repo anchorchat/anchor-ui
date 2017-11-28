@@ -183,7 +183,6 @@ GiphyMessage.defaultProps = {
   collapsed: false,
   collapsedText: 'This GIF has been collapsed, click the button to expand it.',
   giphyDescription: 'Sent using /giphy',
-  iconMenu: null,
   badge: null
 };
 

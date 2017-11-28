@@ -284,13 +284,15 @@ class Commands extends Component {
               <span style={styles.titleContainer}>
                 {
                   command.avatar
-                  ? <div style={styles.avatarContainer}>
-                    {
-                      typeof command.avatar === 'string'
-                      ? <Avatar image={command.avatar} style={styles.avatar} />
-                      : command.avatar
-                    }
-                  </div>
+                  ? (
+                    <div style={styles.avatarContainer}>
+                      {
+                        typeof command.avatar === 'string'
+                        ? <Avatar image={command.avatar} style={styles.avatar} />
+                        : command.avatar
+                      }
+                    </div>
+                  )
                   : null
                 }
                 <strong style={getStyles.title(titleStyle)}>{command.prefix}{command.value}</strong>

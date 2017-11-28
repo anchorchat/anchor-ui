@@ -89,7 +89,10 @@ describe('Tab', () => {
 
     shallow(<Tab {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.color, props.selected, props.style, props.activeStyle
+      props.color,
+      props.selected,
+      props.style,
+      props.activeStyle
     );
   });
 
@@ -99,7 +102,8 @@ describe('Tab', () => {
 
     shallow(<Tab {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.selected, props.iconStyle
+      props.selected,
+      props.iconStyle
     );
     props.icon = null;
   });
@@ -109,7 +113,9 @@ describe('Tab', () => {
 
     shallow(<Tab {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.selected, props.labelStyle, props.activeLabelStyle
+      props.selected,
+      props.labelStyle,
+      props.activeLabelStyle
     );
   });
 

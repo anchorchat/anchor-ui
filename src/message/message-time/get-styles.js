@@ -6,7 +6,9 @@ const root = (myMessage, type, edited, overrideStyle) => {
   let style = styles.root;
 
   if (myMessage) {
-    style = combineStyles(style, { left: 0, right: 'initial', opacity: '.75', color: colors.white });
+    style = combineStyles(style, {
+      left: 0, right: 'initial', opacity: '.75', color: colors.white
+    });
   }
 
   if (type === 'image' || type === 'giphy') {
