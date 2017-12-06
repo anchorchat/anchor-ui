@@ -2,16 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
-/** An user's profile image */
-const Avatar = ({ image, defaultImage, style, status, statusStyle, ...custom }) => (
-  <section style={getStyles.root(image, defaultImage, style)} {...custom}>
-    {status ? <div style={getStyles.status(status, statusStyle)} /> : null}
-  </section>
-);
+const displayName = 'Avatar';
 
-Avatar.displayName = 'Avatar';
-
-Avatar.propTypes = {
+const propTypes = {
   /** Path to user's profile image */
   image: PropTypes.string.isRequired,
   /** Path to default image. This image will be shown if the image path doesn't resolve */
@@ -24,11 +17,24 @@ Avatar.propTypes = {
   statusStyle: PropTypes.instanceOf(Object)
 };
 
-Avatar.defaultProps = {
+const defaultProps = {
   style: {},
   status: '',
   statusStyle: {},
   defaultImage: null
 };
+
+/** A user's profile image */
+const Avatar = ({
+  image, defaultImage, style, status, statusStyle, ...custom
+}) => (
+  <section style={getStyles.root(image, defaultImage, style)} {...custom}>
+    {status ? <div style={getStyles.status(status, statusStyle)} /> : null}
+  </section>
+);
+
+Avatar.displayName = displayName;
+Avatar.propTypes = propTypes;
+Avatar.defaultProps = defaultProps;
 
 export default Avatar;

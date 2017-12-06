@@ -7,6 +7,57 @@ import MessageTime from '../message-time';
 import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
+import ImageLoader from '../../image-loader';
+
+const propTypes = {
+  avatar: PropTypes.string,
+  message: PropTypes.shape({
+    body: PropTypes.node.isRequired,
+    createdAt: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(Date)
+    ]).isRequired,
+    username: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
+  }).isRequired,
+  timeFormat: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
+  messageHeaderStyle: PropTypes.instanceOf(Object),
+  messageBodyStyle: PropTypes.instanceOf(Object),
+  messageTimeStyle: PropTypes.instanceOf(Object),
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  myMessage: PropTypes.bool,
+  enableLightbox: PropTypes.bool,
+  compact: PropTypes.bool,
+  color: PropTypes.string,
+  collapsed: PropTypes.bool,
+  collapsedText: PropTypes.node.isRequired,
+  giphyDescription: PropTypes.node.isRequired,
+  locale: PropTypes.instanceOf(Object).isRequired,
+  badge: PropTypes.node,
+  imagePlaceholder: PropTypes.string.isRequired,
+  imageError: PropTypes.string.isRequired,
+  onImageLoad: PropTypes.func.isRequired,
+  onImageError: PropTypes.func.isRequired,
+  iconMenu: PropTypes.node
+};
+
+const defaultProps = {
+  avatar: '',
+  style: {},
+  timeFormat: 'HH:mm',
+  messageHeaderStyle: {},
+  messageBodyStyle: {},
+  messageTimeStyle: {},
+  fontSize: 'small',
+  myMessage: false,
+  compact: false,
+  enableLightbox: false,
+  color: '',
+  collapsed: false,
+  badge: null,
+  iconMenu: null
+};
 
 class GiphyMessage extends Component {
   constructor() {
@@ -48,6 +99,10 @@ class GiphyMessage extends Component {
       giphyDescription,
       locale,
       badge,
+      imagePlaceholder,
+      imageError,
+      onImageLoad,
+      onImageError,
       iconMenu
     } = this.props;
     const { lightbox } = this.state;
@@ -62,6 +117,14 @@ class GiphyMessage extends Component {
     if (collapsed) {
       headerStyle = combineStyles(headerStyle, { marginBottom: '0' });
     }
+
+    const imgProps = {
+      onClick,
+      style: getStyles.giphy(enableLightbox)
+    };
+
+    const placeholder = <img style={getStyles.giphy(enableLightbox)} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={getStyles.giphy(enableLightbox)} src={imageError} alt="error" />;
 
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
@@ -83,7 +146,17 @@ class GiphyMessage extends Component {
           }
           {
             !collapsed
-            ? <img onClick={onClick} style={getStyles.giphy(enableLightbox)} src={message.body} alt="user-upload" />
+            ? (
+              <ImageLoader
+                src={message.body}
+                alt="user-upload"
+                imgProps={imgProps}
+                placeholder={placeholder}
+                error={error}
+                onLoad={onImageLoad}
+                onError={onImageError}
+              />
+            )
             : <span>{collapsedText}</span>
           }
           <MessageTime
@@ -113,50 +186,7 @@ class GiphyMessage extends Component {
   }
 }
 
-GiphyMessage.propTypes = {
-  avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
-  timeFormat: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  messageHeaderStyle: PropTypes.instanceOf(Object),
-  messageBodyStyle: PropTypes.instanceOf(Object),
-  messageTimeStyle: PropTypes.instanceOf(Object),
-  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  myMessage: PropTypes.bool,
-  enableLightbox: PropTypes.bool,
-  compact: PropTypes.bool,
-  color: PropTypes.string,
-  collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node.isRequired,
-  giphyDescription: PropTypes.node.isRequired,
-  locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node,
-  iconMenu: PropTypes.node
-};
-
-GiphyMessage.defaultProps = {
-  avatar: '',
-  style: {},
-  timeFormat: 'HH:mm',
-  messageHeaderStyle: {},
-  messageBodyStyle: {},
-  messageTimeStyle: {},
-  fontSize: 'small',
-  myMessage: false,
-  compact: false,
-  enableLightbox: false,
-  color: '',
-  collapsed: false,
-  badge: null,
-  iconMenu: null
-};
+GiphyMessage.propTypes = propTypes;
+GiphyMessage.defaultProps = defaultProps;
 
 export default GiphyMessage;

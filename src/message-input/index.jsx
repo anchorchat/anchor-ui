@@ -225,9 +225,11 @@ class MessageInput extends Component {
       <section style={getStyles.root(disabled, height, this.state.multiLine, style)}>
         {
           leftButton
-          ? <div style={styles.buttons}>
-            {leftButton}
-          </div>
+          ? (
+            <div style={styles.buttons}>
+              {leftButton}
+            </div>
+          )
           : null
         }
         {input}

@@ -105,7 +105,7 @@ class Tabs extends Component {
     const tabContent = [];
 
     const tabs = children.map((tab, index) => {
-      tabContent.push(
+      tabContent.push((
         createElement(
           'div', {
             key: index,
@@ -113,7 +113,7 @@ class Tabs extends Component {
           },
           tab.props.children
         )
-      );
+      ));
 
       return cloneElement(
         tab,

@@ -96,9 +96,9 @@ class EmojiFilter extends Component {
     }
 
     const filteredEmoji = _.chain(emoji)
-    .filter(icon => icon.shortname.indexOf(value) === 0)
-    .reject(icon => icon.diversity && !_.includes(icon.title, tone))
-    .value();
+      .filter(icon => icon.shortname.indexOf(value) === 0)
+      .reject(icon => icon.diversity && !_.includes(icon.title, tone))
+      .value();
 
     if (filteredEmoji.length === 1 && _.includes(value, filteredEmoji[0].shortname)) {
       return [];
@@ -197,9 +197,7 @@ class EmojiFilter extends Component {
     const options = {
       replace(domNode) {
         if (domNode.attribs && domNode.attribs.class === 'emojione') {
-          const src = domNode.attribs.src;
-          const alt = domNode.attribs.alt;
-          const title = domNode.attribs.title;
+          const { src, alt, title } = domNode.attribs;
 
           return <img src={src} alt={alt} title={title} style={styles.emojiIcon} />;
         }

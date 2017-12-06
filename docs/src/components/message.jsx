@@ -119,7 +119,8 @@ class MessageDoc extends Component {
       compact: false,
       iconMenu: false,
       edited: false,
-      multiline: false
+      multiline: false,
+      avatar: true
     };
   }
 
@@ -135,7 +136,12 @@ class MessageDoc extends Component {
 
   selectMultiline = (event, multiline) => this.setState({ multiline })
 
+  selectAvatar = (event, avatar) => this.setState({ avatar });
+
   render() {
+    const {
+      collapsed, fontSize, compact, iconMenu, edited, multiline, avatar
+    } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Message');
     const style = {
       paper: {
@@ -183,28 +189,32 @@ class MessageDoc extends Component {
         <section>
           <h1>Examples</h1>
           <div style={style.options}>
-            <Select style={style.select} label="Collapsed images" value={this.state.collapsed} onChange={this.selectCollapse}>
+            <Select style={style.select} label="Collapsed images" value={collapsed} onChange={this.selectCollapse}>
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
-            <Select style={style.select} label="Font size" value={this.state.fontSize} onChange={this.selectFontSize}>
+            <Select style={style.select} label="Font size" value={fontSize} onChange={this.selectFontSize}>
               <MenuItem text="Small" value="small" />
               <MenuItem text="Medium" value="medium" />
               <MenuItem text="Large" value="large" />
             </Select>
-            <Select style={style.select} label="Compact messages" value={this.state.compact} onChange={this.selectCompact}>
+            <Select style={style.select} label="Compact messages" value={compact} onChange={this.selectCompact}>
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
-            <Select style={style.select} label="Icon menu" value={this.state.iconMenu} onChange={this.selectIconMenu}>
+            <Select style={style.select} label="Icon menu" value={iconMenu} onChange={this.selectIconMenu}>
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
-            <Select style={style.select} label="Edited messages" value={this.state.edited} onChange={this.selectEdited}>
+            <Select style={style.select} label="Edited messages" value={edited} onChange={this.selectEdited}>
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
-            <Select style={style.select} label="Enable multiline" value={this.state.multiline} onChange={this.selectMultiline}>
+            <Select style={style.select} label="Enable multiline" value={multiline} onChange={this.selectMultiline}>
+              <MenuItem text="On" value />
+              <MenuItem text="Off" value={false} />
+            </Select>
+            <Select style={style.select} label="Enable avatar" value={avatar} onChange={this.selectAvatar}>
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
@@ -219,16 +229,16 @@ class MessageDoc extends Component {
 
                 const expandMenuItem = <MenuItem key="expand" text="Expand image" onClick={() => this.selectCollapse(false)} />;
 
-                if ((message.type === 'image' || message.type === 'giphy') && this.state.collapsed) {
+                if ((message.type === 'image' || message.type === 'giphy') && collapsed) {
                   menuItems.push(expandMenuItem);
                 }
 
-                let iconMenu = null;
+                let uiIconMenu = null;
 
                 const myMessage = message.username === currentUser;
 
-                if (this.state.iconMenu) {
-                  iconMenu = (
+                if (iconMenu) {
+                  uiIconMenu = (
                     <IconMenu
                       icon={<IconChevronDown color={myMessage ? colors.white : colors.icon} />}
                     >
@@ -244,17 +254,15 @@ class MessageDoc extends Component {
                     myMessage={myMessage}
                     avatar={message.avatar}
                     emoji
-                    collapsed={this.state.collapsed}
+                    collapsed={collapsed}
                     collapsedText={
                       message.type === 'giphy'
                       ? 'This GIF has been collapsed.'
                       : 'This image has been collapsed.'
                     }
-                    // expand={() => this.selectCollapse(false)}
-                    fontSize={this.state.fontSize}
-                    compact={this.state.compact}
-                    // menuItems={this.state.iconMenu ? menuItems : null}
-                    edited={this.state.edited ? 'edited' : null}
+                    fontSize={fontSize}
+                    compact={compact}
+                    edited={edited ? 'edited' : null}
                     highlights={[
                       {
                         prefix: '@',
@@ -269,8 +277,8 @@ class MessageDoc extends Component {
                     ]}
                     onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
                     enableLinks
-                    iconMenu={iconMenu}
-                    enableMultiline={this.state.multiline}
+                    iconMenu={uiIconMenu}
+                    enableMultiline={multiline}
                   />
                 );
               })}

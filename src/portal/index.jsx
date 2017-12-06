@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import isFunction from 'lodash/isFunction';
@@ -29,6 +29,10 @@ class Portal extends Component {
   render() {
     const { children, node } = this.props;
 
+    const childrenWithProps = React.Children.map(children, child => (
+      React.cloneElement(child, { className: 'ignore-react-onclickoutside' })
+    ));
+
     if (!isFunction(document.createElement) || !isFunction(createPortal)) {
       return children;
     }
@@ -39,7 +43,7 @@ class Portal extends Component {
     }
 
     return createPortal(
-      children,
+      childrenWithProps,
       node || this.defaultNode
     );
   }

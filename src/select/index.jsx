@@ -157,7 +157,8 @@ class Select extends Component {
     } = this.props;
 
     const childrenWithProps = React.Children.map(
-      children, child => React.cloneElement(
+      children,
+      child => React.cloneElement(
         child,
         {
           closeMenu: this.closeSelect,

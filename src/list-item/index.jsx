@@ -13,80 +13,76 @@ import Button from '../button';
 import List from '../list';
 import themeable from '../themeable';
 
+const displayName = 'ListItem';
+
+const propTypes = {
+  /** The ListItem's primary text */
+  primaryText: PropTypes.node.isRequired,
+  /** The ListItem's secondary text */
+  secondaryText: PropTypes.node,
+  /** A badge to display before the secondaryText. */
+  textBadge: PropTypes.node,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the primaryText element */
+  primaryTextStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the secondaryText element */
+  secondaryTextStyle: PropTypes.instanceOf(Object),
+  /**
+   * Callback fired when the ListItem is clicked
+   *
+   * function(event: object) => void
+   */
+  onClick: PropTypes.func,
+  /** Add active styles to ListItem */
+  active: PropTypes.bool,
+  /** Right-hand side placed button */
+  rightButton: PropTypes.node,
+  /** The item's avatar, if a string is provided Avatar component is used */
+  avatar: PropTypes.node,
+  /** Add a badge to the ListItem */
+  badge: PropTypes.node,
+  /** Add muted styles to ListItem */
+  muted: PropTypes.bool,
+  /** Add blocked styles to ListItem */
+  blocked: PropTypes.bool,
+  /** ListItems to render in a NestedList,
+  if rightButton is also provided only the NestedList will render */
+  children: PropTypes.node,
+  /** Control toggle state of nested list. */
+  open: PropTypes.bool,
+  /**
+   * Callback fired when the nested list is toggled
+   *
+   * function(event: object) => void
+   */
+  onNestedListToggle: PropTypes.func,
+  /** Nested depth of ListItem. This property is automatically managed, modify at own risk. */
+  nestedLevel: PropTypes.number,
+  color: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  style: {},
+  secondaryText: '',
+  textBadge: null,
+  primaryTextStyle: {},
+  secondaryTextStyle: {},
+  onClick: null,
+  active: false,
+  rightButton: null,
+  avatar: '',
+  badge: null,
+  muted: false,
+  blocked: false,
+  children: null,
+  open: null,
+  onNestedListToggle: () => {},
+  nestedLevel: 0
+};
+
 /** A list's item */
 class ListItem extends Component {
-  static displayName = 'ListItem'
-
-  static propTypes = {
-    /** The ListItem's primary text */
-    primaryText: PropTypes.node.isRequired,
-    /** The ListItem's secondary text */
-    secondaryText: PropTypes.node,
-    /** A badge to display before the secondaryText. */
-    textBadge: PropTypes.node,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the primaryText element */
-    primaryTextStyle: PropTypes.instanceOf(Object),
-    /** Override the styles of the secondaryText element */
-    secondaryTextStyle: PropTypes.instanceOf(Object),
-    /**
-     * Callback fired when the ListItem is clicked
-     *
-     * function(event: object) => void
-     */
-    onClick: PropTypes.func,
-    /** Add active styles to ListItem */
-    active: PropTypes.bool,
-    /** Right-hand side placed button */
-    rightButton: PropTypes.node,
-    /** The item's avatar, if a string is provided Avatar component is used */
-    avatar: PropTypes.node,
-    /** Add a badge to the ListItem */
-    badge: PropTypes.node,
-    /** Add muted styles to ListItem */
-    muted: PropTypes.bool,
-    /** Add blocked styles to ListItem */
-    blocked: PropTypes.bool,
-    /** ListItems to render in a NestedList,
-    if rightButton is also provided only the NestedList will render */
-    children: PropTypes.node,
-    /** Control toggle state of nested list. */
-    open: PropTypes.bool,
-    /**
-     * Callback fired when the nested list is toggled
-     *
-     * function(event: object) => void
-     */
-    onNestedListToggle: PropTypes.func,
-    /** Nested depth of ListItem. This property is automatically managed, modify at own risk. */
-    nestedLevel: PropTypes.number,
-    color: PropTypes.string.isRequired
-  }
-
-  static defaultProps = {
-    style: {},
-    secondaryText: '',
-    textBadge: null,
-    primaryTextStyle: {},
-    secondaryTextStyle: {},
-    onClick: null,
-    active: false,
-    rightButton: null,
-    avatar: '',
-    badge: null,
-    muted: false,
-    blocked: false,
-    children: null,
-    open: null,
-    onNestedListToggle: () => {},
-    nestedLevel: 0
-  }
-
-  static contextTypes = {
-    color: PropTypes.string
-  }
-
   constructor() {
     super();
 
@@ -159,16 +155,18 @@ class ListItem extends Component {
         <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, nestedLevel, style)} {...custom}>
           {
             avatar
-            ? <div style={styles.avatar}>
-              {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
-              {
-                muted && !blocked
-                ? <div style={styles.icon}><IconMute color={colors.white} /></div>
-                : null
-              }
-              {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-              {badge ? <div style={styles.badge}>{badge}</div> : null}
-            </div>
+            ? (
+              <div style={styles.avatar}>
+                {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
+                {
+                  muted && !blocked
+                  ? <div style={styles.icon}><IconMute color={colors.white} /></div>
+                  : null
+                }
+                {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+                {badge ? <div style={styles.badge}>{badge}</div> : null}
+              </div>
+            )
             : null
           }
           <div style={getStyles.textContainer(avatar, rightButton || nestedList)}>
@@ -177,26 +175,30 @@ class ListItem extends Component {
             </h1>
             {
               secondaryText || textBadge
-              ? <h2
-                style={getStyles.text(
-                  styles.secondaryText,
-                  active, textBadge,
-                  secondaryTextStyle
-                )}
-              >
-                {textBadge} {secondaryText}
-              </h2>
+              ? (
+                <h2
+                  style={getStyles.text(
+                    styles.secondaryText,
+                    active, textBadge,
+                    secondaryTextStyle
+                  )}
+                >
+                  {textBadge} {secondaryText}
+                </h2>
+              )
               : null
             }
           </div>
           {rightButton && !nestedList ? <div style={styles.button}>{rightButton}</div> : null}
           {
             nestedList
-            ? <div style={getStyles.nestedListButton(this.state.open)}>
-              <Button iconButton onClick={this.toggleNestedList}>
-                <IconChevronDown />
-              </Button>
-            </div>
+            ? (
+              <div style={getStyles.nestedListButton(this.state.open)}>
+                <Button iconButton onClick={this.toggleNestedList}>
+                  <IconChevronDown />
+                </Button>
+              </div>
+            )
             : null
           }
         </li>
@@ -205,6 +207,10 @@ class ListItem extends Component {
     );
   }
 }
+
+ListItem.displayName = displayName;
+ListItem.propTypes = propTypes;
+ListItem.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),

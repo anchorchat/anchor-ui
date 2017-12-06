@@ -22,9 +22,7 @@ export default {
   },
   myMessage: {
     backgroundColor: colors.theme,
-    color: colors.white,
-    marginLeft: '0',
-    marginRight: '16px',
+    color: colors.white
   },
   body: {
     color: colors.primaryText,

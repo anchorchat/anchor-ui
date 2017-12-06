@@ -2,23 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
-/** General purpose button with three types */
-const Button = ({
-  children, onClick, iconButton, inverted, style, disabled, flatButton, color, ...custom
-}) => (
-  <button
-    onClick={onClick}
-    style={getStyles.root(color, inverted, iconButton, disabled, flatButton, style)}
-    disabled={disabled}
-    {...custom}
-  >
-    {children}
-  </button>
-);
+const displayName = 'Button';
 
-Button.displayName = 'Button';
-
-Button.propTypes = {
+const propTypes = {
   /** Content of the button */
   children: PropTypes.node.isRequired,
   /**
@@ -40,7 +26,7 @@ Button.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-Button.defaultProps = {
+const defaultProps = {
   style: {},
   iconButton: false,
   inverted: false,
@@ -48,5 +34,23 @@ Button.defaultProps = {
   disabled: false,
   flatButton: false
 };
+
+/** General purpose button with three types */
+const Button = ({
+  children, onClick, iconButton, inverted, style, disabled, flatButton, color, ...custom
+}) => (
+  <button
+    onClick={onClick}
+    style={getStyles.root(color, inverted, iconButton, disabled, flatButton, style)}
+    disabled={disabled}
+    {...custom}
+  >
+    {children}
+  </button>
+);
+
+Button.displayName = displayName;
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
 
 export default Button;

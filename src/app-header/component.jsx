@@ -2,41 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
-/** Your app's header */
-const AppHeader = (
-  {
-    text,
-    icon,
-    rightButton,
-    style,
-    iconStyle,
-    textStyle,
-    rightButtonStyle,
-    leftButton,
-    leftButtonStyle,
-    color,
-    ...custom
-  }
-) => (
-  <header style={getStyles.root(color, leftButton, rightButton, style)} {...custom}>
-    {
-      leftButton
-      ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
-      : null
-    }
-    {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
-    {text ? <h1 style={getStyles.text(textStyle)}>{text}</h1> : null}
-    {
-      rightButton
-      ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
-      : null
-    }
-  </header>
-);
+const displayName = 'AppHeader';
 
-AppHeader.displayName = 'AppHeader';
-
-AppHeader.propTypes = {
+const propTypes = {
   /** Title text (your app's name) */
   text: PropTypes.node,
   /** Icon (your app's icon) */
@@ -58,7 +26,7 @@ AppHeader.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-AppHeader.defaultProps = {
+const defaultProps = {
   text: null,
   style: {},
   textStyle: {},
@@ -69,5 +37,39 @@ AppHeader.defaultProps = {
   leftButton: null,
   leftButtonStyle: {}
 };
+
+/** Your app's header */
+const AppHeader = ({
+  text,
+  icon,
+  rightButton,
+  style,
+  iconStyle,
+  textStyle,
+  rightButtonStyle,
+  leftButton,
+  leftButtonStyle,
+  color,
+  ...custom
+}) => (
+  <header style={getStyles.root(color, leftButton, rightButton, style)} {...custom}>
+    {
+      leftButton
+      ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
+      : null
+    }
+    {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
+    {text ? <h1 style={getStyles.text(textStyle)}>{text}</h1> : null}
+    {
+      rightButton
+      ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
+      : null
+    }
+  </header>
+);
+
+AppHeader.displayName = displayName;
+AppHeader.propTypes = propTypes;
+AppHeader.defaultProps = defaultProps;
 
 export default AppHeader;

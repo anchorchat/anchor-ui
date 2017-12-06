@@ -6,7 +6,12 @@ import getStyles from './get-styles';
 import themeable from '../themeable';
 
 /** TableHeaders are used to display data. */
-const TableHeader = ({ children, style, color, ...custom }) => (
+const TableHeader = ({
+  children,
+  style,
+  color,
+  ...custom
+}) => (
   <thead style={getStyles.root(color, style)} {...custom}>
     {children}
   </thead>

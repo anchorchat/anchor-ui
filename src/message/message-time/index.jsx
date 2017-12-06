@@ -4,6 +4,31 @@ import format from 'date-fns/format';
 import getStyles from './get-styles';
 import styles from './styles';
 
+const propTypes = {
+  myMessage: PropTypes.bool,
+  type: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
+  timeFormat: PropTypes.string,
+  createdAt: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Date)
+  ]).isRequired,
+  edited: PropTypes.node,
+  locale: PropTypes.instanceOf(Object).isRequired,
+  collapsed: PropTypes.bool,
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large'])
+};
+
+const defaultProps = {
+  myMessage: false,
+  type: 'text',
+  style: {},
+  timeFormat: 'HH:mm',
+  edited: null,
+  collapsed: false,
+  fontSize: 'small'
+};
+
 const MessageTime = ({
   myMessage,
   type,
@@ -21,29 +46,7 @@ const MessageTime = ({
   </span>
 );
 
-MessageTime.propTypes = {
-  myMessage: PropTypes.bool,
-  type: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  timeFormat: PropTypes.string,
-  createdAt: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date)
-  ]).isRequired,
-  edited: PropTypes.node,
-  locale: PropTypes.instanceOf(Object).isRequired,
-  collapsed: PropTypes.bool,
-  fontSize: PropTypes.oneOf(['small', 'medium', 'large'])
-};
-
-MessageTime.defaultProps = {
-  myMessage: false,
-  type: 'text',
-  style: {},
-  timeFormat: 'HH:mm',
-  edited: null,
-  collapsed: false,
-  fontSize: 'small'
-};
+MessageTime.propTypes = propTypes;
+MessageTime.defaultProps = defaultProps;
 
 export default MessageTime;

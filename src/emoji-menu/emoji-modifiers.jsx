@@ -6,7 +6,25 @@ import htmlParser from 'html-react-parser';
 import getStyles from './get-styles';
 import styles from './styles';
 
-function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
+const propTypes = {
+  modifiers: PropTypes.arrayOf(PropTypes.shape({
+    shortname: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })).isRequired,
+  changeTone: PropTypes.func.isRequired,
+  tone: PropTypes.string.isRequired,
+  style: PropTypes.instanceOf(Object),
+  modifierStyle: PropTypes.instanceOf(Object)
+};
+
+const defaultProps = {
+  style: {},
+  modifierStyle: {}
+};
+
+function EmojiModifiers({
+  modifiers, changeTone, tone, style, modifierStyle
+}) {
   return (
     <header style={getStyles.header(style)}>
       <div style={getStyles.modifiers(modifierStyle)}>
@@ -59,22 +77,7 @@ function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   );
 }
 
-EmojiModifiers.propTypes = {
-  modifiers: PropTypes.arrayOf(
-    PropTypes.shape({
-      shortname: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    })
-  ).isRequired,
-  changeTone: PropTypes.func.isRequired,
-  tone: PropTypes.string.isRequired,
-  style: PropTypes.instanceOf(Object),
-  modifierStyle: PropTypes.instanceOf(Object)
-};
-
-EmojiModifiers.defaultProps = {
-  style: {},
-  modifierStyle: {}
-};
+EmojiModifiers.propTypes = propTypes;
+EmojiModifiers.defaultProps = defaultProps;
 
 export default Radium(EmojiModifiers);

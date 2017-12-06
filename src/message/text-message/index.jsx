@@ -17,7 +17,13 @@ import styles from './styles';
 
 class TextMessage extends Component {
   createMarkup = () => {
-    const { message, enableLinks, emoji, highlights, enableMultiline } = this.props;
+    const {
+      message,
+      enableLinks,
+      emoji,
+      highlights,
+      enableMultiline
+    } = this.props;
 
     const text = message.body;
 
@@ -60,7 +66,12 @@ class TextMessage extends Component {
   }
 
   parseHtml = () => {
-    const { onHighlightClick, color, myMessage, highlights } = this.props;
+    const {
+      onHighlightClick,
+      color,
+      myMessage,
+      highlights
+    } = this.props;
 
     const options = {
       replace: (domNode) => {
@@ -78,7 +89,7 @@ class TextMessage extends Component {
         }
 
         if (domNode.attribs && domNode.attribs.class === 'link') {
-          const value = domNode.attribs.value;
+          const { value } = domNode.attribs;
 
           return (
             <a style={styles.link} href={value} target="_blank" rel="noopener noreferrer">
@@ -199,7 +210,6 @@ TextMessage.defaultProps = {
   emoji: false,
   enableLinks: false,
   compact: false,
-  enableLightbox: false,
   color: colors.theme,
   edited: null,
   highlights: [],

@@ -6,7 +6,24 @@ import htmlParser from 'html-react-parser';
 import styles from './styles';
 import getStyles from './get-styles';
 
-const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
+const propTypes = {
+  category: PropTypes.string.isRequired,
+  emojis: PropTypes.arrayOf(PropTypes.shape({
+    shortname: PropTypes.string.isRequired
+  })).isRequired,
+  sendEmoji: PropTypes.func.isRequired,
+  style: PropTypes.instanceOf(Object),
+  emojiStyle: PropTypes.instanceOf(Object)
+};
+
+const defaultProps = {
+  style: {},
+  emojiStyle: {}
+};
+
+const EmojiCategory = ({
+  category, emojis, sendEmoji, style, emojiStyle
+}) => (
   <article style={getStyles.category(style)}>
     <h1 style={styles.category.header}>{category}</h1>
     <section style={styles.category.emojiContainer}>
@@ -35,21 +52,7 @@ const EmojiCategory = ({ category, emojis, sendEmoji, style, emojiStyle }) => (
   </article>
 );
 
-EmojiCategory.propTypes = {
-  category: PropTypes.string.isRequired,
-  emojis: PropTypes.arrayOf(
-    PropTypes.shape({
-      shortname: PropTypes.string.isRequired
-    })
-  ).isRequired,
-  sendEmoji: PropTypes.func.isRequired,
-  style: PropTypes.instanceOf(Object),
-  emojiStyle: PropTypes.instanceOf(Object)
-};
-
-EmojiCategory.defaultProps = {
-  style: {},
-  emojiStyle: {}
-};
+EmojiCategory.propTypes = propTypes;
+EmojiCategory.defaultProps = defaultProps;
 
 export default Radium(EmojiCategory);

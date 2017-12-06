@@ -4,7 +4,12 @@ import Radium from 'radium';
 import getStyles from './get-styles';
 
 /** A Paper element is a basic container that can give depth to the page. */
-const Paper = ({ children, depth, style, ...custom }) => (
+const Paper = ({
+  children,
+  depth,
+  style,
+  ...custom
+}) => (
   <section style={getStyles.root(depth, style)} {...custom}>
     {children}
   </section>
