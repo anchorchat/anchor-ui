@@ -118,9 +118,12 @@ class IconMenu extends Component {
   handleClickOutside = event => this.closeMenu(event)
 
   applyCloseMenuToChildren(children) {
-    return React.Children.map(children, child => (
-      React.cloneElement(child, { closeMenu: this.closeMenu })
-    ));
+    return React.Children.map(
+      children,
+      child => (
+        React.cloneElement(child, { closeMenu: this.closeMenu })
+      )
+    );
   }
 
   handleKeyUp = (event) => {

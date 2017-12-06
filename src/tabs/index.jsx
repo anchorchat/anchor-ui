@@ -105,14 +105,12 @@ class Tabs extends Component {
     const tabContent = [];
 
     const tabs = children.map((tab, index) => {
-      tabContent.push((
-        createElement(
-          'div', {
-            key: index,
-            style: getStyles.tabContent(this.isSelectedTab(index), contentStyle)
-          },
-          tab.props.children
-        )
+      tabContent.push(createElement(
+        'div', {
+          key: index,
+          style: getStyles.tabContent(this.isSelectedTab(index), contentStyle)
+        },
+        tab.props.children
       ));
 
       return cloneElement(
