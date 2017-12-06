@@ -6,7 +6,7 @@ export default {
   root: {
     position: 'relative',
     backgroundColor: colors.white,
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxShadow: styles.depthShadows[0],
     overflow: 'hidden'
   },

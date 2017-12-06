@@ -4,20 +4,35 @@ import Avatar from '../../avatar';
 import getStyles from './get-styles';
 import styles from './styles';
 
+const propTypes = {
+  avatar: PropTypes.string,
+  compact: PropTypes.bool,
+  myMessage: PropTypes.bool,
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  headerStyle: PropTypes.instanceOf(Object),
+  username: PropTypes.string.isRequired,
+  badge: PropTypes.node,
+  iconMenu: PropTypes.bool
+};
+
+const defaultProps = {
+  avatar: '',
+  headerStyle: {},
+  fontSize: 'small',
+  myMessage: false,
+  compact: false,
+  badge: null,
+  iconMenu: false
+};
+
 const MessageHeader = ({
-  compact,
-  myMessage,
-  avatar,
-  fontSize,
-  headerStyle,
-  username,
-  badge
+  compact, myMessage, avatar, fontSize, headerStyle, username, badge, iconMenu
 }) => (
   <div style={styles.container}>
     {avatar && !compact ? <Avatar image={avatar} style={getStyles.avatar(myMessage)} /> : null}
     <header
       style={
-        getStyles.header(myMessage, compact, fontSize, badge, headerStyle)
+        getStyles.header(myMessage, compact, fontSize, badge, iconMenu, headerStyle)
       }
     >
       {username}
@@ -26,23 +41,7 @@ const MessageHeader = ({
   </div>
 );
 
-MessageHeader.propTypes = {
-  avatar: PropTypes.string,
-  compact: PropTypes.bool,
-  myMessage: PropTypes.bool,
-  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  headerStyle: PropTypes.instanceOf(Object),
-  username: PropTypes.string.isRequired,
-  badge: PropTypes.node
-};
-
-MessageHeader.defaultProps = {
-  avatar: '',
-  headerStyle: {},
-  fontSize: 'small',
-  myMessage: false,
-  compact: false,
-  badge: null
-};
+MessageHeader.propTypes = propTypes;
+MessageHeader.defaultProps = defaultProps;
 
 export default MessageHeader;

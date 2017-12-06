@@ -3,27 +3,28 @@ import darken from '../internal/darken';
 
 export default {
   root: {
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxSizing: 'border-box',
     fontSize: '16px',
     fontWeight: 'inherit',
     lineHeight: '20px',
-    padding: '14px 10px',
+    padding: '12px 8px',
     position: 'relative',
-    minWidth: '275px',
-    maxWidth: '500px'
+    minWidth: '272px',
+    maxWidth: '496px'
   },
   icon: {
     height: '24px',
     position: 'absolute',
     top: '50%',
+    left: '8px',
     transform: 'translateY(-50%)',
     width: '24px'
   },
   text: {
     margin: '0',
     paddingLeft: '32px',
-    paddingRight: '42px',
+
     '&:first-letter': {
       textTransform: 'capitalize'
     }
@@ -32,7 +33,7 @@ export default {
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)',
-    right: '5px'
+    right: '4px'
   },
   success: {
     backgroundColor: colors.alert.success,

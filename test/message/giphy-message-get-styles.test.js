@@ -12,7 +12,7 @@ describe('GiphyMessage.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, { color: 'red' });
+      const style = getStyles.root('red', false, false, false, false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -35,10 +35,29 @@ describe('GiphyMessage.getStyles', () => {
       expect(style).to.have.property('marginLeft', '48px');
     });
 
+    it('should add myAvatar styles', () => {
+      const style = getStyles.root('red', true, true);
+
+      expect(style).to.have.property('marginLeft', '0');
+      expect(style).to.have.property('marginRight', '48px');
+    });
+
     it('should add compact styles', () => {
       const style = getStyles.root('red', false, false, true);
 
       expect(style).to.have.property('marginLeft', '0');
+    });
+
+    it('should add collapsed styles', () => {
+      const style = getStyles.root('red', false, false, true, true);
+
+      expect(style).to.have.property('display', 'flex');
+    });
+
+    it('should add iconMenu styles', () => {
+      const style = getStyles.root('red', false, false, false, true, true);
+
+      expect(style).to.have.property('padding', '12px 40px 12px 12px');
     });
   });
 
@@ -50,7 +69,7 @@ describe('GiphyMessage.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.body(false, 'small', { color: 'red' });
+      const style = getStyles.body(false, 'small', false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -77,6 +96,26 @@ describe('GiphyMessage.getStyles', () => {
       const style = getStyles.body(false, 'large');
 
       expect(style).to.have.property('fontSize', '22px');
+    });
+
+    it('should add collapsed styles', () => {
+      const style = getStyles.body(false, 'small', true);
+
+      expect(style).to.have.property('display', 'initial');
+    });
+  });
+
+  describe('giphy', () => {
+    it('should get styles', () => {
+      const style = getStyles.giphy();
+
+      expect(style).to.deep.equal(styles.giphy);
+    });
+
+    it('should add lightbox styles', () => {
+      const style = getStyles.giphy(true);
+
+      expect(style).to.have.property('cursor', 'pointer');
     });
   });
 });

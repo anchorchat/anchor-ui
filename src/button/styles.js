@@ -26,7 +26,7 @@ export default {
   button: {
     backgroundColor: colors.theme,
     border: 0,
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxShadow: styles.depthShadows[0],
     color: colors.white,
     cursor: 'pointer',

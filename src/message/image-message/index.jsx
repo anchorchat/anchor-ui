@@ -1,12 +1,62 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import styles from './styles';
 import Lightbox from '../../lightbox';
 import combineStyles from '../../internal/combine-styles';
 import ImageLoader from '../../image-loader';
+import styles from './styles';
+
+const propTypes = {
+  avatar: PropTypes.string,
+  message: PropTypes.shape({
+    body: PropTypes.node.isRequired,
+    createdAt: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(Date)
+    ]).isRequired,
+    username: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
+  }).isRequired,
+  timeFormat: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
+  messageHeaderStyle: PropTypes.instanceOf(Object),
+  messageBodyStyle: PropTypes.instanceOf(Object),
+  messageTimeStyle: PropTypes.instanceOf(Object),
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  myMessage: PropTypes.bool,
+  enableLightbox: PropTypes.bool,
+  compact: PropTypes.bool,
+  color: PropTypes.string,
+  collapsed: PropTypes.bool,
+  collapsedText: PropTypes.node.isRequired,
+  locale: PropTypes.instanceOf(Object).isRequired,
+  badge: PropTypes.node,
+  imagePlaceholder: PropTypes.string.isRequired,
+  imageError: PropTypes.string.isRequired,
+  onImageLoad: PropTypes.func.isRequired,
+  onImageError: PropTypes.func.isRequired,
+  iconMenu: PropTypes.node
+};
+
+const defaultProps = {
+  avatar: '',
+  style: {},
+  timeFormat: 'HH:mm',
+  messageHeaderStyle: {},
+  messageBodyStyle: {},
+  messageTimeStyle: {},
+  fontSize: 'small',
+  myMessage: false,
+  compact: false,
+  enableLightbox: false,
+  color: '',
+  collapsed: false,
+  badge: null,
+  iconMenu: null
+};
 
 class ImageMessage extends Component {
   constructor() {
@@ -50,37 +100,32 @@ class ImageMessage extends Component {
       imagePlaceholder,
       imageError,
       onImageLoad,
-      onImageError
+      onImageError,
+      iconMenu
     } = this.props;
     const { lightbox } = this.state;
 
     let onClick = null;
+    let headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '8px' });
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
-    let headerStyle = messageHeaderStyle;
-    let imageStyle = styles.image;
-
-    if (compact) {
-      headerStyle = combineStyles(headerStyle, { marginBottom: '8px' });
-    }
-
-    if (enableLightbox) {
-      imageStyle = combineStyles(imageStyle, { cursor: 'pointer' });
+    if (collapsed) {
+      headerStyle = combineStyles(headerStyle, { marginBottom: '0' });
     }
 
     const imgProps = {
       onClick,
-      style: imageStyle
+      style: getStyles.image(enableLightbox)
     };
 
-    const placeholder = <img style={imageStyle} src={imagePlaceholder} alt="placeholder" />;
-    const error = <img style={imageStyle} src={imageError} alt="error" />;
+    const placeholder = <img style={getStyles.image(enableLightbox)} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={getStyles.image(enableLightbox)} src={imageError} alt="error" />;
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -89,8 +134,9 @@ class ImageMessage extends Component {
           headerStyle={headerStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
-        <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
+        <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {
             !collapsed
             ? (
@@ -113,8 +159,11 @@ class ImageMessage extends Component {
             createdAt={message.createdAt}
             timeFormat={timeFormat}
             locale={locale}
+            collapsed={collapsed}
+            fontSize={fontSize}
           />
         </p>
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
           ? <Lightbox
@@ -130,52 +179,7 @@ class ImageMessage extends Component {
   }
 }
 
-ImageMessage.propTypes = {
-  avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
-  timeFormat: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  messageHeaderStyle: PropTypes.instanceOf(Object),
-  messageBodyStyle: PropTypes.instanceOf(Object),
-  messageTimeStyle: PropTypes.instanceOf(Object),
-  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  myMessage: PropTypes.bool,
-  enableLightbox: PropTypes.bool,
-  compact: PropTypes.bool,
-  color: PropTypes.string,
-  collapsed: PropTypes.bool,
-  collapsedText: PropTypes.node,
-  locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node,
-  imagePlaceholder: PropTypes.string.isRequired,
-  imageError: PropTypes.string.isRequired,
-  onImageLoad: PropTypes.func.isRequired,
-  onImageError: PropTypes.func.isRequired
-};
-
-ImageMessage.defaultProps = {
-  avatar: '',
-  style: {},
-  timeFormat: 'HH:mm',
-  messageHeaderStyle: {},
-  messageBodyStyle: {},
-  messageTimeStyle: {},
-  fontSize: 'small',
-  myMessage: false,
-  compact: false,
-  enableLightbox: false,
-  color: '',
-  collapsed: false,
-  collapsedText: 'This image has been collapsed, click the button to expand it.',
-  badge: null
-};
+ImageMessage.propTypes = propTypes;
+ImageMessage.defaultProps = defaultProps;
 
 export default ImageMessage;

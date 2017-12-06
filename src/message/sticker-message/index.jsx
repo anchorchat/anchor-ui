@@ -28,7 +28,8 @@ const propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
 const defaultProps = {
@@ -42,7 +43,8 @@ const defaultProps = {
   myMessage: false,
   compact: false,
   color: colors.theme,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
 
 const StickerMessage = ({
@@ -58,13 +60,14 @@ const StickerMessage = ({
   messageTimeStyle,
   timeFormat,
   locale,
-  badge
+  badge,
+  iconMenu
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
   return (
     <div style={styles.container}>
-      <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.header(color, myMessage, avatar, compact, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -82,7 +85,9 @@ const StickerMessage = ({
           createdAt={message.createdAt}
           timeFormat={timeFormat}
           locale={locale}
+          fontSize={fontSize}
         />
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
       <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
     </div>

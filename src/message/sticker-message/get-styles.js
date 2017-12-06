@@ -2,7 +2,14 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const header = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
+const header = (
+  color = colors.theme,
+  myMessage,
+  avatar,
+  compact,
+  iconMenu = false,
+  overrideStyle
+) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -24,6 +31,10 @@ const header = (color = colors.theme, myMessage, avatar, compact, overrideStyle)
     style = combineStyles(style, styles.compact);
   }
 
+  if (iconMenu) {
+    style = combineStyles(style, { padding: '12px 40px 12px 12px' });
+  }
+
   return combineStyles(style, overrideStyle);
 };
 
@@ -31,7 +42,7 @@ const body = (myMessage, avatar, compact, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
-    style = combineStyles(style, { marginLeft: '0', marginRight: '16px', float: 'right' });
+    style = combineStyles(style, { marginLeft: '0', marginRight: '16px', alignSelf: 'flex-end' });
   }
 
   if (avatar) {
@@ -43,14 +54,13 @@ const body = (myMessage, avatar, compact, overrideStyle) => {
   }
 
   if (compact) {
-    style = combineStyles(style, { float: 'none', marginLeft: 0, marginRight: 0 });
+    style = combineStyles(style, { alignSelf: 'flex-start', marginLeft: 0, marginRight: 0 });
   }
 
   return combineStyles(style, overrideStyle);
 };
 
 export default {
-  root,
   header,
   body
 };

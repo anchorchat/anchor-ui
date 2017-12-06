@@ -15,9 +15,9 @@ const AlertDoc = () => {
       flexWrap: 'wrap',
       alignItems: 'center',
       margin: 0,
-      padding: '20px'
+      padding: '24px'
     },
-    alert: { margin: '10px' }
+    alert: { margin: '8px' }
   };
 
   return (
