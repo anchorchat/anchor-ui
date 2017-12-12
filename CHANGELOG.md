@@ -2,10 +2,40 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.6.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.0...HEAD)
 
 **Merged pull requests:**
 
+- \[5.0.0\] Updated to React v16, added portal for PopOver, updated to emojione v3, refactored and restyled Message, replaced dangerouslySetInnerHTML with html-react-parser and adjusted some styling to 8dp grid [\#994](https://github.com/anchorchat/anchor-ui/pull/994) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v5.0.0](https://github.com/anchorchat/anchor-ui/tree/v5.0.0) (2017-12-12)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v4.6.0...v5.0.0)
+
+**Implemented enhancements:**
+
+- \[PopOver\] Handle horizontal middle align [\#872](https://github.com/anchorchat/anchor-ui/issues/872)
+- \[popOver\] Should make it render at the bottom of the root [\#783](https://github.com/anchorchat/anchor-ui/issues/783)
+- Replace dangerouslySetInnerHTML with html-react-parser [\#761](https://github.com/anchorchat/anchor-ui/issues/761)
+- Update emojione to v3 [\#725](https://github.com/anchorchat/anchor-ui/issues/725)
+
+**Fixed bugs:**
+
+- \\[PopOver\\] Handle horizontal middle align [\#872](https://github.com/anchorchat/anchor-ui/issues/872)
+- \\[popOver\\] Should make it render at the bottom of the root [\#783](https://github.com/anchorchat/anchor-ui/issues/783)
+
+**Closed issues:**
+
+- \[Docs\] Typo in ChannelHeader code example [\#986](https://github.com/anchorchat/anchor-ui/issues/986)
+- \[Message\] Move IconMenu into message [\#848](https://github.com/anchorchat/anchor-ui/issues/848)
+- \[Message\] Refactor, may need to be split [\#494](https://github.com/anchorchat/anchor-ui/issues/494)
+
+**Merged pull requests:**
+
+- V5.0.0 [\#993](https://github.com/anchorchat/anchor-ui/pull/993) ([IanCStewart](https://github.com/IanCStewart))
+- Implemented 8dp grid to Badge. [\#992](https://github.com/anchorchat/anchor-ui/pull/992) ([IanCStewart](https://github.com/IanCStewart))
+- Fixed functionality removed in linting PR [\#991](https://github.com/anchorchat/anchor-ui/pull/991) ([MrBamBam](https://github.com/MrBamBam))
+- Issue \#751 admin badge [\#990](https://github.com/anchorchat/anchor-ui/pull/990) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaakluthart/eslint [\#989](https://github.com/anchorchat/anchor-ui/pull/989) ([MrBamBam](https://github.com/MrBamBam))
 - \[4.6.0\] Updated some test files, added ImageLoader and fixed Message no-Avatar bug. [\#983](https://github.com/anchorchat/anchor-ui/pull/983) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v4.6.0](https://github.com/anchorchat/anchor-ui/tree/v4.6.0) (2017-11-16)
