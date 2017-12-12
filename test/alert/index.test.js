@@ -129,6 +129,6 @@ describe('Alert', () => {
     const spy = sinon.spy(getStyles, 'text');
 
     shallow(<Alert {...props} />);
-    expect(spy).to.have.been.calledWith(props.textStyle);
+    expect(spy).to.have.been.calledWith(props.hideAlert, props.textStyle);
   });
 });

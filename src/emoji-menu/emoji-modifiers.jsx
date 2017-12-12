@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
-import createMarkup from './create-markup';
+import emojione from 'emojione';
+import htmlParser from 'html-react-parser';
 import getStyles from './get-styles';
 import styles from './styles';
 
@@ -46,11 +47,12 @@ function EmojiModifiers({
               style={
                 getStyles.modifier(title === tone, modifierStyle)
               }
-              dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
               key={`emoji-${modifier.shortname}`}
               onClick={() => changeTone(title)}
               className="modifier"
-            />
+            >
+              {htmlParser(emojione.toImage(modifier.shortname))}
+            </div>
           );
         })}
       </div>

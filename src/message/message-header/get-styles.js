@@ -2,11 +2,15 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const header = (myMessage, compact, fontSize, badge, overrideStyle) => {
+const header = (myMessage, compact, fontSize, badge, iconMenu, overrideStyle) => {
   let style = styles.header;
 
   if (myMessage) {
     style = combineStyles(style, { color: colors.white });
+  }
+
+  if (iconMenu) {
+    style = combineStyles(style, { marginRight: '28px' });
   }
 
   if (compact) {

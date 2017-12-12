@@ -124,11 +124,12 @@ class TextMessage extends Component {
       locale,
       highlights,
       badge,
+      iconMenu,
       enableMultiline
     } = this.props;
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -137,6 +138,7 @@ class TextMessage extends Component {
           headerStyle={messageHeaderStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
@@ -152,8 +154,10 @@ class TextMessage extends Component {
             timeFormat={timeFormat}
             edited={edited}
             locale={locale}
+            fontSize={fontSize}
           />
         </p>
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
     );
   }
@@ -190,6 +194,7 @@ TextMessage.propTypes = {
   })),
   onHighlightClick: PropTypes.func.isRequired,
   badge: PropTypes.node,
+  iconMenu: PropTypes.node,
   enableMultiline: PropTypes.bool
 };
 
@@ -209,6 +214,7 @@ TextMessage.defaultProps = {
   edited: null,
   highlights: [],
   badge: null,
+  iconMenu: null,
   enableMultiline: false
 };
 

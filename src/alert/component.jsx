@@ -54,7 +54,7 @@ const Alert = ({
 }) => (
   <section style={getStyles.root(type, style)} {...custom}>
     <div style={getStyles.icon(iconStyle)}>{icons[type]}</div>
-    <p style={getStyles.text(textStyle)}>{text}</p>
+    <p style={getStyles.text(hideAlert, textStyle)}>{text}</p>
     {
       hideAlert
       ? (

@@ -2,7 +2,15 @@ import colors from '../../settings/colors';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) => {
+const root = (
+  color = colors.theme,
+  myMessage,
+  avatar,
+  compact,
+  collapsed,
+  iconMenu,
+  overrideStyle
+) => {
   let style = styles.message;
 
   if (myMessage) {
@@ -21,16 +29,21 @@ const root = (color = colors.theme, myMessage, avatar, compact, overrideStyle) =
   }
 
   if (compact) {
-    style = combineStyles(
-      style,
-      styles.compact
-    );
+    style = combineStyles(style, styles.compact);
+  }
+
+  if (compact && collapsed) {
+    style = combineStyles(style, { display: 'flex' });
+  }
+
+  if (collapsed && iconMenu) {
+    style = combineStyles(style, { padding: '12px 40px 12px 12px' });
   }
 
   return combineStyles(style, overrideStyle);
 };
 
-const body = (myMessage, fontSize, overrideStyle) => {
+const body = (myMessage, fontSize, collapsed, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
@@ -45,10 +58,25 @@ const body = (myMessage, fontSize, overrideStyle) => {
     style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
   }
 
+  if (collapsed) {
+    style = combineStyles(style, { display: 'initial' });
+  }
+
   return combineStyles(style, overrideStyle);
+};
+
+const giphy = (lightbox) => {
+  let style = styles.giphy;
+
+  if (lightbox) {
+    style = combineStyles(style, { cursor: 'pointer' });
+  }
+
+  return style;
 };
 
 export default {
   root,
-  body
+  body,
+  giphy
 };
