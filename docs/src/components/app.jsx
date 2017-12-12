@@ -41,14 +41,10 @@ class App extends Component {
     const { children } = this.props;
     const { media, menu } = this.state;
 
-    const childrenWithProps = React.Children.map(
-      children, child => React.cloneElement(
-        child,
-        {
-          setColor: this.setColor
-        }
-      )
-    );
+    const childrenWithProps = React.Children.map(children, child => React.cloneElement(
+      child,
+      { setColor: this.setColor }
+    ));
 
     const query = {
       medium: '(min-width: 768px)'

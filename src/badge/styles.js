@@ -4,7 +4,7 @@ import styles from '../settings/styles';
 export default {
   badge: {
     backgroundColor: colors.theme,
-    borderRadius: '10px',
+    borderRadius: '12px',
     boxSizing: 'border-box',
     boxShadow: styles.depthShadows[0],
     color: colors.white,
@@ -12,7 +12,7 @@ export default {
     fontSize: '12px',
     fontWeight: 'inherit',
     height: '20px',
-    lineHeight: '16px',
+    lineHeight: '14px',
     padding: '3px',
     textAlign: 'center',
     minWidth: '20px',

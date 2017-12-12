@@ -76,7 +76,9 @@ describe('Switch', () => {
 
     shallow(<Switch {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.color, props.active, props.trackStyle
+      props.color,
+      props.active,
+      props.trackStyle
     );
   });
 
@@ -85,7 +87,9 @@ describe('Switch', () => {
 
     shallow(<Switch {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.color, props.active, props.knobStyle
+      props.color,
+      props.active,
+      props.knobStyle
     );
   });
 });

@@ -33,7 +33,7 @@ const propTypes = {
   /** Override the styles of the avatar element */
   avatarStyle: PropTypes.instanceOf(Object),
   /** An user's status. One of the following: ["online", "away", "offline"] */
-  status: PropTypes.oneOf(['online', 'away', 'offline', '']),
+  status: PropTypes.oneOf(['online', 'away', 'offline', ''])
 };
 
 const defaultProps = {
@@ -55,15 +55,15 @@ const defaultProps = {
 const Profile = ({
   header,
   secondaryText,
+  secondaryTextStyle,
   avatar,
   coverImage,
-  children,
   button,
+  children,
   style,
   coverStyle,
   coverImageStyle,
   headerStyle,
-  secondaryTextStyle,
   avatarStyle,
   status,
   ...custom

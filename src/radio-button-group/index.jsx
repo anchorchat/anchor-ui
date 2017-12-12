@@ -7,7 +7,8 @@ const RadioButtonGroup = ({
   value, onChange, children, buttonStyle, label, labelStyle, style, error, errorStyle, ...custom
 }) => {
   const childrenWithProps = React.Children.map(
-    children, child => React.cloneElement(
+    children,
+    child => React.cloneElement(
       child,
       {
         checked: child.props.value === value,

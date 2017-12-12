@@ -3,83 +3,71 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import getStyles from './get-styles';
 
+const propTypes = {
+  /** MessageList content */
+  children: PropTypes.node.isRequired,
+  /** The amount of pixels the user has to scroll up to disable auto scroll */
+  scrollOffset: PropTypes.number,
+  /** Reference list element */
+  listRef: PropTypes.func,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the ul element */
+  listStyle: PropTypes.instanceOf(Object),
+  /** Enable autoScroll */
+  autoScroll: PropTypes.bool
+};
+
+const defaultProps = {
+  scrollOffset: 100,
+  listRef: () => {},
+  style: {},
+  listStyle: {},
+  autoScroll: false
+};
+
+const displayName = 'MessageList';
+
 /** Render a list of items (Messages) with optional auto scroll */
 class MessageList extends Component {
-  static displayName = 'MessageList'
-
-  static propTypes = {
-    /** MessageList content */
-    children: PropTypes.node.isRequired,
-    /** The amount of pixels the user has to scroll up to disable auto scroll */
-    scrollOffset: PropTypes.number,
-    /** Expose the components methods to the parent,
-     * useful for calling scrollDown from a parent component */
-    addRef: PropTypes.func,
-    /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
-    /** Override the styles of the ul element */
-    listStyle: PropTypes.instanceOf(Object),
-    /** Enable autoScroll */
-    autoScroll: PropTypes.bool
-  }
-
-  static defaultProps = {
-    scrollOffset: 100,
-    addRef: () => {},
-    style: {},
-    listStyle: {},
-    autoScroll: false
-  }
-
-  componentDidMount() {
-    this.props.addRef(this);
-  }
-
   componentWillReceiveProps() {
     const { autoScroll } = this.props;
 
-    if (autoScroll && this.messageList && this.shouldScrollToBottom(this.messageList)) {
-      this.scrollDown();
+    if (autoScroll) {
+      this.shouldScroll = this.shouldScrollToBottom(this.messageList);
     }
   }
 
-  componentWillUnmount() {
-    this.props.addRef(undefined);
-  }
-
-  shouldScrollToBottom(node) {
-    const { scrollOffset } = this.props;
-
-    const scrollTop = node && (node.scrollTop || node.scrollTop === 0);
-    const offsetHeight = node && (node.offsetHeight || node.offsetHeight === 0);
-    const scrollHeight = node && (node.scrollHeight || node.scrollHeight === 0);
-
-    if (node && scrollTop && offsetHeight && scrollHeight) {
-      return node.scrollTop + node.offsetHeight + scrollOffset >= node.scrollHeight;
-    }
-
-    return false;
-  }
-
-  scrollDown() {
+  componentDidUpdate() {
     const { autoScroll } = this.props;
 
-    if (!autoScroll) {
-      return false;
+    if (autoScroll && this.shouldScroll) {
+      this.scrollToBottom();
+
+      this.shouldScroll = false;
     }
+  }
 
-    return setTimeout(() => {
-      if (this.messageList) {
-        const node = this.messageList;
-        const scrollTop = node && (node.scrollTop || node.scrollTop === 0);
-        const offsetHeight = node && (node.offsetHeight || node.offsetHeight === 0);
-        const scrollHeight = node && (node.scrollHeight || node.scrollHeight === 0);
+  setRef = (node) => {
+    const { listRef } = this.props;
 
-        if (scrollTop && offsetHeight && scrollHeight) {
-          this.messageList.scrollTop = this.messageList.scrollHeight;
-        }
-      }
-    }, 100);
+    this.messageList = node;
+
+    listRef(node);
+  }
+
+  scrollToBottom = () => {
+    const { scrollHeight } = this.messageList;
+
+    this.messageList.scrollTop = scrollHeight;
+  }
+
+  shouldScrollToBottom = ({ scrollHeight, scrollTop, offsetHeight }) => {
+    const { scrollOffset } = this.props;
+
+    const position = scrollHeight - (scrollTop + offsetHeight);
+
+    return position < scrollOffset;
   }
 
   render() {
@@ -87,7 +75,7 @@ class MessageList extends Component {
       children,
       style,
       listStyle,
-      addRef,
+      listRef,
       scrollOffset,
       autoScroll,
       ...custom
@@ -95,15 +83,16 @@ class MessageList extends Component {
 
     return (
       <article style={getStyles.root(style)} {...custom}>
-        <ul
-          style={getStyles.list(listStyle)}
-          ref={(messageList) => { this.messageList = messageList; }}
-        >
+        <ul style={getStyles.list(listStyle)} ref={this.setRef}>
           {children}
         </ul>
       </article>
     );
   }
 }
+
+MessageList.propTypes = propTypes;
+MessageList.defaultProps = defaultProps;
+MessageList.displayName = displayName;
 
 export default Radium(MessageList);

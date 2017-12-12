@@ -4,7 +4,9 @@ import isNumber from 'lodash/isNumber';
 import getStyles from './get-styles';
 
 /** Used for displaying a (notification) counter */
-const Badge = ({ value, maxValue, inverted, style, color, ...custom }) => {
+const Badge = ({
+  value, maxValue, inverted, style, color, ...custom
+}) => {
   let content = value;
 
   if (isNumber(maxValue) && value > maxValue) {

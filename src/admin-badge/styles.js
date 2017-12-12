@@ -6,9 +6,9 @@ const styleSheet = {
     color: colors.white,
     fontSize: '10px',
     lineHeight: '10px',
-    padding: '2px',
+    padding: '2px 4px',
     textAlign: 'center',
-    borderRadius: '3px',
+    borderRadius: '4px',
     fontWeight: 'inherit',
     border: `1px solid ${colors.theme}`,
     transition: 'background .3s ease-in-out'

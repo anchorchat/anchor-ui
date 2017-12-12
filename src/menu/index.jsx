@@ -7,6 +7,51 @@ import getStyles from './get-styles';
 import Overlay from '../overlay';
 import themeable from '../themeable';
 
+const displayName = 'Menu';
+
+const propTypes = {
+  /** The Menu's content (MenuItem) */
+  children: PropTypes.node.isRequired,
+  /** Menu open */
+  open: PropTypes.bool,
+  /**
+   * Callback fired when Menu's overlay or MenuItems are clicked
+   *
+   * function(event: object) => void
+   */
+  closeMenu: PropTypes.func,
+  /** The Menu's header */
+  header: PropTypes.node,
+  /** The header's icon */
+  headerIcon: PropTypes.node,
+  /** The Menu's footer */
+  footer: PropTypes.node,
+  /** Override the styles of the icon element */
+  iconStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the header element */
+  headerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the footer element */
+  footerStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the footer element */
+  contentContainerStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  open: false,
+  closeMenu: null,
+  header: null,
+  footer: null,
+  style: {},
+  headerStyle: {},
+  headerIcon: null,
+  iconStyle: {},
+  footerStyle: {},
+  contentContainerStyle: {}
+};
+
 /** Menu that slides in from the left */
 class Menu extends Component {
   handleKeyUp = (event) => {
@@ -48,9 +93,11 @@ class Menu extends Component {
       <nav style={rootStyle} {...custom}>
         {
           headerIcon
-          ? <div style={getStyles.icon(iconStyle)}>
-            {React.cloneElement(headerIcon, { color })}
-          </div>
+          ? (
+            <div style={getStyles.icon(iconStyle)}>
+              {React.cloneElement(headerIcon, { color })}
+            </div>
+          )
           : null
         }
         {
@@ -90,50 +137,9 @@ class Menu extends Component {
   }
 }
 
-Menu.displayName = 'Menu';
-
-Menu.propTypes = {
-  /** The Menu's content (MenuItem) */
-  children: PropTypes.node.isRequired,
-  /** Menu open */
-  open: PropTypes.bool,
-  /**
-   * Callback fired when Menu's overlay or MenuItems are clicked
-   *
-   * function(event: object) => void
-   */
-  closeMenu: PropTypes.func,
-  /** The Menu's header */
-  header: PropTypes.node,
-  /** The header's icon */
-  headerIcon: PropTypes.node,
-  /** The Menu's footer */
-  footer: PropTypes.node,
-  /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
-  /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the footer element */
-  footerStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the footer element */
-  contentContainerStyle: PropTypes.instanceOf(Object),
-  color: PropTypes.string.isRequired
-};
-
-Menu.defaultProps = {
-  open: false,
-  closeMenu: null,
-  header: null,
-  footer: null,
-  style: {},
-  headerStyle: {},
-  headerIcon: null,
-  iconStyle: {},
-  footerStyle: {},
-  contentContainerStyle: {}
-};
+Menu.displayName = displayName;
+Menu.propTypes = propTypes;
+Menu.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),

@@ -9,6 +9,9 @@ import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
+import colors from '../../../dist/settings/colors';
+import IconMenu from '../../../dist/icon-menu';
+import IconChevronDown from '../../../dist/icons/icon-chevron-down';
 import Markdown from './markdown';
 
 const usage = `
@@ -101,15 +104,7 @@ const messages = [
     avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
     id: 8,
     type: 'giphy'
-  },
-  {
-    body: 'is typing',
-    createdAt: new Date(),
-    username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
-    id: 9,
-    type: 'typing'
-  },
+  }
 ];
 
 const currentUser = 'Sjaak';
@@ -144,7 +139,9 @@ class MessageDoc extends Component {
   selectAvatar = (event, avatar) => this.setState({ avatar });
 
   render() {
-    const { collapsed, fontSize, compact, iconMenu, edited, multiline, avatar } = this.state;
+    const {
+      collapsed, fontSize, compact, iconMenu, edited, multiline, avatar
+    } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Message');
     const style = {
       paper: {
@@ -165,11 +162,6 @@ class MessageDoc extends Component {
         margin: '5px'
       }
     };
-
-    const menuItems = [
-      <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
-      <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
-    ];
 
     return (
       <article className="page">
@@ -229,41 +221,67 @@ class MessageDoc extends Component {
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
-              {messages.map(message => (
-                <Message
-                  message={message}
-                  key={`message-${message.id}`}
-                  myMessage={message.username === currentUser}
-                  avatar={avatar ? message.avatar : null}
-                  emoji
-                  collapsed={collapsed}
-                  collapsedText={
-                    message.type === 'giphy'
-                    ? 'This GIF has been collapsed, click the button to expand it.'
-                    : 'This image has been collapsed, click the button to expand it.'
-                  }
-                  expand={() => this.selectCollapse(false)}
-                  fontSize={fontSize}
-                  compact={compact}
-                  menuItems={iconMenu ? menuItems : null}
-                  edited={edited ? 'edited' : null}
-                  highlights={[
-                    {
-                      prefix: '@',
-                      value: 'Lars',
-                      id: '1'
-                    },
-                    {
-                      prefix: '@',
-                      value: 'Ian',
-                      id: '2'
+              {messages.map((message) => {
+                const menuItems = [
+                  <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
+                  <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
+                ];
+
+                const expandMenuItem = <MenuItem key="expand" text="Expand image" onClick={() => this.selectCollapse(false)} />;
+
+                if ((message.type === 'image' || message.type === 'giphy') && collapsed) {
+                  menuItems.push(expandMenuItem);
+                }
+
+                let uiIconMenu = null;
+
+                const myMessage = message.username === currentUser;
+
+                if (iconMenu) {
+                  uiIconMenu = (
+                    <IconMenu
+                      icon={<IconChevronDown color={myMessage ? colors.white : colors.icon} />}
+                    >
+                      {menuItems}
+                    </IconMenu>
+                  );
+                }
+
+                return (
+                  <Message
+                    message={message}
+                    key={`message-${message.id}`}
+                    myMessage={myMessage}
+                    avatar={message.avatar}
+                    emoji
+                    collapsed={collapsed}
+                    collapsedText={
+                      message.type === 'giphy'
+                      ? 'This GIF has been collapsed.'
+                      : 'This image has been collapsed.'
                     }
-                  ]}
-                  onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
-                  enableLinks
-                  enableMultiline={multiline}
-                />
-              ))}
+                    fontSize={fontSize}
+                    compact={compact}
+                    edited={edited ? 'edited' : null}
+                    highlights={[
+                      {
+                        prefix: '@',
+                        value: 'Lars',
+                        id: '1'
+                      },
+                      {
+                        prefix: '@',
+                        value: 'Ian',
+                        id: '2'
+                      }
+                    ]}
+                    onHighlightClick={(e, username) => alert(`mention ${username}`)} // eslint-disable-line no-alert
+                    enableLinks
+                    iconMenu={uiIconMenu}
+                    enableMultiline={multiline}
+                  />
+                );
+              })}
             </MessageList>
           </Paper>
         </section>

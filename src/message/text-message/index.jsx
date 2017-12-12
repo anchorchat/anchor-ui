@@ -17,7 +17,13 @@ import styles from './styles';
 
 class TextMessage extends Component {
   createMarkup = () => {
-    const { message, enableLinks, emoji, highlights, enableMultiline } = this.props;
+    const {
+      message,
+      enableLinks,
+      emoji,
+      highlights,
+      enableMultiline
+    } = this.props;
 
     const text = message.body;
 
@@ -60,7 +66,12 @@ class TextMessage extends Component {
   }
 
   parseHtml = () => {
-    const { onHighlightClick, color, myMessage, highlights } = this.props;
+    const {
+      onHighlightClick,
+      color,
+      myMessage,
+      highlights
+    } = this.props;
 
     const options = {
       replace: (domNode) => {
@@ -78,7 +89,7 @@ class TextMessage extends Component {
         }
 
         if (domNode.attribs && domNode.attribs.class === 'link') {
-          const value = domNode.attribs.value;
+          const { value } = domNode.attribs;
 
           return (
             <a style={styles.link} href={value} target="_blank" rel="noopener noreferrer">
@@ -113,11 +124,12 @@ class TextMessage extends Component {
       locale,
       highlights,
       badge,
+      iconMenu,
       enableMultiline
     } = this.props;
 
     return (
-      <div style={getStyles.root(color, myMessage, avatar, compact, style)}>
+      <div style={getStyles.root(color, myMessage, avatar, compact, iconMenu, style)}>
         <MessageHeader
           avatar={avatar}
           compact={compact}
@@ -126,6 +138,7 @@ class TextMessage extends Component {
           headerStyle={messageHeaderStyle}
           username={message.username}
           badge={badge}
+          iconMenu={!isEmpty(iconMenu)}
         />
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
@@ -141,8 +154,10 @@ class TextMessage extends Component {
             timeFormat={timeFormat}
             edited={edited}
             locale={locale}
+            fontSize={fontSize}
           />
         </p>
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
     );
   }
@@ -179,6 +194,7 @@ TextMessage.propTypes = {
   })),
   onHighlightClick: PropTypes.func.isRequired,
   badge: PropTypes.node,
+  iconMenu: PropTypes.node,
   enableMultiline: PropTypes.bool
 };
 
@@ -194,12 +210,11 @@ TextMessage.defaultProps = {
   emoji: false,
   enableLinks: false,
   compact: false,
-  enableLightbox: false,
   color: colors.theme,
-  iconMenu: null,
   edited: null,
   highlights: [],
   badge: null,
+  iconMenu: null,
   enableMultiline: false
 };
 

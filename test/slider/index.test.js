@@ -96,7 +96,8 @@ describe('Slider', () => {
 
     shallow(<Slider {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.style, props.disabled
+      props.style,
+      props.disabled
     );
   });
 
@@ -112,7 +113,8 @@ describe('Slider', () => {
 
     shallow(<Slider {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.color, percentage
+      props.color,
+      percentage
     );
   });
 
@@ -128,7 +130,8 @@ describe('Slider', () => {
 
     shallow(<Slider {...props} />).dive();
     expect(spy).to.have.been.calledWith(
-      props.color, percentage
+      props.color,
+      percentage
     );
   });
 });

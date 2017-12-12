@@ -1,11 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
-import createMarkup from './create-markup';
+import emojione from 'emojione';
+import htmlParser from 'html-react-parser';
 import getStyles from './get-styles';
 import styles from './styles';
 
-function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
+const propTypes = {
+  modifiers: PropTypes.arrayOf(PropTypes.shape({
+    shortname: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })).isRequired,
+  changeTone: PropTypes.func.isRequired,
+  tone: PropTypes.string.isRequired,
+  style: PropTypes.instanceOf(Object),
+  modifierStyle: PropTypes.instanceOf(Object)
+};
+
+const defaultProps = {
+  style: {},
+  modifierStyle: {}
+};
+
+function EmojiModifiers({
+  modifiers, changeTone, tone, style, modifierStyle
+}) {
   return (
     <header style={getStyles.header(style)}>
       <div style={getStyles.modifiers(modifierStyle)}>
@@ -28,11 +47,12 @@ function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
               style={
                 getStyles.modifier(title === tone, modifierStyle)
               }
-              dangerouslySetInnerHTML={createMarkup(modifier.shortname)}
               key={`emoji-${modifier.shortname}`}
               onClick={() => changeTone(title)}
               className="modifier"
-            />
+            >
+              {htmlParser(emojione.toImage(modifier.shortname))}
+            </div>
           );
         })}
       </div>
@@ -57,22 +77,7 @@ function EmojiModifiers({ modifiers, changeTone, tone, style, modifierStyle }) {
   );
 }
 
-EmojiModifiers.propTypes = {
-  modifiers: PropTypes.arrayOf(
-    PropTypes.shape({
-      shortname: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    })
-  ).isRequired,
-  changeTone: PropTypes.func.isRequired,
-  tone: PropTypes.string.isRequired,
-  style: PropTypes.instanceOf(Object),
-  modifierStyle: PropTypes.instanceOf(Object)
-};
-
-EmojiModifiers.defaultProps = {
-  style: {},
-  modifierStyle: {}
-};
+EmojiModifiers.propTypes = propTypes;
+EmojiModifiers.defaultProps = defaultProps;
 
 export default Radium(EmojiModifiers);

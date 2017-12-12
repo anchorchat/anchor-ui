@@ -55,7 +55,9 @@ describe('Badge', () => {
 
     shallow(<Badge {...props} />);
     expect(spy).to.have.been.calledWith(
-      props.color, props.inverted, props.style
+      props.color,
+      props.inverted,
+      props.style
     );
   });
 });

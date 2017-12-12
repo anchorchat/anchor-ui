@@ -10,31 +10,9 @@ import Button from '../button';
 import colors from '../settings/colors';
 import darken from '../internal/darken';
 
-const icons = {
-  success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,
-  error: <IconError color={darken(colors.alert.error, 0.65)} />,
-  warning: <IconWarning color={darken(colors.alert.warning, 0.65)} />,
-  info: <IconInfo color={darken(colors.alert.info, 0.65)} />
-};
+const displayName = 'Alert';
 
-/** Four types of (system) messages for alerting your user */
-const Alert = ({ text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom }) => (
-  <section style={getStyles.root(type, style)} {...custom}>
-    <div style={getStyles.icon(iconStyle)}>{icons[type]}</div>
-    <p style={getStyles.text(textStyle)}>{text}</p>
-    {
-      hideAlert
-      ? <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
-        <IconClose color={darken(colors.alert[type], 0.65)} />
-      </Button>
-      : null
-    }
-  </section>
-);
-
-Alert.displayName = 'Alert';
-
-Alert.propTypes = {
+const propTypes = {
   /** Text to display */
   text: PropTypes.node.isRequired,
   /** Type of alert. One of the following: ["info", "success", "warning", "error"] */
@@ -55,12 +33,42 @@ Alert.propTypes = {
   hideAlert: PropTypes.func
 };
 
-Alert.defaultProps = {
+const defaultProps = {
   style: {},
   iconStyle: {},
   textStyle: {},
   buttonStyle: {},
   hideAlert: null
 };
+
+const icons = {
+  success: <IconSuccess color={darken(colors.alert.success, 0.65)} />,
+  error: <IconError color={darken(colors.alert.error, 0.65)} />,
+  warning: <IconWarning color={darken(colors.alert.warning, 0.65)} />,
+  info: <IconInfo color={darken(colors.alert.info, 0.65)} />
+};
+
+/** Four types of (system) messages for alerting your user */
+const Alert = ({
+  text, hideAlert, type, style, iconStyle, textStyle, buttonStyle, ...custom
+}) => (
+  <section style={getStyles.root(type, style)} {...custom}>
+    <div style={getStyles.icon(iconStyle)}>{icons[type]}</div>
+    <p style={getStyles.text(hideAlert, textStyle)}>{text}</p>
+    {
+      hideAlert
+      ? (
+        <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
+          <IconClose color={darken(colors.alert[type], 0.65)} />
+        </Button>
+      )
+      : null
+    }
+  </section>
+);
+
+Alert.displayName = displayName;
+Alert.propTypes = propTypes;
+Alert.defaultProps = defaultProps;
 
 export default Alert;

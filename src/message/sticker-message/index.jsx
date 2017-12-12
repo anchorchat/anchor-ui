@@ -7,51 +7,7 @@ import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
 
-const StickerMessage = ({
-  color,
-  myMessage,
-  avatar,
-  compact,
-  style,
-  fontSize,
-  messageHeaderStyle,
-  message,
-  messageBodyStyle,
-  messageTimeStyle,
-  timeFormat,
-  locale,
-  badge
-}) => {
-  const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
-
-  return (
-    <div style={styles.container}>
-      <div style={getStyles.header(color, myMessage, avatar, compact, style)}>
-        <MessageHeader
-          avatar={avatar}
-          compact={compact}
-          myMessage={myMessage}
-          fontSize={fontSize}
-          headerStyle={headerStyle}
-          username={message.username}
-          stickerMessage
-          badge={badge}
-        />
-        <MessageTime
-          myMessage={myMessage}
-          type={message.type}
-          style={messageTimeStyle}
-          createdAt={message.createdAt}
-          timeFormat={timeFormat}
-          locale={locale}
-        />
-      </div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
-    </div>
-  );
-};
-
-StickerMessage.propTypes = {
+const propTypes = {
   avatar: PropTypes.string,
   message: PropTypes.shape({
     body: PropTypes.node.isRequired,
@@ -72,10 +28,11 @@ StickerMessage.propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   locale: PropTypes.instanceOf(Object).isRequired,
-  badge: PropTypes.node
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node
 };
 
-StickerMessage.defaultProps = {
+const defaultProps = {
   avatar: '',
   style: {},
   timeFormat: 'HH:mm',
@@ -84,13 +41,60 @@ StickerMessage.defaultProps = {
   messageTimeStyle: {},
   fontSize: 'small',
   myMessage: false,
-  emoji: false,
-  enableLinks: false,
   compact: false,
-  enableLightbox: false,
   color: colors.theme,
-  iconMenu: null,
-  badge: null
+  badge: null,
+  iconMenu: null
 };
+
+const StickerMessage = ({
+  color,
+  myMessage,
+  avatar,
+  compact,
+  style,
+  fontSize,
+  messageHeaderStyle,
+  message,
+  messageBodyStyle,
+  messageTimeStyle,
+  timeFormat,
+  locale,
+  badge,
+  iconMenu
+}) => {
+  const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
+
+  return (
+    <div style={styles.container}>
+      <div style={getStyles.header(color, myMessage, avatar, compact, iconMenu, style)}>
+        <MessageHeader
+          avatar={avatar}
+          compact={compact}
+          myMessage={myMessage}
+          fontSize={fontSize}
+          headerStyle={headerStyle}
+          username={message.username}
+          stickerMessage
+          badge={badge}
+        />
+        <MessageTime
+          myMessage={myMessage}
+          type={message.type}
+          style={messageTimeStyle}
+          createdAt={message.createdAt}
+          timeFormat={timeFormat}
+          locale={locale}
+          fontSize={fontSize}
+        />
+        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
+      </div>
+      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
+    </div>
+  );
+};
+
+StickerMessage.propTypes = propTypes;
+StickerMessage.defaultProps = defaultProps;
 
 export default StickerMessage;

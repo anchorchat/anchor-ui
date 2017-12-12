@@ -5,23 +5,21 @@ import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-const Tab = (
-  {
-    onClick,
-    icon,
-    label,
-    selected,
-    style,
-    iconStyle,
-    labelStyle,
-    badge,
-    badgeStyle,
-    activeStyle,
-    activeLabelStyle,
-    color,
-    ...custom
-  }
-) => (
+const Tab = ({
+  onClick,
+  icon,
+  label,
+  selected,
+  style,
+  iconStyle,
+  labelStyle,
+  badge,
+  badgeStyle,
+  activeStyle,
+  activeLabelStyle,
+  color,
+  ...custom
+}) => (
   <section
     style={getStyles.root(color, selected, style, activeStyle)}
     onClick={onClick}

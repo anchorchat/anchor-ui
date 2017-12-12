@@ -20,8 +20,6 @@ class InputDoc extends Component {
       value: 'Default value',
       valueMultiline: '',
       valueText: '',
-      valueNumber: '',
-      valueDate: '',
       valueMaxLength: '',
       valueError: 'Value'
     };

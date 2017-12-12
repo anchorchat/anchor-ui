@@ -17,7 +17,7 @@ import colors from '../settings/colors';
 
 const storage = new Storage();
 
-emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/3.0/png/64/';
+emojione.emojiSize = '64';
 
 const propTypes = {
   /**
