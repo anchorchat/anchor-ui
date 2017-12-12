@@ -126,14 +126,6 @@ class GiphyMessage extends Component {
     const placeholder = <img style={getStyles.giphy(enableLightbox)} src={imagePlaceholder} alt="placeholder" />;
     const error = <img style={getStyles.giphy(enableLightbox)} src={imageError} alt="error" />;
 
-    const imgProps = {
-      onClick,
-      style: giphyStyle
-    };
-
-    const placeholder = <img style={giphyStyle} src={imagePlaceholder} alt="placeholder" />;
-    const error = <img style={giphyStyle} src={imageError} alt="error" />;
-
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
         <MessageHeader
