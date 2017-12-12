@@ -61,9 +61,11 @@ class PortalDoc extends React.Component {
             </Button>
             {
               portal
-                ? <Portal node={document.getElementById('portal-container')}>
-                  <div>I got portaled to the bottom of this section!</div>
-                </Portal>
+                ? (
+                  <Portal node={document.getElementById('portal-container')}>
+                    <div>I got portaled to the bottom of this section!</div>
+                  </Portal>
+                )
                 : null
             }
           </Paper>
