@@ -5,20 +5,7 @@ import Avatar from '../avatar';
 import styles from './styles';
 import getStyles from './get-styles';
 
-const defaultProps = {
-  avatar: '',
-  coverImage: '',
-  children: null,
-  button: null,
-  secondaryText: '',
-  style: {},
-  coverStyle: {},
-  coverImageStyle: {},
-  headerStyle: {},
-  secondaryTextStyle: {},
-  avatarStyle: {},
-  status: ''
-};
+const displayName = 'Profile';
 
 const propTypes = {
   /** The user's username */
@@ -46,7 +33,22 @@ const propTypes = {
   /** Override the styles of the avatar element */
   avatarStyle: PropTypes.instanceOf(Object),
   /** An user's status. One of the following: ["online", "away", "offline"] */
-  status: PropTypes.oneOf(['online', 'away', 'offline', '']),
+  status: PropTypes.oneOf(['online', 'away', 'offline', ''])
+};
+
+const defaultProps = {
+  avatar: '',
+  coverImage: '',
+  children: null,
+  button: null,
+  secondaryText: '',
+  style: {},
+  coverStyle: {},
+  coverImageStyle: {},
+  headerStyle: {},
+  secondaryTextStyle: {},
+  avatarStyle: {},
+  status: ''
 };
 
 /** Profile useful for showing a user's info */
@@ -97,6 +99,7 @@ const Profile = ({
   );
 };
 
+Profile.displayName = displayName;
 Profile.propTypes = propTypes;
 Profile.defaultProps = defaultProps;
 

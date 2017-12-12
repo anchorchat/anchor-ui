@@ -124,6 +124,14 @@ class ImageMessage extends Component {
     const placeholder = <img style={getStyles.image(enableLightbox)} src={imagePlaceholder} alt="placeholder" />;
     const error = <img style={getStyles.image(enableLightbox)} src={imageError} alt="error" />;
 
+    const imgProps = {
+      onClick,
+      style: imageStyle
+    };
+
+    const placeholder = <img style={imageStyle} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={imageStyle} src={imageError} alt="error" />;
+
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
         <MessageHeader
