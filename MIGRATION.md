@@ -37,11 +37,11 @@ If you are using an IconMenu on your Message Component you will have to pass a f
 ```
 
 ## MessageList
-Renamed prop addRef to listRef and renamed scrollDown method to scrollToBottom.
+Removed prop addRef, added listRef and renamed scrollDown method to scrollToBottom. The new listRef prop is used to add a ref to the internal list of MessageList Component. To use the methods of MessageList you will have to th React ref prop.
 ```jsx
-/* v5 uses listRef prop */
+/* v5 adding ref to use component's methods */
 <MessageList
-  listRef={(node) => { this.messageList = node; }}
+  ref={(node) => { this.messageList = node; }}
   ...
 />
 
@@ -55,6 +55,14 @@ Renamed prop addRef to listRef and renamed scrollDown method to scrollToBottom.
 ```jsx
 /* v5 renamed method */
 this.messageList.scrollDown => this.messageList.scrollToBottom
+```
+
+```jsx
+/* v5 adding listRef to use list methods */
+<MessageList
+  listRef={(node) => { this.list = node; }}
+  ...
+/>
 ```
 
 ## Styling
