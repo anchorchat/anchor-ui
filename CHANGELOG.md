@@ -2,10 +2,22 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.1...HEAD)
 
 **Merged pull requests:**
 
+- \[5.0.1\] Fixed avatar margin not being removed [\#997](https://github.com/anchorchat/anchor-ui/pull/997) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v5.0.1](https://github.com/anchorchat/anchor-ui/tree/v5.0.1) (2017-12-13)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.0...v5.0.1)
+
+**Fixed bugs:**
+
+- \[Message\] Margin is not removed when no avatar is passed [\#995](https://github.com/anchorchat/anchor-ui/issues/995)
+
+**Merged pull requests:**
+
+- Sjaakluthart/issue \#995 [\#996](https://github.com/anchorchat/anchor-ui/pull/996) ([sjaakluthart](https://github.com/sjaakluthart))
 - \[5.0.0\] Updated to React v16, added portal for PopOver, updated to emojione v3, refactored and restyled Message, replaced dangerouslySetInnerHTML with html-react-parser and adjusted some styling to 8dp grid [\#994](https://github.com/anchorchat/anchor-ui/pull/994) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v5.0.0](https://github.com/anchorchat/anchor-ui/tree/v5.0.0) (2017-12-12)
