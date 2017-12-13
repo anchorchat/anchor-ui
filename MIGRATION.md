@@ -10,6 +10,8 @@ $ npm i -S react@16.0.0 react-dom@16.0.0
 ## PopOver
 This component now uses the React v16 createPortal function. To make sure this works React v16 is needed. Read the above paragraph to see how.
 
+> *Note: to have your website's font in PopOver font-family style needs to be on html in `index.css`*
+
 ## IconMenu for Message
 If you are using an IconMenu on your Message Component you will have to pass a full IconMenu component instead of an array of MenuItems.
 ```jsx
