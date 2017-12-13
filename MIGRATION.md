@@ -37,7 +37,7 @@ If you are using an IconMenu on your Message Component you will have to pass a f
 ```
 
 ## MessageList
-Renamed prop addRef to listRef.
+Renamed prop addRef to listRef and renamed scrollDown method to scrollToBottom.
 ```jsx
 /* v5 uses listRef prop */
 <MessageList
@@ -50,6 +50,11 @@ Renamed prop addRef to listRef.
   addRef={(node) => { this.messageList = node; }}
   ...
 />
+```
+
+```jsx
+/* v5 with added list ref methods */
+this.messageList.scrollDown => this.messageList.scrollToBottom
 ```
 
 ## Styling
