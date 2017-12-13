@@ -34,6 +34,22 @@ If you are using an IconMenu on your Message Component you will have to pass a f
 />
 ```
 
+## MessageList
+Renamed prop addRef to listRef.
+```jsx
+/* v5 uses listRef prop */
+<MessageList
+  listRef={(node) => { this.messageList = node; }}
+  ...
+/>
+
+/* v4.x */
+<MessageList
+  addRef={(node) => { this.messageList = node; }}
+  ...
+/>
+```
+
 ## Styling
 Some styling might be slightly adjusted. Below a list of Components that are affected. If you passed override styles to one of these Components u might want to check and see if they're still the same.
 
