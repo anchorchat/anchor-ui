@@ -10,6 +10,8 @@ $ npm i -S react@16.0.0 react-dom@16.0.0
 ## PopOver
 This component now uses the React v16 createPortal function. To make sure this works React v16 is needed. Read the above paragraph to see how.
 
+> *Note: to have your website's font in PopOver font-family style needs to be on html in `index.css`*
+
 ## IconMenu for Message
 If you are using an IconMenu on your Message Component you will have to pass a full IconMenu component instead of an array of MenuItems.
 ```jsx
@@ -30,6 +32,35 @@ If you are using an IconMenu on your Message Component you will have to pass a f
     <MenuItem />,
     ...
   ]}
+  ...
+/>
+```
+
+## MessageList
+Removed prop addRef, added listRef and renamed scrollDown method to scrollToBottom. The new listRef prop is used to add a ref to the internal list of MessageList Component. To use the methods of MessageList you will have to th React ref prop.
+```jsx
+/* v5 adding ref to use component's methods */
+<MessageList
+  ref={(node) => { this.messageList = node; }}
+  ...
+/>
+
+/* v4.x */
+<MessageList
+  addRef={(node) => { this.messageList = node; }}
+  ...
+/>
+```
+
+```jsx
+/* v5 renamed method */
+this.messageList.scrollDown => this.messageList.scrollToBottom
+```
+
+```jsx
+/* v5 adding listRef to use list methods */
+<MessageList
+  listRef={(node) => { this.list = node; }}
   ...
 />
 ```
