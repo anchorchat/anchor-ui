@@ -252,7 +252,7 @@ class MessageDoc extends Component {
                     message={message}
                     key={`message-${message.id}`}
                     myMessage={myMessage}
-                    avatar={message.avatar}
+                    avatar={avatar ? message.avatar : null}
                     emoji
                     collapsed={collapsed}
                     collapsedText={
