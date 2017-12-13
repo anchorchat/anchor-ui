@@ -6,7 +6,6 @@ export default {
     borderRadius: '3px',
     boxSizing: 'border-box',
     color: colors.primaryText,
-    marginLeft: '16px',
     maxWidth: '80%',
     padding: '12px',
     position: 'relative',
