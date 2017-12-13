@@ -53,7 +53,7 @@ Renamed prop addRef to listRef and renamed scrollDown method to scrollToBottom.
 ```
 
 ```jsx
-/* v5 with added list ref methods */
+/* v5 renamed method */
 this.messageList.scrollDown => this.messageList.scrollToBottom
 ```
 
