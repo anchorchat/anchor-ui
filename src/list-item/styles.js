@@ -96,6 +96,7 @@ export default {
   },
   text: {
     width: '100%',
-    paddingRight: '8px'
+    paddingRight: '8px',
+    boxSizing: 'border-box'
   }
 };
