@@ -92,13 +92,13 @@ describe('ListItem.getStyles', () => {
     it('should add rightButton styles', () => {
       const style = getStyles.textContainer(false, true);
 
-      expect(style).to.have.property('width', 'calc(100% - 48px)');
+      expect(style).to.have.property('width', 'calc(100% - 40px)');
     });
 
     it('should add avatar and rightButton styles', () => {
       const style = getStyles.textContainer(true, true);
 
-      expect(style).to.have.property('width', 'calc(100% - 96px)');
+      expect(style).to.have.property('width', 'calc(100% - 88px)');
     });
   });
 });
