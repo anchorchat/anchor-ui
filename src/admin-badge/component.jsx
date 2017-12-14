@@ -20,7 +20,7 @@ const defaultProps = {
   text: 'Admin'
 };
 
-/** Used for displaying an user's Admin role */
+/** Used for displaying a user's Admin role */
 const AdminBadge = ({
   text, inverted, style, color, ...custom
 }) => (

@@ -1,6 +1,6 @@
 {
   "components/admin-badge/component.jsx": {
-    "description": "Used for displaying an user's Admin status",
+    "description": "Used for displaying a user's Admin role",
     "displayName": "AdminBadge",
     "methods": [],
     "props": {
@@ -264,7 +264,7 @@
     }
   },
   "components/avatar/component.jsx": {
-    "description": "An user's profile image",
+    "description": "A user's profile image",
     "displayName": "Avatar",
     "methods": [],
     "props": {
@@ -4416,7 +4416,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "ListItems to render in a NestedList,\n    if rightButton is also provided only the NestedList will render",
+        "description": "ListItems to render in a NestedList,\n  if rightButton is also provided only the NestedList will render",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5473,7 +5473,7 @@
     "displayName": "MessageList",
     "methods": [
       {
-        "name": "shouldScrollToBottom",
+        "name": "setRef",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -5485,10 +5485,22 @@
         "returns": null
       },
       {
-        "name": "scrollDown",
+        "name": "scrollToBottom",
         "docblock": null,
         "modifiers": [],
         "params": [],
+        "returns": null
+      },
+      {
+        "name": "shouldScrollToBottom",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ scrollHeight, scrollTop, offsetHeight }",
+            "type": null
+          }
+        ],
         "returns": null
       }
     ],
@@ -5511,12 +5523,12 @@
           "computed": false
         }
       },
-      "addRef": {
+      "listRef": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Expose the components methods to the parent,\nuseful for calling scrollDown from a parent component",
+        "description": "Reference list element",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
