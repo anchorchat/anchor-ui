@@ -68,11 +68,11 @@ const textContainer = (avatar, rightButton) => {
   }
 
   if (rightButton) {
-    style = combineStyles(style, { width: 'calc(100% - 48px)' });
+    style = combineStyles(style, { width: 'calc(100% - 40px)' });
   }
 
   if (avatar && rightButton) {
-    style = combineStyles(style, { width: 'calc(100% - 96px)' });
+    style = combineStyles(style, { width: 'calc(100% - 88px)' });
   }
 
   return style;
