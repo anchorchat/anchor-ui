@@ -5,6 +5,7 @@ import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
 import themeable from '../themeable';
+import Portal from '../portal';
 
 /** A dialog that can only be closed by selecting one of the actions. */
 const Modal = ({
@@ -15,16 +16,18 @@ const Modal = ({
   }
 
   return (
-    <Overlay style={overlayStyle}>
-      <section style={getStyles.root(style)} {...custom}>
-        <section style={getStyles.content(contentStyle)}>
-          {children}
+    <Portal>
+      <Overlay style={overlayStyle}>
+        <section style={getStyles.root(style)} {...custom}>
+          <section style={getStyles.content(contentStyle)}>
+            {children}
+          </section>
+          <footer style={getStyles.footer(color, footerStyle)}>
+            {actions}
+          </footer>
         </section>
-        <footer style={getStyles.footer(color, footerStyle)}>
-          {actions}
-        </footer>
-      </section>
-    </Overlay>
+      </Overlay>
+    </Portal>
   );
 };
 
