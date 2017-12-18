@@ -32,5 +32,13 @@ export default {
     top: '5px',
     right: '5px',
     zIndex: 1
+  },
+  clickAway: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    cursor: 'pointer'
   }
 };

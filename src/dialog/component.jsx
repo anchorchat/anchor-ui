@@ -75,7 +75,7 @@ class Dialog extends Component {
 
     return (
       <Portal>
-        <Overlay style={overlayStyle} onClick={hideDialog} >
+        <Overlay style={overlayStyle}>
           <section style={styles.clickAway} onClick={hideDialog} />
           <section style={getStyles.root(color, style)} {...custom}>
             <Button style={styles.closeButton} onClick={hideDialog} iconButton>
