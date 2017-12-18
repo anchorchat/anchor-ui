@@ -71,7 +71,7 @@ class Lightbox extends Component {
       <Portal>
         <Overlay style={overlayStyle}>
           <section style={styles.clickAway} onClick={hideLightbox} />
-          <section style={getStyles.root(style)} {...custom}>
+          <section style={getStyles.root(style)} className="lightbox" {...custom}>
             <header style={styles.header}>
               {title}
               <Button style={styles.closeButton} onClick={hideLightbox} iconButton>
