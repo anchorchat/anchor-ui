@@ -7,6 +7,7 @@ import IconClose from '../icons/icon-close';
 import colors from '../settings/colors';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
+import Portal from '../portal';
 
 const displayName = 'Dialog';
 
@@ -73,17 +74,19 @@ class Dialog extends Component {
     }
 
     return (
-      <Overlay style={overlayStyle}>
-        <section style={styles.clickAway} onClick={hideDialog} />
-        <section style={getStyles.root(color, style)} {...custom}>
-          <Button style={styles.closeButton} onClick={hideDialog} iconButton>
-            <IconClose color={iconColor} />
-          </Button>
-          {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
-          {children}
-        </section>
-        <EventListener target="window" onKeyUp={this.handleKeyUp} />
-      </Overlay>
+      <Portal>
+        <Overlay style={overlayStyle} onClick={hideDialog} >
+          <section style={styles.clickAway} onClick={hideDialog} />
+          <section style={getStyles.root(color, style)} {...custom}>
+            <Button style={styles.closeButton} onClick={hideDialog} iconButton>
+              <IconClose color={iconColor} />
+            </Button>
+            {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
+            {children}
+          </section>
+          <EventListener target="window" onKeyUp={this.handleKeyUp} />
+        </Overlay>
+      </Portal>
     );
   }
 }
