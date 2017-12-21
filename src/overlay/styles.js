@@ -11,7 +11,7 @@ export default {
     position: 'fixed',
     top: '0',
     left: '0',
-    backgroundColor: fade(colors.black, 0.5),
+    backgroundColor: fade(colors.black, 0.15),
     zIndex: '2'
   }
 };
