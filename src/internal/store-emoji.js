@@ -10,7 +10,9 @@ const storeEmoji = (emoji) => {
     storedEmojis &&
     _.find(storedEmojis, storedEmoji => storedEmoji.shortname === emoji.shortname)
   ) {
-    return false;
+    _.remove(storedEmojis, storedEmoji => storedEmoji.shortname === emoji.shortname);
+    storedEmojis.unshift(emoji);
+    value = storedEmojis;
   }
 
   if (!storedEmojis) {
