@@ -90,6 +90,7 @@
     "react-event-listener": "^0.4.5",
     "react-onclickoutside": "^6.6.3",
     "recompose": "^0.22.0",
+    "store": "^2.0.12",
     "tlds": "^1.182.0"
   }
 }
