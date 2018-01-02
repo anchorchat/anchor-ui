@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import _ from 'lodash';
-import Radium from 'radium';
-import compose from 'recompose/compose';
-import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
 import emojis from './emoji';
 import EmojiCategory from './emoji-category';
@@ -12,7 +9,6 @@ import EmojiModifiers from './emoji-modifiers';
 import EmojiCategories from './emoji-categories';
 import Storage from './storage';
 import getStyles from './get-styles';
-import themeable from '../themeable';
 import colors from '../settings/colors';
 
 const storage = new Storage();
@@ -204,14 +200,8 @@ class EmojiMenu extends Component {
   }
 }
 
-const enhance = compose(
-  themeable(),
-  onClickOutside,
-  Radium
-);
-
 EmojiMenu.propTypes = propTypes;
 EmojiMenu.defaultProps = defaultProps;
 EmojiMenu.displayName = displayName;
 
-export default enhance(EmojiMenu);
+export default EmojiMenu;

@@ -74,7 +74,7 @@ describe('EmojiMenu.getStyles', () => {
     });
   });
 
-  describe('modifierHeader', () => {
+  describe('header', () => {
     it('should get styles', () => {
       const style = getStyles.header();
 
@@ -83,6 +83,20 @@ describe('EmojiMenu.getStyles', () => {
 
     it('should combine styles', () => {
       const style = getStyles.header({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('modifiers', () => {
+    it('should get styles', () => {
+      const style = getStyles.modifiers();
+
+      expect(style).to.deep.equal(styles.modifiers);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.modifiers({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
