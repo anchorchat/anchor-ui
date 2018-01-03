@@ -16,5 +16,11 @@ describe('EmptyState.getStyles', () => {
 
       expect(style).to.have.property('color', 'red');
     });
+
+    it('should add backgroundImage', () => {
+      const style = getStyles.root('http://lorempixel.com/400/200');
+
+      expect(style).to.have.property('backgroundImage', 'url(http://lorempixel.com/400/200)');
+    });
   });
 });
