@@ -7,6 +7,12 @@ const root = (image, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
+const heading = overrideStyle => combineStyles(styles.heading, overrideStyle);
+
+const body = overrideStyle => combineStyles(styles.body, overrideStyle);
+
 export default {
-  root
+  root,
+  heading,
+  body
 };

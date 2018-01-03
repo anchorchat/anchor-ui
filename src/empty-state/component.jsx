@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './styles';
 import getStyles from './get-styles';
-import combineStyles from '../internal/combine-styles';
 
 const propTypes = {
   /** Body text */
@@ -36,8 +34,8 @@ const EmptyState = ({
   headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
 }) => (
   <section style={getStyles.root(background, style)} {...custom}>
-    <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
-    <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
+    <h1 style={getStyles.heading(headingStyle)}>{headerText}</h1>
+    <p style={getStyles.body(bodyStyle)}>{bodyText}</p>
     {button}
   </section>
 );
