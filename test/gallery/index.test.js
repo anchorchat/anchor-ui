@@ -5,24 +5,18 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Gallery from '../../src/gallery';
+import Gallery from '../../src/gallery/component';
+import Lightbox from '../../src/lightbox';
 import getStyles from '../../src/gallery/get-styles';
 
 chai.use(sinonChai);
 
 describe('Gallery', () => {
   const props = {
-    items: [
-      {
-        src: 'https://source.unsplash.com/featured/?man',
-        alt: 'https://source.unsplash.com/featured/?man'
-      },
-      {
-        src: 'https://source.unsplash.com/featured/?woman',
-        alt: 'https://source.unsplash.com/featured/?woman'
-      }
-    ],
-    style: {}
+    items: [],
+    style: {},
+    itemContainerStyle: {},
+    itemStyle: {}
   };
 
   beforeEach(() => {
@@ -33,30 +27,53 @@ describe('Gallery', () => {
     global.navigator = undefined;
   });
 
-  it('should render a section element', () => {
-    const wrapper = shallow(<Gallery />);
+  it('should be an instanceOf Gallery', () => {
+    const component = shallow(<Gallery {...props} />);
 
-    expect(wrapper.find('section')).to.have.length(1);
+    expect(component.instance()).to.be.instanceOf(Gallery);
   });
 
-  it('should render a div element', () => {
-    const wrapper = shallow(<Gallery />);
+  it('should render root elements', () => {
+    const component = shallow(<Gallery {...props} />);
 
-    expect(wrapper.find('div')).to.have.length(1);
+    expect(component.find('section')).to.have.length(1);
+    expect(component.find('div')).to.have.length(1);
   });
 
-  it('should render 3 div elements', () => {
-    const wrapper = shallow(<Gallery {...props} />);
+  it('should render items', () => {
+    const component = shallow(<Gallery {...props} />);
 
-    expect(wrapper.find('div')).to.have.length(3);
+    expect(component.find('div')).to.have.length(1);
+
+    component.setProps({
+      items: [{
+        src: 'https://source.unsplash.com/featured/?man',
+        alt: 'https://source.unsplash.com/featured/?man'
+      }]
+    });
+    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div > img')).to.have.length(1);
+    const links = component.find('img').map(node => node.prop('src'));
+    expect(links).to.deep.equal(['https://source.unsplash.com/featured/?man']);
   });
 
-  it('should render 2 img elements', () => {
-    const wrapper = shallow(<Gallery {...props} />);
+  it('should render Lightbox', () => {
+    const combinedProps = {
+      ...props,
+      items: [{
+        src: 'https://source.unsplash.com/featured/?man',
+        alt: 'https://source.unsplash.com/featured/?man'
+      }]
+    };
+    const component = shallow(<Gallery {...combinedProps} />);
 
-    expect(wrapper.find('img')).to.have.length(2);
-    const links = wrapper.find('img').map(node => node.prop('src'));
-    expect(links).to.deep.equal(['https://source.unsplash.com/featured/?man', 'https://source.unsplash.com/featured/?woman']);
+    expect(component.find(Lightbox)).to.have.length(0);
+
+    component.setProps({ enableLightbox: true });
+    expect(component.find(Lightbox)).to.have.length(0);
+
+    component.setState({ lightbox: combinedProps.items[0] });
+    expect(component.find(Lightbox)).to.have.length(1);
   });
 
   it('should get root styles', () => {
@@ -64,5 +81,33 @@ describe('Gallery', () => {
 
     shallow(<Gallery {...props} />);
     expect(spy).to.have.been.calledWith(props.style);
+  });
+
+  it('should get itemContainer styles', () => {
+    const combinedProps = {
+      ...props,
+      items: [{
+        src: 'https://source.unsplash.com/featured/?man',
+        alt: 'https://source.unsplash.com/featured/?man'
+      }]
+    };
+    const spy = sinon.spy(getStyles, 'itemContainer');
+
+    shallow(<Gallery {...combinedProps} />);
+    expect(spy).to.have.been.calledWith(320, false, props.itemContainerStyle);
+  });
+
+  it('should get item styles', () => {
+    const combinedProps = {
+      ...props,
+      items: [{
+        src: 'https://source.unsplash.com/featured/?man',
+        alt: 'https://source.unsplash.com/featured/?man'
+      }]
+    };
+    const spy = sinon.spy(getStyles, 'item');
+
+    shallow(<Gallery {...combinedProps} />);
+    expect(spy).to.have.been.calledWith(320, props.itemStyle);
   });
 });
