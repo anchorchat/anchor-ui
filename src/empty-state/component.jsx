@@ -35,7 +35,6 @@ const displayName = 'EmptyState';
 const EmptyState = ({
   headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
 }) => (
-
   <section style={getStyles.root(background, style)} {...custom}>
     <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
     <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
