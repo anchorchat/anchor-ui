@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 import styles from './styles';
@@ -124,4 +123,4 @@ Gallery.displayName = displayName;
 Gallery.propTypes = propTypes;
 Gallery.defaultProps = defaultProps;
 
-export default Radium(Gallery);
+export default Gallery;
