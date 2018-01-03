@@ -83,4 +83,20 @@ describe('EmptyState', () => {
     component.setProps({ background: 'http://lorempixel.com/400/200' });
     expect(spy).to.have.been.calledWith('http://lorempixel.com/400/200', props.style);
   });
+
+  it('should get heading styles', () => {
+    const spy = sinon.spy(getStyles, 'heading');
+
+    shallow(<EmptyState {...props} />);
+
+    expect(spy).to.have.been.calledWith(props.headingStyle);
+  });
+
+  it('should get heading styles', () => {
+    const spy = sinon.spy(getStyles, 'body');
+
+    shallow(<EmptyState {...props} />);
+
+    expect(spy).to.have.been.calledWith(props.bodyStyle);
+  });
 });

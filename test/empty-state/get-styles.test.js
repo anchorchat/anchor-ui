@@ -23,4 +23,32 @@ describe('EmptyState.getStyles', () => {
       expect(style).to.have.property('backgroundImage', 'url(http://lorempixel.com/400/200)');
     });
   });
+
+  describe('heading', () => {
+    it('should get styles', () => {
+      const style = getStyles.heading();
+
+      expect(style).to.deep.equal(styles.heading);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.heading({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('body', () => {
+    it('should get styles', () => {
+      const style = getStyles.body();
+
+      expect(style).to.deep.equal(styles.body);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.body({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
 });
