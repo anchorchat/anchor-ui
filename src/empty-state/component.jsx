@@ -1,25 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import styles from './styles';
 import getStyles from './get-styles';
 import combineStyles from '../internal/combine-styles';
 
-/** Pretty placeholder for empty content */
-const EmptyState = ({
-  headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
-}) => (
-
-  <section style={getStyles.root(background, style)} {...custom}>
-    <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
-    <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
-    {button}
-  </section>
-);
-
-EmptyState.displayName = 'EmptyState';
-
-EmptyState.propTypes = {
+const propTypes = {
   /** Body text */
   headerText: PropTypes.node.isRequired,
   /** Header text */
@@ -36,7 +21,7 @@ EmptyState.propTypes = {
   bodyStyle: PropTypes.instanceOf(Object)
 };
 
-EmptyState.defaultProps = {
+const defaultProps = {
   button: null,
   background: '',
   style: {},
@@ -44,4 +29,22 @@ EmptyState.defaultProps = {
   bodyStyle: {}
 };
 
-export default Radium(EmptyState);
+const displayName = 'EmptyState';
+
+/** Pretty placeholder for empty content */
+const EmptyState = ({
+  headerText, bodyText, button, background, style, headingStyle, bodyStyle, ...custom
+}) => (
+
+  <section style={getStyles.root(background, style)} {...custom}>
+    <h1 style={combineStyles(styles.heading, headingStyle)}>{headerText}</h1>
+    <p style={combineStyles(styles.body, bodyStyle)}>{bodyText}</p>
+    {button}
+  </section>
+);
+
+EmptyState.propTypes = propTypes;
+EmptyState.defaultProps = defaultProps;
+EmptyState.displayName = displayName;
+
+export default EmptyState;
