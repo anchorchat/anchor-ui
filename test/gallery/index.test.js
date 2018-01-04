@@ -76,6 +76,28 @@ describe('Gallery', () => {
     expect(component.find(Lightbox)).to.have.length(1);
   });
 
+  it('should call onClick of itemContainer', () => {
+    const spy = sinon.spy();
+    const combinedProps = {
+      ...props,
+      items: [{
+        src: 'https://source.unsplash.com/featured/?man',
+        alt: 'https://source.unsplash.com/featured/?man'
+      }],
+      onItemClick: spy
+    };
+    const component = shallow(<Gallery {...combinedProps} />);
+
+    component.find('div').at(0).simulate('click');
+    expect(spy).to.have.callCount(1);
+    expect(component.find(Lightbox)).to.have.length(0);
+
+    component.setProps({ enableLightbox: true });
+    component.find('div').at(0).simulate('click');
+    expect(spy).to.have.callCount(1);
+    expect(component.find(Lightbox)).to.have.length(1);
+  });
+
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
