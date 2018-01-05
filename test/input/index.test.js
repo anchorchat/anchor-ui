@@ -6,7 +6,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Input from '../../src/input';
+import Input from '../../src/input/component';
 import getStyles from '../../src/input/get-styles';
 
 chai.use(sinonChai);
@@ -15,19 +15,12 @@ describe('Input', () => {
   const props = {
     onChange: () => {},
     value: 1,
-    type: 'text',
-    placeholder: '',
-    label: '',
     name: '',
-    style: { root: true },
-    inputStyle: { input: true },
-    labelStyle: { label: true },
-    maxLength: 500,
-    inputRef: null,
-    disabled: false,
-    error: '',
-    errorStyle: { error: true },
-    placeholderStyle: { placeholder: true }
+    style: {},
+    inputStyle: {},
+    labelStyle: {},
+    errorStyle: {},
+    placeholderStyle: {}
   };
 
   beforeEach(() => {
@@ -38,62 +31,61 @@ describe('Input', () => {
     global.navigator = undefined;
   });
 
-  it('should always render a section element', () => {
-    const wrapper = shallow(<Input {...props} />);
+  it('should be an instanceOf Input', () => {
+    const component = shallow(<Input {...props} />);
 
-    expect(wrapper.find('section')).to.have.length(1);
+    expect(component.instance()).to.be.instanceOf(Input);
   });
 
-  it('should always render a label element', () => {
-    const wrapper = shallow(<Input {...props} />);
+  it('should render root elements', () => {
+    const component = shallow(<Input {...props} />);
 
-    expect(wrapper.find('label')).to.have.length(1);
+    expect(component.find('section')).to.have.length(1);
+    expect(component.find('label')).to.have.length(1);
+    expect(component.find('input')).to.have.length(1);
+    expect(component.find(Style)).to.have.length(1);
   });
 
-  it('should always render an input element', () => {
-    const wrapper = shallow(<Input {...props} />);
+  it('should render error elements', () => {
+    const component = shallow(<Input {...props} />);
 
-    expect(wrapper.find('input')).to.have.length(1);
+    expect(component.find('span')).to.have.length(0);
+
+    component.setProps({ error: 'Text' });
+    expect(component.find('span')).to.have.length(1);
+    expect(component.containsMatchingElement(<span>Text</span>)).to.equal(true);
+
+    component.setProps({ error: <span>Node</span> });
+    expect(component.find('span')).to.have.length(2);
+    expect(component.find('span > span')).to.have.length(1);
+    expect(component.find('span').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
-  it('should always render a Style component', () => {
-    const wrapper = shallow(<Input {...props} />);
+  it('should render multiLine input', () => {
+    const component = shallow(<Input {...props} />);
 
-    expect(wrapper.find(Style)).to.have.length(1);
-  });
+    expect(component.find('textarea')).to.have.length(0);
+    expect(component.find('input')).to.have.length(1);
 
-  it('should not render a span element if the error prop is not passed', () => {
-    const wrapper = shallow(<Input {...props} />);
-
-    expect(wrapper.find('span')).to.have.length(0);
-  });
-
-  it('should render a span element if the error prop is passed', () => {
-    props.error = 'error';
-    const wrapper = shallow(<Input {...props} />);
-
-    expect(wrapper.containsMatchingElement(<span>error</span>)).to.equal(true);
-    props.error = '';
+    component.setProps({ multiLine: true });
+    expect(component.find('textarea')).to.have.length(1);
+    expect(component.find('input')).to.have.length(0);
   });
 
   it('should call input onChange function', () => {
     const spy = sinon.spy();
-    props.onChange = spy;
-    const wrapper = shallow(<Input {...props} />);
+    const component = shallow(<Input {...props} />);
 
-    wrapper.find('input').simulate('change');
+    component.setProps({ onChange: spy });
+    component.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
-    props.onChange = () => {};
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Input {...props} />);
-    expect(spy).to.have.been.calledWith(
-      props.disabled,
-      props.style
-    );
+    expect(spy).to.have.been.calledWith(false, props.style);
   });
 
   it('should get label styles', () => {
@@ -107,18 +99,46 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'input');
 
     shallow(<Input {...props} />);
-    expect(spy).to.have.been.calledWith(
-      props.error,
-      props.inputStyle
-    );
+    expect(spy).to.have.been.calledWith(null, props.inputStyle);
+  });
+
+  it('should get placeholder styles', () => {
+    const spy = sinon.spy(getStyles, 'placeholder');
+
+    shallow(<Input {...props} />);
+    expect(spy).to.have.been.calledWith(props.placeholderStyle);
   });
 
   it('should get error styles', () => {
     const spy = sinon.spy(getStyles, 'error');
-    props.error = 'error';
+    const combinedProps = {
+      ...props,
+      error: 'Text'
+    };
 
-    shallow(<Input {...props} />);
+    shallow(<Input {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.errorStyle);
-    props.error = null;
+  });
+
+  it('should get inputRoot styles', () => {
+    const spy = sinon.spy(getStyles, 'inputRoot');
+    const combinedProps = {
+      ...props,
+      multiLine: true
+    };
+
+    shallow(<Input {...combinedProps} />);
+    expect(spy).to.have.been.calledWith(32);
+  });
+
+  it('should get textarea styles', () => {
+    const spy = sinon.spy(getStyles, 'textarea');
+    const combinedProps = {
+      ...props,
+      multiLine: true
+    };
+
+    shallow(<Input {...combinedProps} />);
+    expect(spy).to.have.been.calledWith(null, props.inputStyle);
   });
 });

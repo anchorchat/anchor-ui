@@ -11,14 +11,14 @@ describe('Input.getStyles', () => {
       expect(style).to.deep.equal(styles.root);
     });
 
-    it('should change letter color', () => {
-      const style = getStyles.root(false, { color: 'green' });
+    it('should combine styles', () => {
+      const style = getStyles.root(false, { color: 'red' });
 
-      expect(style).to.have.property('color', 'green');
+      expect(style).to.have.property('color', 'red');
     });
 
     it('should add disabled styles', () => {
-      const style = getStyles.root(true, {});
+      const style = getStyles.root(true);
 
       expect(style).to.have.property('opacity', '0.5');
     });
@@ -33,20 +33,6 @@ describe('Input.getStyles', () => {
 
     it('should combine styles', () => {
       const style = getStyles.label({ color: 'red' });
-
-      expect(style).to.have.property('color', 'red');
-    });
-  });
-
-  describe('error', () => {
-    it('should get styles', () => {
-      const style = getStyles.error();
-
-      expect(style).to.deep.equal(styles.error);
-    });
-
-    it('should combine styles', () => {
-      const style = getStyles.error({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -68,6 +54,70 @@ describe('Input.getStyles', () => {
 
     it('should combine styles', () => {
       const style = getStyles.input(false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('textarea', () => {
+    it('should get styles', () => {
+      const style = getStyles.textarea();
+
+      expect(style).to.deep.equal({ ...styles.textarea, ...styles.input });
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.textarea(false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add errorMessage styles', () => {
+      const style = getStyles.textarea(true);
+
+      expect(style).to.have.property('border': '1px solid #FD2A43');
+      expect(style).to.have.property('color': '#FD2A43');
+    });
+  });
+
+  describe('error', () => {
+    it('should get styles', () => {
+      const style = getStyles.error();
+
+      expect(style).to.deep.equal(styles.error);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.error({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('inputRoot', () => {
+    it('should get styles', () => {
+      const style = getStyles.inputRoot();
+
+      expect(style).to.deep.equal({ ...styles.inputRoot, ...{ height: 32 } });
+    });
+
+    it('should add height', () => {
+      const height = Math.floor(Math.random() * 10);
+      const style = getStyles.inputRoot(height);
+
+      expect(style).to.have.property('height', height);
+    });
+  });
+
+  describe('placeholder', () => {
+    it('should get styles', () => {
+      const style = getStyles.placeholder();
+
+      expect(style).to.deep.equal(styles.placeholder);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.placeholder({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
