@@ -8,6 +8,10 @@ import propTypes from '../../src/internal/prop-types';
 chai.use(sinonChai);
 
 describe('propTypes', () => {
+  afterEach(() => {
+    PropTypes.number.restore();
+  });
+
   describe('minMax', () => {
     it('should return error if prop isNaN', () => {
       const number = sinon.stub(PropTypes, 'number').callsFake(() => 'isNaN');
@@ -20,8 +24,6 @@ describe('propTypes', () => {
       const error = propTypes.minMax(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error).to.equal('isNaN');
-
-      PropTypes.number.restore();
     });
 
     it('should return error if min is greater than or equal to max', () => {
@@ -36,8 +38,6 @@ describe('propTypes', () => {
       const error = propTypes.minMax(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error.message).to.equal('min should be less than max');
-
-      PropTypes.number.restore();
     });
 
     it('should return error if max is less than or equal to min', () => {
@@ -52,8 +52,6 @@ describe('propTypes', () => {
       const error = propTypes.minMax(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error.message).to.equal('max should be greater than min');
-
-      PropTypes.number.restore();
     });
   });
 
@@ -69,8 +67,6 @@ describe('propTypes', () => {
       const error = propTypes.valueInRange(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error).to.equal('isNaN');
-
-      PropTypes.number.restore();
     });
 
     it('should return error if prop is not in range', () => {
@@ -86,8 +82,6 @@ describe('propTypes', () => {
       const error = propTypes.valueInRange(props, propName, 'Test');
       expect(number).to.have.callCount(1);
       expect(error.message).to.equal('value should be within the range specified by min and max');
-
-      PropTypes.number.restore();
     });
   });
 });
