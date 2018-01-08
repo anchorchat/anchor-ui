@@ -147,7 +147,6 @@ describe('getPopOverPosition', () => {
     expect(position.left).to.equal(button.left);
   });
 
-
   describe('getPopOverPosition middle', () => {
     before(() => {
       global.window = {
@@ -266,6 +265,19 @@ describe('getPopOverPosition', () => {
       expect(position.right).to.equal('initial');
       expect(position.bottom).to.equal(165.5);
       expect(position.left).to.equal(25);
+    });
+  });
+
+  describe('getPopOverPosition offset', () => {
+    before(() => {
+      global.window = {
+        innerWidth: 250,
+        innerHeight: 680
+      };
+    });
+
+    after(() => {
+      delete global.window;
     });
 
     it('should postion popOver offset left from button', () => {
