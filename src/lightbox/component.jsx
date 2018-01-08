@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import EventListener from 'react-event-listener';
 import styles from './styles';
 import Button from '../button';
@@ -91,4 +90,4 @@ Lightbox.displayName = displayName;
 Lightbox.propTypes = propTypes;
 Lightbox.defaultProps = defaultProps;
 
-export default Radium(Lightbox);
+export default Lightbox;
