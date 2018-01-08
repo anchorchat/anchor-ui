@@ -5,7 +5,9 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Lightbox from '../../src/lightbox';
+import EventListener from 'react-event-listener';
+import Lightbox from '../../src/lightbox/component';
+import Portal from '../../src/portal';
 import Overlay from '../../src/overlay';
 import Button from '../../src/button';
 import IconClose from '../../src/icons/icon-close';
@@ -15,13 +17,10 @@ chai.use(sinonChai);
 
 describe('Lightbox', () => {
   const props = {
-    style: { root: true },
-    overlayStyle: { overlay: true },
     hideLightbox: () => {},
     image: 'image',
-    title: <span>title</span>,
-    iconColor: 'red',
-    open: true,
+    style: {},
+    overlayStyle: {},
   };
 
   beforeEach(() => {
@@ -32,72 +31,63 @@ describe('Lightbox', () => {
     global.navigator = undefined;
   });
 
-  it('should always render an Overlay component', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
+  it('should be an instanceOf Lightbox', () => {
+    const component = shallow(<Lightbox {...props} />);
 
-    expect(wrapper.find(Overlay)).to.have.length(1);
+    expect(component.instance()).to.be.instanceOf(Lightbox);
   });
 
-  it('should always render two section elements', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
+  it('should render root elements', () => {
+    const component = shallow(<Lightbox {...props} />);
 
-    expect(wrapper.find('section')).to.have.length(2);
+    component.setProps({ open: true });
+    expect(component.find(Portal)).to.have.length(1);
+    expect(component.find(Overlay)).to.have.length(1);
+    expect(component.find('section')).to.have.length(2);
+    expect(component.find('header')).to.have.length(1);
+    expect(component.find(Button)).to.have.length(1);
+    expect(component.find(IconClose)).to.have.length(1);
+    expect(component.find('img')).to.have.length(1);
+    expect(component.find(EventListener)).to.have.length(1);
   });
 
-  it('should always render a header element', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
+  it('should render title element', () => {
+    const component = shallow(<Lightbox {...props} />);
 
-    expect(wrapper.find('header')).to.have.length(1);
+    component.setProps({ open: true, title: 'Text' });
+    expect(component.containsMatchingElement('Text')).to.equal(true);
+
+    component.setProps({ title: <span>Node</span> });
+    expect(component.find('span')).to.have.length(1);
+    expect(component.containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
-  it('should always render a Button component', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
-
-    expect(wrapper.find(Button)).to.have.length(1);
-  });
-
-  it('should always render an IconClose icon', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
-
-    expect(wrapper.find(IconClose)).to.have.length(1);
-  });
-
-  it('should always render an img element', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
-
-    expect(wrapper.find('img')).to.have.length(1);
-  });
-
-  it('should pass the title prop to the header element', () => {
-    const wrapper = shallow(<Lightbox {...props} />);
-
-    expect(wrapper.find('header > span')).to.have.length(1);
-  });
-
-  it('should call section onClick function', () => {
+  it('should call onClick of clickAway section', () => {
     const spy = sinon.spy();
-    props.hideLightbox = spy;
-    const wrapper = shallow(<Lightbox {...props} />);
+    const component = shallow(<Lightbox {...props} />);
 
-    wrapper.find('section').at(0).simulate('click');
+    component.setProps({ open: true, hideLightbox: spy });
+    component.find('section').at(0).simulate('click');
     expect(spy).to.have.callCount(1);
-    props.hideLightbox = () => {};
   });
 
-  it('should call Button onClick function', () => {
+  it('should call onClick of Button', () => {
     const spy = sinon.spy();
-    props.hideLightbox = spy;
-    const wrapper = shallow(<Lightbox {...props} />);
+    const component = shallow(<Lightbox {...props} />);
 
-    wrapper.find(Button).simulate('click');
+    component.setProps({ open: true, hideLightbox: spy });
+    component.find(Button).simulate('click');
     expect(spy).to.have.callCount(1);
-    props.hideLightbox = () => {};
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
+    const combinedProps = {
+      ...props,
+      open: true
+    };
 
-    shallow(<Lightbox {...props} />);
+    shallow(<Lightbox {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });
