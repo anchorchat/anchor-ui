@@ -6,8 +6,6 @@ import styles from './styles';
 const root = (
   color = colors.theme,
   active,
-  rightButton,
-  avatar,
   secondaryLine = null,
   nestedLevel,
   overrideStyle
