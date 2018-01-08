@@ -1,13 +1,9 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-function root(overrideStyle) {
-  return combineStyles(styles.root, overrideStyle);
-}
+const root = overrideStyle => combineStyles(styles.root, overrideStyle);
 
-function listHeader(overrideStyle) {
-  return combineStyles(styles.listHeader, overrideStyle);
-}
+const listHeader = overrideStyle => combineStyles(styles.listHeader, overrideStyle);
 
 export default {
   root,

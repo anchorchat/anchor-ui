@@ -5,18 +5,15 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import List from '../../src/list';
+import List from '../../src/list/component';
 import getStyles from '../../src/list/get-styles';
 
 chai.use(sinonChai);
 
 describe('List', () => {
   const props = {
-    header: '',
-    listRef: () => {},
-    style: { root: true },
-    headerStyle: { header: true },
-    open: true
+    style: {},
+    headerStyle: {}
   };
   const children = <p>children</p>;
 
@@ -28,53 +25,47 @@ describe('List', () => {
     global.navigator = undefined;
   });
 
-  it('should only render if the open prop equals true', () => {
-    props.open = false;
-    const wrapper = shallow(<List {...props}>{children}</List>);
+  it('should render root elements', () => {
+    const component = shallow(<List {...props}>{children}</List>);
 
-    expect(wrapper.find('ul')).to.have.length(0);
-    props.open = true;
+    component.setProps({ open: true });
+    expect(component.find('ul')).to.have.length(1);
+    expect(component.find('p')).to.have.length(1);
   });
 
-  it('should always render an ul element', () => {
-    const wrapper = shallow(<List {...props}>{children}</List>);
+  it('should render header element', () => {
+    const component = shallow(<List {...props}>{children}</List>);
 
-    expect(wrapper.find('ul')).to.have.length(1);
-  });
+    component.setProps({ open: true, header: 'Text' });
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.containsMatchingElement(<h1>Text</h1>)).to.equal(true);
 
-  it('should not render an h1 element if the header prop is not passed', () => {
-    const wrapper = shallow(<List {...props}>{children}</List>);
-
-    expect(wrapper.find('h1')).to.have.length(0);
-  });
-
-  it('should render an h1 element if the header prop is passed', () => {
-    props.header = 'header';
-    const wrapper = shallow(<List {...props}>{children}</List>);
-
-    expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
-    props.header = null;
-  });
-
-  it('should render children', () => {
-    const wrapper = shallow(<List {...props}>{children}</List>);
-
-    expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
+    component.setProps({ header: <span>Node</span> });
+    expect(component.find('h1')).to.have.length(1);
+    expect(component.find('h1 > span')).to.have.length(1);
+    expect(component.find('h1').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
+    const combinedProps = {
+      ...props,
+      open: true
+    };
 
-    shallow(<List {...props}>{children}</List>);
+    shallow(<List {...combinedProps}>{children}</List>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 
   it('should get listHeader styles', () => {
-    props.header = 'text';
     const spy = sinon.spy(getStyles, 'listHeader');
+    const combinedProps = {
+      ...props,
+      open: true,
+      header: 'Text'
+    };
 
-    shallow(<List {...props}>{children}</List>);
+    shallow(<List {...combinedProps}>{children}</List>);
     expect(spy).to.have.been.calledWith(props.headerStyle);
-    props.header = {};
   });
 });
