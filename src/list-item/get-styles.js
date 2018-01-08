@@ -7,7 +7,7 @@ const root = (
   color = colors.theme,
   active,
   secondaryLine = null,
-  nestedLevel,
+  nestedLevel = 0,
   overrideStyle
 ) => {
   let style = styles.root;
@@ -34,7 +34,7 @@ const root = (
   return combineStyles(style, overrideStyle);
 };
 
-const text = (textStyle, active, textBadge, overrideStyle) => {
+const text = (textStyle = {}, active, textBadge, overrideStyle) => {
   let style = textStyle;
 
   if (active) {

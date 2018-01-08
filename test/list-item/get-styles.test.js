@@ -22,7 +22,7 @@ describe('ListItem.getStyles', () => {
 
       expect(style).to.have.property('backgroundColor', 'red');
       expect(style[':hover']).to.have.property('backgroundColor', 'hsl(0, 100%, 47.5%)');
-      expect(style[':active']).to.have.property('backgroundColor', 'hsl(0, 100%, 47.5%)');
+      expect(style[':active']).to.have.property('backgroundColor', 'hsl(0, 100%, 42.5%)');
     });
 
     it('should add secondaryLine styles', () => {
