@@ -54,7 +54,7 @@ Checkbox.propTypes = {
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
   /** The checkbox' value */
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
   color: PropTypes.string.isRequired
 };
 
