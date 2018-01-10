@@ -24,11 +24,7 @@ const RadioButton = ({
     <div style={getStyles.icon(iconStyle)}>
       {icon || <IconRadio color={checked ? color || colors.theme : colors.icons} />}
     </div>
-    {
-      label
-      ? <span style={getStyles.label(labelStyle)}>{label}</span>
-      : null
-    }
+    {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
   </label>
 );
 
