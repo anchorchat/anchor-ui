@@ -21,6 +21,7 @@ describe('Checkbox', () => {
     inputStyle: {},
     iconStyle: {},
     labelStyle: {},
+    uncheckedStyle: {},
     value: 'value',
     color: '#1BA6C4'
   };
@@ -95,6 +96,13 @@ describe('Checkbox', () => {
 
     shallow(<Checkbox {...props} />);
     expect(spy).to.have.been.calledWith(props.iconStyle);
+  });
+
+  it('should get icon styles', () => {
+    const spy = sinon.spy(getStyles, 'unchecked');
+
+    shallow(<Checkbox {...props} />);
+    expect(spy).to.have.been.calledWith(props.uncheckedStyle);
   });
 
   it('should get label styles', () => {

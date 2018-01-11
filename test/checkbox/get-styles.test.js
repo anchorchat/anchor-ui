@@ -65,4 +65,18 @@ describe('Checkbox.getStyles', () => {
       expect(style).to.have.property('color', 'red');
     });
   });
+
+  describe('unchecked', () => {
+    it('should get styles', () => {
+      const style = getStyles.unchecked();
+
+      expect(style).to.deep.equal(styles.unchecked);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.unchecked({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
 });
