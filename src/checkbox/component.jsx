@@ -25,7 +25,7 @@ const propTypes = {
   /** Override the styles of the label element */
   labelStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the unchecked element */
-  uncheckedStyles: PropTypes.instanceOf(Object),
+  uncheckedStyle: PropTypes.instanceOf(Object),
   /** The checkbox' value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
   color: PropTypes.string.isRequired
@@ -36,7 +36,7 @@ const defaultProps = {
   inputStyle: {},
   iconStyle: {},
   labelStyle: {},
-  uncheckedStyles: {},
+  uncheckedStyle: {},
   checked: false
 };
 
@@ -44,7 +44,7 @@ const displayName = 'Checkbox';
 
 /** A checkbox is used to verify which options you want selected from a group. */
 const Checkbox = ({
-  onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, uncheckedStyles, value, color, ...custom // eslint-disable-line max-len
+  onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, uncheckedStyle, value, color, ...custom // eslint-disable-line max-len
 }) => (
   <label htmlFor={name} style={getStyles.root(color, style)} {...custom}>
     <input
@@ -59,7 +59,7 @@ const Checkbox = ({
       {
         checked
         ? <IconCheckbox color={color} />
-        : <div style={getStyles.unchecked(uncheckedStyles)} />
+        : <div style={getStyles.unchecked(uncheckedStyle)} />
       }
     </div>
     <span style={getStyles.label(labelStyle)}>
