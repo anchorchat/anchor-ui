@@ -5,35 +5,7 @@ import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-const Tab = ({
-  onClick,
-  icon,
-  label,
-  selected,
-  style,
-  iconStyle,
-  labelStyle,
-  badge,
-  badgeStyle,
-  activeStyle,
-  activeLabelStyle,
-  color,
-  ...custom
-}) => (
-  <section
-    style={getStyles.root(color, selected, style, activeStyle)}
-    onClick={onClick}
-    {...custom}
-  >
-    {icon ? <div style={getStyles.icon(selected, iconStyle)}>{icon}</div> : null}
-    <span style={getStyles.label(selected, labelStyle, activeLabelStyle)}>{label}</span>
-    {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
-  </section>
-);
-
-Tab.displayName = 'Tab';
-
-Tab.propTypes = {
+const propTypes = {
   /** The Tab's icon */
   icon: PropTypes.node,
   /** The Tab's label */
@@ -63,7 +35,7 @@ Tab.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-Tab.defaultProps = {
+const defaultProps = {
   icon: null,
   selected: false,
   style: {},
@@ -74,6 +46,38 @@ Tab.defaultProps = {
   activeStyle: {},
   activeLabelStyle: {}
 };
+
+const displayName = 'Tab';
+
+const Tab = ({
+  onClick,
+  icon,
+  label,
+  selected,
+  style,
+  iconStyle,
+  labelStyle,
+  badge,
+  badgeStyle,
+  activeStyle,
+  activeLabelStyle,
+  color,
+  ...custom
+}) => (
+  <section
+    style={getStyles.root(color, selected, style, activeStyle)}
+    onClick={onClick}
+    {...custom}
+  >
+    {icon ? <div style={getStyles.icon(selected, iconStyle)}>{icon}</div> : null}
+    <span style={getStyles.label(selected, labelStyle, activeLabelStyle)}>{label}</span>
+    {badge ? <div style={getStyles.badge(badgeStyle)}>{badge}</div> : null}
+  </section>
+);
+
+Tab.propTypes = propTypes;
+Tab.defaultProps = defaultProps;
+Tab.displayName = displayName;
 
 const enhance = compose(
   themeable(),
