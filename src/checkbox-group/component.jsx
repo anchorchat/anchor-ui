@@ -12,12 +12,12 @@ const propTypes = {
     PropTypes.bool
   ])),
   /**
-   * Callback fired when CheckboxGroup's value changes
+   * Callback fired when Checkbox's value changes
    *
    * function(event: object) => void
    */
   onChange: PropTypes.func.isRequired,
-  /** The CheckboxGroup's content (RadioButton), each child must have a value prop */
+  /** The CheckboxGroup's content (Checkbox), each child must have a value prop */
   children: PropTypes.node.isRequired,
   /** The CheckboxGroup's label */
   label: PropTypes.node.isRequired,
