@@ -30,17 +30,19 @@ export default `
       const { values } = this.state;
 
       return (
-        <CheckboxGroup values={values} onChange={this.handleCheckboxChange} label="Checkboxes">
-          <Checkbox
-            label="One"
-            name="One"
-            value="One"
-          />
-          <Checkbox
-            label="Two"
-            name="Two"
-            value="Two"
-          />
+        <section>
+          <CheckboxGroup values={values} onChange={this.handleCheckboxChange} label="Checkboxes">
+            <Checkbox
+              label="One"
+              name="One"
+              value="One"
+            />
+            <Checkbox
+              label="Two"
+              name="Two"
+              value="Two"
+            />
+          </CheckboxGroup>
           <Divider text="Checked Items" />
           <ul>
             {
@@ -49,7 +51,7 @@ export default `
               ))
             }
           </ul>
-        </CheckboxGroup>
+        </section>
       );
     }
   }
