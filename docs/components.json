@@ -900,9 +900,32 @@
           "computed": false
         }
       },
+      "uncheckedStyles": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the unchecked element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "value": {
         "type": {
-          "name": "string"
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "bool"
+            }
+          ]
         },
         "required": true,
         "description": "The checkbox' value"
@@ -1637,197 +1660,7 @@
       }
     }
   },
-  "components/emoji-menu/emoji-categories.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "changeCategory": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": ""
-      },
-      "category": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "activeColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "recent": {
-        "type": {
-          "name": "bool"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "iconStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "iconColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
-  "components/emoji-menu/emoji-category.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "category": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "emojis": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "shape",
-            "value": {
-              "shortname": {
-                "name": "string",
-                "required": true
-              }
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "sendEmoji": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "emojiStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/emoji-menu/emoji-modifiers.jsx": {
-    "description": "",
-    "displayName": "EmojiModifiers",
-    "methods": [],
-    "props": {
-      "modifiers": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "shape",
-            "value": {
-              "shortname": {
-                "name": "string",
-                "required": true
-              },
-              "title": {
-                "name": "string",
-                "required": true
-              }
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "changeTone": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": ""
-      },
-      "tone": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "modifierStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/emoji-menu/index.jsx": {
+  "components/emoji-menu/component.jsx": {
     "description": "Menu for sending messages with emoji",
     "displayName": "EmojiMenu",
     "methods": [
@@ -2026,7 +1859,197 @@
       }
     }
   },
-  "components/empty-state/index.jsx": {
+  "components/emoji-menu/emoji-categories.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "changeCategory": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "category": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "activeColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "recent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "components/emoji-menu/emoji-category.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "category": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "emojis": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "shortname": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "sendEmoji": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "emojiStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/emoji-menu/emoji-modifiers.jsx": {
+    "description": "",
+    "displayName": "EmojiModifiers",
+    "methods": [],
+    "props": {
+      "modifiers": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "shortname": {
+                "name": "string",
+                "required": true
+              },
+              "title": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "changeTone": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "tone": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modifierStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/empty-state/component.jsx": {
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
     "methods": [],
@@ -2105,7 +2128,7 @@
       }
     }
   },
-  "components/gallery/index.jsx": {
+  "components/gallery/component.jsx": {
     "description": "Justified grid layout for showcasing images.",
     "displayName": "Gallery",
     "methods": [
@@ -2225,7 +2248,7 @@
       }
     }
   },
-  "components/icon-menu/index.jsx": {
+  "components/icon-menu/component.jsx": {
     "description": "Open a menu from an Icon, give options related to the icon",
     "displayName": "IconMenu",
     "methods": [
@@ -3870,7 +3893,7 @@
       }
     }
   },
-  "components/input/index.jsx": {
+  "components/input/component.jsx": {
     "description": "General purpose form input",
     "displayName": "Input",
     "methods": [
@@ -4078,7 +4101,7 @@
       }
     }
   },
-  "components/lightbox/index.jsx": {
+  "components/lightbox/component.jsx": {
     "description": "Lightbox for images",
     "displayName": "Lightbox",
     "methods": [
@@ -4169,7 +4192,7 @@
       }
     }
   },
-  "components/list/index.jsx": {
+  "components/list/component.jsx": {
     "description": "A wrapper for ListItems",
     "displayName": "List",
     "methods": [],
@@ -4251,7 +4274,7 @@
       }
     }
   },
-  "components/list-item/index.jsx": {
+  "components/list-item/component.jsx": {
     "description": "A list's item",
     "displayName": "ListItem",
     "methods": [
