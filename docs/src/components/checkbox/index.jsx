@@ -86,7 +86,9 @@ class CheckboxDoc extends Component {
             </ul>
           </Paper>
         </section>
+        <h2>Checkbox</h2>
         <Props props={checkboxData.props} />
+        <h2>CheckboxGroup</h2>
         <Props props={checkboxGroupData.props} />
       </article>
     );
