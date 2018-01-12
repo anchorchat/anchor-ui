@@ -59,7 +59,7 @@ const CheckboxGroup = ({
   );
 
   return (
-    <section {...custom} style={style}>
+    <section style={style} {...custom}>
       <span style={getStyles.label(labelStyle)}>{label}</span>
       <section style={getStyles.buttons(buttonStyle)}>
         {childrenWithProps}
