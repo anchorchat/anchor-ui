@@ -7,34 +7,7 @@ import IconRadio from '../icons/icon-radio';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-/** Radio buttons are switches used for selection from multiple options */
-const RadioButton = ({
-  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, icon, ...custom
-}) => (
-  <label key="radio" htmlFor={value} style={getStyles.root(color, style)}>
-    <input
-      type="radio"
-      value={value}
-      id={value}
-      onChange={onChange}
-      checked={checked}
-      style={getStyles.input(inputStyle)}
-      {...custom}
-    />
-    <div style={getStyles.icon(iconStyle)}>
-      {icon || <IconRadio color={checked ? color || colors.theme : colors.icons} />}
-    </div>
-    {
-      label
-      ? <span style={getStyles.label(labelStyle)}>{label}</span>
-      : null
-    }
-  </label>
-);
-
-RadioButton.displayName = 'RadioButton';
-
-RadioButton.propTypes = {
+const propTypes = {
   /** The input's value */
   value: PropTypes.string.isRequired,
   /** The input's label text */
@@ -60,7 +33,7 @@ RadioButton.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-RadioButton.defaultProps = {
+const defaultProps = {
   style: {},
   inputStyle: {},
   iconStyle: {},
@@ -70,6 +43,33 @@ RadioButton.defaultProps = {
   label: null,
   icon: null
 };
+
+const displayName = 'RadioButton';
+
+/** Radio buttons are switches used for selection from multiple options */
+const RadioButton = ({
+  value, label, style, inputStyle, iconStyle, labelStyle, onChange, checked, color, icon, ...custom
+}) => (
+  <label key="radio" htmlFor={value} style={getStyles.root(color, style)}>
+    <input
+      type="radio"
+      value={value}
+      id={value}
+      onChange={onChange}
+      checked={checked}
+      style={getStyles.input(inputStyle)}
+      {...custom}
+    />
+    <div style={getStyles.icon(iconStyle)}>
+      {icon || <IconRadio color={checked ? color || colors.theme : colors.icons} />}
+    </div>
+    {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
+  </label>
+);
+
+RadioButton.propTypes = propTypes;
+RadioButton.defaultProps = defaultProps;
+RadioButton.displayName = displayName;
 
 const enhance = compose(
   themeable(),

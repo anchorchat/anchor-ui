@@ -160,7 +160,7 @@ class Input extends Component {
 
     return (
       <section style={getStyles.root(disabled, style)}>
-        <label style={getStyles.label(labelStyle)} htmlFor={name}> {label} </label>
+        {label ? <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label> : null}
         {input}
         <Style
           rules={{
