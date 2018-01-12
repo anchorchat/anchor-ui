@@ -41,7 +41,6 @@ describe('Input', () => {
     const component = shallow(<Input {...props} />);
 
     expect(component.find('section')).to.have.length(1);
-    expect(component.find('label')).to.have.length(1);
     expect(component.find('input')).to.have.length(1);
     expect(component.find(Style)).to.have.length(1);
   });
@@ -72,6 +71,20 @@ describe('Input', () => {
     expect(component.find('input')).to.have.length(0);
   });
 
+  it('should render label element', () => {
+    const component = shallow(<Input {...props} />);
+
+    expect(component.find('label')).to.have.length(0);
+
+    component.setProps({ label: 'Text' });
+    expect(component.find('label')).to.have.length(1);
+    expect(component.containsMatchingElement(<label>Text</label>)).to.equal(true); // eslint-disable-line jsx-a11y/label-has-for, max-len
+
+    component.setProps({ label: <span>Node</span> });
+    expect(component.find('label')).to.have.length(1);
+    expect(component.find('label').containsMatchingElement(<span>Node</span>)).to.equal(true);
+  });
+
   it('should call input onChange function', () => {
     const spy = sinon.spy();
     const component = shallow(<Input {...props} />);
@@ -90,8 +103,12 @@ describe('Input', () => {
 
   it('should get label styles', () => {
     const spy = sinon.spy(getStyles, 'label');
+    const combinedProps = {
+      ...props,
+      label: 'Text'
+    };
 
-    shallow(<Input {...props} />);
+    shallow(<Input {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.labelStyle);
   });
 
