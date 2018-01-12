@@ -900,7 +900,7 @@
           "computed": false
         }
       },
-      "uncheckedStyles": {
+      "uncheckedStyle": {
         "type": {
           "name": "instanceOf",
           "value": "Object"
@@ -936,6 +936,118 @@
         },
         "required": true,
         "description": ""
+      }
+    }
+  },
+  "components/checkbox-group/component.jsx": {
+    "description": "",
+    "displayName": "CheckboxGroup",
+    "methods": [],
+    "props": {
+      "values": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              },
+              {
+                "name": "bool"
+              }
+            ]
+          }
+        },
+        "required": false,
+        "description": "The CheckboxGroup's values",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when Checkbox's value changes\n\nfunction(event: object) => void"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The CheckboxGroup's content (Checkbox), each child must have a value prop"
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The CheckboxGroup's label"
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the button container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -6865,7 +6977,7 @@
       "value": {
         "type": {
           "name": "custom",
-          "raw": "propTypes.valueInRange"
+          "raw": "customPropTypes.valueInRange"
         },
         "required": false,
         "description": "The slider's value. Must between min and max",
@@ -6891,7 +7003,7 @@
       "max": {
         "type": {
           "name": "custom",
-          "raw": "propTypes.minMax"
+          "raw": "customPropTypes.minMax"
         },
         "required": false,
         "description": "The slider's max value. Cannot be equal to min.",
@@ -6903,7 +7015,7 @@
       "min": {
         "type": {
           "name": "custom",
-          "raw": "propTypes.minMax"
+          "raw": "customPropTypes.minMax"
         },
         "required": false,
         "description": "The slider's min value. Cannot be equal to max.",
