@@ -2,20 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
 import _ from 'lodash';
-import Radium from 'radium';
-import compose from 'recompose/compose';
-import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
+import store from 'store';
 import emojis from './emoji';
 import EmojiCategory from './emoji-category';
 import EmojiModifiers from './emoji-modifiers';
 import EmojiCategories from './emoji-categories';
-import Storage from './storage';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import storeEmoji from '../internal/store-emoji';
 import colors from '../settings/colors';
-
-const storage = new Storage();
 
 emojione.emojiSize = '64';
 
@@ -68,7 +63,7 @@ class EmojiMenu extends Component {
   constructor(props) {
     super(props);
 
-    const storedEmojis = storage.getEmojis();
+    const storedEmojis = store.get('recent-emoji');
 
     this.state = {
       tone: 'tone0',
@@ -110,10 +105,10 @@ class EmojiMenu extends Component {
   sendEmoji(event, emoji) {
     const { sendEmoji } = this.props;
 
-    storage.storeEmoji(emoji);
+    storeEmoji(emoji);
     sendEmoji(event, emoji);
 
-    const storedEmojis = storage.getEmojis();
+    const storedEmojis = store.get('recent-emoji');
 
     this.setState({
       storedEmojis: storedEmojis || []
@@ -204,14 +199,8 @@ class EmojiMenu extends Component {
   }
 }
 
-const enhance = compose(
-  themeable(),
-  onClickOutside,
-  Radium
-);
-
 EmojiMenu.propTypes = propTypes;
 EmojiMenu.defaultProps = defaultProps;
 EmojiMenu.displayName = displayName;
 
-export default enhance(EmojiMenu);
+export default EmojiMenu;

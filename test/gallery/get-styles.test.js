@@ -6,7 +6,7 @@ import styles from '../../src/gallery/styles';
 describe('Gallery.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
-      const style = getStyles.root('');
+      const style = getStyles.root();
 
       expect(style).to.deep.equal(styles.root);
     });
@@ -20,7 +20,7 @@ describe('Gallery.getStyles', () => {
 
   describe('itemContainer', () => {
     it('should get styles', () => {
-      const style = getStyles.itemContainer('');
+      const style = getStyles.itemContainer();
 
       expect(style).to.deep.equal(styles.itemContainer);
     });
@@ -32,13 +32,13 @@ describe('Gallery.getStyles', () => {
     });
 
     it('should add height', () => {
-      const style = getStyles.itemContainer(240, false, {});
+      const style = getStyles.itemContainer(240);
 
       expect(style).to.have.property('height', '240px');
     });
 
     it('should add cursor', () => {
-      const style = getStyles.itemContainer(null, true, {});
+      const style = getStyles.itemContainer(null, true);
 
       expect(style).to.have.property('cursor', 'pointer');
     });
@@ -46,7 +46,7 @@ describe('Gallery.getStyles', () => {
 
   describe('item', () => {
     it('should get styles', () => {
-      const style = getStyles.item('');
+      const style = getStyles.item();
 
       expect(style).to.deep.equal(styles.item);
     });
@@ -58,7 +58,7 @@ describe('Gallery.getStyles', () => {
     });
 
     it('should add height', () => {
-      const style = getStyles.item(240, {});
+      const style = getStyles.item(240);
 
       expect(style).to.have.property('height', '240px');
     });

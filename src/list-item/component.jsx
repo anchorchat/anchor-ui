@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import styles from './styles';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
@@ -11,7 +9,6 @@ import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
 import Button from '../button';
 import List from '../list';
-import themeable from '../themeable';
 
 const displayName = 'ListItem';
 
@@ -152,7 +149,7 @@ class ListItem extends Component {
 
     return (
       <div style={styles.container}>
-        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, rightButton || nestedList, avatar, secondaryText || textBadge, nestedLevel, style)} {...custom}>
+        <li key="listItem" onClick={rootClick} style={getStyles.root(color, active, secondaryText || textBadge, nestedLevel, style)} {...custom}>
           {
             avatar
             ? (
@@ -212,9 +209,4 @@ ListItem.displayName = displayName;
 ListItem.propTypes = propTypes;
 ListItem.defaultProps = defaultProps;
 
-const enhance = compose(
-  themeable(),
-  Radium
-);
-
-export default enhance(ListItem);
+export default ListItem;

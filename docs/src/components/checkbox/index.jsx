@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Checkbox from '../../../../dist/checkbox';
+import CheckboxGroup from '../../../../dist/checkbox-group';
 import Divider from '../../../../dist/divider';
 import Props from '../props';
 import components from '../../../components.json';
@@ -31,13 +32,9 @@ class CheckboxDoc extends Component {
   render() {
     const { values } = this.state;
 
-    const componentData = _.find(components, component => component.displayName === 'Checkbox');
+    const checkboxData = _.find(components, component => component.displayName === 'Checkbox');
+    const checkboxGroupData = _.find(components, component => component.displayName === 'CheckboxGroup');
     const style = {
-      checkboxWrapper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center'
-      },
       paper: {
         margin: 0,
         padding: '20px'
@@ -59,30 +56,26 @@ class CheckboxDoc extends Component {
         <h1>Checkbox</h1>
         <section>
           <h1>Description</h1>
-          <p>{componentData.description}</p>
+          <p>{checkboxData.description}</p>
         </section>
         <section>
           <h1>Examples</h1>
           <Markdown markdown={example} title="Code example" />
           <Paper style={style.paper}>
-            <section style={style.checkboxWrapper}>
+            <CheckboxGroup values={values} onChange={this.handleCheckboxChange} label="Checkboxes">
               <Checkbox
-                onChange={this.handleCheckboxChange}
                 label="One"
                 name="One"
                 style={style.checkbox}
-                checked={_.includes(values, 'One')}
                 value="One"
               />
               <Checkbox
-                onChange={this.handleCheckboxChange}
                 label="Two"
                 name="Two"
                 style={style.checkbox}
-                checked={_.includes(values, 'Two')}
                 value="Two"
               />
-            </section>
+            </CheckboxGroup>
             <Divider text="Checked Items" />
             <ul style={style.list}>
               {
@@ -93,7 +86,10 @@ class CheckboxDoc extends Component {
             </ul>
           </Paper>
         </section>
-        <Props props={componentData.props} />
+        <h2>Checkbox</h2>
+        <Props props={checkboxData.props} />
+        <h2>CheckboxGroup</h2>
+        <Props props={checkboxGroupData.props} />
       </article>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium, { Style } from 'radium';
+import { Style } from 'radium';
 import getStyles from './get-styles';
 
 const propTypes = {
@@ -160,7 +160,7 @@ class Input extends Component {
 
     return (
       <section style={getStyles.root(disabled, style)}>
-        <label style={getStyles.label(labelStyle)} htmlFor={name}> {label} </label>
+        {label ? <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label> : null}
         {input}
         <Style
           rules={{
@@ -177,4 +177,4 @@ Input.displayName = displayName;
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 
-export default Radium(Input);
+export default Input;

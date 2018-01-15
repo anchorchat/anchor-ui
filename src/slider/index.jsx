@@ -5,8 +5,54 @@ import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
 import getPercentage from '../internal/get-percentage';
-import propTypes from '../internal/prop-types';
+import customPropTypes from '../internal/prop-types';
 import themeable from '../themeable';
+
+const propTypes = {
+  /**
+   * Callback fired when Slider's value changes
+   *
+   * function(event: object) => void
+   */
+  onChange: PropTypes.func.isRequired,
+  /** The slider's value. Must between min and max */
+  value: customPropTypes.valueInRange,
+  /** The slider's label */
+  label: PropTypes.node.isRequired,
+  /** The slider's name */
+  name: PropTypes.string.isRequired,
+  /** The slider's max value. Cannot be equal to min. */
+  max: customPropTypes.minMax,
+  /** The slider's min value. Cannot be equal to max. */
+  min: customPropTypes.minMax,
+  /** The slider's step value */
+  step: PropTypes.number,
+  /** Disables the slider */
+  disabled: PropTypes.bool,
+  /** Display an error message */
+  error: PropTypes.node,
+  /** Override the styles of the error element */
+  errorStyle: PropTypes.instanceOf(Object),
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object),
+  /** Override the styles of the label element */
+  labelStyle: PropTypes.instanceOf(Object),
+  color: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  max: 1,
+  min: 0,
+  value: 0,
+  step: null,
+  disabled: false,
+  error: null,
+  errorStyle: {},
+  style: {},
+  labelStyle: {}
+};
+
+const displayName = 'Slider';
 
 /** General purpose form slider */
 const Slider = ({
@@ -54,51 +100,9 @@ const Slider = ({
   );
 };
 
-Slider.displayName = 'Slider';
-
-Slider.propTypes = {
-  /**
-   * Callback fired when Slider's value changes
-   *
-   * function(event: object) => void
-   */
-  onChange: PropTypes.func.isRequired,
-  /** The slider's value. Must between min and max */
-  value: propTypes.valueInRange,
-  /** The slider's label */
-  label: PropTypes.node.isRequired,
-  /** The slider's name */
-  name: PropTypes.string.isRequired,
-  /** The slider's max value. Cannot be equal to min. */
-  max: propTypes.minMax,
-  /** The slider's min value. Cannot be equal to max. */
-  min: propTypes.minMax,
-  /** The slider's step value */
-  step: PropTypes.number,
-  /** Disables the slider */
-  disabled: PropTypes.bool,
-  /** Display an error message */
-  error: PropTypes.node,
-  /** Override the styles of the error element */
-  errorStyle: PropTypes.instanceOf(Object),
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
-  /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
-  color: PropTypes.string.isRequired
-};
-
-Slider.defaultProps = {
-  max: 1,
-  min: 0,
-  value: 0,
-  step: null,
-  disabled: false,
-  error: null,
-  errorStyle: {},
-  style: {},
-  labelStyle: {}
-};
+Slider.propTypes = propTypes;
+Slider.defaultProps = defaultProps;
+Slider.displayName = displayName;
 
 const enhance = compose(
   themeable(),

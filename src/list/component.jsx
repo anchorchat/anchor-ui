@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import getStyles from './get-styles';
 
 const displayName = 'List';
@@ -55,4 +54,4 @@ List.displayName = displayName;
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 
-export default Radium(List);
+export default List;
