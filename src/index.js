@@ -10,6 +10,7 @@ export CardContent from './card-content';
 export CardHeader from './card-header';
 export ChannelHeader from './channel-header';
 export Checkbox from './checkbox';
+export CheckboxGroup from './checkbox-group';
 export Commands from './commands';
 export DateSeparator from './date-separator';
 export Dialog from './dialog';
