@@ -2,10 +2,88 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.0...HEAD)
 
 **Merged pull requests:**
 
+- \[5.1.0\] Refactored and added tests, added checkbox group component, refactored store-emoji file and added custom styling possibilities to checkbox. [\#1028](https://github.com/anchorchat/anchor-ui/pull/1028) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v5.1.0](https://github.com/anchorchat/anchor-ui/tree/v5.1.0) (2018-01-15)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.6...v5.1.0)
+
+**Implemented enhancements:**
+
+- \[Checkbox\] In need of a CheckboxGroup component [\#1025](https://github.com/anchorchat/anchor-ui/issues/1025)
+
+**Fixed bugs:**
+
+- \[Input\] Label is not required yet label html is rendered when not passed [\#1020](https://github.com/anchorchat/anchor-ui/issues/1020)
+
+**Closed issues:**
+
+- \[List\] Sort based on optional function. [\#1011](https://github.com/anchorchat/anchor-ui/issues/1011)
+- \[EmojiMenu\] Refactor storage file [\#1009](https://github.com/anchorchat/anchor-ui/issues/1009)
+- Babel presets are deprecated [\#988](https://github.com/anchorchat/anchor-ui/issues/988)
+
+**Merged pull requests:**
+
+- Replaced babel-preset-es2015 with babel-preset-env [\#1027](https://github.com/anchorchat/anchor-ui/pull/1027) ([IanCStewart](https://github.com/IanCStewart))
+- Added CheckboxGroup component. Fixes \#1025. [\#1026](https://github.com/anchorchat/anchor-ui/pull/1026) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaak/input label [\#1023](https://github.com/anchorchat/anchor-ui/pull/1023) ([IanCStewart](https://github.com/IanCStewart))
+- Checkbox custom styles [\#1022](https://github.com/anchorchat/anchor-ui/pull/1022) ([IanCStewart](https://github.com/IanCStewart))
+- Changed propType validation. [\#1021](https://github.com/anchorchat/anchor-ui/pull/1021) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#552 list item [\#1019](https://github.com/anchorchat/anchor-ui/pull/1019) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 list [\#1018](https://github.com/anchorchat/anchor-ui/pull/1018) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 lightbox [\#1017](https://github.com/anchorchat/anchor-ui/pull/1017) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 internal [\#1016](https://github.com/anchorchat/anchor-ui/pull/1016) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 input [\#1015](https://github.com/anchorchat/anchor-ui/pull/1015) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 icon menu [\#1014](https://github.com/anchorchat/anchor-ui/pull/1014) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 gallery [\#1013](https://github.com/anchorchat/anchor-ui/pull/1013) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 empty state [\#1012](https://github.com/anchorchat/anchor-ui/pull/1012) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#1009 [\#1010](https://github.com/anchorchat/anchor-ui/pull/1010) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#552 emoji menu [\#1008](https://github.com/anchorchat/anchor-ui/pull/1008) ([IanCStewart](https://github.com/IanCStewart))
+- \[5.0.6\] Changed Overlay background to be more opaque. [\#1007](https://github.com/anchorchat/anchor-ui/pull/1007) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v5.0.6](https://github.com/anchorchat/anchor-ui/tree/v5.0.6) (2017-12-21)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.5...v5.0.6)
+
+**Implemented enhancements:**
+
+- \[Message\] Replace icon menu related props with iconMenu [\#806](https://github.com/anchorchat/anchor-ui/issues/806)
+
+**Merged pull requests:**
+
+- \[5.0.5\] Added click away layer to Dialog. [\#1005](https://github.com/anchorchat/anchor-ui/pull/1005) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v5.0.5](https://github.com/anchorchat/anchor-ui/tree/v5.0.5) (2017-12-18)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.4...v5.0.5)
+
+**Merged pull requests:**
+
+- \[5.0.4\] Added className to Lightbox. [\#1004](https://github.com/anchorchat/anchor-ui/pull/1004) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v5.0.4](https://github.com/anchorchat/anchor-ui/tree/v5.0.4) (2017-12-18)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.3...v5.0.4)
+
+**Merged pull requests:**
+
+- Added className to Lightbox. [\#1003](https://github.com/anchorchat/anchor-ui/pull/1003) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[5.0.3\] Added Portal to Lightbox, Dialog and Modal. [\#1002](https://github.com/anchorchat/anchor-ui/pull/1002) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v5.0.3](https://github.com/anchorchat/anchor-ui/tree/v5.0.3) (2017-12-18)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.2...v5.0.3)
+
+**Merged pull requests:**
+
+- Lightbox portal [\#1001](https://github.com/anchorchat/anchor-ui/pull/1001) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[5.0.2\] Fixed styling issue with long texts in ListItem.  [\#1000](https://github.com/anchorchat/anchor-ui/pull/1000) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v5.0.2](https://github.com/anchorchat/anchor-ui/tree/v5.0.2) (2017-12-14)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.0.1...v5.0.2)
+
+**Merged pull requests:**
+
+- Added boxSizing: border-box to make sure it stay the correct size. [\#999](https://github.com/anchorchat/anchor-ui/pull/999) ([IanCStewart](https://github.com/IanCStewart))
 - \[5.0.1\] Fixed avatar margin not being removed [\#997](https://github.com/anchorchat/anchor-ui/pull/997) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v5.0.1](https://github.com/anchorchat/anchor-ui/tree/v5.0.1) (2017-12-13)
