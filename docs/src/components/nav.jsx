@@ -83,6 +83,7 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/tabs')} active={router.isActive('/tabs')} text="Tabs" />
       <MenuItem onClick={() => router.push('/theme-provider')} active={router.isActive('/theme-provider')} text="ThemeProvider" />
       <MenuItem onClick={() => router.push('/themeable')} active={router.isActive('/themeable')} text="themeable" />
+      <MenuItem onClick={() => router.push('/tooltip')} active={router.isActive('/tooltip')} text="Tooltip" />
     </Menu>
   );
 };
