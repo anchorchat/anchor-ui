@@ -4,8 +4,7 @@ import faker from 'faker';
 import List from '../../../../dist/list';
 import ListItem from '../../../../dist/list-item';
 import Button from '../../../../dist/button';
-import { IconClose } from '../../../../dist/icons';
-import colors from '../../../../dist/settings/colors';
+import Input from '../../../../dist/input';
 import Props from '../props';
 import components from '../../../components.json';
 import Paper from '../../../../dist/paper';
@@ -15,6 +14,7 @@ import example from './example';
 class ListDoc extends Component {
   state = {
     amount: 10,
+    index: undefined,
     users: []
   }
 
@@ -30,8 +30,23 @@ class ListDoc extends Component {
     }
   }
 
+  scrollToIndex = (event) => {
+    const { users } = this.state;
+
+    let index = Math.min(
+      users.length - 1,
+      parseInt(event.target.value, 10)
+    );
+
+    if (_.isNaN(index)) {
+      index = undefined;
+    }
+
+    this.setState({ index });
+  }
+
   renderItems = (amount) => {
-    const users = _.times(amount, (index) => ({
+    const users = _.times(amount, () => ({
       userId: faker.random.uuid(),
       username: faker.internet.userName(),
       avatar: faker.internet.avatar(),
@@ -47,10 +62,10 @@ class ListDoc extends Component {
       if (nameA > nameB) {
         return 1;
       }
-    
+
       // names must be equal
       return 0;
-    })
+    });
 
     return this.setState({
       users,
@@ -59,7 +74,7 @@ class ListDoc extends Component {
   }
 
   render() {
-    const { amount, users } = this.state;
+    const { amount, index, users } = this.state;
     const componentData = _.find(components, component => component.displayName === 'List');
 
     const style = {
@@ -76,9 +91,10 @@ class ListDoc extends Component {
         width: '100%',
         overflowY: 'hidden'
       },
-      button: { margin: '10px' }
+      button: { margin: '10px' },
+      input: { margin: '10px' }
     };
-  
+
     return (
       <article className="page">
         <h1>List</h1>
@@ -90,24 +106,34 @@ class ListDoc extends Component {
         <section>
           <h1>Examples</h1>
           <div>
-            <p style={style.button}>Render # items</p>
-            <Button style={style.button} onClick={() => this.renderItems(100)}>
-              <p>100</p>
-            </Button>
-            <Button style={style.button} onClick={() => this.renderItems(1000)}>
-              <p>1000</p>
-            </Button>
-            <Button style={style.button} onClick={() => this.renderItems(10000)}>
-              <p>10000</p>
-            </Button>
-            <Button style={style.button} onClick={() => this.renderItems(1e6)}>
-              <p>1000000 (Heavy)</p>
-            </Button>
+            <div>
+              <p style={style.button}>Render # items</p>
+              <Button style={style.button} onClick={() => this.renderItems(100)}>
+                <p>100</p>
+              </Button>
+              <Button style={style.button} onClick={() => this.renderItems(1000)}>
+                <p>1000</p>
+              </Button>
+              <Button style={style.button} onClick={() => this.renderItems(10000)}>
+                <p>10000</p>
+              </Button>
+            </div>
+            <div>
+              <Input
+                onChange={this.scrollToIndex}
+                value={index || ''}
+                type="number"
+                label="Scroll to index"
+                name="onScrollTOo"
+                style={style.input}
+              />
+            </div>
           </div>
           <Paper style={style.paper}>
             <List
               style={style.list}
               header={`${amount} items in list`}
+              scrollToIndex={index}
             >
               {users.map(user => (
                 <ListItem

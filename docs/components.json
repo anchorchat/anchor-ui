@@ -4172,7 +4172,20 @@
   "components/list/index.jsx": {
     "description": "A wrapper for ListItems",
     "displayName": "List",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderRows",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{\n  index,\n  isScrolling,\n  key,\n  style\n}",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "children": {
         "type": {
@@ -4189,29 +4202,6 @@
         "description": "Optional header text",
         "defaultValue": {
           "value": "null",
-          "computed": false
-        }
-      },
-      "listRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Reference list element",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
           "computed": false
         }
       },
@@ -4235,6 +4225,74 @@
         "description": "Specify the height of each item in the list, defaults to 52px",
         "defaultValue": {
           "value": "52",
+          "computed": false
+        }
+      },
+      "listRef": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Reference list element",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the inner list element\n\nHeight needs to be a value like:\n- 100%\n- calc('100%' - 36px)\n\nif the header height is changed, this value needs to be changed accordingly",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "overscanRowCount": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify amount of items to render outside the view.\n\nDefaults to 10, increasing the amount can cause massive performance loss.",
+        "defaultValue": {
+          "value": "10",
+          "computed": false
+        }
+      },
+      "scrollPlaceholder": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Optional scrolling placeholder",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "scrollToIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Scroll to a specific index",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
