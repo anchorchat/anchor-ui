@@ -7717,8 +7717,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7729,8 +7728,7 @@
       },
       "contentStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the content container",
@@ -7750,13 +7748,12 @@
           "computed": false
         }
       },
-      "buttonStyle": {
+      "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
-        "description": "Override the styles of the Button component",
+        "description": "Override the styles of the icon element",
         "defaultValue": {
           "value": "{}",
           "computed": false
