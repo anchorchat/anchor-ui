@@ -16,5 +16,8 @@ export default {
     fontSize: '16px',
     fontWeight: 'bolder',
     color: colors.secondaryText
+  },
+  list: {
+    height: 'calc(100% - 36px)'
   }
 };

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import { AutoSizer, List } from 'react-virtualized';
+import isArray from 'lodash/isArray';
+import { AutoSizer, List as VirtualizedList } from 'react-virtualized';
 import getStyles from './get-styles';
 
 const displayName = 'List';
@@ -11,59 +12,131 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   /** Optional header text */
   header: PropTypes.node,
-  /** Reference list element */
-  listRef: PropTypes.func,
-  /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
   /** Specify the height of each item in the list, defaults to 52px */
-  itemHeight: PropTypes.number
+  itemHeight: PropTypes.number,
+  /** Reference list element */
+  listRef: PropTypes.func,
+  /**
+   * Override the styles of the inner list element
+   *
+   * Height needs to be a value like:
+   * - 100%
+   * - calc('100%' - 36px)
+   *
+   * if the header height is changed, this value needs to be changed accordingly
+   * */
+  listStyle: PropTypes.instanceOf(Object),
+  /**
+   * Specify amount of items to render outside the view.
+   *
+   * Defaults to 10, increasing the amount can cause massive performance loss.
+   * */
+  overscanRowCount: PropTypes.number,
+  /**
+   * Optional scrolling placeholder
+   *
+   * - Single component used on every child
+   *
+   * - Array of components, equal to children, index rendered based on position (placeholder[index])
+   *
+  */
+  scrollPlaceholder: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node)
+  ]),
+  /** Scroll to a specific index */
+  scrollToIndex: PropTypes.number,
+  /** Override the styles of the root element */
+  style: PropTypes.instanceOf(Object)
 };
 
 const defaultProps = {
   header: null,
-  style: {},
   headerStyle: {},
+  itemHeight: 52,
   listRef: () => {},
-  itemHeight: 52
+  listStyle: {},
+  overscanRowCount: 10,
+  scrollPlaceholder: null,
+  scrollToIndex: undefined,
+  style: {}
 };
 
 /** A wrapper for ListItems */
-const ListWrapper = ({
-  children, header, listRef, style, headerStyle, open, itemHeight, ...custom
-}) => {
+class List extends Component {
+  renderRows = ({
+    index,
+    isScrolling,
+    key,
+    style
+  }) => {
+    const { scrollPlaceholder, children } = this.props;
 
-  return (
-    <div ref={listRef} style={getStyles.root(style)} {...custom}>
-      {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
-      <div style={{ height: 'calc(100% - 36px)' }}>
-        <AutoSizer>
-          {({ height, width }) => (
-            <List
-              height={height}
-              width={width}
-              overscanRowCount={20}
-              rowCount={children.length}
-              rowHeight={itemHeight}
-              rowRenderer={({ index, key, style, isScrolling }) => (
-                <div
-                  key={key}
-                  style={style}
-                >
-                  {children[index]}
-                </div>
-              )}
-            />
-          )}
-        </AutoSizer>
+    let placeholder;
+
+    if (scrollPlaceholder) {
+      placeholder = scrollPlaceholder;
+    }
+
+    if (isArray(scrollPlaceholder) && scrollPlaceholder[index]) {
+      placeholder = scrollPlaceholder[index];
+    }
+
+    return (
+      <div
+        key={key}
+        style={style}
+      >
+        {
+          isScrolling && placeholder
+            ? placeholder
+            : children[index]
+        }
       </div>
-    </div>
-  );
-};
+    );
+  }
+  render() {
+    const {
+      children,
+      header,
+      headerStyle,
+      itemHeight,
+      listRef,
+      listStyle,
+      overscanRowCount,
+      scrollPlaceholder, // eslint-disable-line react/prop-types
+      scrollToIndex,
+      style,
+      ...custom
+    } = this.props;
 
-ListWrapper.displayName = displayName;
-ListWrapper.propTypes = propTypes;
-ListWrapper.defaultProps = defaultProps;
+    return (
+      <div ref={listRef} style={getStyles.root(style)} {...custom}>
+        {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
+        <div style={getStyles.list(listStyle)}>
+          <AutoSizer>
+            {({ height, width }) => (
+              <VirtualizedList
+                height={height}
+                width={width}
+                overscanRowCount={overscanRowCount}
+                rowCount={children.length}
+                rowHeight={itemHeight}
+                rowRenderer={this.renderRows}
+                scrollToIndex={scrollToIndex}
+              />
+            )}
+          </AutoSizer>
+        </div>
+      </div>
+    );
+  }
+}
 
-export default Radium(ListWrapper);
+List.displayName = displayName;
+List.propTypes = propTypes;
+List.defaultProps = defaultProps;
+
+export default Radium(List);
