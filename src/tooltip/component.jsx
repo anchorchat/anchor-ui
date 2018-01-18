@@ -121,7 +121,7 @@ class Tooltip extends Component {
           ref={(node) => { this.button = node; }}
           onMouseEnter={this.openTooltip}
           onMouseLeave={this.closeTooltip}
-          style={iconStyle}
+          style={getStyles.icon(iconStyle)}
         >
           {icon}
         </div>
