@@ -128,7 +128,7 @@ class Tooltip extends Component {
         <PopOver
           style={contentStyle}
           open={open}
-          popOverRef={(popOver) => { this.popOver = popOver; }}
+          popOverRef={(node) => { this.popOver = node; }}
           position={position}
         >
           {children}
