@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';
 import PopOver from '../pop-over';
-import Button from '../button';
 import getStyles from './get-styles';
 import getPopOverPosition from '../internal/get-pop-over-position';
 
@@ -31,7 +30,7 @@ const defaultProps = {
   style: {},
   contentStyle: {},
   onTooltipClose: () => {},
-  buttonStyle: {}
+  iconStyle: {}
 };
 
 /** Open a Tooltip from an Icon */
@@ -102,7 +101,7 @@ class Tooltip extends Component {
       stopPropagation, // eslint-disable-line react/prop-types
       disableOnClickOutside, // eslint-disable-line react/prop-types
       enableOnClickOutside, // eslint-disable-line react/prop-types
-      buttonStyle,
+      iconStyle,
       ...custom
     } = this.props;
     const { open, position } = this.state;
@@ -118,15 +117,13 @@ class Tooltip extends Component {
           />
           : null
         }
-        <div ref={(button) => { this.button = button; }}>
-          <Button
-            style={buttonStyle}
-            iconButton
-            onMouseEnter={this.openTooltip}
-            onMouseLeave={this.closeTooltip}
-          >
-            {icon}
-          </Button>
+        <div
+          ref={(node) => { this.button = node; }}
+          onMouseEnter={this.openTooltip}
+          onMouseLeave={this.closeTooltip}
+          style={iconStyle}
+        >
+          {icon}
         </div>
         <PopOver
           style={contentStyle}
