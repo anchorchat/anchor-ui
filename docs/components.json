@@ -1637,197 +1637,7 @@
       }
     }
   },
-  "components/emoji-menu/emoji-categories.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "changeCategory": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": ""
-      },
-      "category": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "activeColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "recent": {
-        "type": {
-          "name": "bool"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "iconStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "iconColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
-  "components/emoji-menu/emoji-category.jsx": {
-    "description": "",
-    "methods": [],
-    "props": {
-      "category": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "emojis": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "shape",
-            "value": {
-              "shortname": {
-                "name": "string",
-                "required": true
-              }
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "sendEmoji": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "emojiStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/emoji-menu/emoji-modifiers.jsx": {
-    "description": "",
-    "displayName": "EmojiModifiers",
-    "methods": [],
-    "props": {
-      "modifiers": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "shape",
-            "value": {
-              "shortname": {
-                "name": "string",
-                "required": true
-              },
-              "title": {
-                "name": "string",
-                "required": true
-              }
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "changeTone": {
-        "type": {
-          "name": "func"
-        },
-        "required": true,
-        "description": ""
-      },
-      "tone": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "modifierStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "components/emoji-menu/index.jsx": {
+  "components/emoji-menu/component.jsx": {
     "description": "Menu for sending messages with emoji",
     "displayName": "EmojiMenu",
     "methods": [
@@ -2023,6 +1833,196 @@
         },
         "required": true,
         "description": ""
+      }
+    }
+  },
+  "components/emoji-menu/emoji-categories.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "changeCategory": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "category": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "activeColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "recent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "iconColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "components/emoji-menu/emoji-category.jsx": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "category": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "emojis": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "shortname": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "sendEmoji": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "emojiStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/emoji-menu/emoji-modifiers.jsx": {
+    "description": "",
+    "displayName": "EmojiModifiers",
+    "methods": [],
+    "props": {
+      "modifiers": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "shortname": {
+                "name": "string",
+                "required": true
+              },
+              "title": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "changeTone": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "tone": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modifierStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -4227,25 +4227,14 @@
           "computed": false
         }
       },
-      "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Toggle the List's visibility",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "nestedLevel": {
+      "itemHeight": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "Nested depth of List. This property is automatically managed, modify at own risk.",
+        "description": "Specify the height of each item in the list, defaults to 52px",
         "defaultValue": {
-          "value": "0",
+          "value": "52",
           "computed": false
         }
       }
@@ -4254,20 +4243,7 @@
   "components/list-item/index.jsx": {
     "description": "A list's item",
     "displayName": "ListItem",
-    "methods": [
-      {
-        "name": "toggleNestedList",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "primaryText": {
         "type": {
@@ -4408,50 +4384,6 @@
         "description": "Add blocked styles to ListItem",
         "defaultValue": {
           "value": "false",
-          "computed": false
-        }
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "ListItems to render in a NestedList,\n  if rightButton is also provided only the NestedList will render",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Control toggle state of nested list.",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "onNestedListToggle": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when the nested list is toggled\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "nestedLevel": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Nested depth of ListItem. This property is automatically managed, modify at own risk.",
-        "defaultValue": {
-          "value": "0",
           "computed": false
         }
       },

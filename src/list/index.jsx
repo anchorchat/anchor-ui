@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
+import { AutoSizer, List } from 'react-virtualized';
 import getStyles from './get-styles';
 
 const displayName = 'List';
@@ -16,10 +17,8 @@ const propTypes = {
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
-  /** Toggle the List's visibility */
-  open: PropTypes.bool,
-  /** Nested depth of List. This property is automatically managed, modify at own risk. */
-  nestedLevel: PropTypes.number,
+  /** Specify the height of each item in the list, defaults to 52px */
+  itemHeight: PropTypes.number
 };
 
 const defaultProps = {
@@ -27,32 +26,44 @@ const defaultProps = {
   style: {},
   headerStyle: {},
   listRef: () => {},
-  open: true,
-  nestedLevel: 0
+  itemHeight: 52
 };
 
 /** A wrapper for ListItems */
-const List = ({
-  children, header, listRef, style, headerStyle, open, nestedLevel, ...custom
+const ListWrapper = ({
+  children, header, listRef, style, headerStyle, open, itemHeight, ...custom
 }) => {
-  if (!open) {
-    return null;
-  }
-
-  const childrenWithProps = React.Children.map(children, child => (
-    React.cloneElement(child, { nestedLevel })
-  ));
 
   return (
-    <ul ref={listRef} style={getStyles.root(style)} {...custom}>
+    <div ref={listRef} style={getStyles.root(style)} {...custom}>
       {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
-      {childrenWithProps}
-    </ul>
+      <div style={{ height: 'calc(100% - 36px)' }}>
+        <AutoSizer>
+          {({ height, width }) => (
+            <List
+              height={height}
+              width={width}
+              overscanRowCount={20}
+              rowCount={children.length}
+              rowHeight={itemHeight}
+              rowRenderer={({ index, key, style, isScrolling }) => (
+                <div
+                  key={key}
+                  style={style}
+                >
+                  {children[index]}
+                </div>
+              )}
+            />
+          )}
+        </AutoSizer>
+      </div>
+    </div>
   );
 };
 
-List.displayName = displayName;
-List.propTypes = propTypes;
-List.defaultProps = defaultProps;
+ListWrapper.displayName = displayName;
+ListWrapper.propTypes = propTypes;
+ListWrapper.defaultProps = defaultProps;
 
-export default Radium(List);
+export default Radium(ListWrapper);

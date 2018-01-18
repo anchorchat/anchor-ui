@@ -17,6 +17,7 @@
     "detect-port": "1.0.1",
     "dotenv": "2.0.0",
     "extract-text-webpack-plugin": "1.0.1",
+    "faker": "^4.1.0",
     "file-loader": "0.9.0",
     "filesize": "3.3.0",
     "fs-extra": "0.30.0",
