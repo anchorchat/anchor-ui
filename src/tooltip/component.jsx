@@ -14,17 +14,17 @@ const propTypes = {
   /** Tooltip's content */
   children: PropTypes.node.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the content container */
-  contentStyle: PropTypes.instanceOf(Object),
+  contentStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the Tooltip closes
    *
    * function(event: object) => void
    */
   onTooltipClose: PropTypes.func,
-  /** Override the styles of the Button component */
-  buttonStyle: PropTypes.instanceOf(Object)
+  /** Override the styles of the icon element */
+  iconStyle: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {
