@@ -54,7 +54,7 @@ class Tooltip extends Component {
 
     this.setState({
       positioned: true,
-      position: getPopOverPosition(button, popOver)
+      position: getPopOverPosition(button, popOver, 'tooltip')
     });
   }
 
