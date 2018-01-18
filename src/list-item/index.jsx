@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
@@ -7,10 +7,7 @@ import colors from '../settings/colors';
 import Avatar from '../avatar';
 import IconMute from '../icons/icon-mute';
 import IconBlock from '../icons/icon-block';
-import IconChevronDown from '../icons/icon-chevron-down';
 import getStyles from './get-styles';
-import Button from '../button';
-import List from '../list';
 import themeable from '../themeable';
 
 const displayName = 'ListItem';
@@ -65,71 +62,67 @@ const defaultProps = {
 };
 
 /** A list's item */
-class ListItem extends Component {
-  render() {
-    const {
-      primaryText,
-      secondaryText,
-      textBadge,
-      onClick,
-      active,
-      rightButton,
-      avatar,
-      badge,
-      style,
-      primaryTextStyle,
-      secondaryTextStyle,
-      muted,
-      blocked,
-      color,
-      ...custom
-    } = this.props;
-
-    return (
-      <div style={styles.container}>
-        <div key="listItem" onClick={onClick} style={getStyles.root(color, active, rightButton, avatar, secondaryText || textBadge, style)} {...custom}>
+const ListItem = ({
+  primaryText,
+  secondaryText,
+  textBadge,
+  onClick,
+  active,
+  rightButton,
+  avatar,
+  badge,
+  style,
+  primaryTextStyle,
+  secondaryTextStyle,
+  muted,
+  blocked,
+  color,
+  ...custom
+}) => (
+  <li
+    onClick={onClick}
+    style={getStyles.root(color, active, rightButton, avatar, secondaryText || textBadge, style)}
+    {...custom}
+  >
+    {
+      avatar
+      ? (
+        <div style={styles.avatar}>
+          {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
           {
-            avatar
-            ? (
-              <div style={styles.avatar}>
-                {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
-                {
-                  muted && !blocked
-                  ? <div style={styles.icon}><IconMute color={colors.white} /></div>
-                  : null
-                }
-                {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-                {badge ? <div style={styles.badge}>{badge}</div> : null}
-              </div>
-            )
+            muted && !blocked
+            ? <div style={styles.icon}><IconMute color={colors.white} /></div>
             : null
           }
-          <div style={getStyles.textContainer(avatar, rightButton)}>
-            <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
-              {primaryText}
-            </h1>
-            {
-              secondaryText || textBadge
-              ? (
-                <h2
-                  style={getStyles.text(
-                    styles.secondaryText,
-                    active, textBadge,
-                    secondaryTextStyle
-                  )}
-                >
-                  {textBadge} {secondaryText}
-                </h2>
-              )
-              : null
-            }
-          </div>
-          {rightButton ? <div style={styles.button}>{rightButton}</div> : null}
+          {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+          {badge ? <div style={styles.badge}>{badge}</div> : null}
         </div>
-      </div>
-    );
-  }
-}
+      )
+      : null
+    }
+    <div style={getStyles.textContainer(avatar, rightButton)}>
+      <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
+        {primaryText}
+      </h1>
+      {
+        secondaryText || textBadge
+        ? (
+          <h2
+            style={getStyles.text(
+              styles.secondaryText,
+              active, textBadge,
+              secondaryTextStyle
+            )}
+          >
+            {textBadge} {secondaryText}
+          </h2>
+        )
+        : null
+      }
+    </div>
+    {rightButton ? <div style={styles.button}>{rightButton}</div> : null}
+  </li>
+);
 
 ListItem.displayName = displayName;
 ListItem.propTypes = propTypes;
