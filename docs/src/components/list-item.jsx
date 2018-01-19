@@ -120,45 +120,6 @@ const ListItemDoc = () => {
               blocked
             />
             <ListItem
-              primaryText="Nested list"
-              secondaryText="Default open"
-              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              open
-            >
-              <ListItem
-                primaryText="Item"
-                secondaryText="Nest level 1"
-                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              />
-              <ListItem
-                primaryText="Item"
-                secondaryText="Nest level 1"
-                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              >
-                <ListItem
-                  primaryText="Item"
-                  secondaryText="Nest level 2"
-                  avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-                />
-              </ListItem>
-            </ListItem>
-            <ListItem
-              primaryText="Nested list"
-              secondaryText="Default closed"
-              avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-            >
-              <ListItem
-                primaryText="Item"
-                secondaryText="10/50"
-                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              />
-              <ListItem
-                primaryText="Item"
-                secondaryText="10/50"
-                avatar="https://avatars0.githubusercontent.com/u/14125280?v=3&s=400"
-              />
-            </ListItem>
-            <ListItem
               primaryText="With textBadge"
               secondaryText="Male"
               textBadge={<span><AdminBadge /> <AdminBadge inverted text="Custom" /></span>}
