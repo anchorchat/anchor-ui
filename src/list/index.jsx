@@ -97,6 +97,7 @@ class List extends Component {
       </div>
     );
   }
+
   render() {
     const {
       children,
@@ -106,14 +107,14 @@ class List extends Component {
       listRef,
       listStyle,
       overscanRowCount,
-      scrollPlaceholder, // eslint-disable-line react/prop-types
+      scrollPlaceholder,
       scrollToIndex,
       style,
       ...custom
     } = this.props;
 
     return (
-      <div ref={listRef} style={getStyles.root(style)} {...custom}>
+      <section ref={listRef} style={getStyles.root(style)} {...custom}>
         {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
         <ul style={getStyles.list(header, listStyle)}>
           <AutoSizer>
@@ -129,8 +130,8 @@ class List extends Component {
               />
             )}
           </AutoSizer>
-        </div>
-      </div>
+        </ul>
+      </section>
     );
   }
 }
