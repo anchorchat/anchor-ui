@@ -115,7 +115,7 @@ class List extends Component {
     return (
       <div ref={listRef} style={getStyles.root(style)} {...custom}>
         {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
-        <div style={getStyles.list(listStyle)}>
+        <ul style={getStyles.list(header, listStyle)}>
           <AutoSizer>
             {({ height, width }) => (
               <VirtualizedList
