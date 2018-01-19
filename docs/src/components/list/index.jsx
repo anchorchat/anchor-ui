@@ -3,7 +3,8 @@ import _ from 'lodash';
 import faker from 'faker';
 import List from '../../../../dist/list';
 import ListItem from '../../../../dist/list-item';
-import Button from '../../../../dist/button';
+import Select from '../../../../dist/select';
+import MenuItem from '../../../../dist/menu-item';
 import Input from '../../../../dist/input';
 import Props from '../props';
 import components from '../../../components.json';
@@ -14,27 +15,27 @@ import example from './example';
 class ListDoc extends Component {
   state = {
     amount: 10,
-    index: undefined,
+    index: 0,
     users: []
   }
 
   componentDidMount() {
-    this.renderItems(this.state.amount);
+    this.renderItems({}, this.state.amount);
   }
 
   componentWillReceiveProps(nextProps, nextState) {
     const { amount } = this.state;
 
     if (nextState.amount && amount !== nextState.amount) {
-      this.renderItems(nextState.amount);
+      this.renderItems({}, nextState.amount);
     }
   }
 
   scrollToIndex = (event) => {
-    const { users } = this.state;
+    const { amount } = this.state;
 
     let index = Math.min(
-      users.length - 1,
+      amount - 1,
       parseInt(event.target.value, 10)
     );
 
@@ -45,7 +46,7 @@ class ListDoc extends Component {
     this.setState({ index });
   }
 
-  renderItems = (amount) => {
+  renderItems = (event, amount) => {
     const users = _.times(amount, () => ({
       userId: faker.random.uuid(),
       username: faker.internet.userName(),
@@ -79,20 +80,29 @@ class ListDoc extends Component {
 
     const style = {
       paper: {
-        width: '50%',
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        padding: '20px',
-        margin: '0 0 20px 0'
+        padding: '16px',
+        margin: '0 0 16px 0'
       },
       list: {
         height: '400px',
         width: '100%',
         overflowY: 'hidden'
       },
-      button: { margin: '10px' },
-      input: { margin: '10px' }
+      button: {
+        margin: '10px'
+      },
+      input: {
+        margin: '10px'
+      },
+      select: {
+        width: '256px',
+        marginRight: '16px'
+      },
+      flex: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginBottom: '16px'
+      }
     };
 
     return (
@@ -105,30 +115,27 @@ class ListDoc extends Component {
         <Markdown markdown={example} title="Code example" />
         <section>
           <h1>Examples</h1>
-          <div>
-            <div>
-              <p style={style.button}>Render # items</p>
-              <Button style={style.button} onClick={() => this.renderItems(100)}>
-                <p>100</p>
-              </Button>
-              <Button style={style.button} onClick={() => this.renderItems(1000)}>
-                <p>1000</p>
-              </Button>
-              <Button style={style.button} onClick={() => this.renderItems(10000)}>
-                <p>10000</p>
-              </Button>
-            </div>
-            <div>
-              <Input
-                onChange={this.scrollToIndex}
-                value={index || ''}
-                type="number"
-                label="Scroll to index"
-                name="onScrollTOo"
-                style={style.input}
-              />
-            </div>
-          </div>
+          <section style={style.flex}>
+            <Select
+              value={amount}
+              onChange={this.renderItems}
+              label="Number of items"
+              style={style.select}
+            >
+              <MenuItem value={100} text="100" />
+              <MenuItem value={1000} text="1000" />
+              <MenuItem value={10000} text="10000" />
+              <MenuItem value={100000} text="100000" />
+            </Select>
+            <Input
+              onChange={this.scrollToIndex}
+              value={index || ''}
+              type="number"
+              label="Scroll to index"
+              name="scroll-to-index"
+              max={amount - 1}
+            />
+          </section>
           <Paper style={style.paper}>
             <List
               style={style.list}
@@ -141,7 +148,6 @@ class ListDoc extends Component {
                   primaryText={user.username}
                   secondaryText={user.message}
                   avatar={user.avatar}
-                  onClick={() => {}}
                 />
               ))}
             </List>
