@@ -127,6 +127,7 @@ class List extends Component {
                 rowHeight={itemHeight}
                 rowRenderer={this.renderRows}
                 scrollToIndex={scrollToIndex}
+                style={getStyles.virtualizedList()}
               />
             )}
           </AutoSizer>

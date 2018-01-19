@@ -5,7 +5,7 @@ export default {
     backgroundColor: colors.white,
     boxSizing: 'border-box',
     margin: '0',
-    paddingLeft: '0',
+    paddingLeft: '0'
   },
   listHeader: {
     paddingTop: '10px',
@@ -18,6 +18,10 @@ export default {
     color: colors.secondaryText
   },
   list: {
-    height: 'calc(100% - 36px)'
+    height: '100%',
+    paddingLeft: '0'
+  },
+  virtualizedList: {
+    outline: 'none'
   }
 };
