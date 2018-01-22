@@ -20,7 +20,7 @@ const propTypes = {
    */
   enableInfiniteScroll: PropTypes.bool,
   /**
-   * Specify the height of each item in the list, defaults to 52px
+   * Specify the height of each item in the list.
    * Only works if enableInfiniteScroll is set to true.
    */
   itemHeight: PropTypes.number,
@@ -62,7 +62,7 @@ const propTypes = {
 const defaultProps = {
   header: null,
   headerStyle: {},
-  itemHeight: 52,
+  itemHeight: 48,
   listRef: () => {},
   listStyle: {},
   overscanRowCount: 10,

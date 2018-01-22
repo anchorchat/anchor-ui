@@ -4386,9 +4386,9 @@
           "name": "number"
         },
         "required": false,
-        "description": "Specify the height of each item in the list, defaults to 52px\nOnly works if enableInfiniteScroll is set to true.",
+        "description": "Specify the height of each item in the list.\nOnly works if enableInfiniteScroll is set to true.",
         "defaultValue": {
-          "value": "52",
+          "value": "48",
           "computed": false
         }
       },
