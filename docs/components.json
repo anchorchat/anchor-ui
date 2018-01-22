@@ -2161,11 +2161,7 @@
       }
     }
   },
-<<<<<<< HEAD
-  "components/empty-state/index.jsx": {
-=======
   "components/empty-state/component.jsx": {
->>>>>>> origin/develop
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
     "methods": [],
@@ -4322,6 +4318,13 @@
             "type": null
           }
         ],
+        "returns": null
+      },
+      {
+        "name": "renderVirtualizedList",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
         "returns": null
       }
     ],
