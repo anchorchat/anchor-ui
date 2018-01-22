@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import isArray from 'lodash/isArray';
 import { AutoSizer, List as VirtualizedList } from 'react-virtualized';
 import getStyles from './get-styles';
+import styles from './styles';
 
 const displayName = 'List';
 
@@ -118,7 +119,7 @@ class List extends Component {
             rowHeight={itemHeight}
             rowRenderer={this.renderRows}
             scrollToIndex={scrollToIndex}
-            style={getStyles.virtualizedList()}
+            style={styles.virtualizedList}
           />
         )}
       </AutoSizer>
