@@ -11,10 +11,8 @@ import Button from '../../src/button';
 import IconMore from '../../src/icons/icon-more';
 import IconMute from '../../src/icons/icon-mute';
 import IconBlock from '../../src/icons/icon-block';
-import IconChevronDown from '../../src/icons/icon-chevron-down';
 import Avatar from '../../src/avatar';
 import Badge from '../../src/badge';
-import List from '../../src/list';
 import getStyles from '../../src/list-item/get-styles';
 import styles from '../../src/list-item/styles';
 
