@@ -143,7 +143,7 @@ class ListDoc extends Component {
               scrollToIndex={index}
               enableInfiniteScroll={enableInfiniteScroll}
             >
-              {users.map(user => (
+              {_.map(users, user => (
                 <ListItem
                   key={user.userId}
                   primaryText={user.username}
