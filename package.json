@@ -7,7 +7,7 @@
     "/*"
   ],
   "scripts": {
-    "test": "NODE_ENV=test nyc mocha --opts ./mocha.opts test/list-item/*",
+    "test": "NODE_ENV=test nyc mocha --opts ./mocha.opts test/*",
     "test:watch": "NODE_ENV=test mocha --opts ./mocha.opts --watch test/*",
     "watch": "babel -d dist/ -w src/",
     "compile": "rimraf dist && babel -d dist/ src/",
