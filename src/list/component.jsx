@@ -25,20 +25,13 @@ const propTypes = {
    */
   itemHeight: PropTypes.number,
   /**
-   * Override the styles of the inner list element
-   *
-   * Height needs to be a value like:
-   * - 100%
-   * - calc('100%' - 36px)
-   *
-   * if the header height is changed, this value needs to be changed accordingly
+   * Override the styles of the list element. Height needs to be set for inifite scroll to work.
    */
   listStyle: PropTypes.instanceOf(Object),
   /**
    * Specify amount of items to render outside the view.
    * Only works if enableInfiniteScroll is set to true.
    * Defaults to 10, increasing the amount can cause massive performance loss.
-   *
    */
   overscanRowCount: PropTypes.number,
   /**

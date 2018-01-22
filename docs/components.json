@@ -4398,7 +4398,7 @@
           "value": "Object"
         },
         "required": false,
-        "description": "Override the styles of the inner list element\n\nHeight needs to be a value like:\n- 100%\n- calc('100%' - 36px)\n\nif the header height is changed, this value needs to be changed accordingly",
+        "description": "Override the styles of the list element. Height needs to be set for inifite scroll to work.",
         "defaultValue": {
           "value": "{}",
           "computed": false
