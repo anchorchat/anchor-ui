@@ -16,9 +16,12 @@ const label = overrideStyles => combineStyles(styles.label, overrideStyles);
 
 const icon = overrideStyles => combineStyles(styles.icon, overrideStyles);
 
+const unchecked = overrideStyles => combineStyles(styles.unchecked, overrideStyles);
+
 export default {
   root,
   input,
   label,
-  icon
+  icon,
+  unchecked
 };

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import EventListener from 'react-event-listener';
-import compose from 'recompose/compose';
-import onClickOutside from 'react-onclickoutside';
 import PopOver from '../pop-over';
 import Button from '../button';
 import getStyles from './get-styles';
@@ -213,9 +210,4 @@ IconMenu.displayName = displayName;
 IconMenu.propTypes = propTypes;
 IconMenu.defaultProps = defaultProps;
 
-const enhance = compose(
-  onClickOutside,
-  Radium
-);
-
-export default enhance(IconMenu);
+export default IconMenu;

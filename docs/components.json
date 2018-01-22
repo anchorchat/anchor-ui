@@ -900,9 +900,32 @@
           "computed": false
         }
       },
+      "uncheckedStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the unchecked element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "value": {
         "type": {
-          "name": "string"
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "bool"
+            }
+          ]
         },
         "required": true,
         "description": "The checkbox' value"
@@ -913,6 +936,118 @@
         },
         "required": true,
         "description": ""
+      }
+    }
+  },
+  "components/checkbox-group/component.jsx": {
+    "description": "",
+    "displayName": "CheckboxGroup",
+    "methods": [],
+    "props": {
+      "values": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              },
+              {
+                "name": "bool"
+              }
+            ]
+          }
+        },
+        "required": false,
+        "description": "The CheckboxGroup's values",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when Checkbox's value changes\n\nfunction(event: object) => void"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The CheckboxGroup's content (Checkbox), each child must have a value prop"
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The CheckboxGroup's label"
+      },
+      "labelStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the button container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Display an error message",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the error element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -2026,7 +2161,11 @@
       }
     }
   },
+<<<<<<< HEAD
   "components/empty-state/index.jsx": {
+=======
+  "components/empty-state/component.jsx": {
+>>>>>>> origin/develop
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
     "methods": [],
@@ -2105,7 +2244,7 @@
       }
     }
   },
-  "components/gallery/index.jsx": {
+  "components/gallery/component.jsx": {
     "description": "Justified grid layout for showcasing images.",
     "displayName": "Gallery",
     "methods": [
@@ -2225,7 +2364,7 @@
       }
     }
   },
-  "components/icon-menu/index.jsx": {
+  "components/icon-menu/component.jsx": {
     "description": "Open a menu from an Icon, give options related to the icon",
     "displayName": "IconMenu",
     "methods": [
@@ -3870,7 +4009,7 @@
       }
     }
   },
-  "components/input/index.jsx": {
+  "components/input/component.jsx": {
     "description": "General purpose form input",
     "displayName": "Input",
     "methods": [
@@ -4078,7 +4217,7 @@
       }
     }
   },
-  "components/lightbox/index.jsx": {
+  "components/lightbox/component.jsx": {
     "description": "Lightbox for images",
     "displayName": "Lightbox",
     "methods": [
@@ -4169,7 +4308,7 @@
       }
     }
   },
-  "components/list/index.jsx": {
+  "components/list/component.jsx": {
     "description": "A wrapper for ListItems",
     "displayName": "List",
     "methods": [
@@ -4320,7 +4459,7 @@
       }
     }
   },
-  "components/list-item/index.jsx": {
+  "components/list-item/component.jsx": {
     "description": "A list's item",
     "displayName": "ListItem",
     "methods": [],
@@ -6854,7 +6993,7 @@
       "value": {
         "type": {
           "name": "custom",
-          "raw": "propTypes.valueInRange"
+          "raw": "customPropTypes.valueInRange"
         },
         "required": false,
         "description": "The slider's value. Must between min and max",
@@ -6880,7 +7019,7 @@
       "max": {
         "type": {
           "name": "custom",
-          "raw": "propTypes.minMax"
+          "raw": "customPropTypes.minMax"
         },
         "required": false,
         "description": "The slider's max value. Cannot be equal to min.",
@@ -6892,7 +7031,7 @@
       "min": {
         "type": {
           "name": "custom",
-          "raw": "propTypes.minMax"
+          "raw": "customPropTypes.minMax"
         },
         "required": false,
         "description": "The slider's min value. Cannot be equal to max.",

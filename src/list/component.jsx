@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import isArray from 'lodash/isArray';
 import { AutoSizer, List as VirtualizedList } from 'react-virtualized';
 import getStyles from './get-styles';
@@ -164,4 +163,4 @@ List.displayName = displayName;
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 
-export default Radium(List);
+export default List;

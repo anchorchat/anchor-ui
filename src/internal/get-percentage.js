@@ -1,7 +1,9 @@
-// date: 28-11 '17
-// This function should make of lodash isNumber()
-// however this doesn't work as expected
-// Should remove isNaN when isNumber works as intended
+// 8-1-17
+// Not using lodash, this because isNumber(NaN) returns true
+// The lodash docs say,
+// Note: To exclude Infinity, -Infinity, and NaN,
+// which are classified as numbers, use the _.isFinite method.
+
 const getPercentage = (value, min, max) => {
   let percentage = (value - min) / (max - min);
 

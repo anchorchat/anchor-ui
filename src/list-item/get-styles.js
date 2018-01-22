@@ -6,8 +6,6 @@ import styles from './styles';
 const root = (
   color = colors.theme,
   active,
-  rightButton,
-  avatar,
   secondaryLine = null,
   overrideStyle
 ) => {
@@ -33,7 +31,7 @@ const root = (
   return combineStyles(style, overrideStyle);
 };
 
-const text = (textStyle, active, textBadge, overrideStyle) => {
+const text = (textStyle = {}, active, textBadge, overrideStyle) => {
   let style = textStyle;
 
   if (active) {

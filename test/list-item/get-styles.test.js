@@ -6,13 +6,13 @@ import styles from '../../src/list-item/styles';
 describe('ListItem.getStyles', () => {
   describe('root', () => {
     it('should get styles', () => {
-      const style = getStyles.root(null, false, false, false, false, 0, {});
+      const style = getStyles.root();
 
       expect(style).to.deep.equal(styles.root);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('red', false, false, false, false, 0, { color: 'red' });
+      const style = getStyles.root('blue', false, false, 0, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -20,27 +20,35 @@ describe('ListItem.getStyles', () => {
     it('should change theme color', () => {
       const style = getStyles.root('red', true);
 
+      expect(style).to.have.property('backgroundColor', 'red');
       expect(style[':hover']).to.have.property('backgroundColor', 'hsl(0, 100%, 47.5%)');
+      expect(style[':active']).to.have.property('backgroundColor', 'hsl(0, 100%, 42.5%)');
     });
 
-    it('should add multi line styles', () => {
-      const style = getStyles.root(null, false, false, false, true, 0, {});
+    it('should add secondaryLine styles', () => {
+      const style = getStyles.root(null, false, true);
 
       expect(style).to.have.property('height', '52px');
     });
 
     it('should add indention padding', () => {
-      const style = getStyles.root(null, false, false, false, false, 1, {});
+      const style = getStyles.root(null, false, false, 1);
 
       expect(style).to.have.property('paddingLeft', '24px');
     });
   });
 
   describe('text', () => {
-    it('should get styles', () => {
+    it('should return empty object', () => {
       const style = getStyles.text();
 
-      expect(style).to.deep.equal(styles.textStyle);
+      expect(style).to.deep.equal({});
+    });
+
+    it('should get styles', () => {
+      const style = getStyles.text(styles.primaryText);
+
+      expect(style).to.deep.equal(styles.primaryText);
     });
 
     it('should combine styles', () => {
