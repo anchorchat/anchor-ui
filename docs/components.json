@@ -4217,17 +4217,6 @@
           "computed": false
         }
       },
-      "itemHeight": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Specify the height of each item in the list, defaults to 52px",
-        "defaultValue": {
-          "value": "52",
-          "computed": false
-        }
-      },
       "listRef": {
         "type": {
           "name": "func"
@@ -4236,6 +4225,28 @@
         "description": "Reference list element",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "enableInfiniteScroll": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable virtualized list from 'react-virtualized'.\nList will only render items that are in view",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "itemHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify the height of each item in the list, defaults to 52px\nOnly works if enableInfiniteScroll is set to true.",
+        "defaultValue": {
+          "value": "52",
           "computed": false
         }
       },
@@ -4256,7 +4267,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "Specify amount of items to render outside the view.\n\nDefaults to 10, increasing the amount can cause massive performance loss.",
+        "description": "Specify amount of items to render outside the view.\nOnly works if enableInfiniteScroll is set to true.\nDefaults to 10, increasing the amount can cause massive performance loss.",
         "defaultValue": {
           "value": "10",
           "computed": false
@@ -4264,10 +4275,21 @@
       },
       "scrollPlaceholder": {
         "type": {
-          "name": "node"
+          "name": "union",
+          "value": [
+            {
+              "name": "node"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            }
+          ]
         },
         "required": false,
-        "description": "Optional scrolling placeholder",
+        "description": "Optional scrolling placeholder\nOnly works if enableInfiniteScroll is set to true.\n\n- Single component used on every child\n\n- Array of components, equal to children, index rendered based on position (placeholder[index])",
         "defaultValue": {
           "value": "null",
           "computed": false

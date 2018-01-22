@@ -14,10 +14,17 @@ const propTypes = {
   header: PropTypes.node,
   /** Override the styles of the header element */
   headerStyle: PropTypes.instanceOf(Object),
-  /** Specify the height of each item in the list, defaults to 52px */
-  itemHeight: PropTypes.number,
   /** Reference list element */
   listRef: PropTypes.func,
+  /** Enable virtualized list from 'react-virtualized'.
+   * List will only render items that are in view
+   */
+  enableInfiniteScroll: PropTypes.bool,
+  /**
+   * Specify the height of each item in the list, defaults to 52px
+   * Only works if enableInfiniteScroll is set to true.
+   */
+  itemHeight: PropTypes.number,
   /**
    * Override the styles of the inner list element
    *
@@ -26,22 +33,23 @@ const propTypes = {
    * - calc('100%' - 36px)
    *
    * if the header height is changed, this value needs to be changed accordingly
-   * */
+   */
   listStyle: PropTypes.instanceOf(Object),
   /**
    * Specify amount of items to render outside the view.
-   *
+   * Only works if enableInfiniteScroll is set to true.
    * Defaults to 10, increasing the amount can cause massive performance loss.
-   * */
+   *
+   */
   overscanRowCount: PropTypes.number,
   /**
    * Optional scrolling placeholder
+   * Only works if enableInfiniteScroll is set to true.
    *
    * - Single component used on every child
    *
    * - Array of components, equal to children, index rendered based on position (placeholder[index])
-   *
-  */
+   */
   scrollPlaceholder: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
@@ -61,7 +69,8 @@ const defaultProps = {
   overscanRowCount: 10,
   scrollPlaceholder: null,
   scrollToIndex: undefined,
-  style: {}
+  style: {},
+  enableInfiniteScroll: false
 };
 
 /** A wrapper for ListItems */
@@ -98,6 +107,32 @@ class List extends Component {
     );
   }
 
+  renderVirtualizedList = () => {
+    const {
+      overscanRowCount,
+      itemHeight,
+      scrollToIndex,
+      children
+    } = this.props;
+
+    return (
+      <AutoSizer>
+        {({ height, width }) => (
+          <VirtualizedList
+            height={height}
+            width={width}
+            overscanRowCount={overscanRowCount}
+            rowCount={children.length}
+            rowHeight={itemHeight}
+            rowRenderer={this.renderRows}
+            scrollToIndex={scrollToIndex}
+            style={getStyles.virtualizedList()}
+          />
+        )}
+      </AutoSizer>
+    );
+  }
+
   render() {
     const {
       children,
@@ -110,6 +145,7 @@ class List extends Component {
       scrollPlaceholder,
       scrollToIndex,
       style,
+      enableInfiniteScroll,
       ...custom
     } = this.props;
 
@@ -117,20 +153,7 @@ class List extends Component {
       <section ref={listRef} style={getStyles.root(style)} {...custom}>
         {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
         <ul style={getStyles.list(header, listStyle)}>
-          <AutoSizer>
-            {({ height, width }) => (
-              <VirtualizedList
-                height={height}
-                width={width}
-                overscanRowCount={overscanRowCount}
-                rowCount={children.length}
-                rowHeight={itemHeight}
-                rowRenderer={this.renderRows}
-                scrollToIndex={scrollToIndex}
-                style={getStyles.virtualizedList()}
-              />
-            )}
-          </AutoSizer>
+          {enableInfiniteScroll ? this.renderVirtualizedList() : children}
         </ul>
       </section>
     );
