@@ -16,7 +16,8 @@ class ListDoc extends Component {
   state = {
     amount: 10,
     index: 0,
-    users: []
+    users: [],
+    enableInfiniteScroll: false
   }
 
   componentDidMount() {
@@ -44,6 +45,12 @@ class ListDoc extends Component {
     }
 
     this.setState({ index });
+  }
+
+  toggleInfiniteScroll = (event, enableInfiniteScroll) => {
+    this.setState({
+      enableInfiniteScroll
+    });
   }
 
   renderItems = (event, amount) => {
@@ -75,7 +82,12 @@ class ListDoc extends Component {
   }
 
   render() {
-    const { amount, index, users } = this.state;
+    const {
+      amount,
+      index,
+      users,
+      enableInfiniteScroll
+    } = this.state;
     const componentData = _.find(components, component => component.displayName === 'List');
 
     const style = {
@@ -117,6 +129,15 @@ class ListDoc extends Component {
           <h1>Examples</h1>
           <section style={style.flex}>
             <Select
+              value={enableInfiniteScroll}
+              onChange={this.toggleInfiniteScroll}
+              label="Enable infinite scroll"
+              style={style.select}
+            >
+              <MenuItem value text="On" />
+              <MenuItem value={false} text="Off" />
+            </Select>
+            <Select
               value={amount}
               onChange={this.renderItems}
               label="Number of items"
@@ -141,6 +162,7 @@ class ListDoc extends Component {
               style={style.list}
               header={`${amount} items in list`}
               scrollToIndex={index}
+              enableInfiniteScroll={enableInfiniteScroll}
             >
               {users.map(user => (
                 <ListItem
