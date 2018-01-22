@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import faker from 'faker';
 import List from '../../../../dist/list';
 import ListItem from '../../../../dist/list-item';
 import Select from '../../../../dist/select';
@@ -11,6 +10,7 @@ import components from '../../../components.json';
 import Paper from '../../../../dist/paper';
 import Markdown from '../markdown';
 import example from './example';
+import { generateRandomUsers, sortUsersByUsername } from '../../utils/users';
 
 class ListDoc extends Component {
   state = {
@@ -54,29 +54,8 @@ class ListDoc extends Component {
   }
 
   renderItems = (event, amount) => {
-    const users = _.times(amount, () => ({
-      userId: faker.random.uuid(),
-      username: faker.internet.userName(),
-      avatar: faker.internet.avatar(),
-      message: faker.lorem.sentence()
-    }));
-
-    users.sort((a, b) => {
-      const nameA = a.username.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.username.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
-
-    return this.setState({
-      users,
+    this.setState({
+      users: sortUsersByUsername(generateRandomUsers(amount)),
       amount
     });
   }
