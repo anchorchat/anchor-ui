@@ -78,7 +78,7 @@ const ListItem = ({
 }) => (
   <li
     onClick={onClick}
-    style={getStyles.root(color, active, rightButton, avatar, secondaryText || textBadge, style)}
+    style={getStyles.root(color, active, secondaryText || textBadge, style)}
     {...custom}
   >
     {
