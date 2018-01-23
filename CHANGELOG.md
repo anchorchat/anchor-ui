@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.1...HEAD)
+
+**Merged pull requests:**
+
+- \[5.1.1\] Fixed import for CheckboxGroup [\#1029](https://github.com/anchorchat/anchor-ui/pull/1029) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v5.1.1](https://github.com/anchorchat/anchor-ui/tree/v5.1.1) (2018-01-15)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.0...v5.1.1)
 
 **Merged pull requests:**
 
