@@ -116,7 +116,7 @@ describe('Input', () => {
     const spy = sinon.spy(getStyles, 'input');
 
     shallow(<Input {...props} />);
-    expect(spy).to.have.been.calledWith(null, props.inputStyle);
+    expect(spy).to.have.been.calledWith(null, null, props.inputStyle);
   });
 
   it('should get placeholder styles', () => {
@@ -156,6 +156,6 @@ describe('Input', () => {
     };
 
     shallow(<Input {...combinedProps} />);
-    expect(spy).to.have.been.calledWith(null, props.inputStyle);
+    expect(spy).to.have.been.calledWith(null, null, props.inputStyle);
   });
 });

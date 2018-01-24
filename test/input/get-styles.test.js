@@ -53,7 +53,7 @@ describe('Input.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.input(false, { color: 'red' });
+      const style = getStyles.input(false, null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -67,7 +67,7 @@ describe('Input.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.textarea(false, { color: 'red' });
+      const style = getStyles.textarea(false, null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
