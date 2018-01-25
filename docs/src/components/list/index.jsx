@@ -76,8 +76,7 @@ class ListDoc extends Component {
       },
       list: {
         height: '400px',
-        width: '100%',
-        overflowY: 'hidden'
+        width: '100%'
       },
       button: {
         margin: '10px'

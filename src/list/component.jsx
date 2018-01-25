@@ -145,7 +145,7 @@ class List extends Component {
     return (
       <section ref={listRef} style={getStyles.root(style)} {...custom}>
         {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
-        <ul style={getStyles.list(header, listStyle)}>
+        <ul style={getStyles.list(header, listStyle, enableInfiniteScroll)}>
           {enableInfiniteScroll ? this.renderVirtualizedList() : children}
         </ul>
       </section>
