@@ -4,7 +4,7 @@ import combineStyles from '../internal/combine-styles';
 export default {
   root: overrideStyle => combineStyles(styles.root, overrideStyle),
   listHeader: overrideStyle => combineStyles(styles.listHeader, overrideStyle),
-  list: (header, overrideStyle, enableInfiniteScroll) => {
+  list: (header, enableInfiniteScroll, overrideStyle) => {
     let style = styles.list;
 
     if (header) {
