@@ -32,7 +32,7 @@ const messages = [
     username: 'Sjaak',
     avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
     id: 3
-  },
+  }
 ];
 
 const currentUser = 'Ian';
