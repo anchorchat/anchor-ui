@@ -15,17 +15,68 @@ import MessageTime from '../message-time';
 import urlRegex from '../../url-regex';
 import styles from './styles';
 
+const propTypes = {
+  avatar: PropTypes.string,
+  body: PropTypes.node.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
+  timeFormat: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
+  messageHeaderStyle: PropTypes.instanceOf(Object),
+  messageBodyStyle: PropTypes.instanceOf(Object),
+  messageTimeStyle: PropTypes.instanceOf(Object),
+  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  myMessage: PropTypes.bool,
+  emoji: PropTypes.bool,
+  enableLinks: PropTypes.bool,
+  compact: PropTypes.bool,
+  edited: PropTypes.node,
+  color: PropTypes.string,
+  locale: PropTypes.instanceOf(Object).isRequired,
+  highlights: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    prefix: PropTypes.string,
+    value: PropTypes.string,
+  })),
+  onHighlightClick: PropTypes.func.isRequired,
+  badge: PropTypes.node,
+  iconMenu: PropTypes.node,
+  enableMultiline: PropTypes.bool
+};
+
+const defaultProps = {
+  avatar: '',
+  type: 'text',
+  style: {},
+  timeFormat: 'HH:mm',
+  messageHeaderStyle: {},
+  messageBodyStyle: {},
+  messageTimeStyle: {},
+  fontSize: 'small',
+  myMessage: false,
+  emoji: false,
+  enableLinks: false,
+  compact: false,
+  color: colors.theme,
+  edited: null,
+  highlights: [],
+  badge: null,
+  iconMenu: null,
+  enableMultiline: false
+};
+
 class TextMessage extends Component {
   createMarkup = () => {
     const {
-      message,
+      body,
       enableLinks,
       emoji,
       highlights,
       enableMultiline
     } = this.props;
 
-    const text = message.body;
+    const text = body;
 
     const escapedText = escape(text);
 
@@ -114,7 +165,10 @@ class TextMessage extends Component {
       style,
       fontSize,
       messageHeaderStyle,
-      message,
+      body,
+      createdAt,
+      username,
+      type,
       messageBodyStyle,
       messageTimeStyle,
       timeFormat,
@@ -136,7 +190,7 @@ class TextMessage extends Component {
           myMessage={myMessage}
           fontSize={fontSize}
           headerStyle={messageHeaderStyle}
-          username={message.username}
+          username={username}
           badge={badge}
           iconMenu={!isEmpty(iconMenu)}
         />
@@ -144,13 +198,13 @@ class TextMessage extends Component {
           {
             enableLinks || enableMultiline || emoji || !isEmpty(highlights)
             ? <span>{this.parseHtml()}</span>
-            : message.body
+            : body
           }
           <MessageTime
             myMessage={myMessage}
-            type={message.type}
+            type={type}
             style={messageTimeStyle}
-            createdAt={message.createdAt}
+            createdAt={createdAt}
             timeFormat={timeFormat}
             edited={edited}
             locale={locale}
@@ -163,59 +217,7 @@ class TextMessage extends Component {
   }
 }
 
-TextMessage.propTypes = {
-  avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
-  timeFormat: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  messageHeaderStyle: PropTypes.instanceOf(Object),
-  messageBodyStyle: PropTypes.instanceOf(Object),
-  messageTimeStyle: PropTypes.instanceOf(Object),
-  fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  myMessage: PropTypes.bool,
-  emoji: PropTypes.bool,
-  enableLinks: PropTypes.bool,
-  compact: PropTypes.bool,
-  edited: PropTypes.node,
-  color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired,
-  highlights: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    prefix: PropTypes.string,
-    value: PropTypes.string,
-  })),
-  onHighlightClick: PropTypes.func.isRequired,
-  badge: PropTypes.node,
-  iconMenu: PropTypes.node,
-  enableMultiline: PropTypes.bool
-};
-
-TextMessage.defaultProps = {
-  avatar: '',
-  style: {},
-  timeFormat: 'HH:mm',
-  messageHeaderStyle: {},
-  messageBodyStyle: {},
-  messageTimeStyle: {},
-  fontSize: 'small',
-  myMessage: false,
-  emoji: false,
-  enableLinks: false,
-  compact: false,
-  color: colors.theme,
-  edited: null,
-  highlights: [],
-  badge: null,
-  iconMenu: null,
-  enableMultiline: false
-};
+TextMessage.propTypes = propTypes;
+TextMessage.defaultProps = defaultProps;
 
 export default TextMessage;

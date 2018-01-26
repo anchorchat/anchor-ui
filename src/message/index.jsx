@@ -16,17 +16,14 @@ const displayName = 'Message';
 const propTypes = {
   /** Path to the user's profile image will only be rendered if provided */
   avatar: PropTypes.string,
-  /** Message object containing : body, createdAt, username */
-  message: PropTypes.shape({
-    /** The message's body text */
-    body: PropTypes.node.isRequired,
-    /** Time when the message was created */
-    createdAt: PropTypes.string.isRequired,
-    /** The sender's username */
-    username: PropTypes.string.isRequired,
-    /** The message's type */
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy'])
-  }).isRequired,
+  /** The message's body text */
+  body: PropTypes.node.isRequired,
+  /** Time when the message was created */
+  createdAt: PropTypes.string.isRequired,
+  /** The sender's username */
+  username: PropTypes.string.isRequired,
+  /** The message's type */
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy']),
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
@@ -69,7 +66,7 @@ const propTypes = {
    * function(event: object, highlight: object) => void
    */
   onHighlightClick: PropTypes.func,
-  /** Badge to display next to message.username */
+  /** Badge to display next to username */
   badge: PropTypes.node,
   /** Render an IconMenu in Message */
   iconMenu: PropTypes.node,
@@ -96,6 +93,7 @@ const propTypes = {
 
 const defaultProps = {
   avatar: '',
+  type: 'text',
   style: {},
   messageHeaderStyle: {},
   messageBodyStyle: {},
@@ -127,7 +125,10 @@ different font sizes and message styles */
 const Message = (props) => {
   const {
     avatar,
-    message,
+    body,
+    createdAt,
+    username,
+    type,
     myMessage,
     style,
     messageHeaderStyle,
@@ -158,15 +159,15 @@ const Message = (props) => {
 
   let messageElement = <TextMessage color={color} {...props} />;
 
-  if (message.type === 'image') {
+  if (type === 'image') {
     messageElement = <ImageMessage color={color} {...props} />;
   }
 
-  if (message.type === 'sticker') {
+  if (type === 'sticker') {
     messageElement = <StickerMessage color={color} {...props} />;
   }
 
-  if (message.type === 'giphy') {
+  if (type === 'giphy') {
     messageElement = <GiphyMessage color={color} {...props} />;
   }
 

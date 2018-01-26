@@ -7,10 +7,7 @@ const propTypes = {
   myMessage: PropTypes.bool,
   type: PropTypes.string,
   style: PropTypes.instanceOf(Object),
-  createdAt: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date)
-  ]).isRequired,
+  createdAt: PropTypes.string.isRequired,
   edited: PropTypes.node,
   collapsed: PropTypes.bool,
   fontSize: PropTypes.oneOf(['small', 'medium', 'large'])

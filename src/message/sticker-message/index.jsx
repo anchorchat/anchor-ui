@@ -9,15 +9,10 @@ import styles from './styles';
 
 const propTypes = {
   avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
+  body: PropTypes.node.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
   timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
@@ -34,6 +29,7 @@ const propTypes = {
 
 const defaultProps = {
   avatar: '',
+  type: 'text',
   style: {},
   timeFormat: 'HH:mm',
   messageHeaderStyle: {},
@@ -55,7 +51,10 @@ const StickerMessage = ({
   style,
   fontSize,
   messageHeaderStyle,
-  message,
+  body,
+  createdAt,
+  username,
+  type,
   messageBodyStyle,
   messageTimeStyle,
   timeFormat,
@@ -74,22 +73,22 @@ const StickerMessage = ({
           myMessage={myMessage}
           fontSize={fontSize}
           headerStyle={headerStyle}
-          username={message.username}
+          username={username}
           stickerMessage
           badge={badge}
         />
         <MessageTime
           myMessage={myMessage}
-          type={message.type}
+          type={type}
           style={messageTimeStyle}
-          createdAt={message.createdAt}
+          createdAt={createdAt}
           timeFormat={timeFormat}
           locale={locale}
           fontSize={fontSize}
         />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
+      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={body} alt="sticker" />
     </div>
   );
 };
