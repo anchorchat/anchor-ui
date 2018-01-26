@@ -1353,30 +1353,10 @@
     "props": {
       "date": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "instanceOf",
-              "value": "Date"
-            }
-          ]
+          "name": "string"
         },
         "required": true,
         "description": "The date to display"
-      },
-      "format": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The format of displaying date\n\nhttps://date-fns.org/docs/format",
-        "defaultValue": {
-          "value": "'DD MMM'",
-          "computed": false
-        }
       },
       "style": {
         "type": {
@@ -1400,18 +1380,6 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
-        }
-      },
-      "locale": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
-        "defaultValue": {
-          "value": "en",
-          "computed": true
         }
       }
     }
