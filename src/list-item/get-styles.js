@@ -7,12 +7,9 @@ const root = (
   color = colors.theme,
   active,
   secondaryLine = null,
-  nestedLevel = 0,
   overrideStyle
 ) => {
   let style = styles.root;
-
-  style = combineStyles(style, { paddingLeft: `${(nestedLevel * 16) + 8}px` });
 
   const activeStyle = combineStyles(
     styles.root,

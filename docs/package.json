@@ -46,6 +46,7 @@
     "date-fns": "^1.28.5",
     "emojione": "^2.2.7",
     "escape-html": "^1.0.3",
+    "faker": "^4.1.0",
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
     "prismjs": "^1.8.3",

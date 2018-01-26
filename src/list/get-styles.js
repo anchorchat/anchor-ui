@@ -1,11 +1,20 @@
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 
-const root = overrideStyle => combineStyles(styles.root, overrideStyle);
-
-const listHeader = overrideStyle => combineStyles(styles.listHeader, overrideStyle);
-
 export default {
-  root,
-  listHeader
+  root: overrideStyle => combineStyles(styles.root, overrideStyle),
+  listHeader: overrideStyle => combineStyles(styles.listHeader, overrideStyle),
+  list: (header, enableInfiniteScroll, overrideStyle) => {
+    let style = styles.list;
+
+    if (header) {
+      style = combineStyles(style, { height: 'calc(100% - 36px)' });
+    }
+
+    if (enableInfiniteScroll) {
+      style = combineStyles(style, { overflowY: 'hidden' });
+    }
+
+    return combineStyles(style, overrideStyle);
+  }
 };

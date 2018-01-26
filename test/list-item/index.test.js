@@ -11,10 +11,8 @@ import Button from '../../src/button';
 import IconMore from '../../src/icons/icon-more';
 import IconMute from '../../src/icons/icon-mute';
 import IconBlock from '../../src/icons/icon-block';
-import IconChevronDown from '../../src/icons/icon-chevron-down';
 import Avatar from '../../src/avatar';
 import Badge from '../../src/badge';
-import List from '../../src/list';
 import getStyles from '../../src/list-item/get-styles';
 import styles from '../../src/list-item/styles';
 
@@ -29,16 +27,10 @@ describe('ListItem', () => {
     color: '#1BA6C4'
   };
 
-  it('should be an instanceOf ListItem', () => {
-    const component = shallow(<ListItem {...props} />);
-
-    expect(component.instance()).to.be.instanceOf(ListItem);
-  });
-
   it('should render root elements', () => {
     const component = shallow(<ListItem {...props} />);
 
-    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div')).to.have.length(1);
     expect(component.find('li')).to.have.length(1);
     expect(component.find('h1')).to.have.length(1);
   });
@@ -76,12 +68,12 @@ describe('ListItem', () => {
   it('should render rightButton element', () => {
     const component = shallow(<ListItem {...props} />);
 
-    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div')).to.have.length(1);
     expect(component.find(Button)).to.have.length(0);
     expect(component.find(IconMore)).to.have.length(0);
 
     component.setProps({ rightButton: <Button iconButton><IconMore /></Button> });
-    expect(component.find('div')).to.have.length(3);
+    expect(component.find('div')).to.have.length(2);
     expect(component.find(Button)).to.have.length(1);
     expect(component.find(IconMore)).to.have.length(1);
   });
@@ -89,54 +81,45 @@ describe('ListItem', () => {
   it('should render avatar element', () => {
     const component = shallow(<ListItem {...props} />);
 
-    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div')).to.have.length(1);
     expect(component.find(Avatar)).to.have.length(0);
 
     component.setProps({ avatar: 'image' });
-    expect(component.find('div')).to.have.length(3);
+    expect(component.find('div')).to.have.length(2);
     expect(component.find(Avatar)).to.have.length(1);
   });
 
   it('should render badge element', () => {
     const component = shallow(<ListItem {...props} />);
 
-    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div')).to.have.length(1);
     expect(component.find(Badge)).to.have.length(0);
 
     component.setProps({ avatar: 'image', badge: <Badge value={9} maxValue={9} /> });
-    expect(component.find('div')).to.have.length(4);
+    expect(component.find('div')).to.have.length(3);
     expect(component.find(Badge)).to.have.length(1);
   });
 
   it('should render muted element', () => {
     const component = shallow(<ListItem {...props} />);
 
-    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div')).to.have.length(1);
     expect(component.find(IconMute)).to.have.length(0);
 
     component.setProps({ avatar: 'image', muted: true });
-    expect(component.find('div')).to.have.length(4);
+    expect(component.find('div')).to.have.length(3);
     expect(component.find(IconMute)).to.have.length(1);
   });
 
   it('should render blocked element', () => {
     const component = shallow(<ListItem {...props} />);
 
-    expect(component.find('div')).to.have.length(2);
+    expect(component.find('div')).to.have.length(1);
     expect(component.find(IconBlock)).to.have.length(0);
 
     component.setProps({ avatar: 'image', blocked: true });
-    expect(component.find('div')).to.have.length(4);
+    expect(component.find('div')).to.have.length(3);
     expect(component.find(IconBlock)).to.have.length(1);
-  });
-
-  it('should render children', () => {
-    const component = shallow(<ListItem {...props}><p>Children</p></ListItem>);
-
-    expect(component.find(List)).to.have.length(1);
-    expect(component.find(List).containsMatchingElement(<p>Children</p>)).to.equal(true);
-    expect(component.find(Button)).to.have.length(1);
-    expect(component.find(IconChevronDown)).to.have.length(1);
   });
 
   it('should call onClick', () => {
@@ -148,20 +131,11 @@ describe('ListItem', () => {
     expect(spy).to.have.callCount(1);
   });
 
-  it('should call onNestedListToggle', () => {
-    const spy = sinon.spy();
-    const component = shallow(<ListItem {...props}><p>Children</p></ListItem>);
-
-    component.setProps({ onNestedListToggle: spy });
-    component.find('li').simulate('click');
-    expect(spy).to.have.callCount(1);
-  });
-
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<ListItem {...props} />);
-    expect(spy).to.have.been.calledWith(props.color, false, null, 0, props.style);
+    expect(spy).to.have.been.calledWith(props.color, false, null, props.style);
   });
 
   it('should get textContainer styles', () => {
@@ -180,12 +154,5 @@ describe('ListItem', () => {
     component.setProps({ secondaryText: 'Text' });
     expect(spy).to.have.callCount(3);
     expect(spy).to.have.been.calledWith(styles.secondaryText, false, null, props.secondaryTextStyle); // eslint-disable-line max-len
-  });
-
-  it('should get nestedListButton styles', () => {
-    const spy = sinon.spy(getStyles, 'nestedListButton');
-
-    shallow(<ListItem {...props}><p>Children</p></ListItem>);
-    expect(spy).to.have.been.calledWith(false);
   });
 });
