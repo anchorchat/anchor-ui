@@ -15,7 +15,6 @@ const propTypes = {
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
-  timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
   messageBodyStyle: PropTypes.instanceOf(Object),
@@ -28,7 +27,6 @@ const propTypes = {
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node.isRequired,
   giphyDescription: PropTypes.node.isRequired,
-  locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   imagePlaceholder: PropTypes.string.isRequired,
   imageError: PropTypes.string.isRequired,
@@ -41,7 +39,6 @@ const defaultProps = {
   avatar: '',
   type: 'text',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -91,12 +88,10 @@ class GiphyMessage extends Component {
       type,
       messageBodyStyle,
       messageTimeStyle,
-      timeFormat,
       enableLightbox,
       collapsed,
       collapsedText,
       giphyDescription,
-      locale,
       badge,
       imagePlaceholder,
       imageError,
@@ -163,8 +158,6 @@ class GiphyMessage extends Component {
             type={type}
             style={messageTimeStyle}
             createdAt={createdAt}
-            timeFormat={timeFormat}
-            locale={locale}
             collapsed={collapsed}
             fontSize={fontSize}
           />

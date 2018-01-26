@@ -13,7 +13,6 @@ const propTypes = {
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
-  timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
   messageBodyStyle: PropTypes.instanceOf(Object),
@@ -22,7 +21,6 @@ const propTypes = {
   myMessage: PropTypes.bool,
   compact: PropTypes.bool,
   color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.node
 };
@@ -31,7 +29,6 @@ const defaultProps = {
   avatar: '',
   type: 'text',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -57,8 +54,6 @@ const StickerMessage = ({
   type,
   messageBodyStyle,
   messageTimeStyle,
-  timeFormat,
-  locale,
   badge,
   iconMenu
 }) => {
@@ -82,8 +77,6 @@ const StickerMessage = ({
           type={type}
           style={messageTimeStyle}
           createdAt={createdAt}
-          timeFormat={timeFormat}
-          locale={locale}
           fontSize={fontSize}
         />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}

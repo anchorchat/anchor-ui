@@ -21,7 +21,6 @@ const propTypes = {
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
-  timeFormat: PropTypes.string,
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
   messageBodyStyle: PropTypes.instanceOf(Object),
@@ -33,7 +32,6 @@ const propTypes = {
   compact: PropTypes.bool,
   edited: PropTypes.node,
   color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired,
   highlights: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     prefix: PropTypes.string,
@@ -49,7 +47,6 @@ const defaultProps = {
   avatar: '',
   type: 'text',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -171,11 +168,9 @@ class TextMessage extends Component {
       type,
       messageBodyStyle,
       messageTimeStyle,
-      timeFormat,
       emoji,
       enableLinks,
       edited,
-      locale,
       highlights,
       badge,
       iconMenu,
@@ -205,9 +200,7 @@ class TextMessage extends Component {
             type={type}
             style={messageTimeStyle}
             createdAt={createdAt}
-            timeFormat={timeFormat}
             edited={edited}
-            locale={locale}
             fontSize={fontSize}
           />
         </p>
