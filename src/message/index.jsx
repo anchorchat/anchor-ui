@@ -21,7 +21,7 @@ const propTypes = {
   /** Time when the message was created */
   createdAt: PropTypes.string.isRequired,
   /** The sender's username */
-  username: PropTypes.string.isRequired,
+  username: PropTypes.node.isRequired,
   /** The message's type */
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy']),
   /** Override the styles of the root element */

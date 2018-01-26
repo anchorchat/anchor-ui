@@ -19,7 +19,7 @@ const propTypes = {
   avatar: PropTypes.string,
   body: PropTypes.node.isRequired,
   createdAt: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  username: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),

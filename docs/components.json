@@ -5007,7 +5007,7 @@
       },
       "username": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "The sender's username"

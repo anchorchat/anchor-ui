@@ -10,7 +10,7 @@ const propTypes = {
   myMessage: PropTypes.bool,
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   headerStyle: PropTypes.instanceOf(Object),
-  username: PropTypes.string.isRequired,
+  username: PropTypes.node.isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.bool
 };
