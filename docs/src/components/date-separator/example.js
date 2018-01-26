@@ -57,7 +57,10 @@ export default `
 
           return (
             <Message
-              message={message}
+              body={message.body}
+              createdAt={moment(message.createdAt).format('HH:mm')}
+              username={message.username}
+              type={message.type}
               key={message.id}
               myMessage={message.username === currentUser}
               avatar={message.avatar}
