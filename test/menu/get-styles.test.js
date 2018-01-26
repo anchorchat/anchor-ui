@@ -80,14 +80,40 @@ describe('Menu.getStyles', () => {
   });
 
   describe('header', () => {
-    it('should get styles', () => {
+    it('should get default styles', () => {
       const style = getStyles.header();
 
       expect(style).to.deep.equal(styles.header);
     });
 
+    it('should add icon styles', () => {
+      const style = getStyles.header(null, true);
+
+      expect(style).to.have.property('padding', '15.5px 16px 15.5px 40px');
+    });
+
     it('should combine styles', () => {
       const style = getStyles.header(null, false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('footer', () => {
+    it('should get styles', () => {
+      const style = getStyles.footer();
+
+      expect(style).to.deep.equal(styles.footer);
+    });
+
+    it('should add sidebar styles', () => {
+      const style = getStyles.footer(true);
+
+      expect(style).to.have.property('position', 'initial');
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.footer(null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
