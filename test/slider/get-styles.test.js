@@ -34,9 +34,15 @@ describe('Slider.getStyles', () => {
   });
 
   describe('filled', () => {
+    it('should get default styles', () => {
+      const style = getStyles.filled();
+      expect(style).to.deep.equal(styles.filled);
+    });
+
     it('should get styles', () => {
       const style = getStyles.filled('#1BA6C4', 1);
-      expect(style).to.deep.equal(styles.filled);
+      expect(style).to.have.property('width', '100%');
+      expect(style).to.have.property('backgroundColor', '#1BA6C4');
     });
 
     it('should combine styles', () => {
@@ -73,10 +79,19 @@ describe('Slider.getStyles', () => {
   });
 
   describe('button', () => {
+    it('should get default styles', () => {
+      const style = getStyles.button();
+
+      expect(style).to.deep.equal(styles.button);
+    });
+
     it('should get styles', () => {
       const style = getStyles.button('red', 0);
 
       expect(style).to.deep.equal(styles.button);
+      expect(style).to.have.property('left', '0%');
+      expect(style).to.have.property('backgroundColor', '#1BA6C4');
+      expect(style).to.have.property('border', '2px solid #1BA6C4');
     });
 
     it('should combine styles', () => {

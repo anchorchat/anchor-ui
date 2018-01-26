@@ -1,3 +1,4 @@
+import isFinite from 'lodash/isFinite';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import styles from './styles';
@@ -15,7 +16,15 @@ const root = (overrideStyle, disabled) => {
 const label = overrideStyle => combineStyles(styles.label, overrideStyle);
 
 const filled = (color = colors.theme, percentage, overrideStyle) => {
-  const style = combineStyles(styles.filled, { width: `${percentage * 100}%`, backgroundColor: color });
+  const style = combineStyles(
+    styles.filled,
+    {
+      width: isFinite(percentage) && percentage > 0
+        ? `${percentage * 100}%`
+        : '0%',
+      backgroundColor: color
+    }
+  );
 
   return combineStyles(style, overrideStyle);
 };
@@ -27,7 +36,14 @@ const remaining = (percentage, overrideStyle) => {
 };
 
 const button = (color = colors.theme, percentage, overrideStyle) => {
-  let style = combineStyles(styles.button, { left: `${percentage * 100}%` });
+  let style = combineStyles(
+    styles.button,
+    {
+      left: isFinite(percentage) && percentage > 0
+        ? `${percentage * 100}%`
+        : '0%'
+    }
+  );
 
   if (percentage !== 0) {
     style = combineStyles(style, { backgroundColor: color, border: `2px solid ${color}` });
