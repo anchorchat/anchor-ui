@@ -2,10 +2,32 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.1...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.0.0...HEAD)
 
 **Merged pull requests:**
 
+- \[6.0.0\] Added infiteScroll to List, removed nestedListItem capabilities, adjusted Message component, adjusted DateSeparator component and removed date-fns dependency [\#1039](https://github.com/anchorchat/anchor-ui/pull/1039) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v6.0.0](https://github.com/anchorchat/anchor-ui/tree/v6.0.0) (2018-01-26)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.2...v6.0.0)
+
+**Closed issues:**
+
+- \[DateSeperator, Message\] Remove date-fns, change logic [\#1036](https://github.com/anchorchat/anchor-ui/issues/1036)
+- \[Dependencies\] Update Radium to the latest version [\#1033](https://github.com/anchorchat/anchor-ui/issues/1033)
+
+**Merged pull requests:**
+
+- Issue \#1036 [\#1038](https://github.com/anchorchat/anchor-ui/pull/1038) ([IanCStewart](https://github.com/IanCStewart))
+- \[5.1.2\] Bumped radium version [\#1035](https://github.com/anchorchat/anchor-ui/pull/1035) ([IanCStewart](https://github.com/IanCStewart))
+- \[List\] Infinite scroll [\#1032](https://github.com/anchorchat/anchor-ui/pull/1032) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v5.1.2](https://github.com/anchorchat/anchor-ui/tree/v5.1.2) (2018-01-23)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v5.1.1...v5.1.2)
+
+**Merged pull requests:**
+
+- Bumped radium to latest version. [\#1034](https://github.com/anchorchat/anchor-ui/pull/1034) ([IanCStewart](https://github.com/IanCStewart))
 - \[5.1.1\] Fixed import for CheckboxGroup [\#1029](https://github.com/anchorchat/anchor-ui/pull/1029) ([IanCStewart](https://github.com/IanCStewart))
 
 ## [v5.1.1](https://github.com/anchorchat/anchor-ui/tree/v5.1.1) (2018-01-15)
