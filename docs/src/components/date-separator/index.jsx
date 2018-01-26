@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import addDays from 'date-fns/add_days';
+import moment from 'moment';
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days';
 import Message from '../../../../dist/message';
 import MessageList from '../../../../dist/message-list';
@@ -29,7 +29,7 @@ const messages = [
   },
   {
     body: ':pig2:',
-    createdAt: addDays(new Date(), 1),
+    createdAt: moment(new Date()).add(1, 'days').format(),
     username: 'Sjaak',
     avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
     id: 3
@@ -91,7 +91,7 @@ const DateSeparatorDoc = () => {
                   myMessage={message.username === currentUser}
                   avatar={message.avatar}
                   emoji
-                  separator={showDateSeparator ? <DateSeparator date={message.createdAt} /> : null}
+                  separator={showDateSeparator ? <DateSeparator date={moment(message.createdAt).format('D MMM')} /> : null}
                 />
               );
             })}
