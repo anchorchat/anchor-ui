@@ -11,16 +11,10 @@ import styles from './styles';
 
 const propTypes = {
   avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
-  timeFormat: PropTypes.string,
+  body: PropTypes.node.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  username: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
   messageBodyStyle: PropTypes.instanceOf(Object),
@@ -32,7 +26,6 @@ const propTypes = {
   color: PropTypes.string,
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node.isRequired,
-  locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   imagePlaceholder: PropTypes.string.isRequired,
   imageError: PropTypes.string.isRequired,
@@ -43,8 +36,8 @@ const propTypes = {
 
 const defaultProps = {
   avatar: '',
+  type: 'text',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -88,14 +81,15 @@ class ImageMessage extends Component {
       style,
       fontSize,
       messageHeaderStyle,
-      message,
+      body,
+      createdAt,
+      username,
+      type,
       messageBodyStyle,
       messageTimeStyle,
-      timeFormat,
       enableLightbox,
       collapsed,
       collapsedText,
-      locale,
       badge,
       imagePlaceholder,
       imageError,
@@ -132,7 +126,7 @@ class ImageMessage extends Component {
           myMessage={myMessage}
           fontSize={fontSize}
           headerStyle={headerStyle}
-          username={message.username}
+          username={username}
           badge={badge}
           iconMenu={!isEmpty(iconMenu)}
         />
@@ -141,7 +135,7 @@ class ImageMessage extends Component {
             !collapsed
             ? (
               <ImageLoader
-                src={message.body}
+                src={body}
                 alt="user-upload"
                 imgProps={imgProps}
                 placeholder={placeholder}
@@ -154,11 +148,9 @@ class ImageMessage extends Component {
           }
           <MessageTime
             myMessage={myMessage}
-            type={message.type}
+            type={type}
             style={messageTimeStyle}
-            createdAt={message.createdAt}
-            timeFormat={timeFormat}
-            locale={locale}
+            createdAt={createdAt}
             collapsed={collapsed}
             fontSize={fontSize}
           />
@@ -168,8 +160,8 @@ class ImageMessage extends Component {
           enableLightbox
           ? <Lightbox
             open={lightbox}
-            image={message.body}
-            title={message.username}
+            image={body}
+            title={username}
             hideLightbox={this.toggleLightbox}
           />
           : null

@@ -1353,30 +1353,10 @@
     "props": {
       "date": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "instanceOf",
-              "value": "Date"
-            }
-          ]
+          "name": "string"
         },
         "required": true,
         "description": "The date to display"
-      },
-      "format": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The format of displaying date\n\nhttps://date-fns.org/docs/format",
-        "defaultValue": {
-          "value": "'DD MMM'",
-          "computed": false
-        }
       },
       "style": {
         "type": {
@@ -1400,18 +1380,6 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
-        }
-      },
-      "locale": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
-        "defaultValue": {
-          "value": "en",
-          "computed": true
         }
       }
     }
@@ -5023,70 +4991,53 @@
           "computed": false
         }
       },
-      "message": {
+      "body": {
         "type": {
-          "name": "shape",
-          "value": {
-            "body": {
-              "name": "node",
-              "description": "The message's body text",
-              "required": true
-            },
-            "createdAt": {
-              "name": "union",
-              "value": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "instanceOf",
-                  "value": "Date"
-                }
-              ],
-              "description": "Time when the message was created",
-              "required": true
-            },
-            "username": {
-              "name": "string",
-              "description": "The sender's username",
-              "required": true
-            },
-            "type": {
-              "name": "enum",
-              "value": [
-                {
-                  "value": "'text'",
-                  "computed": false
-                },
-                {
-                  "value": "'image'",
-                  "computed": false
-                },
-                {
-                  "value": "'sticker'",
-                  "computed": false
-                },
-                {
-                  "value": "'giphy'",
-                  "computed": false
-                }
-              ],
-              "description": "The message's type",
-              "required": false
-            }
-          }
+          "name": "node"
         },
         "required": true,
-        "description": "Message object containing : body, createdAt, username"
+        "description": "The message's body text"
       },
-      "timeFormat": {
+      "createdAt": {
         "type": {
           "name": "string"
         },
+        "required": true,
+        "description": "Time when the message was created"
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The sender's username"
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            }
+          ]
+        },
         "required": false,
-        "description": "The format of displaying message.createdAt\n\nhttps://date-fns.org/docs/format",
+        "description": "The message's type",
         "defaultValue": {
-          "value": "'HH:mm'",
+          "value": "'text'",
           "computed": false
         }
       },
@@ -5262,18 +5213,6 @@
           "computed": false
         }
       },
-      "locale": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
-        "defaultValue": {
-          "value": "en",
-          "computed": true
-        }
-      },
       "separator": {
         "type": {
           "name": "node"
@@ -5316,7 +5255,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Badge to display next to message.username",
+        "description": "Badge to display next to username",
         "defaultValue": {
           "value": "null",
           "computed": false
