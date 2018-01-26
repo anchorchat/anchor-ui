@@ -12,7 +12,7 @@ chai.use(sinonChai);
 
 describe('DateSeparator', () => {
   const props = {
-    date: new Date(),
+    date: '2 Dec',
     style: {},
     textStyle: {}
   };
@@ -30,6 +30,7 @@ describe('DateSeparator', () => {
 
     expect(component.find('section')).to.have.length(1);
     expect(component.find('p')).to.have.length(1);
+    expect(component.find('p').containsMatchingElement('2 Dec')).to.equal(true);
   });
 
   it('should get root styles', () => {
