@@ -1,48 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import formatDate from 'date-fns/format';
-import en from 'date-fns/locale/en';
 import getStyles from './get-styles';
 
 const propTypes = {
   /** The date to display */
-  date: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date)
-  ]).isRequired,
-  /**
-   * The format of displaying date
-   *
-   * https://date-fns.org/docs/format
-   */
-  format: PropTypes.string,
+  date: PropTypes.string.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the text element */
-  textStyle: PropTypes.instanceOf(Object),
-  /**
-   * Internationalization, defaults to English
-   *
-   * https://date-fns.org/docs/I18n
-   */
-  locale: PropTypes.instanceOf(Object)
+  textStyle: PropTypes.instanceOf(Object)
 };
 
 const defaultProps = {
-  format: 'DD MMM',
   style: {},
-  textStyle: {},
-  locale: en
+  textStyle: {}
 };
 
 const displayName = 'DateSeparator';
 
 /** A separator to show above a Message */
 const DateSeparator = ({
-  date, format, style, textStyle, locale
+  date, style, textStyle,
 }) => (
   <section style={getStyles.root(style)}>
-    <p style={getStyles.text(textStyle)}>{formatDate(date, format, { locale })}</p>
+    <p style={getStyles.text(textStyle)}>{date}</p>
   </section>
 );
 

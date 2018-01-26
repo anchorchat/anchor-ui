@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import en from 'date-fns/locale/en';
 import noop from 'lodash/noop';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
@@ -17,26 +16,14 @@ const displayName = 'Message';
 const propTypes = {
   /** Path to the user's profile image will only be rendered if provided */
   avatar: PropTypes.string,
-  /** Message object containing : body, createdAt, username */
-  message: PropTypes.shape({
-    /** The message's body text */
-    body: PropTypes.node.isRequired,
-    /** Time when the message was created */
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    /** The sender's username */
-    username: PropTypes.string.isRequired,
-    /** The message's type */
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy'])
-  }).isRequired,
-  /**
-   * The format of displaying message.createdAt
-   *
-   * https://date-fns.org/docs/format
-   */
-  timeFormat: PropTypes.string,
+  /** The message's body text */
+  body: PropTypes.node.isRequired,
+  /** Time when the message was created */
+  createdAt: PropTypes.string.isRequired,
+  /** The sender's username */
+  username: PropTypes.node.isRequired,
+  /** The message's type */
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy']),
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
@@ -65,12 +52,6 @@ const propTypes = {
   giphyDescription: PropTypes.node,
   /** Text to display for edited banner */
   edited: PropTypes.node,
-  /**
-   * Internationalization, defaults to English
-   *
-   * https://date-fns.org/docs/I18n
-   */
-  locale: PropTypes.instanceOf(Object),
   /** Show a separator above the message */
   separator: PropTypes.node,
   /**
@@ -85,7 +66,7 @@ const propTypes = {
    * function(event: object, highlight: object) => void
    */
   onHighlightClick: PropTypes.func,
-  /** Badge to display next to message.username */
+  /** Badge to display next to username */
   badge: PropTypes.node,
   /** Render an IconMenu in Message */
   iconMenu: PropTypes.node,
@@ -112,8 +93,8 @@ const propTypes = {
 
 const defaultProps = {
   avatar: '',
+  type: 'text',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -127,7 +108,6 @@ const defaultProps = {
   collapsedText: 'This image has been collapsed.',
   giphyDescription: 'Sent using /giphy',
   edited: null,
-  locale: en,
   separator: null,
   highlights: [],
   onHighlightClick: noop,
@@ -145,8 +125,10 @@ different font sizes and message styles */
 const Message = (props) => {
   const {
     avatar,
-    message,
-    timeFormat,
+    body,
+    createdAt,
+    username,
+    type,
     myMessage,
     style,
     messageHeaderStyle,
@@ -160,7 +142,6 @@ const Message = (props) => {
     collapsed,
     collapsedText,
     edited,
-    locale,
     highlights,
     onHighlightClick,
     color,
@@ -178,15 +159,15 @@ const Message = (props) => {
 
   let messageElement = <TextMessage color={color} {...props} />;
 
-  if (message.type === 'image') {
+  if (type === 'image') {
     messageElement = <ImageMessage color={color} {...props} />;
   }
 
-  if (message.type === 'sticker') {
+  if (type === 'sticker') {
     messageElement = <StickerMessage color={color} {...props} />;
   }
 
-  if (message.type === 'giphy') {
+  if (type === 'giphy') {
     messageElement = <GiphyMessage color={color} {...props} />;
   }
 

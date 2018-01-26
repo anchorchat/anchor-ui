@@ -1353,30 +1353,10 @@
     "props": {
       "date": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "instanceOf",
-              "value": "Date"
-            }
-          ]
+          "name": "string"
         },
         "required": true,
         "description": "The date to display"
-      },
-      "format": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The format of displaying date\n\nhttps://date-fns.org/docs/format",
-        "defaultValue": {
-          "value": "'DD MMM'",
-          "computed": false
-        }
       },
       "style": {
         "type": {
@@ -1400,18 +1380,6 @@
         "defaultValue": {
           "value": "{}",
           "computed": false
-        }
-      },
-      "locale": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
-        "defaultValue": {
-          "value": "en",
-          "computed": true
         }
       }
     }
@@ -4307,7 +4275,27 @@
   "components/list/component.jsx": {
     "description": "A wrapper for ListItems",
     "displayName": "List",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderRows",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{\n  index,\n  isScrolling,\n  key,\n  style\n}",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderVirtualizedList",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "children": {
         "type": {
@@ -4327,6 +4315,18 @@
           "computed": false
         }
       },
+      "headerStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "listRef": {
         "type": {
           "name": "func"
@@ -4336,6 +4336,84 @@
         "defaultValue": {
           "value": "() => {}",
           "computed": false
+        }
+      },
+      "enableInfiniteScroll": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Enable virtualized list from 'react-virtualized'.\nList will only render items that are in view",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "itemHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify the height of each item in the list.\nOnly works if enableInfiniteScroll is set to true.",
+        "defaultValue": {
+          "value": "48",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Object"
+        },
+        "required": false,
+        "description": "Override the styles of the list element. Height needs to be set for inifite scroll to work.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "overscanRowCount": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify amount of items to render outside the view.\nOnly works if enableInfiniteScroll is set to true.\nDefaults to 10, increasing the amount can cause massive performance loss.",
+        "defaultValue": {
+          "value": "10",
+          "computed": false
+        }
+      },
+      "scrollPlaceholder": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "node"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": "Optional scrolling placeholder\nOnly works if enableInfiniteScroll is set to true.\n\n- Single component used on every child\n\n- Array of components, equal to children, index rendered based on position (placeholder[index])",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "scrollToIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Scroll to a specific index",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
         }
       },
       "style": {
@@ -4349,60 +4427,13 @@
           "value": "{}",
           "computed": false
         }
-      },
-      "headerStyle": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Override the styles of the header element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Toggle the List's visibility",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "nestedLevel": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Nested depth of List. This property is automatically managed, modify at own risk.",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
       }
     }
   },
   "components/list-item/component.jsx": {
     "description": "A list's item",
     "displayName": "ListItem",
-    "methods": [
-      {
-        "name": "toggleNestedList",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "primaryText": {
         "type": {
@@ -4543,50 +4574,6 @@
         "description": "Add blocked styles to ListItem",
         "defaultValue": {
           "value": "false",
-          "computed": false
-        }
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "ListItems to render in a NestedList,\n  if rightButton is also provided only the NestedList will render",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Control toggle state of nested list.",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "onNestedListToggle": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when the nested list is toggled\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "nestedLevel": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Nested depth of ListItem. This property is automatically managed, modify at own risk.",
-        "defaultValue": {
-          "value": "0",
           "computed": false
         }
       },
@@ -5004,70 +4991,53 @@
           "computed": false
         }
       },
-      "message": {
+      "body": {
         "type": {
-          "name": "shape",
-          "value": {
-            "body": {
-              "name": "node",
-              "description": "The message's body text",
-              "required": true
-            },
-            "createdAt": {
-              "name": "union",
-              "value": [
-                {
-                  "name": "string"
-                },
-                {
-                  "name": "instanceOf",
-                  "value": "Date"
-                }
-              ],
-              "description": "Time when the message was created",
-              "required": true
-            },
-            "username": {
-              "name": "string",
-              "description": "The sender's username",
-              "required": true
-            },
-            "type": {
-              "name": "enum",
-              "value": [
-                {
-                  "value": "'text'",
-                  "computed": false
-                },
-                {
-                  "value": "'image'",
-                  "computed": false
-                },
-                {
-                  "value": "'sticker'",
-                  "computed": false
-                },
-                {
-                  "value": "'giphy'",
-                  "computed": false
-                }
-              ],
-              "description": "The message's type",
-              "required": false
-            }
-          }
+          "name": "node"
         },
         "required": true,
-        "description": "Message object containing : body, createdAt, username"
+        "description": "The message's body text"
       },
-      "timeFormat": {
+      "createdAt": {
         "type": {
           "name": "string"
         },
+        "required": true,
+        "description": "Time when the message was created"
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The sender's username"
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            }
+          ]
+        },
         "required": false,
-        "description": "The format of displaying message.createdAt\n\nhttps://date-fns.org/docs/format",
+        "description": "The message's type",
         "defaultValue": {
-          "value": "'HH:mm'",
+          "value": "'text'",
           "computed": false
         }
       },
@@ -5243,18 +5213,6 @@
           "computed": false
         }
       },
-      "locale": {
-        "type": {
-          "name": "instanceOf",
-          "value": "Object"
-        },
-        "required": false,
-        "description": "Internationalization, defaults to English\n\nhttps://date-fns.org/docs/I18n",
-        "defaultValue": {
-          "value": "en",
-          "computed": true
-        }
-      },
       "separator": {
         "type": {
           "name": "node"
@@ -5297,7 +5255,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Badge to display next to message.username",
+        "description": "Badge to display next to username",
         "defaultValue": {
           "value": "null",
           "computed": false

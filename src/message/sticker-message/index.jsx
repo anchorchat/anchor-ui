@@ -9,16 +9,10 @@ import styles from './styles';
 
 const propTypes = {
   avatar: PropTypes.string,
-  message: PropTypes.shape({
-    body: PropTypes.node.isRequired,
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
-    username: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing'])
-  }).isRequired,
-  timeFormat: PropTypes.string,
+  body: PropTypes.node.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  username: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
   style: PropTypes.instanceOf(Object),
   messageHeaderStyle: PropTypes.instanceOf(Object),
   messageBodyStyle: PropTypes.instanceOf(Object),
@@ -27,15 +21,14 @@ const propTypes = {
   myMessage: PropTypes.bool,
   compact: PropTypes.bool,
   color: PropTypes.string,
-  locale: PropTypes.instanceOf(Object).isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.node
 };
 
 const defaultProps = {
   avatar: '',
+  type: 'text',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -55,11 +48,12 @@ const StickerMessage = ({
   style,
   fontSize,
   messageHeaderStyle,
-  message,
+  body,
+  createdAt,
+  username,
+  type,
   messageBodyStyle,
   messageTimeStyle,
-  timeFormat,
-  locale,
   badge,
   iconMenu
 }) => {
@@ -74,22 +68,20 @@ const StickerMessage = ({
           myMessage={myMessage}
           fontSize={fontSize}
           headerStyle={headerStyle}
-          username={message.username}
+          username={username}
           stickerMessage
           badge={badge}
         />
         <MessageTime
           myMessage={myMessage}
-          type={message.type}
+          type={type}
           style={messageTimeStyle}
-          createdAt={message.createdAt}
-          timeFormat={timeFormat}
-          locale={locale}
+          createdAt={createdAt}
           fontSize={fontSize}
         />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={message.body} alt="sticker" />
+      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={body} alt="sticker" />
     </div>
   );
 };

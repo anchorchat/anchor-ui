@@ -1,9 +1,10 @@
+import isObject from 'lodash/isObject';
+import isEmpty from 'lodash/isEmpty';
+import merge from 'lodash/merge';
+
 const combineStyles = (style, overrideStyle) => {
-  if (overrideStyle && Object.keys(overrideStyle).length !== 0) {
-    return {
-      ...style,
-      ...overrideStyle
-    };
+  if (isObject(overrideStyle) && !isEmpty(overrideStyle)) {
+    return merge({}, style, overrideStyle);
   }
 
   return style;

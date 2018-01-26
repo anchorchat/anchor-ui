@@ -31,4 +31,30 @@ describe('List.getStyles', () => {
       expect(style).to.have.property('color', 'red');
     });
   });
+
+  describe('list', () => {
+    it('should get styles', () => {
+      const style = getStyles.list();
+
+      expect(style).to.deep.equal(styles.list);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.list(null, null, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add header styles', () => {
+      const style = getStyles.list(true, null, {});
+
+      expect(style).to.have.property('height', 'calc(100% - 36px)');
+    });
+
+    it('should add header styles', () => {
+      const style = getStyles.list(null, true, {});
+
+      expect(style).to.have.property('overflowY', 'hidden');
+    });
+  });
 });

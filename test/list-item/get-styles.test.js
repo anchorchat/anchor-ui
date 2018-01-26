@@ -12,7 +12,7 @@ describe('ListItem.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('blue', false, false, 0, { color: 'red' });
+      const style = getStyles.root('blue', false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -29,12 +29,6 @@ describe('ListItem.getStyles', () => {
       const style = getStyles.root(null, false, true);
 
       expect(style).to.have.property('height', '52px');
-    });
-
-    it('should add indention padding', () => {
-      const style = getStyles.root(null, false, false, 1);
-
-      expect(style).to.have.property('paddingLeft', '24px');
     });
   });
 
