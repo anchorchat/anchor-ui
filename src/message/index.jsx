@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import en from 'date-fns/locale/en';
 import noop from 'lodash/noop';
 import getStyles from './get-styles';
 import TextMessage from './text-message';
@@ -22,21 +21,12 @@ const propTypes = {
     /** The message's body text */
     body: PropTypes.node.isRequired,
     /** Time when the message was created */
-    createdAt: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Date)
-    ]).isRequired,
+    createdAt: PropTypes.string.isRequired,
     /** The sender's username */
     username: PropTypes.string.isRequired,
     /** The message's type */
     type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy'])
   }).isRequired,
-  /**
-   * The format of displaying message.createdAt
-   *
-   * https://date-fns.org/docs/format
-   */
-  timeFormat: PropTypes.string,
   /** Override the styles of the root element */
   style: PropTypes.instanceOf(Object),
   /** Override the styles of the header element */
@@ -65,12 +55,6 @@ const propTypes = {
   giphyDescription: PropTypes.node,
   /** Text to display for edited banner */
   edited: PropTypes.node,
-  /**
-   * Internationalization, defaults to English
-   *
-   * https://date-fns.org/docs/I18n
-   */
-  locale: PropTypes.instanceOf(Object),
   /** Show a separator above the message */
   separator: PropTypes.node,
   /**
@@ -113,7 +97,6 @@ const propTypes = {
 const defaultProps = {
   avatar: '',
   style: {},
-  timeFormat: 'HH:mm',
   messageHeaderStyle: {},
   messageBodyStyle: {},
   messageTimeStyle: {},
@@ -127,7 +110,6 @@ const defaultProps = {
   collapsedText: 'This image has been collapsed.',
   giphyDescription: 'Sent using /giphy',
   edited: null,
-  locale: en,
   separator: null,
   highlights: [],
   onHighlightClick: noop,
@@ -146,7 +128,6 @@ const Message = (props) => {
   const {
     avatar,
     message,
-    timeFormat,
     myMessage,
     style,
     messageHeaderStyle,
@@ -160,7 +141,6 @@ const Message = (props) => {
     collapsed,
     collapsedText,
     edited,
-    locale,
     highlights,
     onHighlightClick,
     color,
