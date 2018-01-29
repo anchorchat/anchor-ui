@@ -98,12 +98,13 @@ class Gallery extends Component {
     const { items } = this.props;
     const { selectedIndex } = this.state;
     const gallerySize = size(items);
+    const newIndex = selectedIndex + 1;
 
-    if (selectedIndex + 1 < gallerySize) {
-      return this.showLightbox(items[selectedIndex + 1], selectedIndex + 1);
+    if (newIndex < gallerySize) {
+      return this.showLightbox(items[newIndex], newIndex);
     }
 
-    if (selectedIndex === gallerySize - 1) {
+    if (newIndex === gallerySize) {
       return this.showLightbox(items[0], 0);
     }
 
@@ -114,13 +115,14 @@ class Gallery extends Component {
     const { items } = this.props;
     const { selectedIndex } = this.state;
     const gallerySize = size(items);
+    const newIndex = selectedIndex - 1;
 
     if (selectedIndex === 0) {
       return this.showLightbox(items[gallerySize - 1], gallerySize - 1);
     }
 
-    if (selectedIndex - 1 < gallerySize) {
-      return this.showLightbox(items[selectedIndex - 1], selectedIndex - 1);
+    if (newIndex < gallerySize) {
+      return this.showLightbox(items[newIndex], newIndex);
     }
 
     return false;
