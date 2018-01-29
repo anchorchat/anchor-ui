@@ -26,6 +26,8 @@ const propTypes = {
   headerIcon: PropTypes.node,
   /** The Menu's footer */
   footer: PropTypes.node,
+  /** The Menu's footer */
+  position: PropTypes.oneOf(['left', 'right']),
   /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
@@ -44,6 +46,7 @@ const defaultProps = {
   closeMenu: null,
   header: null,
   footer: null,
+  position: 'left',
   style: {},
   headerStyle: {},
   headerIcon: null,
