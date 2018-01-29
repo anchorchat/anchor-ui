@@ -3978,6 +3978,13 @@
     "displayName": "Input",
     "methods": [
       {
+        "name": "setTextareaHeight",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "handleChange",
         "docblock": null,
         "modifiers": [],
@@ -4668,7 +4675,7 @@
     }
   },
   "components/menu/index.jsx": {
-    "description": "Menu that slides in from the left",
+    "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
       {
@@ -4751,6 +4758,27 @@
         "description": "The Menu's footer",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "position": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'left'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The Menu's footer",
+        "defaultValue": {
+          "value": "'left'",
           "computed": false
         }
       },
@@ -5000,7 +5028,7 @@
       },
       "createdAt": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "Time when the message was created"
@@ -5340,6 +5368,13 @@
     "description": "Message input with send button",
     "displayName": "MessageInput",
     "methods": [
+      {
+        "name": "setTextareaHeight",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
       {
         "name": "handleChange",
         "docblock": null,

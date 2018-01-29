@@ -26,6 +26,8 @@ const propTypes = {
   headerIcon: PropTypes.node,
   /** The Menu's footer */
   footer: PropTypes.node,
+  /** The Menu's footer */
+  position: PropTypes.oneOf(['left', 'right']),
   /** Override the styles of the icon element */
   iconStyle: PropTypes.instanceOf(Object),
   /** Override the styles of the root element */
@@ -44,6 +46,7 @@ const defaultProps = {
   closeMenu: null,
   header: null,
   footer: null,
+  position: 'left',
   style: {},
   headerStyle: {},
   headerIcon: null,
@@ -52,7 +55,7 @@ const defaultProps = {
   contentContainerStyle: {}
 };
 
-/** Menu that slides in from the left */
+/** Menu that slides in from the left or right */
 class Menu extends Component {
   handleKeyUp = (event) => {
     const { closeMenu } = this.props;
@@ -68,6 +71,7 @@ class Menu extends Component {
       open,
       header,
       footer,
+      position,
       headerIcon,
       closeMenu,
       style,
@@ -83,7 +87,7 @@ class Menu extends Component {
       cloneElement(child, { closeMenu })
     ));
 
-    let rootStyle = getStyles.root(open, style);
+    let rootStyle = getStyles.root(open, position, style);
 
     if (!closeMenu) {
       rootStyle = getStyles.sidebar(style);

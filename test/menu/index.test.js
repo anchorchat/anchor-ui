@@ -17,9 +17,9 @@ describe('Menu', () => {
     closeMenu: null,
     header: '',
     headerIcon: null,
-    iconStyle: { icon: true },
-    style: { root: true },
-    headerStyle: { header: true },
+    iconStyle: {},
+    style: {},
+    headerStyle: {},
     color: '#1BA6C4'
   };
   const children = <p>children</p>;
@@ -158,7 +158,7 @@ describe('Menu', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
-    expect(spy).to.have.been.calledWith(props.open, props.style);
+    expect(spy).to.have.been.calledWith(props.open, 'left', props.style);
     props.closeMenu = null;
   });
 });

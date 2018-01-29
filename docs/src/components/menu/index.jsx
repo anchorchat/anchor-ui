@@ -16,11 +16,13 @@ class MenuDoc extends Component {
 
     this.state = {
       open: false,
-      openIconHeader: false
+      openIconHeader: false,
+      openRight: false
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleMenuIconHeader = this.toggleMenuIconHeader.bind(this);
+    this.toggleMenuRight = this.toggleMenuRight.bind(this);
   }
 
   toggleMenu() {
@@ -35,8 +37,14 @@ class MenuDoc extends Component {
     });
   }
 
+  toggleMenuRight() {
+    this.setState({
+      openRight: !this.state.openRight
+    });
+  }
+
   render() {
-    const { open, openIconHeader } = this.state;
+    const { open, openIconHeader, openRight } = this.state;
     const componentData = _.find(components, component => component.displayName === 'Menu');
     const style = {
       paper: {
@@ -81,6 +89,12 @@ class MenuDoc extends Component {
             >
               Menu with iconHeader
             </Button>
+            <Button
+              style={style.button}
+              onClick={this.toggleMenuRight}
+            >
+              Menu position Right
+            </Button>
             <Menu
               closeMenu={this.toggleMenu}
               header="Default Menu"
@@ -100,6 +114,16 @@ class MenuDoc extends Component {
               <MenuItem text="Active Menu item" onClick={() => {}} active />
               <MenuItem text="Menu item" onClick={() => {}} />
               <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Menu item" onClick={() => {}} />
+            </Menu>
+            <Menu
+              closeMenu={this.toggleMenuRight}
+              header="Postion Right Menu"
+              open={openRight}
+              position="right"
+            >
+              <MenuItem text="Active Menu item" onClick={() => {}} active />
               <MenuItem text="Menu item" onClick={() => {}} />
               <MenuItem text="Menu item" onClick={() => {}} />
             </Menu>

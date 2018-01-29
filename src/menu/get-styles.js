@@ -14,8 +14,12 @@ const overlay = (open) => {
   return style;
 };
 
-const root = (open, overrideStyle) => {
+const root = (open, position, overrideStyle) => {
   let style = styles.root;
+
+  if (position === 'right') {
+    style = combineStyles(style, { left: 'initial', right: 0, transform: 'translateX(256px)' });
+  }
 
   if (open) {
     style = combineStyles(style, { transform: 'none' });
