@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
+import size from 'lodash/size';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
 import Lightbox from '../lightbox';
@@ -51,13 +53,15 @@ class Gallery extends Component {
     super();
 
     this.state = {
-      lightbox: {}
+      lightbox: {},
+      selectedIndex: 0
     };
   }
 
-  showLightbox = (item) => {
+  showLightbox = (item, index) => {
     this.setState({
-      lightbox: item
+      lightbox: item,
+      selectedIndex: index
     });
   }
 
@@ -65,6 +69,63 @@ class Gallery extends Component {
     this.setState({
       lightbox: {}
     });
+  }
+
+  handleKeyUp = (event) => {
+    const key = event.which || event.keyCode;
+    const { lightbox } = this.state;
+
+    if (isEmpty(lightbox)) {
+      return false;
+    }
+
+    if (key === 39) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectNext();
+    }
+
+    if (key === 37) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectPrevious();
+    }
+
+    return false;
+  }
+
+  selectNext = () => {
+    const { items } = this.props;
+    const { selectedIndex } = this.state;
+    const gallerySize = size(items);
+    const newIndex = selectedIndex + 1;
+
+    if (newIndex < gallerySize) {
+      return this.showLightbox(items[newIndex], newIndex);
+    }
+
+    if (newIndex === gallerySize) {
+      return this.showLightbox(items[0], 0);
+    }
+
+    return false;
+  }
+
+  selectPrevious = () => {
+    const { items } = this.props;
+    const { selectedIndex } = this.state;
+    const gallerySize = size(items);
+    const newIndex = selectedIndex - 1;
+
+    if (selectedIndex === 0) {
+      return this.showLightbox(items[gallerySize - 1], gallerySize - 1);
+    }
+
+    if (newIndex < gallerySize) {
+      return this.showLightbox(items[newIndex], newIndex);
+    }
+
+    return false;
   }
 
   render() {
@@ -86,7 +147,7 @@ class Gallery extends Component {
           let onClick = event => onItemClick(event, item);
 
           if (enableLightbox) {
-            onClick = () => this.showLightbox(item);
+            onClick = () => this.showLightbox(item, index);
           }
 
           return (
@@ -114,6 +175,7 @@ class Gallery extends Component {
           />
           : null
         }
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>
     );
   }
