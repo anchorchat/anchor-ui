@@ -58,10 +58,10 @@ class Gallery extends Component {
     };
   }
 
-  showLightbox = (item, selectedIndex) => {
+  showLightbox = (item, index) => {
     this.setState({
       lightbox: item,
-      selectedIndex
+      selectedIndex: index
     });
   }
 
@@ -73,20 +73,19 @@ class Gallery extends Component {
 
   handleKeyUp = (event) => {
     const key = event.which || event.keyCode;
-    const { shiftKey } = event;
     const { lightbox } = this.state;
 
     if (isEmpty(lightbox)) {
       return false;
     }
 
-    if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
+    if (key === 39) {
       event.preventDefault();
       event.stopImmediatePropagation();
       return this.selectNext();
     }
 
-    if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
+    if (key === 37) {
       event.preventDefault();
       event.stopImmediatePropagation();
       return this.selectPrevious();
