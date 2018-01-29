@@ -81,7 +81,7 @@ class Input extends Component {
     }
   }
 
-  getHeight = () => {
+  setTextareaHeight = () => {
     const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
 
@@ -108,7 +108,7 @@ class Input extends Component {
   handleChange = (event) => {
     const { onChange } = this.props;
 
-    this.getHeight();
+    this.setTextareaHeight();
 
     onChange(event);
   }
