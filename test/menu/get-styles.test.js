@@ -34,6 +34,14 @@ describe('Menu.getStyles', () => {
       expect(style).to.deep.equal(styles.root);
     });
 
+    it('should add right styles', () => {
+      const style = getStyles.root(false, 'right');
+
+      expect(style).to.have.property('transform', 'translateX(256px)');
+      expect(style).to.have.property('left', 'initial');
+      expect(style).to.have.property('right', 0);
+    });
+
     it('should add open styles', () => {
       const style = getStyles.root(true);
 
@@ -41,7 +49,7 @@ describe('Menu.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root(false, { color: 'red' });
+      const style = getStyles.root(false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
