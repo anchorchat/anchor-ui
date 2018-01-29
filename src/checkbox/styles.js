@@ -8,6 +8,8 @@ export default {
     padding: '5px',
     cursor: 'pointer',
     color: colors.primaryText,
+    position: 'relative',
+
     ':hover': {
       color: colors.theme
     }
