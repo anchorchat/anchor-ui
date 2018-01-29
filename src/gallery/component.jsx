@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
+import size from 'lodash/size';
+import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
 import Lightbox from '../lightbox';
