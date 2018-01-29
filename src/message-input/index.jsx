@@ -85,8 +85,16 @@ class MessageInput extends Component {
     };
   }
 
-  handleChange = (event) => {
-    const { onChange, rowHeight, maxRows } = this.props;
+  componentDidMount() {
+    const { multiLine } = this.props;
+
+    if (multiLine && this.textarea) {
+      this.setTextareaHeight();
+    }
+  }
+
+  setTextareaHeight = () => {
+    const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
 
     this.textarea.style.height = '1px';
@@ -118,6 +126,12 @@ class MessageInput extends Component {
 
     this.textarea.scrollTop = this.textarea.scrollHeight;
     this.textarea.style.height = '100%';
+  }
+
+  handleChange = (event) => {
+    const { onChange } = this.props;
+
+    this.setTextareaHeight();
 
     onChange(event);
   }
