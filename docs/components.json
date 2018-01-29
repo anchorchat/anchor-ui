@@ -4675,7 +4675,7 @@
     }
   },
   "components/menu/index.jsx": {
-    "description": "Menu that slides in from the left/right",
+    "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
       {
