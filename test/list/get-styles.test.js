@@ -51,7 +51,7 @@ describe('List.getStyles', () => {
       expect(style).to.have.property('height', 'calc(100% - 36px)');
     });
 
-    it('should add header styles', () => {
+    it('should add infinite scroll styles', () => {
       const style = getStyles.list(null, true, {});
 
       expect(style).to.have.property('overflowY', 'hidden');
