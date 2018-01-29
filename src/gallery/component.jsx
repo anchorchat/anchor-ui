@@ -51,7 +51,8 @@ class Gallery extends Component {
     super();
 
     this.state = {
-      lightbox: {}
+      lightbox: {},
+      selectedIndex: 0
     };
   }
 
