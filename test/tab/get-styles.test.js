@@ -19,10 +19,11 @@ describe('Tab.getStyles', () => {
     });
 
     it('should add selected styles', () => {
-      const style = getStyles.root('red', true);
+      const style = getStyles.root('red', true, {}, { color: 'blue' });
 
       expect(style).to.have.property('borderBottom', '3px solid red');
       expect(style).to.have.property('opacity', 1);
+      expect(style).to.have.property('color', 'blue');
     });
 
     it('should combine styles', () => {
@@ -37,6 +38,12 @@ describe('Tab.getStyles', () => {
       const style = getStyles.label();
 
       expect(style).to.deep.equal(styles.label);
+    });
+
+    it('should add selected styles', () => {
+      const style = getStyles.label('red', {}, { color: 'blue' });
+
+      expect(style).to.have.property('color', 'blue');
     });
 
     it('should combine styles', () => {

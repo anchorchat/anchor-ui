@@ -29,6 +29,13 @@ describe('Pagination.getStyles', () => {
   });
 
   describe('nav', () => {
+    it('should get default styles', () => {
+      const style = getStyles.nav();
+
+      expect(style).to.have.property('marginBottom', '10px');
+      expect(style).to.have.property('marginTop', 0);
+    });
+
     it('should get styles', () => {
       const style = getStyles.nav('');
       expect(style).to.deep.equal(styles.nav);
