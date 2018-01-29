@@ -20,7 +20,8 @@ export default {
   list: {
     height: '100%',
     paddingLeft: '0',
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+    margin: '0'
   },
   virtualizedList: {
     outline: 'none'
