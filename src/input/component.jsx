@@ -73,8 +73,16 @@ class Input extends Component {
     };
   }
 
-  handleChange = (event) => {
-    const { onChange, rowHeight, maxRows } = this.props;
+  componentDidMount() {
+    const { multiLine } = this.props;
+
+    if (multiLine) {
+      this.getHeight();
+    }
+  }
+
+  getHeight = () => {
+    const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
 
     this.textarea.style.height = '1px';
@@ -95,6 +103,12 @@ class Input extends Component {
     }
 
     this.textarea.style.height = '100%';
+  }
+
+  handleChange = (event) => {
+    const { onChange } = this.props;
+
+    this.getHeight();
 
     onChange(event);
   }
