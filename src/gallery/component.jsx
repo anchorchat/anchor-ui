@@ -71,6 +71,62 @@ class Gallery extends Component {
     });
   }
 
+  handleKeyUp = (event) => {
+    const key = event.which || event.keyCode;
+    const { shiftKey } = event;
+    const { lightbox } = this.state;
+
+    if (isEmpty(lightbox)) {
+      return false;
+    }
+
+    if (key === 39 || key === 40 || (key === 9 && !shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectNext();
+    }
+
+    if (key === 37 || key === 38 || (key === 9 && shiftKey)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return this.selectPrevious();
+    }
+
+    return false;
+  }
+
+  selectNext = () => {
+    const { items } = this.props;
+    const { selectedIndex } = this.state;
+    const gallerySize = size(items);
+
+    if (selectedIndex + 1 < gallerySize) {
+      return this.showLightbox(items[selectedIndex + 1], selectedIndex + 1);
+    }
+
+    if (selectedIndex === gallerySize - 1) {
+      return this.showLightbox(items[0], 0);
+    }
+
+    return false;
+  }
+
+  selectPrevious = () => {
+    const { items } = this.props;
+    const { selectedIndex } = this.state;
+    const gallerySize = size(items);
+
+    if (selectedIndex === 0) {
+      return this.showLightbox(items[gallerySize - 1], gallerySize - 1);
+    }
+
+    if (selectedIndex - 1 < gallerySize) {
+      return this.showLightbox(items[selectedIndex - 1], selectedIndex - 1);
+    }
+
+    return false;
+  }
+
   render() {
     const {
       items,
