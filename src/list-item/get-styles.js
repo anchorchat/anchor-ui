@@ -3,12 +3,7 @@ import combineStyles from '../internal/combine-styles';
 import darken from '../internal/darken';
 import styles from './styles';
 
-const root = (
-  color = colors.theme,
-  active,
-  secondaryLine = null,
-  overrideStyle
-) => {
+const root = (color = colors.theme, active, overrideStyle) => {
   let style = styles.root;
 
   const activeStyle = combineStyles(
@@ -22,10 +17,6 @@ const root = (
 
   if (active) {
     style = combineStyles(style, activeStyle);
-  }
-
-  if (secondaryLine) {
-    style = combineStyles(style, { height: '52px' });
   }
 
   return combineStyles(style, overrideStyle);

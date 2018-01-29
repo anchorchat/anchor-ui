@@ -8,7 +8,7 @@ export default {
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
-    height: '48px',
+    height: '52px',
     listStyle: 'none',
     paddingTop: '0',
     paddingRight: '8px',
