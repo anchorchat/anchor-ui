@@ -19,7 +19,7 @@ const propTypes = {
   /** The message's body text */
   body: PropTypes.node.isRequired,
   /** Time when the message was created */
-  createdAt: PropTypes.string.isRequired,
+  createdAt: PropTypes.node.isRequired,
   /** The sender's username */
   username: PropTypes.node.isRequired,
   /** The message's type */
