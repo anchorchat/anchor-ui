@@ -88,8 +88,8 @@ class MessageInput extends Component {
   componentDidMount() {
     const { multiLine } = this.props;
 
-    if (multiLine) {
-      this.getHeight();
+    if (multiLine && this.textarea) {
+      this.setTextareaHeight();
     }
   }
 
