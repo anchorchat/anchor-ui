@@ -56,9 +56,10 @@ class Gallery extends Component {
     };
   }
 
-  showLightbox = (item) => {
+  showLightbox = (item, selectedIndex) => {
     this.setState({
-      lightbox: item
+      lightbox: item,
+      selectedIndex
     });
   }
 
@@ -87,7 +88,7 @@ class Gallery extends Component {
           let onClick = event => onItemClick(event, item);
 
           if (enableLightbox) {
-            onClick = () => this.showLightbox(item);
+            onClick = () => this.showLightbox(item, index);
           }
 
           return (
