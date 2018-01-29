@@ -80,7 +80,7 @@ describe('Menu.getStyles', () => {
   });
 
   describe('header', () => {
-    it('should get default styles', () => {
+    it('should get styles', () => {
       const style = getStyles.header();
 
       expect(style).to.deep.equal(styles.header);
