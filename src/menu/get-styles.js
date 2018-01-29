@@ -18,7 +18,7 @@ const root = (open, position, overrideStyle) => {
   let style = styles.root;
 
   if (position === 'right') {
-    style = combineStyles(style, { left: 'intial', right: 0, transform: 'translateX(256px)' });
+    style = combineStyles(style, { left: 'initial', right: 0, transform: 'translateX(256px)' });
   }
 
   if (open) {
