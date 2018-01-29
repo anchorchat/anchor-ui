@@ -55,7 +55,7 @@ const defaultProps = {
   contentContainerStyle: {}
 };
 
-/** Menu that slides in from the left */
+/** Menu that slides in from the left/right */
 class Menu extends Component {
   handleKeyUp = (event) => {
     const { closeMenu } = this.props;
