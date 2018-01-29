@@ -116,6 +116,7 @@ class Gallery extends Component {
           />
           : null
         }
+        <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>
     );
   }
