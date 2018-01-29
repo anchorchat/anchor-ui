@@ -71,6 +71,7 @@ class Menu extends Component {
       open,
       header,
       footer,
+      position,
       headerIcon,
       closeMenu,
       style,
@@ -86,7 +87,7 @@ class Menu extends Component {
       cloneElement(child, { closeMenu })
     ));
 
-    let rootStyle = getStyles.root(open, style);
+    let rootStyle = getStyles.root(open, position, style);
 
     if (!closeMenu) {
       rootStyle = getStyles.sidebar(style);
