@@ -168,11 +168,6 @@ class Gallery extends Component {
               key={`gallery-${index}`}
               onClick={onClick}
             >
-              {/* <img
-                src={item.src}
-                alt={item.alt || item.src}
-                style={getStyles.item(itemHeight, itemStyle)}
-              /> */}
               <ImageLoader
                 src={item.src}
                 alt={item.alt || item.src}
