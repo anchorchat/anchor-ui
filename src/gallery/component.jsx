@@ -144,9 +144,14 @@ class Gallery extends Component {
       itemContainerStyle,
       itemStyle,
       enableLightbox,
+      imagePlaceholder,
+      imageError,
       ...custom
     } = this.props;
     const { lightbox } = this.state;
+
+    const placeholder = <img style={getStyles.item(itemHeight, itemStyle)} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={getStyles.item(itemHeight, itemStyle)} src={imageError} alt="error" />;
 
     return (
       <section style={getStyles.root(style)} {...custom}>
