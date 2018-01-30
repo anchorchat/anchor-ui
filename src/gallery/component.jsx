@@ -7,6 +7,7 @@ import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
 import Lightbox from '../lightbox';
+import ImageLoader from '../image-loader';
 
 const displayName = 'Gallery';
 
@@ -35,7 +36,11 @@ const propTypes = {
   /** Override the styles of the image element */
   itemStyle: PropTypes.instanceOf(Object),
   /** Open a Lightbox when an item is clicked */
-  enableLightbox: PropTypes.bool
+  enableLightbox: PropTypes.bool,
+  /** Image placeholder url */
+  imagePlaceholder: PropTypes.string,
+  /** Image error url */
+  imageError: PropTypes.string
 };
 
 const defaultProps = {
@@ -44,7 +49,9 @@ const defaultProps = {
   style: {},
   itemContainerStyle: {},
   itemStyle: {},
-  enableLightbox: false
+  enableLightbox: false,
+  imagePlaceholder: 'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg',
+  imageError: 'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg',
 };
 
 /** Justified grid layout for showcasing images. */
@@ -137,9 +144,17 @@ class Gallery extends Component {
       itemContainerStyle,
       itemStyle,
       enableLightbox,
+      imagePlaceholder,
+      imageError,
       ...custom
     } = this.props;
     const { lightbox } = this.state;
+
+    const placeholder = <img style={getStyles.item(itemHeight, itemStyle)} src={imagePlaceholder} alt="placeholder" />;
+    const error = <img style={getStyles.item(itemHeight, itemStyle)} src={imageError} alt="error" />;
+    const imgProps = {
+      style: getStyles.item(itemHeight, itemStyle)
+    };
 
     return (
       <section style={getStyles.root(style)} {...custom}>
@@ -156,10 +171,12 @@ class Gallery extends Component {
               key={`gallery-${index}`}
               onClick={onClick}
             >
-              <img
+              <ImageLoader
                 src={item.src}
                 alt={item.alt || item.src}
-                style={getStyles.item(itemHeight, itemStyle)}
+                imgProps={imgProps}
+                placeholder={placeholder}
+                error={error}
               />
             </div>
           );

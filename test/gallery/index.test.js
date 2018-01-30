@@ -7,6 +7,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import Gallery from '../../src/gallery/component';
 import Lightbox from '../../src/lightbox';
+import ImageLoader from '../../src/image-loader';
 import getStyles from '../../src/gallery/get-styles';
 
 chai.use(sinonChai);
@@ -52,8 +53,8 @@ describe('Gallery', () => {
       }]
     });
     expect(component.find('div')).to.have.length(2);
-    expect(component.find('div > img')).to.have.length(1);
-    const links = component.find('img').map(node => node.prop('src'));
+    expect(component.find('div > ImageLoader')).to.have.length(1);
+    const links = component.find(ImageLoader).map(node => node.prop('src'));
     expect(links).to.deep.equal(['https://source.unsplash.com/featured/?man']);
   });
 
