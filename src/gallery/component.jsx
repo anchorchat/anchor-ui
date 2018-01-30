@@ -152,6 +152,9 @@ class Gallery extends Component {
 
     const placeholder = <img style={getStyles.item(itemHeight, itemStyle)} src={imagePlaceholder} alt="placeholder" />;
     const error = <img style={getStyles.item(itemHeight, itemStyle)} src={imageError} alt="error" />;
+    const imgProps = {
+      style: getStyles.item(itemHeight, itemStyle)
+    };
 
     return (
       <section style={getStyles.root(style)} {...custom}>
@@ -171,9 +174,7 @@ class Gallery extends Component {
               <ImageLoader
                 src={item.src}
                 alt={item.alt || item.src}
-                imgProps={{
-                  style: getStyles.item(itemHeight, itemStyle)
-                }}
+                imgProps={imgProps}
                 placeholder={placeholder}
                 error={error}
               />
