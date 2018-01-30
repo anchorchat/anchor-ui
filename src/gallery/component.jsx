@@ -7,6 +7,7 @@ import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
 import Lightbox from '../lightbox';
+import ImageLoader from '../image-loader';
 
 const displayName = 'Gallery';
 
@@ -35,7 +36,11 @@ const propTypes = {
   /** Override the styles of the image element */
   itemStyle: PropTypes.instanceOf(Object),
   /** Open a Lightbox when an item is clicked */
-  enableLightbox: PropTypes.bool
+  enableLightbox: PropTypes.bool,
+  /** Image placeholder url */
+  imagePlaceholder: PropTypes.string,
+  /** Image error url */
+  imageError: PropTypes.string
 };
 
 const defaultProps = {
@@ -44,7 +49,9 @@ const defaultProps = {
   style: {},
   itemContainerStyle: {},
   itemStyle: {},
-  enableLightbox: false
+  enableLightbox: false,
+  imagePlaceholder: 'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg',
+  imageError: 'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg',
 };
 
 /** Justified grid layout for showcasing images. */
