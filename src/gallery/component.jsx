@@ -155,13 +155,7 @@ class Gallery extends Component {
       style: getStyles.item(itemHeight, itemStyle)
     };
 
-    const error = (
-      <img
-        style={getStyles.item(itemHeight, itemStyle)}
-        src={imageError}
-        alt="error"
-      />
-    );
+    const error = <img style={getStyles.item(itemHeight, itemStyle)} src={imageError} alt="error" />;
 
     return (
       <section style={getStyles.root(style)} {...custom}>
