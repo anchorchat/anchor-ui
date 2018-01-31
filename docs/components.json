@@ -2277,6 +2277,10 @@
                 "name": "string",
                 "required": false
               },
+              "placeholder": {
+                "name": "string",
+                "required": false
+              },
               "title": {
                 "name": "node",
                 "required": false
@@ -2285,7 +2289,7 @@
           }
         },
         "required": true,
-        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt' and 'title' are optional"
+        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt', 'placeholder' and 'title' are optional"
       },
       "itemHeight": {
         "type": {
