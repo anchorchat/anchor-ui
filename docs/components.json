@@ -2289,7 +2289,7 @@
           }
         },
         "required": true,
-        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt' and 'title' are optional"
+        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt', 'placeholder' and 'title' are optional"
       },
       "itemHeight": {
         "type": {

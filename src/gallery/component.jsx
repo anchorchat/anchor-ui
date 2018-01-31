@@ -14,7 +14,7 @@ const displayName = 'Gallery';
 const propTypes = {
   /**
    * Array of objects containing gallery images.
-   * Each object must have a 'src' key, 'alt' and 'title' are optional
+   * Each object must have a 'src' key, 'alt', 'placeholder' and 'title' are optional
    */
   items: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string.isRequired,
