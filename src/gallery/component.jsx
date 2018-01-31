@@ -19,6 +19,7 @@ const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
+    placeholder: PropTypes.string,
     title: PropTypes.node
   })).isRequired,
   /** Height of the items within the gallery */
@@ -150,8 +151,6 @@ class Gallery extends Component {
     } = this.props;
     const { lightbox } = this.state;
 
-    const placeholder = <img style={getStyles.item(itemHeight, itemStyle)} src={imagePlaceholder} alt="placeholder" />;
-    const error = <img style={getStyles.item(itemHeight, itemStyle)} src={imageError} alt="error" />;
     const imgProps = {
       style: getStyles.item(itemHeight, itemStyle)
     };
@@ -164,6 +163,21 @@ class Gallery extends Component {
           if (enableLightbox) {
             onClick = () => this.showLightbox(item, index);
           }
+
+          const placeholder = (
+            <img
+              style={getStyles.item(itemHeight, itemStyle)}
+              src={item.placeholder || imagePlaceholder}
+              alt="placeholder"
+            />
+          );
+          const error = (
+            <img
+              style={getStyles.item(itemHeight, itemStyle)}
+              src={imageError}
+              alt="error"
+            />
+          );
 
           return (
             <div
