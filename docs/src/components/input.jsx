@@ -4,6 +4,8 @@ import Input from '../../../dist/input';
 import Props from './props';
 import components from '../../components.json';
 import Paper from '../../../dist/paper';
+import Tooltip from '../../../dist/tooltip';
+import IconInfo from '../../../dist/icons/icon-info';
 import Markdown from './markdown';
 
 const usage = `
@@ -21,7 +23,8 @@ class InputDoc extends Component {
       valueMultiline: '',
       valueText: '',
       valueMaxLength: '',
-      valueError: 'Value'
+      valueError: 'Value',
+      valueTooltip: 'Tooltip',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,6 +32,7 @@ class InputDoc extends Component {
     this.handleChangeText = this.handleChangeText.bind(this);
     this.handleChangeMaxLength = this.handleChangeMaxLength.bind(this);
     this.handleChangeError = this.handleChangeError.bind(this);
+    this.handleChangeTooltip = this.handleChangeTooltip.bind(this);
   }
 
   handleChange(event) {
@@ -61,6 +65,12 @@ class InputDoc extends Component {
     });
   }
 
+  handleChangeTooltip(event) {
+    this.setState({
+      valueTooltip: event.currentTarget.value
+    });
+  }
+
   render() {
     const componentData = _.find(components, component => component.displayName === 'Input');
     const style = {
@@ -70,7 +80,15 @@ class InputDoc extends Component {
         margin: 0,
         padding: '20px'
       },
-      input: { margin: '10px' }
+      input: {
+        margin: '10px'
+      },
+      toolTipContent: {
+        paddingTop: '8px',
+        paddingRight: '8px',
+        paddingLeft: '8px',
+        paddingBottom: '8px'
+      }
     };
 
     return (
@@ -141,6 +159,20 @@ class InputDoc extends Component {
               error="Error message"
               style={style.input}
               inputStyle={style.inputStyle}
+            />
+            <Input
+              onChange={this.handleChangeError}
+              value={this.state.valueTooltip}
+              type="text"
+              label="Tooltip example"
+              name="exampleTooltip"
+              style={style.input}
+              inputStyle={style.inputStyle}
+              tooltip={
+                <Tooltip icon={<IconInfo />} contentStyle={style.toolTipContent}>
+                  <span>Hi! I&apos;m a tooltip</span>
+                </Tooltip>
+              }
             />
           </Paper>
         </section>

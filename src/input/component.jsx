@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Style } from 'radium';
 import getStyles from './get-styles';
+import styles from './styles';
 
 const propTypes = {
   /**
@@ -21,11 +22,11 @@ const propTypes = {
   /** The input's name */
   name: PropTypes.string.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the input element */
-  inputStyle: PropTypes.instanceOf(Object),
+  inputStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The input's max length */
   maxLength: PropTypes.number,
   /** Disables the input */
@@ -33,15 +34,19 @@ const propTypes = {
   /** Display an error message */
   error: PropTypes.node,
   /** Override the styles of the error element */
-  errorStyle: PropTypes.instanceOf(Object),
+  errorStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the placeholder */
-  placeholderStyle: PropTypes.instanceOf(Object),
+  placeholderStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Multi line input. If true, a textarea element will be rendered. */
   multiLine: PropTypes.bool,
   /** Multi line input's max visible rows. */
   maxRows: PropTypes.number,
   /** Multi line input's row height. */
-  rowHeight: PropTypes.number
+  rowHeight: PropTypes.number,
+  /** Input tooltip */
+  tooltip: PropTypes.node,
+  /** Override the styles of the label element */
+  tooltipStyle: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {
@@ -58,7 +63,9 @@ const defaultProps = {
   placeholderStyle: {},
   multiLine: false,
   maxRows: 12,
-  rowHeight: 16
+  rowHeight: 16,
+  tooltip: null,
+  tooltipStyle: {}
 };
 
 const displayName = 'Input';
@@ -132,6 +139,8 @@ class Input extends Component {
       multiLine,
       maxRows,
       rowHeight,
+      tooltip,
+      tooltipStyle,
       ...custom
     } = this.props;
     const { height } = this.state;
@@ -139,7 +148,7 @@ class Input extends Component {
     let input = (
       <input
         className="input"
-        style={getStyles.input(error, inputStyle)}
+        style={getStyles.input(error, tooltip, inputStyle)}
         onChange={onChange}
         value={value}
         type={type}
@@ -156,7 +165,7 @@ class Input extends Component {
         <section style={getStyles.inputRoot(height)}>
           <textarea
             className="input"
-            style={getStyles.textarea(error, inputStyle)}
+            style={getStyles.textarea(error, tooltip, inputStyle)}
             onChange={this.handleChange}
             value={value}
             type={type}
@@ -175,7 +184,14 @@ class Input extends Component {
     return (
       <section style={getStyles.root(disabled, style)}>
         {label ? <label style={getStyles.label(labelStyle)} htmlFor={name}>{label}</label> : null}
-        {input}
+        <div style={styles.inputContainer}>
+          {input}
+          {
+            tooltip
+            ? <div style={getStyles.tooltip(tooltipStyle)}>{tooltip}</div>
+            : null
+          }
+        </div>
         <Style
           rules={{
             '.input::placeholder': getStyles.placeholder(placeholderStyle)

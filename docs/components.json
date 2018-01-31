@@ -7693,5 +7693,121 @@
         "description": "Children to apply theme color to"
       }
     }
+  },
+  "components/tooltip/component.jsx": {
+    "description": "Open a Tooltip from an Icon",
+    "displayName": "Tooltip",
+    "methods": [
+      {
+        "name": "positionPopOver",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "openTooltip",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "closeTooltip",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Icon to toggle the menu with"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Tooltip's content"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the content container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onTooltipClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when the Tooltip closes\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
   }
 }

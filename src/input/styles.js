@@ -3,7 +3,7 @@ import colors from '../settings/colors';
 export default {
   root: {
     maxWidth: '250px',
-    width: '100%',
+    width: '100%'
   },
   inputRoot: {
     height: '32px'
@@ -54,5 +54,13 @@ export default {
   },
   placeholder: {
     color: colors.placeholderText
+  },
+  inputContainer: {
+    position: 'relative'
+  },
+  tooltip: {
+    position: 'absolute',
+    top: '4px',
+    right: '4px'
   }
 };

@@ -58,3 +58,4 @@ export settings from './settings';
 export themeable from './themeable';
 export ThemeProvider from './theme-provider';
 export Media from './media';
+export Tooltip from './tooltip';
