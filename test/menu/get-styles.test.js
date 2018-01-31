@@ -34,6 +34,14 @@ describe('Menu.getStyles', () => {
       expect(style).to.deep.equal(styles.root);
     });
 
+    it('should add right styles', () => {
+      const style = getStyles.root(false, 'right');
+
+      expect(style).to.have.property('transform', 'translateX(256px)');
+      expect(style).to.have.property('left', 'initial');
+      expect(style).to.have.property('right', 0);
+    });
+
     it('should add open styles', () => {
       const style = getStyles.root(true);
 
@@ -41,7 +49,7 @@ describe('Menu.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root(false, { color: 'red' });
+      const style = getStyles.root(false, false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -86,8 +94,34 @@ describe('Menu.getStyles', () => {
       expect(style).to.deep.equal(styles.header);
     });
 
+    it('should add icon styles', () => {
+      const style = getStyles.header(null, true);
+
+      expect(style).to.have.property('padding', '15.5px 16px 15.5px 40px');
+    });
+
     it('should combine styles', () => {
       const style = getStyles.header(null, false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('footer', () => {
+    it('should get styles', () => {
+      const style = getStyles.footer();
+
+      expect(style).to.deep.equal(styles.footer);
+    });
+
+    it('should add sidebar styles', () => {
+      const style = getStyles.footer(true);
+
+      expect(style).to.have.property('position', 'initial');
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.footer(null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });

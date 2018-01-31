@@ -2220,12 +2220,42 @@
           {
             "name": "item",
             "type": null
+          },
+          {
+            "name": "index",
+            "type": null
           }
         ],
         "returns": null
       },
       {
         "name": "hideLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "selectNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "selectPrevious",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -2247,6 +2277,10 @@
                 "name": "string",
                 "required": false
               },
+              "placeholder": {
+                "name": "string",
+                "required": false
+              },
               "title": {
                 "name": "node",
                 "required": false
@@ -2255,7 +2289,7 @@
           }
         },
         "required": true,
-        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt' and 'title' are optional"
+        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt', 'placeholder' and 'title' are optional"
       },
       "itemHeight": {
         "type": {
@@ -2323,6 +2357,28 @@
         "description": "Open a Lightbox when an item is clicked",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "imagePlaceholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Image placeholder url",
+        "defaultValue": {
+          "value": "'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg'",
+          "computed": false
+        }
+      },
+      "imageError": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Image error url",
+        "defaultValue": {
+          "value": "'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg'",
           "computed": false
         }
       }
@@ -3978,6 +4034,13 @@
     "displayName": "Input",
     "methods": [
       {
+        "name": "setTextareaHeight",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "handleChange",
         "docblock": null,
         "modifiers": [],
@@ -4668,7 +4731,7 @@
     }
   },
   "components/menu/index.jsx": {
-    "description": "Menu that slides in from the left",
+    "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
       {
@@ -4751,6 +4814,27 @@
         "description": "The Menu's footer",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "position": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'left'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The Menu's footer",
+        "defaultValue": {
+          "value": "'left'",
           "computed": false
         }
       },
@@ -5000,7 +5084,7 @@
       },
       "createdAt": {
         "type": {
-          "name": "string"
+          "name": "node"
         },
         "required": true,
         "description": "Time when the message was created"
@@ -5340,6 +5424,13 @@
     "description": "Message input with send button",
     "displayName": "MessageInput",
     "methods": [
+      {
+        "name": "setTextareaHeight",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
       {
         "name": "handleChange",
         "docblock": null,

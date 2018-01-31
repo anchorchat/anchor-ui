@@ -44,7 +44,18 @@ const displayName = 'Checkbox';
 
 /** A checkbox is used to verify which options you want selected from a group. */
 const Checkbox = ({
-  onChange, label, checked, name, style, inputStyle, iconStyle, labelStyle, uncheckedStyle, value, color, ...custom // eslint-disable-line max-len
+  onChange,
+  label,
+  checked,
+  name,
+  style,
+  inputStyle,
+  iconStyle,
+  labelStyle,
+  uncheckedStyle,
+  value,
+  color,
+  ...custom
 }) => (
   <label htmlFor={name} style={getStyles.root(color, style)} {...custom}>
     <input

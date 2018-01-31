@@ -135,7 +135,7 @@ describe('ListItem', () => {
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<ListItem {...props} />);
-    expect(spy).to.have.been.calledWith(props.color, false, null, props.style);
+    expect(spy).to.have.been.calledWith(props.color, false, props.style);
   });
 
   it('should get textContainer styles', () => {

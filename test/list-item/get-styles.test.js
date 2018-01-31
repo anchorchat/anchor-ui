@@ -12,7 +12,7 @@ describe('ListItem.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.root('blue', false, false, { color: 'red' });
+      const style = getStyles.root('blue', false, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -23,12 +23,6 @@ describe('ListItem.getStyles', () => {
       expect(style).to.have.property('backgroundColor', 'red');
       expect(style[':hover']).to.have.property('backgroundColor', 'hsl(0, 100%, 47.5%)');
       expect(style[':active']).to.have.property('backgroundColor', 'hsl(0, 100%, 42.5%)');
-    });
-
-    it('should add secondaryLine styles', () => {
-      const style = getStyles.root(null, false, true);
-
-      expect(style).to.have.property('height', '52px');
     });
   });
 

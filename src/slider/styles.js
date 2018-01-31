@@ -20,7 +20,7 @@ export default {
   filled: {
     backgroundColor: colors.theme,
     height: '100%',
-    width: '100%',
+    width: '0%',
     position: 'absolute',
     left: 0,
     top: 0
@@ -38,10 +38,10 @@ export default {
     width: '10px',
     height: '10px',
     borderRadius: '50%',
-    border: `2px solid ${colors.grey}`,
+    border: `2px solid ${colors.theme}`,
     top: '1px',
     left: '0%',
-    backgroundColor: colors.white,
+    backgroundColor: colors.theme,
     transform: 'translate(-50%, -50%)',
     transition: 'border .1s ease-in-out, background-color .1s ease-in-out',
     cursor: 'pointer'
