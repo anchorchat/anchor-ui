@@ -155,6 +155,14 @@ class Gallery extends Component {
       style: getStyles.item(itemHeight, itemStyle)
     };
 
+    const error = (
+      <img
+        style={getStyles.item(itemHeight, itemStyle)}
+        src={imageError}
+        alt="error"
+      />
+    );
+
     return (
       <section style={getStyles.root(style)} {...custom}>
         {map(items, (item, index) => {
@@ -169,13 +177,6 @@ class Gallery extends Component {
               style={getStyles.item(itemHeight, itemStyle)}
               src={item.placeholder || imagePlaceholder}
               alt="placeholder"
-            />
-          );
-          const error = (
-            <img
-              style={getStyles.item(itemHeight, itemStyle)}
-              src={imageError}
-              alt="error"
             />
           );
 
