@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
 import MobileDetect from 'mobile-detect';
+import md from '../../src/internal/mobile-detect';
 
 describe('MobileDetect', () => {
   beforeEach(() => {
@@ -12,8 +13,6 @@ describe('MobileDetect', () => {
   });
 
   it('should return an instance of MobileDetect', () => {
-    const md = require('../../src/internal/mobile-detect'); // eslint-disable-line global-require
-
     expect(md).to.be.an.instanceof(MobileDetect);
   });
 });
