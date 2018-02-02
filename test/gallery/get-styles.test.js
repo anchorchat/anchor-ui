@@ -34,7 +34,7 @@ describe('Gallery.getStyles', () => {
     it('should add height', () => {
       const style = getStyles.itemContainer(240);
 
-      expect(style).to.have.property('height', '240px');
+      expect(style).to.have.property('height', 240);
     });
 
     it('should add cursor', () => {
@@ -60,7 +60,7 @@ describe('Gallery.getStyles', () => {
     it('should add height', () => {
       const style = getStyles.item(240);
 
-      expect(style).to.have.property('height', '240px');
+      expect(style).to.have.property('height', 240);
     });
   });
 });
