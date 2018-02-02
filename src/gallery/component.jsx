@@ -179,7 +179,7 @@ class Gallery extends Component {
             />
           );
 
-          if (item.placeholderType === 'color' && item.width && item.height) {
+          if (item.placeholder && item.placeholderType === 'color' && item.width && item.height) {
             placeholder = (
               <div
                 style={
