@@ -14,16 +14,21 @@ const displayName = 'Gallery';
 const propTypes = {
   /**
    * Array of objects containing gallery images.
-   * Each object must have a 'src' key, 'alt', 'placeholder' and 'title' are optional
+   * Each object must have a 'src' key.
+   * 'alt', 'placeholder', 'placeholderType', 'width', 'height' and 'title' are optional
+   * Color placeholders only work if both 'width' and 'height' are set
    */
   items: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
     placeholder: PropTypes.string,
+    placeholderType: PropTypes.oneOf(['image', 'color']),
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     title: PropTypes.node
   })).isRequired,
-  /** Height of the items within the gallery */
-  itemHeight: PropTypes.number,
+  /** Gallery row height */
+  rowHeight: PropTypes.number,
   /**
    * Callback fired when a Gallery's item is clicked, only works if enableLightbox equals false
    *
@@ -45,7 +50,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  itemHeight: 320,
+  rowHeight: 320,
   onItemClick: () => {},
   style: {},
   itemContainerStyle: {},
@@ -139,7 +144,7 @@ class Gallery extends Component {
   render() {
     const {
       items,
-      itemHeight,
+      rowHeight,
       onItemClick,
       style,
       itemContainerStyle,
@@ -152,10 +157,10 @@ class Gallery extends Component {
     const { lightbox } = this.state;
 
     const imgProps = {
-      style: getStyles.item(itemHeight, itemStyle)
+      style: getStyles.item(rowHeight, itemStyle)
     };
 
-    const error = <img style={getStyles.item(itemHeight, itemStyle)} src={imageError} alt="error" />;
+    const error = <img style={getStyles.item(rowHeight, itemStyle)} src={imageError} alt="error" />;
 
     return (
       <section style={getStyles.root(style)} {...custom}>
@@ -166,17 +171,33 @@ class Gallery extends Component {
             onClick = () => this.showLightbox(item, index);
           }
 
-          const placeholder = (
+          let placeholder = (
             <img
-              style={getStyles.item(itemHeight, itemStyle)}
+              style={getStyles.item(rowHeight, itemStyle)}
               src={item.placeholder || imagePlaceholder}
               alt="placeholder"
             />
           );
 
+          if (item.placeholder && item.placeholderType === 'color' && item.width && item.height) {
+            placeholder = (
+              <div
+                style={
+                  getStyles.colorPlaceholder(
+                    item.placeholder,
+                    item.width,
+                    item.height,
+                    rowHeight,
+                    itemStyle
+                  )
+                }
+              />
+            );
+          }
+
           return (
             <div
-              style={getStyles.itemContainer(itemHeight, enableLightbox, itemContainerStyle)}
+              style={getStyles.itemContainer(rowHeight, enableLightbox, itemContainerStyle)}
               key={`gallery-${index}`}
               onClick={onClick}
             >
