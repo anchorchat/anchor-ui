@@ -89,9 +89,9 @@ If you'd like to help with the development of this module please consider our [c
 
 ## Team
 
-|![Sjaak Luthart](https://avatars1.githubusercontent.com/u/6596471?v=3&s=150)|![Ian Stewart](https://avatars2.githubusercontent.com/u/14125280?v=3&s=150)|![Lars Tadema](https://avatars0.githubusercontent.com/u/16486197?v=3&s=150)|![Peter Kuiper](https://avatars3.githubusercontent.com/u/6492184?v=3&s=150)|![Daan Nagtegaal](https://avatars0.githubusercontent.com/u/3033357?v=3&s=150)|![Martijn Reeuwijk](https://avatars1.githubusercontent.com/u/15121010?v=3&s=150)|![Mitchel van Bever](https://avatars1.githubusercontent.com/u/10127707?v=3&s=150)
-|---|---|---|---|---|---|---|
-|[Sjaak Luthart](https://github.com/sjaakluthart)|[Ian Stewart](https://github.com/IanCStewart)|[Lars Tadema](https://github.com/larstadema)|[Peter Kuiper](https://github.com/peterkuiper)|[Daan Nagtegaal](https://github.com/daannagtegaal)|[Martijn Reeuwijk](https://github.com/MartijnReeuwijk)|[Mitchel van Bever](https://github.com/MrBamBam)
+|![Sjaak Luthart](https://avatars1.githubusercontent.com/u/6596471?v=3&s=150)|![Ian Stewart](https://avatars2.githubusercontent.com/u/14125280?v=3&s=150)|![Lars Tadema](https://avatars0.githubusercontent.com/u/16486197?v=3&s=150)|![Peter Kuiper](https://avatars3.githubusercontent.com/u/6492184?v=3&s=150)
+|---|---|---|---|
+|[Sjaak Luthart](https://github.com/sjaakluthart)|[Ian Stewart](https://github.com/IanCStewart)|[Lars Tadema](https://github.com/larstadema)|[Peter Kuiper](https://github.com/peterkuiper)
 
 ## License
 

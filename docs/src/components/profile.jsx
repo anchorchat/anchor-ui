@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import faker from 'faker';
 import Profile from '../../../dist/profile';
 import Button from '../../../dist/button';
 import Props from './props';
@@ -12,6 +13,8 @@ const usage = `
   import Profile from 'anchor-ui/profile';
   \`\`\`
 `;
+
+const profileImage = faker.internet.avatar();
 
 const ProfileDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Profile');
@@ -43,8 +46,8 @@ const ProfileDoc = () => {
           <Profile
             header="Sjaak"
             secondaryText="Secondary text"
-            avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
-            coverImage="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400"
+            avatar={profileImage}
+            coverImage={profileImage}
             button={<Button>Edit Information</Button>}
             style={style.profile}
             status="online"

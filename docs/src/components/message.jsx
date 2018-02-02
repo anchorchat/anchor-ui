@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import moment from 'moment';
+import faker from 'faker';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
 import MenuItem from '../../../dist/menu-item';
@@ -45,70 +46,71 @@ const scalingEmoji = `
   \`\`\`
 `;
 
+const currentUser = faker.internet.userName();
+const currentUserAvatar = faker.internet.avatar();
+
 const messages = [
   {
     body: 'Stop talking, brain thinking. @Lars Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: moment().toISOString(),
-    username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+    username: currentUser,
+    avatar: currentUserAvatar,
     id: 1
   },
   {
     body: 'Daleks have no concept of elegance. https://anchor.chat',
     createdAt: moment().toISOString(),
-    username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 2
   },
   {
     body: ':hammer: @Ian @test',
     createdAt: moment().toISOString(),
-    username: 'Lars',
-    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 3
   },
   {
     body: '🎈\n\n\n\n\n____________🏃\nrun forest run.',
     createdAt: moment().toISOString(),
-    username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 4
   },
   {
     body: 'https://telegram.org/file/811140066/1/7fM-CwKk4F0/53f9f1fc731c63547d',
     createdAt: moment().toISOString(),
-    username: 'Lars',
-    avatar: 'https://avatars0.githubusercontent.com/u/16486197?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 5,
     type: 'sticker'
   },
   {
     body: 'https://telegram.org/file/811140750/1/KwtOAxwo1SA/452620c767366798d3',
     createdAt: moment().toISOString(),
-    username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+    username: currentUser,
+    avatar: currentUserAvatar,
     id: 6,
     type: 'sticker'
   },
   {
     body: 'https://source.unsplash.com/random/375x667',
     createdAt: moment().toISOString(),
-    username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+    username: currentUser,
+    avatar: currentUserAvatar,
     id: 7,
     type: 'image'
   },
   {
     body: 'https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif',
     createdAt: moment().toISOString(),
-    username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 8,
     type: 'giphy'
   }
 ];
-
-const currentUser = 'Sjaak';
 
 class MessageDoc extends Component {
   constructor() {
