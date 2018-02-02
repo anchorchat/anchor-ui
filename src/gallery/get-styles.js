@@ -3,12 +3,8 @@ import combineStyles from '../internal/combine-styles';
 
 const root = overrideStyle => combineStyles(styles.root, overrideStyle);
 
-const itemContainer = (height, enableLightbox, overrideStyle) => {
-  let style = styles.itemContainer;
-
-  if (height) {
-    style = combineStyles(style, { height: `${height}px` });
-  }
+const itemContainer = (rowHeight, enableLightbox, overrideStyle) => {
+  let style = combineStyles(styles.itemContainer, { height: rowHeight });
 
   if (enableLightbox) {
     style = combineStyles(style, { cursor: 'pointer' });
@@ -17,12 +13,14 @@ const itemContainer = (height, enableLightbox, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
-const item = (height, overrideStyle) => {
-  let style = styles.item;
+const item = (rowHeight, overrideStyle) => (
+  combineStyles(combineStyles(styles.item, { height: rowHeight }), overrideStyle)
+);
 
-  if (height) {
-    style = combineStyles(style, { height: `${height}px` });
-  }
+const colorPlaceholder = (color, originalWidth, originalHeight, rowHeight, overrideStyle) => {
+  const width = (originalWidth * rowHeight) / originalHeight;
+
+  const style = combineStyles(styles.item, { backgroundColor: color, width, height: rowHeight });
 
   return combineStyles(style, overrideStyle);
 };
@@ -30,5 +28,6 @@ const item = (height, overrideStyle) => {
 export default {
   root,
   itemContainer,
-  item
+  item,
+  colorPlaceholder
 };
