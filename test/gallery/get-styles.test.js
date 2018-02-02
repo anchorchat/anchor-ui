@@ -63,4 +63,18 @@ describe('Gallery.getStyles', () => {
       expect(style).to.have.property('height', 240);
     });
   });
+
+  describe('colorPlaceholder', () => {
+    it('should compute width', () => {
+      const style = getStyles.colorPlaceholder('hotpink', 800, 600, 320);
+
+      expect(style.width).to.equal((800 * 320) / 600);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.colorPlaceholder('hotpink', 800, 600, 320, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
 });
