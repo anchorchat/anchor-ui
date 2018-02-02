@@ -1,5 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
+import moment from 'moment';
+import faker from 'faker';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
 import Props from './props';
@@ -14,15 +16,15 @@ const usage = `
   \`\`\`
 `;
 
+const currentUser = faker.internet.userName();
+
 const message = {
   body: 'https://source.unsplash.com/random/1280x1080',
   createdAt: new Date(),
-  username: 'Sjaak',
-  avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+  username: currentUser,
+  avatar: faker.internet.avatar(),
   type: 'image'
 };
-
-const currentUser = 'Sjaak';
 
 const LightboxDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'Lightbox');
@@ -51,7 +53,10 @@ const LightboxDoc = () => {
         <Paper style={style.paper}>
           <MessageList style={style.list}>
             <Message
-              message={message}
+              body={message.body}
+              createdAt={moment(message.createdAt).format('HH:mm')}
+              username={message.username}
+              type={message.type}
               myMessage={message.username === currentUser}
               avatar={message.avatar}
               enableLightbox

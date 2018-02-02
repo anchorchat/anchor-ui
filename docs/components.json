@@ -2281,6 +2281,44 @@
                 "name": "string",
                 "required": false
               },
+              "placeholderType": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'image'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'color'",
+                    "computed": false
+                  }
+                ],
+                "required": false
+              },
+              "width": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ],
+                "required": false
+              },
+              "height": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ],
+                "required": false
+              },
               "title": {
                 "name": "node",
                 "required": false
@@ -2289,14 +2327,14 @@
           }
         },
         "required": true,
-        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key, 'alt', 'placeholder' and 'title' are optional"
+        "description": "Array of objects containing gallery images.\nEach object must have a 'src' key.\n'alt', 'placeholder', 'placeholderType', 'width', 'height' and 'title' are optional\nColor placeholders only work if both 'width' and 'height' are set"
       },
-      "itemHeight": {
+      "rowHeight": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "Height of the items within the gallery",
+        "description": "Gallery row height",
         "defaultValue": {
           "value": "320",
           "computed": false

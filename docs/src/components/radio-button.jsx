@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import faker from 'faker';
 import RadioButton from '../../../dist/radio-button';
 import RadioButtonGroup from '../../../dist/radio-button-group';
 import Props from './props';
@@ -13,6 +14,8 @@ const usage = `
   import RadioButton from 'anchor-ui/radio-button';
   \`\`\`
 `;
+
+const customIcon = faker.image.image(40, 40);
 
 class RadioButtonDoc extends Component {
   constructor() {
@@ -79,7 +82,7 @@ class RadioButtonDoc extends Component {
               <RadioButton
                 label="Custom icon"
                 value="three"
-                icon={<Avatar style={style.avatar} image="https://avatars2.githubusercontent.com/u/16486197?v=3&s=400" />}
+                icon={<Avatar style={style.avatar} image={customIcon} />}
               />
               <RadioButton
                 value="four"
