@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import faker from 'faker';
 import Commands from '../../../../dist/commands';
 import MessageInput from '../../../../dist/message-input';
 import Paper from '../../../../dist/paper';
+
+const mentions = [
+  {
+    value: faker.internet.userName(),
+    prefix: '@',
+    avatar: faker.internet.avatar()
+  },
+  {
+    value: faker.internet.userName(),
+    prefix: '@',
+    avatar: faker.internet.avatar()
+  },
+  {
+    value: faker.internet.userName(),
+    prefix: '@',
+    avatar: faker.internet.avatar()
+  },
+];
 
 class CommandsDoc extends Component {
   constructor() {
@@ -62,6 +81,8 @@ class CommandsDoc extends Component {
 
   handleClose = () => this.setState({ valueToMatch: '', selectedCommand: '' })
 
+  handleRef = (node) => { this.input = node; }
+
   render() {
     const style = {
       paper: {
@@ -82,23 +103,6 @@ class CommandsDoc extends Component {
         marginLeft: '16px'
       }
     };
-    const mentions = [
-      {
-        value: 'IanCStewart',
-        prefix: '@',
-        avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400'
-      },
-      {
-        value: 'sjaakluthart',
-        prefix: '@',
-        avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400'
-      },
-      {
-        value: 'larstadema',
-        prefix: '@',
-        avatar: 'https://avatars2.githubusercontent.com/u/16486197?v=3&s=400'
-      },
-    ];
 
     return (
       <Paper style={style.paper}>
@@ -116,9 +120,9 @@ class CommandsDoc extends Component {
           onChange={this.changeValue}
           placeholder="Type @ to filter mentions"
           value={this.state.value}
-          sendMessage={() => {}}
+          sendMessage={_.noop}
           style={style.messageInput}
-          inputRef={(node) => { this.input = node; }}
+          inputRef={this.handleRef}
         />
       </Paper>
     );

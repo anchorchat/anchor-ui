@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import faker from 'faker';
 import Avatar from '../../../../dist/avatar';
 import components from '../../../components.json';
 import Props from '../props';
@@ -31,11 +32,11 @@ const AvatarDoc = () => {
         <h1>Examples</h1>
         <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
-          <Avatar style={style.avatar} image="https://avatars2.githubusercontent.com/u/3033357?s=120&v=4" />
-          <Avatar style={style.avatar} image="https://avatars3.githubusercontent.com/u/10127707?s=120&v=4" />
-          <Avatar style={style.avatar} image="https://avatars2.githubusercontent.com/u/16486197?v=3&s=120" status="online" />
-          <Avatar style={style.avatar} image="https://avatars1.githubusercontent.com/u/6596471?v=3&s=120" status="away" />
-          <Avatar style={style.avatar} image="https://avatars0.githubusercontent.com/u/14125280?v=3&s=120" status="offline" />
+          <Avatar style={style.avatar} image={faker.internet.avatar()} />
+          <Avatar style={style.avatar} image={faker.internet.avatar()} />
+          <Avatar style={style.avatar} image={faker.internet.avatar()} status="online" />
+          <Avatar style={style.avatar} image={faker.internet.avatar()} status="away" />
+          <Avatar style={style.avatar} image={faker.internet.avatar()} status="offline" />
         </Paper>
       </section>
       <Props props={componentData.props} />

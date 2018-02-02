@@ -1,5 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
+import moment from 'moment';
+import faker from 'faker';
 import Message from '../../../dist/message';
 import MessageList from '../../../dist/message-list';
 import Props from './props';
@@ -14,31 +16,31 @@ const usage = `
   \`\`\`
 `;
 
+const currentUser = faker.internet.userName();
+
 const messages = [
   {
     body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: new Date(),
-    username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 1
   },
   {
     body: 'Daleks have no concept of elegance.',
     createdAt: new Date(),
-    username: 'Ian',
-    avatar: 'https://avatars0.githubusercontent.com/u/14125280?v=3&s=400',
+    username: currentUser,
+    avatar: faker.internet.avatar(),
     id: 2
   },
   {
     body: ':pig2:',
     createdAt: new Date(),
-    username: 'Sjaak',
-    avatar: 'https://avatars1.githubusercontent.com/u/6596471?v=3&s=400',
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
     id: 3
   },
 ];
-
-const currentUser = 'Ian';
 
 const MessageListDoc = () => {
   const componentData = _.find(components, component => component.displayName === 'MessageList');
@@ -70,7 +72,10 @@ const MessageListDoc = () => {
           <MessageList style={style.messageList}>
             {messages.map(message => (
               <Message
-                message={message}
+                body={message.body}
+                createdAt={moment(message.createdAt).format('HH:mm')}
+                username={message.username}
+                type={message.type}
                 key={`message-${message.id}`}
                 myMessage={message.username === currentUser}
                 avatar={message.avatar}

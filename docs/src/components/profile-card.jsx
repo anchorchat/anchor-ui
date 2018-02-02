@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import faker from 'faker';
 import ProfileCard from '../../../dist/profile-card';
 import components from '../../components.json';
 import Props from './props';
@@ -32,7 +33,7 @@ const ProfileCardDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          <ProfileCard username="Sjaak" avatar="https://avatars1.githubusercontent.com/u/6596471?v=3&s=400" />
+          <ProfileCard username={faker.internet.userName()} avatar={faker.internet.avatar()} />
         </Paper>
       </section>
       <Props props={componentData.props} />
