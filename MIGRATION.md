@@ -1,4 +1,10 @@
-# Migrating from anchor-ui v5.x.x to v6
+# Migrating from v6 to v6.2
+
+## Gallery
+
+Gallery's itemHeight prop has been renamed to rowHeight.
+
+# Migrating from v5.x.x to v6
 
 ## ListItem
 
@@ -12,7 +18,7 @@ Message no longer formats date objects or strings. It just renders a node. Suppl
 
 DateSeparator no longer formats date objects or strings. It just renders a node. Supply your own formatting using a libary like [momentjs](https://momentjs.com/).
 
-# Migrating from anchor-ui v4.x to v5
+# Migrating from v4.x to v5
 In this version we updated to React v16, added Portal for PopOver, updated to emojione v3, refactored and restyled Message, replaced dangerouslySetInnerHTML with html-react-parser and adjusted some styling to 8dp grid.
 
 ## React v16
