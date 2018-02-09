@@ -17,8 +17,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -86,8 +85,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -98,8 +96,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -110,8 +107,7 @@
       },
       "textStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the text element",
@@ -122,8 +118,7 @@
       },
       "buttonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the button element",
@@ -185,8 +180,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -197,8 +191,7 @@
       },
       "textStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the text element",
@@ -209,8 +202,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -221,8 +213,7 @@
       },
       "rightButtonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the right button",
@@ -244,8 +235,7 @@
       },
       "leftButtonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the left button",
@@ -288,8 +278,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -329,8 +318,7 @@
       },
       "statusStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the status indicator",
@@ -355,8 +343,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -442,8 +429,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -490,8 +476,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -567,8 +552,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -593,8 +577,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -612,8 +595,7 @@
     "props": {
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -624,8 +606,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -636,8 +617,7 @@
       },
       "titleStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the title element",
@@ -655,8 +635,7 @@
       },
       "subtitleStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the subtitle element",
@@ -689,8 +668,7 @@
       },
       "avatarStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the subtitle element",
@@ -748,8 +726,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -760,8 +737,7 @@
       },
       "textStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the text element",
@@ -772,8 +748,7 @@
       },
       "secondaryTextStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the text element",
@@ -784,8 +759,7 @@
       },
       "leftButtonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the leftButton element",
@@ -796,8 +770,7 @@
       },
       "rightButtonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the rightButton element",
@@ -854,8 +827,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -866,8 +838,7 @@
       },
       "inputStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input element",
@@ -878,8 +849,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -890,8 +860,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -902,8 +871,7 @@
       },
       "uncheckedStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the unchecked element",
@@ -992,8 +960,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -1004,8 +971,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1016,8 +982,7 @@
       },
       "buttonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the button container",
@@ -1039,8 +1004,7 @@
       },
       "errorStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the error element",
@@ -1220,8 +1184,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1232,8 +1195,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -1244,8 +1206,7 @@
       },
       "titleStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the title element",
@@ -1256,8 +1217,7 @@
       },
       "descriptionStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the description element",
@@ -1268,8 +1228,7 @@
       },
       "commandStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the command element",
@@ -1280,8 +1239,7 @@
       },
       "paramStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the param element",
@@ -1360,8 +1318,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1372,8 +1329,7 @@
       },
       "textStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the text element",
@@ -1415,8 +1371,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1427,8 +1382,7 @@
       },
       "overlayStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the overlay element",
@@ -1439,8 +1393,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -1516,8 +1469,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1673,8 +1625,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1685,8 +1636,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -1819,8 +1769,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1831,8 +1780,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -1843,8 +1791,7 @@
       },
       "modifierStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the color modifiers",
@@ -1855,8 +1802,7 @@
       },
       "categoryStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the emoji category",
@@ -1867,8 +1813,7 @@
       },
       "emojiStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the emojis",
@@ -1879,8 +1824,7 @@
       },
       "footerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the footer element",
@@ -1891,8 +1835,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the footer icons",
@@ -1973,8 +1916,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "",
@@ -1985,8 +1927,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "",
@@ -2040,8 +1981,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "",
@@ -2052,8 +1992,7 @@
       },
       "emojiStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "",
@@ -2105,8 +2044,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "",
@@ -2117,8 +2055,7 @@
       },
       "modifierStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "",
@@ -2172,8 +2109,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -2184,8 +2120,7 @@
       },
       "headingStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header text element",
@@ -2196,8 +2131,7 @@
       },
       "bodyStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the body text element",
@@ -2353,8 +2287,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -2365,8 +2298,7 @@
       },
       "itemContainerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the image container element",
@@ -2377,8 +2309,7 @@
       },
       "itemStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the image element",
@@ -2551,8 +2482,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -2563,8 +2493,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -2575,8 +2504,7 @@
       },
       "contentStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the content container",
@@ -2598,8 +2526,7 @@
       },
       "dividerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the divider element",
@@ -2621,8 +2548,7 @@
       },
       "buttonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the Button component",
@@ -4015,8 +3941,7 @@
       },
       "imgProps": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Optional props for the img element",
@@ -4156,8 +4081,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -4168,8 +4092,7 @@
       },
       "inputStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input element",
@@ -4180,8 +4103,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -4225,8 +4147,7 @@
       },
       "errorStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the error element",
@@ -4237,8 +4158,7 @@
       },
       "placeholderStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the placeholder",
@@ -4302,8 +4222,7 @@
     "props": {
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -4314,8 +4233,7 @@
       },
       "overlayStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the overlay element",
@@ -4418,8 +4336,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -4463,8 +4380,7 @@
       },
       "listStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the list element. Height needs to be set for inifite scroll to work.",
@@ -4519,8 +4435,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -4567,8 +4482,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -4579,8 +4493,7 @@
       },
       "primaryTextStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the primaryText element",
@@ -4591,8 +4504,7 @@
       },
       "secondaryTextStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the secondaryText element",
@@ -4694,8 +4606,7 @@
     "props": {
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -4706,8 +4617,7 @@
       },
       "dotStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the dot element",
@@ -4878,8 +4788,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -4890,8 +4799,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -4902,8 +4810,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -4914,8 +4821,7 @@
       },
       "footerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the footer element",
@@ -4926,8 +4832,7 @@
       },
       "contentContainerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the footer element",
@@ -5008,8 +4913,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -5020,8 +4924,7 @@
       },
       "textStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input element",
@@ -5032,8 +4935,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -5066,8 +4968,7 @@
       },
       "buttonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the right button element",
@@ -5078,8 +4979,7 @@
       },
       "activeStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override style applied when the MenuItem is active",
@@ -5165,8 +5065,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -5177,8 +5076,7 @@
       },
       "messageHeaderStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -5189,8 +5087,7 @@
       },
       "messageBodyStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the body element",
@@ -5201,8 +5098,7 @@
       },
       "messageTimeStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the time element",
@@ -5537,8 +5433,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -5549,8 +5444,7 @@
       },
       "inputStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input element",
@@ -5671,8 +5565,7 @@
       },
       "placeholderStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input's placeholder",
@@ -5758,8 +5651,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -5770,8 +5662,7 @@
       },
       "listStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the ul element",
@@ -5814,8 +5705,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the style of the root element",
@@ -5826,8 +5716,7 @@
       },
       "contentStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the style of the content element",
@@ -5838,8 +5727,7 @@
       },
       "footerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the style of the footer element",
@@ -5861,8 +5749,7 @@
       },
       "overlayStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the overlay element",
@@ -5898,8 +5785,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the style of the root element",
@@ -5989,8 +5875,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6001,8 +5886,7 @@
       },
       "navStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the nav element",
@@ -6013,8 +5897,7 @@
       },
       "navButtonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the nav button elements",
@@ -6025,8 +5908,7 @@
       },
       "iconButtonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon button elements",
@@ -6116,8 +5998,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the style of the root element",
@@ -6153,8 +6034,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6176,8 +6056,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -6195,8 +6074,7 @@
       },
       "position": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "The PopOver's position relative to the anchor",
@@ -6229,8 +6107,7 @@
       },
       "dividerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the divider element",
@@ -6266,8 +6143,7 @@
       },
       "node": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Optional node to portal children to",
@@ -6347,8 +6223,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6359,8 +6234,7 @@
       },
       "coverStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the cover element",
@@ -6371,8 +6245,7 @@
       },
       "coverImageStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the coverImage element",
@@ -6383,8 +6256,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -6395,8 +6267,7 @@
       },
       "secondaryTextStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the secondaryText element",
@@ -6407,8 +6278,7 @@
       },
       "avatarStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the avatar element",
@@ -6473,8 +6343,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6485,8 +6354,7 @@
       },
       "usernameStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the username element",
@@ -6551,8 +6419,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6563,8 +6430,7 @@
       },
       "inputStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input element",
@@ -6575,8 +6441,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -6587,8 +6452,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -6664,8 +6528,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -6676,8 +6539,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6688,8 +6550,7 @@
       },
       "buttonStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the button container",
@@ -6711,8 +6572,7 @@
       },
       "errorStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the error element",
@@ -6787,8 +6647,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6799,8 +6658,7 @@
       },
       "inputStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input element",
@@ -6811,8 +6669,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -6823,8 +6680,7 @@
       },
       "placeholderStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the input's placeholder",
@@ -6938,8 +6794,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -6950,8 +6805,7 @@
       },
       "headerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the header element",
@@ -6973,8 +6827,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -6985,8 +6838,7 @@
       },
       "contentStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the content container",
@@ -7019,8 +6871,7 @@
       },
       "errorStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the error element",
@@ -7146,8 +6997,7 @@
       },
       "errorStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the error element",
@@ -7158,8 +7008,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7170,8 +7019,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -7225,8 +7073,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7237,8 +7084,7 @@
       },
       "trackStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the track element",
@@ -7249,8 +7095,7 @@
       },
       "knobStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the knob element",
@@ -7261,8 +7106,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the label element",
@@ -7323,8 +7167,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of an inactive root element",
@@ -7335,8 +7178,7 @@
       },
       "labelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of an inactive label element",
@@ -7347,8 +7189,7 @@
       },
       "iconStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the icon element",
@@ -7370,8 +7211,7 @@
       },
       "badgeStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the badge element",
@@ -7382,8 +7222,7 @@
       },
       "activeStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Overide the styles of an active root element.",
@@ -7394,8 +7233,7 @@
       },
       "activeLabelStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Overide the styles of an active label element.",
@@ -7427,8 +7265,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7453,8 +7290,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7479,8 +7315,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7505,8 +7340,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7538,8 +7372,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7564,8 +7397,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7626,8 +7458,7 @@
       },
       "style": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -7638,8 +7469,7 @@
       },
       "tabContainerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the tab container",
@@ -7650,8 +7480,7 @@
       },
       "contentContainerStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the tab content container",
@@ -7662,8 +7491,7 @@
       },
       "contentStyle": {
         "type": {
-          "name": "instanceOf",
-          "value": "Object"
+          "name": "object"
         },
         "required": false,
         "description": "Override the styles of the tab content container",
