@@ -26,7 +26,7 @@ Badge.propTypes = {
   /** The badge's value */
   value: PropTypes.number.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Inverts color */
   inverted: PropTypes.bool,
   /** Maximum value that will be shown.

@@ -24,7 +24,7 @@ const propTypes = {
    */
   hideBanner: PropTypes.func.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Toggle banner open */
   open: PropTypes.bool
 };

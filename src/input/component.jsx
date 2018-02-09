@@ -21,11 +21,11 @@ const propTypes = {
   /** The input's name */
   name: PropTypes.string.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the input element */
-  inputStyle: PropTypes.instanceOf(Object),
+  inputStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The input's max length */
   maxLength: PropTypes.number,
   /** Disables the input */
@@ -33,9 +33,9 @@ const propTypes = {
   /** Display an error message */
   error: PropTypes.node,
   /** Override the styles of the error element */
-  errorStyle: PropTypes.instanceOf(Object),
+  errorStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the placeholder */
-  placeholderStyle: PropTypes.instanceOf(Object),
+  placeholderStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Multi line input. If true, a textarea element will be rendered. */
   multiLine: PropTypes.bool,
   /** Multi line input's max visible rows. */

@@ -18,13 +18,13 @@ const propTypes = {
   /** Type of alert. One of the following: ["info", "success", "warning", "error"] */
   type: PropTypes.oneOf(['success', 'error', 'warning', 'info']).isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the text element */
-  textStyle: PropTypes.instanceOf(Object),
+  textStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the button element */
-  buttonStyle: PropTypes.instanceOf(Object),
+  buttonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the close button is clicked
    *

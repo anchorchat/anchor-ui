@@ -20,11 +20,11 @@ const propTypes = {
   /** Optional header text */
   header: PropTypes.node,
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the content container */
-  contentStyle: PropTypes.instanceOf(Object),
+  contentStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the IconMenu closes
    *
@@ -32,7 +32,7 @@ const propTypes = {
    */
   onMenuClose: PropTypes.func,
   /** Override the styles of the divider element */
-  dividerStyle: PropTypes.instanceOf(Object),
+  dividerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the IconMenu's header is clicked
    *
@@ -40,7 +40,7 @@ const propTypes = {
    */
   onHeaderClick: PropTypes.func,
   /** Override the styles of the Button component */
-  buttonStyle: PropTypes.instanceOf(Object)
+  buttonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

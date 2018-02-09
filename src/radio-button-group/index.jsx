@@ -17,15 +17,15 @@ const propTypes = {
   /** The RadioButtonGroup's label */
   label: PropTypes.node,
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the button container */
-  buttonStyle: PropTypes.instanceOf(Object),
+  buttonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Display an error message */
   error: PropTypes.node,
   /** Override the styles of the error element */
-  errorStyle: PropTypes.instanceOf(Object)
+  errorStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

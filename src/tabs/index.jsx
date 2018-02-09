@@ -12,13 +12,13 @@ class Tabs extends Component {
     /** The Tabs's content (Tab) */
     children: PropTypes.node.isRequired,
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the tab container */
-    tabContainerStyle: PropTypes.instanceOf(Object),
+    tabContainerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the tab content container */
-    contentContainerStyle: PropTypes.instanceOf(Object),
+    contentContainerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the tab content container */
-    contentStyle: PropTypes.instanceOf(Object),
+    contentStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /**
      * Specify initial visible tab index.
      * If `initialSelectedIndex` is set but larger than the total amount of specified tabs,

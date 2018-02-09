@@ -11,9 +11,9 @@ const propTypes = {
   /** Reference list element */
   listRef: PropTypes.func,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the ul element */
-  listStyle: PropTypes.instanceOf(Object),
+  listStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Enable autoScroll */
   autoScroll: PropTypes.bool
 };

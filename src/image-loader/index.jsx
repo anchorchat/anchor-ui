@@ -7,7 +7,7 @@ const propTypes = {
   /** Optional error component to show when image failed to load */
   error: PropTypes.node,
   /** Optional props for the img element */
-  imgProps: PropTypes.instanceOf(Object),
+  imgProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when loading throws an error
    *

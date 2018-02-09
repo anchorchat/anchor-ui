@@ -25,13 +25,13 @@ const propTypes = {
   /** The message's type */
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy']),
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  messageHeaderStyle: PropTypes.instanceOf(Object),
+  messageHeaderStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the body element */
-  messageBodyStyle: PropTypes.instanceOf(Object),
+  messageBodyStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the time element */
-  messageTimeStyle: PropTypes.instanceOf(Object),
+  messageTimeStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The message size. One of the following: ["small", "medium", "large"] */
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   /** Flag used to change message styles. True if the message was sent by the current user */

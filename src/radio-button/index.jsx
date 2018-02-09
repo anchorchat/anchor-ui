@@ -21,13 +21,13 @@ const propTypes = {
   /** Input active */
   checked: PropTypes.bool,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the input element */
-  inputStyle: PropTypes.instanceOf(Object),
+  inputStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the label element */
   icon: PropTypes.node,
   color: PropTypes.string.isRequired

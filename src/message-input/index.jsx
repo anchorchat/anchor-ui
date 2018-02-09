@@ -28,9 +28,9 @@ const propTypes = {
   /** The input's placeholder */
   placeholder: PropTypes.node.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the input element */
-  inputStyle: PropTypes.instanceOf(Object),
+  inputStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The input's max length */
   maxLength: PropTypes.number,
   /** Left-hand side placed button */
@@ -52,7 +52,7 @@ const propTypes = {
   /** Custom send button icon */
   sendIcon: PropTypes.node,
   /** Override the styles of the input's placeholder */
-  placeholderStyle: PropTypes.instanceOf(Object),
+  placeholderStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

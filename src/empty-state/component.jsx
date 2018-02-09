@@ -12,11 +12,11 @@ const propTypes = {
   /** Path to background image */
   background: PropTypes.string,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header text element */
-  headingStyle: PropTypes.instanceOf(Object),
+  headingStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the body text element */
-  bodyStyle: PropTypes.instanceOf(Object)
+  bodyStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

@@ -23,11 +23,11 @@ class MenuItem extends Component {
      */
     onClick: PropTypes.func.isRequired,
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the input element */
-    textStyle: PropTypes.instanceOf(Object),
+    textStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the icon element */
-    iconStyle: PropTypes.instanceOf(Object),
+    iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /**
      * Callback fired when the MenuItem closes a Menu/IconMenu
      *
@@ -37,9 +37,9 @@ class MenuItem extends Component {
     /** Right-hand side placed button */
     rightButton: PropTypes.node,
     /** Override the styles of the right button element */
-    buttonStyle: PropTypes.instanceOf(Object),
+    buttonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override style applied when the MenuItem is active */
-    activeStyle: PropTypes.instanceOf(Object),
+    activeStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     color: PropTypes.string.isRequired
   };
 
