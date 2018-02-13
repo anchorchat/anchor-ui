@@ -23,7 +23,7 @@ Paper.propTypes = {
   /** The Paper's shadow depth. One of the following: [1, 2, 3, 4, 5] */
   depth: PropTypes.oneOf([1, 2, 3, 4, 5]),
   /** Override the style of the root element */
-  style: PropTypes.instanceOf(Object)
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 Paper.defaultProps = {

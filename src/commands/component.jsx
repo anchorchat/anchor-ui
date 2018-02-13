@@ -38,17 +38,17 @@ const propTypes = {
   /** Filter commands based on input value */
   value: PropTypes.string.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the title element */
-  titleStyle: PropTypes.instanceOf(Object),
+  titleStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the description element */
-  descriptionStyle: PropTypes.instanceOf(Object),
+  descriptionStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the command element */
-  commandStyle: PropTypes.instanceOf(Object),
+  commandStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the param element */
-  paramStyle: PropTypes.instanceOf(Object),
+  paramStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when a command is clicked
    *

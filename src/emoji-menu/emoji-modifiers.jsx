@@ -13,8 +13,8 @@ const propTypes = {
   })).isRequired,
   changeTone: PropTypes.func.isRequired,
   tone: PropTypes.string.isRequired,
-  style: PropTypes.instanceOf(Object),
-  modifierStyle: PropTypes.instanceOf(Object)
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  modifierStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

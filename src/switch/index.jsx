@@ -18,13 +18,13 @@ const propTypes = {
   /** The Switch's label */
   label: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the track element */
-  trackStyle: PropTypes.instanceOf(Object),
+  trackStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the knob element */
-  knobStyle: PropTypes.instanceOf(Object),
+  knobStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

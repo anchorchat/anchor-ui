@@ -12,17 +12,17 @@ const propTypes = {
   /** Button on the right side of the AppHeader */
   rightButton: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the text element */
-  textStyle: PropTypes.instanceOf(Object),
+  textStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the right button */
-  rightButtonStyle: PropTypes.instanceOf(Object),
+  rightButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Button on the left side of the AppHeader */
   leftButton: PropTypes.node,
   /** Override the styles of the left button */
-  leftButtonStyle: PropTypes.instanceOf(Object),
+  leftButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

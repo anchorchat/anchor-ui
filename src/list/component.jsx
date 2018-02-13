@@ -13,7 +13,7 @@ const propTypes = {
   /** Optional header text */
   header: PropTypes.node,
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Reference list element */
   listRef: PropTypes.func,
   /** Enable virtualized list from 'react-virtualized'.
@@ -28,7 +28,7 @@ const propTypes = {
   /**
    * Override the styles of the list element. Height needs to be set for inifite scroll to work.
    */
-  listStyle: PropTypes.instanceOf(Object),
+  listStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Specify amount of items to render outside the view.
    * Only works if enableInfiniteScroll is set to true.
@@ -50,7 +50,7 @@ const propTypes = {
   /** Scroll to a specific index */
   scrollToIndex: PropTypes.number,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object)
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

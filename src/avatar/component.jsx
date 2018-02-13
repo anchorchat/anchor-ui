@@ -10,11 +10,11 @@ const propTypes = {
   /** Path to default image. This image will be shown if the image path doesn't resolve */
   defaultImage: PropTypes.string,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** An user's status. One of the following: ["online", "away", "offline"] */
   status: PropTypes.oneOf(['online', 'away', 'offline', '']),
   /** Override the styles of the status indicator */
-  statusStyle: PropTypes.instanceOf(Object)
+  statusStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

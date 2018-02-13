@@ -13,9 +13,9 @@ const displayName = 'Lightbox';
 
 const propTypes = {
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the overlay element */
-  overlayStyle: PropTypes.instanceOf(Object),
+  overlayStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the Lightbox is closed
    *

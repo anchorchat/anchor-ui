@@ -8,7 +8,7 @@ const propTypes = {
   /** The badge's text */
   text: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Inverts color */
   inverted: PropTypes.bool,
   color: PropTypes.string.isRequired

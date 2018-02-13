@@ -21,10 +21,10 @@ const propTypes = {
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
-  style: PropTypes.instanceOf(Object),
-  messageHeaderStyle: PropTypes.instanceOf(Object),
-  messageBodyStyle: PropTypes.instanceOf(Object),
-  messageTimeStyle: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  messageHeaderStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  messageBodyStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  messageTimeStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
   myMessage: PropTypes.bool,
   emoji: PropTypes.bool,

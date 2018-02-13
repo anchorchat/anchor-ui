@@ -17,15 +17,15 @@ const propTypes = {
   /** Checkbox checked */
   checked: PropTypes.bool,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the input element */
-  inputStyle: PropTypes.instanceOf(Object),
+  inputStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the unchecked element */
-  uncheckedStyle: PropTypes.instanceOf(Object),
+  uncheckedStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The checkbox' value */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
   color: PropTypes.string.isRequired

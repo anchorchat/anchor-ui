@@ -16,8 +16,8 @@ const propTypes = {
   category: PropTypes.string.isRequired,
   activeColor: PropTypes.string.isRequired,
   recent: PropTypes.bool.isRequired,
-  style: PropTypes.instanceOf(Object),
-  iconStyle: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   iconColor: PropTypes.string.isRequired
 };
 

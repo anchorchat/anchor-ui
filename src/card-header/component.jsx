@@ -20,21 +20,21 @@ CardHeader.displayName = 'CardHeader';
 
 CardHeader.propTypes = {
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the title element */
-  titleStyle: PropTypes.instanceOf(Object),
+  titleStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The CardHeader's title */
   title: PropTypes.node.isRequired,
   /** Override the styles of the subtitle element */
-  subtitleStyle: PropTypes.instanceOf(Object),
+  subtitleStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The CardHeader's subtitle */
   subtitle: PropTypes.node,
   /** Path to an Avatar image */
   avatar: PropTypes.string,
   /** Override the styles of the subtitle element */
-  avatarStyle: PropTypes.instanceOf(Object),
+  avatarStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 CardHeader.defaultProps = {

@@ -36,11 +36,11 @@ const propTypes = {
    */
   onItemClick: PropTypes.func,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the image container element */
-  itemContainerStyle: PropTypes.instanceOf(Object),
+  itemContainerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the image element */
-  itemStyle: PropTypes.instanceOf(Object),
+  itemStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Open a Lightbox when an item is clicked */
   enableLightbox: PropTypes.bool,
   /** Image placeholder url */

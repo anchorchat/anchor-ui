@@ -29,21 +29,21 @@ class Select extends Component {
      */
     onChange: PropTypes.func.isRequired,
     /** Override the styles of the root element */
-    style: PropTypes.instanceOf(Object),
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the header element */
-    headerStyle: PropTypes.instanceOf(Object),
+    headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** The Select's label */
     label: PropTypes.node,
     /** Override the styles of the label element */
-    labelStyle: PropTypes.instanceOf(Object),
+    labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** Override the styles of the content container */
-    contentStyle: PropTypes.instanceOf(Object),
+    contentStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** The Select's placeholder */
     placeholder: PropTypes.string,
     /** Display an error message */
     error: PropTypes.node,
     /** Override the styles of the error element */
-    errorStyle: PropTypes.instanceOf(Object),
+    errorStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     /** The header's icon color */
     iconColor: PropTypes.string,
     color: PropTypes.string.isRequired

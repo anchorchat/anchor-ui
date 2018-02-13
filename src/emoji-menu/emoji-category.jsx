@@ -12,8 +12,8 @@ const propTypes = {
     shortname: PropTypes.string.isRequired
   })).isRequired,
   sendEmoji: PropTypes.func.isRequired,
-  style: PropTypes.instanceOf(Object),
-  emojiStyle: PropTypes.instanceOf(Object)
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  emojiStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {
