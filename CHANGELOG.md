@@ -2,7 +2,67 @@
 
 ## [Unreleased](https://github.com/anchorchat/anchor-ui/tree/HEAD)
 
-[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.0.0...HEAD)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.2.0...HEAD)
+
+**Merged pull requests:**
+
+- \[6.2.0\] Added color placeholder to Gallery, renamed itemHeight to rowHeight. [\#1060](https://github.com/anchorchat/anchor-ui/pull/1060) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v6.2.0](https://github.com/anchorchat/anchor-ui/tree/v6.2.0) (2018-02-02)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.1.1...v6.2.0)
+
+**Merged pull requests:**
+
+- Team readme [\#1059](https://github.com/anchorchat/anchor-ui/pull/1059) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaak/gallery color placeholder [\#1058](https://github.com/anchorchat/anchor-ui/pull/1058) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[6.1.1\] Added check for window to MobileDetect singleton. [\#1057](https://github.com/anchorchat/anchor-ui/pull/1057) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v6.1.1](https://github.com/anchorchat/anchor-ui/tree/v6.1.1) (2018-02-01)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.1.0...v6.1.1)
+
+**Merged pull requests:**
+
+- Added get for window. [\#1056](https://github.com/anchorchat/anchor-ui/pull/1056) ([sjaakluthart](https://github.com/sjaakluthart))
+- \[6.1.0\] Added imagePlaceholder, imageError and EventListener to Gallery. Compute Input and MessageInput multiline height on mount. Added position prop to Menu. Increased test coverage. [\#1054](https://github.com/anchorchat/anchor-ui/pull/1054) ([sjaakluthart](https://github.com/sjaakluthart))
+
+## [v6.1.0](https://github.com/anchorchat/anchor-ui/tree/v6.1.0) (2018-01-31)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.0.1...v6.1.0)
+
+**Implemented enhancements:**
+
+- \[Message\] createdAt PropType should be node, just like username and body [\#1045](https://github.com/anchorchat/anchor-ui/issues/1045)
+- \[Input\] Multiline support only works on onChange [\#1031](https://github.com/anchorchat/anchor-ui/issues/1031)
+- \[List\] add large list support with scroll loading [\#855](https://github.com/anchorchat/anchor-ui/issues/855)
+
+**Fixed bugs:**
+
+- \[Checkbox\] When rendered in a overflowing container it can create more overflow [\#1037](https://github.com/anchorchat/anchor-ui/issues/1037)
+- \\[Input\\] Multiline support only works on onChange [\#1031](https://github.com/anchorchat/anchor-ui/issues/1031)
+
+**Closed issues:**
+
+- \[Gallery\] Make use of ImageLoader component [\#1051](https://github.com/anchorchat/anchor-ui/issues/1051)
+- \[ListItem\] change height to 72px for items with secondary text [\#1006](https://github.com/anchorchat/anchor-ui/issues/1006)
+- \[Menu\] add option to open Menu from the right side of the screen [\#985](https://github.com/anchorchat/anchor-ui/issues/985)
+- \[Gallery\] allow for image browsing in lightbox with arrow keys [\#924](https://github.com/anchorchat/anchor-ui/issues/924)
+
+**Merged pull requests:**
+
+- Added optional item placeholder. [\#1053](https://github.com/anchorchat/anchor-ui/pull/1053) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#1051 [\#1052](https://github.com/anchorchat/anchor-ui/pull/1052) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#924 [\#1050](https://github.com/anchorchat/anchor-ui/pull/1050) ([IanCStewart](https://github.com/IanCStewart))
+- Default list item height [\#1049](https://github.com/anchorchat/anchor-ui/pull/1049) ([IanCStewart](https://github.com/IanCStewart))
+- Issue \#985 [\#1048](https://github.com/anchorchat/anchor-ui/pull/1048) ([IanCStewart](https://github.com/IanCStewart))
+- Sjaakluthart/issue \#1045 [\#1047](https://github.com/anchorchat/anchor-ui/pull/1047) ([sjaakluthart](https://github.com/sjaakluthart))
+- Changed propType to node, fixes \#1045. [\#1046](https://github.com/anchorchat/anchor-ui/pull/1046) ([sjaakluthart](https://github.com/sjaakluthart))
+- Issue \#1031 [\#1044](https://github.com/anchorchat/anchor-ui/pull/1044) ([IanCStewart](https://github.com/IanCStewart))
+- Added position relative to top container of Checkbox. Fixes \#1037. [\#1043](https://github.com/anchorchat/anchor-ui/pull/1043) ([IanCStewart](https://github.com/IanCStewart))
+- Reset default margin of ul element. [\#1042](https://github.com/anchorchat/anchor-ui/pull/1042) ([IanCStewart](https://github.com/IanCStewart))
+- Increase test coverage to 100% [\#1041](https://github.com/anchorchat/anchor-ui/pull/1041) ([larstadema](https://github.com/larstadema))
+- \[6.0.1\] Fixed getStyle order for listStyle [\#1040](https://github.com/anchorchat/anchor-ui/pull/1040) ([IanCStewart](https://github.com/IanCStewart))
+
+## [v6.0.1](https://github.com/anchorchat/anchor-ui/tree/v6.0.1) (2018-01-26)
+[Full Changelog](https://github.com/anchorchat/anchor-ui/compare/v6.0.0...v6.0.1)
 
 **Merged pull requests:**
 
