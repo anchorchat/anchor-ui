@@ -6,9 +6,9 @@ const propTypes = {
   /** The date to display */
   date: PropTypes.string.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the text element */
-  textStyle: PropTypes.instanceOf(Object)
+  textStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

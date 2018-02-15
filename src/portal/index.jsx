@@ -9,7 +9,7 @@ const propTypes = {
   /** Content to be portaled */
   children: PropTypes.node.isRequired,
   /** Optional node to portal children to */
-  node: PropTypes.instanceOf(Object)
+  node: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

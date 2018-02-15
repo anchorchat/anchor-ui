@@ -42,9 +42,9 @@ ProfileCard.propTypes = {
   /** The user's username */
   username: PropTypes.node.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the username element */
-  usernameStyle: PropTypes.instanceOf(Object),
+  usernameStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

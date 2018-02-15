@@ -14,7 +14,7 @@ const propTypes = {
    */
   onClick: PropTypes.func,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Toggle IconButton type */
   iconButton: PropTypes.bool,
   /** Inverts color */

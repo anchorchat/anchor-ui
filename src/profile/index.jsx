@@ -21,17 +21,17 @@ const propTypes = {
   /** Profile content */
   children: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the cover element */
-  coverStyle: PropTypes.instanceOf(Object),
+  coverStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the coverImage element */
-  coverImageStyle: PropTypes.instanceOf(Object),
+  coverImageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the secondaryText element */
-  secondaryTextStyle: PropTypes.instanceOf(Object),
+  secondaryTextStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the avatar element */
-  avatarStyle: PropTypes.instanceOf(Object),
+  avatarStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** An user's status. One of the following: ["online", "away", "offline"] */
   status: PropTypes.oneOf(['online', 'away', 'offline', ''])
 };

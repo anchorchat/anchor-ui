@@ -15,11 +15,11 @@ const propTypes = {
   /** Header text */
   header: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the overlay element */
-  overlayStyle: PropTypes.instanceOf(Object),
+  overlayStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the close button is clicked
    *

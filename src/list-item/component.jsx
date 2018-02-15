@@ -17,11 +17,11 @@ const propTypes = {
   /** A badge to display before the secondaryText. */
   textBadge: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the primaryText element */
-  primaryTextStyle: PropTypes.instanceOf(Object),
+  primaryTextStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the secondaryText element */
-  secondaryTextStyle: PropTypes.instanceOf(Object),
+  secondaryTextStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the ListItem is clicked
    *

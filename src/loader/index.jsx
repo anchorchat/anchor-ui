@@ -9,9 +9,9 @@ const displayName = 'Loader';
 
 const propTypes = {
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the dot element */
-  dotStyle: PropTypes.instanceOf(Object),
+  dotStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Inverts the color */
   inverted: PropTypes.bool,
   color: PropTypes.string.isRequired

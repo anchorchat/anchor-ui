@@ -9,7 +9,7 @@ const propTypes = {
   compact: PropTypes.bool,
   myMessage: PropTypes.bool,
   fontSize: PropTypes.oneOf(['small', 'medium', 'large']),
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   username: PropTypes.node.isRequired,
   badge: PropTypes.node,
   iconMenu: PropTypes.bool

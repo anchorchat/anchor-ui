@@ -37,15 +37,15 @@ Modal.propTypes = {
   /** The Modal's actions */
   actions: PropTypes.node.isRequired,
   /** Override the style of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the style of the content element */
-  contentStyle: PropTypes.instanceOf(Object),
+  contentStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the style of the footer element */
-  footerStyle: PropTypes.instanceOf(Object),
+  footerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Toggle the Dialogs visibility */
   open: PropTypes.bool,
   /** Override the styles of the overlay element */
-  overlayStyle: PropTypes.instanceOf(Object),
+  overlayStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

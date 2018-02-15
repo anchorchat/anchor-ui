@@ -145,13 +145,13 @@ Pagination.propTypes = {
   /** The paginated list */
   children: PropTypes.node.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the nav element */
-  navStyle: PropTypes.instanceOf(Object),
+  navStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the nav button elements */
-  navButtonStyle: PropTypes.instanceOf(Object),
+  navButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the icon button elements */
-  iconButtonStyle: PropTypes.instanceOf(Object),
+  iconButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The nav's position relative to the children. One of the following: ["top", "bottom"] */
   position: PropTypes.oneOf(['top', 'bottom']),
   /** Jump to a certain page in the list */

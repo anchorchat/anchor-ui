@@ -62,21 +62,21 @@ PopOver.propTypes = {
   /** Optional header text */
   header: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Toggle the PopOvers visibility */
   open: PropTypes.bool,
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Ref to the PopOver */
   popOverRef: PropTypes.func.isRequired,
   /** The PopOver's position relative to the anchor */
-  position: PropTypes.instanceOf(Object),
+  position: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Secondary set of MenuItems */
   secondaryMenuItems: PropTypes.node,
   /** Text to divide the menu items */
   dividerText: PropTypes.node,
   /** Override the styles of the divider element */
-  dividerStyle: PropTypes.instanceOf(Object),
+  dividerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when the PopOver's header is clicked
    *

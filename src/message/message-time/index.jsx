@@ -6,7 +6,7 @@ import styles from './styles';
 const propTypes = {
   myMessage: PropTypes.bool,
   type: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   createdAt: PropTypes.node.isRequired,
   edited: PropTypes.node,
   collapsed: PropTypes.bool,

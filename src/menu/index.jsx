@@ -29,15 +29,15 @@ const propTypes = {
   /** The Menu's footer */
   position: PropTypes.oneOf(['left', 'right']),
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the footer element */
-  footerStyle: PropTypes.instanceOf(Object),
+  footerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the footer element */
-  contentContainerStyle: PropTypes.instanceOf(Object),
+  contentContainerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

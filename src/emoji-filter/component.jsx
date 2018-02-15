@@ -13,9 +13,9 @@ const propTypes = {
   /** Filter emoji based on input value */
   value: PropTypes.string.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
-  headerStyle: PropTypes.instanceOf(Object),
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * Callback fired when a emoji is selected by pressing 'enter', 'escape' or by clicking the emoji
    *

@@ -19,19 +19,19 @@ const propTypes = {
    */
   onClick: PropTypes.func.isRequired,
   /** Override the styles of an inactive root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of an inactive label element */
-  labelStyle: PropTypes.instanceOf(Object),
+  labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the icon element */
-  iconStyle: PropTypes.instanceOf(Object),
+  iconStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Badge for the tab */
   badge: PropTypes.node,
   /** Override the styles of the badge element */
-  badgeStyle: PropTypes.instanceOf(Object),
+  badgeStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Overide the styles of an active root element. */
-  activeStyle: PropTypes.instanceOf(Object),
+  activeStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Overide the styles of an active label element. */
-  activeLabelStyle: PropTypes.instanceOf(Object),
+  activeLabelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 

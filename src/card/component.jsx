@@ -8,7 +8,7 @@ const propTypes = {
   /** The Card's content */
   children: PropTypes.node.isRequired,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object)
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {

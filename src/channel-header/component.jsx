@@ -51,15 +51,15 @@ ChannelHeader.propTypes = {
   /** Button on the left side of the ChannelHeader */
   leftButton: PropTypes.node,
   /** Override the styles of the root element */
-  style: PropTypes.instanceOf(Object),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the text element */
-  textStyle: PropTypes.instanceOf(Object),
+  textStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the text element */
-  secondaryTextStyle: PropTypes.instanceOf(Object),
+  secondaryTextStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the leftButton element */
-  leftButtonStyle: PropTypes.instanceOf(Object),
+  leftButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the rightButton element */
-  rightButtonStyle: PropTypes.instanceOf(Object),
+  rightButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
 
