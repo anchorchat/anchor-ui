@@ -70,3 +70,4 @@ export IconCoins from './icon-coins';
 export IconShop from './icon-shop';
 export IconArrowLeft from './icon-arrow-left';
 export IconArrowRight from './icon-arrow-right';
+export IconUpload from './icon-upload';

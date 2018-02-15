@@ -3848,6 +3848,24 @@
       }
     }
   },
+  "components/icons/icon-upload.jsx": {
+    "description": "",
+    "displayName": "IconUpload",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-warning.jsx": {
     "description": "",
     "displayName": "IconWarning",
