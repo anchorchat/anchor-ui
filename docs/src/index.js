@@ -53,6 +53,7 @@ import EmojiFilter from './components/emoji-filter';
 import Gallery from './components/gallery';
 import Media from './components/media';
 import Portal from './components/portal';
+import focusManager from './components/focus-manager';
 import './css/meyer-reset.css';
 import './css/index.css';
 import './css/prism.css';
@@ -109,6 +110,7 @@ ReactDOM.render(
         <Route path="/media" component={Media} />
         <Route path="/portal" component={Portal} />
         <Route path="/image-loader" component={ImageLoader} />
+        <Route path="/focus-manager" component={focusManager} />
       </Route>
     </Router>
   </StyleRoot>,

@@ -88,3 +88,7 @@ h2,
   vertical-align: middle;
   margin-top: -4px;
 }
+
+p {
+  line-height: 20px;
+}
