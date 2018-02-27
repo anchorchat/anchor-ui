@@ -11,6 +11,7 @@ import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
+import Switch from '../../../dist/switch';
 import colors from '../../../dist/settings/colors';
 import IconMenu from '../../../dist/icon-menu';
 import IconChevronDown from '../../../dist/icons/icon-chevron-down';
@@ -127,19 +128,19 @@ class MessageDoc extends Component {
     };
   }
 
-  selectCollapse = (event, collapsed) => this.setState({ collapsed })
+  selectCollapse = () => this.setState({ collapsed: !this.state.collapsed })
 
   selectCompact = () => this.setState({ compact: !this.state.compact })
 
   selectFontSize = (event, fontSize) => this.setState({ fontSize })
 
-  selectIconMenu = (event, iconMenu) => this.setState({ iconMenu })
+  selectIconMenu = () => this.setState({ iconMenu: !this.state.iconMenu })
 
-  selectEdited = (event, edited) => this.setState({ edited })
+  selectEdited = () => this.setState({ edited: !this.state.edited })
 
-  selectMultiline = (event, multiline) => this.setState({ multiline })
+  selectMultiline = () => this.setState({ multiline: !this.state.multiline })
 
-  selectAvatar = (event, avatar) => this.setState({ avatar });
+  selectAvatar = () => this.setState({ avatar: !this.state.avatar });
 
   render() {
     const {
@@ -161,7 +162,7 @@ class MessageDoc extends Component {
         flexWrap: 'wrap',
         padding: '10px 0'
       },
-      select: {
+      margin: {
         margin: '5px'
       }
     };
@@ -192,34 +193,46 @@ class MessageDoc extends Component {
         <section>
           <h1>Examples</h1>
           <div style={style.options}>
-            <Select style={style.select} label="Collapsed images" value={collapsed} onChange={this.selectCollapse}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Font size" value={fontSize} onChange={this.selectFontSize}>
+            <Switch
+              toggleSwitch={this.selectCollapse}
+              label="Collapsed images"
+              style={style.margin}
+              active={collapsed}
+            />
+            <Switch
+              toggleSwitch={this.selectCompact}
+              label="Compact messages"
+              style={style.margin}
+              active={compact}
+            />
+            <Switch
+              toggleSwitch={this.selectIconMenu}
+              label="Icon menu"
+              style={style.margin}
+              active={iconMenu}
+            />
+            <Switch
+              toggleSwitch={this.selectEdited}
+              label="Edited messages"
+              style={style.margin}
+              active={edited}
+            />
+            <Switch
+              toggleSwitch={this.selectMultiline}
+              label="Enable multiline"
+              style={style.margin}
+              active={multiline}
+            />
+            <Switch
+              toggleSwitch={this.selectAvatar}
+              label="Enable avatar"
+              style={style.margin}
+              active={avatar}
+            />
+            <Select style={style.margin} label="Font size" value={fontSize} onChange={this.selectFontSize}>
               <MenuItem text="Small" value="small" />
               <MenuItem text="Medium" value="medium" />
               <MenuItem text="Large" value="large" />
-            </Select>
-            <Select style={style.select} label="Compact messages" value={compact} onChange={this.selectCompact}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Icon menu" value={iconMenu} onChange={this.selectIconMenu}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Edited messages" value={edited} onChange={this.selectEdited}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Enable multiline" value={multiline} onChange={this.selectMultiline}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Enable avatar" value={avatar} onChange={this.selectAvatar}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
             </Select>
           </div>
           <Paper style={style.paper}>
