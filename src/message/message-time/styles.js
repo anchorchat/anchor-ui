@@ -18,8 +18,8 @@ export default {
     borderRadius: '3px 0 3px',
     backgroundColor: fade(colors.black, 0.55),
     position: 'absolute',
-    bottom: '12px',
-    right: '12px',
+    bottom: '13px',
+    right: '13px',
     color: colors.white,
     opacity: 1
   }
