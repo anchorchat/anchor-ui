@@ -1,39 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Table from '../../../../dist/table';
 import TableHeader from '../../../../dist/table-header';
 import TableHeaderColumn from '../../../../dist/table-header-column';
 import TableBody from '../../../../dist/table-body';
 import TableRow from '../../../../dist/table-row';
 import TableColumn from '../../../../dist/table-column';
+import Paper from '../../../../dist/paper';
+import focusManager from '../../../../dist/focus-manager';
 import Markdown from '../markdown';
+import example from './example';
 
-const usage = `
-  \`\`\`js
-  import focusManager from 'anchor-ui/focus-manager';
-  import MyComponent from './my-component';
-
-  export default focusManager()(MyComponent);
-
-  // with custom events
-  import focusManager from 'anchor-ui/focus-manager';
-  import MyComponent from './my-component';
-
-  export default focusManager(['onFocus', 'onBlur'])(MyComponent);
-
-  // with custom style
-  import focusManager from 'anchor-ui/focus-manager';
-  import MyComponent from './my-component';
-
-  const options = {
-    style: {
-      width: '100%',
-      height: '100%'
-    }
+const FocusedComponent = ({ focused }) => {
+  const style = {
+    width: '100px',
+    height: '100px',
+    color: focused ? 'white' : 'black',
+    backgroundColor: focused ? 'blue' : 'yellow'
   };
 
-  export default focusManager([], options)(MyComponent);
-  \`\`\`
-`;
+  return (
+    <div style={style}>
+      {
+        focused
+          ? 'focused'
+          : 'not focused'
+      }
+    </div>
+  );
+};
+
+FocusedComponent.propTypes = {
+  focused: PropTypes.bool.isRequired
+};
+
+const FocusedDefault = focusManager()(FocusedComponent);
+
+const FocusedClick = focusManager(['onClick', 'onMouseOut'])(FocusedComponent);
+
+const FocusedMouse = focusManager(['onMouseOver', 'onMouseOut'])(FocusedComponent);
 
 const focusManagerDoc = () => (
   <article className="page">
@@ -53,7 +58,28 @@ const focusManagerDoc = () => (
       </p>
     </section>
     <section>
-      <Markdown markdown={usage} title="Code examples" />
+      <h1>Examples</h1>
+      <Markdown markdown={example} title="Code examples" />
+      <Paper style={{ margin: 0, padding: '16px', display: 'flex' }}>
+        <div style={{ padding: '10px' }}>
+          <p>Default</p>
+          <div style={{ width: '100px', height: '100px' }}>
+            <FocusedDefault />
+          </div>
+        </div>
+        <div style={{ padding: '10px' }}>
+          <p>Focus on click</p>
+          <div style={{ width: '100px', height: '100px' }}>
+            <FocusedClick />
+          </div>
+        </div>
+        <div style={{ padding: '10px' }}>
+          <p>Focus on mouse over</p>
+          <div style={{ width: '100px', height: '100px' }}>
+            <FocusedMouse />
+          </div>
+        </div>
+      </Paper>
     </section>
     <section>
       <h1>Options</h1>
@@ -69,8 +95,19 @@ const focusManagerDoc = () => (
         <TableBody>
           <TableRow>
             <TableColumn>events</TableColumn>
-            <TableColumn>Array</TableColumn>
-            <TableColumn>Events to listen for</TableColumn>
+            <TableColumn>Array&lt;string&gt;</TableColumn>
+            <TableColumn>
+              <p>Focus events: </p>
+              <p>&apos;onClick&apos;</p>
+              <p>&apos;onFocus&apos;</p>
+              <p>&apos;onMouseEnter&apos;</p>
+              <p>&apos;onMouseOver&apos;</p>
+              <br />
+              <p>Unfocus events: </p>
+              <p>&apos;onBlur&apos;</p>
+              <p>&apos;onMouseLeave&apos;</p>
+              <p>&apos;onMouseOut&apos;</p>
+            </TableColumn>
             <TableColumn>[]</TableColumn>
           </TableRow>
           <TableRow>
