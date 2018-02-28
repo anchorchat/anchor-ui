@@ -41,7 +41,7 @@ import MyComponent from './my-component';
 export default withFocus(['onFocus', 'onBlur'])(MyComponent);
 
 // as HOC with custom styles
-import withFocus from 'anchor-ui/focus-manager';
+import { withFocus } from 'anchor-ui/focus-manager';
 import MyComponent from './my-component';
 
 const options = {
