@@ -1884,6 +1884,7 @@
   },
   "components/emoji-menu/emoji-categories.jsx": {
     "description": "",
+    "displayName": "EmojiCategories",
     "methods": [],
     "props": {
       "changeCategory": {
@@ -1947,6 +1948,7 @@
   },
   "components/emoji-menu/emoji-category.jsx": {
     "description": "",
+    "displayName": "EmojiCategory",
     "methods": [],
     "props": {
       "category": {
