@@ -8,7 +8,14 @@ import get from 'lodash/get';
 const focusManager = (events = [], options = {}) => (ChildComponent) => {
   class FocusManager extends Component {
     state = {
+      events: {},
       focused: false
+    }
+
+    componentDidMount() {
+      this.setState({
+        events: this.getEvents()
+      });
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -62,7 +69,7 @@ const focusManager = (events = [], options = {}) => (ChildComponent) => {
         <div
           role="presentation"
           style={style}
-          {...this.getEvents()}
+          {...this.state.events}
         >
           <ChildComponent focused={this.state.focused} {...this.props} />
         </div>
