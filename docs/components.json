@@ -2144,6 +2144,73 @@
       }
     }
   },
+  "components/focus-manager/component.jsx": {
+    "description": "",
+    "displayName": "FocusManager",
+    "methods": [
+      {
+        "name": "getEvents",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleFocus",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleBlur",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "events": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "List of events to include in focus checking",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "options": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "style": {
+              "name": "object",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Option object for defining style",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "render": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Render function"
+      }
+    }
+  },
   "components/gallery/component.jsx": {
     "description": "Justified grid layout for showcasing images.",
     "displayName": "Gallery",

@@ -1,18 +1,47 @@
 export default `
 \`\`\`js
-import focusManager from 'anchor-ui/focus-manager';
+// with render prop
+import FocusManager from 'anchor-ui/focus-manager';
+
+export default class extends React.Component {
+  render() {
+    <div style={{ height: '100%' }}>
+      <FocusManager render={(focused) => (
+        <p>I am {focused ? 'focused' : 'not focused'}</p>
+      )} />
+    </div>
+  }
+}
+
+// with children prop
+import FocusManager from 'anchor-ui/focus-manager';
+
+export default class extends React.Component {
+  render() {
+    <div style={{ height: '100%' }}>
+      <FocusManager>
+        {(focused) => (
+          <p>I am {focused ? 'focused' : 'not focused'}</p>
+        )}
+      </FocusManager>
+    </div>
+  }
+}
+
+// as HOC
+import { withFocus } from 'anchor-ui/focus-manager';
 import MyComponent from './my-component';
 
-export default focusManager()(MyComponent);
+export default withFocus()(MyComponent);
 
-// with events
-import focusManager from 'anchor-ui/focus-manager';
+// as HOC with focus events
+import { withFocus } from 'anchor-ui/focus-manager';
 import MyComponent from './my-component';
 
-export default focusManager(['onFocus', 'onBlur'])(MyComponent);
+export default withFocus(['onFocus', 'onBlur'])(MyComponent);
 
-// with custom style
-import focusManager from 'anchor-ui/focus-manager';
+// as HOC with custom styles
+import withFocus from 'anchor-ui/focus-manager';
 import MyComponent from './my-component';
 
 const options = {
@@ -22,6 +51,6 @@ const options = {
   }
 };
 
-export default focusManager([], options)(MyComponent);
+export default withFocus([], options)(MyComponent);
 \`\`\`
 `;

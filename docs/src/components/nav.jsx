@@ -52,7 +52,7 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/emoji-filter')} active={router.isActive('/emoji-filter')} text="EmojiFilter" />
       <MenuItem onClick={() => router.push('/emoji-menu')} active={router.isActive('/emoji-menu')} text="EmojiMenu" />
       <MenuItem onClick={() => router.push('/empty-state')} active={router.isActive('/empty-state')} text="EmptyState" />
-      <MenuItem onClick={() => router.push('/focus-manager')} active={router.isActive('/focus-manager')} text="focusManager" />
+      <MenuItem onClick={() => router.push('/focus-manager')} active={router.isActive('/focus-manager')} text="FocusManager" />
       <MenuItem onClick={() => router.push('/gallery')} active={router.isActive('/gallery')} text="Gallery" />
       <MenuItem onClick={() => router.push('/icons')} active={router.isActive('/icons')} text="Icons" />
       <MenuItem onClick={() => router.push('/icon-menu')} active={router.isActive('/icon-menu')} text="IconMenu" />
