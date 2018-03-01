@@ -6,6 +6,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
+import ImageLoader from '../../image-loader';
 
 const propTypes = {
   avatar: PropTypes.string,
@@ -22,7 +23,11 @@ const propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   badge: PropTypes.node,
-  iconMenu: PropTypes.node
+  iconMenu: PropTypes.node,
+  imagePlaceholder: PropTypes.string.isRequired,
+  imageError: PropTypes.string.isRequired,
+  onImageLoad: PropTypes.func.isRequired,
+  onImageError: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -55,9 +60,20 @@ const StickerMessage = ({
   messageBodyStyle,
   messageTimeStyle,
   badge,
-  iconMenu
+  iconMenu,
+  imagePlaceholder,
+  imageError,
+  onImageLoad,
+  onImageError
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
+
+  const imgProps = {
+    style: getStyles.body(myMessage, avatar, compact, messageBodyStyle)
+  };
+
+  const placeholder = <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={imagePlaceholder} alt="placeholder" />;
+  const error = <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={imageError} alt="error" />;
 
   return (
     <div style={styles.container}>
@@ -81,7 +97,15 @@ const StickerMessage = ({
         />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={body} alt="sticker" />
+      <ImageLoader
+        src={body}
+        alt="user-upload"
+        imgProps={imgProps}
+        placeholder={placeholder}
+        error={error}
+        onLoad={onImageLoad}
+        onError={onImageError}
+      />
     </div>
   );
 };
