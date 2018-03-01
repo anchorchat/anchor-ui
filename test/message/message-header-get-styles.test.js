@@ -57,7 +57,7 @@ describe('MessageHeader.getStyles', () => {
     it('should add iconMenu styles', () => {
       const style = getStyles.header(false, false, 'small', null, true);
 
-      expect(style).to.have.property('marginRight', '28px');
+      expect(style).to.have.property('marginRight', '35px');
     });
   });
 

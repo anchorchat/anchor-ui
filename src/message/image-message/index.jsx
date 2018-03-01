@@ -100,14 +100,14 @@ class ImageMessage extends Component {
     const { lightbox } = this.state;
 
     let onClick = null;
-    let headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '8px' });
+    let headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '9px' });
 
     if (enableLightbox) {
       onClick = this.toggleLightbox;
     }
 
     if (collapsed) {
-      headerStyle = combineStyles(headerStyle, { marginBottom: '0' });
+      headerStyle = combineStyles(headerStyle, { marginBottom: '5px' });
     }
 
     const imgProps = {

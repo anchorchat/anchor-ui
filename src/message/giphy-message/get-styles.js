@@ -37,7 +37,7 @@ const root = (
   }
 
   if (collapsed && iconMenu) {
-    style = combineStyles(style, { padding: '12px 40px 12px 12px' });
+    style = combineStyles(style, { padding: '13px 48px 13px 13px' });
   }
 
   return combineStyles(style, overrideStyle);

@@ -10,7 +10,7 @@ const header = (myMessage, compact, fontSize, badge, iconMenu, overrideStyle) =>
   }
 
   if (iconMenu) {
-    style = combineStyles(style, { marginRight: '28px' });
+    style = combineStyles(style, { marginRight: '35px' });
   }
 
   if (compact) {

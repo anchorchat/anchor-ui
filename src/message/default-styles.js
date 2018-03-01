@@ -7,7 +7,7 @@ export default {
     boxSizing: 'border-box',
     color: colors.primaryText,
     maxWidth: '80%',
-    padding: '12px',
+    padding: '13px',
     position: 'relative',
     wordBreak: 'break-word',
     fontWeight: 'inherit'
@@ -37,7 +37,7 @@ export default {
   },
   iconMenu: {
     position: 'absolute',
-    top: '3px',
-    right: '0'
+    top: '4px',
+    right: '4px'
   }
 };
