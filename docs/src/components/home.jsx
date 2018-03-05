@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import map from 'lodash/map';
 import npmPackage from '../../../package.json';
 import Markdown from './markdown';
 import Table from '../../../dist/table';
@@ -119,7 +119,7 @@ const Home = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {_.map(npmPackage.dependencies, (version, name) => (
+              {map(npmPackage.dependencies, (version, name) => (
                 <TableRow key={name}>
                   <TableColumn>{name}</TableColumn>
                   <TableColumn>{version}</TableColumn>
@@ -138,7 +138,7 @@ const Home = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {_.map(npmPackage.peerDependencies, (version, name) => (
+              {map(npmPackage.peerDependencies, (version, name) => (
                 <TableRow key={name}>
                   <TableColumn>{name}</TableColumn>
                   <TableColumn>{version}</TableColumn>
