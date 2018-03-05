@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Props from '../props';
 import components from '../../../components.json';
 import SlashCommands from './slash-commands';
@@ -12,25 +12,23 @@ const usage = `
   \`\`\`
 `;
 
-const CommandsDoc = () => {
-  const componentData = _.find(components, component => component.displayName === 'Commands');
+const componentData = find(components, { displayName: 'Commands' });
 
-  return (
-    <article className="page">
-      <h1>Commands</h1>
-      <section>
-        <h1>Description</h1>
-        <p>{componentData.description}</p>
-      </section>
-      <Markdown markdown={usage} title="Code example" />
-      <section>
-        <h1>Examples</h1>
-        <SlashCommands />
-        <Mentions />
-      </section>
-      <Props props={componentData.props} />
-    </article>
-  );
-};
+const CommandsDoc = () => (
+  <article className="page">
+    <h1>Commands</h1>
+    <section>
+      <h1>Description</h1>
+      <p>{componentData.description}</p>
+    </section>
+    <Markdown markdown={usage} title="Code example" />
+    <section>
+      <h1>Examples</h1>
+      <SlashCommands />
+      <Mentions />
+    </section>
+    <Props props={componentData.props} />
+  </article>
+);
 
 export default CommandsDoc;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Dialog from '../../../../dist/dialog';
 import Button from '../../../../dist/button';
 import Props from '../props';
@@ -8,18 +8,24 @@ import Paper from '../../../../dist/paper';
 import Markdown from '../markdown';
 import example from './example';
 
+const componentData = find(components, { displayName: 'Dialog' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  button: { margin: '10px' }
+};
+
 class DialogDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      open: false
-    };
-
-    this.toggleDialog = this.toggleDialog.bind(this);
+  state = {
+    open: false
   }
 
-  toggleDialog() {
+  toggleDialog = () => {
     this.setState({
       open: !this.state.open
     });
@@ -27,17 +33,6 @@ class DialogDoc extends Component {
 
   render() {
     const { open } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Dialog');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      button: { margin: '10px' }
-    };
 
     return (
       <article className="page">

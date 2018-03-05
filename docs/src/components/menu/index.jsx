@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import noop from 'lodash/noop';
 import Menu from '../../../../dist/menu';
 import MenuItem from '../../../../dist/menu-item';
 import Button from '../../../../dist/button';
@@ -10,34 +11,38 @@ import IconRocket from '../../../../dist/icons/icon-rocket';
 import Markdown from '../markdown';
 import example from './example';
 
+const componentData = find(components, { displayName: 'Menu' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  button: { margin: '10px' }
+};
+
 class MenuDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      open: false,
-      openIconHeader: false,
-      openRight: false
-    };
-
-    this.toggleMenu = this.toggleMenu.bind(this);
-    this.toggleMenuIconHeader = this.toggleMenuIconHeader.bind(this);
-    this.toggleMenuRight = this.toggleMenuRight.bind(this);
+  state = {
+    open: false,
+    openIconHeader: false,
+    openRight: false
   }
 
-  toggleMenu() {
+  toggleMenu = () => {
     this.setState({
       open: !this.state.open
     });
   }
 
-  toggleMenuIconHeader() {
+  toggleMenuIconHeader = () => {
     this.setState({
       openIconHeader: !this.state.openIconHeader
     });
   }
 
-  toggleMenuRight() {
+  toggleMenuRight = () => {
     this.setState({
       openRight: !this.state.openRight
     });
@@ -45,17 +50,6 @@ class MenuDoc extends Component {
 
   render() {
     const { open, openIconHeader, openRight } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Menu');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      button: { margin: '10px' }
-    };
 
     return (
       <article className="page">
@@ -73,9 +67,9 @@ class MenuDoc extends Component {
               header="Sidebar menu"
               footer="version 8af2fbb"
             >
-              <MenuItem text="Active Menu item" onClick={() => {}} active />
-              <MenuItem text="Menu item" onClick={() => {}} />
-              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Active Menu item" onClick={noop} active />
+              <MenuItem text="Menu item" onClick={noop} />
+              <MenuItem text="Menu item" onClick={noop} />
             </Menu>
             <Button
               style={style.button}
@@ -100,9 +94,9 @@ class MenuDoc extends Component {
               header="Default Menu"
               open={open}
             >
-              <MenuItem text="Active Menu item" onClick={() => {}} active />
-              <MenuItem text="Menu item" onClick={() => {}} />
-              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Active Menu item" onClick={noop} active />
+              <MenuItem text="Menu item" onClick={noop} />
+              <MenuItem text="Menu item" onClick={noop} />
             </Menu>
             <Menu
               closeMenu={this.toggleMenuIconHeader}
@@ -111,11 +105,11 @@ class MenuDoc extends Component {
               headerIcon={<IconRocket />}
               footer="version 8af2fbb"
             >
-              <MenuItem text="Active Menu item" onClick={() => {}} active />
-              <MenuItem text="Menu item" onClick={() => {}} />
-              <MenuItem text="Menu item" onClick={() => {}} />
-              <MenuItem text="Menu item" onClick={() => {}} />
-              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Active Menu item" onClick={noop} active />
+              <MenuItem text="Menu item" onClick={noop} />
+              <MenuItem text="Menu item" onClick={noop} />
+              <MenuItem text="Menu item" onClick={noop} />
+              <MenuItem text="Menu item" onClick={noop} />
             </Menu>
             <Menu
               closeMenu={this.toggleMenuRight}
@@ -123,9 +117,9 @@ class MenuDoc extends Component {
               open={openRight}
               position="right"
             >
-              <MenuItem text="Active Menu item" onClick={() => {}} active />
-              <MenuItem text="Menu item" onClick={() => {}} />
-              <MenuItem text="Menu item" onClick={() => {}} />
+              <MenuItem text="Active Menu item" onClick={noop} active />
+              <MenuItem text="Menu item" onClick={noop} />
+              <MenuItem text="Menu item" onClick={noop} />
             </Menu>
           </Paper>
         </section>

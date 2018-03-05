@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import map from 'lodash/map';
+import isNaN from 'lodash/isNaN';
 import List from '../../../../dist/list';
 import ListItem from '../../../../dist/list-item';
 import Select from '../../../../dist/select';
@@ -11,6 +13,34 @@ import Paper from '../../../../dist/paper';
 import Markdown from '../markdown';
 import example from './example';
 import { generateRandomUsers, sortUsersByUsername } from '../../utils/users';
+
+const componentData = find(components, { displayName: 'List' });
+
+const style = {
+  paper: {
+    padding: '16px',
+    margin: '0 0 16px 0'
+  },
+  list: {
+    height: '400px',
+    width: '100%'
+  },
+  button: {
+    margin: '10px'
+  },
+  input: {
+    margin: '10px'
+  },
+  select: {
+    width: '256px',
+    marginRight: '16px'
+  },
+  flex: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    marginBottom: '16px'
+  }
+};
 
 class ListDoc extends Component {
   state = {
@@ -40,7 +70,7 @@ class ListDoc extends Component {
       parseInt(event.target.value, 10)
     );
 
-    if (_.isNaN(index)) {
+    if (isNaN(index)) {
       index = undefined;
     }
 
@@ -67,33 +97,6 @@ class ListDoc extends Component {
       users,
       enableInfiniteScroll
     } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'List');
-
-    const style = {
-      paper: {
-        padding: '16px',
-        margin: '0 0 16px 0'
-      },
-      list: {
-        height: '400px',
-        width: '100%'
-      },
-      button: {
-        margin: '10px'
-      },
-      input: {
-        margin: '10px'
-      },
-      select: {
-        width: '256px',
-        marginRight: '16px'
-      },
-      flex: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        marginBottom: '16px'
-      }
-    };
 
     return (
       <article className="page">
@@ -142,7 +145,7 @@ class ListDoc extends Component {
               scrollToIndex={index}
               enableInfiniteScroll={enableInfiniteScroll}
             >
-              {_.map(users, user => (
+              {map(users, user => (
                 <ListItem
                   key={user.userId}
                   primaryText={user.username}
