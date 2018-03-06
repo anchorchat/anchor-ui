@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import sample from 'lodash/sample';
 import Menu from '../../../dist/menu';
 import MenuItem from '../../../dist/menu-item';
 import npmPackage from '../../../package.json';
@@ -31,7 +31,7 @@ const Nav = ({ media, toggleMenu, open }, context) => {
   return (
     <Menu
       header={`Version: ${npmPackage.version}`}
-      headerIcon={React.createElement(_.sample(icons), { style: style.icon })}
+      headerIcon={React.createElement(sample(icons), { style: style.icon })}
       closeMenu={!media.medium ? toggleMenu : null}
       open={open}
     >
