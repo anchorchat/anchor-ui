@@ -1,8 +1,10 @@
-import _ from 'lodash';
+import times from 'lodash/times';
+import sortBy from 'lodash/sortBy';
+import toLower from 'lodash/toLower';
 import faker from 'faker';
 
 const generateRandomUsers = amount => (
-  _.times(amount, () => ({
+  times(amount, () => ({
     userId: faker.random.uuid(),
     username: faker.internet.userName(),
     avatar: faker.internet.avatar(),
@@ -11,7 +13,7 @@ const generateRandomUsers = amount => (
 );
 
 const sortUsersByUsername = users => (
-  _.sortBy(users, user => _.toLower(user.username))
+  sortBy(users, user => toLower(user.username))
 );
 
 export {
