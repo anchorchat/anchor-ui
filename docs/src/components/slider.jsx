@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import noop from 'lodash/noop';
 import Slider from '../../../dist/slider';
 import Props from './props';
 import components from '../../components.json';
@@ -11,6 +12,15 @@ const usage = `
   import Slider from 'anchor-ui/slider';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'Slider' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  slider: { margin: '0 10px 30px 10px' }
+};
 
 class SliderDoc extends Component {
   constructor() {
@@ -55,15 +65,6 @@ class SliderDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Slider');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '20px'
-      },
-      slider: { margin: '0 10px 30px 10px' }
-    };
-
     return (
       <article className="page">
         <h1>Slider</h1>
@@ -102,7 +103,7 @@ class SliderDoc extends Component {
               style={style.slider}
             />
             <Slider
-              onChange={() => {}}
+              onChange={noop}
               label="Disabled example"
               name="sliderDisabled"
               value={this.state.valueDisabled}

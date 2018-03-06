@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import range from 'lodash/range';
+import map from 'lodash/map';
 import Pagination from '../../../dist/pagination';
 import Props from './props';
 import components from '../../components.json';
@@ -19,10 +21,23 @@ const usage = `
   \`\`\`
 `;
 
-const range = _.range(1, 351);
-const listDefault = _.map(range, number => ({ id: number, name: `Item ${number}` }));
-const listJumpToPage = _.map(range, number => ({ id: number, name: `Item ${number}` }));
-const listIntialPage = _.map(range, number => ({ id: number, name: `Item ${number}` }));
+const numbers = range(1, 351);
+const listDefault = map(numbers, number => ({ id: number, name: `Item ${number}` }));
+const listJumpToPage = map(numbers, number => ({ id: number, name: `Item ${number}` }));
+const listIntialPage = map(numbers, number => ({ id: number, name: `Item ${number}` }));
+
+const componentData = find(components, { displayName: 'Pagination' });
+
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  button: { margin: '10px' }
+};
 
 class PaginationDoc extends Component {
   constructor() {
@@ -48,22 +63,12 @@ class PaginationDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Pagination');
     const {
       itemsDefault,
       itemsIntialPage,
       itemsJumpToPage
     } = this.state;
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      button: { margin: '10px' }
-    };
+
     return (
       <article className="page">
         <h1>Pagination</h1>
@@ -84,7 +89,7 @@ class PaginationDoc extends Component {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {_.map(itemsDefault, listItem => (
+                  {map(itemsDefault, listItem => (
                     <TableRow key={listItem.id}>
                       <TableColumn>{listItem.id}</TableColumn>
                       <TableColumn>{listItem.name}</TableColumn>
@@ -117,7 +122,7 @@ class PaginationDoc extends Component {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {_.map(itemsJumpToPage, listItem => (
+                  {map(itemsJumpToPage, listItem => (
                     <TableRow key={listItem.id}>
                       <TableColumn>{listItem.id}</TableColumn>
                       <TableColumn>{listItem.name}</TableColumn>
@@ -138,7 +143,7 @@ class PaginationDoc extends Component {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {_.map(itemsIntialPage, listItem => (
+                  {map(itemsIntialPage, listItem => (
                     <TableRow key={listItem.id}>
                       <TableColumn>{listItem.id}</TableColumn>
                       <TableColumn>{listItem.name}</TableColumn>
@@ -154,9 +159,5 @@ class PaginationDoc extends Component {
     );
   }
 }
-
-PaginationDoc.defaultProps = {
-  setColor: () => {}
-};
 
 export default PaginationDoc;

@@ -1,6 +1,8 @@
 /* global alert */
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import map from 'lodash/map';
+import noop from 'lodash/noop';
 import moment from 'moment';
 import faker from 'faker';
 import Message from '../../../dist/message';
@@ -49,6 +51,27 @@ const scalingEmoji = `
 
 const currentUser = faker.internet.userName();
 const currentUserAvatar = faker.internet.avatar();
+
+const componentData = find(components, { displayName: 'Message' });
+const style = {
+  paper: {
+    margin: '0 0 20px 0',
+    padding: '20px'
+  },
+  list: {
+    backgroundImage: `url(${background})`,
+    backgroundSize: '500px',
+    height: '475px'
+  },
+  options: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: '10px 0'
+  },
+  margin: {
+    margin: '5px'
+  }
+};
 
 const messages = [
   {
@@ -146,26 +169,6 @@ class MessageDoc extends Component {
     const {
       collapsed, fontSize, compact, iconMenu, edited, multiline, avatar
     } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Message');
-    const style = {
-      paper: {
-        margin: '0 0 20px 0',
-        padding: '20px'
-      },
-      list: {
-        backgroundImage: `url(${background})`,
-        backgroundSize: '500px',
-        height: '475px'
-      },
-      options: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        padding: '10px 0'
-      },
-      margin: {
-        margin: '5px'
-      }
-    };
 
     return (
       <article className="page">
@@ -237,10 +240,10 @@ class MessageDoc extends Component {
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
-              {messages.map((message) => {
+              {map(messages, (message) => {
                 const menuItems = [
-                  <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
-                  <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
+                  <MenuItem key="item1" text="Menu Item" onClick={noop} />,
+                  <MenuItem key="item2" text="Another Menu Item" onClick={noop} />
                 ];
 
                 const expandMenuItem = <MenuItem key="expand" text="Expand image" onClick={() => this.selectCollapse(false)} />;

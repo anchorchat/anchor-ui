@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import faker from 'faker';
 import RadioButton from '../../../dist/radio-button';
 import RadioButtonGroup from '../../../dist/radio-button-group';
@@ -16,6 +16,25 @@ const usage = `
 `;
 
 const customIcon = faker.image.image(40, 40);
+
+const componentData = find(components, { displayName: 'RadioButton' });
+const groupData = find(components, { displayName: 'RadioButtonGroup' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  radioButtonGroup: {
+    margin: '10px'
+  },
+  avatar: {
+    width: '24px',
+    height: '24px'
+  }
+};
 
 class RadioButtonDoc extends Component {
   constructor() {
@@ -35,25 +54,6 @@ class RadioButtonDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'RadioButton');
-    const groupData = _.find(components, component => component.displayName === 'RadioButtonGroup');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      radioButtonGroup: {
-        margin: '10px'
-      },
-      avatar: {
-        width: '24px',
-        height: '24px'
-      }
-    };
-
     return (
       <article className="page">
         <h1>RadioButton</h1>

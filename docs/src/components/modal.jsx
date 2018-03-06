@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Modal from '../../../dist/modal';
 import Button from '../../../dist/button';
 import Props from './props';
@@ -12,6 +12,18 @@ const usage = `
   import Modal from 'anchor-ui/modal';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'Modal' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  button: { margin: '10px' }
+};
 
 class ModalDoc extends Component {
   constructor() {
@@ -32,17 +44,6 @@ class ModalDoc extends Component {
 
   render() {
     const { open } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Modal');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      button: { margin: '10px' }
-    };
 
     return (
       <article className="page">

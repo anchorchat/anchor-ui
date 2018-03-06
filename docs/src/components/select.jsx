@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import MenuItem from '../../../dist/menu-item';
 import Select from '../../../dist/select';
 import Props from './props';
@@ -12,6 +12,15 @@ const usage = `
   import Select from 'anchor-ui/select';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'Select' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  select: { margin: '10px' }
+};
 
 class SelectDoc extends Component {
   constructor() {
@@ -39,15 +48,6 @@ class SelectDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Select');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '20px'
-      },
-      select: { margin: '10px' }
-    };
-
     return (
       <article className="page">
         <h1>{componentData.displayName}</h1>

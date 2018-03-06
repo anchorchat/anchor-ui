@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import noop from 'lodash/noop';
 import SearchBox from '../../../dist/search-box';
 import Props from './props';
 import components from '../../components.json';
@@ -11,6 +12,17 @@ const usage = `
   import SearchBox from 'anchor-ui/search-box';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'SearchBox' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  }
+};
 
 class SearchBoxDoc extends React.Component {
   constructor(props) {
@@ -27,17 +39,6 @@ class SearchBoxDoc extends React.Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'SearchBox');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      }
-    };
-
     return (
       <article className="page">
         <h1>SearchBox</h1>
@@ -49,7 +50,7 @@ class SearchBoxDoc extends React.Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <SearchBox onChange={this.handleChange} changeSearchQuery={() => {}} placeholder="Search" value={this.state.value} />
+            <SearchBox onChange={this.handleChange} changeSearchQuery={noop} placeholder="Search" value={this.state.value} />
           </Paper>
         </section>
         <Props props={componentData.props} />

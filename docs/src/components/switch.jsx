@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Switch from '../../../dist/switch';
 import Props from './props';
 import components from '../../components.json';
@@ -11,6 +11,18 @@ const usage = `
   import Switch from 'anchor-ui/switch';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'Switch' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  switch: { margin: '10px' }
+};
 
 class SwitchDoc extends Component {
   constructor() {
@@ -38,18 +50,6 @@ class SwitchDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Switch');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      switch: { margin: '10px' }
-    };
-
     return (
       <article className="page">
         <h1>Switch</h1>

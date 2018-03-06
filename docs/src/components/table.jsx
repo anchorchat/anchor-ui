@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Table from '../../../dist/table';
 import TableHeader from '../../../dist/table-header';
 import TableHeaderColumn from '../../../dist/table-header-column';
@@ -61,14 +61,14 @@ const usage = `
   \`\`\`
 `;
 
-const TableDoc = () => {
-  const componentData = _.find(components, component => component.displayName === 'Table');
-  const headerData = _.find(components, component => component.displayName === 'TableHeader');
-  const headerColumnData = _.find(components, component => component.displayName === 'TableHeaderColumn');
-  const bodyData = _.find(components, component => component.displayName === 'TableBody');
-  const rowData = _.find(components, component => component.displayName === 'TableRow');
-  const columnData = _.find(components, component => component.displayName === 'TableColumn');
+const componentData = find(components, { displayName: 'Table' });
+const headerData = find(components, { displayName: 'TableHeader' });
+const headerColumnData = find(components, { displayName: 'TableHeaderColumn' });
+const bodyData = find(components, { displayName: 'TableBody' });
+const rowData = find(components, { displayName: 'TableRow' });
+const columnData = find(components, { displayName: 'TableColumn' });
 
+const TableDoc = () => {
   const style = {
     paper: {
       display: 'flex',
