@@ -25,7 +25,7 @@ class SlashCommands extends Component {
     let valueToMatch = '';
 
     if (includes(value, '/')) {
-      valueToMatch = split(value, '/');
+      valueToMatch = last(split(value, '/'));
     }
 
     if (value.length > this.input.selectionStart) {
