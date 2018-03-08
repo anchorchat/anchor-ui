@@ -6,6 +6,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import Input from '../../src/input/component';
 import getStyles from '../../src/input/get-styles';
 
@@ -13,7 +14,7 @@ chai.use(sinonChai);
 
 describe('Input', () => {
   const props = {
-    onChange: () => {},
+    onChange: noop,
     value: 1,
     name: '',
     style: {},

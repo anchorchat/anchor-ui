@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import Checkbox from '../../src/checkbox/component';
 import IconCheckbox from '../../src/icons/icon-checkbox';
 import getStyles from '../../src/checkbox/get-styles';
@@ -15,7 +16,7 @@ describe('Checkbox', () => {
   const props = {
     label: 'Label',
     name: 'name',
-    onChange: () => {},
+    onChange: noop,
     checked: false,
     style: {},
     inputStyle: {},

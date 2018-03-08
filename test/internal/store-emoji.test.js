@@ -3,7 +3,8 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import store from 'store';
-import _ from 'lodash';
+import times from 'lodash/times';
+import last from 'lodash/last';
 import Chance from 'chance';
 import storeEmoji from '../../src/internal/store-emoji';
 
@@ -57,7 +58,7 @@ describe('storeEmoji', () => {
   });
 
   it('should remove last emoji from array', () => {
-    let storage = _.times(
+    let storage = times(
       42,
       () => ({ name: chance.string({ length: 20 }), shortname: chance.string({ length: 20 }) })
     );
@@ -65,12 +66,12 @@ describe('storeEmoji', () => {
     const set = sinon.stub(store, 'set').callsFake((key, item) => { storage = item; });
     const emoji = { name: 'grinning face', shortname: ':grinning:' };
 
-    const lastEmoji = _.last(storage);
+    const lastEmoji = last(storage);
     storeEmoji(emoji);
 
     expect(get).to.have.been.calledWith('recent-emoji');
     expect(set).to.have.been.calledOnce; // eslint-disable-line no-unused-expressions
     expect(storage).to.have.lengthOf(42);
-    expect(_.last(storage)).to.not.equal(lastEmoji);
+    expect(last(storage)).to.not.equal(lastEmoji);
   });
 });

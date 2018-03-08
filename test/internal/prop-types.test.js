@@ -3,6 +3,7 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import PropTypes from 'prop-types';
+import constant from 'lodash/constant';
 import propTypes from '../../src/internal/prop-types';
 
 chai.use(sinonChai);
@@ -14,7 +15,7 @@ describe('propTypes', () => {
 
   describe('minMax', () => {
     it('should return error if prop isNaN', () => {
-      const number = sinon.stub(PropTypes, 'number').callsFake(() => 'isNaN');
+      const number = sinon.stub(PropTypes, 'number').callsFake(constant('isNaN'));
 
       const props = {
         min: 'min'
@@ -27,7 +28,7 @@ describe('propTypes', () => {
     });
 
     it('should return error if min is greater than or equal to max', () => {
-      const number = sinon.stub(PropTypes, 'number').callsFake(() => null);
+      const number = sinon.stub(PropTypes, 'number').callsFake(constant(null));
 
       const props = {
         min: 2,
@@ -41,7 +42,7 @@ describe('propTypes', () => {
     });
 
     it('should return error if max is less than or equal to min', () => {
-      const number = sinon.stub(PropTypes, 'number').callsFake(() => null);
+      const number = sinon.stub(PropTypes, 'number').callsFake(constant(null));
 
       const props = {
         min: 2,
@@ -57,7 +58,7 @@ describe('propTypes', () => {
 
   describe('valueInRange', () => {
     it('should return error if prop isNaN', () => {
-      const number = sinon.stub(PropTypes, 'number').callsFake(() => 'isNaN');
+      const number = sinon.stub(PropTypes, 'number').callsFake(constant('isNaN'));
 
       const props = {
         value: 'value'
@@ -70,7 +71,7 @@ describe('propTypes', () => {
     });
 
     it('should return error if prop is not in range', () => {
-      const number = sinon.stub(PropTypes, 'number').callsFake(() => null);
+      const number = sinon.stub(PropTypes, 'number').callsFake(constant(null));
 
       const props = {
         value: 10,

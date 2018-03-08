@@ -5,6 +5,8 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import isFunction from 'lodash/isFunction';
+import noop from 'lodash/noop';
 import Menu from '../../src/menu';
 import Overlay from '../../src/overlay';
 import getStyles from '../../src/menu/get-styles';
@@ -88,11 +90,11 @@ describe('Menu', () => {
   });
 
   it('should apply closeMenu prop to children', () => {
-    props.closeMenu = () => {};
+    props.closeMenu = noop;
     const wrapper = shallow(<Menu {...props} >{menuItems}</Menu>).dive();
     const closeMenu = wrapper.find('p').prop('closeMenu');
 
-    expect(typeof closeMenu === 'function').to.equal(true);
+    expect(isFunction(closeMenu)).to.equal(true);
     props.closeMenu = null;
   });
 
@@ -136,7 +138,7 @@ describe('Menu', () => {
   });
 
   it('should get container styles', () => {
-    props.closeMenu = () => {};
+    props.closeMenu = noop;
     const spy = sinon.spy(getStyles, 'container');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
@@ -145,7 +147,7 @@ describe('Menu', () => {
   });
 
   it('should get overlay styles', () => {
-    props.closeMenu = () => {};
+    props.closeMenu = noop;
     const spy = sinon.spy(getStyles, 'overlay');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();
@@ -154,7 +156,7 @@ describe('Menu', () => {
   });
 
   it('should get root styles', () => {
-    props.closeMenu = () => {};
+    props.closeMenu = noop;
     const spy = sinon.spy(getStyles, 'root');
 
     shallow(<Menu {...props} >{menuItems}</Menu>).dive();

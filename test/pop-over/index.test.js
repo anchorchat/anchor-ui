@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import PopOver from '../../src/pop-over';
 import getStyles from '../../src/pop-over/get-styles';
 
@@ -20,7 +21,7 @@ describe('PopOver', () => {
     secondaryMenuItems: null,
     dividerText: null,
     children: '',
-    popOverRef: () => {}
+    popOverRef: noop
   };
   const children = <p>children</p>;
   const divider = 'text';
