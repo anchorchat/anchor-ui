@@ -6,6 +6,7 @@ import isEmpty from 'lodash/isEmpty';
 import forEach from 'lodash/forEach';
 import find from 'lodash/find';
 import size from 'lodash/size';
+import replace from 'lodash/replace';
 import htmlParser from 'html-react-parser';
 import domToReact from 'html-react-parser/lib/dom-to-react';
 import colors from '../../settings/colors';
@@ -85,7 +86,7 @@ class TextMessage extends Component {
     if (enableLinks && size(dotCount) < 10) {
       const urlSchemeRegex = /^(?:https?:\/\/)/;
 
-      parsedText = escapedText.replace(urlRegex, (url) => {
+      parsedText = replace(escapedText, urlRegex, (url) => {
         if (!urlSchemeRegex.test(url)) {
           // Add default http:// scheme for urls like example.com
           return (`<a class="link" value="http://${url}" href="http://${url}">${url}</a>`);
@@ -96,7 +97,7 @@ class TextMessage extends Component {
 
     if (!isEmpty(highlights)) {
       forEach(highlights, (highlight) => {
-        parsedText = parsedText.replace(`${highlight.prefix}${highlight.value}`, `<span class="highlight" value="${highlight.id}">${highlight.prefix}${highlight.value}</span>`);
+        parsedText = replace(parsedText, `${highlight.prefix}${highlight.value}`, `<span class="highlight" value="${highlight.id}">${highlight.prefix}${highlight.value}</span>`);
       });
     }
 
@@ -107,7 +108,7 @@ class TextMessage extends Component {
     }
 
     if (enableMultiline) {
-      html = html.replace(/\n/g, '<br />');
+      html = replace(html, /\n/g, '<br />');
     }
 
     return html;

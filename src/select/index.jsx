@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import find from 'lodash/find';
+import get from 'lodash/get';
+import matchesProperty from 'lodash/matchesProperty';
 import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
 import styles from './styles';
@@ -168,10 +170,10 @@ class Select extends Component {
       )
     );
 
-    const activeChild = find(childrenWithProps, child => child.props.value === value);
+    const activeChild = find(childrenWithProps, ['props.value', value]);
 
     const headerText = (
-      (activeChild && activeChild.props && activeChild.props.text) || value || placeholder
+      get(activeChild, 'props.text') || value || placeholder
     );
 
     const popOverStyle = combineStyles({ minWidth: popOverWidth, right: 'initial' }, contentStyle);

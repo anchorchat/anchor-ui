@@ -116,8 +116,8 @@ const defaultProps = {
   enableMultiline: false,
   imagePlaceholder: 'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg',
   imageError: 'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg',
-  onImageLoad: () => {},
-  onImageError: () => {}
+  onImageLoad: noop,
+  onImageError: noop
 };
 
 /** Messages with optional styling for the current user's message,
