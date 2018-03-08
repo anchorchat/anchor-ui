@@ -4,7 +4,6 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import find from 'lodash/find';
 import get from 'lodash/get';
-import matchesProperty from 'lodash/matchesProperty';
 import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
 import styles from './styles';
