@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import get from 'lodash/get';
 import colors from '../settings/colors';
 
 const themeable = options => ChildComponent => (
@@ -12,7 +13,7 @@ const themeable = options => ChildComponent => (
       super(props, context);
 
       this.state = {
-        color: (context && context.theme && context.theme.color) || colors.theme
+        color: get(context, 'theme.color') || colors.theme
       };
     }
 
