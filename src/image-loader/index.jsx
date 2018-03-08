@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
 
 const propTypes = {
   /** The alt of the image to be loaded */
@@ -30,8 +31,8 @@ const defaultProps = {
   alt: '',
   error: null,
   imgProps: {},
-  onError: () => {},
-  onLoad: () => {},
+  onError: noop,
+  onLoad: noop,
   placeholder: null
 };
 

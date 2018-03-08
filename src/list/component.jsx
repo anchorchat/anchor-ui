@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isArray from 'lodash/isArray';
+import noop from 'lodash/noop';
 import { AutoSizer, List as VirtualizedList } from 'react-virtualized';
 import getStyles from './get-styles';
 import styles from './styles';
@@ -57,7 +58,7 @@ const defaultProps = {
   header: null,
   headerStyle: {},
   itemHeight: 48,
-  listRef: () => {},
+  listRef: noop,
   listStyle: {},
   overscanRowCount: 10,
   scrollPlaceholder: null,
