@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';
+import noop from 'lodash/noop';
 import PopOver from '../pop-over';
 import Button from '../button';
 import getStyles from './get-styles';
@@ -51,8 +52,8 @@ const defaultProps = {
   dividerStyle: {},
   secondaryMenuItems: null,
   dividerText: null,
-  onMenuClose: () => {},
-  onHeaderClick: () => {},
+  onMenuClose: noop,
+  onHeaderClick: noop,
   buttonStyle: {}
 };
 
