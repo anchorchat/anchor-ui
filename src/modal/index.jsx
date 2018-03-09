@@ -7,37 +7,19 @@ import Overlay from '../overlay';
 import themeable from '../themeable';
 import Portal from '../portal';
 
-/** A dialog that can only be closed by selecting one of the actions. */
-const Modal = ({
-  children, actions, style, contentStyle, footerStyle, open, overlayStyle, color, ...custom
-}) => {
-  if (!open) {
-    return null;
-  }
+const displayName = 'Modal';
 
-  return (
-    <Portal>
-      <Overlay style={overlayStyle}>
-        <section style={getStyles.root(style)} {...custom}>
-          <section style={getStyles.content(contentStyle)}>
-            {children}
-          </section>
-          <footer style={getStyles.footer(color, footerStyle)}>
-            {actions}
-          </footer>
-        </section>
-      </Overlay>
-    </Portal>
-  );
-};
-
-Modal.propTypes = {
+const propTypes = {
+  /** Header text */
+  header: PropTypes.node,
   /** The Modal's children */
   children: PropTypes.node.isRequired,
   /** The Modal's actions */
   actions: PropTypes.node.isRequired,
   /** Override the style of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Override the styles of the header element */
+  headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the style of the content element */
   contentStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the style of the footer element */
@@ -49,15 +31,54 @@ Modal.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-Modal.displayName = 'Modal';
-
-Modal.defaultProps = {
+const defaultProps = {
+  header: null,
   style: {},
+  headerStyle: {},
   contentStyle: {},
   footerStyle: {},
   open: false,
   overlayStyle: {}
 };
+
+/** A dialog that can only be closed by selecting one of the actions. */
+const Modal = ({
+  header,
+  children,
+  actions,
+  style,
+  headerStyle,
+  contentStyle,
+  footerStyle,
+  open,
+  overlayStyle,
+  color,
+  ...custom
+}) => {
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <Portal>
+      <Overlay style={overlayStyle}>
+        <section style={getStyles.root(style)} {...custom}>
+          <section style={getStyles.content(contentStyle)}>
+            {header ? <h1 style={getStyles.header(headerStyle)}>{header}</h1> : null}
+            {children}
+          </section>
+          <footer style={getStyles.footer(color, footerStyle)}>
+            {actions}
+          </footer>
+        </section>
+      </Overlay>
+    </Portal>
+  );
+};
+
+Modal.displayName = displayName;
+Modal.propTypes = propTypes;
+Modal.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),

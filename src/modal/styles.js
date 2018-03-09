@@ -7,7 +7,7 @@ export default {
     maxWidth: '350px',
     margin: '0 auto',
     backgroundColor: colors.white,
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxSizing: 'border-box',
     overflow: 'hidden',
     boxShadow: styles.depthShadows[0]
@@ -17,12 +17,21 @@ export default {
     color: colors.primaryText
   },
   footer: {
-    padding: '12px 16px',
+    padding: '16px',
     backgroundColor: colors.theme,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     color: colors.white,
     textTransform: 'uppercase'
+  },
+  header: {
+    color: colors.secondaryText,
+    fontSize: '24px',
+    fontWeight: 'bolder',
+    marginTop: '0',
+    marginLeft: '0',
+    marginRight: '0',
+    marginBottom: '16px'
   }
 };
