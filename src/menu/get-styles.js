@@ -50,7 +50,7 @@ const header = (color = colors.theme, icon = false, overrideStyle) => {
   let style = combineStyles(styles.header, { color });
 
   if (icon) {
-    style = combineStyles(style, { padding: '15.5px 16px 15.5px 40px' });
+    style = combineStyles(style, { padding: '16px 16px 16px 40px' });
   }
 
   return combineStyles(style, overrideStyle);
