@@ -55,6 +55,7 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/gallery')} active={router.isActive('/gallery')} text="Gallery" />
       <MenuItem onClick={() => router.push('/icons')} active={router.isActive('/icons')} text="Icons" />
       <MenuItem onClick={() => router.push('/icon-menu')} active={router.isActive('/icon-menu')} text="IconMenu" />
+      <MenuItem onClick={() => router.push('/image-loader')} active={router.isActive('/image-loader')} text="ImageLoader" />
       <MenuItem onClick={() => router.push('/input')} active={router.isActive('/input')} text="Input" />
       <MenuItem onClick={() => router.push('/lightbox')} active={router.isActive('/lightbox')} text="Lightbox" />
       <MenuItem onClick={() => router.push('/list')} active={router.isActive('/list')} text="List" />
@@ -69,7 +70,6 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/modal')} active={router.isActive('/modal')} text="Modal" />
       <MenuItem onClick={() => router.push('/pagination')} active={router.isActive('/pagination')} text="Pagination" />
       <MenuItem onClick={() => router.push('/paper')} active={router.isActive('/paper')} text="Paper" />
-      <MenuItem onClick={() => router.push('/image-loader')} active={router.isActive('/image-loader')} text="ImageLoader" />
       <MenuItem onClick={() => router.push('/pop-over')} active={router.isActive('/pop-over')} text="PopOver" />
       <MenuItem onClick={() => router.push('/portal')} active={router.isActive('/portal')} text="Portal" />
       <MenuItem onClick={() => router.push('/profile')} active={router.isActive('/profile')} text="Profile" />
