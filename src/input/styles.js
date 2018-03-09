@@ -12,7 +12,7 @@ export default {
     appearance: 'none',
     backgroundColor: colors.inputs,
     border: '0',
-    borderRadius: '3px',
+    borderRadius: '4px',
     height: '32px',
     boxSizing: 'border-box',
     color: colors.primaryText,
@@ -20,7 +20,7 @@ export default {
     fontWeight: 'inherit',
     fontFamily: 'inherit',
     lineHeight: '16px',
-    padding: '6.5px',
+    padding: '0 8px',
     width: '100%',
     outline: 'none',
     ':focus': {

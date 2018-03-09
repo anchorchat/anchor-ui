@@ -3,7 +3,7 @@ import styles from '../settings/styles';
 
 export default {
   root: {
-    borderRadius: '3px',
+    borderRadius: '4px',
     backgroundColor: colors.white,
     overflow: 'hidden',
     width: '100%',
@@ -30,7 +30,7 @@ export default {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderRadius: '3px'
+    borderRadius: '4px'
   },
   attributionLink: {
     color: colors.secondaryText,

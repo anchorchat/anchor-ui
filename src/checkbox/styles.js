@@ -5,7 +5,7 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '5px',
+    padding: '4px',
     cursor: 'pointer',
     color: colors.primaryText,
     position: 'relative',
@@ -30,7 +30,7 @@ export default {
   icon: {
     width: '24px',
     height: '24px',
-    marginRight: '10px'
+    marginRight: '8px'
   },
   unchecked: {
     width: '18px',
