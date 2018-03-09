@@ -4,9 +4,9 @@ import styles from '../settings/styles';
 export default {
   depthShadows: styles.depthShadows,
   root: {
-    padding: '10px',
-    borderRadius: '3px',
+    padding: '8px',
+    borderRadius: '4px',
     backgroundColor: colors.white,
-    margin: '10px'
+    margin: '8px'
   }
 };

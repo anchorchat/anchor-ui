@@ -8,7 +8,7 @@ export default {
     right: '50%',
     minWidth: '200px',
     backgroundColor: colors.white,
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxShadow: styles.depthShadows[0],
     margin: 0,
     paddingLeft: 0,
@@ -17,9 +17,9 @@ export default {
     maxWidth: '85%'
   },
   header: {
-    paddingTop: '10px',
-    paddingRight: '10px',
-    paddingBottom: '10px',
+    paddingTop: '8px',
+    paddingRight: '8px',
+    paddingBottom: '8px',
     paddingLeft: '16px',
     margin: '0',
     fontSize: '16px',
