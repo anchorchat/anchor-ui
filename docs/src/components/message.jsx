@@ -164,7 +164,32 @@ class MessageDoc extends Component {
       },
       margin: {
         margin: '5px'
+      },
+      image: {
+        borderRadius: '3px',
+        width: 'auto',
+        height: 'auto',
+        maxWidth: '100%',
+        maxHeight: '200px',
+        objectFit: 'cover'
       }
+    };
+
+    const imageLoaderProps = {
+      placeholder: (
+        <img
+          src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg"
+          alt="placeholder"
+          style={style.image}
+        />
+      ),
+      error: (
+        <img
+          src="https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg"
+          alt="error"
+          style={style.image}
+        />
+      )
     };
 
     return (
@@ -298,6 +323,7 @@ class MessageDoc extends Component {
                     enableLinks
                     iconMenu={uiIconMenu}
                     enableMultiline={multiline}
+                    imageLoaderProps={imageLoaderProps}
                   />
                 );
               })}
