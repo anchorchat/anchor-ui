@@ -24,10 +24,7 @@ const propTypes = {
   color: PropTypes.string,
   badge: PropTypes.node,
   iconMenu: PropTypes.node,
-  imagePlaceholder: PropTypes.string.isRequired,
-  imageError: PropTypes.string.isRequired,
-  onImageLoad: PropTypes.func.isRequired,
-  onImageError: PropTypes.func.isRequired,
+  imageLoaderProps: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {
@@ -61,19 +58,13 @@ const StickerMessage = ({
   messageTimeStyle,
   badge,
   iconMenu,
-  imagePlaceholder,
-  imageError,
-  onImageLoad,
-  onImageError
+  imageLoaderProps
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
 
   const imgProps = {
     style: getStyles.body(myMessage, avatar, compact, messageBodyStyle)
   };
-
-  const placeholder = <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={imagePlaceholder} alt="placeholder" />;
-  const error = <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={imageError} alt="error" />;
 
   return (
     <div style={styles.container}>
@@ -101,10 +92,7 @@ const StickerMessage = ({
         src={body}
         alt="user-upload"
         imgProps={imgProps}
-        placeholder={placeholder}
-        error={error}
-        onLoad={onImageLoad}
-        onError={onImageError}
+        {...imageLoaderProps}
       />
     </div>
   );
