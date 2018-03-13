@@ -23,25 +23,18 @@ const style = {
 };
 
 class SelectDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: 1,
-      valueError: 1,
-    };
-
-    this.changeValue = this.changeValue.bind(this);
-    this.changeValueError = this.changeValueError.bind(this);
+  state = {
+    value: 1,
+    valueError: 1,
   }
 
-  changeValue(event, value) {
+  changeValue = (event, value) => {
     this.setState({
       value
     });
   }
 
-  changeValueError(event, valueError) {
+  changeValueError = (event, valueError) => {
     this.setState({
       valueError
     });

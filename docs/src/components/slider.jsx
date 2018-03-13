@@ -23,42 +23,33 @@ const style = {
 };
 
 class SliderDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: 0,
-      valueCustom: 50,
-      valueStep: 0,
-      valueDisabled: 0.5,
-      valueError: 0
-    };
-
-    this.toggleSlider = this.toggleSlider.bind(this);
-    this.toggleSliderCustom = this.toggleSliderCustom.bind(this);
-    this.toggleSliderStep = this.toggleSliderStep.bind(this);
-    this.toggleSliderError = this.toggleSliderError.bind(this);
+  state = {
+    value: 0,
+    valueCustom: 50,
+    valueStep: 0,
+    valueDisabled: 0.5,
+    valueError: 0
   }
 
-  toggleSlider(event) {
+  toggleSlider = (event) => {
     this.setState({
       value: parseInt(event.currentTarget.value, 10)
     });
   }
 
-  toggleSliderCustom(event) {
+  toggleSliderCustom = (event) => {
     this.setState({
       valueCustom: parseInt(event.currentTarget.value, 10)
     });
   }
 
-  toggleSliderStep(event) {
+  toggleSliderStep = (event) => {
     this.setState({
       valueStep: parseInt(event.currentTarget.value, 10)
     });
   }
 
-  toggleSliderError(event) {
+  toggleSliderError = (event) => {
     this.setState({
       valueError: parseInt(event.currentTarget.value, 10)
     });

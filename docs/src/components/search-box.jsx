@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
 import SearchBox from '../../../dist/search-box';
@@ -24,17 +24,12 @@ const style = {
   }
 };
 
-class SearchBoxDoc extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
-
-    this.handleChange = this.handleChange.bind(this);
+class SearchBoxDoc extends Component {
+  state = {
+    value: ''
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ value: event.currentTarget.value });
   }
 

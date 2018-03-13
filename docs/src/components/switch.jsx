@@ -25,25 +25,18 @@ const style = {
 };
 
 class SwitchDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      one: false,
-      two: true
-    };
-
-    this.toggleSwitchOne = this.toggleSwitchOne.bind(this);
-    this.toggleSwitchTwo = this.toggleSwitchTwo.bind(this);
+  state = {
+    one: false,
+    two: true
   }
 
-  toggleSwitchOne() {
+  toggleSwitchOne = () => {
     this.setState({
       one: !this.state.one
     });
   }
 
-  toggleSwitchTwo() {
+  toggleSwitchTwo = () => {
     this.setState({
       two: !this.state.two
     });
