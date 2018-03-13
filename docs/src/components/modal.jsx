@@ -68,8 +68,9 @@ class ModalDoc extends Component {
                 <Button key="button1" flatButton onClick={this.toggleModal}>Ok</Button>
               ]}
               open={open}
+              header="Modal"
             >
-              <p>I&apos;m a modal</p>
+              <p>Hi! I&apos;m a modal</p>
             </Modal>
           </Paper>
         </section>

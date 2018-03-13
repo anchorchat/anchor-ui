@@ -14,12 +14,12 @@ export default {
     marginRight: '4px'
   },
   image: {
-    padding: '5px 4px 4px',
-    borderRadius: '3px 0 3px',
+    padding: '4px',
+    borderRadius: '4px 0 4px',
     backgroundColor: fade(colors.black, 0.55),
     position: 'absolute',
-    bottom: '13px',
-    right: '13px',
+    bottom: '12px',
+    right: '12px',
     color: colors.white,
     opacity: 1
   }

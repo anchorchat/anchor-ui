@@ -13,7 +13,7 @@ export default {
     boxSizing: 'border-box',
     display: 'flex',
     alignItems: 'center',
-    borderRadius: '3px',
+    borderRadius: '4px',
     backgroundColor: colors.white,
     boxShadow: styles.depthShadows[0],
     overflow: 'auto'

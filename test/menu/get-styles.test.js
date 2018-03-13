@@ -97,7 +97,7 @@ describe('Menu.getStyles', () => {
     it('should add icon styles', () => {
       const style = getStyles.header(null, true);
 
-      expect(style).to.have.property('padding', '15.5px 16px 15.5px 40px');
+      expect(style).to.have.property('padding', '16px 16px 16px 40px');
     });
 
     it('should combine styles', () => {

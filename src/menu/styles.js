@@ -32,10 +32,12 @@ export default {
     fontWeight: 'bolder',
     color: colors.theme,
     margin: 0,
-    padding: '15.5px 16px 15.5px 16px',
+    padding: '16px',
     borderBottom: `1px solid ${colors.grey}`,
     fontSize: '16px',
-    lineHeight: '16px'
+    lineHeight: '16px',
+    height: '48px',
+    boxSizing: 'border-box'
   },
   icon: {
     position: 'absolute',

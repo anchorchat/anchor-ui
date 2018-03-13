@@ -51,4 +51,18 @@ describe('Modal.getStyles', () => {
       expect(style).to.have.property('color', 'red');
     });
   });
+
+  describe('header', () => {
+    it('should get styles', () => {
+      const style = getStyles.header();
+
+      expect(style).to.deep.equal(styles.header);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.header({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
 });

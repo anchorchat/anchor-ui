@@ -7,8 +7,8 @@ export default {
     height: '250px',
     backgroundColor: colors.background,
     overflow: 'hidden',
-    borderRadius: '3px',
-    boxShadow: styles.depthShadows[0],
+    borderRadius: '4px',
+    boxShadow: styles.depthShadows[0]
   },
   modifiers: {
     display: 'flex',

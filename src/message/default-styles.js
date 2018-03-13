@@ -3,11 +3,11 @@ import colors from '../settings/colors';
 export default {
   message: {
     backgroundColor: colors.white,
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxSizing: 'border-box',
     color: colors.primaryText,
     maxWidth: '80%',
-    padding: '13px',
+    padding: '12px',
     position: 'relative',
     wordBreak: 'break-word',
     fontWeight: 'inherit'

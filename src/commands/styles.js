@@ -3,7 +3,7 @@ import styles from '../settings/styles';
 
 export default {
   root: {
-    borderRadius: '3px',
+    borderRadius: '4px',
     backgroundColor: colors.white,
     overflow: 'hidden',
     width: '100%',
@@ -38,7 +38,7 @@ export default {
   },
   title: {
     fontWeight: 'bolder',
-    marginRight: '5px',
+    marginRight: '4px',
     fontSize: '14px',
     lineHeight: '14px'
   },

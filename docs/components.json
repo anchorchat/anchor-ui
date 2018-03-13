@@ -5674,6 +5674,17 @@
     "displayName": "Modal",
     "methods": [],
     "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "children": {
         "type": {
           "name": "node"
@@ -5694,6 +5705,17 @@
         },
         "required": false,
         "description": "Override the style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
         "defaultValue": {
           "value": "{}",
           "computed": false

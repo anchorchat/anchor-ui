@@ -10,5 +10,4 @@ const root = (color = colors.theme, overrideStyle) => {
 
 const header = overrideStyle => combineStyles(styles.header, overrideStyle);
 
-
 export default { root, header };

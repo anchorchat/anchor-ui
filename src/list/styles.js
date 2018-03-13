@@ -8,10 +8,7 @@ export default {
     paddingLeft: '0'
   },
   listHeader: {
-    paddingTop: '10px',
-    paddingRight: '10px',
-    paddingBottom: '10px',
-    paddingLeft: '16px',
+    padding: '8px 8px 8px 16px',
     margin: '0',
     fontSize: '16px',
     fontWeight: 'bolder',

@@ -8,7 +8,7 @@ const overrideStyles = {
     flexDirection: 'column'
   },
   giphy: {
-    borderRadius: '3px',
+    borderRadius: '4px',
     width: 'auto',
     height: 'auto',
     maxWidth: '100%',
