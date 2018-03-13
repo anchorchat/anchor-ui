@@ -14,7 +14,9 @@ const usage = `
   \`\`\`
 `;
 
-const profileImage = faker.internet.avatar();
+const avatar = faker.internet.avatar();
+const username = faker.internet.userName();
+const secondaryText = faker.name.jobTitle();
 
 const componentData = find(components, { displayName: 'Profile' });
 const style = {
@@ -43,10 +45,10 @@ const ProfileDoc = () => (
       <h1>Examples</h1>
       <Paper style={style.paper}>
         <Profile
-          header="Sjaak"
-          secondaryText="Secondary text"
-          avatar={profileImage}
-          coverImage={profileImage}
+          header={username}
+          secondaryText={secondaryText}
+          avatar={avatar}
+          coverImage={avatar}
           button={<Button>Edit Information</Button>}
           style={style.profile}
           status="online"
