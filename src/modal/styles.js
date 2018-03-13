@@ -29,9 +29,6 @@ export default {
     color: colors.secondaryText,
     fontSize: '24px',
     fontWeight: 'bolder',
-    marginTop: '0',
-    marginLeft: '0',
-    marginRight: '0',
-    marginBottom: '16px'
+    margin: '0 0 16px'
   }
 };
