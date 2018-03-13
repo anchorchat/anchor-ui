@@ -73,11 +73,13 @@ describe('Modal', () => {
   });
 
   it('should render header', () => {
-    props.header = 'header';
     const wrapper = shallow(<Modal {...props}>{actions}</Modal>).dive();
 
-    expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
-    props.header = null;
+    expect(wrapper.find('h1')).to.have.length(0);
+
+    wrapper.setProps({ header: <span>header</span> });
+    expect(wrapper.find('h1')).to.have.length(1);
+    expect(wrapper.find('h1').containsMatchingElement(<span>header</span>)).to.equal(true);
   });
 
   it('should get root styles', () => {
