@@ -17,7 +17,7 @@ export default {
     color: colors.primaryText
   },
   footer: {
-    padding: '16px',
+    padding: '8px 16px',
     backgroundColor: colors.theme,
     display: 'flex',
     flexDirection: 'row',
