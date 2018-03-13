@@ -6,6 +6,7 @@ import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
+import ImageLoader from '../../image-loader';
 
 const propTypes = {
   avatar: PropTypes.string,
@@ -22,7 +23,8 @@ const propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   badge: PropTypes.node,
-  iconMenu: PropTypes.node
+  iconMenu: PropTypes.node,
+  imageLoaderProps: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 const defaultProps = {
@@ -55,9 +57,14 @@ const StickerMessage = ({
   messageBodyStyle,
   messageTimeStyle,
   badge,
-  iconMenu
+  iconMenu,
+  imageLoaderProps
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
+
+  const imgProps = {
+    style: getStyles.body(myMessage, avatar, compact, messageBodyStyle)
+  };
 
   return (
     <div style={styles.container}>
@@ -81,7 +88,12 @@ const StickerMessage = ({
         />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
-      <img style={getStyles.body(myMessage, avatar, compact, messageBodyStyle)} src={body} alt="sticker" />
+      <ImageLoader
+        src={body}
+        alt="user-upload"
+        imgProps={imgProps}
+        {...imageLoaderProps}
+      />
     </div>
   );
 };

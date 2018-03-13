@@ -27,10 +27,7 @@ const propTypes = {
   collapsed: PropTypes.bool,
   collapsedText: PropTypes.node.isRequired,
   badge: PropTypes.node,
-  imagePlaceholder: PropTypes.string.isRequired,
-  imageError: PropTypes.string.isRequired,
-  onImageLoad: PropTypes.func.isRequired,
-  onImageError: PropTypes.func.isRequired,
+  imageLoaderProps: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   iconMenu: PropTypes.node
 };
 
@@ -91,10 +88,7 @@ class ImageMessage extends Component {
       collapsed,
       collapsedText,
       badge,
-      imagePlaceholder,
-      imageError,
-      onImageLoad,
-      onImageError,
+      imageLoaderProps,
       iconMenu
     } = this.props;
     const { lightbox } = this.state;
@@ -114,9 +108,6 @@ class ImageMessage extends Component {
       onClick,
       style: getStyles.image(enableLightbox)
     };
-
-    const placeholder = <img style={getStyles.image(enableLightbox)} src={imagePlaceholder} alt="placeholder" />;
-    const error = <img style={getStyles.image(enableLightbox)} src={imageError} alt="error" />;
 
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
@@ -138,10 +129,7 @@ class ImageMessage extends Component {
                 src={body}
                 alt="user-upload"
                 imgProps={imgProps}
-                placeholder={placeholder}
-                error={error}
-                onLoad={onImageLoad}
-                onError={onImageError}
+                {...imageLoaderProps}
               />
             )
             : <span>{collapsedText}</span>
