@@ -20,7 +20,7 @@ export default {
     fontWeight: 'inherit',
     fontFamily: 'inherit',
     lineHeight: '16px',
-    padding: '0 8px',
+    padding: '6.5px 8px',
     width: '100%',
     outline: 'none',
     ':focus': {
