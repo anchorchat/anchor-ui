@@ -20,7 +20,8 @@ describe('Modal', () => {
     overlayStyle: { overlay: true },
     color: '#1BA6C4',
     children: '',
-    actions: ''
+    actions: '',
+    header: null
   };
   const children = <p>children</p>;
   const actions = <p>actions</p>;
@@ -69,6 +70,14 @@ describe('Modal', () => {
     const wrapper = shallow(<Modal {...props}>{actions}</Modal>).dive();
 
     expect(wrapper.containsMatchingElement(<p>actions</p>)).to.equal(true);
+  });
+
+  it('should render header', () => {
+    props.header = 'header';
+    const wrapper = shallow(<Modal {...props}>{actions}</Modal>).dive();
+
+    expect(wrapper.containsMatchingElement(<h1>header</h1>)).to.equal(true);
+    props.header = null;
   });
 
   it('should get root styles', () => {
