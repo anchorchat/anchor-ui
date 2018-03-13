@@ -1,6 +1,11 @@
 /* eslint no-console: [0] */
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import includes from 'lodash/includes';
+import split from 'lodash/split';
+import replace from 'lodash/replace';
+import noop from 'lodash/noop';
+import last from 'lodash/last';
 import EmojiFilter from '../../../dist/emoji-filter';
 import MessageInput from '../../../dist/message-input';
 import Props from './props';
@@ -13,6 +18,27 @@ const usage = `
   import EmojiFilter from 'anchor-ui/emoji-filter';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'EmojiFilter' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  messageInput: {
+    paddingTop: 0,
+    paddingBottom: 0,
+    marginTop: '10px',
+    width: '100%'
+  },
+  commands: {
+    width: 'calc(100% - 32px)',
+    marginLeft: '16px'
+  }
+};
 
 class EmojiFilterDoc extends Component {
   constructor() {
@@ -30,17 +56,17 @@ class EmojiFilterDoc extends Component {
 
     let valueToMatch = '';
 
-    if (value.indexOf(':') > -1) {
-      valueToMatch = _.last(value.split(':'));
+    if (includes(value, ':')) {
+      valueToMatch = last(split(value, ':'));
     }
 
     if (value.length > this.input.selectionStart) {
       const slicedValue = value.slice(0, this.input.selectionStart);
 
-      if (slicedValue.indexOf(':') > -1) {
-        const splitValue = slicedValue.split(':');
+      if (includes(slicedValue, ':')) {
+        const splitValue = split(slicedValue, ':');
 
-        valueToMatch = _.last(splitValue);
+        valueToMatch = last(splitValue);
       }
     }
 
@@ -51,7 +77,7 @@ class EmojiFilterDoc extends Component {
     const { value, valueToMatch, selectedEmoji } = this.state;
 
     this.setState({
-      value: value.replace(selectedEmoji || valueToMatch, emoji.shortname),
+      value: replace(value, selectedEmoji || valueToMatch, emoji.shortname),
       valueToMatch: '',
       selectedEmoji: ''
     });
@@ -63,7 +89,7 @@ class EmojiFilterDoc extends Component {
     const { value, valueToMatch, selectedEmoji } = this.state;
 
     this.setState({
-      value: value.replace(selectedEmoji || valueToMatch, emoji.shortname),
+      value: replace(value, selectedEmoji || valueToMatch, emoji.shortname),
       selectedEmoji: emoji.shortname
     });
   }
@@ -71,27 +97,6 @@ class EmojiFilterDoc extends Component {
   handleClose = () => this.setState({ valueToMatch: '', selectedEmoji: '' })
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'EmojiFilter');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      messageInput: {
-        paddingTop: 0,
-        paddingBottom: 0,
-        marginTop: '10px',
-        width: '100%'
-      },
-      commands: {
-        width: 'calc(100% - 32px)',
-        marginLeft: '16px'
-      }
-    };
-
     return (
       <article className="page">
         <h1>EmojiFilter</h1>
@@ -114,7 +119,7 @@ class EmojiFilterDoc extends Component {
               onChange={this.changeValue}
               placeholder="Type : to view and filter emoji"
               value={this.state.value}
-              sendMessage={() => {}}
+              sendMessage={noop}
               style={style.messageInput}
               inputRef={(node) => { this.input = node; }}
             />

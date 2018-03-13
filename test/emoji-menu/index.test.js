@@ -6,6 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EventListener from 'react-event-listener';
+import noop from 'lodash/noop';
 import EmojiMenu from '../../src/emoji-menu/component';
 import EmojiModifiers from '../../src/emoji-menu/emoji-modifiers';
 import EmojiCategory from '../../src/emoji-menu/emoji-category';
@@ -17,8 +18,8 @@ chai.use(sinonChai);
 describe('EmojiFilter', () => {
   const props = {
     style: {},
-    hideMenu: () => {},
-    sendEmoji: () => {},
+    hideMenu: noop,
+    sendEmoji: noop,
     color: '#1BA6C4'
   };
 

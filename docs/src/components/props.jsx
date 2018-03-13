@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import replace from 'lodash/replace';
+import omit from 'lodash/omit';
+import map from 'lodash/map';
 import escape from 'escape-html';
 import Table from '../../../dist/table';
 import TableHeader from '../../../dist/table-header';
@@ -31,11 +33,11 @@ const createMarkup = (text) => {
 
   const urlSchemeRegex = /^(?:https?:\/\/)/;
 
-  let parsedText = escapedText.replace(/\n/g, '<br />');
+  let parsedText = replace(escapedText, /\n/g, '<br />');
 
   const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
 
-  parsedText = parsedText.replace(urlRegex, (url) => {
+  parsedText = replace(parsedText, urlRegex, (url) => {
     if (!urlSchemeRegex.test(url)) {
       // Add default http:// scheme for urls like example.com
       return (`<a style="${style}" href="http://${url}" target="_blank">${url}</a>`);
@@ -49,7 +51,7 @@ const createMarkup = (text) => {
 };
 
 const Props = ({ props }) => {
-  const propsWithoutColor = _.omit(props, 'color');
+  const propsWithoutColor = omit(props, 'color');
 
   const style = {
     column: {
@@ -71,7 +73,7 @@ const Props = ({ props }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {_.map(propsWithoutColor, (prop, name) => (
+          {map(propsWithoutColor, (prop, name) => (
             <TableRow key={name}>
               <TableColumn style={style.column}>{name}</TableColumn>
               <TableColumn style={style.column}>{getPropType(prop.type)}</TableColumn>

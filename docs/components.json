@@ -1666,7 +1666,7 @@
         "required": false,
         "description": "Callback fired when the menu is closed\n\nfunction() => void",
         "defaultValue": {
-          "value": "_.noop",
+          "value": "noop",
           "computed": true
         }
       },
@@ -1677,7 +1677,7 @@
         "required": false,
         "description": "Callback fired when the menu is opened\n\nfunction() => void",
         "defaultValue": {
-          "value": "_.noop",
+          "value": "noop",
           "computed": true
         }
       },
@@ -2281,8 +2281,8 @@
         "required": false,
         "description": "Callback fired when a Gallery's item is clicked, only works if enableLightbox equals false\n\nfunction(event: object, image: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "style": {
@@ -2520,8 +2520,8 @@
         "required": false,
         "description": "Callback fired when the IconMenu closes\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "dividerStyle": {
@@ -2542,8 +2542,8 @@
         "required": false,
         "description": "Callback fired when the IconMenu's header is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "buttonStyle": {
@@ -3975,8 +3975,8 @@
         "required": false,
         "description": "Callback fired when loading throws an error\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "onLoad": {
@@ -3986,8 +3986,8 @@
         "required": false,
         "description": "Callback fired when image is finished loading\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "placeholder": {
@@ -4370,8 +4370,8 @@
         "required": false,
         "description": "Reference list element",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "enableInfiniteScroll": {
@@ -5630,8 +5630,8 @@
         "required": false,
         "description": "Reference list element",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "style": {

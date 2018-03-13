@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import Tab from '../../src/tab';
 import getStyles from '../../src/tab/get-styles';
 
@@ -15,7 +16,7 @@ describe('Tab', () => {
     icon: null,
     label: 'label',
     selected: false,
-    onClick: () => {},
+    onClick: noop,
     style: { root: true },
     labelStyle: { label: true },
     iconStyle: { icon: true },
@@ -81,7 +82,7 @@ describe('Tab', () => {
 
     wrapper.find('section').simulate('click');
     expect(spy).to.have.callCount(1);
-    props.onClick = () => {};
+    props.onClick = noop;
   });
 
   it('should get root styles', () => {

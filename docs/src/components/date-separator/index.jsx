@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import map from 'lodash/map';
 import moment from 'moment';
 import faker from 'faker';
 import Message from '../../../../dist/message';
@@ -38,22 +39,22 @@ const messages = [
   }
 ];
 
+const componentData = find(components, { displayName: 'DateSeparator' });
+
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  messageList: {
+    backgroundImage: `url(${background})`,
+    backgroundSize: '500px',
+    height: '475px',
+    margin: '10px'
+  }
+};
+
 const DateSeparatorDoc = () => {
-  const componentData = _.find(components, component => component.displayName === 'DateSeparator');
-
-  const style = {
-    paper: {
-      margin: 0,
-      padding: '20px'
-    },
-    messageList: {
-      backgroundImage: `url(${background})`,
-      backgroundSize: '500px',
-      height: '475px',
-      margin: '10px'
-    }
-  };
-
   let lastDate = moment().toISOString();
 
   return (
@@ -68,7 +69,7 @@ const DateSeparatorDoc = () => {
         <Markdown markdown={example} title="Code example" />
         <Paper style={style.paper}>
           <MessageList style={style.messageList}>
-            {messages.map((message, index) => {
+            {map(messages, (message, index) => {
               let showDateSeparator = false;
 
               if (index === 0) {

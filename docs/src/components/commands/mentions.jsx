@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import includes from 'lodash/includes';
+import split from 'lodash/split';
+import replace from 'lodash/replace';
+import last from 'lodash/last';
+import noop from 'lodash/noop';
 import faker from 'faker';
 import Commands from '../../../../dist/commands';
 import MessageInput from '../../../../dist/message-input';
@@ -39,17 +43,17 @@ class CommandsDoc extends Component {
 
     let valueToMatch = '';
 
-    if (value.indexOf('@') > -1) {
-      valueToMatch = _.last(value.split('@'));
+    if (includes(value, '@')) {
+      valueToMatch = split(value, '@');
     }
 
     if (value.length > this.input.selectionStart) {
       const slicedValue = value.slice(0, this.input.selectionStart);
 
-      if (slicedValue.indexOf('@') > -1) {
-        const splitValue = slicedValue.split('@');
+      if (includes(slicedValue, '@')) {
+        const splitValue = split(slicedValue, '@');
 
-        valueToMatch = _.last(splitValue);
+        valueToMatch = last(splitValue);
       }
     }
 
@@ -62,7 +66,7 @@ class CommandsDoc extends Component {
     const { value, valueToMatch, selectedCommand } = this.state;
 
     this.setState({
-      value: value.replace(selectedCommand || valueToMatch, command),
+      value: replace(value, selectedCommand || valueToMatch, command),
       valueToMatch: '',
       selectedCommand: ''
     });
@@ -74,7 +78,7 @@ class CommandsDoc extends Component {
     const { value, valueToMatch, selectedCommand } = this.state;
 
     this.setState({
-      value: value.replace(selectedCommand || valueToMatch, command),
+      value: replace(value, selectedCommand || valueToMatch, command),
       selectedCommand: command
     });
   }
@@ -120,7 +124,7 @@ class CommandsDoc extends Component {
           onChange={this.changeValue}
           placeholder="Type @ to filter mentions"
           value={this.state.value}
-          sendMessage={_.noop}
+          sendMessage={noop}
           style={style.messageInput}
           inputRef={this.handleRef}
         />

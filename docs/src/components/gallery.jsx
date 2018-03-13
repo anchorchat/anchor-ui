@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Gallery from '../../../dist/gallery';
 import Props from './props';
 import components from '../../components.json';
@@ -13,6 +13,27 @@ const usage = `
   import Gallery from 'anchor-ui/gallery';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'Gallery' });
+
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  options: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: '10px 0'
+  },
+  select: {
+    margin: '5px'
+  }
+};
+
 
 const images = [
   {
@@ -86,26 +107,6 @@ class GalleryDoc extends Component {
   selectLightbox = (event, lightbox) => this.setState({ lightbox })
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Gallery');
-
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      options: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        padding: '10px 0'
-      },
-      select: {
-        margin: '5px'
-      }
-    };
-
     return (
       <article className="page">
         <h1>Gallery</h1>

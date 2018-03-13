@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Media from '../../../dist/media';
 import Props from './props';
 import components from '../../components.json';
@@ -20,6 +20,20 @@ const usage = `
   \`\`\`
 `;
 
+const componentData = find(components, { displayName: 'Media' });
+const style = {
+  paper: {
+    margin: '8px 0 0',
+    padding: '20px'
+  }
+};
+
+const query = {
+  large: '(max-width: 1024px)',
+  small: '(min-width: 400px)',
+  medium: '(min-width: 768px)'
+};
+
 class MediaDoc extends Component {
   constructor() {
     super();
@@ -36,20 +50,6 @@ class MediaDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Media');
-    const style = {
-      paper: {
-        margin: '8px 0 0',
-        padding: '20px'
-      }
-    };
-
-    const query = {
-      large: '(max-width: 1024px)',
-      small: '(min-width: 400px)',
-      medium: '(min-width: 768px)'
-    };
-
     return (
       <article className="page">
         <h1>Media</h1>

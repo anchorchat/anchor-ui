@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import MenuItem from '../../../dist/menu-item';
 import Select from '../../../dist/select';
 import Props from './props';
@@ -13,41 +13,34 @@ const usage = `
   \`\`\`
 `;
 
+const componentData = find(components, { displayName: 'Select' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  select: { margin: '10px' }
+};
+
 class SelectDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: 1,
-      valueError: 1,
-    };
-
-    this.changeValue = this.changeValue.bind(this);
-    this.changeValueError = this.changeValueError.bind(this);
+  state = {
+    value: 1,
+    valueError: 1,
   }
 
-  changeValue(event, value) {
+  changeValue = (event, value) => {
     this.setState({
       value
     });
   }
 
-  changeValueError(event, valueError) {
+  changeValueError = (event, valueError) => {
     this.setState({
       valueError
     });
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Select');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '20px'
-      },
-      select: { margin: '10px' }
-    };
-
     return (
       <article className="page">
         <h1>{componentData.displayName}</h1>

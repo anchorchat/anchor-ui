@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
 import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
+import map from 'lodash/map';
 import styles from './styles';
 import getStyles from './get-styles';
 
@@ -27,7 +28,7 @@ const EmojiCategory = ({
   <article style={getStyles.category(style)}>
     <h1 style={styles.category.header}>{category}</h1>
     <section style={styles.category.emojiContainer}>
-      {emojis.map(emoji => (
+      {map(emojis, emoji => (
         <div
           key={`emoji-${emoji.shortname}`}
           onClick={event => sendEmoji(event, emoji)}

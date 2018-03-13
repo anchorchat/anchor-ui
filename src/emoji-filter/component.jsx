@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import startsWith from 'lodash/startsWith';
+import includes from 'lodash/includes';
+import filter from 'lodash/filter';
+import reject from 'lodash/reject';
+import noop from 'lodash/noop';
+import isEmpty from 'lodash/isEmpty';
+import size from 'lodash/size';
+import map from 'lodash/map';
 import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
 import EventListener from 'react-event-listener';
@@ -46,8 +53,8 @@ const propTypes = {
 const defaultProps = {
   style: {},
   headerStyle: {},
-  onMenuClose: _.noop,
-  onMenuOpen: _.noop,
+  onMenuClose: noop,
+  onMenuOpen: noop,
 };
 
 /** Used for displaying a list of commands */
@@ -73,7 +80,7 @@ class EmojiFilter extends Component {
 
     const filteredEmoji = this.filterEmoji(nextProps.value);
 
-    if (!_.isEmpty(filteredEmoji) && !open) {
+    if (!isEmpty(filteredEmoji) && !open) {
       this.setState({
         open: true,
         emoji: filteredEmoji
@@ -81,7 +88,7 @@ class EmojiFilter extends Component {
       return this.props.onMenuOpen();
     }
 
-    if (_.isEmpty(filteredEmoji) && open) {
+    if (isEmpty(filteredEmoji) && open) {
       return this.hideMenu();
     }
 
@@ -95,12 +102,15 @@ class EmojiFilter extends Component {
       return [];
     }
 
-    const filteredEmoji = _.chain(emoji)
-      .filter(icon => icon.shortname.indexOf(value) === 0)
-      .reject(icon => icon.diversity && !_.includes(icon.title, tone))
-      .value();
+    const filteredEmoji = reject(
+      filter(
+        emoji,
+        icon => startsWith(icon.shortname, value)
+      ),
+      icon => icon.diversity && !includes(icon.title, tone)
+    );
 
-    if (filteredEmoji.length === 1 && _.includes(value, filteredEmoji[0].shortname)) {
+    if (filteredEmoji.length === 1 && includes(value, filteredEmoji[0].shortname)) {
       return [];
     }
 
@@ -150,7 +160,7 @@ class EmojiFilter extends Component {
 
   selectNext = (event) => {
     const { selectedIndex } = this.state;
-    const emojiSize = _.size(this.state.emoji);
+    const emojiSize = size(this.state.emoji);
 
     if (selectedIndex === null) {
       return this.handleChange(event, this.state.emoji[0], 0);
@@ -169,7 +179,7 @@ class EmojiFilter extends Component {
 
   selectPrevious = (event) => {
     const { selectedIndex } = this.state;
-    const emojiSize = _.size(this.state.emoji);
+    const emojiSize = size(this.state.emoji);
 
     if (selectedIndex === null) {
       return this.handleChange(event, this.state.emoji[0], 0);
@@ -225,17 +235,18 @@ class EmojiFilter extends Component {
 
   render() {
     const {
-      value, // eslint-disable-line no-unused-vars
-      onSelect, // eslint-disable-line no-unused-vars
+      value,
+      onSelect,
       style,
       headerStyle,
-      eventTypes, // eslint-disable-line no-unused-vars, react/prop-types
-      outsideClickIgnoreClass, // eslint-disable-line no-unused-vars, react/prop-types
-      preventDefault, // eslint-disable-line no-unused-vars, react/prop-types
-      stopPropagation, // eslint-disable-line no-unused-vars, react/prop-types
-      disableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      enableOnClickOutside, // eslint-disable-line no-unused-vars, react/prop-types
-      onMenuClose, // eslint-disable-line no-unused-vars
+      eventTypes, // eslint-disable-line react/prop-types
+      outsideClickIgnoreClass, // eslint-disable-line react/prop-types
+      preventDefault, // eslint-disable-line react/prop-types
+      stopPropagation, // eslint-disable-line react/prop-types
+      disableOnClickOutside, // eslint-disable-line react/prop-types
+      enableOnClickOutside, // eslint-disable-line react/prop-types
+      onMenuClose,
+      onMenuOpen,
       color,
       ...custom
     } = this.props;
@@ -245,7 +256,7 @@ class EmojiFilter extends Component {
       return null;
     }
 
-    const modifiers = _.filter(emoji, { category: 'modifier' });
+    const modifiers = filter(emoji, { category: 'modifier' });
 
     return (
       <section style={getStyles.root(style)} {...custom}>
@@ -256,7 +267,7 @@ class EmojiFilter extends Component {
           style={getStyles.header(headerStyle)}
         />
         <section style={getStyles.commands()}>
-          {_.map(this.state.emoji, (icon, index) => (
+          {map(this.state.emoji, (icon, index) => (
             <div
               key={icon.shortname}
               style={getStyles.emoji(color, index === selectedIndex)}

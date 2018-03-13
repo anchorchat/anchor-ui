@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import MenuItem from '../../src/menu-item';
 import getStyles from '../../src/menu-item/get-styles';
 
@@ -22,7 +23,7 @@ describe('MenuItem', () => {
     rightButton: null,
     color: '#1BA6C4',
     text: 'text',
-    onClick: () => {}
+    onClick: noop
   };
 
   beforeEach(() => {
@@ -86,7 +87,7 @@ describe('MenuItem', () => {
 
     wrapper.find('section').simulate('click');
     expect(spy).to.have.callCount(1);
-    props.onClick = () => {};
+    props.onClick = noop;
   });
 
   it('should get root styles', () => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import emojione from 'emojione';
 import EmojiMenu from '../../../../dist/emoji-menu';
 import Button from '../../../../dist/button';
@@ -9,18 +9,26 @@ import Paper from '../../../../dist/paper';
 import Markdown from '../markdown';
 import example from './example';
 
+const createMarkup = text => ({
+  __html: emojione.toImage(text)
+});
+
+const componentData = find(components, { displayName: 'EmojiMenu' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  emojiMenu: { margin: '10px' }
+};
+
 class EmojiMenuDoc extends Component {
-  static createMarkup = text => ({
-    __html: emojione.toImage(text)
-  })
-
-  constructor() {
-    super();
-
-    this.state = {
-      open: false,
-      emoji: ''
-    };
+  state = {
+    open: false,
+    emoji: ''
   }
 
   toggleMenu = () => this.setState({ open: !this.state.open })
@@ -28,18 +36,6 @@ class EmojiMenuDoc extends Component {
   sendEmoji = ({ shortname }) => this.setState({ emoji: shortname })
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'EmojiMenu');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      emojiMenu: { margin: '10px' }
-    };
-
     return (
       <article className="page">
         <h1>EmojiMenu</h1>
@@ -62,7 +58,7 @@ class EmojiMenuDoc extends Component {
           <Paper style={style.paper}>
             {
               this.state.emoji
-              ? <span style={style.emojiMenu} className="emojione" dangerouslySetInnerHTML={EmojiMenuDoc.createMarkup(this.state.emoji)} />
+              ? <span style={style.emojiMenu} className="emojione" dangerouslySetInnerHTML={createMarkup(this.state.emoji)} />
               : null
             }
             <EmojiMenu

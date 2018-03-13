@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
-import _ from 'lodash';
+import filter from 'lodash/filter';
+import includes from 'lodash/includes';
 import EventListener from 'react-event-listener';
 import store from 'store';
 import emojis from './emoji';
@@ -143,15 +144,19 @@ class EmojiMenu extends Component {
       return null;
     }
 
-    const modifiers = _.filter(emojis, { category: 'modifier' });
+    const modifiers = filter(emojis, { category: 'modifier' });
 
-    const filteredEmoji = _.chain(emojis).filter({ category }).filter((emoji) => {
+    const filteredEmoji = filter(emojis, (emoji) => {
+      if (emoji.category !== category) {
+        return false;
+      }
+
       if (emoji.diversity) {
-        return _.includes(emoji.title, tone);
+        return includes(emoji.title, tone);
       }
 
       return true;
-    }).value();
+    });
 
     return (
       <section style={getStyles.root(style)} {...custom}>

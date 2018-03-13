@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import Commands from '../../src/commands/component';
 import getStyles from '../../src/commands/get-styles';
 
@@ -22,8 +23,8 @@ describe('Commands', () => {
     titleStyle: {},
     commandStyle: {},
     descriptionStyle: {},
-    onSelect: () => {},
-    onChange: () => {},
+    onSelect: noop,
+    onChange: noop,
     leading: true,
     color: '#1BA6C4'
   };

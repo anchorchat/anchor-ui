@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import Switch from '../../../dist/switch';
 import Props from './props';
 import components from '../../components.json';
@@ -12,44 +12,37 @@ const usage = `
   \`\`\`
 `;
 
+const componentData = find(components, { displayName: 'Switch' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  },
+  switch: { margin: '10px' }
+};
+
 class SwitchDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      one: false,
-      two: true
-    };
-
-    this.toggleSwitchOne = this.toggleSwitchOne.bind(this);
-    this.toggleSwitchTwo = this.toggleSwitchTwo.bind(this);
+  state = {
+    one: false,
+    two: true
   }
 
-  toggleSwitchOne() {
+  toggleSwitchOne = () => {
     this.setState({
       one: !this.state.one
     });
   }
 
-  toggleSwitchTwo() {
+  toggleSwitchTwo = () => {
     this.setState({
       two: !this.state.two
     });
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Switch');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      },
-      switch: { margin: '10px' }
-    };
-
     return (
       <article className="page">
         <h1>Switch</h1>

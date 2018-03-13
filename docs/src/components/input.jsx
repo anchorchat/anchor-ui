@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import noop from 'lodash/noop';
 import Input from '../../../dist/input';
 import Props from './props';
 import components from '../../components.json';
@@ -11,6 +12,17 @@ const usage = `
   import Input from 'anchor-ui/input';
   \`\`\`
 `;
+
+const componentData = find(components, { displayName: 'Input' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: 0,
+    padding: '20px'
+  },
+  input: { margin: '10px' }
+};
 
 class InputDoc extends Component {
   constructor() {
@@ -62,17 +74,6 @@ class InputDoc extends Component {
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Input');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexDirection: 'column',
-        margin: 0,
-        padding: '20px'
-      },
-      input: { margin: '10px' }
-    };
-
     return (
       <article className="page">
         <h1>Input</h1>
@@ -121,7 +122,7 @@ class InputDoc extends Component {
               style={style.input}
             />
             <Input
-              onChange={() => {}}
+              onChange={noop}
               value=""
               placeholder="Enter text.."
               type="text"

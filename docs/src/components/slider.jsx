@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import noop from 'lodash/noop';
 import Slider from '../../../dist/slider';
 import Props from './props';
 import components from '../../components.json';
@@ -12,58 +13,49 @@ const usage = `
   \`\`\`
 `;
 
+const componentData = find(components, { displayName: 'Slider' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  slider: { margin: '0 10px 30px 10px' }
+};
+
 class SliderDoc extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: 0,
-      valueCustom: 50,
-      valueStep: 0,
-      valueDisabled: 0.5,
-      valueError: 0
-    };
-
-    this.toggleSlider = this.toggleSlider.bind(this);
-    this.toggleSliderCustom = this.toggleSliderCustom.bind(this);
-    this.toggleSliderStep = this.toggleSliderStep.bind(this);
-    this.toggleSliderError = this.toggleSliderError.bind(this);
+  state = {
+    value: 0,
+    valueCustom: 50,
+    valueStep: 0,
+    valueDisabled: 0.5,
+    valueError: 0
   }
 
-  toggleSlider(event) {
+  toggleSlider = (event) => {
     this.setState({
       value: parseInt(event.currentTarget.value, 10)
     });
   }
 
-  toggleSliderCustom(event) {
+  toggleSliderCustom = (event) => {
     this.setState({
       valueCustom: parseInt(event.currentTarget.value, 10)
     });
   }
 
-  toggleSliderStep(event) {
+  toggleSliderStep = (event) => {
     this.setState({
       valueStep: parseInt(event.currentTarget.value, 10)
     });
   }
 
-  toggleSliderError(event) {
+  toggleSliderError = (event) => {
     this.setState({
       valueError: parseInt(event.currentTarget.value, 10)
     });
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'Slider');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '20px'
-      },
-      slider: { margin: '0 10px 30px 10px' }
-    };
-
     return (
       <article className="page">
         <h1>Slider</h1>
@@ -102,7 +94,7 @@ class SliderDoc extends Component {
               style={style.slider}
             />
             <Slider
-              onChange={() => {}}
+              onChange={noop}
               label="Disabled example"
               name="sliderDisabled"
               value={this.state.valueDisabled}

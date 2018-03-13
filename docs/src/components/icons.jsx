@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import map from 'lodash/map';
 import * as icons from '../../../dist/icons';
 import Paper from '../../../dist/paper';
 import Table from '../../../dist/table';
@@ -54,7 +54,7 @@ const IconsDoc = () => {
       <section>
         <h1>Examples</h1>
         <Paper style={style.paper}>
-          {_.map(icons, (icon, name) => (
+          {map(icons, (icon, name) => (
             <div key={name} style={style.wrapper}>
               {React.createElement(icon, { style: style.icon })}
               <span style={style.label}>{name}</span>

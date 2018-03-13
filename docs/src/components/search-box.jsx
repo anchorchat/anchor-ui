@@ -1,5 +1,6 @@
-import React from 'react';
-import _ from 'lodash';
+import React, { Component } from 'react';
+import find from 'lodash/find';
+import noop from 'lodash/noop';
 import SearchBox from '../../../dist/search-box';
 import Props from './props';
 import components from '../../components.json';
@@ -12,32 +13,27 @@ const usage = `
   \`\`\`
 `;
 
-class SearchBoxDoc extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
+const componentData = find(components, { displayName: 'SearchBox' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  }
+};
 
-    this.handleChange = this.handleChange.bind(this);
+class SearchBoxDoc extends Component {
+  state = {
+    value: ''
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ value: event.currentTarget.value });
   }
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'SearchBox');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      }
-    };
-
     return (
       <article className="page">
         <h1>SearchBox</h1>
@@ -49,7 +45,7 @@ class SearchBoxDoc extends React.Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <SearchBox onChange={this.handleChange} changeSearchQuery={() => {}} placeholder="Search" value={this.state.value} />
+            <SearchBox onChange={this.handleChange} changeSearchQuery={noop} placeholder="Search" value={this.state.value} />
           </Paper>
         </section>
         <Props props={componentData.props} />

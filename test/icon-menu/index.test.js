@@ -6,6 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EventListener from 'react-event-listener';
+import noop from 'lodash/noop';
 import IconMenu from '../../src/icon-menu/component';
 import IconClose from '../../src/icons/icon-close';
 import Button from '../../src/button';
@@ -24,7 +25,7 @@ describe('IconMenu', () => {
     dividerStyle: {},
     buttonStyle: {}
   };
-  const children = <MenuItem text="Test" onClick={() => {}} />;
+  const children = <MenuItem text="Test" onClick={noop} />;
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
