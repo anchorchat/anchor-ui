@@ -77,7 +77,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.4.1",
-    "react": "^15.4.1"
+    "react": "^16.3.0"
   },
   "dependencies": {
     "color": "^1.0.3",
