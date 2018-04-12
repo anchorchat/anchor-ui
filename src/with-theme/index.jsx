@@ -1,7 +1,6 @@
 import React from 'react';
 import ThemeContext from '../internal/theme-context';
 
-// This function takes a component...
 const withTheme = Component => (
   function ThemedComponent(props) {
     return (
