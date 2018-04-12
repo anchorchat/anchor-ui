@@ -4,7 +4,7 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 const propTypes = {
   /** The Switch's active state */
@@ -56,7 +56,7 @@ Switch.defaultProps = defaultProps;
 Switch.displayName = displayName;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

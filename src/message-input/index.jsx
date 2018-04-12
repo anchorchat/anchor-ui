@@ -7,7 +7,7 @@ import styles from './styles';
 import getStyles from './get-styles';
 import Button from '../button';
 import IconSend from '../icons/icon-send';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 import md from '../internal/mobile-detect';
 
 const propTypes = {
@@ -271,7 +271,7 @@ MessageInput.defaultProps = defaultProps;
 MessageInput.displayName = displayName;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

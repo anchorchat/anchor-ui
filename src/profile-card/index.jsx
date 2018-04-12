@@ -7,7 +7,7 @@ import styles from './styles';
 import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 /** Card containing the user's profile data */
 const ProfileCard = ({
@@ -55,7 +55,7 @@ ProfileCard.defaultProps = {
 };
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

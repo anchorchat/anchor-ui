@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import colors from '../settings/colors';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 const ChannelAvatar = ({ color, inverted, ...custom }) => {
   let background = color;
@@ -32,4 +32,4 @@ ChannelAvatar.defaultProps = {
 
 ChannelAvatar.displayName = 'ChannelAvatar';
 
-export default themeable()(ChannelAvatar);
+export default withTheme(ChannelAvatar);

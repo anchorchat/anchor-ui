@@ -5,7 +5,7 @@ import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import IconRadio from '../icons/icon-radio';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 const propTypes = {
   /** The input's value */
@@ -72,7 +72,7 @@ RadioButton.defaultProps = defaultProps;
 RadioButton.displayName = displayName;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 const propTypes = {
   /** The Tab's icon */
@@ -80,7 +80,7 @@ Tab.defaultProps = defaultProps;
 Tab.displayName = displayName;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

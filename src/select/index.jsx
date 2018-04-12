@@ -13,7 +13,7 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 class Select extends Component {
   static displayName = 'Select'
@@ -212,7 +212,7 @@ class Select extends Component {
 }
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   onClickOutside,
   Radium
 );

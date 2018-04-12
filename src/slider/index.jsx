@@ -6,7 +6,7 @@ import styles from './styles';
 import getStyles from './get-styles';
 import getPercentage from '../internal/get-percentage';
 import customPropTypes from '../internal/prop-types';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 const propTypes = {
   /**
@@ -105,7 +105,7 @@ Slider.defaultProps = defaultProps;
 Slider.displayName = displayName;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 /** General purpose menu item */
 class MenuItem extends Component {
@@ -119,7 +119,7 @@ class MenuItem extends Component {
 }
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

@@ -55,6 +55,6 @@ export icons from './icons';
 
 export settings from './settings';
 
-export themeable from './themeable';
+export withTheme from './with-theme';
 export ThemeProvider from './theme-provider';
 export Media from './media';

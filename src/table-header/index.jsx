@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import compose from 'recompose/compose';
 import getStyles from './get-styles';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 /** TableHeaders are used to display data. */
 const TableHeader = ({
@@ -32,7 +32,7 @@ TableHeader.defaultProps = {
 };
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

@@ -4,7 +4,7 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 import Portal from '../portal';
 
 const displayName = 'Modal';
@@ -81,7 +81,7 @@ Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

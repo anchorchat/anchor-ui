@@ -5,7 +5,7 @@ import compose from 'recompose/compose';
 import EventListener from 'react-event-listener';
 import getStyles from './get-styles';
 import Overlay from '../overlay';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 
 const displayName = 'Menu';
 
@@ -146,7 +146,7 @@ Menu.propTypes = propTypes;
 Menu.defaultProps = defaultProps;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 
