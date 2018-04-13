@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import TableHeader from '../../src/table-header';
+import TableHeader from '../../src/table-header/component';
 import getStyles from '../../src/table-header/get-styles';
 
 chai.use(sinonChai);
@@ -26,13 +26,13 @@ describe('TableHeader', () => {
   });
 
   it('should always render a thead element', () => {
-    const wrapper = shallow(<TableHeader {...props} >{children}</TableHeader>).dive();
+    const wrapper = shallow(<TableHeader {...props} >{children}</TableHeader>);
 
     expect(wrapper.find('thead')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<TableHeader {...props} >{children}</TableHeader>).dive();
+    const wrapper = shallow(<TableHeader {...props} >{children}</TableHeader>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -40,7 +40,7 @@ describe('TableHeader', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<TableHeader {...props} >{children}</TableHeader>).dive();
+    shallow(<TableHeader {...props} >{children}</TableHeader>);
     expect(spy).to.have.been.calledWith(props.color, props.style);
   });
 });
