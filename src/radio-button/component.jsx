@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import colors from '../settings/colors';
 import IconRadio from '../icons/icon-radio';
 import getStyles from './get-styles';
-import withTheme from '../with-theme';
 
 const propTypes = {
   /** The input's value */
@@ -71,9 +68,4 @@ RadioButton.propTypes = propTypes;
 RadioButton.defaultProps = defaultProps;
 RadioButton.displayName = displayName;
 
-const enhance = compose(
-  withTheme,
-  Radium
-);
-
-export default enhance(RadioButton);
+export default RadioButton;
