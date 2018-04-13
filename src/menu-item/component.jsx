@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
 const displayName = 'MenuItem';
+
 const propTypes = {
   /** The item's icon */
   icon: PropTypes.node,
@@ -36,6 +37,7 @@ const propTypes = {
   activeStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired
 };
+
 const defaultProps = {
   icon: null,
   active: false,
