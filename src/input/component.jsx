@@ -89,22 +89,25 @@ class Input extends Component {
 
     textarea.style.height = '1px';
 
-    if (
-      textarea.scrollHeight !== height &&
-      textarea.scrollHeight < (maxRows * rowHeight)
-    ) {
-      if (textarea.scrollHeight < 32) {
-        this.setState({
-          height: 32
-        });
-      } else {
-        this.setState({
-          height: textarea.scrollHeight
-        });
-      }
+    if (textarea.scrollHeight === height || textarea.scrollHeight > (maxRows * rowHeight)) {
+      textarea.style.height = '100%';
+
+      return false;
+    }
+
+    if (textarea.scrollHeight < 32) {
+      this.setState({
+        height: 32
+      });
+    } else {
+      this.setState({
+        height: textarea.scrollHeight
+      });
     }
 
     textarea.style.height = '100%';
+
+    return false;
   }
 
   handleChange = (event) => {
