@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { Style } from 'radium';
 import getStyles from './get-styles';
@@ -71,6 +71,7 @@ class Input extends Component {
     this.state = {
       height: 32
     };
+    this.textarea = createRef();
   }
 
   componentDidMount() {
@@ -84,25 +85,26 @@ class Input extends Component {
   setTextareaHeight = () => {
     const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
+    const { current: textarea } = this.textarea;
 
-    this.textarea.style.height = '1px';
+    textarea.style.height = '1px';
 
     if (
-      this.textarea.scrollHeight !== height &&
-      this.textarea.scrollHeight < (maxRows * rowHeight)
+      textarea.scrollHeight !== height &&
+      textarea.scrollHeight < (maxRows * rowHeight)
     ) {
-      if (this.textarea.scrollHeight < 32) {
+      if (textarea.scrollHeight < 32) {
         this.setState({
           height: 32
         });
       } else {
         this.setState({
-          height: this.textarea.scrollHeight
+          height: textarea.scrollHeight
         });
       }
     }
 
-    this.textarea.style.height = '100%';
+    textarea.style.height = '100%';
   }
 
   handleChange = (event) => {
@@ -164,7 +166,7 @@ class Input extends Component {
             rows={maxRows}
             id={name}
             placeholder={placeholder}
-            ref={(node) => { this.textarea = node; }}
+            ref={this.textarea}
             disabled={disabled}
             {...custom}
           />
