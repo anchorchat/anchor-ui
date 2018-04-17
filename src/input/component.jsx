@@ -77,7 +77,7 @@ class Input extends Component {
   componentDidMount() {
     const { multiLine } = this.props;
 
-    if (multiLine && this.textarea) {
+    if (multiLine && this.textarea && this.textarea.current) {
       this.setTextareaHeight();
     }
   }
