@@ -38,7 +38,9 @@ const propTypes = {
   /** Right-hand side placed button */
   rightButton: PropTypes.node,
   /** Ref function to the element */
-  inputRef: PropTypes.func,
+  inputRef: PropTypes.shape({
+    current: PropTypes.object
+  }),
   /** Disables the input for the messageInput area */
   disabled: PropTypes.bool,
   /** Multi line input. If true, a textarea element will be rendered. */

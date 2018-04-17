@@ -16,7 +16,9 @@ const propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Reference list element */
-  listRef: PropTypes.func,
+  listRef: PropTypes.shape({
+    current: PropTypes.object
+  }),
   /** Enable virtualized list from 'react-virtualized'.
    * List will only render items that are in view
    */
