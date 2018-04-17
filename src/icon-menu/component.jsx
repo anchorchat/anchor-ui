@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';
 import noop from 'lodash/noop';
@@ -67,10 +67,8 @@ class IconMenu extends Component {
       positioned: false
     };
 
-    this.openMenu = this.openMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
-    this.positionPopOver = this.positionPopOver.bind(this);
-    this.handleHeaderClick = this.handleHeaderClick.bind(this);
+    this.button = createRef();
+    this.popOver = createRef();
   }
 
   componentDidUpdate() {
@@ -81,9 +79,9 @@ class IconMenu extends Component {
     }
   }
 
-  positionPopOver() {
-    const button = this.button.getBoundingClientRect();
-    const popOver = this.popOver.getBoundingClientRect();
+  positionPopOver = () => {
+    const button = this.button.current.getBoundingClientRect();
+    const popOver = this.popOver.current.getBoundingClientRect();
 
     this.setState({
       positioned: true,
@@ -91,13 +89,13 @@ class IconMenu extends Component {
     });
   }
 
-  openMenu() {
+  openMenu = () => {
     this.setState({
       open: true
     });
   }
 
-  closeMenu(event) {
+  closeMenu = (event) => {
     const { onMenuClose } = this.props;
     const { open } = this.state;
 
@@ -115,14 +113,14 @@ class IconMenu extends Component {
 
   handleClickOutside = event => this.closeMenu(event)
 
-  applyCloseMenuToChildren(children) {
-    return React.Children.map(
+  applyCloseMenuToChildren = children => (
+    React.Children.map(
       children,
       child => (
         React.cloneElement(child, { closeMenu: this.closeMenu })
       )
-    );
-  }
+    )
+  )
 
   handleKeyUp = (event) => {
     if (event.which === 27) {
@@ -130,7 +128,7 @@ class IconMenu extends Component {
     }
   }
 
-  handleHeaderClick(event) {
+  handleHeaderClick = (event) => {
     const { onHeaderClick } = this.props;
 
     onHeaderClick(event);
@@ -179,7 +177,7 @@ class IconMenu extends Component {
           />
           : null
         }
-        <div ref={(button) => { this.button = button; }}>
+        <div ref={this.button}>
           <Button
             style={buttonStyle}
             iconButton
@@ -193,7 +191,7 @@ class IconMenu extends Component {
           header={header}
           headerStyle={headerStyle}
           open={open}
-          popOverRef={(popOver) => { this.popOver = popOver; }}
+          popOverRef={this.popOver}
           position={position}
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}
