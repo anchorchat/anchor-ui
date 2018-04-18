@@ -4363,17 +4363,6 @@
           "computed": false
         }
       },
-      "listRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Reference list element",
-        "defaultValue": {
-          "value": "noop",
-          "computed": true
-        }
-      },
       "enableInfiniteScroll": {
         "type": {
           "name": "bool"
@@ -5385,6 +5374,13 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "focusInput",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
@@ -5466,17 +5462,6 @@
         },
         "required": false,
         "description": "Right-hand side placed button",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "inputRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Ref function to the element",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5573,18 +5558,6 @@
     "displayName": "MessageList",
     "methods": [
       {
-        "name": "setRef",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "node",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
         "name": "scrollToBottom",
         "docblock": null,
         "modifiers": [],
@@ -5621,17 +5594,6 @@
         "defaultValue": {
           "value": "100",
           "computed": false
-        }
-      },
-      "listRef": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Reference list element",
-        "defaultValue": {
-          "value": "noop",
-          "computed": true
         }
       },
       "style": {
@@ -6074,7 +6036,13 @@
       },
       "popOverRef": {
         "type": {
-          "name": "func"
+          "name": "shape",
+          "value": {
+            "current": {
+              "name": "object",
+              "required": false
+            }
+          }
         },
         "required": true,
         "description": "Ref to the PopOver"

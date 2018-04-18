@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { Style } from 'radium';
 import getStyles from './get-styles';
@@ -71,12 +71,13 @@ class Input extends Component {
     this.state = {
       height: 32
     };
+    this.textareaRef = createRef();
   }
 
   componentDidMount() {
     const { multiLine } = this.props;
 
-    if (multiLine && this.textarea) {
+    if (multiLine && this.textareaRef && this.textareaRef.current) {
       this.setTextareaHeight();
     }
   }
@@ -84,25 +85,29 @@ class Input extends Component {
   setTextareaHeight = () => {
     const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
+    const textarea = this.textareaRef.current;
 
-    this.textarea.style.height = '1px';
+    textarea.style.height = '1px';
 
-    if (
-      this.textarea.scrollHeight !== height &&
-      this.textarea.scrollHeight < (maxRows * rowHeight)
-    ) {
-      if (this.textarea.scrollHeight < 32) {
-        this.setState({
-          height: 32
-        });
-      } else {
-        this.setState({
-          height: this.textarea.scrollHeight
-        });
-      }
+    if (textarea.scrollHeight === height || textarea.scrollHeight > (maxRows * rowHeight)) {
+      textarea.style.height = '100%';
+
+      return false;
     }
 
-    this.textarea.style.height = '100%';
+    if (textarea.scrollHeight < 32) {
+      this.setState({
+        height: 32
+      });
+    } else {
+      this.setState({
+        height: textarea.scrollHeight
+      });
+    }
+
+    textarea.style.height = '100%';
+
+    return false;
   }
 
   handleChange = (event) => {
@@ -164,7 +169,7 @@ class Input extends Component {
             rows={maxRows}
             id={name}
             placeholder={placeholder}
-            ref={(node) => { this.textarea = node; }}
+            ref={this.textareaRef}
             disabled={disabled}
             {...custom}
           />

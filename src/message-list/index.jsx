@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
-import noop from 'lodash/noop';
 import getStyles from './get-styles';
 
 const propTypes = {
@@ -9,8 +8,6 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   /** The amount of pixels the user has to scroll up to disable auto scroll */
   scrollOffset: PropTypes.number,
-  /** Reference list element */
-  listRef: PropTypes.func,
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the ul element */
@@ -21,7 +18,6 @@ const propTypes = {
 
 const defaultProps = {
   scrollOffset: 100,
-  listRef: noop,
   style: {},
   listStyle: {},
   autoScroll: false
@@ -31,11 +27,17 @@ const displayName = 'MessageList';
 
 /** Render a list of items (Messages) with optional auto scroll */
 class MessageList extends Component {
+  constructor() {
+    super();
+
+    this.listRef = createRef();
+  }
+
   componentWillReceiveProps() {
     const { autoScroll } = this.props;
 
     if (autoScroll) {
-      this.shouldScroll = this.shouldScrollToBottom(this.messageList);
+      this.shouldScroll = this.shouldScrollToBottom(this.listRef.current);
     }
   }
 
@@ -49,18 +51,10 @@ class MessageList extends Component {
     }
   }
 
-  setRef = (node) => {
-    const { listRef } = this.props;
-
-    this.messageList = node;
-
-    listRef(node);
-  }
-
   scrollToBottom = () => {
-    const { scrollHeight } = this.messageList;
+    const list = this.listRef.current;
 
-    this.messageList.scrollTop = scrollHeight;
+    list.scrollTop = list.scrollHeight;
   }
 
   shouldScrollToBottom = ({ scrollHeight, scrollTop, offsetHeight }) => {
@@ -76,7 +70,6 @@ class MessageList extends Component {
       children,
       style,
       listStyle,
-      listRef,
       scrollOffset,
       autoScroll,
       ...custom
@@ -84,7 +77,7 @@ class MessageList extends Component {
 
     return (
       <article style={getStyles.root(style)} {...custom}>
-        <ul style={getStyles.list(listStyle)} ref={this.setRef}>
+        <ul style={getStyles.list(listStyle)} ref={this.listRef}>
           {children}
         </ul>
       </article>
