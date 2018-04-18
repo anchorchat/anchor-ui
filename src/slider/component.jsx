@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import styles from './styles';
 import getStyles from './get-styles';
 import getPercentage from '../internal/get-percentage';
 import customPropTypes from '../internal/prop-types';
-import themeable from '../themeable';
 
 const propTypes = {
   /**
@@ -104,9 +101,4 @@ Slider.propTypes = propTypes;
 Slider.defaultProps = defaultProps;
 Slider.displayName = displayName;
 
-const enhance = compose(
-  themeable(),
-  Radium
-);
-
-export default enhance(Slider);
+export default Slider;

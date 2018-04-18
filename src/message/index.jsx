@@ -8,7 +8,7 @@ import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import GiphyMessage from './giphy-message';
 import StickerMessage from './sticker-message';
-import themeable from '../themeable';
+import withTheme from '../with-theme';
 import styles from './styles';
 
 const displayName = 'Message';
@@ -166,7 +166,7 @@ Message.propTypes = propTypes;
 Message.defaultProps = defaultProps;
 
 const enhance = compose(
-  themeable(),
+  withTheme,
   Radium
 );
 

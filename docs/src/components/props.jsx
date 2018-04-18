@@ -50,8 +50,8 @@ const createMarkup = (text) => {
   };
 };
 
-const Props = ({ props }) => {
-  const propsWithoutColor = omit(props, 'color');
+const Props = ({ props, componentName }) => {
+  const propsWithoutColor = componentName !== 'ThemeProvider' ? omit(props, 'color') : props;
 
   const style = {
     column: {
@@ -92,7 +92,12 @@ const Props = ({ props }) => {
 };
 
 Props.propTypes = {
-  props: PropTypes.shape({}).isRequired
+  props: PropTypes.shape({}).isRequired,
+  componentName: PropTypes.string
+};
+
+Props.defaultProps = {
+  componentName: ''
 };
 
 export default Props;

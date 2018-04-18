@@ -64,7 +64,7 @@ const ThemeProviderDoc = ({ setColor }) => (
         </ThemeProvider>
       </Paper>
     </section>
-    <Props props={componentData.props} />
+    <Props props={componentData.props} componentName="ThemeProvider" />
   </article>
 );
 
