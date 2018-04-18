@@ -67,8 +67,8 @@ class IconMenu extends Component {
       positioned: false
     };
 
-    this.button = createRef();
-    this.popOver = createRef();
+    this.buttonRef = createRef();
+    this.popOverRef = createRef();
   }
 
   componentDidUpdate() {
@@ -80,8 +80,8 @@ class IconMenu extends Component {
   }
 
   positionPopOver = () => {
-    const button = this.button.current.getBoundingClientRect();
-    const popOver = this.popOver.current.getBoundingClientRect();
+    const button = this.buttonRef.current.getBoundingClientRect();
+    const popOver = this.popOverRef.current.getBoundingClientRect();
 
     this.setState({
       positioned: true,
@@ -177,7 +177,7 @@ class IconMenu extends Component {
           />
           : null
         }
-        <div ref={this.button}>
+        <div ref={this.buttonRef}>
           <Button
             style={buttonStyle}
             iconButton
@@ -191,7 +191,7 @@ class IconMenu extends Component {
           header={header}
           headerStyle={headerStyle}
           open={open}
-          popOverRef={this.popOver}
+          popOverRef={this.popOverRef}
           position={position}
           secondaryMenuItems={secondaryMenuItemsWithProps}
           dividerText={dividerText}
