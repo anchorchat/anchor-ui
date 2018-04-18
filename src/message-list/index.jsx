@@ -37,7 +37,7 @@ class MessageList extends Component {
     const { autoScroll } = this.props;
 
     if (autoScroll) {
-      this.shouldScroll = this.shouldScrollToBottom(this.list.current);
+      this.shouldScroll = this.shouldScrollToBottom(this.listRef.current);
     }
   }
 
@@ -77,7 +77,7 @@ class MessageList extends Component {
 
     return (
       <article style={getStyles.root(style)} {...custom}>
-        <ul style={getStyles.list(listStyle)} ref={this.list}>
+        <ul style={getStyles.list(listStyle)} ref={this.listRef}>
           {children}
         </ul>
       </article>
