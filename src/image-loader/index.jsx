@@ -121,14 +121,14 @@ class ImageLoader extends Component {
     }
   }
 
-  renderImage = () => {
-    const { src, alt, imgProps } = this.props;
-
-    return <img src={src} alt={alt} {...imgProps} />;
-  }
-
   render() {
-    const { placeholder, error, src } = this.props;
+    const {
+      placeholder,
+      error,
+      src,
+      alt,
+      imgProps
+    } = this.props;
     const { status } = this.state;
 
     if (!src) {
@@ -136,7 +136,7 @@ class ImageLoader extends Component {
     }
 
     if (status === 'loaded') {
-      return this.renderImage();
+      return <img src={src} alt={alt} {...imgProps} />;
     }
 
     if (status === 'failed') {
