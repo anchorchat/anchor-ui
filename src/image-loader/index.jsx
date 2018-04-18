@@ -40,8 +40,20 @@ const displayName = 'ImageLoader';
 
 /* Show a placeholder while an image is loading or an error when an image fails to load. */
 class ImageLoader extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.lastSrc !== nextProps.src) {
+      return {
+        status: 'loading',
+        lastSrc: nextProps.src
+      };
+    }
+
+    return null;
+  }
+
   state = {
-    status: 'loading'
+    status: 'loading',
+    lastSrc: null // eslint-disable-line react/no-unused-state
   }
 
   componentDidMount() {
@@ -50,16 +62,6 @@ class ImageLoader extends Component {
 
     if (src && status === 'loading') {
       this.create();
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { src } = this.props;
-
-    if (src !== nextProps.src) {
-      this.setState({
-        status: 'loading',
-      });
     }
   }
 
