@@ -27,27 +27,20 @@ const displayName = 'MessageList';
 
 /** Render a list of items (Messages) with optional auto scroll */
 class MessageList extends Component {
-  constructor() {
-    super();
+  listRef = createRef() // eslint-disable-line react/sort-comp
 
-    this.listRef = createRef();
-  }
-
-  componentWillReceiveProps() {
-    const { autoScroll } = this.props;
-
-    if (autoScroll) {
-      this.shouldScroll = this.shouldScrollToBottom(this.listRef.current);
+  getSnapshotBeforeUpdate(prevProps) {
+    if (prevProps.autoScroll) {
+      return this.shouldScrollToBottom(this.listRef.current);
     }
+
+    return null;
   }
 
-  componentDidUpdate() {
-    const { autoScroll } = this.props;
-
-    if (autoScroll && this.shouldScroll) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // If snapshot is truthy autoScroll is enabled and the list should scroll down.
+    if (snapshot) {
       this.scrollToBottom();
-
-      this.shouldScroll = false;
     }
   }
 
