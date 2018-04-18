@@ -79,14 +79,14 @@ class MessageInput extends Component {
       height: 48,
       multiLine: false
     };
-    this.input = createRef();
-    this.textarea = createRef();
+    this.inputRef = createRef();
+    this.textareaRef = createRef();
   }
 
   componentDidMount() {
     const { multiLine } = this.props;
 
-    if (multiLine && this.textarea && this.textarea.current) {
+    if (multiLine && this.textareaRef && this.textareaRef.current) {
       this.setTextareaHeight();
     }
   }
@@ -94,7 +94,7 @@ class MessageInput extends Component {
   setTextareaHeight = () => {
     const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
-    const { current: textarea } = this.textarea;
+    const textarea = this.textareaRef.current;
 
     textarea.style.height = '1px';
 
@@ -173,8 +173,8 @@ class MessageInput extends Component {
 
   focusInput = () => {
     const { multiLine } = this.props;
-    const { current: input } = this.input;
-    const { current: textarea } = this.textarea;
+    const input = this.inputRef.current;
+    const textarea = this.textareaRef.current;
 
     if (multiLine) {
       return textarea.focus();
@@ -215,7 +215,7 @@ class MessageInput extends Component {
         type="text"
         onKeyDown={this.handleKeyDown}
         maxLength={maxLength}
-        ref={this.input}
+        ref={this.inputRef}
         disabled={disabled}
         key="input"
         className="message-input"
@@ -234,7 +234,7 @@ class MessageInput extends Component {
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
           rows={maxRows}
-          ref={this.textarea}
+          ref={this.textareaRef}
           disabled={disabled}
           key="input"
           className="message-input"

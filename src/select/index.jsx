@@ -72,9 +72,9 @@ class Select extends Component {
       popOverWidth: '200px'
     };
 
-    this.button = createRef();
-    this.popOver = createRef();
-    this.container = createRef();
+    this.buttonRef = createRef();
+    this.popOverRef = createRef();
+    this.containerRef = createRef();
   }
 
   componentDidUpdate() {
@@ -86,9 +86,9 @@ class Select extends Component {
   }
 
   positionPopOver = () => {
-    const button = this.button.current.getBoundingClientRect();
-    const popOver = this.popOver.current.getBoundingClientRect();
-    const container = this.container.current.getBoundingClientRect();
+    const button = this.buttonRef.current.getBoundingClientRect();
+    const popOver = this.popOverRef.current.getBoundingClientRect();
+    const container = this.containerRef.current.getBoundingClientRect();
 
     this.setState({
       positioned: true,
@@ -179,13 +179,13 @@ class Select extends Component {
 
     return (
       <section
-        ref={this.container}
+        ref={this.containerRef}
         style={combineStyles(styles.root, style)}
         {...custom}
       >
         {label ? <span style={combineStyles(styles.label, labelStyle)}>{label}</span> : null}
         <header
-          ref={this.button}
+          ref={this.buttonRef}
           style={getStyles.header(error, color, headerStyle)}
           onClick={this.toggleSelect}
         >
@@ -195,7 +195,7 @@ class Select extends Component {
         <PopOver
           style={popOverStyle}
           open={open}
-          popOverRef={this.popOver}
+          popOverRef={this.popOverRef}
           position={position}
         >
           {childrenWithProps}
