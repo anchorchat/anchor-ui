@@ -1,5 +1,4 @@
-/* eslint react/require-default-props: 0 */
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
 import compose from 'recompose/compose';
@@ -37,8 +36,6 @@ const propTypes = {
   leftButton: PropTypes.node,
   /** Right-hand side placed button */
   rightButton: PropTypes.node,
-  /** Ref function to the element */
-  inputRef: PropTypes.func,
   /** Disables the input for the messageInput area */
   disabled: PropTypes.bool,
   /** Multi line input. If true, a textarea element will be rendered. */
@@ -64,7 +61,6 @@ const defaultProps = {
   leftButton: null,
   disabled: false,
   rightButton: null,
-  inputRef: null,
   multiLine: false,
   maxRows: 12,
   sendIconColor: '',
@@ -83,12 +79,14 @@ class MessageInput extends Component {
       height: 48,
       multiLine: false
     };
+    this.inputRef = createRef();
+    this.textareaRef = createRef();
   }
 
   componentDidMount() {
     const { multiLine } = this.props;
 
-    if (multiLine && this.textarea) {
+    if (multiLine && this.textareaRef && this.textareaRef.current) {
       this.setTextareaHeight();
     }
   }
@@ -96,10 +94,11 @@ class MessageInput extends Component {
   setTextareaHeight = () => {
     const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
+    const textarea = this.textareaRef.current;
 
-    this.textarea.style.height = '1px';
+    textarea.style.height = '1px';
 
-    if (this.textarea.scrollHeight > 48) {
+    if (textarea.scrollHeight > 48) {
       this.setState({
         multiLine: true
       });
@@ -109,23 +108,27 @@ class MessageInput extends Component {
       });
     }
 
-    if (
-      this.textarea.scrollHeight !== height
-      && this.textarea.scrollHeight < (maxRows * rowHeight)
-    ) {
-      if (this.textarea.scrollHeight < 49) {
-        this.setState({
-          height: 48
-        });
-      } else {
-        this.setState({
-          height: this.textarea.scrollHeight
-        });
-      }
+    if (textarea.scrollHeight === height || textarea.scrollHeight > (maxRows * rowHeight)) {
+      textarea.scrollTop = textarea.scrollHeight;
+      textarea.style.height = '100%';
+
+      return false;
     }
 
-    this.textarea.scrollTop = this.textarea.scrollHeight;
-    this.textarea.style.height = '100%';
+    if (textarea.scrollHeight < 49) {
+      this.setState({
+        height: 48
+      });
+    } else {
+      this.setState({
+        height: textarea.scrollHeight
+      });
+    }
+
+    textarea.scrollTop = textarea.scrollHeight;
+    textarea.style.height = '100%';
+
+    return false;
   }
 
   handleChange = (event) => {
@@ -168,6 +171,18 @@ class MessageInput extends Component {
     sendMessage(event);
   }
 
+  focusInput = () => {
+    const { multiLine } = this.props;
+    const input = this.inputRef.current;
+    const textarea = this.textareaRef.current;
+
+    if (multiLine) {
+      return textarea.focus();
+    }
+
+    return input.focus();
+  }
+
   render() {
     const {
       onChange,
@@ -176,7 +191,6 @@ class MessageInput extends Component {
       value,
       maxLength,
       leftButton,
-      inputRef,
       disabled,
       style,
       inputStyle,
@@ -201,7 +215,7 @@ class MessageInput extends Component {
         type="text"
         onKeyDown={this.handleKeyDown}
         maxLength={maxLength}
-        ref={inputRef}
+        ref={this.inputRef}
         disabled={disabled}
         key="input"
         className="message-input"
@@ -220,13 +234,7 @@ class MessageInput extends Component {
           onKeyDown={this.handleKeyDown}
           maxLength={maxLength}
           rows={maxRows}
-          ref={(node) => {
-            this.textarea = node;
-
-            if (inputRef) {
-              inputRef(node);
-            }
-          }}
+          ref={this.textareaRef}
           disabled={disabled}
           key="input"
           className="message-input"
