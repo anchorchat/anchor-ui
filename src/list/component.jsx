@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isArray from 'lodash/isArray';
-import noop from 'lodash/noop';
 import { AutoSizer, List as VirtualizedList } from 'react-virtualized';
 import getStyles from './get-styles';
 import styles from './styles';
@@ -15,10 +14,6 @@ const propTypes = {
   header: PropTypes.node,
   /** Override the styles of the header element */
   headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Reference list element */
-  listRef: PropTypes.shape({
-    current: PropTypes.object
-  }),
   /** Enable virtualized list from 'react-virtualized'.
    * List will only render items that are in view
    */
@@ -60,7 +55,6 @@ const defaultProps = {
   header: null,
   headerStyle: {},
   itemHeight: 48,
-  listRef: noop,
   listStyle: {},
   overscanRowCount: 10,
   scrollPlaceholder: null,
@@ -135,7 +129,6 @@ class List extends Component {
       header,
       headerStyle,
       itemHeight,
-      listRef,
       listStyle,
       overscanRowCount,
       scrollPlaceholder,
@@ -146,7 +139,7 @@ class List extends Component {
     } = this.props;
 
     return (
-      <section ref={listRef} style={getStyles.root(style)} {...custom}>
+      <section style={getStyles.root(style)} {...custom}>
         {header ? <h1 style={getStyles.listHeader(headerStyle)}>{header}</h1> : null}
         <ul style={getStyles.list(header, enableInfiniteScroll, listStyle)}>
           {enableInfiniteScroll ? this.renderVirtualizedList() : children}
