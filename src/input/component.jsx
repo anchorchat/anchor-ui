@@ -71,13 +71,13 @@ class Input extends Component {
     this.state = {
       height: 32
     };
-    this.textarea = createRef();
+    this.textareaRef = createRef();
   }
 
   componentDidMount() {
     const { multiLine } = this.props;
 
-    if (multiLine && this.textarea && this.textarea.current) {
+    if (multiLine && this.textareaRef && this.textareaRef.current) {
       this.setTextareaHeight();
     }
   }
@@ -85,7 +85,7 @@ class Input extends Component {
   setTextareaHeight = () => {
     const { rowHeight, maxRows } = this.props;
     const { height } = this.state;
-    const { current: textarea } = this.textarea;
+    const textarea = this.textareaRef.current;
 
     textarea.style.height = '1px';
 
@@ -169,7 +169,7 @@ class Input extends Component {
             rows={maxRows}
             id={name}
             placeholder={placeholder}
-            ref={this.textarea}
+            ref={this.textareaRef}
             disabled={disabled}
             {...custom}
           />
