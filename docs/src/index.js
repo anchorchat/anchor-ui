@@ -44,7 +44,7 @@ import Menu from './components/menu';
 import Slider from './components/slider';
 import Lightbox from './components/lightbox';
 import ThemeProvider from './components/theme-provider';
-import themeable from './components/themeable';
+import withTheme from './components/with-theme';
 import Table from './components/table';
 import Pagination from './components/pagination';
 import Commands from './components/commands';
@@ -100,7 +100,7 @@ ReactDOM.render(
         <Route path="/lightbox" component={Lightbox} />
         <Route path="/table" component={Table} />
         <Route path="/theme-provider" component={ThemeProvider} />
-        <Route path="/themeable" component={themeable} />
+        <Route path="/with-theme" component={withTheme} />
         <Route path="/pagination" component={Pagination} />
         <Route path="/commands" component={Commands} />
         <Route path="/date-separator" component={DateSeparator} />
