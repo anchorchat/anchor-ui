@@ -90,7 +90,7 @@ class ImageLoader extends Component {
     onError(error);
   }
 
-  handleLoad = (e) => {
+  handleLoad = (event) => {
     const { onLoad } = this.props;
 
     this.destroy();
@@ -99,7 +99,7 @@ class ImageLoader extends Component {
       status: 'loaded'
     });
 
-    onLoad(e);
+    onLoad(event);
   }
 
   create = () => {
