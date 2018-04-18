@@ -30,7 +30,7 @@ class MessageList extends Component {
   constructor() {
     super();
 
-    this.list = createRef();
+    this.listRef = createRef();
   }
 
   componentWillReceiveProps() {
@@ -52,7 +52,7 @@ class MessageList extends Component {
   }
 
   scrollToBottom = () => {
-    const { current: list } = this.list;
+    const list = this.listRef.current;
 
     list.scrollTop = list.scrollHeight;
   }
