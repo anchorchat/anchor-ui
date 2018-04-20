@@ -9,6 +9,12 @@ after_success: npm run coverage
 before_deploy:
   cd docs && npm run build && cd ../ && npm run build:travis && zip -r build.zip anchor-ui
 deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  file: "build.zip"
+  skip_cleanup: true
+  on:
+    tags: true
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
@@ -17,11 +23,5 @@ deploy:
   name: IanCStewart
   on:
     branch: master
-  provider: releases
-  api_key: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  file: ""
-  skip_cleanup: true
-  on:
-    tags: true
 notifications:
   email: false
