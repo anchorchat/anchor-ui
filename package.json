@@ -14,7 +14,7 @@
     "compile:travis": "rimraf anchor-ui && babel -d anchor-ui/ src/",
     "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
     "copy": "cp -rf package.json README.md dist",
-    "copy": "cp -rf package.json README.md anchor-ui",
+    "copy:travis": "cp -rf package.json README.md anchor-ui",
     "build": "npm run compile && npm run copy",
     "build:travis": "npm run compile:travis && npm run copy:travis",
     "dist": "cd dist && npm publish",
