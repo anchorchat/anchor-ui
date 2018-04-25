@@ -6161,7 +6161,7 @@
       }
     }
   },
-  "components/profile/index.jsx": {
+  "components/profile/component.jsx": {
     "description": "Profile useful for showing a user's info",
     "displayName": "Profile",
     "methods": [],
@@ -6326,7 +6326,7 @@
     }
   },
   "components/profile-card/index.jsx": {
-    "description": "Card containing the user's profile data",
+    "description": "Card containing a user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
     "props": {
@@ -6335,7 +6335,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to the user's profile image",
+        "description": "Path to the user's avatar",
         "defaultValue": {
           "value": "''",
           "computed": false

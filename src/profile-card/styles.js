@@ -9,7 +9,7 @@ export default {
     lineHeight: '20px',
     padding: '15px'
   },
-  avatar: {
+  withAvatar: {
     lineHeight: '40px',
     overflow: 'auto'
   },
@@ -29,5 +29,12 @@ export default {
     marginBottom: '0',
     wordBreak: 'break-word',
     marginTop: '4px'
+  },
+  avatar: {
+    float: 'left',
+    width: '80px',
+    height: '80px',
+    border: `3px solid ${colors.white}`,
+    marginRight: '15px'
   }
 };

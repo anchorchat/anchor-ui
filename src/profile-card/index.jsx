@@ -4,40 +4,14 @@ import Radium from 'radium';
 import compose from 'recompose/compose';
 import Avatar from '../avatar';
 import styles from './styles';
-import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import getStyles from './get-styles';
 import themeable from '../themeable';
 
-/** Card containing the user's profile data */
-const ProfileCard = ({
-  username,
-  avatar,
-  style,
-  usernameStyle,
-  color,
-  ...custom
-}) => {
-  const avatarStyle = {
-    float: 'left',
-    width: '80px',
-    height: '80px',
-    border: `3px solid ${colors.white}`,
-    marginRight: '15px'
-  };
+const displayName = 'ProfileCard';
 
-  return (
-    <section style={getStyles.root(color, avatar, style)} {...custom}>
-      {avatar ? <Avatar image={avatar} style={avatarStyle} /> : null}
-      <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
-    </section>
-  );
-};
-
-ProfileCard.displayName = 'ProfileCard';
-
-ProfileCard.propTypes = {
-  /** Path to the user's profile image */
+const propTypes = {
+  /** Path to the user's avatar */
   avatar: PropTypes.string,
   /** The user's username */
   username: PropTypes.node.isRequired,
@@ -48,11 +22,30 @@ ProfileCard.propTypes = {
   color: PropTypes.string.isRequired
 };
 
-ProfileCard.defaultProps = {
+const defaultProps = {
   avatar: '',
   style: {},
   usernameStyle: {},
 };
+
+/** Card containing a user's profile data */
+const ProfileCard = ({
+  username,
+  avatar,
+  style,
+  usernameStyle,
+  color,
+  ...custom
+}) => (
+  <section style={getStyles.root(color, avatar, style)} {...custom}>
+    {avatar ? <Avatar image={avatar} style={getStyles.avatar()} /> : null}
+    <h1 style={combineStyles(styles.username, usernameStyle)}>{username}</h1>
+  </section>
+);
+
+ProfileCard.displayName = displayName;
+ProfileCard.propTypes = propTypes;
+ProfileCard.defaultProps = defaultProps;
 
 const enhance = compose(
   themeable(),
