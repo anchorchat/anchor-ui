@@ -4,10 +4,10 @@ export default {
   profileCard: {
     backgroundColor: colors.theme,
     color: colors.white,
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: 'bolder',
     lineHeight: '20px',
-    padding: '15px'
+    padding: '16px'
   },
   withAvatar: {
     lineHeight: '40px',
@@ -22,13 +22,6 @@ export default {
     display: 'inline-block',
     color: colors.white,
     fontWeight: 'inherit'
-  },
-  text: {
-    fontSize: '16px',
-    lineHeight: '18px',
-    marginBottom: '0',
-    wordBreak: 'break-word',
-    marginTop: '4px'
   },
   avatar: {
     float: 'left',
