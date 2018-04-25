@@ -16,7 +16,7 @@ export default {
     width: '100%',
     height: '200px',
     overflow: 'hidden',
-    marginBottom: '78px'
+    marginBottom: '76px'
   },
   coverImage: {
     backgroundSize: 'cover',
@@ -27,22 +27,18 @@ export default {
     filter: 'blur(4px) brightness(80%)'
   },
   avatar: {
-    width: '150px',
-    height: '150px',
+    width: '152px',
+    height: '152px',
+    boxSizing: 'border-box',
     margin: '0 auto',
-    border: `3px solid ${colors.white}`,
+    border: `2px solid ${colors.white}`,
     position: 'absolute',
     top: '200px',
     left: '50%',
     transform: 'translate(-50%, -50%)'
   },
-  close: {
-    position: 'absolute',
-    top: '16px',
-    right: '32px'
-  },
   header: {
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: 'bolder',
     marginTop: '16px',
     marginBottom: '8px',
@@ -51,7 +47,6 @@ export default {
     textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    minHeight: '22px',
     whiteSpace: 'nowrap'
   },
   secondaryText: {
@@ -63,15 +58,15 @@ export default {
     textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    minHeight: '20px',
     fontWeight: 'inherit',
     whiteSpace: 'nowrap'
   },
   status: {
-    width: '15px',
-    height: '15px',
-    border: `2px solid ${colors.white}`,
-    top: '10px',
-    right: '10px'
+    width: '16px',
+    height: '16px',
+    boxSizing: 'border-box',
+    border: `1px solid ${colors.white}`,
+    top: '12px',
+    right: '12px'
   }
 };
