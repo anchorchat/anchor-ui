@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import find from 'lodash/find';
 import get from 'lodash/get';
-import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -13,7 +10,6 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
-import themeable from '../themeable';
 
 class Select extends Component {
   static displayName = 'Select'
@@ -211,10 +207,4 @@ class Select extends Component {
   }
 }
 
-const enhance = compose(
-  themeable(),
-  onClickOutside,
-  Radium
-);
-
-export default enhance(Select);
+export default Select;
