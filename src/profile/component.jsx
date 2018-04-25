@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
 import Avatar from '../avatar';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -103,4 +102,4 @@ Profile.displayName = displayName;
 Profile.propTypes = propTypes;
 Profile.defaultProps = defaultProps;
 
-export default Radium(Profile);
+export default Profile;

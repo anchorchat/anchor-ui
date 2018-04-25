@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import ProfileCard from '../../src/profile-card';
+import ProfileCard from '../../src/profile-card/component';
 import getStyles from '../../src/profile-card/get-styles';
 
 chai.use(sinonChai);
@@ -29,19 +29,19 @@ describe('ProfileCard', () => {
   });
 
   it('should always render a section element', () => {
-    const wrapper = shallow(<ProfileCard {...props} />).dive();
+    const wrapper = shallow(<ProfileCard {...props} />);
 
     expect(wrapper.find('section')).to.have.length(1);
   });
 
   it('should always render a h1 element', () => {
-    const wrapper = shallow(<ProfileCard {...props} />).dive();
+    const wrapper = shallow(<ProfileCard {...props} />);
 
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
   it('should render a h1 element if the username prop is passed', () => {
-    const wrapper = shallow(<ProfileCard {...props} />).dive();
+    const wrapper = shallow(<ProfileCard {...props} />);
 
     expect(wrapper.find('h1')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<h1>test</h1>)).to.equal(true);
@@ -50,7 +50,7 @@ describe('ProfileCard', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<ProfileCard {...props} />).dive();
+    shallow(<ProfileCard {...props} />);
     expect(spy).to.have.been.calledWith(props.color, props.avatar, props.style);
   });
 });

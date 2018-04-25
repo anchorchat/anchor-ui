@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import Avatar from '../avatar';
 import styles from './styles';
 import combineStyles from '../internal/combine-styles';
 import getStyles from './get-styles';
-import themeable from '../themeable';
 
 const displayName = 'ProfileCard';
 
@@ -47,9 +44,4 @@ ProfileCard.displayName = displayName;
 ProfileCard.propTypes = propTypes;
 ProfileCard.defaultProps = defaultProps;
 
-const enhance = compose(
-  themeable(),
-  Radium
-);
-
-export default enhance(ProfileCard);
+export default ProfileCard;
