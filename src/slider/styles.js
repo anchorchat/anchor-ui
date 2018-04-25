@@ -42,7 +42,7 @@ export default {
     top: '1px',
     left: '0%',
     backgroundColor: colors.theme,
-    transform: 'translateY(-50%, -50%)',
+    transform: 'translate(-50%, -50%)',
     transition: 'border .1s ease-in-out, background-color .1s ease-in-out',
     cursor: 'pointer'
   },
