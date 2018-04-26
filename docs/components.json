@@ -6716,7 +6716,7 @@
       }
     }
   },
-  "components/select/index.jsx": {
+  "components/select/component.jsx": {
     "description": "",
     "displayName": "Select",
     "methods": [
@@ -6821,12 +6821,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The Select's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The Select's label"
       },
       "labelStyle": {
         "type": {
@@ -7067,12 +7063,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The Switch's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The Switch's label"
       },
       "style": {
         "type": {
