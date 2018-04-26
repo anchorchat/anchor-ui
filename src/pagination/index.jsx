@@ -12,14 +12,52 @@ import IconFirst from '../icons/icon-first';
 import IconLast from '../icons/icon-last';
 import colors from '../settings/colors';
 
+const displayName = 'Pagination';
+
+const propTypes = {
+  /** The list to navigate through */
+  list: PropTypes.arrayOf(Object).isRequired,
+  /**
+   * Callback fired when the navigation changes
+   *
+   * function(event: object, pager: object) => void
+   */
+  onChange: PropTypes.func.isRequired,
+  /** Initial active page */
+  initialPage: PropTypes.number,
+  /** The page's size */
+  pageSize: PropTypes.number,
+  /** The paginated list */
+  children: PropTypes.node.isRequired,
+  /** Override the styles of the root element */
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Override the styles of the nav element */
+  navStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Override the styles of the nav button elements */
+  navButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Override the styles of the icon button elements */
+  iconButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** The nav's position relative to the children. One of the following: ["top", "bottom"] */
+  position: PropTypes.oneOf(['top', 'bottom']),
+  /** Jump to a certain page in the list */
+  jumpToPage: PropTypes.number
+};
+
+const defaultProps = {
+  initialPage: 1,
+  pageSize: 10,
+  style: {},
+  navStyle: {},
+  navButtonStyle: {},
+  iconButtonStyle: {},
+  position: 'top',
+  jumpToPage: 1
+};
+
 /** Navigate through large sets of data */
 class Pagination extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      pager: {}
-    };
+  state = {
+    pager: {}
   }
 
   componentDidMount() {
@@ -129,46 +167,8 @@ class Pagination extends Component {
   }
 }
 
-Pagination.propTypes = {
-  /** The list to navigate through */
-  list: PropTypes.arrayOf(Object).isRequired,
-  /**
-   * Callback fired when the navigation changes
-   *
-   * function(event: object, pager: object) => void
-   */
-  onChange: PropTypes.func.isRequired,
-  /** Initial active page */
-  initialPage: PropTypes.number,
-  /** The page's size */
-  pageSize: PropTypes.number,
-  /** The paginated list */
-  children: PropTypes.node.isRequired,
-  /** Override the styles of the root element */
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Override the styles of the nav element */
-  navStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Override the styles of the nav button elements */
-  navButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Override the styles of the icon button elements */
-  iconButtonStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** The nav's position relative to the children. One of the following: ["top", "bottom"] */
-  position: PropTypes.oneOf(['top', 'bottom']),
-  /** Jump to a certain page in the list */
-  jumpToPage: PropTypes.number
-};
-
-Pagination.defaultProps = {
-  initialPage: 1,
-  pageSize: 10,
-  style: {},
-  navStyle: {},
-  navButtonStyle: {},
-  iconButtonStyle: {},
-  position: 'top',
-  jumpToPage: 1
-};
-
-Pagination.displayName = 'Pagination';
+Pagination.propTypes = propTypes;
+Pagination.defaultProps = defaultProps;
+Pagination.displayName = displayName;
 
 export default Pagination;
