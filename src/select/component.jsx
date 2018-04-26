@@ -29,7 +29,7 @@ const propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The Select's label */
-  label: PropTypes.node,
+  label: PropTypes.node.isRequired,
   /** Override the styles of the label element */
   labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the content container */
@@ -47,7 +47,6 @@ const propTypes = {
 
 const defaultProps = {
   value: '',
-  label: null,
   style: {},
   headerStyle: {},
   labelStyle: {},
