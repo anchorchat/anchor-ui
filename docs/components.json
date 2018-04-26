@@ -3884,7 +3884,7 @@
       }
     }
   },
-  "components/image-loader/index.jsx": {
+  "components/image-loader/component.jsx": {
     "description": "",
     "displayName": "ImageLoader",
     "methods": [
@@ -6526,12 +6526,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The RadioButtonGroup's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The RadioButtonGroup's label"
       },
       "labelStyle": {
         "type": {
