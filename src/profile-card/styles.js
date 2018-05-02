@@ -27,7 +27,8 @@ export default {
     float: 'left',
     width: '80px',
     height: '80px',
-    border: `3px solid ${colors.white}`,
-    marginRight: '15px'
+    border: `2px solid ${colors.white}`,
+    marginRight: '15px',
+    boxSizing: 'border-box'
   }
 };

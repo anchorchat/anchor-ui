@@ -51,6 +51,7 @@ export default {
   },
   secondaryText: {
     fontSize: '16px',
+    lineHeight: '18px',
     marginTop: 0,
     marginBottom: '16px',
     color: colors.primaryText,
