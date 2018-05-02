@@ -6395,12 +6395,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The input's label text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The input's label text"
       },
       "onChange": {
         "type": {
