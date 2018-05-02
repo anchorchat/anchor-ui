@@ -38,10 +38,10 @@ export default {
     width: '12px',
     height: '12px',
     borderRadius: '50%',
-    border: `2px solid ${colors.theme}`,
+    border: `2px solid ${colors.grey}`,
     top: '1px',
     left: '0%',
-    backgroundColor: colors.theme,
+    backgroundColor: colors.white,
     transform: 'translate(-50%, -50%)',
     transition: 'border .1s ease-in-out, background-color .1s ease-in-out',
     cursor: 'pointer'
