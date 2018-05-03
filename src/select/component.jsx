@@ -1,10 +1,7 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
-import Radium from 'radium';
-import compose from 'recompose/compose';
 import find from 'lodash/find';
 import get from 'lodash/get';
-import onClickOutside from 'react-onclickoutside';
 import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -13,7 +10,6 @@ import colors from '../settings/colors';
 import combineStyles from '../internal/combine-styles';
 import PopOver from '../pop-over';
 import getPopOverPosition from '../internal/get-pop-over-position';
-import withTheme from '../with-theme';
 
 const displayName = 'Select';
 
@@ -33,7 +29,7 @@ const propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The Select's label */
-  label: PropTypes.node,
+  label: PropTypes.node.isRequired,
   /** Override the styles of the label element */
   labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the content container */
@@ -51,7 +47,6 @@ const propTypes = {
 
 const defaultProps = {
   value: '',
-  label: null,
   style: {},
   headerStyle: {},
   labelStyle: {},
@@ -183,7 +178,7 @@ class Select extends Component {
         style={combineStyles(styles.root, style)}
         {...custom}
       >
-        {label ? <span style={combineStyles(styles.label, labelStyle)}>{label}</span> : null}
+        <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         <header
           ref={this.buttonRef}
           style={getStyles.header(error, color, headerStyle)}
@@ -215,10 +210,4 @@ Select.displayName = displayName;
 Select.propTypes = propTypes;
 Select.defaultProps = defaultProps;
 
-const enhance = compose(
-  withTheme,
-  onClickOutside,
-  Radium
-);
-
-export default enhance(Select);
+export default Select;

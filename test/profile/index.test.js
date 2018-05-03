@@ -5,7 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import Profile from '../../src/profile';
+import Profile from '../../src/profile/component';
 import Avatar from '../../src/avatar';
 import getStyles from '../../src/profile/get-styles';
 
