@@ -93,18 +93,17 @@ describe('Slider.getStyles', () => {
 
   describe('button', () => {
     it('should get default styles', () => {
-      const style = getStyles.button();
+      const style = getStyles.button(undefined, 0);
 
       expect(style).to.deep.equal(styles.button);
     });
 
     it('should add theme color', () => {
-      const style = getStyles.button('red', 0);
+      const style = getStyles.button('red', 1);
 
-      expect(style).to.deep.equal(styles.button);
-      expect(style).to.have.property('left', '0%');
-      expect(style).to.have.property('backgroundColor', '#1BA6C4');
-      expect(style).to.have.property('border', '2px solid #1BA6C4');
+      expect(style).to.have.property('left', '100%');
+      expect(style).to.have.property('backgroundColor', 'red');
+      expect(style).to.have.property('border', '2px solid red');
     });
 
     it('should combine styles', () => {
