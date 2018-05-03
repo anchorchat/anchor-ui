@@ -16,7 +16,7 @@ const propTypes = {
    */
   toggleSwitch: PropTypes.func.isRequired,
   /** The Switch's label */
-  label: PropTypes.node,
+  label: PropTypes.node.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the track element */
@@ -30,7 +30,6 @@ const propTypes = {
 
 const defaultProps = {
   active: false,
-  label: null,
   style: {},
   trackStyle: {},
   knobStyle: {},
