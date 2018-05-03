@@ -5,7 +5,7 @@ export default {
     borderRadius: 0,
     borderTop: 0,
     borderRight: 0,
-    borderBottom: '3px solid transparent',
+    borderBottom: '2px solid transparent',
     borderLeft: 0,
     backgroundColor: colors.white,
     outline: 0,

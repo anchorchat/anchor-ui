@@ -6,7 +6,7 @@ const root = (color = colors.theme, selected, overrideStyle, activeStyle) => {
   const style = styles.root;
 
   if (selected) {
-    return combineStyles(combineStyles(style, { opacity: 1, borderBottom: `3px solid ${color}` }), activeStyle);
+    return combineStyles(combineStyles(style, { opacity: 1, borderBottom: `2px solid ${color}` }), activeStyle);
   }
 
   return combineStyles(style, overrideStyle);
