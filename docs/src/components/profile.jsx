@@ -14,7 +14,6 @@ const usage = `
   \`\`\`
 `;
 
-const avatar = faker.internet.avatar();
 const username = faker.internet.userName();
 const secondaryText = faker.name.jobTitle();
 
@@ -47,8 +46,8 @@ const ProfileDoc = () => (
         <Profile
           header={username}
           secondaryText={secondaryText}
-          avatar={avatar}
-          coverImage={avatar}
+          avatar="https://source.unsplash.com/random/240x240"
+          coverImage="https://source.unsplash.com/random/800x400"
           button={<Button>Edit Information</Button>}
           style={style.profile}
           status="online"

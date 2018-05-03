@@ -40,8 +40,20 @@ const displayName = 'ImageLoader';
 
 /* Show a placeholder while an image is loading or an error when an image fails to load. */
 class ImageLoader extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.lastSrc !== nextProps.src) {
+      return {
+        status: 'loading',
+        lastSrc: nextProps.src
+      };
+    }
+
+    return null;
+  }
+
   state = {
-    status: 'loading'
+    status: 'loading',
+    lastSrc: null // eslint-disable-line react/no-unused-state
   }
 
   componentDidMount() {
@@ -50,16 +62,6 @@ class ImageLoader extends Component {
 
     if (src && status === 'loading') {
       this.create();
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { src } = this.props;
-
-    if (src !== nextProps.src) {
-      this.setState({
-        status: 'loading',
-      });
     }
   }
 
@@ -88,7 +90,7 @@ class ImageLoader extends Component {
     onError(error);
   }
 
-  handleLoad = (e) => {
+  handleLoad = (event) => {
     const { onLoad } = this.props;
 
     this.destroy();
@@ -97,7 +99,7 @@ class ImageLoader extends Component {
       status: 'loaded'
     });
 
-    onLoad(e);
+    onLoad(event);
   }
 
   create = () => {
@@ -119,14 +121,14 @@ class ImageLoader extends Component {
     }
   }
 
-  renderImage = () => {
-    const { src, alt, imgProps } = this.props;
-
-    return <img src={src} alt={alt} {...imgProps} />;
-  }
-
   render() {
-    const { placeholder, error, src } = this.props;
+    const {
+      placeholder,
+      error,
+      src,
+      alt,
+      imgProps
+    } = this.props;
     const { status } = this.state;
 
     if (!src) {
@@ -134,7 +136,7 @@ class ImageLoader extends Component {
     }
 
     if (status === 'loaded') {
-      return this.renderImage();
+      return <img src={src} alt={alt} {...imgProps} />;
     }
 
     if (status === 'failed') {

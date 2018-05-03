@@ -19,9 +19,9 @@ describe('RadioButton', () => {
     checked: false,
     onChange: null,
     color: '#1BA6C4',
-    label: null
+    label: 'label',
+    value: '1'
   };
-  const label = 'text';
 
   beforeEach(() => {
     global.navigator = { userAgent: 'all' };
@@ -60,12 +60,6 @@ describe('RadioButton', () => {
     expect(wrapper.find('span')).to.have.length(1);
     expect(wrapper.containsMatchingElement(<span>text</span>)).to.equal(true);
     props.label = null;
-  });
-
-  it('should always render the value of the label prop', () => {
-    const wrapper = shallow(<RadioButton {...props} >{label}</RadioButton>);
-
-    expect(wrapper.contains(label)).to.equal(true);
   });
 
   it('should call input onChange function', () => {

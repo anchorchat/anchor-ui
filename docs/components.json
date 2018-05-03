@@ -3884,7 +3884,7 @@
       }
     }
   },
-  "components/image-loader/index.jsx": {
+  "components/image-loader/component.jsx": {
     "description": "",
     "displayName": "ImageLoader",
     "methods": [
@@ -6129,7 +6129,7 @@
       }
     }
   },
-  "components/profile/index.jsx": {
+  "components/profile/component.jsx": {
     "description": "Profile useful for showing a user's info",
     "displayName": "Profile",
     "methods": [],
@@ -6294,7 +6294,7 @@
     }
   },
   "components/profile-card/index.jsx": {
-    "description": "Card containing the user's profile data",
+    "description": "Card containing a user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
     "props": {
@@ -6303,7 +6303,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to the user's profile image",
+        "description": "Path to the user's avatar",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -6363,12 +6363,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The input's label text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The input's label text"
       },
       "onChange": {
         "type": {
@@ -6494,12 +6490,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The RadioButtonGroup's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The RadioButtonGroup's label"
       },
       "labelStyle": {
         "type": {
@@ -6688,7 +6680,7 @@
       }
     }
   },
-  "components/select/index.jsx": {
+  "components/select/component.jsx": {
     "description": "",
     "displayName": "Select",
     "methods": [
@@ -6793,12 +6785,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The Select's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The Select's label"
       },
       "labelStyle": {
         "type": {
@@ -7039,12 +7027,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The Switch's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The Switch's label"
       },
       "style": {
         "type": {
