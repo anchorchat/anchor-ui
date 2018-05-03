@@ -52,8 +52,6 @@ describe('RadioButton', () => {
   it('should render a span element if the label prop is passed', () => {
     let wrapper = shallow(<RadioButton {...props} />);
 
-    expect(wrapper.find('span')).to.have.length(0);
-
     props.label = 'text';
     wrapper = shallow(<RadioButton {...props} />);
 
