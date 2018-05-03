@@ -29,7 +29,7 @@ const propTypes = {
   /** Override the styles of the header element */
   headerStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** The Select's label */
-  label: PropTypes.node,
+  label: PropTypes.node.isRequired,
   /** Override the styles of the label element */
   labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the content container */
@@ -47,7 +47,6 @@ const propTypes = {
 
 const defaultProps = {
   value: '',
-  label: null,
   style: {},
   headerStyle: {},
   labelStyle: {},
@@ -171,7 +170,7 @@ class Select extends Component {
         style={combineStyles(styles.root, style)}
         {...custom}
       >
-        {label ? <span style={combineStyles(styles.label, labelStyle)}>{label}</span> : null}
+        <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         <header
           ref={(button) => { this.button = button; }}
           style={getStyles.header(error, color, headerStyle)}

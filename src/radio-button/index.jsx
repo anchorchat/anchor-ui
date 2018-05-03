@@ -11,7 +11,7 @@ const propTypes = {
   /** The input's value */
   value: PropTypes.string.isRequired,
   /** The input's label text */
-  label: PropTypes.node,
+  label: PropTypes.node.isRequired,
   /**
    * Callback fired when RadioButton's value changes
    *
@@ -40,7 +40,6 @@ const defaultProps = {
   labelStyle: {},
   checked: false,
   onChange: null,
-  label: null,
   icon: null
 };
 
