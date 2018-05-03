@@ -2,29 +2,21 @@ import React, { Component } from 'react';
 import find from 'lodash/find';
 import range from 'lodash/range';
 import map from 'lodash/map';
-import Pagination from '../../../dist/pagination';
-import Props from './props';
-import components from '../../components.json';
-import Button from '../../../dist/button';
-import Paper from '../../../dist/paper';
-import Table from '../../../dist/table';
-import TableHeader from '../../../dist/table-header';
-import TableHeaderColumn from '../../../dist/table-header-column';
-import TableBody from '../../../dist/table-body';
-import TableRow from '../../../dist/table-row';
-import TableColumn from '../../../dist/table-column';
-import Markdown from './markdown';
+import Pagination from '../../../../dist/pagination';
+import Props from '../props';
+import components from '../../../components.json';
+import Button from '../../../../dist/button';
+import Paper from '../../../../dist/paper';
+import Table from '../../../../dist/table';
+import TableHeader from '../../../../dist/table-header';
+import TableHeaderColumn from '../../../../dist/table-header-column';
+import TableBody from '../../../../dist/table-body';
+import TableRow from '../../../../dist/table-row';
+import TableColumn from '../../../../dist/table-column';
+import Markdown from '../markdown';
+import example from './example';
 
-const usage = `
-  \`\`\`js
-  import Pagination from 'anchor-ui/pagination';
-  \`\`\`
-`;
-
-const numbers = range(1, 351);
-const listDefault = map(numbers, number => ({ id: number, name: `Item ${number}` }));
-const listJumpToPage = map(numbers, number => ({ id: number, name: `Item ${number}` }));
-const listIntialPage = map(numbers, number => ({ id: number, name: `Item ${number}` }));
+const list = map(range(1, 101), number => ({ id: number, name: `Item ${number}` }));
 
 const componentData = find(components, { displayName: 'Pagination' });
 
@@ -36,7 +28,12 @@ const style = {
     margin: 0,
     padding: '20px'
   },
-  button: { margin: '10px' }
+  button: {
+    margin: '10px'
+  },
+  heading: {
+    marginTop: '16px'
+  }
 };
 
 class PaginationDoc extends Component {
@@ -76,12 +73,12 @@ class PaginationDoc extends Component {
           <h1>Description</h1>
           <p>{componentData.description}</p>
         </section>
-        <Markdown markdown={usage} title="Code example" />
+        <Markdown markdown={example} title="Code example" />
         <section>
           <h1>Default pagination</h1>
           <Paper style={style.paper}>
-            <Pagination list={listDefault} onChange={this.onPageChange}>
-              <Table style={style.tabs}>
+            <Pagination list={list} onChange={this.onPageChange}>
+              <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHeaderColumn>ID</TableHeaderColumn>
@@ -99,7 +96,7 @@ class PaginationDoc extends Component {
               </Table>
             </Pagination>
           </Paper>
-          <h1>Pagination with jumpToPage</h1>
+          <h1 style={style.heading}>Pagination with jumpToPage</h1>
           <Paper style={style.paper}>
             <Button
               style={style.button}
@@ -110,11 +107,11 @@ class PaginationDoc extends Component {
               <p>Jump to Page {this.state.jumpToPage + 1}</p>
             </Button>
             <Pagination
-              list={listJumpToPage}
+              list={list}
               onChange={this.onJumpToPageChange}
               jumpToPage={this.state.jumpToPage}
             >
-              <Table style={style.tabs}>
+              <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHeaderColumn>ID</TableHeaderColumn>
@@ -132,10 +129,10 @@ class PaginationDoc extends Component {
               </Table>
             </Pagination>
           </Paper>
-          <h1>Pagination with initialPage 5</h1>
+          <h1 style={style.heading}>Pagination with initialPage 5</h1>
           <Paper style={style.paper}>
-            <Pagination list={listIntialPage} onChange={this.onInitialPageChange} initialPage={5}>
-              <Table style={style.tabs}>
+            <Pagination list={list} onChange={this.onInitialPageChange} initialPage={5}>
+              <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHeaderColumn>ID</TableHeaderColumn>
