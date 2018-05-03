@@ -170,7 +170,7 @@ class Select extends Component {
         style={combineStyles(styles.root, style)}
         {...custom}
       >
-        {label ? <span style={combineStyles(styles.label, labelStyle)}>{label}</span> : null}
+        <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
         <header
           ref={(button) => { this.button = button; }}
           style={getStyles.header(error, color, headerStyle)}

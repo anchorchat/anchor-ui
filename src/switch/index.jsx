@@ -42,7 +42,7 @@ const Switch = ({
   active, label, toggleSwitch, style, trackStyle, knobStyle, labelStyle, color, ...custom
 }) => (
   <section style={style} {...custom}>
-    {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
+    <span style={getStyles.label(labelStyle)}>{label}</span>
     <section style={styles.wrapper} onClick={toggleSwitch}>
       <div style={getStyles.track(color, active, trackStyle)} />
       <div style={getStyles.knob(color, active, knobStyle)} />
