@@ -54,7 +54,7 @@ const RadioButtonGroup = ({
 
   return (
     <section {...custom} style={style}>
-      {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
+      <span style={getStyles.label(labelStyle)}>{label}</span>
       <section style={getStyles.buttons(buttonStyle)}>
         {childrenWithProps}
       </section>
