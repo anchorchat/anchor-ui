@@ -98,7 +98,7 @@ class Pagination extends Component {
     return this.handlePageChanged();
   }
 
-  setPage = (event, page, list, pageSize) => {
+  handlePageChange = (event, page, list, pageSize) => {
     this.setState({
       pager: getPager(list, page, pageSize)
     });
@@ -140,13 +140,13 @@ class Pagination extends Component {
       <nav style={getStyles.nav(position, navStyle)}>
         <Button
           disabled={currentPage === 1}
-          onClick={event => this.setPage(event, 1, list, pageSize)}
+          onClick={event => this.handlePageChange(event, 1, list, pageSize)}
           style={getStyles.iconButton(iconButtonStyle)}
         >
           <IconFirst color={colors.white} />
         </Button>
         <Button
-          onClick={event => this.setPage(event, currentPage - 1, list, pageSize)}
+          onClick={event => this.handlePageChange(event, currentPage - 1, list, pageSize)}
           disabled={currentPage === 1}
           style={getStyles.iconButton(iconButtonStyle)}
         >
@@ -155,7 +155,7 @@ class Pagination extends Component {
         {map(pages, (page, index) => (
           <Button
             key={index}
-            onClick={event => this.setPage(event, page, list, pageSize)}
+            onClick={event => this.handlePageChange(event, page, list, pageSize)}
             style={getStyles.navButton(navButtonStyle)}
             disabled={currentPage === page}
             inverted
@@ -165,14 +165,14 @@ class Pagination extends Component {
         ))}
         <Button
           disabled={currentPage === totalPages}
-          onClick={event => this.setPage(event, currentPage + 1, list, pageSize)}
+          onClick={event => this.handlePageChange(event, currentPage + 1, list, pageSize)}
           style={getStyles.iconButton(iconButtonStyle)}
         >
           <IconChevronRight color={colors.white} />
         </Button>
         <Button
           disabled={currentPage === totalPages}
-          onClick={event => this.setPage(event, totalPages, list, pageSize)}
+          onClick={event => this.handlePageChange(event, totalPages, list, pageSize)}
           style={getStyles.iconButton(iconButtonStyle)}
         >
           <IconLast color={colors.white} />
