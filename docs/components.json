@@ -3889,6 +3889,24 @@
     "displayName": "ImageLoader",
     "methods": [
       {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": null
+          },
+          {
+            "name": "prevState",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "handleError",
         "docblock": null,
         "modifiers": [],
@@ -3906,7 +3924,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "e",
+            "name": "event",
             "type": null
           }
         ],
@@ -3921,13 +3939,6 @@
       },
       {
         "name": "destroy",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "renderImage",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -4685,7 +4696,7 @@
       }
     }
   },
-  "components/menu/index.jsx": {
+  "components/menu/component.jsx": {
     "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
@@ -4857,7 +4868,7 @@
       }
     }
   },
-  "components/menu-item/index.jsx": {
+  "components/menu-item/component.jsx": {
     "description": "General purpose menu item",
     "displayName": "MenuItem",
     "methods": [
@@ -5558,6 +5569,18 @@
     "displayName": "MessageList",
     "methods": [
       {
+        "name": "getSnapshotBeforeUpdate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "prevProps",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "scrollToBottom",
         "docblock": null,
         "modifiers": [],
@@ -5631,7 +5654,7 @@
       }
     }
   },
-  "components/modal/index.jsx": {
+  "components/modal/component.jsx": {
     "description": "A dialog that can only be closed by selecting one of the actions.",
     "displayName": "Modal",
     "methods": [],
@@ -5770,7 +5793,25 @@
     "displayName": "Pagination",
     "methods": [
       {
-        "name": "setPage",
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": null
+          },
+          {
+            "name": "prevState",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handlePageChange",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -5788,6 +5829,18 @@
           },
           {
             "name": "pageSize",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handlePageChanged",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
             "type": null
           }
         ],
@@ -6293,8 +6346,8 @@
       }
     }
   },
-  "components/profile-card/index.jsx": {
-    "description": "Card containing a user's profile data",
+  "components/profile-card/component.jsx": {
+    "description": "Card containing the user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
     "props": {
@@ -6303,7 +6356,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to the user's avatar",
+        "description": "Path to the user's profile image",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -6347,7 +6400,7 @@
       }
     }
   },
-  "components/radio-button/index.jsx": {
+  "components/radio-button/component.jsx": {
     "description": "Radio buttons are switches used for selection from multiple options",
     "displayName": "RadioButton",
     "methods": [],
@@ -6550,7 +6603,7 @@
       }
     }
   },
-  "components/search-box/index.jsx": {
+  "components/search-box/component.jsx": {
     "description": "General purpose Search box",
     "displayName": "SearchBox",
     "methods": [
@@ -6863,7 +6916,7 @@
       }
     }
   },
-  "components/slider/index.jsx": {
+  "components/slider/component.jsx": {
     "description": "General purpose form slider",
     "displayName": "Slider",
     "methods": [],
@@ -7000,7 +7053,7 @@
       }
     }
   },
-  "components/switch/index.jsx": {
+  "components/switch/component.jsx": {
     "description": "",
     "displayName": "Switch",
     "methods": [],
@@ -7083,7 +7136,7 @@
       }
     }
   },
-  "components/tab/index.jsx": {
+  "components/tab/component.jsx": {
     "description": "",
     "displayName": "Tab",
     "methods": [],
@@ -7285,7 +7338,7 @@
       }
     }
   },
-  "components/table-header/index.jsx": {
+  "components/table-header/component.jsx": {
     "description": "TableHeaders are used to display data.",
     "displayName": "TableHeader",
     "methods": [],
