@@ -84,9 +84,6 @@ class RadioButtonDoc extends Component {
                 value="three"
                 icon={<Avatar style={style.avatar} image={customIcon} />}
               />
-              <RadioButton
-                value="four"
-              />
             </RadioButtonGroup>
           </Paper>
         </section>
