@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import isEqual from 'lodash/isEqual';
 import size from 'lodash/size';
 import map from 'lodash/map';
 import getPager from '../internal/get-pager';
@@ -24,7 +23,7 @@ const propTypes = {
    */
   onChange: PropTypes.func.isRequired,
   /** Initial active page */
-  initialPage: PropTypes.number,
+  initialPage: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
   /** The page's size */
   pageSize: PropTypes.number,
   /** The paginated list */
@@ -40,7 +39,7 @@ const propTypes = {
   /** The nav's position relative to the children. One of the following: ["top", "bottom"] */
   position: PropTypes.oneOf(['top', 'bottom']),
   /** Jump to a certain page in the list */
-  jumpToPage: PropTypes.number
+  jumpToPage: PropTypes.number // eslint-disable-line react/no-unused-prop-types
 };
 
 const defaultProps = {
@@ -56,46 +55,70 @@ const defaultProps = {
 
 /** Navigate through large sets of data */
 class Pagination extends Component {
-  state = {
-    pager: {}
+  state = { // eslint-disable-line react/sort-comp
+    pager: {},
+    lastList: null, // eslint-disable-line react/no-unused-state
+    lastPageSize: null, // eslint-disable-line react/no-unused-state
+    lastJumpToPage: null // eslint-disable-line react/no-unused-state
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.list !== prevState.lastList || nextProps.pageSize !== prevState.lastPageSize) {
+      return {
+        pager: getPager(nextProps.list, nextProps.initialPage, nextProps.pageSize),
+        lastList: nextProps.list,
+        lastPageSize: nextProps.pageSize,
+        lastJumpToPage: nextProps.jumpToPage
+      };
+    }
+
+    if (nextProps.jumpToPage !== prevState.lastJumpToPage) {
+      return {
+        pager: getPager(nextProps.list, nextProps.jumpToPage, nextProps.pageSize),
+        lastList: nextProps.list,
+        lastPageSize: nextProps.pageSize,
+        lastJumpToPage: nextProps.jumpToPage
+      };
+    }
+
+    return null;
   }
 
   componentDidMount() {
-    const { initialPage, list, pageSize } = this.props;
-    this.setPage({}, initialPage, list, pageSize);
+    this.handlePageChanged();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const {
-      initialPage,
-      list,
-      pageSize,
-      jumpToPage
-    } = nextProps;
+  componentDidUpdate(prevProps, prevState) {
+    const { pager } = this.state;
 
-    if (!isEqual(list, this.props.list) || !isEqual(pageSize, this.props.pageSize)) {
-      this.setPage({}, initialPage, list, pageSize);
+    if (pager === prevState.pager) {
+      return false;
     }
 
-    if (!isEqual(jumpToPage, this.props.jumpToPage)) {
-      this.setPage({}, jumpToPage, list, pageSize);
-    }
+    return this.handlePageChanged();
   }
 
   setPage = (event, page, list, pageSize) => {
-    const newPager = getPager(list, page, pageSize);
+    this.setState({
+      pager: getPager(list, page, pageSize)
+    });
 
-    const items = list.slice(newPager.startIndex, newPager.endIndex + 1);
+    this.handlePageChanged(event);
+  }
 
-    this.setState({ pager: newPager });
+  handlePageChanged = (event = {}) => {
+    const { onChange, list } = this.props;
+    const { pager } = this.state;
 
-    this.props.onChange(
+    const items = list.slice(pager.startIndex, pager.endIndex + 1);
+
+    onChange(
       event,
       {
         items,
-        totalItems: newPager.totalItems,
-        totalPages: newPager.totalPages,
-        currentPage: newPager.currentPage
+        totalItems: pager.totalItems,
+        totalPages: pager.totalPages,
+        currentPage: pager.currentPage
       }
     );
   }
