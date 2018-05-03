@@ -95,6 +95,22 @@ const defaultProps = {
   onMenuClose: noop
 };
 
+const filterCommands = (commands, value, leading) => {
+  if (leading) {
+    return filter(commands, (command) => {
+      const argument = `${command.prefix}${command.value}`;
+
+      return startsWith(toLower(argument), toLower(value));
+    });
+  }
+
+  return filter(commands, (command) => {
+    const [argument] = split(value, command.prefix);
+
+    return startsWith(command.value, argument);
+  });
+};
+
 /** Used for displaying a list of commands */
 class Commands extends Component {
   constructor(props) {
@@ -102,7 +118,7 @@ class Commands extends Component {
 
     this.state = {
       open: false,
-      commands: this.filterCommands(props.commands, props.value),
+      commands: filterCommands(props.commands, props.value, props.leading),
       selectedIndex: 0
     };
   }
@@ -115,7 +131,7 @@ class Commands extends Component {
       return this.hideMenu();
     }
 
-    const filteredCommands = this.filterCommands(commands, value);
+    const filteredCommands = filterCommands(commands, value);
 
     if (!isEmpty(filteredCommands) && !open) {
       this.setState({
@@ -132,24 +148,6 @@ class Commands extends Component {
 
     return this.setState({
       commands: filteredCommands
-    });
-  }
-
-  filterCommands = (commands, value) => {
-    const { leading } = this.props;
-
-    if (leading) {
-      return filter(commands, (command) => {
-        const argument = `${command.prefix}${command.value}`;
-
-        return startsWith(toLower(argument), toLower(value));
-      });
-    }
-
-    return filter(commands, (command) => {
-      const [argument] = split(value, command.prefix);
-
-      return startsWith(command.value, argument);
     });
   }
 
