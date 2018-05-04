@@ -26,7 +26,7 @@ describe('Loader.getStyles', () => {
     });
 
     it('should combine styles', () => {
-      const style = getStyles.dot('red', false, 1, { color: 'red' });
+      const style = getStyles.dot(undefined, false, 0, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -38,19 +38,19 @@ describe('Loader.getStyles', () => {
     });
 
     it('should add inverted styles', () => {
-      const style = getStyles.dot('red', true);
+      const style = getStyles.dot(undefined, true);
 
       expect(style).to.have.property('backgroundColor', '#FEFEFE');
     });
 
     it('should add index 1 styles', () => {
-      const style = getStyles.dot('red', false, 1);
+      const style = getStyles.dot(undefined, false, 1);
 
       expect(style).to.have.property('animationDelay', '.33s');
     });
 
     it('should add index 2 styles', () => {
-      const style = getStyles.dot('red', false, 2);
+      const style = getStyles.dot(undefined, false, 2);
 
       expect(style).to.have.property('animationDelay', '.66s');
     });
