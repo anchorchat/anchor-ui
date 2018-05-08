@@ -10,6 +10,7 @@ import noop from 'lodash/noop';
 import Menu from '../../src/menu/component';
 import MenuItem from '../../src/menu-item';
 import Overlay from '../../src/overlay';
+import IconMenu from '../../src/icons/icon-menu';
 import getStyles from '../../src/menu/get-styles';
 
 chai.use(sinonChai);
@@ -75,69 +76,55 @@ describe('Menu', () => {
     expect(component.find('h1').containsMatchingElement(<span>Node</span>)).to.equal(true);
   });
 
-  // it('should not render an overlay component if the closeMenu prop is not passed', () => {
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.find(Overlay)).to.have.length(0);
-  // });
-  //
-  // it('should render a nav element', () => {
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.find('nav')).to.have.length(1);
-  // });
-  //
-  // it('should not render a div element if the headerIcon prop is not passed', () => {
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.find('div')).to.have.length(0);
-  // });
-  //
-  // it('should render a div element if the headerIcon prop is passed', () => {
-  //   props.headerIcon = <span />;
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.containsMatchingElement(<div><span /></div>)).to.equal(true);
-  //   props.headerIcon = null;
-  // });
-  //
-  // it('should not render an h1 element if the header prop is not passed', () => {
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.find('h1')).to.have.length(0);
-  // });
-  //
-  // it('should render an h1 element if the header prop is passed', () => {
-  //   props.header = 'header';
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.containsMatchingElement(<h1>header</h1>)).to.equal(true);
-  //   props.header = '';
-  // });
-  //
-  // it('should render children as children', () => {
-  //   const component = shallow(<Menu {...props} />);
-  //
-  //   expect(component.containsMatchingElement(<p>children</p>)).to.equal(true);
-  // });
-  //
-  // it('should apply closeMenu prop to children', () => {
-  //   props.closeMenu = noop;
-  //   const component = shallow(<Menu {...props} />);
-  //   const closeMenu = component.find('p').prop('closeMenu');
-  //
-  //   expect(isFunction(closeMenu)).to.equal(true);
-  //   props.closeMenu = null;
-  // });
+  it('should render headerIcon element', () => {
+    const component = shallow(<Menu {...props} />);
+
+    expect(component.find('div')).to.have.length(0);
+    expect(component.find(IconMenu)).to.have.length(0);
+
+    component.setProps({ headerIcon: <IconMenu /> });
+    expect(component.find('div')).to.have.length(1);
+    expect(component.find(IconMenu)).to.have.length(1);
+  });
+
+  it('should render footer element', () => {
+    const component = shallow(<Menu {...props} />);
+
+    expect(component.find('span')).to.have.length(0);
+
+    component.setProps({ footer: 'Text' });
+    expect(component.find('span')).to.have.length(1);
+    expect(component.containsMatchingElement(<span>Text</span>)).to.equal(true);
+
+    component.setProps({ footer: <span>Node</span> });
+    expect(component.find('span')).to.have.length(2);
+    expect(component.find('span > span')).to.have.length(1);
+    expect(component.find('span').containsMatchingElement(<span>Node</span>)).to.equal(true);
+  });
+
+  it('should apply closeMenu to children props', () => {
+    const combinedProps = {
+      ...props,
+      closeMenu: noop
+    };
+
+    const component = shallow(<Menu {...combinedProps} />);
+    const closeMenu = component.find(MenuItem).prop('closeMenu');
+
+    expect(isFunction(closeMenu)).to.equal(true);
+  });
 
   it('should execute Overlay onClick function', () => {
     const spy = sinon.spy();
-    props.closeMenu = spy;
-    const component = shallow(<Menu {...props} />);
+    const combinedProps = {
+      ...props,
+      closeMenu: spy
+    };
+
+    const component = shallow(<Menu {...combinedProps} />);
 
     component.find(Overlay).simulate('click');
     expect(spy).to.have.callCount(1);
-    props.closeMenu = null;
   });
 
   it('should get sidebar styles', () => {
@@ -148,51 +135,62 @@ describe('Menu', () => {
   });
 
   it('should get icon styles', () => {
-    props.headerIcon = <span />;
     const spy = sinon.spy(getStyles, 'icon');
+    const combinedProps = {
+      ...props,
+      headerIcon: <IconMenu />
+    };
 
-    shallow(<Menu {...props} />);
+    shallow(<Menu {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.iconStyle);
-    props.headerIcon = null;
   });
 
   it('should get header styles', () => {
-    props.header = 'header';
     const spy = sinon.spy(getStyles, 'header');
+    const combinedProps = {
+      ...props,
+      header: 'Text'
+    };
 
-    shallow(<Menu {...props} />);
+    shallow(<Menu {...combinedProps} />);
     expect(spy).to.have.been.calledWith(
       props.color,
       props.headerIcon,
       props.headerStyle
     );
-    props.header = '';
   });
 
   it('should get container styles', () => {
-    props.closeMenu = noop;
     const spy = sinon.spy(getStyles, 'container');
+    const combinedProps = {
+      ...props,
+      closeMenu: noop
+    };
 
-    shallow(<Menu {...props} />);
+    shallow(<Menu {...combinedProps} />);
     expect(spy).to.have.callCount(1);
     props.closeMenu = null;
   });
 
   it('should get overlay styles', () => {
-    props.closeMenu = noop;
     const spy = sinon.spy(getStyles, 'overlay');
+    const combinedProps = {
+      ...props,
+      closeMenu: noop
+    };
 
-    shallow(<Menu {...props} />);
+    shallow(<Menu {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.open);
-    props.closeMenu = null;
   });
 
   it('should get root styles', () => {
-    props.closeMenu = noop;
     const spy = sinon.spy(getStyles, 'root');
+    const combinedProps = {
+      ...props,
+      closeMenu: noop
+    };
 
-    shallow(<Menu {...props} />);
+    shallow(<Menu {...combinedProps} />);
     expect(spy).to.have.been.calledWith(props.open, 'left', props.style);
-    props.closeMenu = null;
   });
 });
