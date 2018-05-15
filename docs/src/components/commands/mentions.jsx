@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import includes from 'lodash/includes';
 import split from 'lodash/split';
 import replace from 'lodash/replace';
@@ -36,10 +36,13 @@ class CommandsDoc extends Component {
       valueToMatch: '',
       selectedCommand: ''
     };
+
+    this.messageInputRef = createRef();
   }
 
   changeValue = (event) => {
     const { value } = event.currentTarget;
+    const input = this.messageInputRef.current.inputRef.current;
 
     let valueToMatch = '';
 
@@ -47,8 +50,8 @@ class CommandsDoc extends Component {
       valueToMatch = split(value, '@');
     }
 
-    if (value.length > this.input.selectionStart) {
-      const slicedValue = value.slice(0, this.input.selectionStart);
+    if (value.length > input.selectionStart) {
+      const slicedValue = value.slice(0, input.selectionStart);
 
       if (includes(slicedValue, '@')) {
         const splitValue = split(slicedValue, '@');
@@ -64,6 +67,7 @@ class CommandsDoc extends Component {
 
   handleSelect = (event, command) => {
     const { value, valueToMatch, selectedCommand } = this.state;
+    const messageInput = this.messageInputRef.current;
 
     this.setState({
       value: replace(value, selectedCommand || valueToMatch, command),
@@ -71,7 +75,7 @@ class CommandsDoc extends Component {
       selectedCommand: ''
     });
 
-    this.input.focus();
+    messageInput.focusInput();
   }
 
   handleChange = (event, command) => {
@@ -84,8 +88,6 @@ class CommandsDoc extends Component {
   }
 
   handleClose = () => this.setState({ valueToMatch: '', selectedCommand: '' })
-
-  handleRef = (node) => { this.input = node; }
 
   render() {
     const style = {
@@ -126,7 +128,7 @@ class CommandsDoc extends Component {
           value={this.state.value}
           sendMessage={noop}
           style={style.messageInput}
-          inputRef={this.handleRef}
+          ref={this.messageInputRef}
         />
       </Paper>
     );

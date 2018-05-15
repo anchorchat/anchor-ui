@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import includes from 'lodash/includes';
 import split from 'lodash/split';
 import replace from 'lodash/replace';
@@ -17,10 +17,13 @@ class SlashCommands extends Component {
       valueToMatch: '',
       selectedCommand: ''
     };
+
+    this.messageInputRef = createRef();
   }
 
   changeValue = (event) => {
     const { value } = event.currentTarget;
+    const input = this.messageInputRef.current.inputRef.current;
 
     let valueToMatch = '';
 
@@ -28,8 +31,8 @@ class SlashCommands extends Component {
       valueToMatch = last(split(value, '/'));
     }
 
-    if (value.length > this.input.selectionStart) {
-      const slicedValue = value.slice(0, this.input.selectionStart);
+    if (value.length > input.selectionStart) {
+      const slicedValue = value.slice(0, input.selectionStart);
 
       if (includes(slicedValue, '/')) {
         const splitValue = split(slicedValue, '/');
@@ -45,6 +48,7 @@ class SlashCommands extends Component {
 
   handleSelect = (event, command) => {
     const { value, valueToMatch, selectedCommand } = this.state;
+    const messageInput = this.messageInputRef.current;
 
     this.setState({
       value: replace(value, selectedCommand || valueToMatch, command),
@@ -52,7 +56,7 @@ class SlashCommands extends Component {
       selectedCommand: ''
     });
 
-    this.input.focus();
+    messageInput.focusInput();
   }
 
   handleChange = (event, command) => {
@@ -149,7 +153,7 @@ class SlashCommands extends Component {
           value={this.state.value}
           sendMessage={noop}
           style={style.messageInput}
-          inputRef={(node) => { this.input = node; }}
+          ref={this.messageInputRef}
         />
       </Paper>
     );
