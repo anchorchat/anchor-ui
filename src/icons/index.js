@@ -17,7 +17,7 @@ export IconEmoji from './icon-emoji';
 export IconHammer from './icon-hammer';
 export IconHand from './icon-hand';
 export IconInfo from './icon-info';
-export IconsLanguage from './icon-language';
+export IconLanguage from './icon-language';
 export IconLock from './icon-lock';
 export IconMenu from './icon-menu';
 export IconMore from './icon-more';
