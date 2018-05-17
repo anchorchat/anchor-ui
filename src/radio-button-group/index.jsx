@@ -15,7 +15,7 @@ const propTypes = {
   /** The RadioButtonGroup's content (RadioButton), each child must have a value prop */
   children: PropTypes.node.isRequired,
   /** The RadioButtonGroup's label */
-  label: PropTypes.node,
+  label: PropTypes.node.isRequired,
   /** Override the styles of the label element */
   labelStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the root element */
@@ -29,7 +29,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  label: null,
   labelStyle: {},
   style: {},
   error: null,
@@ -55,7 +54,7 @@ const RadioButtonGroup = ({
 
   return (
     <section {...custom} style={style}>
-      {label ? <span style={getStyles.label(labelStyle)}>{label}</span> : null}
+      <span style={getStyles.label(labelStyle)}>{label}</span>
       <section style={getStyles.buttons(buttonStyle)}>
         {childrenWithProps}
       </section>

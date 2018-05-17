@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 import size from 'lodash/size';
+import noop from 'lodash/noop';
 import EventListener from 'react-event-listener';
 import styles from './styles';
 import getStyles from './get-styles';
@@ -51,7 +52,7 @@ const propTypes = {
 
 const defaultProps = {
   rowHeight: 320,
-  onItemClick: () => {},
+  onItemClick: noop,
   style: {},
   itemContainerStyle: {},
   itemStyle: {},

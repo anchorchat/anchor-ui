@@ -20,7 +20,7 @@ const overrideStyles = {
     maxHeight: '152px',
     marginLeft: '16px',
     alignSelf: 'flex-start',
-    marginTop: '5px'
+    marginTop: '4px'
   },
   compact: {
     alignSelf: 'flex-start'

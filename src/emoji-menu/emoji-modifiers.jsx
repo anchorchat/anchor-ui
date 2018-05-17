@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Radium, { Style } from 'radium';
 import emojione from 'emojione';
 import htmlParser from 'html-react-parser';
+import map from 'lodash/map';
+import replace from 'lodash/replace';
 import getStyles from './get-styles';
 import styles from './styles';
 
@@ -39,14 +41,12 @@ function EmojiModifiers({
             <circle id="circle" fill="#FFDD67" cx="25" cy="25" r="25" />
           </svg>
         </div>
-        {modifiers.map((modifier) => {
-          const title = modifier.title.replace(/:/g, '');
+        {map(modifiers, (modifier) => {
+          const title = replace(modifier.title, /:/g, '');
 
           return (
             <div
-              style={
-                getStyles.modifier(title === tone, modifierStyle)
-              }
+              style={getStyles.modifier(title === tone, modifierStyle)}
               key={`emoji-${modifier.shortname}`}
               onClick={() => changeTone(title)}
               className="modifier"

@@ -24,6 +24,7 @@ describe('Menu.getStyles', () => {
 
       expect(style).to.have.property('opacity', 1);
       expect(style).to.have.property('pointerEvents', 'auto');
+      expect(style).to.have.property('left', 0);
     });
   });
 
@@ -34,12 +35,10 @@ describe('Menu.getStyles', () => {
       expect(style).to.deep.equal(styles.root);
     });
 
-    it('should add right styles', () => {
-      const style = getStyles.root(false, 'right');
+    it('should combine styles', () => {
+      const style = getStyles.root(false, false, { color: 'red' });
 
-      expect(style).to.have.property('transform', 'translateX(256px)');
-      expect(style).to.have.property('left', 'initial');
-      expect(style).to.have.property('right', 0);
+      expect(style).to.have.property('color', 'red');
     });
 
     it('should add open styles', () => {
@@ -48,10 +47,12 @@ describe('Menu.getStyles', () => {
       expect(style).to.have.property('transform', 'none');
     });
 
-    it('should combine styles', () => {
-      const style = getStyles.root(false, false, { color: 'red' });
+    it('should add right styles', () => {
+      const style = getStyles.root(false, 'right');
 
-      expect(style).to.have.property('color', 'red');
+      expect(style).to.have.property('transform', 'translateX(256px)');
+      expect(style).to.have.property('left', 'initial');
+      expect(style).to.have.property('right', 0);
     });
   });
 
@@ -60,6 +61,12 @@ describe('Menu.getStyles', () => {
       const style = getStyles.contentContainer();
 
       expect(style).to.deep.equal(styles.contentContainer);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.contentContainer(false, false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
     });
 
     it('should add header styles', () => {
@@ -79,12 +86,6 @@ describe('Menu.getStyles', () => {
 
       expect(style).to.have.property('maxHeight', 'calc(100% - 83px)');
     });
-
-    it('should combine styles', () => {
-      const style = getStyles.contentContainer(false, false, { color: 'red' });
-
-      expect(style).to.have.property('color', 'red');
-    });
   });
 
   describe('header', () => {
@@ -94,14 +95,48 @@ describe('Menu.getStyles', () => {
       expect(style).to.deep.equal(styles.header);
     });
 
+    it('should combine styles', () => {
+      const style = getStyles.header(null, false, { color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add theme color', () => {
+      const style = getStyles.header('red');
+
+      expect(style).to.have.property('color', 'red');
+    });
+
     it('should add icon styles', () => {
       const style = getStyles.header(null, true);
 
-      expect(style).to.have.property('padding', '15.5px 16px 15.5px 40px');
+      expect(style).to.have.property('padding', '16px 16px 16px 40px');
+    });
+  });
+
+  describe('icon', () => {
+    it('should get styles', () => {
+      const style = getStyles.icon();
+
+      expect(style).to.deep.equal(styles.icon);
     });
 
     it('should combine styles', () => {
-      const style = getStyles.header(null, false, { color: 'red' });
+      const style = getStyles.icon({ color: 'red' });
+
+      expect(style).to.have.property('color', 'red');
+    });
+  });
+
+  describe('sidebar', () => {
+    it('should get styles', () => {
+      const style = getStyles.sidebar();
+
+      expect(style).to.deep.equal(styles.sidebar);
+    });
+
+    it('should combine styles', () => {
+      const style = getStyles.sidebar({ color: 'red' });
 
       expect(style).to.have.property('color', 'red');
     });
@@ -114,16 +149,16 @@ describe('Menu.getStyles', () => {
       expect(style).to.deep.equal(styles.footer);
     });
 
-    it('should add sidebar styles', () => {
-      const style = getStyles.footer(true);
-
-      expect(style).to.have.property('position', 'initial');
-    });
-
     it('should combine styles', () => {
       const style = getStyles.footer(null, { color: 'red' });
 
       expect(style).to.have.property('color', 'red');
+    });
+
+    it('should add sidebar styles', () => {
+      const style = getStyles.footer(true);
+
+      expect(style).to.have.property('position', 'initial');
     });
   });
 });

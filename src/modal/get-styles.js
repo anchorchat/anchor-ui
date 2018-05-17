@@ -12,8 +12,11 @@ const footer = (color = colors.theme, overrideStyle) => {
   return combineStyles(style, overrideStyle);
 };
 
+const header = overrideStyle => combineStyles(styles.header, overrideStyle);
+
 export default {
   root,
+  header,
   content,
   footer
 };

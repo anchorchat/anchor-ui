@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import sample from 'lodash/sample';
 import ImageLoader from '../../../../dist/image-loader';
 import Button from '../../../../dist/button';
 import Props from '../props';
@@ -17,6 +18,38 @@ const images = [
   'https://static.pexels.com/photos/635628/pexels-photo-635628.jpeg'
 ];
 
+const componentData = find(components, { displayName: 'ImageLoader' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '16px'
+  },
+  images: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  image: {
+    height: '200px',
+    width: 'auto'
+  },
+  error: {
+    height: '200px',
+    width: '200px',
+    color: '#FEFEFE',
+    backgroundColor: '#FD2A43',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  button: {
+    margin: '8px'
+  }
+};
+
+const imgProps = {
+  style: style.image
+};
+
 class ImageLoaderDoc extends Component {
   state = {
     image: '',
@@ -25,7 +58,7 @@ class ImageLoaderDoc extends Component {
   }
 
   handleImageLoad = () => {
-    const image = _.sample(images);
+    const image = sample(images);
 
     this.setState({
       image
@@ -33,7 +66,7 @@ class ImageLoaderDoc extends Component {
   }
 
   handlePlaceholderLoad = () => {
-    const image = _.sample(images);
+    const image = sample(images);
 
     this.setState({
       placeholderImage: image
@@ -48,38 +81,6 @@ class ImageLoaderDoc extends Component {
 
   render() {
     const { image, placeholderImage, errorImage } = this.state;
-
-    const componentData = _.find(components, component => component.displayName === 'ImageLoader');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '16px'
-      },
-      images: {
-        display: 'flex',
-        flexWrap: 'wrap'
-      },
-      image: {
-        height: '200px',
-        width: 'auto'
-      },
-      error: {
-        height: '200px',
-        width: '200px',
-        color: '#FEFEFE',
-        backgroundColor: '#FD2A43',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      },
-      button: {
-        margin: '8px'
-      }
-    };
-
-    const imgProps = {
-      style: style.image
-    };
 
     return (
       <article className="page">

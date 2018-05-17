@@ -1,12 +1,13 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
-import _ from 'lodash';
+import range from 'lodash/range';
+import map from 'lodash/map';
 import getPager from '../../src/internal/get-pager';
 
-const range = _.range(1, 51);
-const largeRange = _.range(1, 351);
-const list = _.map(range, number => ({ id: number, name: `Item ${number}` }));
-const largeList = _.map(largeRange, number => ({ id: number, name: `Item ${number}` }));
+const smallRange = range(1, 51);
+const largeRange = range(1, 351);
+const list = map(smallRange, number => ({ id: number, name: `Item ${number}` }));
+const largeList = map(largeRange, number => ({ id: number, name: `Item ${number}` }));
 
 describe('getPager', () => {
   it('should return pager', () => {

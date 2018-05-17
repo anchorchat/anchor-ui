@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import EventListener from 'react-event-listener';
 import Lightbox from '../../src/lightbox/component';
 import Portal from '../../src/portal';
@@ -17,7 +18,7 @@ chai.use(sinonChai);
 
 describe('Lightbox', () => {
   const props = {
-    hideLightbox: () => {},
+    hideLightbox: noop,
     image: 'image',
     style: {},
     overlayStyle: {},

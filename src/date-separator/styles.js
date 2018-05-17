@@ -16,7 +16,7 @@ const styles = {
     margin: 0,
     backgroundColor: 'rgba(117, 127, 133, 0.4)',
     backdropFilter: 'blur(10px)',
-    borderRadius: '3px'
+    borderRadius: '4px'
   }
 };
 

@@ -15,13 +15,13 @@ describe('Tab.getStyles', () => {
       const style = getStyles.root('red', true, { color: 'red' });
 
       expect(style).to.have.property('borderBottom');
-      expect(style.borderBottom).to.equal('3px solid red');
+      expect(style.borderBottom).to.equal('2px solid red');
     });
 
     it('should add selected styles', () => {
       const style = getStyles.root('red', true, {}, { color: 'blue' });
 
-      expect(style).to.have.property('borderBottom', '3px solid red');
+      expect(style).to.have.property('borderBottom', '2px solid red');
       expect(style).to.have.property('opacity', 1);
       expect(style).to.have.property('color', 'blue');
     });

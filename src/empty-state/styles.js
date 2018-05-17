@@ -24,7 +24,7 @@ export default {
     fontSize: '16px',
     fontWeight: 'inherit',
     color: colors.primaryText,
-    marginBottom: '30px',
+    marginBottom: '32px',
     marginTop: '16px',
     textAlign: 'center',
     maxWidth: '100%'

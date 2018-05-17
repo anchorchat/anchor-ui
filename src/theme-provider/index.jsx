@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import each from 'lodash/each';
+import forEach from 'lodash/forEach';
 import filter from 'lodash/filter';
 import colors from '../settings/colors';
 
@@ -12,7 +12,7 @@ class Theme {
 
   setColor = (color) => {
     this.color = color;
-    each(this.subscriptions, func => func(color));
+    forEach(this.subscriptions, func => func(color));
   }
 
   subscribe = (listener) => {

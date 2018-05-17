@@ -57,7 +57,7 @@ describe('GiphyMessage.getStyles', () => {
     it('should add iconMenu styles', () => {
       const style = getStyles.root('red', false, false, false, true, true);
 
-      expect(style).to.have.property('padding', '12px 40px 12px 12px');
+      expect(style).to.have.property('padding', '13px 48px 13px 13px');
     });
   });
 

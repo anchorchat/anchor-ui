@@ -6,6 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EventListener from 'react-event-listener';
+import noop from 'lodash/noop';
 import Dialog from '../../src/dialog/component';
 import Overlay from '../../src/overlay';
 import Button from '../../src/button';
@@ -19,7 +20,7 @@ describe('Dialog', () => {
     style: {},
     overlayStyle: {},
     headerStyle: {},
-    hideDialog: () => {},
+    hideDialog: noop,
     color: '#1BA6C4'
   };
 

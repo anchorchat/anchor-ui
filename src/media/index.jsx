@@ -54,7 +54,7 @@ class Media extends Component {
     onChange(matches);
   }
 
-  render() {
+  render() { // eslint-disable-line lodash/prefer-constant
     return null;
   }
 }

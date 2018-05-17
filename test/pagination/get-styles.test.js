@@ -71,7 +71,7 @@ describe('Pagination.getStyles', () => {
 
   describe('iconButton', () => {
     it('should get styles', () => {
-      const style = getStyles.iconButton({ padding: '6px' });
+      const style = getStyles.iconButton({ padding: '4px' });
       expect(style).to.deep.equal(styles.navButton);
     });
 

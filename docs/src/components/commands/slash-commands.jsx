@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import includes from 'lodash/includes';
+import split from 'lodash/split';
+import replace from 'lodash/replace';
+import last from 'lodash/last';
+import noop from 'lodash/noop';
 import Commands from '../../../../dist/commands';
 import MessageInput from '../../../../dist/message-input';
 import Paper from '../../../../dist/paper';
@@ -20,17 +24,17 @@ class SlashCommands extends Component {
 
     let valueToMatch = '';
 
-    if (value.indexOf('/') > -1) {
-      valueToMatch = _.last(value.split('/'));
+    if (includes(value, '/')) {
+      valueToMatch = last(split(value, '/'));
     }
 
     if (value.length > this.input.selectionStart) {
       const slicedValue = value.slice(0, this.input.selectionStart);
 
-      if (slicedValue.indexOf('/') > -1) {
-        const splitValue = slicedValue.split('/');
+      if (includes(slicedValue, '/')) {
+        const splitValue = split(slicedValue, '/');
 
-        valueToMatch = _.last(splitValue);
+        valueToMatch = last(splitValue);
       }
     }
 
@@ -43,7 +47,7 @@ class SlashCommands extends Component {
     const { value, valueToMatch, selectedCommand } = this.state;
 
     this.setState({
-      value: value.replace(selectedCommand || valueToMatch, command),
+      value: replace(value, selectedCommand || valueToMatch, command),
       valueToMatch: '',
       selectedCommand: ''
     });
@@ -55,7 +59,7 @@ class SlashCommands extends Component {
     const { value, valueToMatch, selectedCommand } = this.state;
 
     this.setState({
-      value: value.replace(selectedCommand || valueToMatch, command),
+      value: replace(value, selectedCommand || valueToMatch, command),
       selectedCommand: command
     });
   }
@@ -143,7 +147,7 @@ class SlashCommands extends Component {
           onChange={this.changeValue}
           placeholder="Type / to view and filter the commands"
           value={this.state.value}
-          sendMessage={() => {}}
+          sendMessage={noop}
           style={style.messageInput}
           inputRef={(node) => { this.input = node; }}
         />

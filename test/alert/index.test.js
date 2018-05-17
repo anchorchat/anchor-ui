@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import Alert from '../../src/alert/component';
 import Button from '../../src/button';
 import IconClose from '../../src/icons/icon-close';
@@ -58,7 +59,7 @@ describe('Alert', () => {
 
     expect(component.find(Button)).to.have.length(0);
     expect(component.find(IconClose)).to.have.length(0);
-    component.setProps({ hideAlert: () => {} });
+    component.setProps({ hideAlert: noop });
     expect(component.find(Button)).to.have.length(1);
     expect(component.find(IconClose)).to.have.length(1);
   });

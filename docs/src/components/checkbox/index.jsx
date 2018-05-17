@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import union from 'lodash/union';
+import without from 'lodash/without';
+import map from 'lodash/map';
 import Checkbox from '../../../../dist/checkbox';
 import CheckboxGroup from '../../../../dist/checkbox-group';
 import Divider from '../../../../dist/divider';
@@ -8,6 +11,25 @@ import components from '../../../components.json';
 import Paper from '../../../../dist/paper';
 import Markdown from '../markdown';
 import example from './example';
+
+const checkboxData = find(components, { displayName: 'Checkbox' });
+const checkboxGroupData = find(components, { displayName: 'CheckboxGroup' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  checkbox: {
+    margin: '10px'
+  },
+  list: {
+    paddingLeft: '24px',
+    listStyle: 'initial'
+  },
+  listItem: {
+    margin: '8px 0'
+  }
+};
 
 class CheckboxDoc extends Component {
   state = {
@@ -20,36 +42,17 @@ class CheckboxDoc extends Component {
 
     if (checked) {
       this.setState({
-        values: _.union(values, [value])
+        values: union(values, [value])
       });
     } else {
       this.setState({
-        values: _.without(values, value)
+        values: without(values, value)
       });
     }
   }
 
   render() {
     const { values } = this.state;
-
-    const checkboxData = _.find(components, component => component.displayName === 'Checkbox');
-    const checkboxGroupData = _.find(components, component => component.displayName === 'CheckboxGroup');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '20px'
-      },
-      checkbox: {
-        margin: '10px'
-      },
-      list: {
-        paddingLeft: '24px',
-        listStyle: 'initial'
-      },
-      listItem: {
-        margin: '8px 0'
-      }
-    };
 
     return (
       <article className="page">
@@ -79,7 +82,7 @@ class CheckboxDoc extends Component {
             <Divider text="Checked Items" />
             <ul style={style.list}>
               {
-                _.map(values, (value, key) => (
+                map(values, (value, key) => (
                   <li key={key} style={style.listItem}>{value}</li>
                 ))
               }

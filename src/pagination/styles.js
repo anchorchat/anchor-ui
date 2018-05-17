@@ -9,14 +9,14 @@ export default {
     display: 'flex'
   },
   navButton: {
-    minWidth: '30px',
-    height: '30px',
-    padding: '6px',
-    lineHeight: '18px',
+    minWidth: '32px',
+    height: '32px',
+    padding: '4px',
+    lineHeight: '16px',
     alignSelf: 'center',
     margin: '0 2.5px'
   },
   iconButton: {
-    padding: '3px'
+    padding: '4px'
   }
 };

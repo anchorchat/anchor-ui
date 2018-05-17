@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import IconRocket from '../../../../dist/icons/icon-rocket';
 import Button from '../../../../dist/button';
 import Portal from '../../../../dist/portal';
@@ -9,6 +9,16 @@ import components from '../../../components.json';
 import Paper from '../../../../dist/paper';
 import example from './example';
 import Markdown from '../markdown';
+
+const componentData = find(components, { displayName: 'Portal' });
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  button: { margin: '10px' },
+  alert: { maxWidth: '100%' }
+};
 
 class PortalDoc extends React.Component {
   constructor() {
@@ -29,15 +39,6 @@ class PortalDoc extends React.Component {
 
   render() {
     const { portal } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Portal');
-    const style = {
-      paper: {
-        margin: 0,
-        padding: '20px'
-      },
-      button: { margin: '10px' },
-      alert: { maxWidth: '100%' }
-    };
 
     return (
       <article className="page">

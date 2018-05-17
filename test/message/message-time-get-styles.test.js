@@ -26,8 +26,8 @@ describe('MessageTime.getStyles', () => {
     it('should add image styles', () => {
       const style = getStyles.root(false, 'image', false);
 
-      expect(style).to.have.property('padding', '5px 4px 4px');
-      expect(style).to.have.property('borderRadius', '3px 0 3px');
+      expect(style).to.have.property('padding', '4px');
+      expect(style).to.have.property('borderRadius', '4px 0 4px');
     });
 
     it('should add sticker styles', () => {

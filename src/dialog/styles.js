@@ -4,11 +4,11 @@ import styles from '../settings/styles';
 export default {
   dialog: {
     width: '80%',
-    maxWidth: '350px',
+    maxWidth: '360px',
     margin: '0 auto',
     backgroundColor: colors.theme,
     color: colors.white,
-    borderRadius: '3px',
+    borderRadius: '4px',
     padding: '40px 30px',
     boxSizing: 'border-box',
     display: 'flex',
@@ -16,21 +16,19 @@ export default {
     position: 'relative',
     boxShadow: styles.depthShadows[0],
     overflow: 'auto',
-    transition: 'background .3s ease-in-out'
+    transition: 'background .3s ease-in-out',
+    fontSize: '16px'
   },
   header: {
     color: 'inherit',
-    fontSize: '22px',
+    fontSize: '24px',
     fontWeight: 'bolder',
-    marginTop: '0',
-    marginLeft: '0',
-    marginRight: '0',
-    marginBottom: '12.5px'
+    margin: '0 0 16px'
   },
   closeButton: {
     position: 'absolute',
-    top: '5px',
-    right: '5px',
+    top: '4px',
+    right: '4px',
     zIndex: 1
   },
   clickAway: {

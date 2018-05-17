@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import CheckboxGroup from '../../src/checkbox-group/component';
 import Checkbox from '../../src/checkbox';
 import getStyles from '../../src/checkbox-group/get-styles';
@@ -14,7 +15,7 @@ chai.use(sinonChai);
 describe('CheckboxGroup', () => {
   const props = {
     values: [],
-    onChange: () => {},
+    onChange: noop,
     label: 'Label',
     style: {},
     labelStyle: {},

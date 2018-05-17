@@ -7,7 +7,7 @@ const overrideStyles = {
     lineHeight: '18px',
   },
   image: {
-    borderRadius: '3px',
+    borderRadius: '4px',
     width: 'auto',
     height: 'auto',
     maxWidth: '100%',

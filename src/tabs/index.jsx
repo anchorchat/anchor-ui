@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Radium from 'radium';
 import noop from 'lodash/noop';
 import isNumber from 'lodash/isNumber';
+import map from 'lodash/map';
 import getStyles from './get-styles';
 
 class Tabs extends Component {
@@ -104,7 +105,7 @@ class Tabs extends Component {
     } = this.props;
     const tabContent = [];
 
-    const tabs = children.map((tab, index) => {
+    const tabs = map(children, (tab, index) => {
       tabContent.push(createElement(
         'div', {
           key: index,

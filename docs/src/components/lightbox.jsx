@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
 import moment from 'moment';
 import faker from 'faker';
 import Message from '../../../dist/message';
@@ -26,47 +26,45 @@ const message = {
   type: 'image'
 };
 
-const LightboxDoc = () => {
-  const componentData = _.find(components, component => component.displayName === 'Lightbox');
-  const style = {
-    paper: {
-      margin: '0 0 20px 0',
-      padding: '20px'
-    },
-    list: {
-      backgroundImage: `url(${background})`,
-      backgroundSize: '500px',
-      height: '495px'
-    }
-  };
-
-  return (
-    <article className="page">
-      <h1>Lightbox</h1>
-      <section>
-        <h1>Description</h1>
-        <p>{componentData.description}</p>
-      </section>
-      <Markdown markdown={usage} title="Code example" />
-      <section>
-        <h1>Example</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.list}>
-            <Message
-              body={message.body}
-              createdAt={moment(message.createdAt).format('HH:mm')}
-              username={message.username}
-              type={message.type}
-              myMessage={message.username === currentUser}
-              avatar={message.avatar}
-              enableLightbox
-            />
-          </MessageList>
-        </Paper>
-      </section>
-      <Props props={componentData.props} />
-    </article>
-  );
+const componentData = find(components, { displayName: 'Lightbox' });
+const style = {
+  paper: {
+    margin: '0 0 20px 0',
+    padding: '20px'
+  },
+  list: {
+    backgroundImage: `url(${background})`,
+    backgroundSize: '500px',
+    height: '495px'
+  }
 };
+
+const LightboxDoc = () => (
+  <article className="page">
+    <h1>Lightbox</h1>
+    <section>
+      <h1>Description</h1>
+      <p>{componentData.description}</p>
+    </section>
+    <Markdown markdown={usage} title="Code example" />
+    <section>
+      <h1>Example</h1>
+      <Paper style={style.paper}>
+        <MessageList style={style.list}>
+          <Message
+            body={message.body}
+            createdAt={moment(message.createdAt).format('HH:mm')}
+            username={message.username}
+            type={message.type}
+            myMessage={message.username === currentUser}
+            avatar={message.avatar}
+            enableLightbox
+          />
+        </MessageList>
+      </Paper>
+    </section>
+    <Props props={componentData.props} />
+  </article>
+);
 
 export default LightboxDoc;

@@ -4,6 +4,7 @@ import React from 'react';
 import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
+import noop from 'lodash/noop';
 import sinonChai from 'sinon-chai';
 import Banner from '../../src/banner/component';
 import Button from '../../src/button';
@@ -17,7 +18,7 @@ describe('Banner', () => {
       desktop: <span>Node</span>,
       mobile: <span>Node</span>
     },
-    hideBanner: () => {},
+    hideBanner: noop,
     style: {},
     open: true
   };

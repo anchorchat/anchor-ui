@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
 import AppHeader from '../../../dist/app-header';
 import Button from '../../../dist/button';
 import Nav from './nav';
@@ -41,10 +42,11 @@ class App extends Component {
     const { children } = this.props;
     const { media, menu } = this.state;
 
-    const childrenWithProps = React.Children.map(children, child => React.cloneElement(
-      child,
-      { setColor: this.setColor }
-    ));
+    const childrenWithProps = (
+      React.Children.map(children, child => (
+        React.cloneElement(child, { setColor: this.setColor })
+      ))
+    );
 
     const query = {
       medium: '(min-width: 768px)'
@@ -81,7 +83,7 @@ class App extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button onClick={() => {}} iconButton>
+                <Button onClick={noop} iconButton>
                   <img className="github" src={github} alt="Github" />
                 </Button>
               </a>

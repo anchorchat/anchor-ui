@@ -1,6 +1,8 @@
 /* global alert */
 import React, { Component } from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import map from 'lodash/map';
+import noop from 'lodash/noop';
 import moment from 'moment';
 import faker from 'faker';
 import Message from '../../../dist/message';
@@ -11,6 +13,7 @@ import components from '../../components.json';
 import background from '../assets/images/channel-background.jpg';
 import Paper from '../../../dist/paper';
 import Select from '../../../dist/select';
+import Switch from '../../../dist/switch';
 import colors from '../../../dist/settings/colors';
 import IconMenu from '../../../dist/icon-menu';
 import IconChevronDown from '../../../dist/icons/icon-chevron-down';
@@ -48,6 +51,35 @@ const scalingEmoji = `
 
 const currentUser = faker.internet.userName();
 const currentUserAvatar = faker.internet.avatar();
+
+const componentData = find(components, { displayName: 'Message' });
+const style = {
+  paper: {
+    margin: '0 0 20px 0',
+    padding: '20px'
+  },
+  list: {
+    backgroundImage: `url(${background})`,
+    backgroundSize: '500px',
+    height: '475px'
+  },
+  options: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: '10px 0'
+  },
+  margin: {
+    margin: '5px'
+  },
+  image: {
+    borderRadius: '3px',
+    width: 'auto',
+    height: 'auto',
+    maxWidth: '100%',
+    maxHeight: '200px',
+    objectFit: 'cover'
+  }
+};
 
 const messages = [
   {
@@ -112,6 +144,23 @@ const messages = [
   }
 ];
 
+const imageLoaderProps = {
+  placeholder: (
+    <img
+      src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg"
+      alt="placeholder"
+      style={style.image}
+    />
+  ),
+  error: (
+    <img
+      src="https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg"
+      alt="error"
+      style={style.image}
+    />
+  )
+};
+
 class MessageDoc extends Component {
   constructor() {
     super();
@@ -127,44 +176,24 @@ class MessageDoc extends Component {
     };
   }
 
-  selectCollapse = (event, collapsed) => this.setState({ collapsed })
+  selectCollapse = () => this.setState({ collapsed: !this.state.collapsed })
 
   selectCompact = () => this.setState({ compact: !this.state.compact })
 
   selectFontSize = (event, fontSize) => this.setState({ fontSize })
 
-  selectIconMenu = (event, iconMenu) => this.setState({ iconMenu })
+  selectIconMenu = () => this.setState({ iconMenu: !this.state.iconMenu })
 
-  selectEdited = (event, edited) => this.setState({ edited })
+  selectEdited = () => this.setState({ edited: !this.state.edited })
 
-  selectMultiline = (event, multiline) => this.setState({ multiline })
+  selectMultiline = () => this.setState({ multiline: !this.state.multiline })
 
-  selectAvatar = (event, avatar) => this.setState({ avatar });
+  selectAvatar = () => this.setState({ avatar: !this.state.avatar });
 
   render() {
     const {
       collapsed, fontSize, compact, iconMenu, edited, multiline, avatar
     } = this.state;
-    const componentData = _.find(components, component => component.displayName === 'Message');
-    const style = {
-      paper: {
-        margin: '0 0 20px 0',
-        padding: '20px'
-      },
-      list: {
-        backgroundImage: `url(${background})`,
-        backgroundSize: '500px',
-        height: '475px'
-      },
-      options: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        padding: '10px 0'
-      },
-      select: {
-        margin: '5px'
-      }
-    };
 
     return (
       <article className="page">
@@ -192,42 +221,54 @@ class MessageDoc extends Component {
         <section>
           <h1>Examples</h1>
           <div style={style.options}>
-            <Select style={style.select} label="Collapsed images" value={collapsed} onChange={this.selectCollapse}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Font size" value={fontSize} onChange={this.selectFontSize}>
+            <Switch
+              toggleSwitch={this.selectCollapse}
+              label="Collapsed images"
+              style={style.margin}
+              active={collapsed}
+            />
+            <Switch
+              toggleSwitch={this.selectCompact}
+              label="Compact messages"
+              style={style.margin}
+              active={compact}
+            />
+            <Switch
+              toggleSwitch={this.selectIconMenu}
+              label="Icon menu"
+              style={style.margin}
+              active={iconMenu}
+            />
+            <Switch
+              toggleSwitch={this.selectEdited}
+              label="Edited messages"
+              style={style.margin}
+              active={edited}
+            />
+            <Switch
+              toggleSwitch={this.selectMultiline}
+              label="Enable multiline"
+              style={style.margin}
+              active={multiline}
+            />
+            <Switch
+              toggleSwitch={this.selectAvatar}
+              label="Enable avatar"
+              style={style.margin}
+              active={avatar}
+            />
+            <Select style={style.margin} label="Font size" value={fontSize} onChange={this.selectFontSize}>
               <MenuItem text="Small" value="small" />
               <MenuItem text="Medium" value="medium" />
               <MenuItem text="Large" value="large" />
             </Select>
-            <Select style={style.select} label="Compact messages" value={compact} onChange={this.selectCompact}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Icon menu" value={iconMenu} onChange={this.selectIconMenu}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Edited messages" value={edited} onChange={this.selectEdited}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Enable multiline" value={multiline} onChange={this.selectMultiline}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
-            <Select style={style.select} label="Enable avatar" value={avatar} onChange={this.selectAvatar}>
-              <MenuItem text="On" value />
-              <MenuItem text="Off" value={false} />
-            </Select>
           </div>
           <Paper style={style.paper}>
             <MessageList style={style.list}>
-              {messages.map((message) => {
+              {map(messages, (message) => {
                 const menuItems = [
-                  <MenuItem key="item1" text="Menu Item" onClick={() => {}} />,
-                  <MenuItem key="item2" text="Another Menu Item" onClick={() => {}} />
+                  <MenuItem key="item1" text="Menu Item" onClick={noop} />,
+                  <MenuItem key="item2" text="Another Menu Item" onClick={noop} />
                 ];
 
                 const expandMenuItem = <MenuItem key="expand" text="Expand image" onClick={() => this.selectCollapse(false)} />;
@@ -285,6 +326,7 @@ class MessageDoc extends Component {
                     enableLinks
                     iconMenu={uiIconMenu}
                     enableMultiline={multiline}
+                    imageLoaderProps={imageLoaderProps}
                   />
                 );
               })}

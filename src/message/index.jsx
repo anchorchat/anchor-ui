@@ -72,22 +72,8 @@ const propTypes = {
   iconMenu: PropTypes.node,
   /** Enables multiline messages */
   enableMultiline: PropTypes.bool,
-  /** Image placeholder url */
-  imagePlaceholder: PropTypes.string,
-  /** Image error url */
-  imageError: PropTypes.string,
-  /**
-   * Callback fired when an image or giphy is finished loading
-   *
-   * function(event: object) => void
-   */
-  onImageLoad: PropTypes.func,
-  /**
-   * Callback fired when an image or giphy throws an error while loading
-   *
-   * function(event: object) => void
-   */
-  onImageError: PropTypes.func,
+  /** ImageLoader props, see https://ui.anchor.chat/#/image-loader */
+  imageLoaderProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   color: PropTypes.string.isRequired,
 };
 
@@ -114,10 +100,7 @@ const defaultProps = {
   badge: null,
   iconMenu: null,
   enableMultiline: false,
-  imagePlaceholder: 'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg',
-  imageError: 'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg',
-  onImageLoad: () => {},
-  onImageError: () => {}
+  imageLoaderProps: {}
 };
 
 /** Messages with optional styling for the current user's message,
@@ -150,10 +133,7 @@ const Message = (props) => {
     giphyDescription,
     iconMenu,
     enableMultiline,
-    imagePlaceholder,
-    imageError,
-    onImageLoad,
-    onImageError,
+    imageLoaderProps,
     ...custom
   } = props;
 

@@ -3,7 +3,7 @@ import colors from '../settings/colors';
 export default {
   message: {
     backgroundColor: colors.white,
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxSizing: 'border-box',
     color: colors.primaryText,
     maxWidth: '80%',
@@ -37,7 +37,7 @@ export default {
   },
   iconMenu: {
     position: 'absolute',
-    top: '3px',
-    right: '0'
+    top: '4px',
+    right: '4px'
   }
 };

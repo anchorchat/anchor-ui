@@ -5,6 +5,10 @@ import size from 'lodash/size';
 import filter from 'lodash/filter';
 import isEmpty from 'lodash/isEmpty';
 import noop from 'lodash/noop';
+import startsWith from 'lodash/startsWith';
+import toLower from 'lodash/toLower';
+import split from 'lodash/split';
+import isString from 'lodash/isString';
 import EventListener from 'react-event-listener';
 import getStyles from './get-styles';
 import Avatar from '../avatar';
@@ -138,14 +142,14 @@ class Commands extends Component {
       return filter(commands, (command) => {
         const argument = `${command.prefix}${command.value}`;
 
-        return argument.toLowerCase().indexOf(value.toLowerCase()) === 0;
+        return startsWith(toLower(argument), toLower(value));
       });
     }
 
     return filter(commands, (command) => {
-      const argument = value.split(command.prefix)[1];
+      const [argument] = split(value, command.prefix);
 
-      return command.value.indexOf(argument) === 0;
+      return startsWith(command.value, argument);
     });
   }
 
@@ -287,7 +291,7 @@ class Commands extends Component {
                   ? (
                     <div style={styles.avatarContainer}>
                       {
-                        typeof command.avatar === 'string'
+                        isString(command.avatar)
                         ? <Avatar image={command.avatar} style={styles.avatar} />
                         : command.avatar
                       }

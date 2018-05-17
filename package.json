@@ -1,8 +1,8 @@
 {
   "name": "anchor-ui",
-  "version": "6.2.1",
+  "version": "6.3.0",
   "description": "React Component UI Kit",
-  "main": "dist/index.js",
+  "main": "index.js",
   "files": [
     "/*"
   ],
@@ -11,9 +11,12 @@
     "test:watch": "NODE_ENV=test mocha --opts ./mocha.opts --watch test/*",
     "watch": "babel -d dist/ -w src/",
     "compile": "rimraf dist && babel -d dist/ src/",
+    "compile:travis": "rimraf anchor-ui && babel -d anchor-ui/ src/",
     "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
     "copy": "cp -rf package.json README.md dist",
+    "copy:travis": "cp -rf package.json README.md anchor-ui",
     "build": "npm run compile && npm run copy",
+    "build:travis": "npm run compile:travis && npm run copy:travis",
     "dist": "cd dist && npm publish",
     "docs": "react-docgen components --out docs/components.json --pretty",
     "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js",
@@ -52,6 +55,7 @@
     "eslint-config-airbnb": "^16.0.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-lodash": "^2.6.1",
     "eslint-plugin-mocha": "^4.8.0",
     "eslint-plugin-react": "^7.5.1",
     "mocha": "^3.2.0",

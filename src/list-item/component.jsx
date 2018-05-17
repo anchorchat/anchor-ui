@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import isString from 'lodash/isString';
 import styles from './styles';
 import colors from '../settings/colors';
 import Avatar from '../avatar';
@@ -85,7 +86,7 @@ const ListItem = ({
       avatar
       ? (
         <div style={styles.avatar}>
-          {typeof avatar === 'string' ? <Avatar image={avatar} /> : avatar}
+          {isString(avatar) ? <Avatar image={avatar} /> : avatar}
           {
             muted && !blocked
             ? <div style={styles.icon}><IconMute color={colors.white} /></div>

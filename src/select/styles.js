@@ -12,18 +12,19 @@ export default {
     minWidth: '100%',
     position: 'relative',
     paddingTop: '8px',
-    paddingRight: '44px',
+    paddingRight: '40px',
     paddingLeft: '8px',
     paddingBottom: '8px',
     boxSizing: 'border-box',
     cursor: 'pointer',
     color: colors.white,
     backgroundColor: colors.theme,
-    borderRadius: '3px',
+    borderRadius: '4px',
     fontSize: '16px',
     lineHeight: '16px',
     transition: 'background .3s ease-in-out',
     boxShadow: styles.depthShadows[0],
+
     ':hover': {
       backgroundColor: darken(colors.theme, 0.05)
     },
@@ -35,7 +36,7 @@ export default {
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)',
-    right: '10px',
+    right: '8px',
     width: '24px',
     height: '24px',
     transition: 'transform .3s ease-in-out',
@@ -59,7 +60,7 @@ export default {
   },
   error: {
     display: 'block',
-    paddingTop: '6px',
+    paddingTop: '8px',
     paddingLeft: '8px',
     color: colors.error,
     fontSize: '14px'

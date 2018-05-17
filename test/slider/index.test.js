@@ -5,6 +5,7 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
+import noop from 'lodash/noop';
 import Slider from '../../src/slider';
 import getStyles from '../../src/slider/get-styles';
 import getPercentage from '../../src/internal/get-percentage';
@@ -13,7 +14,7 @@ chai.use(sinonChai);
 
 describe('Slider', () => {
   const props = {
-    onChange: () => {},
+    onChange: noop,
     value: 0,
     label: 'label',
     name: 'name',
@@ -88,7 +89,7 @@ describe('Slider', () => {
 
     wrapper.find('input').simulate('change');
     expect(spy).to.have.callCount(1);
-    props.onChange = () => {};
+    props.onChange = noop;
   });
 
   it('should get root styles', () => {

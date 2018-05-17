@@ -4,6 +4,7 @@ import React from 'react';
 import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
+import noop from 'lodash/noop';
 import sinonChai from 'sinon-chai';
 import Switch from '../../src/switch';
 import getStyles from '../../src/switch/get-styles';
@@ -13,7 +14,7 @@ chai.use(sinonChai);
 describe('Switch', () => {
   const props = {
     active: false,
-    toggleSwitch: () => {},
+    toggleSwitch: noop,
     label: 'label',
     style: { root: true },
     trackStyle: { track: true },
@@ -61,7 +62,7 @@ describe('Switch', () => {
 
     wrapper.find('section').at(1).simulate('click');
     expect(spy).to.have.callCount(1);
-    props.toggleSwitch = () => {};
+    props.toggleSwitch = noop;
   });
 
   it('should get label styles', () => {

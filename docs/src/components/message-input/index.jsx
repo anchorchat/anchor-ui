@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import replace from 'lodash/replace';
 import MessageInput from '../../../../dist/message-input';
 import Button from '../../../../dist/button';
 import IconEmoji from '../../../../dist/icons/icon-emoji';
@@ -9,14 +10,21 @@ import Paper from '../../../../dist/paper';
 import example from './example';
 import Markdown from '../markdown';
 
-class MessageInputDoc extends React.Component {
-  constructor() {
-    super();
+const componentData = find(components, { displayName: 'MessageInput' });
+const style = {
+  paper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    margin: 0,
+    padding: '20px'
+  }
+};
 
-    this.state = {
-      value: '',
-      multiLine: ''
-    };
+class MessageInputDoc extends React.Component {
+  state = {
+    value: '',
+    multiLine: ''
   }
 
   handleChange = event => this.setState({ value: event.currentTarget.value })
@@ -28,16 +36,7 @@ class MessageInputDoc extends React.Component {
   sendMultiLineMessage = () => this.setState({ multiLine: '' })
 
   render() {
-    const componentData = _.find(components, component => component.displayName === 'MessageInput');
-    const style = {
-      paper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        margin: 0,
-        padding: '20px'
-      }
-    };
+    const { value, multiLine } = this.state;
 
     return (
       <article className="page">
@@ -55,32 +54,32 @@ class MessageInputDoc extends React.Component {
             <MessageInput
               onChange={this.handleChange}
               placeholder="Type something..."
-              value={this.state.value}
+              value={value}
               sendMessage={this.sendMessage}
               leftButton={
-                <Button iconButton onClick={() => {}}>
+                <Button iconButton>
                   <IconEmoji />
                 </Button>
               }
               rightButton={
-                <Button iconButton onClick={() => {}}>
+                <Button iconButton>
                   <IconEmoji />
                 </Button>
               }
             />
-            <span dangerouslySetInnerHTML={{ __html: this.state.multiLine.replace(/\n/g, '<br />') }} />
+            <span dangerouslySetInnerHTML={{ __html: replace(multiLine, /\n/g, '<br />') }} />
             <MessageInput
               onChange={this.handleMultiLineChange}
               placeholder="Multi line example..."
               value={this.state.multiLine}
               sendMessage={this.sendMultiLineMessage}
               leftButton={
-                <Button iconButton onClick={() => {}}>
+                <Button iconButton>
                   <IconEmoji />
                 </Button>
               }
               rightButton={
-                <Button iconButton onClick={() => {}}>
+                <Button iconButton>
                   <IconEmoji />
                 </Button>
               }

@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import find from 'lodash/find';
+import map from 'lodash/map';
 import moment from 'moment';
 import faker from 'faker';
 import Message from '../../../dist/message';
@@ -42,52 +43,50 @@ const messages = [
   },
 ];
 
-const MessageListDoc = () => {
-  const componentData = _.find(components, component => component.displayName === 'MessageList');
+const componentData = find(components, { displayName: 'MessageList' });
 
-  const style = {
-    paper: {
-      margin: 0,
-      padding: '20px'
-    },
-    messageList: {
-      backgroundImage: `url(${background})`,
-      backgroundSize: '500px',
-      height: '475px',
-      margin: '10px'
-    }
-  };
-
-  return (
-    <article className="page">
-      <h1>MessageList</h1>
-      <section>
-        <h1>Description</h1>
-        <p>{componentData.description}</p>
-      </section>
-      <Markdown markdown={usage} title="Code example" />
-      <section>
-        <h1>Examples</h1>
-        <Paper style={style.paper}>
-          <MessageList style={style.messageList}>
-            {messages.map(message => (
-              <Message
-                body={message.body}
-                createdAt={moment(message.createdAt).format('HH:mm')}
-                username={message.username}
-                type={message.type}
-                key={`message-${message.id}`}
-                myMessage={message.username === currentUser}
-                avatar={message.avatar}
-                emoji
-              />
-            ))}
-          </MessageList>
-        </Paper>
-      </section>
-      <Props props={componentData.props} />
-    </article>
-  );
+const style = {
+  paper: {
+    margin: 0,
+    padding: '20px'
+  },
+  messageList: {
+    backgroundImage: `url(${background})`,
+    backgroundSize: '500px',
+    height: '475px',
+    margin: '10px'
+  }
 };
+
+const MessageListDoc = () => (
+  <article className="page">
+    <h1>MessageList</h1>
+    <section>
+      <h1>Description</h1>
+      <p>{componentData.description}</p>
+    </section>
+    <Markdown markdown={usage} title="Code example" />
+    <section>
+      <h1>Examples</h1>
+      <Paper style={style.paper}>
+        <MessageList style={style.messageList}>
+          {map(messages, message => (
+            <Message
+              body={message.body}
+              createdAt={moment(message.createdAt).format('HH:mm')}
+              username={message.username}
+              type={message.type}
+              key={`message-${message.id}`}
+              myMessage={message.username === currentUser}
+              avatar={message.avatar}
+              emoji
+            />
+          ))}
+        </MessageList>
+      </Paper>
+    </section>
+    <Props props={componentData.props} />
+  </article>
+);
 
 export default MessageListDoc;

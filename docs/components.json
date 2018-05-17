@@ -1666,7 +1666,7 @@
         "required": false,
         "description": "Callback fired when the menu is closed\n\nfunction() => void",
         "defaultValue": {
-          "value": "_.noop",
+          "value": "noop",
           "computed": true
         }
       },
@@ -1677,7 +1677,7 @@
         "required": false,
         "description": "Callback fired when the menu is opened\n\nfunction() => void",
         "defaultValue": {
-          "value": "_.noop",
+          "value": "noop",
           "computed": true
         }
       },
@@ -2281,8 +2281,8 @@
         "required": false,
         "description": "Callback fired when a Gallery's item is clicked, only works if enableLightbox equals false\n\nfunction(event: object, image: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "style": {
@@ -2520,8 +2520,8 @@
         "required": false,
         "description": "Callback fired when the IconMenu closes\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "dividerStyle": {
@@ -2542,8 +2542,8 @@
         "required": false,
         "description": "Callback fired when the IconMenu's header is clicked\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "buttonStyle": {
@@ -3218,6 +3218,24 @@
       }
     }
   },
+  "components/icons/icon-heart.jsx": {
+    "description": "",
+    "displayName": "IconHeart",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-home.jsx": {
     "description": "",
     "displayName": "IconHome",
@@ -3326,6 +3344,42 @@
       }
     }
   },
+  "components/icons/icon-male-female.jsx": {
+    "description": "",
+    "displayName": "IconMaleFemale",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-man.jsx": {
+    "description": "",
+    "displayName": "IconMan",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-menu.jsx": {
     "description": "",
     "displayName": "IconMenu",
@@ -3401,6 +3455,24 @@
   "components/icons/icon-nature.jsx": {
     "description": "",
     "displayName": "IconNature",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-newspaper.jsx": {
+    "description": "",
+    "displayName": "IconNewspaper",
     "methods": [],
     "props": {
       "color": {
@@ -3740,6 +3812,24 @@
       }
     }
   },
+  "components/icons/icon-sticker.jsx": {
+    "description": "",
+    "displayName": "IconSticker",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-success.jsx": {
     "description": "",
     "displayName": "IconSuccess",
@@ -3866,6 +3956,24 @@
       }
     }
   },
+  "components/icons/icon-verified.jsx": {
+    "description": "",
+    "displayName": "IconVerified",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-warning.jsx": {
     "description": "",
     "displayName": "IconWarning",
@@ -3884,7 +3992,25 @@
       }
     }
   },
-  "components/image-loader/index.jsx": {
+  "components/icons/icon-woman.jsx": {
+    "description": "",
+    "displayName": "IconWoman",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/image-loader/component.jsx": {
     "description": "",
     "displayName": "ImageLoader",
     "methods": [
@@ -3975,8 +4101,8 @@
         "required": false,
         "description": "Callback fired when loading throws an error\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "onLoad": {
@@ -3986,8 +4112,8 @@
         "required": false,
         "description": "Callback fired when image is finished loading\n\nfunction(event: object) => void",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "placeholder": {
@@ -4370,8 +4496,8 @@
         "required": false,
         "description": "Reference list element",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "enableInfiniteScroll": {
@@ -4617,7 +4743,7 @@
       }
     }
   },
-  "components/loader/index.jsx": {
+  "components/loader/component.jsx": {
     "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],
@@ -4696,7 +4822,7 @@
       }
     }
   },
-  "components/menu/index.jsx": {
+  "components/menu/component.jsx": {
     "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
@@ -5319,47 +5445,14 @@
           "computed": false
         }
       },
-      "imagePlaceholder": {
+      "imageLoaderProps": {
         "type": {
-          "name": "string"
+          "name": "object"
         },
         "required": false,
-        "description": "Image placeholder url",
+        "description": "ImageLoader props, see https://ui.anchor.chat/#/image-loader",
         "defaultValue": {
-          "value": "'https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg'",
-          "computed": false
-        }
-      },
-      "imageError": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Image error url",
-        "defaultValue": {
-          "value": "'https://cdn.anchor.fish/client/assets/defaults/error.2838da1f.jpg'",
-          "computed": false
-        }
-      },
-      "onImageLoad": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when an image or giphy is finished loading\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "onImageError": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when an image or giphy throws an error while loading\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "() => {}",
+          "value": "{}",
           "computed": false
         }
       },
@@ -5663,8 +5756,8 @@
         "required": false,
         "description": "Reference list element",
         "defaultValue": {
-          "value": "() => {}",
-          "computed": false
+          "value": "noop",
+          "computed": true
         }
       },
       "style": {
@@ -5707,6 +5800,17 @@
     "displayName": "Modal",
     "methods": [],
     "props": {
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "children": {
         "type": {
           "name": "node"
@@ -5727,6 +5831,17 @@
         },
         "required": false,
         "description": "Override the style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -6172,7 +6287,7 @@
       }
     }
   },
-  "components/profile/index.jsx": {
+  "components/profile/component.jsx": {
     "description": "Profile useful for showing a user's info",
     "displayName": "Profile",
     "methods": [],
@@ -6336,6 +6451,60 @@
       }
     }
   },
+  "components/profile-card/component.jsx": {
+    "description": "Card containing a user's profile data",
+    "displayName": "ProfileCard",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to the user's avatar",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The user's username"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "usernameStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the username element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "components/profile-card/index.jsx": {
     "description": "Card containing the user's profile data",
     "displayName": "ProfileCard",
@@ -6406,12 +6575,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The input's label text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The input's label text"
       },
       "onChange": {
         "type": {
@@ -6537,12 +6702,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The RadioButtonGroup's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The RadioButtonGroup's label"
       },
       "labelStyle": {
         "type": {
@@ -6601,7 +6762,7 @@
       }
     }
   },
-  "components/search-box/index.jsx": {
+  "components/search-box/component.jsx": {
     "description": "General purpose Search box",
     "displayName": "SearchBox",
     "methods": [
@@ -6731,7 +6892,7 @@
       }
     }
   },
-  "components/select/index.jsx": {
+  "components/select/component.jsx": {
     "description": "",
     "displayName": "Select",
     "methods": [
@@ -6836,12 +6997,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The Select's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The Select's label"
       },
       "labelStyle": {
         "type": {
@@ -6918,7 +7075,7 @@
       }
     }
   },
-  "components/slider/index.jsx": {
+  "components/slider/component.jsx": {
     "description": "General purpose form slider",
     "displayName": "Slider",
     "methods": [],
@@ -7055,7 +7212,7 @@
       }
     }
   },
-  "components/switch/index.jsx": {
+  "components/switch/component.jsx": {
     "description": "",
     "displayName": "Switch",
     "methods": [],
@@ -7082,12 +7239,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "The Switch's label",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "The Switch's label"
       },
       "style": {
         "type": {

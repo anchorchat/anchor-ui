@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
+import noop from 'lodash/noop';
 import getStyles from './get-styles';
 
 const propTypes = {
@@ -20,7 +21,7 @@ const propTypes = {
 
 const defaultProps = {
   scrollOffset: 100,
-  listRef: () => {},
+  listRef: noop,
   style: {},
   listStyle: {},
   autoScroll: false

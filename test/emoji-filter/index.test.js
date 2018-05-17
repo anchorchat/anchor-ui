@@ -6,6 +6,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import EventListener from 'react-event-listener';
+import noop from 'lodash/noop';
 import EmojiFilter from '../../src/emoji-filter/component';
 import EmojiModifiers from '../../src/emoji-menu/emoji-modifiers';
 import getStyles from '../../src/emoji-filter/get-styles';
@@ -17,8 +18,8 @@ describe('EmojiFilter', () => {
     value: '',
     style: {},
     headerStyle: {},
-    onSelect: () => {},
-    onChange: () => {},
+    onSelect: noop,
+    onChange: noop,
     color: '#1BA6C4'
   };
 
