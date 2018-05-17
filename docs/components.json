@@ -6505,6 +6505,60 @@
       }
     }
   },
+  "components/profile-card/index.jsx": {
+    "description": "Card containing the user's profile data",
+    "displayName": "ProfileCard",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Path to the user's profile image",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The user's username"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "usernameStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the username element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "components/radio-button/index.jsx": {
     "description": "Radio buttons are switches used for selection from multiple options",
     "displayName": "RadioButton",
