@@ -3956,6 +3956,24 @@
       }
     }
   },
+  "components/icons/icon-verified.jsx": {
+    "description": "",
+    "displayName": "IconVerified",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-warning.jsx": {
     "description": "",
     "displayName": "IconWarning",

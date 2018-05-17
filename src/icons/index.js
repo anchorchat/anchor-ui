@@ -75,5 +75,6 @@ export IconThumbsUp from './icon-thumbs-up';
 export IconTools from './icon-tools';
 export IconTravel from './icon-travel';
 export IconUpload from './icon-upload';
+export IconVerified from './icon-verified';
 export IconWarning from './icon-warning';
 export IconWoman from './icon-woman';
