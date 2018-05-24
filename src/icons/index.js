@@ -7,6 +7,7 @@ export IconArrowLeft from './icon-arrow-left';
 export IconArrowRight from './icon-arrow-right';
 export IconBlock from './icon-block';
 export IconBomb from './icon-bomb';
+export IconBriefcase from './icon-briefcase';
 export IconBroadcast from './icon-broadcast';
 export IconCart from './icon-cart';
 export IconChannel from './icon-channel';
