@@ -41,6 +41,7 @@ export IconHome from './icon-home';
 export IconInfo from './icon-info';
 export IconLanguage from './icon-language';
 export IconLast from './icon-last';
+export IconLocation from './icon-location';
 export IconLock from './icon-lock';
 export IconMail from './icon-mail';
 export IconMaleFemale from './icon-male-female';
