@@ -1,4 +1,5 @@
 export ChannelAvatar from './channel-avatar';
+export IconAcademicCap from './icon-academic-cap';
 export IconActivity from './icon-activity';
 export IconAddFriend from './icon-add-friend';
 export IconAddImage from './icon-add-image';
