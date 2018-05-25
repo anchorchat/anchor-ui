@@ -3,10 +3,6 @@ import darken from '../internal/darken';
 import styles from '../settings/styles';
 
 export default {
-  container: {
-    position: 'relative',
-    minWidth: '200px'
-  },
   header: {
     minHeight: '32px',
     minWidth: '100%',
