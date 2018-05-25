@@ -28,6 +28,6 @@ export default {
   icon: {
     width: '24px',
     height: '24px',
-    marginRight: '10px'
+    marginRight: '8px'
   }
 };
