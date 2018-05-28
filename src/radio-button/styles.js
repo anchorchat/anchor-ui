@@ -5,7 +5,7 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '5px',
+    padding: '4px 8px',
     cursor: 'pointer',
     color: colors.primaryText,
     ':hover': {
@@ -28,6 +28,6 @@ export default {
   icon: {
     width: '24px',
     height: '24px',
-    marginRight: '10px'
+    marginRight: '8px'
   }
 };
