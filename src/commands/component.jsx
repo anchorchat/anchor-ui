@@ -113,18 +113,32 @@ const filterCommands = (commands, value, leading) => {
 
 /** Used for displaying a list of commands */
 class Commands extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      open: false,
-      commands: filterCommands(props.commands, props.value, props.leading),
-      selectedIndex: 0
-    };
+  state = { // eslint-disable-line react/sort-comp
+    open: false,
+    commands: [],
+    selectedIndex: 0
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { value, commands } = nextProps;
+  static getDerivedStateFromProps(props, state) {
+    const { value, commands } = props;
+    const { open } = state;
+
+    const filteredCommands = filterCommands(commands, value);
+
+    if (!isEmpty(filteredCommands) && !open) {
+      this.setState({
+        open: true,
+        commands: filteredCommands
+      });
+    }
+
+    return this.setState({
+      commands: filteredCommands
+    });
+  }
+
+  componentDidUpdate() {
+    const { value, commands } = this.props;
     const { open } = this.state;
 
     if (!value) {
@@ -134,11 +148,6 @@ class Commands extends Component {
     const filteredCommands = filterCommands(commands, value);
 
     if (!isEmpty(filteredCommands) && !open) {
-      this.setState({
-        open: true,
-        commands: filteredCommands
-      });
-
       return this.props.onMenuOpen();
     }
 
@@ -146,9 +155,7 @@ class Commands extends Component {
       return this.hideMenu();
     }
 
-    return this.setState({
-      commands: filteredCommands
-    });
+    return false;
   }
 
   hideMenu = () => {
