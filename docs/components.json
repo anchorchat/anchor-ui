@@ -1020,22 +1020,6 @@
     "displayName": "Commands",
     "methods": [
       {
-        "name": "filterCommands",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "commands",
-            "type": null
-          },
-          {
-            "name": "value",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
         "name": "hideMenu",
         "docblock": null,
         "modifiers": [],
@@ -2588,6 +2572,24 @@
       }
     }
   },
+  "components/icons/icon-academic-cap.jsx": {
+    "description": "",
+    "displayName": "IconAcademicCap",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-activity.jsx": {
     "description": "",
     "displayName": "IconActivity",
@@ -2717,6 +2719,24 @@
   "components/icons/icon-bomb.jsx": {
     "description": "",
     "displayName": "IconBomb",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-briefcase.jsx": {
+    "description": "",
+    "displayName": "IconBriefcase",
     "methods": [],
     "props": {
       "color": {
@@ -3218,6 +3238,24 @@
       }
     }
   },
+  "components/icons/icon-heart.jsx": {
+    "description": "",
+    "displayName": "IconHeart",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-home.jsx": {
     "description": "",
     "displayName": "IconHome",
@@ -3290,6 +3328,24 @@
       }
     }
   },
+  "components/icons/icon-location.jsx": {
+    "description": "",
+    "displayName": "IconLocation",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
@@ -3311,6 +3367,42 @@
   "components/icons/icon-mail.jsx": {
     "description": "",
     "displayName": "IconMail",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-male-female.jsx": {
+    "description": "",
+    "displayName": "IconMaleFemale",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-man.jsx": {
+    "description": "",
+    "displayName": "IconMan",
     "methods": [],
     "props": {
       "color": {
@@ -3401,6 +3493,24 @@
   "components/icons/icon-nature.jsx": {
     "description": "",
     "displayName": "IconNature",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-newspaper.jsx": {
+    "description": "",
+    "displayName": "IconNewspaper",
     "methods": [],
     "props": {
       "color": {
@@ -3740,6 +3850,24 @@
       }
     }
   },
+  "components/icons/icon-sticker.jsx": {
+    "description": "",
+    "displayName": "IconSticker",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-success.jsx": {
     "description": "",
     "displayName": "IconSuccess",
@@ -3866,9 +3994,45 @@
       }
     }
   },
+  "components/icons/icon-verified.jsx": {
+    "description": "",
+    "displayName": "IconVerified",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-warning.jsx": {
     "description": "",
     "displayName": "IconWarning",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-woman.jsx": {
+    "description": "",
+    "displayName": "IconWoman",
     "methods": [],
     "props": {
       "color": {
@@ -4617,7 +4781,7 @@
       }
     }
   },
-  "components/loader/index.jsx": {
+  "components/loader/component.jsx": {
     "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],

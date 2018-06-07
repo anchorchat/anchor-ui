@@ -19,7 +19,10 @@ const style = {
     margin: 0,
     padding: '20px'
   },
-  select: { margin: '10px' }
+  select: {
+    margin: '10px',
+    maxWidth: '256px'
+  }
 };
 
 class SelectDoc extends Component {
