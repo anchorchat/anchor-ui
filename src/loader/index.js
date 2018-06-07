@@ -1,11 +1,11 @@
 import Radium from 'radium';
 import compose from 'recompose/compose';
-import Menu from './component';
 import withTheme from '../with-theme';
+import Loader from './component';
 
 const enhance = compose(
   withTheme,
   Radium
 );
 
-export default enhance(Menu);
+export default enhance(Loader);
