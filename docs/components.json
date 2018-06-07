@@ -2588,6 +2588,24 @@
       }
     }
   },
+  "components/icons/icon-academic-cap.jsx": {
+    "description": "",
+    "displayName": "IconAcademicCap",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-activity.jsx": {
     "description": "",
     "displayName": "IconActivity",
@@ -2717,6 +2735,24 @@
   "components/icons/icon-bomb.jsx": {
     "description": "",
     "displayName": "IconBomb",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-briefcase.jsx": {
+    "description": "",
+    "displayName": "IconBriefcase",
     "methods": [],
     "props": {
       "color": {
@@ -3218,6 +3254,24 @@
       }
     }
   },
+  "components/icons/icon-heart.jsx": {
+    "description": "",
+    "displayName": "IconHeart",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-home.jsx": {
     "description": "",
     "displayName": "IconHome",
@@ -3290,6 +3344,24 @@
       }
     }
   },
+  "components/icons/icon-location.jsx": {
+    "description": "",
+    "displayName": "IconLocation",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
@@ -3311,6 +3383,42 @@
   "components/icons/icon-mail.jsx": {
     "description": "",
     "displayName": "IconMail",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-male-female.jsx": {
+    "description": "",
+    "displayName": "IconMaleFemale",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-man.jsx": {
+    "description": "",
+    "displayName": "IconMan",
     "methods": [],
     "props": {
       "color": {
@@ -3401,6 +3509,24 @@
   "components/icons/icon-nature.jsx": {
     "description": "",
     "displayName": "IconNature",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-newspaper.jsx": {
+    "description": "",
+    "displayName": "IconNewspaper",
     "methods": [],
     "props": {
       "color": {
@@ -3740,6 +3866,24 @@
       }
     }
   },
+  "components/icons/icon-sticker.jsx": {
+    "description": "",
+    "displayName": "IconSticker",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-success.jsx": {
     "description": "",
     "displayName": "IconSuccess",
@@ -3866,9 +4010,45 @@
       }
     }
   },
+  "components/icons/icon-verified.jsx": {
+    "description": "",
+    "displayName": "IconVerified",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-warning.jsx": {
     "description": "",
     "displayName": "IconWarning",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-woman.jsx": {
+    "description": "",
+    "displayName": "IconWoman",
     "methods": [],
     "props": {
       "color": {
@@ -4606,7 +4786,7 @@
       }
     }
   },
-  "components/loader/index.jsx": {
+  "components/loader/component.jsx": {
     "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],
@@ -4685,7 +4865,7 @@
       }
     }
   },
-  "components/menu/index.jsx": {
+  "components/menu/component.jsx": {
     "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
@@ -6293,7 +6473,7 @@
       }
     }
   },
-  "components/profile-card/index.jsx": {
+  "components/profile-card/component.jsx": {
     "description": "Card containing a user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
@@ -6550,7 +6730,7 @@
       }
     }
   },
-  "components/search-box/index.jsx": {
+  "components/search-box/component.jsx": {
     "description": "General purpose Search box",
     "displayName": "SearchBox",
     "methods": [
@@ -6863,7 +7043,7 @@
       }
     }
   },
-  "components/slider/index.jsx": {
+  "components/slider/component.jsx": {
     "description": "General purpose form slider",
     "displayName": "Slider",
     "methods": [],
@@ -7000,7 +7180,7 @@
       }
     }
   },
-  "components/switch/index.jsx": {
+  "components/switch/component.jsx": {
     "description": "",
     "displayName": "Switch",
     "methods": [],

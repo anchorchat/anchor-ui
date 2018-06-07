@@ -19,9 +19,6 @@ const style = {
     margin: 0,
     padding: '20px'
   },
-  checkbox: {
-    margin: '10px'
-  },
   list: {
     paddingLeft: '24px',
     listStyle: 'initial'
@@ -69,13 +66,11 @@ class CheckboxDoc extends Component {
               <Checkbox
                 label="One"
                 name="One"
-                style={style.checkbox}
                 value="One"
               />
               <Checkbox
                 label="Two"
                 name="Two"
-                style={style.checkbox}
                 value="Two"
               />
             </CheckboxGroup>

@@ -2,7 +2,7 @@ import colors from '../settings/colors';
 
 export default {
   root: {
-    maxWidth: '250px',
+    maxWidth: '256px',
     width: '100%',
   },
   inputRoot: {
@@ -38,7 +38,6 @@ export default {
     boxSizing: 'border-box',
     display: 'block',
     paddingBottom: '8px',
-    paddingLeft: '8px',
     textTransform: 'capitalize',
     width: '100%'
   },

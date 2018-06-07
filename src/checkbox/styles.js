@@ -5,7 +5,7 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '4px',
+    padding: '4px 8px',
     cursor: 'pointer',
     color: colors.primaryText,
     position: 'relative',

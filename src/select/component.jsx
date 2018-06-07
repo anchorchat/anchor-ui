@@ -175,7 +175,7 @@ class Select extends Component {
     return (
       <section
         ref={this.containerRef}
-        style={combineStyles(styles.root, style)}
+        style={style}
         {...custom}
       >
         <span style={combineStyles(styles.label, labelStyle)}>{label}</span>
