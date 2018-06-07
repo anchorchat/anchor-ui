@@ -3,7 +3,7 @@
 rm -rf components
 cp -r src components
 rm -rf components/*/*.js components/*.js
-rm -rf components/themeable
+rm -rf components/with-theme
 rm -rf components/message/message-time
 rm -rf components/message/message-header
 rm -rf components/message/image-message
