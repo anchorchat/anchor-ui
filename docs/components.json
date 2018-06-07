@@ -5037,7 +5037,7 @@
       }
     }
   },
-  "components/menu-item/index.jsx": {
+  "components/menu-item/component.jsx": {
     "description": "General purpose menu item",
     "displayName": "MenuItem",
     "methods": [
@@ -5811,7 +5811,7 @@
       }
     }
   },
-  "components/modal/index.jsx": {
+  "components/modal/component.jsx": {
     "description": "A dialog that can only be closed by selecting one of the actions.",
     "displayName": "Modal",
     "methods": [],
@@ -6474,7 +6474,7 @@
     }
   },
   "components/profile-card/component.jsx": {
-    "description": "Card containing a user's profile data",
+    "description": "Card containing the user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
     "props": {
@@ -6483,7 +6483,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Path to the user's avatar",
+        "description": "Path to the user's profile image",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -6527,7 +6527,7 @@
       }
     }
   },
-  "components/radio-button/index.jsx": {
+  "components/radio-button/component.jsx": {
     "description": "Radio buttons are switches used for selection from multiple options",
     "displayName": "RadioButton",
     "methods": [],
@@ -7263,7 +7263,7 @@
       }
     }
   },
-  "components/tab/index.jsx": {
+  "components/tab/component.jsx": {
     "description": "",
     "displayName": "Tab",
     "methods": [],
@@ -7465,7 +7465,7 @@
       }
     }
   },
-  "components/table-header/index.jsx": {
+  "components/table-header/component.jsx": {
     "description": "TableHeaders are used to display data.",
     "displayName": "TableHeader",
     "methods": [],
