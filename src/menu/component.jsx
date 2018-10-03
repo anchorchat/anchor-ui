@@ -80,9 +80,13 @@ class Menu extends Component {
       ...custom
     } = this.props;
 
-    const menuItems = React.Children.map(children, child => (
-      cloneElement(child, { closeMenu })
-    ));
+    const menuItems = React.Children.map(children, (child) => {
+      if (!child) {
+        return null;
+      }
+
+      return cloneElement(child, { closeMenu });
+    });
 
     let rootStyle = getStyles.root(open, position, style);
 
