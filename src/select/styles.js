@@ -3,10 +3,6 @@ import darken from '../internal/darken';
 import styles from '../settings/styles';
 
 export default {
-  container: {
-    position: 'relative',
-    minWidth: '200px'
-  },
   header: {
     minHeight: '32px',
     minWidth: '100%',
@@ -55,7 +51,7 @@ export default {
     fontSize: '16px',
     color: colors.secondaryText,
     fontWeight: 'bolder',
-    padding: '0 0 8px 8px',
+    padding: '0 0 8px',
     display: 'inline-block'
   },
   error: {
