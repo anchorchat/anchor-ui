@@ -8,6 +8,7 @@ import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import GiphyMessage from './giphy-message';
 import StickerMessage from './sticker-message';
+import AudioMessage from './audio-message';
 import themeable from '../themeable';
 import styles from './styles';
 
@@ -23,7 +24,7 @@ const propTypes = {
   /** The sender's username */
   username: PropTypes.node.isRequired,
   /** The message's type */
-  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy']),
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'audio']),
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
@@ -74,7 +75,7 @@ const propTypes = {
   enableMultiline: PropTypes.bool,
   /** ImageLoader props, see https://ui.anchor.chat/#/image-loader */
   imageLoaderProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
@@ -149,6 +150,10 @@ const Message = (props) => {
 
   if (type === 'giphy') {
     messageElement = <GiphyMessage color={color} {...props} />;
+  }
+
+  if (type === 'audio') {
+    messageElement = <AudioMessage color={color} {...props} />;
   }
 
   return (
