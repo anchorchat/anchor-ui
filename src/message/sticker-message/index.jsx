@@ -13,7 +13,7 @@ const propTypes = {
   body: PropTypes.node.isRequired,
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.node.isRequired,
-  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'typing']),
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'audio']),
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   messageHeaderStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   messageBodyStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
