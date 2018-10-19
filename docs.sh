@@ -11,5 +11,6 @@ rm -rf components/message/sticker-message
 rm -rf components/message/text-message
 rm -rf components/message/typing-message
 rm -rf components/message/giphy-message
+rm -rf components/message/audio-message
 npm run docs
 rm -rf components
