@@ -75,6 +75,24 @@ const propTypes = {
   enableMultiline: PropTypes.bool,
   /** ImageLoader props, see https://ui.anchor.chat/#/image-loader */
   imageLoaderProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /**
+   * Audio object
+   *
+   * {
+   *   onPlay: function(event: object) => void,
+   *   onPause: function(event: object) => void,
+   *   isPlaying: Boolean,
+   *   progress: Number,
+   *   time: Node
+   * }
+   */
+  audio: PropTypes.shape({
+    onPlay: PropTypes.func.isRequired,
+    onPause: PropTypes.func.isRequired,
+    isPlaying: PropTypes.bool.isRequired,
+    progress: PropTypes.number.isRequired,
+    time: PropTypes.node.isRequired
+  }),
   color: PropTypes.string.isRequired
 };
 
@@ -101,7 +119,14 @@ const defaultProps = {
   badge: null,
   iconMenu: null,
   enableMultiline: false,
-  imageLoaderProps: {}
+  imageLoaderProps: {},
+  audio: {
+    onPlay: noop,
+    onPause: noop,
+    isPlaying: false,
+    progress: 0,
+    time: '00:00'
+  }
 };
 
 /** Messages with optional styling for the current user's message,
@@ -135,6 +160,7 @@ const Message = (props) => {
     iconMenu,
     enableMultiline,
     imageLoaderProps,
+    audio,
     ...custom
   } = props;
 

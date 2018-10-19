@@ -2,20 +2,20 @@ import merge from 'lodash/merge';
 import defaultStyles from '../default-styles';
 
 const overrideStyles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center'
-  },
   compact: {
     maxWidth: 'calc(100% - 40px)',
     flexDirection: 'column'
   },
-  playerContainer: {
+  audioContainer: {
     display: 'flex',
     alignItems: 'center',
     flex: 1
   },
-  barContainer: {
+  playerContainer: {
+    flex: 1,
+    position: 'relative'
+  },
+  progressContainer: {
     flex: 1,
     borderRadius: '3px',
     overflow: 'hidden',
@@ -34,7 +34,17 @@ const overrideStyles = {
     marginRight: '4px'
   },
   message: {
-    width: '280px'
+    width: '280px',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  time: {
+    position: 'absolute',
+    top: '10px',
+    color: 'currentColor',
+    fontSize: '12px',
+    lineHeight: '12px',
+    opacity: '.75'
   }
 };
 

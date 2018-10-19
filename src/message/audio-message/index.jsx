@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
-import ReactPlayer from 'react-player';
 import colors from '../../settings/colors';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
@@ -13,7 +12,6 @@ import IconPause from '../../icons/icon-pause';
 
 const propTypes = {
   avatar: PropTypes.string,
-  body: PropTypes.node.isRequired,
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'audio']),
@@ -25,7 +23,14 @@ const propTypes = {
   compact: PropTypes.bool,
   color: PropTypes.string,
   badge: PropTypes.node,
-  iconMenu: PropTypes.node
+  iconMenu: PropTypes.node,
+  audio: PropTypes.shape({
+    onPlay: PropTypes.func.isRequired,
+    onPause: PropTypes.func.isRequired,
+    isPlaying: PropTypes.bool.isRequired,
+    progress: PropTypes.number.isRequired,
+    time: PropTypes.node.isRequired
+  }).isRequired
 };
 
 const defaultProps = {
@@ -43,52 +48,19 @@ const defaultProps = {
 };
 
 class AudioMessage extends Component {
-  state = {
-    playing: false,
-    progress: {
-      played: 0,
-      playedSeconds: 0,
-      loaded: 0,
-      loadedSeconds: 0
-    }
-  }
-
-  handlePlay = () => {
-    this.setState({
-      playing: true
-    });
-  }
-
-  handlePause = () => {
-    this.setState({
-      playing: false
-    });
-  }
-
-  handleProgress = (progress) => {
-    this.setState({
-      progress
-    });
-
-    if (progress.played === 1) {
-      this.handlePause();
-    }
-  }
-
   renderButton = () => {
-    const { myMessage } = this.props;
-    const { playing } = this.state;
+    const { myMessage, audio } = this.props;
 
-    if (playing) {
+    if (audio.isPlaying) {
       return (
-        <Button style={styles.button} iconButton onClick={this.handlePause}>
+        <Button style={styles.button} iconButton onClick={audio.onPause}>
           <IconPause width="18" height="18" color={myMessage ? colors.white : colors.icons} />
         </Button>
       );
     }
 
     return (
-      <Button style={styles.button} iconButton onClick={this.handlePlay}>
+      <Button style={styles.button} iconButton onClick={audio.onPlay}>
         <IconPlay width="18" height="18" color={myMessage ? colors.white : colors.icons} />
       </Button>
     );
@@ -109,9 +81,8 @@ class AudioMessage extends Component {
       messageTimeStyle,
       badge,
       iconMenu,
-      body
+      audio
     } = this.props;
-    const { playing, progress } = this.state;
 
     return (
       <div style={getStyles.root(color, myMessage, avatar, compact, iconMenu, style)}>
@@ -125,29 +96,22 @@ class AudioMessage extends Component {
           badge={badge}
           iconMenu={!isEmpty(iconMenu)}
         />
-        <div style={styles.container}>
-          <ReactPlayer
-            url={body}
-            playing={playing}
-            width="0"
-            height="0"
-            onProgress={this.handleProgress}
-            progressInterval={500}
-          />
-          <section style={styles.playerContainer}>
-            {this.renderButton()}
-            <section style={styles.barContainer}>
-              <div style={getStyles.bar(color, myMessage, progress.played)} />
+        <section style={styles.audioContainer}>
+          {this.renderButton()}
+          <div style={styles.playerContainer}>
+            <section style={styles.progressContainer}>
+              <div style={getStyles.bar(color, myMessage, audio.progress)} />
             </section>
-          </section>
-          <MessageTime
-            myMessage={myMessage}
-            type={type}
-            style={messageTimeStyle}
-            createdAt={createdAt}
-            fontSize={fontSize}
-          />
-        </div>
+            <span style={styles.time}>{audio.time}</span>
+          </div>
+        </section>
+        <MessageTime
+          myMessage={myMessage}
+          type={type}
+          style={messageTimeStyle}
+          createdAt={createdAt}
+          fontSize={fontSize}
+        />
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
       </div>
     );
