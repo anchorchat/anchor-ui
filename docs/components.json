@@ -1884,6 +1884,7 @@
   },
   "components/emoji-menu/emoji-categories.jsx": {
     "description": "",
+    "displayName": "EmojiCategories",
     "methods": [],
     "props": {
       "changeCategory": {
@@ -1947,6 +1948,7 @@
   },
   "components/emoji-menu/emoji-category.jsx": {
     "description": "",
+    "displayName": "EmojiCategory",
     "methods": [],
     "props": {
       "category": {
@@ -5193,6 +5195,14 @@
         "required": true,
         "description": ""
       }
+    },
+    "context": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false
+      }
     }
   },
   "components/message/index.jsx": {
@@ -5250,6 +5260,10 @@
             },
             {
               "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
               "computed": false
             }
           ]
@@ -5507,6 +5521,17 @@
         "description": "ImageLoader props, see https://ui.anchor.chat/#/image-loader",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Video node to display a video url within a player",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -7704,6 +7729,14 @@
           "computed": false
         }
       }
+    },
+    "context": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false
+      }
     }
   },
   "components/theme-provider/index.jsx": {
@@ -7728,6 +7761,14 @@
         },
         "required": true,
         "description": "Children to apply theme color to"
+      }
+    },
+    "childContext": {
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": false
       }
     }
   }
