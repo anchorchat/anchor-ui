@@ -141,6 +141,31 @@ const messages = [
     avatar: faker.internet.avatar(),
     id: 8,
     type: 'giphy'
+  },
+  {
+    body: 'freezing bubble movie',
+    createdAt: moment().toISOString(),
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
+    id: 9,
+    type: 'video',
+    video: (
+      <video
+        controls
+        muted
+        src="https://player.vimeo.com/external/208458665.hd.mp4?s=2001abe1e54facca01cc1ba9c074076eb711a9f8&profile_id=119&oauth2_token_id=57447761"
+        style={{
+          borderRadius: '4px',
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: '200px',
+          objectFit: 'cover'
+        }}
+      >
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    )
   }
 ];
 
@@ -327,6 +352,7 @@ class MessageDoc extends Component {
                     iconMenu={uiIconMenu}
                     enableMultiline={multiline}
                     imageLoaderProps={imageLoaderProps}
+                    video={message.video}
                   />
                 );
               })}
