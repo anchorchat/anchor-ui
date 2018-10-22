@@ -9,7 +9,7 @@ const root = (myMessage, type, collapsed, fontSize, overrideStyle) => {
     style = combineStyles(style, { color: colors.white });
   }
 
-  if ((type === 'image' || type === 'giphy') && !collapsed) {
+  if ((type === 'image' || type === 'giphy' || type === 'video') && !collapsed) {
     style = combineStyles(style, styles.image);
   }
 
