@@ -75,6 +75,7 @@ const propTypes = {
   enableMultiline: PropTypes.bool,
   /** ImageLoader props, see https://ui.anchor.chat/#/image-loader */
   imageLoaderProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Video node to display a video url within a player */
   video: PropTypes.node,
   color: PropTypes.string.isRequired,
 };
