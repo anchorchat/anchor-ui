@@ -165,7 +165,7 @@ const messages = [
           objectFit: 'cover'
         }}
       >
-        Sorry, your browser doesn't support embedded videos.
+        Sorry, your browser doesn&apos;t support embedded videos.
       </video>
     ),
     collapsedText: 'This video has been collapsed.'
