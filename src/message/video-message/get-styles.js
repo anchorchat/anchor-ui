@@ -7,6 +7,7 @@ const root = (
   myMessage,
   avatar,
   compact,
+  collapsed,
   iconMenu,
   overrideStyle
 ) => {
@@ -31,10 +32,18 @@ const root = (
     style = combineStyles(style, styles.compact);
   }
 
+  if (compact && collapsed) {
+    style = combineStyles(style, { display: 'flex' });
+  }
+
+  if (collapsed && iconMenu) {
+    style = combineStyles(style, { padding: '13px 48px 13px 13px' });
+  }
+
   return combineStyles(style, overrideStyle);
 };
 
-const body = (myMessage, fontSize, overrideStyle) => {
+const body = (myMessage, fontSize, collapsed, overrideStyle) => {
   let style = styles.body;
 
   if (myMessage) {
@@ -47,6 +56,10 @@ const body = (myMessage, fontSize, overrideStyle) => {
 
   if (fontSize === 'large') {
     style = combineStyles(style, { fontSize: '22px', lineHeight: '24px' });
+  }
+
+  if (collapsed) {
+    style = combineStyles(style, { display: 'initial' });
   }
 
   return combineStyles(style, overrideStyle);

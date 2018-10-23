@@ -22,7 +22,9 @@ const propTypes = {
   color: PropTypes.string,
   badge: PropTypes.node,
   iconMenu: PropTypes.node,
-  video: PropTypes.node.isRequired
+  video: PropTypes.node.isRequired,
+  collapsed: PropTypes.bool,
+  collapsedText: PropTypes.node.isRequired,
 };
 
 const defaultProps = {
@@ -37,7 +39,8 @@ const defaultProps = {
   compact: false,
   color: '',
   badge: null,
-  iconMenu: null
+  iconMenu: null,
+  collapsed: false
 };
 
 const VideoMessage = ({
@@ -55,12 +58,14 @@ const VideoMessage = ({
   messageTimeStyle,
   badge,
   iconMenu,
-  video
+  video,
+  collapsed,
+  collapsedText
 }) => {
   const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '9px' });
 
   return (
-    <div style={getStyles.root(color, myMessage, avatar, compact, iconMenu, style)}>
+    <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
       <MessageHeader
         avatar={avatar}
         compact={compact}
@@ -71,14 +76,19 @@ const VideoMessage = ({
         badge={badge}
         iconMenu={!isEmpty(iconMenu)}
       />
-      <p style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
-        {video}
+      <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
+        {
+          !collapsed
+          ? video
+          : <span>{collapsedText}</span>
+        }
         <MessageTime
           myMessage={myMessage}
           type={type}
           style={messageTimeStyle}
           createdAt={createdAt}
           fontSize={fontSize}
+          collapsed={collapsed}
         />
       </p>
       {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
