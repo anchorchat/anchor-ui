@@ -132,7 +132,8 @@ const messages = [
     username: currentUser,
     avatar: currentUserAvatar,
     id: 7,
-    type: 'image'
+    type: 'image',
+    collapsedText: 'This image has been collapsed.'
   },
   {
     body: 'https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif',
@@ -140,7 +141,34 @@ const messages = [
     username: faker.internet.userName(),
     avatar: faker.internet.avatar(),
     id: 8,
-    type: 'giphy'
+    type: 'giphy',
+    collapsedText: 'This GIF has been collapsed.'
+  },
+  {
+    body: 'freezing bubble movie',
+    createdAt: moment().toISOString(),
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
+    id: 9,
+    type: 'video',
+    video: (
+      <video
+        controls
+        muted
+        src="https://player.vimeo.com/external/208458665.hd.mp4?s=2001abe1e54facca01cc1ba9c074076eb711a9f8&profile_id=119&oauth2_token_id=57447761"
+        style={{
+          borderRadius: '4px',
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: '200px',
+          objectFit: 'cover'
+        }}
+      >
+        Sorry, your browser doesn&apos;t support embedded videos.
+      </video>
+    ),
+    collapsedText: 'This video has been collapsed.'
   }
 ];
 
@@ -302,11 +330,7 @@ class MessageDoc extends Component {
                     avatar={avatar ? message.avatar : null}
                     emoji
                     collapsed={collapsed}
-                    collapsedText={
-                      message.type === 'giphy'
-                      ? 'This GIF has been collapsed.'
-                      : 'This image has been collapsed.'
-                    }
+                    collapsedText={message.collapsedText}
                     fontSize={fontSize}
                     compact={compact}
                     edited={edited ? 'edited' : null}
@@ -327,6 +351,7 @@ class MessageDoc extends Component {
                     iconMenu={uiIconMenu}
                     enableMultiline={multiline}
                     imageLoaderProps={imageLoaderProps}
+                    video={message.video}
                   />
                 );
               })}

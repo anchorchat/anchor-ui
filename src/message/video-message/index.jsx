@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import colors from '../../settings/colors';
+import isEmpty from 'lodash/isEmpty';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
 import combineStyles from '../../internal/combine-styles';
 import styles from './styles';
-import ImageLoader from '../../image-loader';
 
 const propTypes = {
   avatar: PropTypes.string,
-  body: PropTypes.node.isRequired,
   createdAt: PropTypes.string.isRequired,
   username: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'video']),
@@ -24,7 +22,9 @@ const propTypes = {
   color: PropTypes.string,
   badge: PropTypes.node,
   iconMenu: PropTypes.node,
-  imageLoaderProps: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+  video: PropTypes.node.isRequired,
+  collapsed: PropTypes.bool,
+  collapsedText: PropTypes.node.isRequired,
 };
 
 const defaultProps = {
@@ -37,12 +37,13 @@ const defaultProps = {
   fontSize: 'small',
   myMessage: false,
   compact: false,
-  color: colors.theme,
+  color: '',
   badge: null,
-  iconMenu: null
+  iconMenu: null,
+  collapsed: false
 };
 
-const StickerMessage = ({
+const VideoMessage = ({
   color,
   myMessage,
   avatar,
@@ -50,7 +51,6 @@ const StickerMessage = ({
   style,
   fontSize,
   messageHeaderStyle,
-  body,
   createdAt,
   username,
   type,
@@ -58,47 +58,45 @@ const StickerMessage = ({
   messageTimeStyle,
   badge,
   iconMenu,
-  imageLoaderProps
+  video,
+  collapsed,
+  collapsedText
 }) => {
-  const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: 0 });
-
-  const imgProps = {
-    style: getStyles.body(myMessage, avatar, compact, messageBodyStyle)
-  };
+  const headerStyle = combineStyles(messageHeaderStyle, { marginBottom: '9px' });
 
   return (
-    <div style={styles.container}>
-      <div style={getStyles.header(color, myMessage, avatar, compact, iconMenu, style)}>
-        <MessageHeader
-          avatar={avatar}
-          compact={compact}
-          myMessage={myMessage}
-          fontSize={fontSize}
-          headerStyle={headerStyle}
-          username={username}
-          stickerMessage
-          badge={badge}
-        />
+    <div style={getStyles.root(color, myMessage, avatar, compact, collapsed, iconMenu, style)}>
+      <MessageHeader
+        avatar={avatar}
+        compact={compact}
+        myMessage={myMessage}
+        fontSize={fontSize}
+        headerStyle={headerStyle}
+        username={username}
+        badge={badge}
+        iconMenu={!isEmpty(iconMenu)}
+      />
+      <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
+        {
+          !collapsed
+          ? video
+          : <span>{collapsedText}</span>
+        }
         <MessageTime
           myMessage={myMessage}
           type={type}
           style={messageTimeStyle}
           createdAt={createdAt}
           fontSize={fontSize}
+          collapsed={collapsed}
         />
-        {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
-      </div>
-      <ImageLoader
-        src={body}
-        alt="user-upload"
-        imgProps={imgProps}
-        {...imageLoaderProps}
-      />
+      </p>
+      {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
     </div>
   );
 };
 
-StickerMessage.propTypes = propTypes;
-StickerMessage.defaultProps = defaultProps;
+VideoMessage.propTypes = propTypes;
+VideoMessage.defaultProps = defaultProps;
 
-export default StickerMessage;
+export default VideoMessage;
