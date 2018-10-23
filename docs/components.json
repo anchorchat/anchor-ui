@@ -5299,6 +5299,10 @@
               "computed": false
             },
             {
+              "value": "'video'",
+              "computed": false
+            },
+            {
               "value": "'audio'",
               "computed": false
             }
@@ -5557,6 +5561,17 @@
         "description": "ImageLoader props, see https://ui.anchor.chat/#/image-loader",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Video node to display a video url within a player",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },

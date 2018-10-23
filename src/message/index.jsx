@@ -7,6 +7,7 @@ import getStyles from './get-styles';
 import TextMessage from './text-message';
 import ImageMessage from './image-message';
 import GiphyMessage from './giphy-message';
+import VideoMessage from './video-message';
 import StickerMessage from './sticker-message';
 import AudioMessage from './audio-message';
 import themeable from '../themeable';
@@ -24,7 +25,7 @@ const propTypes = {
   /** The sender's username */
   username: PropTypes.node.isRequired,
   /** The message's type */
-  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'audio']),
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'video', 'audio']),
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
@@ -75,6 +76,8 @@ const propTypes = {
   enableMultiline: PropTypes.bool,
   /** ImageLoader props, see https://ui.anchor.chat/#/image-loader */
   imageLoaderProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Video node to display a video url within a player */
+  video: PropTypes.node,
   /**
    * Audio object
    *
@@ -120,6 +123,7 @@ const defaultProps = {
   iconMenu: null,
   enableMultiline: false,
   imageLoaderProps: {},
+  video: null,
   audio: {
     onPlay: noop,
     onPause: noop,
@@ -176,6 +180,10 @@ const Message = (props) => {
 
   if (type === 'giphy') {
     messageElement = <GiphyMessage color={color} {...props} />;
+  }
+
+  if (type === 'video') {
+    messageElement = <VideoMessage color={color} {...props} />;
   }
 
   if (type === 'audio') {
