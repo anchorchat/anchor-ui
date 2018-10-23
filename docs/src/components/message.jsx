@@ -132,7 +132,8 @@ const messages = [
     username: currentUser,
     avatar: currentUserAvatar,
     id: 7,
-    type: 'image'
+    type: 'image',
+    collapsedText: 'This image has been collapsed.'
   },
   {
     body: 'https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif',
@@ -140,7 +141,8 @@ const messages = [
     username: faker.internet.userName(),
     avatar: faker.internet.avatar(),
     id: 8,
-    type: 'giphy'
+    type: 'giphy',
+    collapsedText: 'This GIF has been collapsed.'
   },
   {
     body: 'freezing bubble movie',
@@ -165,7 +167,8 @@ const messages = [
       >
         Sorry, your browser doesn't support embedded videos.
       </video>
-    )
+    ),
+    collapsedText: 'This video has been collapsed.'
   }
 ];
 
@@ -327,11 +330,7 @@ class MessageDoc extends Component {
                     avatar={avatar ? message.avatar : null}
                     emoji
                     collapsed={collapsed}
-                    collapsedText={
-                      message.type === 'giphy'
-                      ? 'This GIF has been collapsed.'
-                      : 'This image has been collapsed.'
-                    }
+                    collapsedText={message.collapsedText}
                     fontSize={fontSize}
                     compact={compact}
                     edited={edited ? 'edited' : null}
