@@ -9,6 +9,7 @@ import ImageMessage from './image-message';
 import GiphyMessage from './giphy-message';
 import VideoMessage from './video-message';
 import StickerMessage from './sticker-message';
+import AudioMessage from './audio-message';
 import themeable from '../themeable';
 import styles from './styles';
 
@@ -24,7 +25,7 @@ const propTypes = {
   /** The sender's username */
   username: PropTypes.node.isRequired,
   /** The message's type */
-  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'video']),
+  type: PropTypes.oneOf(['text', 'image', 'sticker', 'giphy', 'video', 'audio']),
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the header element */
@@ -77,7 +78,25 @@ const propTypes = {
   imageLoaderProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Video node to display a video url within a player */
   video: PropTypes.node,
-  color: PropTypes.string.isRequired,
+  /**
+   * Audio object
+   *
+   * {
+   *   onPlay: function(event: object) => void,
+   *   onPause: function(event: object) => void,
+   *   isPlaying: Boolean,
+   *   progress: Number,
+   *   time: Node
+   * }
+   */
+  audio: PropTypes.shape({
+    onPlay: PropTypes.func.isRequired,
+    onPause: PropTypes.func.isRequired,
+    isPlaying: PropTypes.bool.isRequired,
+    progress: PropTypes.number.isRequired,
+    time: PropTypes.node.isRequired
+  }),
+  color: PropTypes.string.isRequired
 };
 
 const defaultProps = {
@@ -104,7 +123,14 @@ const defaultProps = {
   iconMenu: null,
   enableMultiline: false,
   imageLoaderProps: {},
-  video: null
+  video: null,
+  audio: {
+    onPlay: noop,
+    onPause: noop,
+    isPlaying: false,
+    progress: 0,
+    time: '00:00'
+  }
 };
 
 /** Messages with optional styling for the current user's message,
@@ -138,6 +164,7 @@ const Message = (props) => {
     iconMenu,
     enableMultiline,
     imageLoaderProps,
+    audio,
     ...custom
   } = props;
 
@@ -157,6 +184,10 @@ const Message = (props) => {
 
   if (type === 'video') {
     messageElement = <VideoMessage color={color} {...props} />;
+  }
+
+  if (type === 'audio') {
+    messageElement = <AudioMessage color={color} {...props} />;
   }
 
   return (

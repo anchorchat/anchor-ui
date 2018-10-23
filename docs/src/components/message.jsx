@@ -18,6 +18,8 @@ import colors from '../../../dist/settings/colors';
 import IconMenu from '../../../dist/icon-menu';
 import IconChevronDown from '../../../dist/icons/icon-chevron-down';
 import Markdown from './markdown';
+import organ from '../assets/audio/organ.mp3';
+import loop from '../assets/audio/loop.m4a';
 
 const usage = `
   \`\`\`js
@@ -82,6 +84,36 @@ const style = {
 };
 
 const messages = [
+  {
+    body: loop,
+    createdAt: moment().toISOString(),
+    username: currentUser,
+    avatar: currentUserAvatar,
+    id: 11,
+    type: 'audio',
+    audio: {
+      onPlay: noop,
+      onPause: noop,
+      isPlaying: true,
+      progress: 0.74,
+      time: '13:37'
+    }
+  },
+  {
+    body: organ,
+    createdAt: moment().toISOString(),
+    username: faker.internet.userName(),
+    avatar: faker.internet.avatar(),
+    id: 10,
+    type: 'audio',
+    audio: {
+      onPlay: noop,
+      onPause: noop,
+      isPlaying: false,
+      progress: 0,
+      time: '0:42'
+    }
+  },
   {
     body: 'Stop talking, brain thinking. @Lars Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
     createdAt: moment().toISOString(),
@@ -352,6 +384,7 @@ class MessageDoc extends Component {
                     enableMultiline={multiline}
                     imageLoaderProps={imageLoaderProps}
                     video={message.video}
+                    audio={message.audio}
                   />
                 );
               })}

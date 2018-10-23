@@ -3580,6 +3580,24 @@
       }
     }
   },
+  "components/icons/icon-pause.jsx": {
+    "description": "",
+    "displayName": "IconPause",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "components/icons/icon-people.jsx": {
     "description": "",
     "displayName": "IconPeople",
@@ -3619,6 +3637,24 @@
   "components/icons/icon-picture.jsx": {
     "description": "",
     "displayName": "IconPicture",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "components/icons/icon-play.jsx": {
+    "description": "",
+    "displayName": "IconPlay",
     "methods": [],
     "props": {
       "color": {
@@ -5265,6 +5301,10 @@
             {
               "value": "'video'",
               "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
             }
           ]
         },
@@ -5532,6 +5572,39 @@
         "description": "Video node to display a video url within a player",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": true
+            },
+            "onPause": {
+              "name": "func",
+              "required": true
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": true
+            },
+            "progress": {
+              "name": "number",
+              "required": true
+            },
+            "time": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": false,
+        "description": "Audio object\n\n{\n  onPlay: function(event: object) => void,\n  onPause: function(event: object) => void,\n  isPlaying: Boolean,\n  progress: Number,\n  time: Node\n}",
+        "defaultValue": {
+          "value": "{\n  onPlay: noop,\n  onPause: noop,\n  isPlaying: false,\n  progress: 0,\n  time: '00:00'\n}",
           "computed": false
         }
       },
