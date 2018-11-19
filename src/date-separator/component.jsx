@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import getStyles from './get-styles';
 
 const propTypes = {
-  /** The date to display */
-  date: PropTypes.string.isRequired,
+  /** Separator text */
+  text: PropTypes.node.isRequired,
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Override the styles of the text element */
@@ -20,10 +20,10 @@ const displayName = 'DateSeparator';
 
 /** A separator to show above a Message */
 const DateSeparator = ({
-  date, style, textStyle,
+  text, style, textStyle,
 }) => (
   <section style={getStyles.root(style)}>
-    <p style={getStyles.text(textStyle)}>{date}</p>
+    <p style={getStyles.text(textStyle)}>{text}</p>
   </section>
 );
 
