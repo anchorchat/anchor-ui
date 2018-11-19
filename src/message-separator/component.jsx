@@ -16,10 +16,10 @@ const defaultProps = {
   textStyle: {}
 };
 
-const displayName = 'DateSeparator';
+const displayName = 'MessageSeparator';
 
 /** A separator to show above a Message */
-const DateSeparator = ({
+const MessageSeparator = ({
   text, style, textStyle,
 }) => (
   <section style={getStyles.root(style)}>
@@ -27,8 +27,8 @@ const DateSeparator = ({
   </section>
 );
 
-DateSeparator.propTypes = propTypes;
-DateSeparator.defaultProps = defaultProps;
-DateSeparator.displayName = displayName;
+MessageSeparator.propTypes = propTypes;
+MessageSeparator.defaultProps = defaultProps;
+MessageSeparator.displayName = displayName;
 
-export default DateSeparator;
+export default MessageSeparator;
