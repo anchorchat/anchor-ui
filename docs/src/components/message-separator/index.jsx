@@ -9,7 +9,7 @@ import Props from '../props';
 import components from '../../../components.json';
 import background from '../../assets/images/channel-background.jpg';
 import Paper from '../../../../dist/paper';
-import DateSeparator from '../../../../dist/date-separator';
+import MessageSeparator from '../../../../dist/message-separator';
 import Markdown from '../markdown';
 import example from './example';
 
@@ -39,7 +39,7 @@ const messages = [
   }
 ];
 
-const componentData = find(components, { displayName: 'DateSeparator' });
+const componentData = find(components, { displayName: 'MessageSeparator' });
 
 const style = {
   paper: {
@@ -54,7 +54,7 @@ const style = {
   }
 };
 
-const DateSeparatorDoc = () => {
+const MessageSeparatorDoc = () => {
   let lastDate = moment().toISOString();
 
   return (
@@ -70,17 +70,17 @@ const DateSeparatorDoc = () => {
         <Paper style={style.paper}>
           <MessageList style={style.messageList}>
             {map(messages, (message, index) => {
-              let showDateSeparator = false;
+              let showMessageSeparator = false;
 
               if (index === 0) {
-                showDateSeparator = true;
+                showMessageSeparator = true;
               }
 
               const date = message.createdAt;
               const dateIsAfterLastDate = moment(date).diff(moment(lastDate), 'days');
 
-              if (!showDateSeparator && dateIsAfterLastDate) {
-                showDateSeparator = true;
+              if (!showMessageSeparator && dateIsAfterLastDate) {
+                showMessageSeparator = true;
               }
 
               lastDate = date;
@@ -95,7 +95,7 @@ const DateSeparatorDoc = () => {
                   myMessage={message.username === currentUser}
                   avatar={message.avatar}
                   emoji
-                  separator={showDateSeparator ? <DateSeparator date={moment(message.createdAt).format('D MMM')} /> : null}
+                  separator={showMessageSeparator ? <MessageSeparator text={moment(message.createdAt).format('D MMM')} /> : null}
                 />
               );
             })}
@@ -107,4 +107,4 @@ const DateSeparatorDoc = () => {
   );
 };
 
-export default DateSeparatorDoc;
+export default MessageSeparatorDoc;

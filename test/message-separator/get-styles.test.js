@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
-import getStyles from '../../src/date-separator/get-styles';
-import styles from '../../src/date-separator/styles';
+import getStyles from '../../src/message-separator/get-styles';
+import styles from '../../src/message-separator/styles';
 
 describe('DateSeparator.getStyles', () => {
   describe('root', () => {
