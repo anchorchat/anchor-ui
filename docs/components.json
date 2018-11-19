@@ -1304,42 +1304,6 @@
       }
     }
   },
-  "components/date-separator/component.jsx": {
-    "description": "A separator to show above a Message",
-    "displayName": "DateSeparator",
-    "methods": [],
-    "props": {
-      "date": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "The date to display"
-      },
-      "style": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textStyle": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Override the styles of the text element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
   "components/dialog/component.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
@@ -5942,6 +5906,42 @@
         "description": "Enable autoScroll",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "components/message-separator/component.jsx": {
+    "description": "A separator to show above a Message",
+    "displayName": "MessageSeparator",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Separator text"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }

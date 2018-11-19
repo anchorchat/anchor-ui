@@ -48,7 +48,7 @@ import themeable from './components/themeable';
 import Table from './components/table';
 import Pagination from './components/pagination';
 import Commands from './components/commands';
-import DateSeparator from './components/date-separator';
+import MessageSeparator from './components/message-separator';
 import EmojiFilter from './components/emoji-filter';
 import Gallery from './components/gallery';
 import Media from './components/media';
@@ -103,7 +103,7 @@ ReactDOM.render(
         <Route path="/themeable" component={themeable} />
         <Route path="/pagination" component={Pagination} />
         <Route path="/commands" component={Commands} />
-        <Route path="/date-separator" component={DateSeparator} />
+        <Route path="/message-separator" component={MessageSeparator} />
         <Route path="/emoji-filter" component={EmojiFilter} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/media" component={Media} />

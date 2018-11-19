@@ -46,7 +46,6 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/channel-header')} active={router.isActive('/channel-header')} text="ChannelHeader" />
       <MenuItem onClick={() => router.push('/checkbox')} active={router.isActive('/checkbox')} text="Checkbox" />
       <MenuItem onClick={() => router.push('/commands')} active={router.isActive('/commands')} text="Commands" />
-      <MenuItem onClick={() => router.push('/date-separator')} active={router.isActive('/date-separator')} text="DateSeparator" />
       <MenuItem onClick={() => router.push('/dialog')} active={router.isActive('/dialog')} text="Dialog" />
       <MenuItem onClick={() => router.push('/divider')} active={router.isActive('/divider')} text="Divider" />
       <MenuItem onClick={() => router.push('/emoji-filter')} active={router.isActive('/emoji-filter')} text="EmojiFilter" />
@@ -65,8 +64,9 @@ const Nav = ({ media, toggleMenu, open }, context) => {
       <MenuItem onClick={() => router.push('/menu')} active={router.isActive('/menu')} text="Menu" />
       <MenuItem onClick={() => router.push('/menu-item')} active={router.isActive('/menu-item')} text="MenuItem" />
       <MenuItem onClick={() => router.push('/message')} active={router.isActive('/message')} text="Message" />
-      <MenuItem onClick={() => router.push('/message-list')} active={router.isActive('/message-list')} text="MessageList" />
       <MenuItem onClick={() => router.push('/message-input')} active={router.isActive('/message-input')} text="MessageInput" />
+      <MenuItem onClick={() => router.push('/message-list')} active={router.isActive('/message-list')} text="MessageList" />
+      <MenuItem onClick={() => router.push('/message-separator')} active={router.isActive('/message-separator')} text="MessageSeparator" />
       <MenuItem onClick={() => router.push('/modal')} active={router.isActive('/modal')} text="Modal" />
       <MenuItem onClick={() => router.push('/pagination')} active={router.isActive('/pagination')} text="Pagination" />
       <MenuItem onClick={() => router.push('/paper')} active={router.isActive('/paper')} text="Paper" />

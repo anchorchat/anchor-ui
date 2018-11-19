@@ -5,14 +5,14 @@ import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import DateSeparator from '../../src/date-separator/component';
-import getStyles from '../../src/date-separator/get-styles';
+import DateSeparator from '../../src/message-separator/component';
+import getStyles from '../../src/message-separator/get-styles';
 
 chai.use(sinonChai);
 
 describe('DateSeparator', () => {
   const props = {
-    date: '2 Dec',
+    text: '2 Dec',
     style: {},
     textStyle: {}
   };
