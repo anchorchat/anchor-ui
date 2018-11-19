@@ -6,7 +6,7 @@ export default `
   import Message from 'anchor-ui/message';
   import MessageList from 'anchor-ui/message-list';
   import Paper from 'anchor-ui/paper';
-  import DateSeparator from 'anchor-ui/date-separator';
+  import MessageSeparator from 'anchor-ui/message-separator';
 
   const messages = [
     {
@@ -34,23 +34,23 @@ export default `
 
   const currentUser = 'Ian';
 
-  const DateSeparatorExample = () => {
+  const MessageSeparatorExample = () => {
     let lastDate = moment().toISOString();
 
     return (
       <MessageList>
         {messages.map((message, index) => {
-          let showDateSeparator = false;
+          let showMessageSeparator = false;
 
           if (index === 0) {
-            showDateSeparator = true;
+            showMessageSeparator = true;
           }
 
           const date = message.createdAt;
           const dateIsAfterLastDate = moment(date).diff(moment(lastDate), 'days');
 
-          if (!showDateSeparator && dateIsAfterLastDate) {
-            showDateSeparator = true;
+          if (!showMessageSeparator && dateIsAfterLastDate) {
+            showMessageSeparator = true;
           }
 
           lastDate = date;
@@ -65,7 +65,7 @@ export default `
               myMessage={message.username === currentUser}
               avatar={message.avatar}
               emoji
-              separator={showDateSeparator ? <DateSeparator date={moment(message.createdAt).format('D MMM')} /> : null}
+              separator={showMessageSeparator ? <MessageSeparator text={moment(message.createdAt).format('D MMM')} /> : null}
             />
           );
         })}
@@ -73,6 +73,6 @@ export default `
     );
   };
 
-  export default DateSeparatorExample;
+  export default MessageSeparatorExample;
   \`\`\`
 `;
