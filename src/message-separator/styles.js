@@ -14,7 +14,7 @@ const styles = {
     padding: '4px 8px',
     fontFamily: 'inherit',
     margin: 0,
-    backgroundColor: 'rgba(117, 127, 133, 0.4)',
+    backgroundColor: 'rgba(117, 127, 133, 0.65)',
     backdropFilter: 'blur(10px)',
     borderRadius: '4px'
   }
