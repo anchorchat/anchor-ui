@@ -46,6 +46,7 @@ export IconLock from './icon-lock';
 export IconMail from './icon-mail';
 export IconMaleFemale from './icon-male-female';
 export IconMan from './icon-man';
+export IconMask from './icon-mask';
 export IconMenu from './icon-menu';
 export IconMicrophone from './icon-microphone';
 export IconMore from './icon-more';
