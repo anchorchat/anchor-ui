@@ -94,7 +94,7 @@
     "react-event-listener": "^0.6.5",
     "react-onclickoutside": "^6.6.3",
     "react-virtualized": "^9.15.0",
-    "recompose": "^0.22.0",
+    "recompose": "^0.30.0",
     "store": "^2.0.12",
     "tlds": "^1.182.0"
   }
