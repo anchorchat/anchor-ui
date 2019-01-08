@@ -1,9 +1,9 @@
 import React from 'react';
 import find from 'lodash/find';
-import Badge from '../../../../dist/badge';
+import Badge from '../../anchor-ui/badge';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

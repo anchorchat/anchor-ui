@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
-import SearchBox from '../../../dist/search-box';
+import SearchBox from '../anchor-ui/search-box';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

@@ -1,10 +1,10 @@
 import React from 'react';
 import find from 'lodash/find';
 import faker from 'faker';
-import Avatar from '../../../../dist/avatar';
-import components from '../../../components.json';
+import Avatar from '../../anchor-ui/avatar';
+import components from '../../components.json';
 import Props from '../props';
-import Paper from '../../../../dist/paper';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

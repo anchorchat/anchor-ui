@@ -4,9 +4,9 @@ import split from 'lodash/split';
 import replace from 'lodash/replace';
 import last from 'lodash/last';
 import noop from 'lodash/noop';
-import Commands from '../../../../dist/commands';
-import MessageInput from '../../../../dist/message-input';
-import Paper from '../../../../dist/paper';
+import Commands from '../../anchor-ui/commands';
+import MessageInput from '../../anchor-ui/message-input';
+import Paper from '../../anchor-ui/paper';
 
 class SlashCommands extends Component {
   constructor() {

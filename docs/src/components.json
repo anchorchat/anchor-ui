@@ -1,5 +1,5 @@
 {
-  "components/admin-badge/component.jsx": {
+  "src/admin-badge/component.jsx": {
     "description": "Used for displaying a user's Admin role",
     "displayName": "AdminBadge",
     "methods": [],
@@ -46,7 +46,7 @@
       }
     }
   },
-  "components/alert/component.jsx": {
+  "src/alert/component.jsx": {
     "description": "Four types of (system) messages for alerting your user",
     "displayName": "Alert",
     "methods": [],
@@ -140,7 +140,7 @@
       }
     }
   },
-  "components/app-header/component.jsx": {
+  "src/app-header/component.jsx": {
     "description": "Your app's header",
     "displayName": "AppHeader",
     "methods": [],
@@ -253,7 +253,7 @@
       }
     }
   },
-  "components/avatar/component.jsx": {
+  "src/avatar/component.jsx": {
     "description": "A user's profile image",
     "displayName": "Avatar",
     "methods": [],
@@ -329,7 +329,7 @@
       }
     }
   },
-  "components/badge/component.jsx": {
+  "src/badge/component.jsx": {
     "description": "Used for displaying a (notification) counter",
     "displayName": "Badge",
     "methods": [],
@@ -383,7 +383,7 @@
       }
     }
   },
-  "components/banner/component.jsx": {
+  "src/banner/component.jsx": {
     "description": "728x90 and 320x50 banners",
     "displayName": "Banner",
     "methods": [
@@ -451,7 +451,7 @@
       }
     }
   },
-  "components/button/component.jsx": {
+  "src/button/component.jsx": {
     "description": "General purpose button with three types",
     "displayName": "Button",
     "methods": [],
@@ -538,7 +538,7 @@
       }
     }
   },
-  "components/card/component.jsx": {
+  "src/card/component.jsx": {
     "description": "A Card is a piece of paper with unique related data",
     "displayName": "Card",
     "methods": [],
@@ -563,7 +563,7 @@
       }
     }
   },
-  "components/card-content/component.jsx": {
+  "src/card-content/component.jsx": {
     "description": "A Card is a piece of paper with unique related data",
     "displayName": "CardContent",
     "methods": [],
@@ -588,7 +588,7 @@
       }
     }
   },
-  "components/card-header/component.jsx": {
+  "src/card-header/component.jsx": {
     "description": "A Card is a piece of paper with unique related data",
     "displayName": "CardHeader",
     "methods": [],
@@ -679,7 +679,7 @@
       }
     }
   },
-  "components/channel-header/component.jsx": {
+  "src/channel-header/component.jsx": {
     "description": "A channel's header",
     "displayName": "ChannelHeader",
     "methods": [],
@@ -788,7 +788,7 @@
       }
     }
   },
-  "components/checkbox/component.jsx": {
+  "src/checkbox/component.jsx": {
     "description": "A checkbox is used to verify which options you want selected from a group.",
     "displayName": "Checkbox",
     "methods": [],
@@ -907,7 +907,7 @@
       }
     }
   },
-  "components/checkbox-group/component.jsx": {
+  "src/checkbox-group/component.jsx": {
     "description": "",
     "displayName": "CheckboxGroup",
     "methods": [],
@@ -1015,7 +1015,7 @@
       }
     }
   },
-  "components/commands/component.jsx": {
+  "src/commands/component.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "Commands",
     "methods": [
@@ -1304,7 +1304,7 @@
       }
     }
   },
-  "components/dialog/component.jsx": {
+  "src/dialog/component.jsx": {
     "description": "General purpose dialog",
     "displayName": "Dialog",
     "methods": [
@@ -1415,7 +1415,7 @@
       }
     }
   },
-  "components/divider/component.jsx": {
+  "src/divider/component.jsx": {
     "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",
     "methods": [],
@@ -1444,7 +1444,7 @@
       }
     }
   },
-  "components/emoji-filter/component.jsx": {
+  "src/emoji-filter/component.jsx": {
     "description": "Used for displaying a list of commands",
     "displayName": "EmojiFilter",
     "methods": [
@@ -1654,7 +1654,7 @@
       }
     }
   },
-  "components/emoji-menu/component.jsx": {
+  "src/emoji-menu/component.jsx": {
     "description": "Menu for sending messages with emoji",
     "displayName": "EmojiMenu",
     "methods": [
@@ -1846,7 +1846,7 @@
       }
     }
   },
-  "components/emoji-menu/emoji-categories.jsx": {
+  "src/emoji-menu/emoji-categories.jsx": {
     "description": "",
     "displayName": "EmojiCategories",
     "methods": [],
@@ -1910,7 +1910,7 @@
       }
     }
   },
-  "components/emoji-menu/emoji-category.jsx": {
+  "src/emoji-menu/emoji-category.jsx": {
     "description": "",
     "displayName": "EmojiCategory",
     "methods": [],
@@ -1969,7 +1969,7 @@
       }
     }
   },
-  "components/emoji-menu/emoji-modifiers.jsx": {
+  "src/emoji-menu/emoji-modifiers.jsx": {
     "description": "",
     "displayName": "EmojiModifiers",
     "methods": [],
@@ -2032,7 +2032,7 @@
       }
     }
   },
-  "components/empty-state/component.jsx": {
+  "src/empty-state/component.jsx": {
     "description": "Pretty placeholder for empty content",
     "displayName": "EmptyState",
     "methods": [],
@@ -2108,7 +2108,7 @@
       }
     }
   },
-  "components/gallery/component.jsx": {
+  "src/gallery/component.jsx": {
     "description": "Justified grid layout for showcasing images.",
     "displayName": "Gallery",
     "methods": [
@@ -2319,7 +2319,7 @@
       }
     }
   },
-  "components/icon-menu/component.jsx": {
+  "src/icon-menu/component.jsx": {
     "description": "Open a menu from an Icon, give options related to the icon",
     "displayName": "IconMenu",
     "methods": [
@@ -2525,7 +2525,7 @@
       }
     }
   },
-  "components/icons/channel-avatar.jsx": {
+  "src/icons/channel-avatar.jsx": {
     "description": "",
     "displayName": "ChannelAvatar",
     "methods": [],
@@ -2554,7 +2554,7 @@
       }
     }
   },
-  "components/icons/icon-academic-cap.jsx": {
+  "src/icons/icon-academic-cap.jsx": {
     "description": "",
     "displayName": "IconAcademicCap",
     "methods": [],
@@ -2572,7 +2572,7 @@
       }
     }
   },
-  "components/icons/icon-activity.jsx": {
+  "src/icons/icon-activity.jsx": {
     "description": "",
     "displayName": "IconActivity",
     "methods": [],
@@ -2590,7 +2590,7 @@
       }
     }
   },
-  "components/icons/icon-add-friend.jsx": {
+  "src/icons/icon-add-friend.jsx": {
     "description": "",
     "displayName": "IconAddFriend",
     "methods": [],
@@ -2608,7 +2608,7 @@
       }
     }
   },
-  "components/icons/icon-add-image.jsx": {
+  "src/icons/icon-add-image.jsx": {
     "description": "",
     "displayName": "IconAddImage",
     "methods": [],
@@ -2626,7 +2626,7 @@
       }
     }
   },
-  "components/icons/icon-admin.jsx": {
+  "src/icons/icon-admin.jsx": {
     "description": "",
     "displayName": "IconAdmin",
     "methods": [],
@@ -2644,7 +2644,7 @@
       }
     }
   },
-  "components/icons/icon-arrow-left.jsx": {
+  "src/icons/icon-arrow-left.jsx": {
     "description": "",
     "displayName": "IconArrowLeft",
     "methods": [],
@@ -2662,7 +2662,7 @@
       }
     }
   },
-  "components/icons/icon-arrow-right.jsx": {
+  "src/icons/icon-arrow-right.jsx": {
     "description": "",
     "displayName": "IconArrowRight",
     "methods": [],
@@ -2680,7 +2680,7 @@
       }
     }
   },
-  "components/icons/icon-block.jsx": {
+  "src/icons/icon-block.jsx": {
     "description": "",
     "displayName": "IconBlock",
     "methods": [],
@@ -2698,7 +2698,7 @@
       }
     }
   },
-  "components/icons/icon-bomb.jsx": {
+  "src/icons/icon-bomb.jsx": {
     "description": "",
     "displayName": "IconBomb",
     "methods": [],
@@ -2716,7 +2716,7 @@
       }
     }
   },
-  "components/icons/icon-briefcase.jsx": {
+  "src/icons/icon-briefcase.jsx": {
     "description": "",
     "displayName": "IconBriefcase",
     "methods": [],
@@ -2734,7 +2734,7 @@
       }
     }
   },
-  "components/icons/icon-broadcast.jsx": {
+  "src/icons/icon-broadcast.jsx": {
     "description": "",
     "displayName": "IconBroadcast",
     "methods": [],
@@ -2752,7 +2752,7 @@
       }
     }
   },
-  "components/icons/icon-cart.jsx": {
+  "src/icons/icon-cart.jsx": {
     "description": "",
     "displayName": "IconCart",
     "methods": [],
@@ -2770,7 +2770,7 @@
       }
     }
   },
-  "components/icons/icon-channel-settings.jsx": {
+  "src/icons/icon-channel-settings.jsx": {
     "description": "",
     "displayName": "IconChannelSettings",
     "methods": [],
@@ -2788,7 +2788,7 @@
       }
     }
   },
-  "components/icons/icon-channel.jsx": {
+  "src/icons/icon-channel.jsx": {
     "description": "",
     "displayName": "IconChannel",
     "methods": [],
@@ -2806,7 +2806,7 @@
       }
     }
   },
-  "components/icons/icon-channels.jsx": {
+  "src/icons/icon-channels.jsx": {
     "description": "",
     "displayName": "IconChannels",
     "methods": [],
@@ -2824,7 +2824,7 @@
       }
     }
   },
-  "components/icons/icon-chart.jsx": {
+  "src/icons/icon-chart.jsx": {
     "description": "",
     "displayName": "IconChart",
     "methods": [],
@@ -2842,7 +2842,7 @@
       }
     }
   },
-  "components/icons/icon-checkbox.jsx": {
+  "src/icons/icon-checkbox.jsx": {
     "description": "",
     "displayName": "IconCheckbox",
     "methods": [],
@@ -2860,7 +2860,7 @@
       }
     }
   },
-  "components/icons/icon-chevron-down.jsx": {
+  "src/icons/icon-chevron-down.jsx": {
     "description": "",
     "displayName": "IconChevronDown",
     "methods": [],
@@ -2878,7 +2878,7 @@
       }
     }
   },
-  "components/icons/icon-chevron-left.jsx": {
+  "src/icons/icon-chevron-left.jsx": {
     "description": "",
     "displayName": "IconChevronLeft",
     "methods": [],
@@ -2896,7 +2896,7 @@
       }
     }
   },
-  "components/icons/icon-chevron-right.jsx": {
+  "src/icons/icon-chevron-right.jsx": {
     "description": "",
     "displayName": "IconChevronRight",
     "methods": [],
@@ -2914,7 +2914,7 @@
       }
     }
   },
-  "components/icons/icon-clock.jsx": {
+  "src/icons/icon-clock.jsx": {
     "description": "",
     "displayName": "IconClock",
     "methods": [],
@@ -2932,7 +2932,7 @@
       }
     }
   },
-  "components/icons/icon-close.jsx": {
+  "src/icons/icon-close.jsx": {
     "description": "",
     "displayName": "IconClose",
     "methods": [],
@@ -2950,7 +2950,7 @@
       }
     }
   },
-  "components/icons/icon-coins.jsx": {
+  "src/icons/icon-coins.jsx": {
     "description": "",
     "displayName": "IconCoins",
     "methods": [],
@@ -2968,7 +2968,7 @@
       }
     }
   },
-  "components/icons/icon-color.jsx": {
+  "src/icons/icon-color.jsx": {
     "description": "",
     "displayName": "IconColor",
     "methods": [],
@@ -2986,7 +2986,7 @@
       }
     }
   },
-  "components/icons/icon-conversation.jsx": {
+  "src/icons/icon-conversation.jsx": {
     "description": "",
     "displayName": "IconConversation",
     "methods": [],
@@ -3004,7 +3004,7 @@
       }
     }
   },
-  "components/icons/icon-delete.jsx": {
+  "src/icons/icon-delete.jsx": {
     "description": "",
     "displayName": "IconDelete",
     "methods": [],
@@ -3022,7 +3022,7 @@
       }
     }
   },
-  "components/icons/icon-edit.jsx": {
+  "src/icons/icon-edit.jsx": {
     "description": "",
     "displayName": "IconEdit",
     "methods": [],
@@ -3040,7 +3040,7 @@
       }
     }
   },
-  "components/icons/icon-emoji.jsx": {
+  "src/icons/icon-emoji.jsx": {
     "description": "",
     "displayName": "IconEmoji",
     "methods": [],
@@ -3058,7 +3058,7 @@
       }
     }
   },
-  "components/icons/icon-error.jsx": {
+  "src/icons/icon-error.jsx": {
     "description": "",
     "displayName": "IconError",
     "methods": [],
@@ -3076,7 +3076,7 @@
       }
     }
   },
-  "components/icons/icon-exit.jsx": {
+  "src/icons/icon-exit.jsx": {
     "description": "",
     "displayName": "IconExit",
     "methods": [],
@@ -3094,7 +3094,7 @@
       }
     }
   },
-  "components/icons/icon-first.jsx": {
+  "src/icons/icon-first.jsx": {
     "description": "",
     "displayName": "IconFirst",
     "methods": [],
@@ -3112,7 +3112,7 @@
       }
     }
   },
-  "components/icons/icon-font.jsx": {
+  "src/icons/icon-font.jsx": {
     "description": "",
     "displayName": "IconFont",
     "methods": [],
@@ -3130,7 +3130,7 @@
       }
     }
   },
-  "components/icons/icon-food.jsx": {
+  "src/icons/icon-food.jsx": {
     "description": "",
     "displayName": "IconFood",
     "methods": [],
@@ -3148,7 +3148,7 @@
       }
     }
   },
-  "components/icons/icon-gender-female.jsx": {
+  "src/icons/icon-gender-female.jsx": {
     "description": "",
     "displayName": "IconGenderFemale",
     "methods": [],
@@ -3166,7 +3166,7 @@
       }
     }
   },
-  "components/icons/icon-gender-male.jsx": {
+  "src/icons/icon-gender-male.jsx": {
     "description": "",
     "displayName": "IconGenderMale",
     "methods": [],
@@ -3184,7 +3184,7 @@
       }
     }
   },
-  "components/icons/icon-hammer.jsx": {
+  "src/icons/icon-hammer.jsx": {
     "description": "",
     "displayName": "IconHammer",
     "methods": [],
@@ -3202,7 +3202,7 @@
       }
     }
   },
-  "components/icons/icon-hand.jsx": {
+  "src/icons/icon-hand.jsx": {
     "description": "",
     "displayName": "IconHand",
     "methods": [],
@@ -3220,7 +3220,7 @@
       }
     }
   },
-  "components/icons/icon-heart.jsx": {
+  "src/icons/icon-heart.jsx": {
     "description": "",
     "displayName": "IconHeart",
     "methods": [],
@@ -3238,7 +3238,7 @@
       }
     }
   },
-  "components/icons/icon-home.jsx": {
+  "src/icons/icon-home.jsx": {
     "description": "",
     "displayName": "IconHome",
     "methods": [],
@@ -3256,7 +3256,7 @@
       }
     }
   },
-  "components/icons/icon-info.jsx": {
+  "src/icons/icon-info.jsx": {
     "description": "",
     "displayName": "IconInfo",
     "methods": [],
@@ -3274,7 +3274,7 @@
       }
     }
   },
-  "components/icons/icon-language.jsx": {
+  "src/icons/icon-language.jsx": {
     "description": "",
     "displayName": "IconLanguage",
     "methods": [],
@@ -3292,7 +3292,7 @@
       }
     }
   },
-  "components/icons/icon-last.jsx": {
+  "src/icons/icon-last.jsx": {
     "description": "",
     "displayName": "IconLast",
     "methods": [],
@@ -3310,7 +3310,7 @@
       }
     }
   },
-  "components/icons/icon-location.jsx": {
+  "src/icons/icon-location.jsx": {
     "description": "",
     "displayName": "IconLocation",
     "methods": [],
@@ -3328,7 +3328,7 @@
       }
     }
   },
-  "components/icons/icon-lock.jsx": {
+  "src/icons/icon-lock.jsx": {
     "description": "",
     "displayName": "IconLock",
     "methods": [],
@@ -3346,7 +3346,7 @@
       }
     }
   },
-  "components/icons/icon-mail.jsx": {
+  "src/icons/icon-mail.jsx": {
     "description": "",
     "displayName": "IconMail",
     "methods": [],
@@ -3364,7 +3364,7 @@
       }
     }
   },
-  "components/icons/icon-male-female.jsx": {
+  "src/icons/icon-male-female.jsx": {
     "description": "",
     "displayName": "IconMaleFemale",
     "methods": [],
@@ -3382,7 +3382,7 @@
       }
     }
   },
-  "components/icons/icon-man.jsx": {
+  "src/icons/icon-man.jsx": {
     "description": "",
     "displayName": "IconMan",
     "methods": [],
@@ -3400,7 +3400,25 @@
       }
     }
   },
-  "components/icons/icon-menu.jsx": {
+  "src/icons/icon-mask.jsx": {
+    "description": "",
+    "displayName": "IconMask",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
+  "src/icons/icon-menu.jsx": {
     "description": "",
     "displayName": "IconMenu",
     "methods": [],
@@ -3418,7 +3436,7 @@
       }
     }
   },
-  "components/icons/icon-microphone.jsx": {
+  "src/icons/icon-microphone.jsx": {
     "description": "",
     "displayName": "IconMicrophone",
     "methods": [],
@@ -3436,7 +3454,7 @@
       }
     }
   },
-  "components/icons/icon-more.jsx": {
+  "src/icons/icon-more.jsx": {
     "description": "",
     "displayName": "IconMore",
     "methods": [],
@@ -3454,7 +3472,7 @@
       }
     }
   },
-  "components/icons/icon-mute.jsx": {
+  "src/icons/icon-mute.jsx": {
     "description": "",
     "displayName": "IconMute",
     "methods": [],
@@ -3472,7 +3490,7 @@
       }
     }
   },
-  "components/icons/icon-nature.jsx": {
+  "src/icons/icon-nature.jsx": {
     "description": "",
     "displayName": "IconNature",
     "methods": [],
@@ -3490,7 +3508,7 @@
       }
     }
   },
-  "components/icons/icon-newspaper.jsx": {
+  "src/icons/icon-newspaper.jsx": {
     "description": "",
     "displayName": "IconNewspaper",
     "methods": [],
@@ -3508,7 +3526,7 @@
       }
     }
   },
-  "components/icons/icon-notification.jsx": {
+  "src/icons/icon-notification.jsx": {
     "description": "",
     "displayName": "IconNotification",
     "methods": [],
@@ -3526,7 +3544,7 @@
       }
     }
   },
-  "components/icons/icon-objects.jsx": {
+  "src/icons/icon-objects.jsx": {
     "description": "",
     "displayName": "IconObjects",
     "methods": [],
@@ -3544,7 +3562,7 @@
       }
     }
   },
-  "components/icons/icon-pause.jsx": {
+  "src/icons/icon-pause.jsx": {
     "description": "",
     "displayName": "IconPause",
     "methods": [],
@@ -3562,7 +3580,7 @@
       }
     }
   },
-  "components/icons/icon-people.jsx": {
+  "src/icons/icon-people.jsx": {
     "description": "",
     "displayName": "IconPeople",
     "methods": [],
@@ -3580,7 +3598,7 @@
       }
     }
   },
-  "components/icons/icon-person.jsx": {
+  "src/icons/icon-person.jsx": {
     "description": "",
     "displayName": "IconPerson",
     "methods": [],
@@ -3598,7 +3616,7 @@
       }
     }
   },
-  "components/icons/icon-picture.jsx": {
+  "src/icons/icon-picture.jsx": {
     "description": "",
     "displayName": "IconPicture",
     "methods": [],
@@ -3616,7 +3634,7 @@
       }
     }
   },
-  "components/icons/icon-play.jsx": {
+  "src/icons/icon-play.jsx": {
     "description": "",
     "displayName": "IconPlay",
     "methods": [],
@@ -3634,7 +3652,7 @@
       }
     }
   },
-  "components/icons/icon-plus.jsx": {
+  "src/icons/icon-plus.jsx": {
     "description": "",
     "displayName": "IconPlus",
     "methods": [],
@@ -3652,7 +3670,7 @@
       }
     }
   },
-  "components/icons/icon-power.jsx": {
+  "src/icons/icon-power.jsx": {
     "description": "",
     "displayName": "IconPower",
     "methods": [],
@@ -3670,7 +3688,7 @@
       }
     }
   },
-  "components/icons/icon-question.jsx": {
+  "src/icons/icon-question.jsx": {
     "description": "",
     "displayName": "IconQuestion",
     "methods": [],
@@ -3688,7 +3706,7 @@
       }
     }
   },
-  "components/icons/icon-radio.jsx": {
+  "src/icons/icon-radio.jsx": {
     "description": "",
     "displayName": "IconRadio",
     "methods": [],
@@ -3706,7 +3724,7 @@
       }
     }
   },
-  "components/icons/icon-refresh.jsx": {
+  "src/icons/icon-refresh.jsx": {
     "description": "",
     "displayName": "IconRefresh",
     "methods": [],
@@ -3724,7 +3742,7 @@
       }
     }
   },
-  "components/icons/icon-remove-friend.jsx": {
+  "src/icons/icon-remove-friend.jsx": {
     "description": "",
     "displayName": "IconRemoveFriend",
     "methods": [],
@@ -3742,7 +3760,7 @@
       }
     }
   },
-  "components/icons/icon-report.jsx": {
+  "src/icons/icon-report.jsx": {
     "description": "",
     "displayName": "IconReport",
     "methods": [],
@@ -3760,7 +3778,7 @@
       }
     }
   },
-  "components/icons/icon-rocket.jsx": {
+  "src/icons/icon-rocket.jsx": {
     "description": "",
     "displayName": "IconRocket",
     "methods": [],
@@ -3778,7 +3796,7 @@
       }
     }
   },
-  "components/icons/icon-rules.jsx": {
+  "src/icons/icon-rules.jsx": {
     "description": "",
     "displayName": "IconRules",
     "methods": [],
@@ -3796,7 +3814,7 @@
       }
     }
   },
-  "components/icons/icon-search.jsx": {
+  "src/icons/icon-search.jsx": {
     "description": "",
     "displayName": "IconSearch",
     "methods": [],
@@ -3814,7 +3832,7 @@
       }
     }
   },
-  "components/icons/icon-send.jsx": {
+  "src/icons/icon-send.jsx": {
     "description": "",
     "displayName": "IconSend",
     "methods": [],
@@ -3832,7 +3850,7 @@
       }
     }
   },
-  "components/icons/icon-settings.jsx": {
+  "src/icons/icon-settings.jsx": {
     "description": "",
     "displayName": "IconSettings",
     "methods": [],
@@ -3850,7 +3868,7 @@
       }
     }
   },
-  "components/icons/icon-shop.jsx": {
+  "src/icons/icon-shop.jsx": {
     "description": "",
     "displayName": "IconShop",
     "methods": [],
@@ -3868,7 +3886,7 @@
       }
     }
   },
-  "components/icons/icon-sticker.jsx": {
+  "src/icons/icon-sticker.jsx": {
     "description": "",
     "displayName": "IconSticker",
     "methods": [],
@@ -3886,7 +3904,7 @@
       }
     }
   },
-  "components/icons/icon-success.jsx": {
+  "src/icons/icon-success.jsx": {
     "description": "",
     "displayName": "IconSuccess",
     "methods": [],
@@ -3904,7 +3922,7 @@
       }
     }
   },
-  "components/icons/icon-symbols.jsx": {
+  "src/icons/icon-symbols.jsx": {
     "description": "",
     "displayName": "IconSymbols",
     "methods": [],
@@ -3922,7 +3940,7 @@
       }
     }
   },
-  "components/icons/icon-thumbs-down.jsx": {
+  "src/icons/icon-thumbs-down.jsx": {
     "description": "",
     "displayName": "IconThumbsDown",
     "methods": [],
@@ -3940,7 +3958,7 @@
       }
     }
   },
-  "components/icons/icon-thumbs-up.jsx": {
+  "src/icons/icon-thumbs-up.jsx": {
     "description": "",
     "displayName": "IconThumbsUp",
     "methods": [],
@@ -3958,7 +3976,7 @@
       }
     }
   },
-  "components/icons/icon-tools.jsx": {
+  "src/icons/icon-tools.jsx": {
     "description": "",
     "displayName": "IconTools",
     "methods": [],
@@ -3976,7 +3994,7 @@
       }
     }
   },
-  "components/icons/icon-travel.jsx": {
+  "src/icons/icon-travel.jsx": {
     "description": "",
     "displayName": "IconTravel",
     "methods": [],
@@ -3994,7 +4012,7 @@
       }
     }
   },
-  "components/icons/icon-upload.jsx": {
+  "src/icons/icon-upload.jsx": {
     "description": "",
     "displayName": "IconUpload",
     "methods": [],
@@ -4012,7 +4030,7 @@
       }
     }
   },
-  "components/icons/icon-verified.jsx": {
+  "src/icons/icon-verified.jsx": {
     "description": "",
     "displayName": "IconVerified",
     "methods": [],
@@ -4030,7 +4048,7 @@
       }
     }
   },
-  "components/icons/icon-warning.jsx": {
+  "src/icons/icon-warning.jsx": {
     "description": "",
     "displayName": "IconWarning",
     "methods": [],
@@ -4048,7 +4066,7 @@
       }
     }
   },
-  "components/icons/icon-woman.jsx": {
+  "src/icons/icon-woman.jsx": {
     "description": "",
     "displayName": "IconWoman",
     "methods": [],
@@ -4066,7 +4084,7 @@
       }
     }
   },
-  "components/image-loader/component.jsx": {
+  "src/image-loader/component.jsx": {
     "description": "",
     "displayName": "ImageLoader",
     "methods": [
@@ -4192,7 +4210,7 @@
       }
     }
   },
-  "components/input/component.jsx": {
+  "src/input/component.jsx": {
     "description": "General purpose form input",
     "displayName": "Input",
     "methods": [
@@ -4402,7 +4420,7 @@
       }
     }
   },
-  "components/lightbox/component.jsx": {
+  "src/lightbox/component.jsx": {
     "description": "Lightbox for images",
     "displayName": "Lightbox",
     "methods": [
@@ -4491,7 +4509,7 @@
       }
     }
   },
-  "components/list/component.jsx": {
+  "src/list/component.jsx": {
     "description": "A wrapper for ListItems",
     "displayName": "List",
     "methods": [
@@ -4646,7 +4664,7 @@
       }
     }
   },
-  "components/list-item/component.jsx": {
+  "src/list-item/component.jsx": {
     "description": "A list's item",
     "displayName": "ListItem",
     "methods": [],
@@ -4799,7 +4817,7 @@
       }
     }
   },
-  "components/loader/component.jsx": {
+  "src/loader/component.jsx": {
     "description": "Animated loader",
     "displayName": "Loader",
     "methods": [],
@@ -4846,7 +4864,7 @@
       }
     }
   },
-  "components/media/index.jsx": {
+  "src/media/index.jsx": {
     "description": "CSS media query component, listens to matches for given queries",
     "displayName": "Media",
     "methods": [
@@ -4878,7 +4896,7 @@
       }
     }
   },
-  "components/menu/component.jsx": {
+  "src/menu/component.jsx": {
     "description": "Menu that slides in from the left or right",
     "displayName": "Menu",
     "methods": [
@@ -5050,7 +5068,7 @@
       }
     }
   },
-  "components/menu-item/index.jsx": {
+  "src/menu-item/index.jsx": {
     "description": "General purpose menu item",
     "displayName": "MenuItem",
     "methods": [
@@ -5205,7 +5223,721 @@
       }
     }
   },
-  "components/message/index.jsx": {
+  "src/message/audio-message/index.jsx": {
+    "description": "",
+    "displayName": "AudioMessage",
+    "methods": [
+      {
+        "name": "renderButton",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "createdAt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'audio'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconMenu": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": true
+            },
+            "onPause": {
+              "name": "func",
+              "required": true
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": true
+            },
+            "progress": {
+              "name": "number",
+              "required": true
+            },
+            "time": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "src/message/giphy-message/index.jsx": {
+    "description": "",
+    "displayName": "GiphyMessage",
+    "methods": [
+      {
+        "name": "toggleLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "body": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "createdAt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "enableLightbox": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "collapsedText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "giphyDescription": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imageLoaderProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "iconMenu": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/message/image-message/index.jsx": {
+    "description": "",
+    "displayName": "ImageMessage",
+    "methods": [
+      {
+        "name": "toggleLightbox",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "body": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "createdAt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "enableLightbox": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "collapsedText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imageLoaderProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "iconMenu": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/message/index.jsx": {
     "description": "Messages with optional styling for the current user's message,\ndifferent font sizes and message styles",
     "displayName": "Message",
     "methods": [],
@@ -5581,7 +6313,921 @@
       }
     }
   },
-  "components/message-input/index.jsx": {
+  "src/message/message-header/index.jsx": {
+    "description": "",
+    "displayName": "MessageHeader",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconMenu": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/message/message-time/index.jsx": {
+    "description": "",
+    "displayName": "MessageTime",
+    "methods": [],
+    "props": {
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "createdAt": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "edited": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/message/sticker-message/index.jsx": {
+    "description": "",
+    "displayName": "StickerMessage",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "body": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "createdAt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconMenu": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imageLoaderProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "src/message/text-message/index.jsx": {
+    "description": "",
+    "displayName": "TextMessage",
+    "methods": [
+      {
+        "name": "createMarkup",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "parseHtml",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "body": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "createdAt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "emoji": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "enableLinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "edited": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.theme",
+          "computed": true
+        }
+      },
+      "highlights": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "id": {
+                "name": "string",
+                "required": false
+              },
+              "prefix": {
+                "name": "string",
+                "required": false
+              },
+              "value": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onHighlightClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconMenu": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "enableMultiline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/message/video-message/index.jsx": {
+    "description": "",
+    "displayName": "VideoMessage",
+    "methods": [],
+    "props": {
+      "avatar": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "createdAt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "username": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'sticker'",
+              "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageHeaderStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageBodyStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "messageTimeStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fontSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "myMessage": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "compact": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "badge": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconMenu": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "collapsedText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "src/message-input/index.jsx": {
     "description": "Message input with send button",
     "displayName": "MessageInput",
     "methods": [
@@ -5810,7 +7456,7 @@
       }
     }
   },
-  "components/message-list/index.jsx": {
+  "src/message-list/index.jsx": {
     "description": "Render a list of items (Messages) with optional auto scroll",
     "displayName": "MessageList",
     "methods": [
@@ -5911,7 +7557,7 @@
       }
     }
   },
-  "components/message-separator/component.jsx": {
+  "src/message-separator/component.jsx": {
     "description": "A separator to show above a Message",
     "displayName": "MessageSeparator",
     "methods": [],
@@ -5947,7 +7593,7 @@
       }
     }
   },
-  "components/modal/index.jsx": {
+  "src/modal/index.jsx": {
     "description": "A dialog that can only be closed by selecting one of the actions.",
     "displayName": "Modal",
     "methods": [],
@@ -6052,7 +7698,7 @@
       }
     }
   },
-  "components/overlay/index.jsx": {
+  "src/overlay/index.jsx": {
     "description": "Overlay with dark transparent background, useful for rendering Dialogs in",
     "displayName": "Overlay",
     "methods": [],
@@ -6081,7 +7727,7 @@
       }
     }
   },
-  "components/pagination/index.jsx": {
+  "src/pagination/index.jsx": {
     "description": "Navigate through large sets of data",
     "displayName": "Pagination",
     "methods": [
@@ -6236,7 +7882,7 @@
       }
     }
   },
-  "components/paper/index.jsx": {
+  "src/paper/index.jsx": {
     "description": "A Paper element is a basic container that can give depth to the page.",
     "displayName": "Paper",
     "methods": [],
@@ -6294,7 +7940,7 @@
       }
     }
   },
-  "components/pop-over/index.jsx": {
+  "src/pop-over/index.jsx": {
     "description": "Pop over useful for showing tooltips or menu options",
     "displayName": "PopOver",
     "methods": [],
@@ -6414,7 +8060,7 @@
       }
     }
   },
-  "components/portal/index.jsx": {
+  "src/portal/index.jsx": {
     "description": "Transportation of elements",
     "displayName": "Portal",
     "methods": [],
@@ -6439,7 +8085,7 @@
       }
     }
   },
-  "components/profile/component.jsx": {
+  "src/profile/component.jsx": {
     "description": "Profile useful for showing a user's info",
     "displayName": "Profile",
     "methods": [],
@@ -6603,7 +8249,7 @@
       }
     }
   },
-  "components/profile-card/component.jsx": {
+  "src/profile-card/component.jsx": {
     "description": "Card containing a user's profile data",
     "displayName": "ProfileCard",
     "methods": [],
@@ -6657,7 +8303,7 @@
       }
     }
   },
-  "components/radio-button/index.jsx": {
+  "src/radio-button/index.jsx": {
     "description": "Radio buttons are switches used for selection from multiple options",
     "displayName": "RadioButton",
     "methods": [],
@@ -6762,7 +8408,7 @@
       }
     }
   },
-  "components/radio-button-group/index.jsx": {
+  "src/radio-button-group/index.jsx": {
     "description": "",
     "displayName": "RadioButtonGroup",
     "methods": [],
@@ -6860,7 +8506,7 @@
       }
     }
   },
-  "components/search-box/component.jsx": {
+  "src/search-box/component.jsx": {
     "description": "General purpose Search box",
     "displayName": "SearchBox",
     "methods": [
@@ -6990,7 +8636,7 @@
       }
     }
   },
-  "components/select/component.jsx": {
+  "src/select/component.jsx": {
     "description": "",
     "displayName": "Select",
     "methods": [
@@ -7173,7 +8819,7 @@
       }
     }
   },
-  "components/slider/component.jsx": {
+  "src/slider/component.jsx": {
     "description": "General purpose form slider",
     "displayName": "Slider",
     "methods": [],
@@ -7310,7 +8956,7 @@
       }
     }
   },
-  "components/switch/component.jsx": {
+  "src/switch/component.jsx": {
     "description": "",
     "displayName": "Switch",
     "methods": [],
@@ -7393,7 +9039,7 @@
       }
     }
   },
-  "components/tab/index.jsx": {
+  "src/tab/index.jsx": {
     "description": "",
     "displayName": "Tab",
     "methods": [],
@@ -7520,7 +9166,7 @@
       }
     }
   },
-  "components/table/index.jsx": {
+  "src/table/index.jsx": {
     "description": "Tables are used to display data.",
     "displayName": "Table",
     "methods": [],
@@ -7545,7 +9191,7 @@
       }
     }
   },
-  "components/table-body/index.jsx": {
+  "src/table-body/index.jsx": {
     "description": "TableBodys are used to display data.",
     "displayName": "TableBody",
     "methods": [],
@@ -7570,7 +9216,7 @@
       }
     }
   },
-  "components/table-column/index.jsx": {
+  "src/table-column/index.jsx": {
     "description": "TableColumns are used to display data.",
     "displayName": "TableColumn",
     "methods": [],
@@ -7595,7 +9241,7 @@
       }
     }
   },
-  "components/table-header/index.jsx": {
+  "src/table-header/index.jsx": {
     "description": "TableHeaders are used to display data.",
     "displayName": "TableHeader",
     "methods": [],
@@ -7627,7 +9273,7 @@
       }
     }
   },
-  "components/table-header-column/index.jsx": {
+  "src/table-header-column/index.jsx": {
     "description": "TableHeaderColumns are used to display data.",
     "displayName": "TableHeaderColumn",
     "methods": [],
@@ -7652,7 +9298,7 @@
       }
     }
   },
-  "components/table-row/index.jsx": {
+  "src/table-row/index.jsx": {
     "description": "TableRows are used to display data.",
     "displayName": "TableRow",
     "methods": [],
@@ -7677,7 +9323,7 @@
       }
     }
   },
-  "components/tabs/index.jsx": {
+  "src/tabs/index.jsx": {
     "description": "",
     "displayName": "Tabs",
     "methods": [
@@ -7812,7 +9458,7 @@
       }
     }
   },
-  "components/theme-provider/index.jsx": {
+  "src/theme-provider/index.jsx": {
     "description": "",
     "displayName": "ThemeProvider",
     "methods": [],

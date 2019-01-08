@@ -1,10 +1,10 @@
 import React from 'react';
 import find from 'lodash/find';
-import Tab from '../../../dist/tab';
-import Tabs from '../../../dist/tabs';
+import Tab from '../anchor-ui/tab';
+import Tabs from '../anchor-ui/tabs';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

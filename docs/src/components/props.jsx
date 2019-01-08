@@ -4,13 +4,13 @@ import replace from 'lodash/replace';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import escape from 'escape-html';
-import Table from '../../../dist/table';
-import TableHeader from '../../../dist/table-header';
-import TableHeaderColumn from '../../../dist/table-header-column';
-import TableBody from '../../../dist/table-body';
-import TableRow from '../../../dist/table-row';
-import TableColumn from '../../../dist/table-column';
-import urlRegex from '../../../dist/url-regex';
+import Table from '../anchor-ui/table';
+import TableHeader from '../anchor-ui/table-header';
+import TableHeaderColumn from '../anchor-ui/table-header-column';
+import TableBody from '../anchor-ui/table-body';
+import TableRow from '../anchor-ui/table-row';
+import TableColumn from '../anchor-ui/table-column';
+import urlRegex from '../anchor-ui/url-regex';
 
 const getPropType = (type) => {
   if (type.name === 'instanceOf') {

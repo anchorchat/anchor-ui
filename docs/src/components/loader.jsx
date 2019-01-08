@@ -1,11 +1,11 @@
 import React from 'react';
 import find from 'lodash/find';
-import Loader from '../../../dist/loader';
-import colors from '../../../dist/settings/colors';
+import Loader from '../anchor-ui/loader';
+import colors from '../anchor-ui/settings/colors';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Alert from '../../../dist/alert';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
+import Alert from '../anchor-ui/alert';
 import Markdown from './markdown';
 
 const usage = `

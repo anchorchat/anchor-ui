@@ -1,12 +1,12 @@
 import React from 'react';
 import find from 'lodash/find';
 import replace from 'lodash/replace';
-import MessageInput from '../../../../dist/message-input';
-import Button from '../../../../dist/button';
-import IconEmoji from '../../../../dist/icons/icon-emoji';
+import MessageInput from '../../anchor-ui/message-input';
+import Button from '../../anchor-ui/button';
+import IconEmoji from '../../anchor-ui/icons/icon-emoji';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import example from './example';
 import Markdown from '../markdown';
 

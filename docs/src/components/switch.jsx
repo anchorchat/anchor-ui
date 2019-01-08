@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Switch from '../../../dist/switch';
+import Switch from '../anchor-ui/switch';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

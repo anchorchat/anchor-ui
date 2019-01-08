@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import sample from 'lodash/sample';
-import Menu from '../../../dist/menu';
-import MenuItem from '../../../dist/menu-item';
-import npmPackage from '../../../package.json';
-import * as icons from '../../../dist/icons';
+import Menu from '../anchor-ui/menu';
+import MenuItem from '../anchor-ui/menu-item';
+import * as icons from '../anchor-ui/icons';
 
 const propTypes = {
   media: PropTypes.shape({
@@ -34,7 +33,6 @@ const Nav = ({ media, toggleMenu, open }, context) => {
 
   return (
     <Menu
-      header={`Version: ${npmPackage.version}`}
       headerIcon={React.createElement(sample(icons), { style: style.icon })}
       closeMenu={!media.medium ? toggleMenu : null}
       open={open}

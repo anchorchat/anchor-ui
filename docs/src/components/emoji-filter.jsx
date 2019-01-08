@@ -6,11 +6,11 @@ import split from 'lodash/split';
 import replace from 'lodash/replace';
 import noop from 'lodash/noop';
 import last from 'lodash/last';
-import EmojiFilter from '../../../dist/emoji-filter';
-import MessageInput from '../../../dist/message-input';
+import EmojiFilter from '../anchor-ui/emoji-filter';
+import MessageInput from '../anchor-ui/message-input';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

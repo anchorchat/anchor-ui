@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import find from 'lodash/find';
 import range from 'lodash/range';
 import map from 'lodash/map';
-import Pagination from '../../../dist/pagination';
+import Pagination from '../anchor-ui/pagination';
 import Props from './props';
-import components from '../../components.json';
-import Button from '../../../dist/button';
-import Paper from '../../../dist/paper';
-import Table from '../../../dist/table';
-import TableHeader from '../../../dist/table-header';
-import TableHeaderColumn from '../../../dist/table-header-column';
-import TableBody from '../../../dist/table-body';
-import TableRow from '../../../dist/table-row';
-import TableColumn from '../../../dist/table-column';
+import components from '../components.json';
+import Button from '../anchor-ui/button';
+import Paper from '../anchor-ui/paper';
+import Table from '../anchor-ui/table';
+import TableHeader from '../anchor-ui/table-header';
+import TableHeaderColumn from '../anchor-ui/table-header-column';
+import TableBody from '../anchor-ui/table-body';
+import TableRow from '../anchor-ui/table-row';
+import TableColumn from '../anchor-ui/table-column';
 import Markdown from './markdown';
 
 const usage = `

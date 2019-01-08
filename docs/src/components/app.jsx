@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
-import AppHeader from '../../../dist/app-header';
-import Button from '../../../dist/button';
+import AppHeader from '../anchor-ui/app-header';
+import Button from '../anchor-ui/button';
 import Nav from './nav';
 import logo from '../assets/images/logo.svg';
 import github from '../assets/images/github.svg';
-import ThemeProvider from '../../../dist/theme-provider';
-import colors from '../../../dist/settings/colors';
-import Media from '../../../dist/media';
-import IconMenu from '../../../dist/icons/icon-menu';
+import ThemeProvider from '../anchor-ui/theme-provider';
+import colors from '../anchor-ui/settings/colors';
+import Media from '../anchor-ui/media';
+import IconMenu from '../anchor-ui/icons/icon-menu';
 
 class App extends Component {
   constructor() {

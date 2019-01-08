@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import MenuItem from '../../../dist/menu-item';
-import Select from '../../../dist/select';
+import MenuItem from '../anchor-ui/menu-item';
+import Select from '../anchor-ui/select';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

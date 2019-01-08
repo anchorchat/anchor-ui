@@ -9,7 +9,7 @@
   "scripts": {
     "test": "NODE_ENV=test nyc mocha --opts ./mocha.opts test/*",
     "test:watch": "NODE_ENV=test mocha --opts ./mocha.opts --watch test/*",
-    "watch": "babel -d dist/ -w src/",
+    "watch": "babel -d docs/src/anchor-ui -w src/",
     "compile": "rimraf dist && babel -d dist/ src/",
     "compile:travis": "rimraf anchor-ui && babel -d anchor-ui/ src/",
     "lint": "eslint '{src,docs/src,test}/**/**/*.{js,jsx}'",
@@ -18,7 +18,7 @@
     "build": "npm run compile && npm run copy",
     "build:travis": "npm run compile:travis && npm run copy:travis",
     "dist": "cd dist && npm publish",
-    "docs": "react-docgen components --out docs/components.json --pretty",
+    "docs": "react-docgen src --out docs/src/components.json --pretty",
     "emojione": "node parse-emoji.js > src/emoji-menu/emoji.js",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
@@ -59,6 +59,7 @@
     "eslint-plugin-mocha": "^5.2.1",
     "eslint-plugin-react": "^7.5.1",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
     "nyc": "^13.1.0",
     "prettier": "^1.7.4",
     "react": "^16.0.0",

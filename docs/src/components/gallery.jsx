@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Gallery from '../../../dist/gallery';
+import Gallery from '../anchor-ui/gallery';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Select from '../../../dist/select';
-import MenuItem from '../../../dist/menu-item';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
+import Select from '../anchor-ui/select';
+import MenuItem from '../anchor-ui/menu-item';
 import Markdown from './markdown';
 
 const usage = `

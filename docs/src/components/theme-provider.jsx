@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
-import ThemeProvider from '../../../dist/theme-provider';
-import Button from '../../../dist/button';
+import ThemeProvider from '../anchor-ui/theme-provider';
+import Button from '../anchor-ui/button';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import colors from '../../../dist/settings/colors';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
+import colors from '../anchor-ui/settings/colors';
 import Markdown from './markdown';
 
 const usage = `

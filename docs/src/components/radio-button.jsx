@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import faker from 'faker';
-import RadioButton from '../../../dist/radio-button';
-import RadioButtonGroup from '../../../dist/radio-button-group';
+import RadioButton from '../anchor-ui/radio-button';
+import RadioButtonGroup from '../anchor-ui/radio-button-group';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Avatar from '../../../dist/avatar';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
+import Avatar from '../anchor-ui/avatar';
 import Markdown from './markdown';
 
 const usage = `

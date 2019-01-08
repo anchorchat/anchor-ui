@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import emojione from 'emojione';
-import EmojiMenu from '../../../../dist/emoji-menu';
-import Button from '../../../../dist/button';
+import EmojiMenu from '../../anchor-ui/emoji-menu';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

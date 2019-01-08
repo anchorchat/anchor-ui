@@ -1,10 +1,10 @@
 import React from 'react';
 import find from 'lodash/find';
 import faker from 'faker';
-import ProfileCard from '../../../dist/profile-card';
-import components from '../../components.json';
+import ProfileCard from '../anchor-ui/profile-card';
+import components from '../components.json';
 import Props from './props';
-import Paper from '../../../dist/paper';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
