@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import sample from 'lodash/sample';
+// import sample from 'lodash/sample';
 import Menu from '../anchor-ui/menu';
 import MenuItem from '../anchor-ui/menu-item';
-import * as icons from '../anchor-ui/icons';
+// import * as icons from '../anchor-ui/icons';
 
 const propTypes = {
   media: PropTypes.shape({
@@ -24,16 +24,17 @@ const contextTypes = {
 const Nav = ({ media, toggleMenu, open }, context) => {
   const { router } = context;
 
-  const style = {
-    icon: {
-      width: '24px',
-      height: '24px'
-    }
-  };
+  // const style = {
+  //   icon: {
+  //     width: '24px',
+  //     height: '24px'
+  //   }
+  // };
 
   return (
     <Menu
-      headerIcon={React.createElement(sample(icons), { style: style.icon })}
+      // header={`Version: ${npmPackage.version}`}
+      // headerIcon={React.createElement(sample(icons), { style: style.icon })}
       closeMenu={!media.medium ? toggleMenu : null}
       open={open}
     >
