@@ -73,10 +73,10 @@ describe('MenuItem', () => {
   });
 
   it('should render a div element if the rightButton prop is passed', () => {
-    props.rightButton = <button />;
+    props.rightButton = <button />; // eslint-disable-line react/button-has-type
     const wrapper = shallow(<MenuItem {...props} />).dive();
 
-    expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<div><button /></div>)).to.equal(true); // eslint-disable-line react/button-has-type
     props.rightButton = null;
   });
 

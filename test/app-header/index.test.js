@@ -43,9 +43,9 @@ describe('AppHeader', () => {
 
     expect(component.find('div')).to.have.length(0);
 
-    component.setProps({ leftButton: <button /> });
+    component.setProps({ leftButton: <button /> }); // eslint-disable-line react/button-has-type
     expect(component.find('div')).to.have.length(1);
-    expect(component.find('div').containsMatchingElement(<button />)).to.equal(true);
+    expect(component.find('div').containsMatchingElement(<button />)).to.equal(true); // eslint-disable-line react/button-has-type
   });
 
   it('should render icon element', () => {
@@ -76,9 +76,9 @@ describe('AppHeader', () => {
 
     expect(component.find('div')).to.have.length(0);
 
-    component.setProps({ rightButton: <button /> });
+    component.setProps({ rightButton: <button /> }); // eslint-disable-line react/button-has-type
     expect(component.find('div')).to.have.length(1);
-    expect(component.find('div').containsMatchingElement(<button />)).to.equal(true);
+    expect(component.find('div').containsMatchingElement(<button />)).to.equal(true); // eslint-disable-line react/button-has-type
   });
 
   it('should get root styles', () => {
@@ -97,7 +97,7 @@ describe('AppHeader', () => {
     const spy = sinon.spy(getStyles, 'leftButton');
     const combinedProps = {
       ...props,
-      leftButton: <button />
+      leftButton: <button /> // eslint-disable-line react/button-has-type
     };
 
     shallow(<AppHeader {...combinedProps} />);
@@ -130,7 +130,7 @@ describe('AppHeader', () => {
     const spy = sinon.spy(getStyles, 'rightButton');
     const combinedProps = {
       ...props,
-      rightButton: <button />
+      rightButton: <button /> // eslint-disable-line react/button-has-type
     };
 
     shallow(<AppHeader {...combinedProps} />);

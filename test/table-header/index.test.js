@@ -26,13 +26,13 @@ describe('TableHeader', () => {
   });
 
   it('should always render a thead element', () => {
-    const wrapper = shallow(<TableHeader {...props} >{children}</TableHeader>).dive();
+    const wrapper = shallow(<TableHeader {...props}>{children}</TableHeader>).dive();
 
     expect(wrapper.find('thead')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<TableHeader {...props} >{children}</TableHeader>).dive();
+    const wrapper = shallow(<TableHeader {...props}>{children}</TableHeader>).dive();
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -40,7 +40,7 @@ describe('TableHeader', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<TableHeader {...props} >{children}</TableHeader>).dive();
+    shallow(<TableHeader {...props}>{children}</TableHeader>).dive();
     expect(spy).to.have.been.calledWith(props.color, props.style);
   });
 });

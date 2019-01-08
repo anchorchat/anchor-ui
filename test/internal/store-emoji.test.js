@@ -45,7 +45,10 @@ describe('storeEmoji', () => {
   });
 
   it('should place emoji first in array', () => {
-    let storage = [{ name: 'thinking face', shortname: ':thinking:' }, { name: 'grinning face', shortname: ':grinning:' }];
+    let storage = [
+      { name: 'thinking face', shortname: ':thinking:' },
+      { name: 'grinning face', shortname: ':grinning:' }
+    ];
     const get = sinon.stub(store, 'get').callsFake(() => storage);
     const set = sinon.stub(store, 'set').callsFake((key, item) => { storage = item; });
     const emoji = { name: 'grinning face', shortname: ':grinning:' };

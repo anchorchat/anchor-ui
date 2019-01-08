@@ -17,7 +17,7 @@ describe('Profile', () => {
     secondaryText: '',
     avatar: '',
     coverImage: '',
-    button: <button>text</button>,
+    button: <button>text</button>, // eslint-disable-line react/button-has-type
     style: { root: true },
     headerStyle: { header: true },
     secondaryTextStyle: { secondaryText: true },
@@ -59,11 +59,11 @@ describe('Profile', () => {
     const wrapper = shallow(<Profile {...props} />);
 
     expect(wrapper.find('button')).to.have.length(1);
-    expect(wrapper.containsMatchingElement(<button>text</button>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<button>text</button>)).to.equal(true); // eslint-disable-line react/button-has-type
   });
 
   it('should always render the value of the children prop', () => {
-    const wrapper = shallow(<Profile {...props} >{children}</Profile>);
+    const wrapper = shallow(<Profile {...props}>{children}</Profile>);
 
     expect(wrapper.contains(children)).to.equal(true);
   });

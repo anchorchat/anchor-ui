@@ -79,7 +79,7 @@ describe('Slider', () => {
   it('should pass the value of the label prop to the label element', () => {
     const wrapper = shallow(<Slider {...props} />).dive();
 
-    expect(wrapper.containsMatchingElement(<label htmlFor="name" >label</label>)).to.equal(true);
+    expect(wrapper.containsMatchingElement(<label htmlFor="name">label</label>)).to.equal(true); // eslint-disable-line jsx-a11y/label-has-associated-control
   });
 
   it('should call input onChange function', () => {

@@ -42,19 +42,19 @@ describe('PopOver', () => {
   });
 
   it('should always render the value of the children prop', () => {
-    const wrapper = shallow(<PopOver {...props} >{children}</PopOver>);
+    const wrapper = shallow(<PopOver {...props}>{children}</PopOver>);
 
     expect(wrapper.contains(children)).to.equal(true);
   });
 
   it('should always render the value of the divider prop', () => {
-    const wrapper = shallow(<PopOver {...props} >{divider}</PopOver>);
+    const wrapper = shallow(<PopOver {...props}>{divider}</PopOver>);
 
     expect(wrapper.contains(divider)).to.equal(true);
   });
 
   it('should always render the value of the secondaryMenuItems prop', () => {
-    const wrapper = shallow(<PopOver {...props} >{secondaryMenuItems}</PopOver>);
+    const wrapper = shallow(<PopOver {...props}>{secondaryMenuItems}</PopOver>);
 
     expect(wrapper.contains(secondaryMenuItems)).to.equal(true);
   });
