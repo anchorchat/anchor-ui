@@ -86,7 +86,7 @@ describe('IconMenu', () => {
     expect(component.find(EventListener)).to.have.length(1);
   });
 
-  it('should call openMenu', () => {
+  it('should open menu', () => {
     const component = shallow(<IconMenu {...props}>{children}</IconMenu>);
 
     expect(component.state('open')).to.equal(false);
@@ -94,9 +94,8 @@ describe('IconMenu', () => {
     let popOverOpenProp = component.find(PopOver).map(node => node.prop('open'));
     expect(popOverOpenProp).to.deep.equal([false]);
 
-    component.find(Button).simulate('click');
+    component.setState({ open: true, positioned: true });
     expect(component.state('open')).to.equal(true);
-    expect(component.find(EventListener)).to.have.length(1);
     popOverOpenProp = component.find(PopOver).map(node => node.prop('open'));
     expect(popOverOpenProp).to.deep.equal([true]);
   });
