@@ -300,8 +300,8 @@ class Commands extends Component {
                     )
                     : null
                 }
-                <strong style={getStyles.title(titleStyle)}>{command.prefix}{command.value}</strong> {/* eslint-disable-line react/jsx-one-expression-per-line, max-len */}
-                {command.param ? <span style={paramStyle}>[{command.param}]</span> : null} {/* eslint-disable-line react/jsx-one-expression-per-line, max-len */}
+                <strong style={getStyles.title(titleStyle)}>{command.prefix}{command.value}</strong>
+                {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
               </span>
               {
                 command.description

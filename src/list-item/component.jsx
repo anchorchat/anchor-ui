@@ -112,7 +112,7 @@ const ListItem = ({
                 secondaryTextStyle
               )}
             >
-              {textBadge} {secondaryText} {/* eslint-disable-line react/jsx-one-expression-per-line, max-len */}
+              {textBadge} {secondaryText}
             </h2>
           )
           : null
