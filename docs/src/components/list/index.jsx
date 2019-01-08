@@ -51,7 +51,9 @@ class ListDoc extends Component {
   }
 
   componentDidMount() {
-    this.renderItems({}, this.state.amount);
+    const { amount } = this.state;
+
+    this.renderItems({}, amount);
   }
 
   componentWillReceiveProps(nextProps, nextState) {

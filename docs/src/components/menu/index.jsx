@@ -31,20 +31,26 @@ class MenuDoc extends Component {
   }
 
   toggleMenu = () => {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 
   toggleMenuIconHeader = () => {
+    const { openIconHeader } = this.state;
+
     this.setState({
-      openIconHeader: !this.state.openIconHeader
+      openIconHeader: !openIconHeader
     });
   }
 
   toggleMenuRight = () => {
+    const { openRight } = this.state;
+
     this.setState({
-      openRight: !this.state.openRight
+      openRight: !openRight
     });
   }
 

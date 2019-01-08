@@ -26,8 +26,10 @@ class DialogDoc extends Component {
   }
 
   toggleDialog = () => {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 

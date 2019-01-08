@@ -97,6 +97,8 @@ class EmojiFilterDoc extends Component {
   handleClose = () => this.setState({ valueToMatch: '', selectedEmoji: '' })
 
   render() {
+    const { valueToMatch, value } = this.state;
+
     return (
       <article className="page">
         <h1>EmojiFilter</h1>
@@ -110,7 +112,7 @@ class EmojiFilterDoc extends Component {
           <Paper style={style.paper}>
             <EmojiFilter
               style={style.commands}
-              value={this.state.valueToMatch}
+              value={valueToMatch}
               onSelect={this.handleSelect}
               onChange={this.handleChange}
               onMenuClose={this.handleClose}
@@ -118,7 +120,7 @@ class EmojiFilterDoc extends Component {
             <MessageInput
               onChange={this.changeValue}
               placeholder="Type : to view and filter emoji"
-              value={this.state.value}
+              value={value}
               sendMessage={noop}
               style={style.messageInput}
               inputRef={(node) => { this.input = node; }}

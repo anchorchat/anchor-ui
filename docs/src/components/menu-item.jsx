@@ -52,7 +52,7 @@ const MenuItemDoc = () => (
             active
           />
           <MenuItem
-            rightButton={
+            rightButton={(
               <IconMenu
                 icon={<IconMore />}
                 header="Items"
@@ -61,7 +61,7 @@ const MenuItemDoc = () => (
                 <MenuItem text="Active item" onClick={noop} active />
                 <MenuItem text="Inactive item" onClick={noop} />
               </IconMenu>
-            }
+            )}
             text="Menu item with rightButton"
             onClick={noop}
           />

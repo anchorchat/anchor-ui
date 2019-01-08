@@ -56,6 +56,14 @@ class SliderDoc extends Component {
   }
 
   render() {
+    const {
+      value,
+      valueCustom,
+      valueStep,
+      valueDisabled,
+      valueError
+    } = this.state;
+
     return (
       <article className="page">
         <h1>Slider</h1>
@@ -71,7 +79,7 @@ class SliderDoc extends Component {
               onChange={this.toggleSlider}
               label="Default slider example (0-1)"
               name="slider"
-              value={this.state.value}
+              value={value}
               style={style.slider}
             />
             <Slider
@@ -80,7 +88,7 @@ class SliderDoc extends Component {
               name="sliderCustom"
               min={0}
               max={100}
-              value={this.state.valueCustom}
+              value={valueCustom}
               style={style.slider}
             />
             <Slider
@@ -90,14 +98,14 @@ class SliderDoc extends Component {
               min={0}
               max={100}
               step={20}
-              value={this.state.valueStep}
+              value={valueStep}
               style={style.slider}
             />
             <Slider
               onChange={noop}
               label="Disabled example"
               name="sliderDisabled"
-              value={this.state.valueDisabled}
+              value={valueDisabled}
               style={style.slider}
               disabled
             />
@@ -105,7 +113,7 @@ class SliderDoc extends Component {
               onChange={this.toggleSliderError}
               label="Error example"
               name="sliderError"
-              value={this.state.valueError}
+              value={valueError}
               style={style.slider}
               error="Error message"
             />

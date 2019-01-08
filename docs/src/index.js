@@ -2,7 +2,12 @@
 /* global document */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import {
+  Router,
+  Route,
+  hashHistory,
+  IndexRoute
+} from 'react-router';
 import { StyleRoot } from 'radium';
 import App from './components/app';
 import Home from './components/home';

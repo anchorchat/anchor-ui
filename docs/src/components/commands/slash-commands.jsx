@@ -69,6 +69,8 @@ class SlashCommands extends Component {
   }
 
   render() {
+    const { valueToMatch, value } = this.state;
+
     const style = {
       paper: {
         display: 'flex',
@@ -136,7 +138,7 @@ class SlashCommands extends Component {
       <Paper style={style.paper}>
         <Commands
           style={style.commands}
-          value={this.state.valueToMatch}
+          value={valueToMatch}
           commands={commands}
           onChange={this.handleChange}
           onSelect={this.handleSelect}
@@ -146,7 +148,7 @@ class SlashCommands extends Component {
         <MessageInput
           onChange={this.changeValue}
           placeholder="Type / to view and filter the commands"
-          value={this.state.value}
+          value={value}
           sendMessage={noop}
           style={style.messageInput}
           inputRef={(node) => { this.input = node; }}

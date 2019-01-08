@@ -33,14 +33,16 @@ class App extends Component {
   }
 
   toggleMenu = () => {
+    const { menu } = this.state;
+
     this.setState({
-      menu: !this.state.menu
+      menu: !menu
     });
   }
 
   render() {
     const { children } = this.props;
-    const { media, menu } = this.state;
+    const { media, menu, color } = this.state;
 
     const childrenWithProps = (
       React.Children.map(children, child => (
@@ -59,11 +61,11 @@ class App extends Component {
     );
 
     return (
-      <ThemeProvider color={this.state.color}>
+      <ThemeProvider color={color}>
         <main>
           <AppHeader
             text="Anchor UI"
-            icon={
+            icon={(
               <a
                 href="https://anchor.chat"
                 target="_blank"
@@ -71,13 +73,13 @@ class App extends Component {
               >
                 <img src={logo} alt="Anchor Chat" />
               </a>
-            }
+            )}
             leftButton={
               !media.medium
                 ? leftButton
                 : null
             }
-            rightButton={
+            rightButton={(
               <a
                 href="https://github.com/anchorchat/anchor-ui"
                 target="_blank"
@@ -87,7 +89,7 @@ class App extends Component {
                   <img className="github" src={github} alt="Github" />
                 </Button>
               </a>
-            }
+            )}
           />
           <article className="docs">
             <Nav media={media} open={menu} toggleMenu={this.toggleMenu} />

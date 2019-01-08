@@ -29,8 +29,10 @@ class Markdown extends Component {
   }
 
   toggleOpen = () => {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 

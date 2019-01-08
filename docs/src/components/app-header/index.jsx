@@ -41,11 +41,11 @@ const AppHeaderDoc = () => (
           style={style.appHeader}
           text="Anchor UI"
           icon={<img src={logo} alt="Anchor Chat" />}
-          rightButton={
+          rightButton={(
             <Button iconButton>
               <IconExit color={colors.white} />
             </Button>
-          }
+          )}
         />
       </Paper>
     </section>

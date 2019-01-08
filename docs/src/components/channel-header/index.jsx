@@ -39,16 +39,16 @@ const ChannelHeaderDoc = () => (
         <ChannelHeader
           name="Channel 1"
           style={style.channelHeader}
-          rightButton={
+          rightButton={(
             <Button iconButton>
               <IconPeople />
             </Button>
-          }
-          leftButton={
+          )}
+          leftButton={(
             <Button iconButton>
               <IconChannels />
             </Button>
-          }
+          )}
         />
       </Paper>
     </section>

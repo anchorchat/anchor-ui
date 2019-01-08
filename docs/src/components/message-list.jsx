@@ -21,7 +21,7 @@ const currentUser = faker.internet.userName();
 
 const messages = [
   {
-    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
+    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.', // eslint-disable-line max-len
     createdAt: new Date(),
     username: faker.internet.userName(),
     avatar: faker.internet.avatar(),

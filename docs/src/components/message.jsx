@@ -115,7 +115,7 @@ const messages = [
     }
   },
   {
-    body: 'Stop talking, brain thinking. @Lars Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
+    body: 'Stop talking, brain thinking. @Lars Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.', // eslint-disable-line max-len
     createdAt: moment().toISOString(),
     username: currentUser,
     avatar: currentUserAvatar,
@@ -187,7 +187,7 @@ const messages = [
       <video
         controls
         muted
-        src="https://player.vimeo.com/external/208458665.hd.mp4?s=2001abe1e54facca01cc1ba9c074076eb711a9f8&profile_id=119&oauth2_token_id=57447761"
+        src="https://player.vimeo.com/external/208458665.hd.mp4?s=2001abe1e54facca01cc1ba9c074076eb711a9f8&profile_id=119&oauth2_token_id=57447761" // eslint-disable-line max-len
         style={{
           borderRadius: '4px',
           width: 'auto',
@@ -236,19 +236,55 @@ class MessageDoc extends Component {
     };
   }
 
-  selectCollapse = () => this.setState({ collapsed: !this.state.collapsed })
+  selectCollapse = () => {
+    const { collapsed } = this.state;
 
-  selectCompact = () => this.setState({ compact: !this.state.compact })
+    this.setState({
+      collapsed: !collapsed
+    });
+  }
+
+  selectCompact = () => {
+    const { compact } = this.state;
+
+    this.setState({
+      compact: !compact
+    });
+  }
 
   selectFontSize = (event, fontSize) => this.setState({ fontSize })
 
-  selectIconMenu = () => this.setState({ iconMenu: !this.state.iconMenu })
+  selectIconMenu = () => {
+    const { iconMenu } = this.state;
 
-  selectEdited = () => this.setState({ edited: !this.state.edited })
+    this.setState({
+      iconMenu: !iconMenu
+    });
+  }
 
-  selectMultiline = () => this.setState({ multiline: !this.state.multiline })
+  selectEdited = () => {
+    const { edited } = this.state;
 
-  selectAvatar = () => this.setState({ avatar: !this.state.avatar });
+    this.setState({
+      edited: !edited
+    });
+  }
+
+  selectMultiline = () => {
+    const { multiline } = this.state;
+
+    this.setState({
+      multiline: !multiline
+    });
+  }
+
+  selectAvatar = () => {
+    const { avatar } = this.state;
+
+    this.setState({
+      avatar: !avatar
+    });
+  }
 
   render() {
     const {
@@ -317,7 +353,12 @@ class MessageDoc extends Component {
               style={style.margin}
               active={avatar}
             />
-            <Select style={style.margin} label="Font size" value={fontSize} onChange={this.selectFontSize}>
+            <Select
+              style={style.margin}
+              label="Font size"
+              value={fontSize}
+              onChange={this.selectFontSize}
+            >
               <MenuItem text="Small" value="small" />
               <MenuItem text="Medium" value="medium" />
               <MenuItem text="Large" value="large" />
@@ -331,7 +372,13 @@ class MessageDoc extends Component {
                   <MenuItem key="item2" text="Another Menu Item" onClick={noop} />
                 ];
 
-                const expandMenuItem = <MenuItem key="expand" text="Expand image" onClick={() => this.selectCollapse(false)} />;
+                const expandMenuItem = (
+                  <MenuItem
+                    key="expand"
+                    text="Expand image"
+                    onClick={() => this.selectCollapse(false)}
+                  />
+                );
 
                 if ((message.type === 'image' || message.type === 'giphy') && collapsed) {
                   menuItems.push(expandMenuItem);

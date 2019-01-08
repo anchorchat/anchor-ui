@@ -58,11 +58,11 @@ const ListItemDoc = () => (
           <ListItem
             primaryText="Default item with some very very long text"
             secondaryText="Very very very long Secondary text"
-            rightButton={
+            rightButton={(
               <Button iconButton>
                 <IconClose />
               </Button>
-            }
+            )}
             avatar={faker.internet.avatar()}
           />
           <ListItem
@@ -78,17 +78,17 @@ const ListItemDoc = () => (
           <ListItem
             primaryText="With rightButton"
             secondaryText="10/50"
-            rightButton={
+            rightButton={(
               <Button iconButton>
                 <IconClose />
               </Button>
-            }
+            )}
           />
           <ListItem
             primaryText="With IconMenu"
             secondaryText="10/50"
             avatar={faker.internet.avatar()}
-            rightButton={
+            rightButton={(
               <IconMenu
                 style={style.iconMenu}
                 icon={<IconRocket />}
@@ -103,7 +103,7 @@ const ListItemDoc = () => (
                 <MenuItem text="Active item" onClick={noop} active />
                 <MenuItem text="Inactive item" onClick={noop} />
               </IconMenu>
-            }
+            )}
           />
           <ListItem
             primaryText="With badge"

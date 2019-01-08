@@ -56,33 +56,33 @@ class MessageInputDoc extends React.Component {
               placeholder="Type something..."
               value={value}
               sendMessage={this.sendMessage}
-              leftButton={
+              leftButton={(
                 <Button iconButton>
                   <IconEmoji />
                 </Button>
-              }
-              rightButton={
+              )}
+              rightButton={(
                 <Button iconButton>
                   <IconEmoji />
                 </Button>
-              }
+              )}
             />
             <span dangerouslySetInnerHTML={{ __html: replace(multiLine, /\n/g, '<br />') }} />
             <MessageInput
               onChange={this.handleMultiLineChange}
               placeholder="Multi line example..."
-              value={this.state.multiLine}
+              value={multiLine}
               sendMessage={this.sendMultiLineMessage}
-              leftButton={
+              leftButton={(
                 <Button iconButton>
                   <IconEmoji />
                 </Button>
-              }
-              rightButton={
+              )}
+              rightButton={(
                 <Button iconButton>
                   <IconEmoji />
                 </Button>
-              }
+              )}
               multiLine
             />
           </Paper>

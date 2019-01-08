@@ -66,7 +66,8 @@ class PaginationDoc extends Component {
     const {
       itemsDefault,
       itemsIntialPage,
-      itemsJumpToPage
+      itemsJumpToPage,
+      jumpToPage
     } = this.state;
 
     return (
@@ -104,15 +105,15 @@ class PaginationDoc extends Component {
             <Button
               style={style.button}
               onClick={() => {
-                this.setState({ jumpToPage: this.state.jumpToPage + 1 });
+                this.setState({ jumpToPage: jumpToPage + 1 });
               }}
             >
-              <p>Jump to Page {this.state.jumpToPage + 1}</p>
+              <p>Jump to Page {jumpToPage + 1}</p>
             </Button>
             <Pagination
               list={listJumpToPage}
               onChange={this.onJumpToPageChange}
-              jumpToPage={this.state.jumpToPage}
+              jumpToPage={jumpToPage}
             >
               <Table style={style.tabs}>
                 <TableHeader>

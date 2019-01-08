@@ -24,7 +24,8 @@
     ],
     "lodash/prefer-lodash-method": [2, {"ignoreObjects": ["React\\.Children", "component", "wrapper"]}],
     "max-len": [2, { "code": 100, "ignoreComments": true, "ignoreTemplateLiterals": true }],
-    "react/sort-comp": 0
+    "react/sort-comp": 0,
+    "react/jsx-one-expression-per-line": 0
   },
   "globals": {
     "Image": true,

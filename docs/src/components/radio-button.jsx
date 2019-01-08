@@ -54,6 +54,8 @@ class RadioButtonDoc extends Component {
   }
 
   render() {
+    const { value } = this.state;
+
     return (
       <article className="page">
         <h1>RadioButton</h1>
@@ -67,7 +69,7 @@ class RadioButtonDoc extends Component {
           <Paper style={style.paper}>
             <RadioButtonGroup
               onChange={this.toggleRadio}
-              value={this.state.value}
+              value={value}
               style={style.radioButtonGroup}
               label="RadioButton"
             >

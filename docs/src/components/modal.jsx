@@ -37,8 +37,10 @@ class ModalDoc extends Component {
   }
 
   toggleModal() {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 

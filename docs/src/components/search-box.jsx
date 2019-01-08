@@ -34,6 +34,8 @@ class SearchBoxDoc extends Component {
   }
 
   render() {
+    const { value } = this.state;
+
     return (
       <article className="page">
         <h1>SearchBox</h1>
@@ -45,7 +47,12 @@ class SearchBoxDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <SearchBox onChange={this.handleChange} changeSearchQuery={noop} placeholder="Search" value={this.state.value} />
+            <SearchBox
+              onChange={this.handleChange}
+              changeSearchQuery={noop}
+              placeholder="Search"
+              value={value}
+            />
           </Paper>
         </section>
         <Props props={componentData.props} />

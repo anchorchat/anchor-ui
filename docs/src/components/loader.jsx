@@ -49,12 +49,12 @@ const LoaderDoc = () => (
     <h1>Loader</h1>
     <Alert
       style={style.alert}
-      text={
+      text={(
         <span>
           Warning! This component uses CSS animations and requires your app to be wrapped in&nbsp;
-          <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component!
+          <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component! {/* eslint-disable-line max-len */}
         </span>
-      }
+      )}
       type="warning"
     />
     <section>

@@ -108,22 +108,22 @@ class ImageLoaderDoc extends Component {
               <ImageLoader
                 src={placeholderImage}
                 imgProps={imgProps}
-                placeholder={
+                placeholder={(
                   <img
                     src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg"
                     alt="placeholder"
                     style={style.image}
                   />
-                }
+                )}
               />
               <ImageLoader
                 src={errorImage}
                 imgProps={imgProps}
-                error={
+                error={(
                   <div style={style.error}>
                     <p>Failed to load image</p>
                   </div>
-                }
+                )}
               />
             </div>
           </Paper>

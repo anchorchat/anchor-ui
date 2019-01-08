@@ -88,6 +88,8 @@ class CommandsDoc extends Component {
   handleRef = (node) => { this.input = node; }
 
   render() {
+    const { valueToMatch, value } = this.state;
+
     const style = {
       paper: {
         display: 'flex',
@@ -113,7 +115,7 @@ class CommandsDoc extends Component {
         <Commands
           header="Mentions"
           style={style.commands}
-          value={this.state.valueToMatch}
+          value={valueToMatch}
           commands={mentions}
           onChange={this.handleChange}
           onSelect={this.handleSelect}
@@ -123,7 +125,7 @@ class CommandsDoc extends Component {
         <MessageInput
           onChange={this.changeValue}
           placeholder="Type @ to filter mentions"
-          value={this.state.value}
+          value={value}
           sendMessage={noop}
           style={style.messageInput}
           inputRef={this.handleRef}

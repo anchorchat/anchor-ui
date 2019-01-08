@@ -35,7 +35,7 @@ const createMarkup = (text) => {
 
   let parsedText = replace(escapedText, /\n/g, '<br />');
 
-  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;'; // eslint-disable-line max-len
 
   parsedText = replace(parsedText, urlRegex, (url) => {
     if (!urlSchemeRegex.test(url)) {
@@ -81,7 +81,9 @@ const Props = ({ props }) => {
                 style={style.column}
                 dangerouslySetInnerHTML={createMarkup(prop.description)}
               />
-              <TableColumn style={style.column}>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
+              <TableColumn style={style.column}>
+                {prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}
+              </TableColumn>
               <TableColumn style={style.column}>{prop.required ? 'Yes' : 'No'}</TableColumn>
             </TableRow>
           ))}

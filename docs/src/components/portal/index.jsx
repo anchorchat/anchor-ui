@@ -45,7 +45,7 @@ class PortalDoc extends React.Component {
         <h1>Portal</h1>
         <Alert
           style={style.alert}
-          text="Portal will only transport elements to a given element in React v16 or later. In older versions of React Portal will just render children."
+          text="Portal will only transport elements to a given element in React v16 or later. In older versions of React Portal will just render children." // eslint-disable-line max-len
           type="warning"
         />
         <section>
