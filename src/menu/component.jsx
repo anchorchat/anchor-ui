@@ -98,17 +98,17 @@ class Menu extends Component {
       <nav style={rootStyle} {...custom}>
         {
           headerIcon
-          ? (
-            <div style={getStyles.icon(iconStyle)}>
-              {React.cloneElement(headerIcon, { color })}
-            </div>
-          )
-          : null
+            ? (
+              <div style={getStyles.icon(iconStyle)}>
+                {React.cloneElement(headerIcon, { color })}
+              </div>
+            )
+            : null
         }
         {
           header
-          ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1>
-          : null
+            ? <h1 style={getStyles.header(color, headerIcon, headerStyle)}>{header}</h1>
+            : null
         }
         <section style={getStyles.contentContainer(header, footer, contentContainerStyle)}>
           {menuItems}
@@ -134,8 +134,8 @@ class Menu extends Component {
         {this.renderNav()}
         {
           open
-          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
-          : null
+            ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
+            : null
         }
       </section>
     );

@@ -215,13 +215,15 @@ class Gallery extends Component {
         <div style={styles.after} />
         {
           enableLightbox && !isEmpty(lightbox)
-          ? <Lightbox
-            open={!isEmpty(lightbox)}
-            image={lightbox.src}
-            title={lightbox.title}
-            hideLightbox={this.hideLightbox}
-          />
-          : null
+            ? (
+              <Lightbox
+                open={!isEmpty(lightbox)}
+                image={lightbox.src}
+                title={lightbox.title}
+                hideLightbox={this.hideLightbox}
+              />
+            )
+            : null
         }
         <EventListener target="window" onKeyUp={this.handleKeyUp} />
       </section>

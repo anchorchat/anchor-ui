@@ -7,8 +7,11 @@ const minMax = (props, propName, componentName, ...rest) => {
     return error;
   }
 
-  if (props.min >= props.max) {
-    const errorMsg = (propName === 'min') ? 'min should be less than max' : 'max should be greater than min';
+  if (props.min >= props.max) { // eslint-disable-line react/destructuring-assignment
+    const errorMsg = (propName === 'min')
+      ? 'min should be less than max'
+      : 'max should be greater than min';
+
     return new Error(errorMsg);
   }
 
@@ -22,9 +25,9 @@ const valueInRange = (props, propName, componentName, ...rest) => {
     return error;
   }
 
-  const value = props[propName];
+  const value = props[propName]; // eslint-disable-line react/destructuring-assignment
 
-  if (value < props.min || props.max < value) {
+  if (value < props.min || props.max < value) { // eslint-disable-line react/destructuring-assignment
     return new Error(`${propName} should be within the range specified by min and max`);
   }
 

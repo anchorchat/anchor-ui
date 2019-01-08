@@ -169,25 +169,29 @@ class EmojiMenu extends Component {
         />
         {
           storedEmojis.length > 0 && category === 'recent'
-          ? <EmojiCategory
-            emojis={storedEmojis}
-            category="recent"
-            sendEmoji={this.sendEmoji}
-            style={categoryStyle}
-            emojiStyle={emojiStyle}
-          />
-          : null
+            ? (
+              <EmojiCategory
+                emojis={storedEmojis}
+                category="recent"
+                sendEmoji={this.sendEmoji}
+                style={categoryStyle}
+                emojiStyle={emojiStyle}
+              />
+            )
+            : null
         }
         {
           category !== 'recent'
-          ? <EmojiCategory
-            emojis={filteredEmoji}
-            category={category}
-            sendEmoji={this.sendEmoji}
-            style={categoryStyle}
-            emojiStyle={emojiStyle}
-          />
-          : null
+            ? (
+              <EmojiCategory
+                emojis={filteredEmoji}
+                category={category}
+                sendEmoji={this.sendEmoji}
+                style={categoryStyle}
+                emojiStyle={emojiStyle}
+              />
+            )
+            : null
         }
         <EmojiCategories
           changeCategory={this.changeCategory}

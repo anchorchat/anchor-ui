@@ -32,12 +32,15 @@ const EmojiCategories = ({
   <footer style={getStyles.categories(style)}>
     {
       recent
-      ? (
-        <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('recent')}>
-          <IconClock color={category === 'recent' ? activeColor : iconColor} />
-        </div>
-      )
-      : null
+        ? (
+          <div
+            style={getStyles.categoriesCategory(iconStyle)}
+            onClick={() => changeCategory('recent')}
+          >
+            <IconClock color={category === 'recent' ? activeColor : iconColor} />
+          </div>
+        )
+        : null
     }
     <div style={getStyles.categoriesCategory(iconStyle)} onClick={() => changeCategory('people')}>
       <IconEmoji color={category === 'people' ? activeColor : iconColor} />

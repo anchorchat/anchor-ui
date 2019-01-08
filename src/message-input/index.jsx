@@ -236,15 +236,15 @@ class MessageInput extends Component {
     }
 
     return (
-      <section style={getStyles.root(disabled, height, this.state.multiLine, style)}>
+      <section style={getStyles.root(disabled, height, this.state.multiLine, style)}> {/* eslint-disable-line react/destructuring-assignment, react/jsx-one-expression-per-line, max-len */}
         {
           leftButton
-          ? (
-            <div style={styles.buttons}>
-              {leftButton}
-            </div>
-          )
-          : null
+            ? (
+              <div style={styles.buttons}>
+                {leftButton}
+              </div>
+            )
+            : null
         }
         {input}
         <div style={styles.buttons}>

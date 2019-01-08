@@ -172,12 +172,14 @@ class IconMenu extends Component {
       <div style={getStyles.root(style)} {...custom}>
         {
           open
-          ? <EventListener
-            target="window"
-            onResize={this.closeMenu}
-            onKeyUp={this.handleKeyUp}
-          />
-          : null
+            ? (
+              <EventListener
+                target="window"
+                onResize={this.closeMenu}
+                onKeyUp={this.handleKeyUp}
+              />
+            )
+            : null
         }
         <div ref={(button) => { this.button = button; }}>
           <Button

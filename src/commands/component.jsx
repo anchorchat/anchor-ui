@@ -110,6 +110,7 @@ class Commands extends Component {
   componentWillReceiveProps(nextProps) {
     const { value, commands } = nextProps;
     const { open } = this.state;
+    const { onMenuOpen } = this.props;
 
     if (!value) {
       return this.hideMenu();
@@ -123,7 +124,7 @@ class Commands extends Component {
         commands: filteredCommands
       });
 
-      return this.props.onMenuOpen();
+      return onMenuOpen();
     }
 
     if (isEmpty(filteredCommands) && open) {
@@ -172,7 +173,7 @@ class Commands extends Component {
   handleKeyDown = (event) => {
     const key = event.which || event.keyCode;
     const { shiftKey } = event;
-    const { selectedIndex } = this.state;
+    const { selectedIndex, commands } = this.state;
 
     if (key === 27) {
       return this.hideMenu();
@@ -193,37 +194,37 @@ class Commands extends Component {
     if (key === 13) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      this.handleSelect(event, this.state.commands[selectedIndex], selectedIndex);
+      this.handleSelect(event, commands[selectedIndex], selectedIndex);
     }
 
     return false;
   }
 
   selectNext = (event) => {
-    const { selectedIndex } = this.state;
-    const commandsSize = size(this.state.commands);
+    const { selectedIndex, commands } = this.state;
+    const commandsSize = size(commands);
 
     if (selectedIndex + 1 < commandsSize) {
-      return this.handleChange(event, this.state.commands[selectedIndex + 1], selectedIndex + 1);
+      return this.handleChange(event, commands[selectedIndex + 1], selectedIndex + 1);
     }
 
     if (selectedIndex === commandsSize - 1) {
-      return this.handleChange(event, this.state.commands[0], 0);
+      return this.handleChange(event, commands[0], 0);
     }
 
     return false;
   }
 
   selectPrevious = (event) => {
-    const { selectedIndex } = this.state;
-    const commandsSize = size(this.state.commands);
+    const { selectedIndex, commands } = this.state;
+    const commandsSize = size(commands);
 
     if (selectedIndex === 0) {
-      return this.handleChange(event, this.state.commands[commandsSize - 1], commandsSize - 1);
+      return this.handleChange(event, commands[commandsSize - 1], commandsSize - 1);
     }
 
     if (selectedIndex - 1 < commandsSize) {
-      return this.handleChange(event, this.state.commands[selectedIndex - 1], selectedIndex - 1);
+      return this.handleChange(event, commands[selectedIndex - 1], selectedIndex - 1);
     }
 
     return false;
@@ -278,7 +279,7 @@ class Commands extends Component {
       <section style={getStyles.root(style)} {...custom}>
         <header style={getStyles.header(headerStyle)}>{header}</header>
         <section style={getStyles.commands()}>
-          {map(this.state.commands, (command, index) => (
+          {map(this.state.commands, (command, index) => ( // eslint-disable-line react/destructuring-assignment
             <div
               key={command.value}
               style={getStyles.command(color, index === selectedIndex, commandStyle)}
@@ -288,24 +289,28 @@ class Commands extends Component {
               <span style={styles.titleContainer}>
                 {
                   command.avatar
-                  ? (
-                    <div style={styles.avatarContainer}>
-                      {
-                        isString(command.avatar)
-                        ? <Avatar image={command.avatar} style={styles.avatar} />
-                        : command.avatar
-                      }
-                    </div>
-                  )
-                  : null
+                    ? (
+                      <div style={styles.avatarContainer}>
+                        {
+                          isString(command.avatar)
+                            ? <Avatar image={command.avatar} style={styles.avatar} />
+                            : command.avatar
+                        }
+                      </div>
+                    )
+                    : null
                 }
-                <strong style={getStyles.title(titleStyle)}>{command.prefix}{command.value}</strong>
-                {command.param ? <span style={paramStyle}>[{command.param}]</span> : null}
+                <strong style={getStyles.title(titleStyle)}>{command.prefix}{command.value}</strong> {/* eslint-disable-line react/jsx-one-expression-per-line, max-len */}
+                {command.param ? <span style={paramStyle}>[{command.param}]</span> : null} {/* eslint-disable-line react/jsx-one-expression-per-line, max-len */}
               </span>
               {
                 command.description
-                ? <span style={getStyles.description(descriptionStyle)}>{command.description}</span>
-                : null
+                  ? (
+                    <span style={getStyles.description(descriptionStyle)}>
+                      {command.description}
+                    </span>
+                  )
+                  : null
               }
             </div>
           ))}

@@ -84,19 +84,19 @@ const ListItem = ({
   >
     {
       avatar
-      ? (
-        <div style={styles.avatar}>
-          {isString(avatar) ? <Avatar image={avatar} /> : avatar}
-          {
-            muted && !blocked
-            ? <div style={styles.icon}><IconMute color={colors.white} /></div>
-            : null
-          }
-          {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
-          {badge ? <div style={styles.badge}>{badge}</div> : null}
-        </div>
-      )
-      : null
+        ? (
+          <div style={styles.avatar}>
+            {isString(avatar) ? <Avatar image={avatar} /> : avatar}
+            {
+              muted && !blocked
+                ? <div style={styles.icon}><IconMute color={colors.white} /></div>
+                : null
+            }
+            {blocked ? <div style={styles.icon}><IconBlock color={colors.white} /></div> : null}
+            {badge ? <div style={styles.badge}>{badge}</div> : null}
+          </div>
+        )
+        : null
     }
     <div style={getStyles.textContainer(avatar, rightButton)}>
       <h1 style={getStyles.text(styles.primaryText, active, null, primaryTextStyle)}>
@@ -104,18 +104,18 @@ const ListItem = ({
       </h1>
       {
         secondaryText || textBadge
-        ? (
-          <h2
-            style={getStyles.text(
-              styles.secondaryText,
-              active, textBadge,
-              secondaryTextStyle
-            )}
-          >
-            {textBadge} {secondaryText}
-          </h2>
-        )
-        : null
+          ? (
+            <h2
+              style={getStyles.text(
+                styles.secondaryText,
+                active, textBadge,
+                secondaryTextStyle
+              )}
+            >
+              {textBadge} {secondaryText} {/* eslint-disable-line react/jsx-one-expression-per-line, max-len */}
+            </h2>
+          )
+          : null
       }
     </div>
     {rightButton ? <div style={styles.button}>{rightButton}</div> : null}

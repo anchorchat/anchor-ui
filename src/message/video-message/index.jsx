@@ -79,8 +79,8 @@ const VideoMessage = ({
       <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
         {
           !collapsed
-          ? video
-          : <span>{collapsedText}</span>
+            ? video
+            : <span>{collapsedText}</span>
         }
         <MessageTime
           myMessage={myMessage}

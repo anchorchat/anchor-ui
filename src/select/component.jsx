@@ -190,8 +190,8 @@ class Select extends Component {
         {error ? <span style={getStyles.error(errorStyle)}>{error}</span> : null}
         {
           open
-          ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
-          : null
+            ? <EventListener target="window" onKeyUp={this.handleKeyUp} />
+            : null
         }
       </section>
     );

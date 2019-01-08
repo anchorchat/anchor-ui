@@ -88,8 +88,8 @@ class Input extends Component {
     this.textarea.style.height = '1px';
 
     if (
-      this.textarea.scrollHeight !== height &&
-      this.textarea.scrollHeight < (maxRows * rowHeight)
+      this.textarea.scrollHeight !== height
+      && this.textarea.scrollHeight < (maxRows * rowHeight)
     ) {
       if (this.textarea.scrollHeight < 32) {
         this.setState({
