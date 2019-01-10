@@ -4,7 +4,7 @@ node_js:
 before_install:
   cd docs && npm install && cd ../
 before_script:
-  npm run compile && npm run lint
+  npm run compile:before-lint && npm run lint
 after_success: npm run coverage
 before_deploy:
   cd docs && npm run build && cd ../ && npm run build:travis && zip -r build.zip anchor-ui
