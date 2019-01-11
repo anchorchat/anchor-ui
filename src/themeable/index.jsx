@@ -36,8 +36,9 @@ const themeable = options => ChildComponent => (
     setColor = color => this.setState({ color });
 
     render() {
+      const { color } = this.state;
       const propName = (options && options.propName) || 'color';
-      const customPropName = { [propName]: this.state.color }; // eslint-disable-line react/destructuring-assignment
+      const customPropName = { [propName]: color };
       const combinedProps = { ...customPropName, ...this.props };
 
       return <ChildComponent {...combinedProps} />;
