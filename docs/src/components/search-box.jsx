@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
-import SearchBox from '../../../dist/search-box';
+import SearchBox from '../anchor-ui/search-box';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -34,6 +34,8 @@ class SearchBoxDoc extends Component {
   }
 
   render() {
+    const { value } = this.state;
+
     return (
       <article className="page">
         <h1>SearchBox</h1>
@@ -45,7 +47,12 @@ class SearchBoxDoc extends Component {
         <section>
           <h1>Examples</h1>
           <Paper style={style.paper}>
-            <SearchBox onChange={this.handleChange} changeSearchQuery={noop} placeholder="Search" value={this.state.value} />
+            <SearchBox
+              onChange={this.handleChange}
+              changeSearchQuery={noop}
+              placeholder="Search"
+              value={value}
+            />
           </Paper>
         </section>
         <Props props={componentData.props} />

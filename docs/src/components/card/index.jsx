@@ -1,11 +1,11 @@
 import React from 'react';
 import find from 'lodash/find';
-import Card from '../../../../dist/card';
-import CardHeader from '../../../../dist/card-header';
-import CardContent from '../../../../dist/card-content';
+import Card from '../../anchor-ui/card';
+import CardHeader from '../../anchor-ui/card-header';
+import CardContent from '../../anchor-ui/card-content';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

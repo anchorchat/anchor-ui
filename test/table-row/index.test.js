@@ -25,13 +25,13 @@ describe('TableRow', () => {
   });
 
   it('should always render a tr element', () => {
-    const wrapper = shallow(<TableRow {...props} >{children}</TableRow>);
+    const wrapper = shallow(<TableRow {...props}>{children}</TableRow>);
 
     expect(wrapper.find('tr')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<TableRow {...props} >{children}</TableRow>);
+    const wrapper = shallow(<TableRow {...props}>{children}</TableRow>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +39,7 @@ describe('TableRow', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<TableRow {...props} >{children}</TableRow>);
+    shallow(<TableRow {...props}>{children}</TableRow>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });

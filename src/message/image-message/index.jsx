@@ -59,13 +59,14 @@ class ImageMessage extends Component {
 
   toggleLightbox = () => {
     const { enableLightbox } = this.props;
+    const { lightbox } = this.state;
 
     if (!enableLightbox) {
       return false;
     }
 
     return this.setState({
-      lightbox: !this.state.lightbox
+      lightbox: !lightbox
     });
   }
 
@@ -124,15 +125,15 @@ class ImageMessage extends Component {
         <p style={getStyles.body(myMessage, fontSize, collapsed, messageBodyStyle)}>
           {
             !collapsed
-            ? (
-              <ImageLoader
-                src={body}
-                alt="user-upload"
-                imgProps={imgProps}
-                {...imageLoaderProps}
-              />
-            )
-            : <span>{collapsedText}</span>
+              ? (
+                <ImageLoader
+                  src={body}
+                  alt="user-upload"
+                  imgProps={imgProps}
+                  {...imageLoaderProps}
+                />
+              )
+              : <span>{collapsedText}</span>
           }
           <MessageTime
             myMessage={myMessage}
@@ -146,13 +147,15 @@ class ImageMessage extends Component {
         {iconMenu ? <div style={styles.iconMenu}>{iconMenu}</div> : null}
         {
           enableLightbox
-          ? <Lightbox
-            open={lightbox}
-            image={body}
-            title={username}
-            hideLightbox={this.toggleLightbox}
-          />
-          : null
+            ? (
+              <Lightbox
+                open={lightbox}
+                image={body}
+                title={username}
+                hideLightbox={this.toggleLightbox}
+              />
+            )
+            : null
         }
       </div>
     );

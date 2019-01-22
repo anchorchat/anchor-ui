@@ -3,12 +3,12 @@ import find from 'lodash/find';
 import union from 'lodash/union';
 import without from 'lodash/without';
 import map from 'lodash/map';
-import Checkbox from '../../../../dist/checkbox';
-import CheckboxGroup from '../../../../dist/checkbox-group';
-import Divider from '../../../../dist/divider';
+import Checkbox from '../../anchor-ui/checkbox';
+import CheckboxGroup from '../../anchor-ui/checkbox-group';
+import Divider from '../../anchor-ui/divider';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

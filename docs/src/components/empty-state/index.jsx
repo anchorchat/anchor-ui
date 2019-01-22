@@ -1,11 +1,11 @@
 import React from 'react';
 import find from 'lodash/find';
-import EmptyState from '../../../../dist/empty-state';
-import Button from '../../../../dist/button';
+import EmptyState from '../../anchor-ui/empty-state';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
+import components from '../../components.json';
 import background from '../../assets/images/empty_state_users.jpg';
-import Paper from '../../../../dist/paper';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

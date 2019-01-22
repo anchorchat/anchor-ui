@@ -69,8 +69,8 @@ const Checkbox = ({
     <div style={getStyles.icon(iconStyle)}>
       {
         checked
-        ? <IconCheckbox color={color} />
-        : <div style={getStyles.unchecked(uncheckedStyle)} />
+          ? <IconCheckbox color={color} />
+          : <div style={getStyles.unchecked(uncheckedStyle)} />
       }
     </div>
     <span style={getStyles.label(labelStyle)}>

@@ -25,13 +25,13 @@ describe('TableBody', () => {
   });
 
   it('should always render a tbody element', () => {
-    const wrapper = shallow(<TableBody {...props} >{children}</TableBody>);
+    const wrapper = shallow(<TableBody {...props}>{children}</TableBody>);
 
     expect(wrapper.find('tbody')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<TableBody {...props} >{children}</TableBody>);
+    const wrapper = shallow(<TableBody {...props}>{children}</TableBody>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +39,7 @@ describe('TableBody', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<TableBody {...props} >{children}</TableBody>);
+    shallow(<TableBody {...props}>{children}</TableBody>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });

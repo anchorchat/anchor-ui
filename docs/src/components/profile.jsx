@@ -1,11 +1,11 @@
 import React from 'react';
 import find from 'lodash/find';
 import faker from 'faker';
-import Profile from '../../../dist/profile';
-import Button from '../../../dist/button';
+import Profile from '../anchor-ui/profile';
+import Button from '../anchor-ui/button';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

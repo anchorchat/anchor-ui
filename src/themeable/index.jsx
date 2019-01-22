@@ -6,7 +6,7 @@ import colors from '../settings/colors';
 const themeable = options => ChildComponent => (
   class ThemeableComponent extends Component {
     static contextTypes = {
-      theme: PropTypes.object
+      theme: PropTypes.object // eslint-disable-line react/forbid-prop-types
     }
 
     constructor(props, context) {
@@ -36,8 +36,9 @@ const themeable = options => ChildComponent => (
     setColor = color => this.setState({ color });
 
     render() {
+      const { color } = this.state;
       const propName = (options && options.propName) || 'color';
-      const customPropName = { [propName]: this.state.color };
+      const customPropName = { [propName]: color };
       const combinedProps = { ...customPropName, ...this.props };
 
       return <ChildComponent {...combinedProps} />;

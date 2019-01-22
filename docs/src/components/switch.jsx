@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Switch from '../../../dist/switch';
+import Switch from '../anchor-ui/switch';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -31,18 +31,24 @@ class SwitchDoc extends Component {
   }
 
   toggleSwitchOne = () => {
+    const { one } = this.state;
+
     this.setState({
-      one: !this.state.one
+      one: !one
     });
   }
 
   toggleSwitchTwo = () => {
+    const { two } = this.state;
+
     this.setState({
-      two: !this.state.two
+      two: !two
     });
   }
 
   render() {
+    const { one, two } = this.state;
+
     return (
       <article className="page">
         <h1>Switch</h1>
@@ -58,13 +64,13 @@ class SwitchDoc extends Component {
               toggleSwitch={this.toggleSwitchOne}
               label="Switch"
               style={style.switch}
-              active={this.state.one}
+              active={one}
             />
             <Switch
               toggleSwitch={this.toggleSwitchTwo}
               label="Default enabled"
               style={style.switch}
-              active={this.state.two}
+              active={two}
             />
           </Paper>
         </section>

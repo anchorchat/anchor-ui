@@ -193,8 +193,8 @@ class TextMessage extends Component {
         <p className={fontSize} style={getStyles.body(myMessage, fontSize, messageBodyStyle)}>
           {
             enableLinks || enableMultiline || emoji || !isEmpty(highlights)
-            ? <span>{this.parseHtml()}</span>
-            : body
+              ? <span>{this.parseHtml()}</span>
+              : body
           }
           <MessageTime
             myMessage={myMessage}

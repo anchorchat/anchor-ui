@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Media from '../../../dist/media';
+import Media from '../anchor-ui/media';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -50,6 +50,8 @@ class MediaDoc extends Component {
   }
 
   render() {
+    const { media } = this.state;
+
     return (
       <article className="page">
         <h1>Media</h1>
@@ -58,14 +60,14 @@ class MediaDoc extends Component {
           <p>{componentData.description}</p>
         </section>
         <Markdown markdown={usage} title="Code example" />
-        <p>The query prop must be an object of valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">CSS Media Queries</a>.</p>
+        <p>The query prop must be an object of valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">CSS Media Queries</a>.</p> {/* eslint-disable-line max-len */}
         <section>
           <h1>Examples</h1>
           <p>Resize your window to change the values</p>
           <Paper style={style.paper}>
-            <p>(min-width: 400px): {`${this.state.media.small}`}</p>
-            <p>(min-width: 768px): {`${this.state.media.medium}`}</p>
-            <p>(max-width: 1024px): {`${this.state.media.large}`}</p>
+            <p>(min-width: 400px): {media.small}</p>
+            <p>(min-width: 768px): {media.medium}</p>
+            <p>(max-width: 1024px): {media.large}</p>
             <Media query={query} onChange={this.setMedia} />
           </Paper>
         </section>

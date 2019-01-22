@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Dialog from '../../../../dist/dialog';
-import Button from '../../../../dist/button';
+import Dialog from '../../anchor-ui/dialog';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 
@@ -26,8 +26,10 @@ class DialogDoc extends Component {
   }
 
   toggleDialog = () => {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 

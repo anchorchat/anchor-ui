@@ -37,14 +37,26 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   }
 
   if (vertical === 'top') {
-    position = combineStyles(position, { top: 'initial', bottom: (innerHeight - button.bottom) + button.height });
+    position = combineStyles(
+      position,
+      {
+        top: 'initial',
+        bottom: (innerHeight - button.bottom) + button.height
+      }
+    );
   }
 
   if (vertical === 'middle') {
     const overflowsTop = (popOver.height / 2) > (button.top + halfButtonWidth);
     const overflowsBottom = (popOver.height / 2) > (innerHeight - button.bottom);
 
-    position = combineStyles(position, { top: 'initial', bottom: (innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2) });
+    position = combineStyles(
+      position,
+      {
+        top: 'initial',
+        bottom: (innerHeight - button.bottom - (popOver.height / 2)) + (button.height / 2)
+      }
+    );
 
     if (overflowsTop && !((popOver.height + 32) > innerHeight)) {
       position = combineStyles(position, { top: 16, bottom: 'initial' });
@@ -56,7 +68,13 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
   }
 
   if (horizontal === 'left') {
-    position = combineStyles(position, { left: 'initial', right: (innerWidth - button.right) + halfButtonWidth });
+    position = combineStyles(
+      position,
+      {
+        left: 'initial',
+        right: (innerWidth - button.right) + halfButtonWidth
+      }
+    );
   }
 
   if (horizontal === 'right') {
@@ -67,7 +85,13 @@ const getPopOverPosition = (button, popOver, type = 'iconMenu') => {
     const overflowsLeft = (popOver.width / 2) > (button.left + halfButtonWidth);
     const overflowsRight = (popOver.width / 2) > (innerWidth - button.right);
 
-    position = combineStyles(position, { left: button.right - (popOver.width / 2), right: 'initial' });
+    position = combineStyles(
+      position,
+      {
+        left: button.right - (popOver.width / 2),
+        right: 'initial'
+      }
+    );
 
     if (overflowsLeft && !((popOver.width + 32) > innerWidth)) {
       position = combineStyles(position, { left: 16, right: 'initial' });

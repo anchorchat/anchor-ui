@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import emojione from 'emojione';
-import EmojiMenu from '../../../../dist/emoji-menu';
-import Button from '../../../../dist/button';
+import EmojiMenu from '../../anchor-ui/emoji-menu';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 
@@ -31,11 +31,19 @@ class EmojiMenuDoc extends Component {
     emoji: ''
   }
 
-  toggleMenu = () => this.setState({ open: !this.state.open })
+  toggleMenu = () => {
+    const { open } = this.state;
+
+    this.setState({
+      open: !open
+    });
+  }
 
   sendEmoji = ({ shortname }) => this.setState({ emoji: shortname })
 
   render() {
+    const { emoji, open } = this.state;
+
     return (
       <article className="page">
         <h1>EmojiMenu</h1>
@@ -57,14 +65,20 @@ class EmojiMenuDoc extends Component {
           <Markdown markdown={example} title="Code example" />
           <Paper style={style.paper}>
             {
-              this.state.emoji
-              ? <span style={style.emojiMenu} className="emojione" dangerouslySetInnerHTML={createMarkup(this.state.emoji)} />
-              : null
+              emoji
+                ? (
+                  <span
+                    style={style.emojiMenu}
+                    className="emojione"
+                    dangerouslySetInnerHTML={createMarkup(emoji)}
+                  />
+                )
+                : null
             }
             <EmojiMenu
               sendEmoji={this.sendEmoji}
               style={style.emojiMenu}
-              open={this.state.open}
+              open={open}
               hideMenu={this.toggleMenu}
             />
             <Button style={style.emojiMenu} onClick={this.toggleMenu}>

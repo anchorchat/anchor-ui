@@ -25,13 +25,13 @@ describe('TableHeaderColumn', () => {
   });
 
   it('should always render a th element', () => {
-    const wrapper = shallow(<TableHeaderColumn {...props} >{children}</TableHeaderColumn>);
+    const wrapper = shallow(<TableHeaderColumn {...props}>{children}</TableHeaderColumn>);
 
     expect(wrapper.find('th')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<TableHeaderColumn {...props} >{children}</TableHeaderColumn>);
+    const wrapper = shallow(<TableHeaderColumn {...props}>{children}</TableHeaderColumn>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +39,7 @@ describe('TableHeaderColumn', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<TableHeaderColumn {...props} >{children}</TableHeaderColumn>);
+    shallow(<TableHeaderColumn {...props}>{children}</TableHeaderColumn>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });

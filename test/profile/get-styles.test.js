@@ -40,9 +40,14 @@ describe('Profile.getStyles', () => {
     });
 
     it('should add image styles', () => {
-      const style = getStyles.coverImage({ backgroundImage: 'url(https://avatars1.githubusercontent.com/u/6596471?v=3&s=400)' });
+      const style = getStyles.coverImage(
+        { backgroundImage: 'url(https://avatars1.githubusercontent.com/u/6596471?v=3&s=400)' }
+      );
 
-      expect(style).to.have.property('backgroundImage', 'url(https://avatars1.githubusercontent.com/u/6596471?v=3&s=400)');
+      expect(style).to.have.property(
+        'backgroundImage',
+        'url(https://avatars1.githubusercontent.com/u/6596471?v=3&s=400)'
+      );
     });
 
     it('should combine styles', () => {

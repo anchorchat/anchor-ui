@@ -43,6 +43,7 @@ const Button = ({
     onClick={onClick}
     style={getStyles.root(color, inverted, iconButton, disabled, flatButton, style)}
     disabled={disabled}
+    type="button"
     {...custom}
   >
     {children}

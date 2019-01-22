@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
-import Menu from '../../../../dist/menu';
-import MenuItem from '../../../../dist/menu-item';
-import Button from '../../../../dist/button';
+import Menu from '../../anchor-ui/menu';
+import MenuItem from '../../anchor-ui/menu-item';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
-import IconRocket from '../../../../dist/icons/icon-rocket';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
+import IconRocket from '../../anchor-ui/icons/icon-rocket';
 import Markdown from '../markdown';
 import example from './example';
 
@@ -31,20 +31,26 @@ class MenuDoc extends Component {
   }
 
   toggleMenu = () => {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 
   toggleMenuIconHeader = () => {
+    const { openIconHeader } = this.state;
+
     this.setState({
-      openIconHeader: !this.state.openIconHeader
+      openIconHeader: !openIconHeader
     });
   }
 
   toggleMenuRight = () => {
+    const { openRight } = this.state;
+
     this.setState({
-      openRight: !this.state.openRight
+      openRight: !openRight
     });
   }
 

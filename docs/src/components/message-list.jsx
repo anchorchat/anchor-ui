@@ -3,12 +3,12 @@ import find from 'lodash/find';
 import map from 'lodash/map';
 import moment from 'moment';
 import faker from 'faker';
-import Message from '../../../dist/message';
-import MessageList from '../../../dist/message-list';
+import Message from '../anchor-ui/message';
+import MessageList from '../anchor-ui/message-list';
 import Props from './props';
-import components from '../../components.json';
+import components from '../components.json';
 import background from '../assets/images/channel-background.jpg';
-import Paper from '../../../dist/paper';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -21,7 +21,7 @@ const currentUser = faker.internet.userName();
 
 const messages = [
   {
-    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.',
+    body: 'Stop talking, brain thinking. Hush. You know when grown-ups tell you \'everything\'s going to be fine\' and you think they\'re probably lying to make you feel better? I\'m the Doctor. Well, they call me the Doctor. I don\'t know why. I call me the Doctor too. I still don\'t know why.', // eslint-disable-line max-len
     createdAt: new Date(),
     username: faker.internet.userName(),
     avatar: faker.internet.avatar(),

@@ -4,13 +4,13 @@ import replace from 'lodash/replace';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import escape from 'escape-html';
-import Table from '../../../dist/table';
-import TableHeader from '../../../dist/table-header';
-import TableHeaderColumn from '../../../dist/table-header-column';
-import TableBody from '../../../dist/table-body';
-import TableRow from '../../../dist/table-row';
-import TableColumn from '../../../dist/table-column';
-import urlRegex from '../../../dist/url-regex';
+import Table from '../anchor-ui/table';
+import TableHeader from '../anchor-ui/table-header';
+import TableHeaderColumn from '../anchor-ui/table-header-column';
+import TableBody from '../anchor-ui/table-body';
+import TableRow from '../anchor-ui/table-row';
+import TableColumn from '../anchor-ui/table-column';
+import urlRegex from '../anchor-ui/url-regex';
 
 const getPropType = (type) => {
   if (type.name === 'instanceOf') {
@@ -35,7 +35,7 @@ const createMarkup = (text) => {
 
   let parsedText = replace(escapedText, /\n/g, '<br />');
 
-  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;'; // eslint-disable-line max-len
 
   parsedText = replace(parsedText, urlRegex, (url) => {
     if (!urlSchemeRegex.test(url)) {
@@ -81,7 +81,9 @@ const Props = ({ props }) => {
                 style={style.column}
                 dangerouslySetInnerHTML={createMarkup(prop.description)}
               />
-              <TableColumn style={style.column}>{prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}</TableColumn>
+              <TableColumn style={style.column}>
+                {prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}
+              </TableColumn>
               <TableColumn style={style.column}>{prop.required ? 'Yes' : 'No'}</TableColumn>
             </TableRow>
           ))}

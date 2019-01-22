@@ -1,13 +1,13 @@
 import React from 'react';
 import find from 'lodash/find';
-import AppHeader from '../../../../dist/app-header';
-import Button from '../../../../dist/button';
-import { colors } from '../../../../dist/settings';
-import IconExit from '../../../../dist/icons/icon-exit';
+import AppHeader from '../../anchor-ui/app-header';
+import Button from '../../anchor-ui/button';
+import { colors } from '../../anchor-ui/settings';
+import IconExit from '../../anchor-ui/icons/icon-exit';
 import Props from '../props';
-import components from '../../../components.json';
+import components from '../../components.json';
 import logo from '../../assets/images/logo.svg';
-import Paper from '../../../../dist/paper';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 
@@ -41,11 +41,11 @@ const AppHeaderDoc = () => (
           style={style.appHeader}
           text="Anchor UI"
           icon={<img src={logo} alt="Anchor Chat" />}
-          rightButton={
+          rightButton={(
             <Button iconButton>
               <IconExit color={colors.white} />
             </Button>
-          }
+          )}
         />
       </Paper>
     </section>

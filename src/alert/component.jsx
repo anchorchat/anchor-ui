@@ -57,12 +57,12 @@ const Alert = ({
     <p style={getStyles.text(hideAlert, textStyle)}>{text}</p>
     {
       hideAlert
-      ? (
-        <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
-          <IconClose color={darken(colors.alert[type], 0.65)} />
-        </Button>
-      )
-      : null
+        ? (
+          <Button iconButton onClick={hideAlert} style={getStyles.button(buttonStyle)}>
+            <IconClose color={darken(colors.alert[type], 0.65)} />
+          </Button>
+        )
+        : null
     }
   </section>
 );

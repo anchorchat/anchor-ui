@@ -5,9 +5,9 @@ import replace from 'lodash/replace';
 import last from 'lodash/last';
 import noop from 'lodash/noop';
 import faker from 'faker';
-import Commands from '../../../../dist/commands';
-import MessageInput from '../../../../dist/message-input';
-import Paper from '../../../../dist/paper';
+import Commands from '../../anchor-ui/commands';
+import MessageInput from '../../anchor-ui/message-input';
+import Paper from '../../anchor-ui/paper';
 
 const mentions = [
   {
@@ -88,6 +88,8 @@ class CommandsDoc extends Component {
   handleRef = (node) => { this.input = node; }
 
   render() {
+    const { valueToMatch, value } = this.state;
+
     const style = {
       paper: {
         display: 'flex',
@@ -113,7 +115,7 @@ class CommandsDoc extends Component {
         <Commands
           header="Mentions"
           style={style.commands}
-          value={this.state.valueToMatch}
+          value={valueToMatch}
           commands={mentions}
           onChange={this.handleChange}
           onSelect={this.handleSelect}
@@ -123,7 +125,7 @@ class CommandsDoc extends Component {
         <MessageInput
           onChange={this.changeValue}
           placeholder="Type @ to filter mentions"
-          value={this.state.value}
+          value={value}
           sendMessage={noop}
           style={style.messageInput}
           inputRef={this.handleRef}

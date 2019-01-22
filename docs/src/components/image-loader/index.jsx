@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import sample from 'lodash/sample';
-import ImageLoader from '../../../../dist/image-loader';
-import Button from '../../../../dist/button';
+import ImageLoader from '../../anchor-ui/image-loader';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 
@@ -108,22 +108,22 @@ class ImageLoaderDoc extends Component {
               <ImageLoader
                 src={placeholderImage}
                 imgProps={imgProps}
-                placeholder={
+                placeholder={(
                   <img
                     src="https://cdn.anchor.fish/client/assets/defaults/picture.f682bf93.jpg"
                     alt="placeholder"
                     style={style.image}
                   />
-                }
+                )}
               />
               <ImageLoader
                 src={errorImage}
                 imgProps={imgProps}
-                error={
+                error={(
                   <div style={style.error}>
                     <p>Failed to load image</p>
                   </div>
-                }
+                )}
               />
             </div>
           </Paper>

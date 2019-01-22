@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Modal from '../../../dist/modal';
-import Button from '../../../dist/button';
+import Modal from '../anchor-ui/modal';
+import Button from '../anchor-ui/button';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -37,8 +37,10 @@ class ModalDoc extends Component {
   }
 
   toggleModal() {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 
