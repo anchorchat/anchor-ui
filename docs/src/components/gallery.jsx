@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import Gallery from '../../../dist/gallery';
+import Gallery from '../anchor-ui/gallery';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
-import Select from '../../../dist/select';
-import MenuItem from '../../../dist/menu-item';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
+import Select from '../anchor-ui/select';
+import MenuItem from '../anchor-ui/menu-item';
 import Markdown from './markdown';
 
 const usage = `
@@ -107,6 +107,8 @@ class GalleryDoc extends Component {
   selectLightbox = (event, lightbox) => this.setState({ lightbox })
 
   render() {
+    const { lightbox, rowHeight } = this.state;
+
     return (
       <article className="page">
         <h1>Gallery</h1>
@@ -119,11 +121,21 @@ class GalleryDoc extends Component {
           <h1>Examples</h1>
           <h1>Examples</h1>
           <div style={style.options}>
-            <Select style={style.select} label="Lightbox" value={this.state.lightbox} onChange={this.selectLightbox}>
+            <Select
+              style={style.select}
+              label="Lightbox"
+              value={lightbox}
+              onChange={this.selectLightbox}
+            >
               <MenuItem text="On" value />
               <MenuItem text="Off" value={false} />
             </Select>
-            <Select style={style.select} label="Row height" value={this.state.rowHeight} onChange={this.selectRowHeight}>
+            <Select
+              style={style.select}
+              label="Row height"
+              value={rowHeight}
+              onChange={this.selectRowHeight}
+            >
               <MenuItem text="400" value={400} />
               <MenuItem text="320" value={320} />
               <MenuItem text="240" value={240} />
@@ -133,8 +145,8 @@ class GalleryDoc extends Component {
           <Paper style={style.paper}>
             <Gallery
               items={images}
-              rowHeight={this.state.rowHeight}
-              enableLightbox={this.state.lightbox}
+              rowHeight={rowHeight}
+              enableLightbox={lightbox}
             />
           </Paper>
         </section>

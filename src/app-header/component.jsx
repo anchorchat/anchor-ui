@@ -55,15 +55,15 @@ const AppHeader = ({
   <header style={getStyles.root(color, leftButton, rightButton, style)} {...custom}>
     {
       leftButton
-      ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
-      : null
+        ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
+        : null
     }
     {icon ? <div style={getStyles.icon(iconStyle)}>{icon}</div> : null}
     {text ? <h1 style={getStyles.text(textStyle)}>{text}</h1> : null}
     {
       rightButton
-      ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
-      : null
+        ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
+        : null
     }
   </header>
 );

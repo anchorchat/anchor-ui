@@ -1,12 +1,12 @@
 import React from 'react';
 import find from 'lodash/find';
-import IconRocket from '../../../../dist/icons/icon-rocket';
-import Button from '../../../../dist/button';
-import Portal from '../../../../dist/portal';
-import Alert from '../../../../dist/alert';
+import IconRocket from '../../anchor-ui/icons/icon-rocket';
+import Button from '../../anchor-ui/button';
+import Portal from '../../anchor-ui/portal';
+import Alert from '../../anchor-ui/alert';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import example from './example';
 import Markdown from '../markdown';
 
@@ -45,7 +45,7 @@ class PortalDoc extends React.Component {
         <h1>Portal</h1>
         <Alert
           style={style.alert}
-          text="Portal will only transport elements to a given element in React v16 or later. In older versions of React Portal will just render children."
+          text="Portal will only transport elements to a given element in React v16 or later. In older versions of React Portal will just render children." // eslint-disable-line max-len
           type="warning"
         />
         <section>

@@ -5,8 +5,8 @@ import prism from 'prismjs';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-jsx';
-import Button from '../../../dist/button';
-import IconChevronDown from '../../../dist/icons/icon-chevron-down';
+import Button from '../anchor-ui/button';
+import IconChevronDown from '../anchor-ui/icons/icon-chevron-down';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -29,8 +29,10 @@ class Markdown extends Component {
   }
 
   toggleOpen = () => {
+    const { open } = this.state;
+
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 

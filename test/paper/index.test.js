@@ -33,7 +33,7 @@ describe('Paper', () => {
   });
 
   it('should always render the value of the children prop', () => {
-    const wrapper = shallow(<Paper {...props} >{children}</Paper>);
+    const wrapper = shallow(<Paper {...props}>{children}</Paper>);
 
     expect(wrapper.contains(children)).to.equal(true);
   });

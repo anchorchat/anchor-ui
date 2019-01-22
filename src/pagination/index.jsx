@@ -35,23 +35,25 @@ class Pagination extends Component {
       jumpToPage
     } = nextProps;
 
-    if (!isEqual(list, this.props.list) || !isEqual(pageSize, this.props.pageSize)) {
+    if (!isEqual(list, this.props.list) || !isEqual(pageSize, this.props.pageSize)) { // eslint-disable-line react/destructuring-assignment
       this.setPage({}, initialPage, list, pageSize);
     }
 
-    if (!isEqual(jumpToPage, this.props.jumpToPage)) {
+    if (!isEqual(jumpToPage, this.props.jumpToPage)) { // eslint-disable-line react/destructuring-assignment
       this.setPage({}, jumpToPage, list, pageSize);
     }
   }
 
   setPage = (event, page, list, pageSize) => {
+    const { onChange } = this.props;
+
     const newPager = getPager(list, page, pageSize);
 
     const items = list.slice(newPager.startIndex, newPager.endIndex + 1);
 
     this.setState({ pager: newPager });
 
-    this.props.onChange(
+    onChange(
       event,
       {
         items,
@@ -73,7 +75,8 @@ class Pagination extends Component {
       iconButtonStyle,
       position
     } = this.props;
-    const { currentPage, pages, totalPages } = this.state.pager;
+    const { pager } = this.state;
+    const { currentPage, pages, totalPages } = pager;
 
     const nav = (
       <nav style={getStyles.nav(position, navStyle)}>

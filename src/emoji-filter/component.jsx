@@ -73,6 +73,7 @@ class EmojiFilter extends Component {
   componentWillReceiveProps(nextProps) {
     const { value } = nextProps;
     const { open } = this.state;
+    const { onMenuOpen } = this.props;
 
     if (!value) {
       return this.hideMenu();
@@ -85,7 +86,7 @@ class EmojiFilter extends Component {
         open: true,
         emoji: filteredEmoji
       });
-      return this.props.onMenuOpen();
+      return onMenuOpen();
     }
 
     if (isEmpty(filteredEmoji) && open) {
@@ -97,7 +98,7 @@ class EmojiFilter extends Component {
     });
   }
 
-  filterEmoji = (value, tone = this.state.tone) => {
+  filterEmoji = (value, tone = this.state.tone) => { // eslint-disable-line react/destructuring-assignment
     if (!value || value.length < 3) {
       return [];
     }
@@ -119,8 +120,9 @@ class EmojiFilter extends Component {
 
   hideMenu = () => {
     const { onMenuClose } = this.props;
+    const { open } = this.state;
 
-    if (this.state.open) {
+    if (open) {
       this.setState({ open: false, emoji: [], selectedIndex: 0 });
       onMenuClose();
     }
@@ -148,7 +150,7 @@ class EmojiFilter extends Component {
     }
 
     if (key === 13) {
-      this.handleSelect(event, this.state.emoji[selectedIndex], selectedIndex);
+      this.handleSelect(event, this.state.emoji[selectedIndex], selectedIndex); // eslint-disable-line react/destructuring-assignment
     }
 
     return false;
@@ -160,18 +162,18 @@ class EmojiFilter extends Component {
 
   selectNext = (event) => {
     const { selectedIndex } = this.state;
-    const emojiSize = size(this.state.emoji);
+    const emojiSize = size(this.state.emoji); // eslint-disable-line react/destructuring-assignment
 
     if (selectedIndex === null) {
-      return this.handleChange(event, this.state.emoji[0], 0);
+      return this.handleChange(event, this.state.emoji[0], 0); // eslint-disable-line react/destructuring-assignment
     }
 
     if (selectedIndex + 1 < emojiSize) {
-      return this.handleChange(event, this.state.emoji[selectedIndex + 1], selectedIndex + 1);
+      return this.handleChange(event, this.state.emoji[selectedIndex + 1], selectedIndex + 1); // eslint-disable-line react/destructuring-assignment
     }
 
     if (selectedIndex === emojiSize - 1) {
-      return this.handleChange(event, this.state.emoji[0], 0);
+      return this.handleChange(event, this.state.emoji[0], 0); // eslint-disable-line react/destructuring-assignment
     }
 
     return false;
@@ -179,27 +181,29 @@ class EmojiFilter extends Component {
 
   selectPrevious = (event) => {
     const { selectedIndex } = this.state;
-    const emojiSize = size(this.state.emoji);
+    const emojiSize = size(this.state.emoji); // eslint-disable-line react/destructuring-assignment
 
     if (selectedIndex === null) {
-      return this.handleChange(event, this.state.emoji[0], 0);
+      return this.handleChange(event, this.state.emoji[0], 0); // eslint-disable-line react/destructuring-assignment
     }
 
     if (selectedIndex === 0) {
-      return this.handleChange(event, this.state.emoji[emojiSize - 1], emojiSize - 1);
+      return this.handleChange(event, this.state.emoji[emojiSize - 1], emojiSize - 1); // eslint-disable-line react/destructuring-assignment
     }
 
     if (selectedIndex - 1 < emojiSize) {
-      return this.handleChange(event, this.state.emoji[selectedIndex - 1], selectedIndex - 1);
+      return this.handleChange(event, this.state.emoji[selectedIndex - 1], selectedIndex - 1); // eslint-disable-line react/destructuring-assignment
     }
 
     return false;
   }
 
   changeTone = (tone) => {
+    const { value } = this.props;
+
     this.setState({
       tone,
-      emoji: this.filterEmoji(this.props.value, tone)
+      emoji: this.filterEmoji(value, tone)
     });
   }
 
@@ -267,7 +271,7 @@ class EmojiFilter extends Component {
           style={getStyles.header(headerStyle)}
         />
         <section style={getStyles.commands()}>
-          {map(this.state.emoji, (icon, index) => (
+          {map(this.state.emoji, (icon, index) => ( // eslint-disable-line
             <div
               key={icon.shortname}
               style={getStyles.emoji(color, index === selectedIndex)}

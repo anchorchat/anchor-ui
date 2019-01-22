@@ -1,5 +1,5 @@
 import map from 'lodash/map';
-import colors from '../settings/colors';
+import colors from './colors';
 import fade from '../internal/fade';
 
 const data = [

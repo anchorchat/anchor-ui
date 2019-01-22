@@ -2,9 +2,9 @@ import React from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
 import Props from '../props';
-import Alert from '../../../../dist/alert';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import Alert from '../../anchor-ui/alert';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

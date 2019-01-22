@@ -9,7 +9,13 @@ describe('Paper.getStyles', () => {
       const style = getStyles.root();
 
       expect(style).to.be.an('object');
-      expect(style).to.have.all.keys('padding', 'borderRadius', 'boxShadow', 'backgroundColor', 'margin');
+      expect(style).to.have.all.keys(
+        'padding',
+        'borderRadius',
+        'boxShadow',
+        'backgroundColor',
+        'margin'
+      );
     });
 
     it('should change depth', () => {
@@ -25,7 +31,14 @@ describe('Paper.getStyles', () => {
       // I'm now also testing combineStyles,
       // this can be avoided by exporting all internal functions as one object...
       expect(style).to.be.an('object');
-      expect(style).to.have.all.keys('padding', 'borderRadius', 'boxShadow', 'backgroundColor', 'margin', 'color');
+      expect(style).to.have.all.keys(
+        'padding',
+        'borderRadius',
+        'boxShadow',
+        'backgroundColor',
+        'margin',
+        'color'
+      );
     });
   });
 });

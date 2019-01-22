@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
-import Input from '../../../dist/input';
+import Input from '../anchor-ui/input';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -74,6 +74,14 @@ class InputDoc extends Component {
   }
 
   render() {
+    const {
+      value,
+      valueMultiline,
+      valueText,
+      valueError,
+      valueMaxLength
+    } = this.state;
+
     return (
       <article className="page">
         <h1>Input</h1>
@@ -87,7 +95,7 @@ class InputDoc extends Component {
           <Paper style={style.paper}>
             <Input
               onChange={this.handleChange}
-              value={this.state.value}
+              value={value}
               type="text"
               label="Default value example"
               name="example"
@@ -95,7 +103,7 @@ class InputDoc extends Component {
             />
             <Input
               onChange={this.handleChangeMultiline}
-              value={this.state.valueMultiline}
+              value={valueMultiline}
               type="text"
               label="Multiline value example"
               name="Multiline example"
@@ -104,7 +112,7 @@ class InputDoc extends Component {
             />
             <Input
               onChange={this.handleChangeText}
-              value={this.state.valueText}
+              value={valueText}
               placeholder="Placeholder text.."
               type="text"
               label="Text example"
@@ -113,7 +121,7 @@ class InputDoc extends Component {
             />
             <Input
               onChange={this.handleChangeMaxLength}
-              value={this.state.valueMaxLength}
+              value={valueMaxLength}
               placeholder="Placeholder text.."
               type="text"
               label="Max length example"
@@ -134,7 +142,7 @@ class InputDoc extends Component {
             />
             <Input
               onChange={this.handleChangeError}
-              value={this.state.valueError}
+              value={valueError}
               placeholder="Placeholder text.."
               type="text"
               label="Error example"

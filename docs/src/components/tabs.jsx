@@ -1,10 +1,10 @@
 import React from 'react';
 import find from 'lodash/find';
-import Tab from '../../../dist/tab';
-import Tabs from '../../../dist/tabs';
+import Tab from '../anchor-ui/tab';
+import Tabs from '../anchor-ui/tabs';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -45,7 +45,10 @@ const TabsDoc = () => (
     <section>
       <h1>Examples</h1>
       <Paper style={style.paper}>
-        <Tabs style={style.tabs} onTabChange={(event, index) => console.log('on tab change callback fired! clicked tab => ', index)}>
+        <Tabs
+          style={style.tabs}
+          onTabChange={(event, index) => console.log('on tab change callback fired! clicked tab => ', index)} // eslint-disable-line max-len
+        >
           <Tab label="Tab 1">Content 1</Tab>
           <Tab label="Tab 2">Content 2</Tab>
           <Tab label="Tab 3">Content 3</Tab>

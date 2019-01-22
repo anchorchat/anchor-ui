@@ -78,19 +78,21 @@ const Profile = ({
       </section>
       {
         avatar
-        ? <Avatar
-          image={avatar}
-          style={getStyles.avatar(avatarStyle)}
-          statusStyle={styles.status}
-          status={status}
-        />
-        : null
+          ? (
+            <Avatar
+              image={avatar}
+              style={getStyles.avatar(avatarStyle)}
+              statusStyle={styles.status}
+              status={status}
+            />
+          )
+          : null
       }
       <h1 style={getStyles.header(headerStyle)}>{header}</h1>
       {
         secondaryText
-        ? <p style={getStyles.secondaryText(secondaryTextStyle)}>{secondaryText}</p>
-        : null
+          ? <p style={getStyles.secondaryText(secondaryTextStyle)}>{secondaryText}</p>
+          : null
       }
       {button}
       {children}

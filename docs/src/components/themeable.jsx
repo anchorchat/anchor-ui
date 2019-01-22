@@ -1,10 +1,10 @@
 import React from 'react';
-import Table from '../../../dist/table';
-import TableHeader from '../../../dist/table-header';
-import TableHeaderColumn from '../../../dist/table-header-column';
-import TableBody from '../../../dist/table-body';
-import TableRow from '../../../dist/table-row';
-import TableColumn from '../../../dist/table-column';
+import Table from '../anchor-ui/table';
+import TableHeader from '../anchor-ui/table-header';
+import TableHeaderColumn from '../anchor-ui/table-header-column';
+import TableBody from '../anchor-ui/table-body';
+import TableRow from '../anchor-ui/table-row';
+import TableColumn from '../anchor-ui/table-column';
 import Markdown from './markdown';
 
 const usage = `

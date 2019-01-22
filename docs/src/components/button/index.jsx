@@ -1,11 +1,11 @@
 import React from 'react';
 import find from 'lodash/find';
-import IconEmoji from '../../../../dist/icons/icon-emoji';
-import Button from '../../../../dist/button';
+import IconEmoji from '../../anchor-ui/icons/icon-emoji';
+import Button from '../../anchor-ui/button';
 import Props from '../props';
-import components from '../../../components.json';
-import colors from '../../../../dist/settings/colors';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import colors from '../../anchor-ui/settings/colors';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 

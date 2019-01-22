@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
-import AppHeader from '../../../dist/app-header';
-import Button from '../../../dist/button';
+import AppHeader from '../anchor-ui/app-header';
+import Button from '../anchor-ui/button';
 import Nav from './nav';
 import logo from '../assets/images/logo.svg';
 import github from '../assets/images/github.svg';
-import ThemeProvider from '../../../dist/theme-provider';
-import colors from '../../../dist/settings/colors';
-import Media from '../../../dist/media';
-import IconMenu from '../../../dist/icons/icon-menu';
+import ThemeProvider from '../anchor-ui/theme-provider';
+import colors from '../anchor-ui/settings/colors';
+import Media from '../anchor-ui/media';
+import IconMenu from '../anchor-ui/icons/icon-menu';
 
 class App extends Component {
   constructor() {
@@ -33,14 +33,16 @@ class App extends Component {
   }
 
   toggleMenu = () => {
+    const { menu } = this.state;
+
     this.setState({
-      menu: !this.state.menu
+      menu: !menu
     });
   }
 
   render() {
     const { children } = this.props;
-    const { media, menu } = this.state;
+    const { media, menu, color } = this.state;
 
     const childrenWithProps = (
       React.Children.map(children, child => (
@@ -59,11 +61,11 @@ class App extends Component {
     );
 
     return (
-      <ThemeProvider color={this.state.color}>
+      <ThemeProvider color={color}>
         <main>
           <AppHeader
             text="Anchor UI"
-            icon={
+            icon={(
               <a
                 href="https://anchor.chat"
                 target="_blank"
@@ -71,13 +73,13 @@ class App extends Component {
               >
                 <img src={logo} alt="Anchor Chat" />
               </a>
-            }
+            )}
             leftButton={
               !media.medium
                 ? leftButton
                 : null
             }
-            rightButton={
+            rightButton={(
               <a
                 href="https://github.com/anchorchat/anchor-ui"
                 target="_blank"
@@ -87,7 +89,7 @@ class App extends Component {
                   <img className="github" src={github} alt="Github" />
                 </Button>
               </a>
-            }
+            )}
           />
           <article className="docs">
             <Nav media={media} open={menu} toggleMenu={this.toggleMenu} />

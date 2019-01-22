@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import find from 'lodash/find';
-import MenuItem from '../../../dist/menu-item';
-import Select from '../../../dist/select';
+import MenuItem from '../anchor-ui/menu-item';
+import Select from '../anchor-ui/select';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -44,6 +44,8 @@ class SelectDoc extends Component {
   }
 
   render() {
+    const { value, valueError } = this.state;
+
     return (
       <article className="page">
         <h1>{componentData.displayName}</h1>
@@ -56,7 +58,7 @@ class SelectDoc extends Component {
           <h1>Examples</h1>
           <Paper style={style.paper}>
             <Select
-              value={this.state.value}
+              value={value}
               label="Select"
               onChange={this.changeValue}
               style={style.select}
@@ -65,7 +67,7 @@ class SelectDoc extends Component {
               <MenuItem text="Menu item 2" value={2} />
             </Select>
             <Select
-              value={this.state.valueError}
+              value={valueError}
               label="Error example"
               onChange={this.changeValueError}
               style={style.select}

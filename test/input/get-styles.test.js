@@ -48,8 +48,8 @@ describe('Input.getStyles', () => {
     it('should get error styles', () => {
       const style = getStyles.input(true);
 
-      expect(style).to.have.property('border': '1px solid #FD2A43');
-      expect(style).to.have.property('color': '#FD2A43');
+      expect(style).to.have.property('border', '1px solid #FD2A43');
+      expect(style).to.have.property('color', '#FD2A43');
     });
 
     it('should combine styles', () => {
@@ -75,8 +75,8 @@ describe('Input.getStyles', () => {
     it('should add errorMessage styles', () => {
       const style = getStyles.textarea(true);
 
-      expect(style).to.have.property('border': '1px solid #FD2A43');
-      expect(style).to.have.property('color': '#FD2A43');
+      expect(style).to.have.property('border', '1px solid #FD2A43');
+      expect(style).to.have.property('color', '#FD2A43');
     });
   });
 

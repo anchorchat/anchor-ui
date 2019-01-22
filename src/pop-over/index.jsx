@@ -43,8 +43,8 @@ const PopOver = ({
       >
         {
           header
-          ? <h1 onClick={onHeaderClick} style={getStyles.header(headerStyle)}>{header}</h1>
-          : null
+            ? <h1 onClick={onHeaderClick} style={getStyles.header(headerStyle)}>{header}</h1>
+            : null
         }
         {children}
         {divider}

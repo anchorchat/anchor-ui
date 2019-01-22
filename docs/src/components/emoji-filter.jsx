@@ -6,11 +6,11 @@ import split from 'lodash/split';
 import replace from 'lodash/replace';
 import noop from 'lodash/noop';
 import last from 'lodash/last';
-import EmojiFilter from '../../../dist/emoji-filter';
-import MessageInput from '../../../dist/message-input';
+import EmojiFilter from '../anchor-ui/emoji-filter';
+import MessageInput from '../anchor-ui/message-input';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `
@@ -97,6 +97,8 @@ class EmojiFilterDoc extends Component {
   handleClose = () => this.setState({ valueToMatch: '', selectedEmoji: '' })
 
   render() {
+    const { valueToMatch, value } = this.state;
+
     return (
       <article className="page">
         <h1>EmojiFilter</h1>
@@ -110,7 +112,7 @@ class EmojiFilterDoc extends Component {
           <Paper style={style.paper}>
             <EmojiFilter
               style={style.commands}
-              value={this.state.valueToMatch}
+              value={valueToMatch}
               onSelect={this.handleSelect}
               onChange={this.handleChange}
               onMenuClose={this.handleClose}
@@ -118,7 +120,7 @@ class EmojiFilterDoc extends Component {
             <MessageInput
               onChange={this.changeValue}
               placeholder="Type : to view and filter emoji"
-              value={this.state.value}
+              value={value}
               sendMessage={noop}
               style={style.messageInput}
               inputRef={(node) => { this.input = node; }}

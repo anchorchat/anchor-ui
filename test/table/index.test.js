@@ -25,13 +25,13 @@ describe('Table', () => {
   });
 
   it('should always render a table element', () => {
-    const wrapper = shallow(<Table {...props} >{children}</Table>);
+    const wrapper = shallow(<Table {...props}>{children}</Table>);
 
     expect(wrapper.find('table')).to.have.length(1);
   });
 
   it('should render children', () => {
-    const wrapper = shallow(<Table {...props} >{children}</Table>);
+    const wrapper = shallow(<Table {...props}>{children}</Table>);
 
     expect(wrapper.containsMatchingElement(<p>children</p>)).to.equal(true);
   });
@@ -39,7 +39,7 @@ describe('Table', () => {
   it('should get root styles', () => {
     const spy = sinon.spy(getStyles, 'root');
 
-    shallow(<Table {...props} >{children}</Table>);
+    shallow(<Table {...props}>{children}</Table>);
     expect(spy).to.have.been.calledWith(props.style);
   });
 });

@@ -1,12 +1,12 @@
 import React from 'react';
 import find from 'lodash/find';
 import noop from 'lodash/noop';
-import IconMenu from '../../../dist/icon-menu';
-import MenuItem from '../../../dist/menu-item';
-import IconLanguage from '../../../dist/icons/icon-language';
+import IconMenu from '../anchor-ui/icon-menu';
+import MenuItem from '../anchor-ui/menu-item';
+import IconLanguage from '../anchor-ui/icons/icon-language';
 import Props from './props';
-import components from '../../components.json';
-import Paper from '../../../dist/paper';
+import components from '../components.json';
+import Paper from '../anchor-ui/paper';
 import Markdown from './markdown';
 
 const usage = `

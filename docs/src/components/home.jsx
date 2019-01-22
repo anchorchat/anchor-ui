@@ -1,13 +1,5 @@
 import React from 'react';
-import map from 'lodash/map';
-import npmPackage from '../../../package.json';
 import Markdown from './markdown';
-import Table from '../../../dist/table';
-import TableHeader from '../../../dist/table-header';
-import TableHeaderColumn from '../../../dist/table-header-column';
-import TableBody from '../../../dist/table-body';
-import TableRow from '../../../dist/table-row';
-import TableColumn from '../../../dist/table-column';
 
 const install = `
   \`\`\`bash
@@ -87,7 +79,7 @@ const Home = () => {
       <section>
         <h1>Font</h1>
         <p>
-          Anchor UI is designed with <a href="https://fonts.google.com/specimen/Lato" target="_blank" rel="noopener noreferrer">Lato</a> but you can also supply your own font with CSS.
+          Anchor UI is designed with <a href="https://fonts.google.com/specimen/Lato" target="_blank" rel="noopener noreferrer">Lato</a> but you can also supply your own font with CSS. {/* eslint-disable-line max-len */}
         </p>
         <Markdown markdown={font} title="Install Lato" />
       </section>
@@ -106,47 +98,7 @@ const Home = () => {
       </section>
       <section>
         <h2>StyleRoot</h2>
-        <p>If you want to use inline Media Queries or inline CSS animations you need to wrap your app in <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component</p>
-      </section>
-      <section style={style.tables}>
-        <section>
-          <h1>Dependencies</h1>
-          <Table style={style.table}>
-            <TableHeader>
-              <TableRow>
-                <TableHeaderColumn>Name</TableHeaderColumn>
-                <TableHeaderColumn>Version</TableHeaderColumn>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {map(npmPackage.dependencies, (version, name) => (
-                <TableRow key={name}>
-                  <TableColumn>{name}</TableColumn>
-                  <TableColumn>{version}</TableColumn>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </section>
-        <section>
-          <h1>Peer Dependencies</h1>
-          <Table style={style.table}>
-            <TableHeader>
-              <TableRow>
-                <TableHeaderColumn>Name</TableHeaderColumn>
-                <TableHeaderColumn>Version</TableHeaderColumn>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {map(npmPackage.peerDependencies, (version, name) => (
-                <TableRow key={name}>
-                  <TableColumn>{name}</TableColumn>
-                  <TableColumn>{version}</TableColumn>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </section>
+        <p>If you want to use inline Media Queries or inline CSS animations you need to wrap your app in <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component</p> {/* eslint-disable-line max-len */}
       </section>
     </article>
   );

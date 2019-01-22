@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import find from 'lodash/find';
 import map from 'lodash/map';
 import isNaN from 'lodash/isNaN';
-import List from '../../../../dist/list';
-import ListItem from '../../../../dist/list-item';
-import Select from '../../../../dist/select';
-import MenuItem from '../../../../dist/menu-item';
-import Input from '../../../../dist/input';
+import List from '../../anchor-ui/list';
+import ListItem from '../../anchor-ui/list-item';
+import Select from '../../anchor-ui/select';
+import MenuItem from '../../anchor-ui/menu-item';
+import Input from '../../anchor-ui/input';
 import Props from '../props';
-import components from '../../../components.json';
-import Paper from '../../../../dist/paper';
+import components from '../../components.json';
+import Paper from '../../anchor-ui/paper';
 import Markdown from '../markdown';
 import example from './example';
 import { generateRandomUsers, sortUsersByUsername } from '../../utils/users';
@@ -51,7 +51,9 @@ class ListDoc extends Component {
   }
 
   componentDidMount() {
-    this.renderItems({}, this.state.amount);
+    const { amount } = this.state;
+
+    this.renderItems({}, amount);
   }
 
   componentWillReceiveProps(nextProps, nextState) {

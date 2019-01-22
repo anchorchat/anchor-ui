@@ -37,7 +37,7 @@ class ThemeProvider extends Component {
   }
 
   static childContextTypes = {
-    theme: PropTypes.object
+    theme: PropTypes.object // eslint-disable-line react/forbid-prop-types
   }
 
   constructor(props, context) {
@@ -57,7 +57,9 @@ class ThemeProvider extends Component {
   }
 
   render() {
-    return this.props.children;
+    const { children } = this.props;
+
+    return children;
   }
 }
 

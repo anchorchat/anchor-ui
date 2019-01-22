@@ -20,21 +20,21 @@ const ChannelHeader = ({
   <header style={getStyles.root(style)} {...custom}>
     {
       leftButton
-      ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
-      : null
+        ? <div style={getStyles.leftButton(leftButtonStyle)}>{leftButton}</div>
+        : null
     }
     <section style={styles.textContainer}>
       <h1 style={getStyles.text(textStyle)}>{name}</h1>
       {
         secondaryText
-        ? <h2 style={getStyles.secondaryText(color, secondaryTextStyle)}>{secondaryText}</h2>
-        : null
+          ? <h2 style={getStyles.secondaryText(color, secondaryTextStyle)}>{secondaryText}</h2>
+          : null
       }
     </section>
     {
       rightButton
-      ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
-      : null
+        ? <div style={getStyles.rightButton(rightButtonStyle)}>{rightButton}</div>
+        : null
     }
   </header>
 );

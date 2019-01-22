@@ -79,7 +79,7 @@ describe('Input', () => {
 
     component.setProps({ label: 'Text' });
     expect(component.find('label')).to.have.length(1);
-    expect(component.containsMatchingElement(<label>Text</label>)).to.equal(true); // eslint-disable-line jsx-a11y/label-has-for, max-len
+    expect(component.containsMatchingElement(<label>Text</label>)).to.equal(true); // eslint-disable-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
 
     component.setProps({ label: <span>Node</span> });
     expect(component.find('label')).to.have.length(1);
