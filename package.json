@@ -30,11 +30,7 @@
   "keywords": [
     "react"
   ],
-  "author": "Sjaak Luthart <sjaak.luthart@anchor.chat>",
-  "contributors": [
-    "Ian Stewart <ian.stewart@anchor.chat>",
-    "Lars Tadema <lars.tadema@anchor.chat>"
-  ],
+  "author": "Peter Kuiper <peter.kuiper@anchor.chat>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anchorchat/anchor-ui/issues"
