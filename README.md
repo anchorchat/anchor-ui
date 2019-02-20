@@ -87,12 +87,6 @@ $ bundle install && make changelog
 
 If you'd like to help with the development of this module please consider our [contributing guidelines](https://github.com/anchorchat/anchor-ui/blob/master/CONTRIBUTING.md).
 
-## Team
-
-|![Sjaak Luthart](https://avatars1.githubusercontent.com/u/6596471?v=3&s=150)|![Ian Stewart](https://avatars2.githubusercontent.com/u/14125280?v=3&s=150)|![Lars Tadema](https://avatars0.githubusercontent.com/u/16486197?v=3&s=150)|![Peter Kuiper](https://avatars3.githubusercontent.com/u/6492184?v=3&s=150)
-|---|---|---|---|
-|[Sjaak Luthart](https://github.com/sjaakluthart)|[Ian Stewart](https://github.com/IanCStewart)|[Lars Tadema](https://github.com/larstadema)|[Peter Kuiper](https://github.com/peterkuiper)
-
 ## License
 
 This project is licensed under the terms of the [MIT license](https://github.com/anchorchat/anchor-ui/blob/master/LICENSE).
