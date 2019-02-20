@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import emojione from 'emojione';
+import Autolinker from 'autolinker';
 import escape from 'escape-html';
 import isEmpty from 'lodash/isEmpty';
 import forEach from 'lodash/forEach';
