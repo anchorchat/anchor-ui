@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import replace from 'lodash/replace';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import escape from 'escape-html';
