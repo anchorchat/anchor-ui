@@ -10,7 +10,6 @@ import TableHeaderColumn from '../anchor-ui/table-header-column';
 import TableBody from '../anchor-ui/table-body';
 import TableRow from '../anchor-ui/table-row';
 import TableColumn from '../anchor-ui/table-column';
-import urlRegex from '../anchor-ui/url-regex';
 
 const getPropType = (type) => {
   if (type.name === 'instanceOf') {
@@ -26,28 +25,6 @@ const getPropType = (type) => {
   }
 
   return type.name;
-};
-
-const createMarkup = (text) => {
-  const escapedText = escape(text);
-
-  const urlSchemeRegex = /^(?:https?:\/\/)/;
-
-  let parsedText = replace(escapedText, /\n/g, '<br />');
-
-  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;'; // eslint-disable-line max-len
-
-  parsedText = replace(parsedText, urlRegex, (url) => {
-    if (!urlSchemeRegex.test(url)) {
-      // Add default http:// scheme for urls like example.com
-      return (`<a style="${style}" href="http://${url}" target="_blank">${url}</a>`);
-    }
-    return (`<a style="${style}" href="${url}" target="_blank">${url}</a>`);
-  });
-
-  return {
-    __html: parsedText
-  };
 };
 
 const Props = ({ props }) => {
@@ -79,7 +56,7 @@ const Props = ({ props }) => {
               <TableColumn style={style.column}>{getPropType(prop.type)}</TableColumn>
               <TableColumn
                 style={style.column}
-                dangerouslySetInnerHTML={createMarkup(prop.description)}
+                dangerouslySetInnerHTML={{ __html: escape(prop.description) }}
               />
               <TableColumn style={style.column}>
                 {prop.defaultValue && prop.defaultValue.value ? prop.defaultValue.value : ''}
