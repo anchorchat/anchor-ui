@@ -13,7 +13,6 @@ import colors from '../../settings/colors';
 import getStyles from './get-styles';
 import MessageHeader from '../message-header';
 import MessageTime from '../message-time';
-import urlRegex from '../../url-regex';
 import styles from './styles';
 
 const propTypes = {
@@ -65,57 +64,63 @@ const defaultProps = {
 };
 
 class TextMessage extends Component {
-  createMarkup = () => {
-    const {
-      body,
-      enableLinks,
-      emoji,
-      highlights,
-      enableMultiline
-    } = this.props;
+  autolinkText = (text) => {
+    const { enableLinks } = this.props;
 
-    const text = body;
+    const autolinkOptions = {
+      className: 'link',
+      urls: true,
+      email: false,
+      phone: false,
+      mention: false,
+      hashtag: false
+    };
 
-    const escapedText = escape(text);
-
-    let parsedText = escapedText;
-
-    // XXX: Should find a prettier solution for this
-    const dotCount = escapedText.match(/([0-9])+./g);
-
-    if (enableLinks && size(dotCount) < 10) {
-      const urlSchemeRegex = /^(?:https?:\/\/)/;
-
-      parsedText = replace(escapedText, urlRegex, (url) => {
-        if (!urlSchemeRegex.test(url)) {
-          // Add default http:// scheme for urls like example.com
-          return (`<a class="link" value="http://${url}" href="http://${url}">${url}</a>`);
-        }
-        return (`<a class="link" value="${url}" href="${url}">${url}</a>`);
-      });
-    }
-
-    if (!isEmpty(highlights)) {
-      forEach(highlights, (highlight) => {
-        parsedText = replace(parsedText, `${highlight.prefix}${highlight.value}`, `<span class="highlight" value="${highlight.id}">${highlight.prefix}${highlight.value}</span>`);
-      });
-    }
-
-    let html = parsedText;
-
-    if (emoji) {
-      html = emojione.toImage(parsedText);
-    }
-
-    if (enableMultiline) {
-      html = replace(html, /\n/g, '<br />');
-    }
-
-    return html;
+    return enableLinks ? Autolinker.link(text, autolinkOptions) : text;
   }
+
+  emojiToImage = (text) => {
+    const { emoji } = this.props;
+
+    return emoji ? emojione.toImage(text) : text;
+  }
+
+  nl2br = (text) => {
+    const { enableMultiline } = this.props;
+
+    return enableMultiline ? replace(text, /\n/g, '<br />') : text;
+  }
+
+  highlightText = (text) => {
+    const { highlights } = this.props;
+
+    if (isEmpty(highlights)) {
+      return text;
+    }
+
+    let highlightedText = text;
+
+    forEach(highlights, (highlight) => {
+      highlightedText = replace(
+        text,
+        `${highlight.prefix}${highlight.value}`, `<span class="highlight" value="${highlight.id}">${highlight.prefix}${highlight.value}</span>`
+      );
+    });
+
+    return highlightedText;
+  }
+
+  createMarkup = compose(
+    this.nl2br,
+    this.highlightText,
+    this.emojiToImage,
+    this.autolinkText,
+    escape
+  )
 
   parseHtml = () => {
     const {
+      body,
       onHighlightClick,
       color,
       myMessage,
@@ -151,7 +156,7 @@ class TextMessage extends Component {
       }
     };
 
-    return htmlParser(this.createMarkup(), options);
+    return htmlParser(this.createMarkup(body), options);
   }
 
   render() {
