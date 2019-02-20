@@ -89,10 +89,7 @@
     "html-react-parser": "^0.6.1",
     "lodash": "^4.17.4",
     "mobile-detect": "^1.3.6",
-<<<<<<< HEAD
     "radium": "^0.25.1",
-=======
->>>>>>> origin/develop
     "react-dom": "^16.0.0",
     "react-event-listener": "^0.6.5",
     "react-onclickoutside": "^6.6.3",
