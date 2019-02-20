@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "React Component UI Kit",
   "main": "index.js",
   "files": [
@@ -30,11 +30,7 @@
   "keywords": [
     "react"
   ],
-  "author": "Sjaak Luthart <sjaak.luthart@anchor.chat>",
-  "contributors": [
-    "Ian Stewart <ian.stewart@anchor.chat>",
-    "Lars Tadema <lars.tadema@anchor.chat>"
-  ],
+  "author": "Peter Kuiper <peter.kuiper@anchor.chat>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anchorchat/anchor-ui/issues"
@@ -63,6 +59,7 @@
     "nodemon": "^1.18.9",
     "nyc": "^13.1.0",
     "prettier": "^1.7.4",
+    "radium": "^0.25.1",
     "react": "^16.0.0",
     "react-docgen": "^2.19.0",
     "react-test-renderer": "^16.7.0",
@@ -82,6 +79,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.4.1",
+    "radium": "^0.25.1",
     "react": "^15.4.1"
   },
   "dependencies": {
@@ -91,7 +89,10 @@
     "html-react-parser": "^0.6.1",
     "lodash": "^4.17.4",
     "mobile-detect": "^1.3.6",
+<<<<<<< HEAD
     "radium": "^0.25.1",
+=======
+>>>>>>> origin/develop
     "react-dom": "^16.0.0",
     "react-event-listener": "^0.6.5",
     "react-onclickoutside": "^6.6.3",
