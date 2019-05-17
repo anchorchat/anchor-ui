@@ -145,6 +145,7 @@ class Input extends Component {
         type={type}
         maxLength={maxLength}
         id={name}
+        name={name}
         placeholder={placeholder}
         disabled={disabled}
         {...custom}
@@ -163,6 +164,7 @@ class Input extends Component {
             maxLength={maxLength}
             rows={maxRows}
             id={name}
+            name={name}
             placeholder={placeholder}
             ref={(node) => { this.textarea = node; }}
             disabled={disabled}
