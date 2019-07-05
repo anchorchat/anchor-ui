@@ -424,8 +424,12 @@
         "type": {
           "name": "func"
         },
-        "required": true,
-        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void"
+        "required": false,
+        "description": "Callback fired when the close button is clicked\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "style": {
         "type": {
@@ -6724,10 +6728,51 @@
     "displayName": "TextMessage",
     "methods": [
       {
-        "name": "createMarkup",
+        "name": "autolinkText",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "emojiToImage",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "nl2br",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "highlightText",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
         "returns": null
       },
       {
