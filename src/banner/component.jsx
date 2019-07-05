@@ -22,7 +22,7 @@ const propTypes = {
    *
    * function(event: object) => void
    */
-  hideBanner: PropTypes.func.isRequired,
+  hideBanner: PropTypes.func,
   /** Override the styles of the root element */
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Toggle banner open */
@@ -31,7 +31,8 @@ const propTypes = {
 
 const defaultProps = {
   style: {},
-  open: false
+  open: false,
+  hideBanner: null
 };
 
 /** 728x90 and 320x50 banners */
@@ -78,9 +79,15 @@ class Banner extends Component {
       <section style={styles.wrapper}>
         <section style={getStyles.root(type, style)}>
           {content[type]}
-          <Button iconButton onClick={hideBanner} style={styles.button}>
-            <IconClose color={colors.white} />
-          </Button>
+          {
+            hideBanner
+              ? (
+                <Button iconButton onClick={hideBanner} style={styles.button}>
+                  <IconClose color={colors.white} />
+                </Button>
+              )
+              : null
+          }
         </section>
         <Media query={query} onChange={this.setMedia} />
       </section>
