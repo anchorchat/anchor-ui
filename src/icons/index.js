@@ -24,6 +24,7 @@ export IconClose from './icon-close';
 export IconCoins from './icon-coins';
 export IconColor from './icon-color';
 export IconConversation from './icon-conversation';
+export IconCopy from './icon-copy';
 export IconDelete from './icon-delete';
 export IconEdit from './icon-edit';
 export IconEmoji from './icon-emoji';
