@@ -3008,6 +3008,24 @@
       }
     }
   },
+  "src/icons/icon-copy.jsx": {
+    "description": "",
+    "displayName": "IconCopy",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "colors.icons",
+          "computed": true
+        }
+      }
+    }
+  },
   "src/icons/icon-delete.jsx": {
     "description": "",
     "displayName": "IconDelete",
