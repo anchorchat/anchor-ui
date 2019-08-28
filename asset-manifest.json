@@ -1,0 +1,20 @@
+{
+  "main.css": "./static/css/main.885c6d40.chunk.css",
+  "main.js": "./static/js/main.0e2f77c9.chunk.js",
+  "main.js.map": "./static/js/main.0e2f77c9.chunk.js.map",
+  "static/js/1.a80215b7.chunk.js": "./static/js/1.a80215b7.chunk.js",
+  "static/js/1.a80215b7.chunk.js.map": "./static/js/1.a80215b7.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/channel-background.jpg": "./static/media/channel-background.511298b0.jpg",
+  "static/media/github.svg": "./static/media/github.bad1671b.svg",
+  "static/media/browserstack.svg": "./static/media/browserstack.50288544.svg",
+  "static/media/empty_state_users.jpg": "./static/media/empty_state_users.eaf9e34a.jpg",
+  "static/media/organ.mp3": "./static/media/organ.f87ba8fb.mp3",
+  "static/media/loop.m4a": "./static/media/loop.b2ff9ba7.m4a",
+  "static/media/logo.svg": "./static/media/logo.fb97ebdc.svg",
+  "static/css/main.885c6d40.chunk.css.map": "./static/css/main.885c6d40.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.ff9c018947d969c2ed8d3f9e5abe7542.js": "./precache-manifest.ff9c018947d969c2ed8d3f9e5abe7542.js",
+  "service-worker.js": "./service-worker.js"
+}
