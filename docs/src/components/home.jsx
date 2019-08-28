@@ -95,7 +95,7 @@ const Home = () => {
         <h1>BrowserStack</h1>
         <p>anchor-ui uses <a href="https://www.browserstack.com" target="_blank" rel="noopener noreferrer">BrowserStack</a> for compatibility testing.</p> {/* eslint-disable-line max-len */}
         <a href="https://www.browserstack.com" target="_blank" rel="noopener noreferrer">
-          <img style={style.image} src={browserstack} alt="Browserstack" />
+          <img style={style.image} src={browserstack} alt="BrowserStack" />
         </a>
       </section>
     </article>
