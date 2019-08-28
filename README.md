@@ -95,4 +95,4 @@ This project is licensed under the terms of the [MIT license](https://github.com
 
 anchor-ui uses [BrowserStack](https://www.browserstack.com) for compatibility testing.
 
-![BrowserStack](/docs/src/assets/images/browserstack.svg)
+<a href="https://www.browserstack.com"><img width="160px" src="/docs/src/assets/images/browserstack.svg" /></a>
