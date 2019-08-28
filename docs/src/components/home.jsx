@@ -1,5 +1,6 @@
 import React from 'react';
 import Markdown from './markdown';
+import browserstack from '../assets/images/browserstack.svg';
 
 const install = `
   \`\`\`bash
@@ -43,23 +44,13 @@ const theme = `
 
 const Home = () => {
   const style = {
-    alert: {
-      maxWidth: '100%',
-      marginTop: '16px'
-    },
     link: {
       textDecoration: 'underline',
       fontWeight: 'normal'
     },
-    table: {
-      minWidth: '240px',
-      maxWidth: '360px',
-      flex: '1'
-    },
-    tables: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-between'
+    image: {
+      width: '160px',
+      marginTop: '16px'
     }
   };
 
@@ -97,8 +88,15 @@ const Home = () => {
         <Markdown markdown={theme} title="Code example" />
       </section>
       <section>
-        <h2>StyleRoot</h2>
+        <h1>StyleRoot</h1>
         <p>If you want to use inline Media Queries or inline CSS animations you need to wrap your app in <a style={style.link} href="https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component" target="_blank" rel="noopener noreferrer">Radium&apos;s StyleRoot</a> component</p> {/* eslint-disable-line max-len */}
+      </section>
+      <section>
+        <h1>BrowserStack</h1>
+        <p>anchor-ui uses <a href="https://www.browserstack.com" target="_blank" rel="noopener noreferrer">BrowserStack</a> for compatibility testing.</p> {/* eslint-disable-line max-len */}
+        <a href="https://www.browserstack.com" target="_blank" rel="noopener noreferrer">
+          <img style={style.image} src={browserstack} alt="BrowserStack" />
+        </a>
       </section>
     </article>
   );

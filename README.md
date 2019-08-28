@@ -90,3 +90,9 @@ If you'd like to help with the development of this module please consider our [c
 ## License
 
 This project is licensed under the terms of the [MIT license](https://github.com/anchorchat/anchor-ui/blob/master/LICENSE).
+
+## BrowserStack
+
+anchor-ui uses [BrowserStack](https://www.browserstack.com) for compatibility testing.
+
+<a href="https://www.browserstack.com"><img width="160px" src="/docs/src/assets/images/browserstack.svg" /></a>
