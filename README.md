@@ -91,7 +91,7 @@ If you'd like to help with the development of this module please consider our [c
 
 This project is licensed under the terms of the [MIT license](https://github.com/anchorchat/anchor-ui/blob/master/LICENSE).
 
-## Browserstack
+## BrowserStack
 
 anchor-ui uses [BrowserStack](https://www.browserstack.com) for compatibility testing.
 
